@@ -18,6 +18,7 @@ html, body {
   user-select: none;
   width: 100%;
   /*使用min-height:100%代替height：100%*/
+  height: 100%;
   min-height: 100%; }
 
 body {
@@ -57,5 +58,628 @@ ol, ul {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+.wrapper {
+  width: 100%;
+  max-width: 640px;
+  min-height: 320px;
+  padding-bottom: 3.3rem;
+  margin: 0 auto;
+  background: url("../images/top_bg.jpg") #3f1339 no-repeat;
+  background-size: 100% auto;
+  overflow: hidden; }
+
+.header {
+  padding: 1%;
+  justify-content: space-between;
+  display: -webkit-flex; }
+  .header > div {
+    width: 20%; }
+    .header > div img {
+      width: 100%; }
+  .header .strategy {
+    animation: mymove .5s infinite;
+    -webkit-animation: mymove .5s infinite;
+    /*Safari and Chrome*/
+    width: 40%;
+    margin-right: -20%; }
+    .header .strategy img {
+      width: 50%; }
+
+@keyframes mymove {
+  from {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg); }
+  to {
+    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg); } }
+@-webkit-keyframes mymove {
+  from {
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg); }
+  to {
+    transform: rotate(-10deg);
+    -webkit-transform: rotate(-10deg); } }
+.nav {
+  padding: 0 3%;
+  margin-top: 8rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex; }
+  .nav .nav-list {
+    -webkit-flex: 1;
+    flex: 1;
+    height: 2.7rem;
+    margin: 0 .1rem; }
+  .nav .discount {
+    background: url("../images/nav01.png") no-repeat;
+    background-size: 100% auto; }
+    .nav .discount.active {
+      background: url("../images/nav_active01.png") no-repeat;
+      background-size: 100% auto; }
+  .nav .SecKill {
+    background: url("../images/nav02.png") no-repeat;
+    background-size: 100% auto; }
+    .nav .SecKill.active {
+      background: url("../images/nav_active02.png") no-repeat;
+      background-size: 100% auto; }
+  .nav .free {
+    background: url("../images/nav03.png") no-repeat;
+    background-size: 100% auto; }
+    .nav .free.active {
+      background: url("../images/nav_active03.png") no-repeat;
+      background-size: 100% auto; }
+
+.prize-draw {
+  padding: 0 3%;
+  margin-top: 1rem; }
+  .prize-draw .prize-draw-container {
+    position: relative;
+    height: 11rem;
+    background: url("../images/lottery_draw.png") no-repeat;
+    background-size: 100% auto; }
+    .prize-draw .prize-draw-container .prize-draw-list {
+      margin: 0 auto;
+      padding-top: 10%;
+      width: 80%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex; }
+      .prize-draw .prize-draw-container .prize-draw-list .slotMachine {
+        overflow: hidden;
+        background-color: #ffffff;
+        -webkit-flex: 1;
+        flex: 1;
+        height: 5.2rem;
+        margin: 0 .3rem; }
+        .prize-draw .prize-draw-container .prize-draw-list .slotMachine .slot {
+          width: 100%;
+          height: 5.2rem;
+          background-size: 100% 100%; }
+        .prize-draw .prize-draw-container .prize-draw-list .slotMachine .slot1 {
+          background-image: url("../images/slot1.png"); }
+        .prize-draw .prize-draw-container .prize-draw-list .slotMachine .slot2 {
+          background-image: url("../images/slot2.png"); }
+        .prize-draw .prize-draw-container .prize-draw-list .slotMachine .slot3 {
+          background-image: url("../images/slot3.png"); }
+        .prize-draw .prize-draw-container .prize-draw-list .slotMachine .slot4 {
+          background-image: url("../images/slot4.png"); }
+        .prize-draw .prize-draw-container .prize-draw-list .slotMachine .slot5 {
+          background-image: url("../images/slot5.png"); }
+        .prize-draw .prize-draw-container .prize-draw-list .slotMachine .slot6 {
+          background-image: url("../images/slot6.png"); }
+    .prize-draw .prize-draw-container .prize-draw-btn {
+      position: absolute;
+      bottom: 5%;
+      left: 28%;
+      width: 45%;
+      height: 3rem;
+      background: url("../images/lottery_draw_btn.png") no-repeat;
+      background-size: 100% auto; }
+  .prize-draw .prize-draw-text {
+    margin: .5rem auto 0;
+    width: 80%;
+    height: 1.5rem;
+    border-radius: 30px;
+    background-color: #b93ffc;
+    overflow: hidden; }
+    .prize-draw .prize-draw-text i {
+      width: .8rem;
+      height: 1rem;
+      background: url("../images/gold_medal.png") no-repeat;
+      background-size: 100% 100%;
+      display: block;
+      vertical-align: middle;
+      float: left;
+      margin: .25rem .1rem 0 .5rem; }
+    .prize-draw .prize-draw-text ul {
+      margin-left: 1.5rem; }
+      .prize-draw .prize-draw-text ul li {
+        color: #fff;
+        font: .65rem/1.5rem "Microsoft YaHei","Helvetica Neue";
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden; }
+
+.all-list {
+  padding: 0 6%; }
+  .all-list .all-list-container > div {
+    margin-top: 1.5rem;
+    font-size: 0; }
+    .all-list .all-list-container > div > img {
+      width: 100%;
+      margin-bottom: .6rem; }
+
+.SecKill-list, .free-list {
+  display: block; }
+
+.SecKill-container > img {
+  margin-bottom: 0 !important; }
+.SecKill-container > p {
+  font: .7rem/2 "Microsoft YaHei","Helvetica Neue";
+  color: #fff;
+  text-align: center;
+  margin-bottom: .5rem; }
+.SecKill-container .SecKill-container-text ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex; }
+  .SecKill-container .SecKill-container-text ul li {
+    color: #fff;
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+    background-color: #4a0b6d;
+    border-radius: 5px 5px 0 0;
+    margin-right: .25rem; }
+    .SecKill-container .SecKill-container-text ul li h3 {
+      font: .7rem/1rem "Microsoft YaHei","Helvetica Neue"; }
+    .SecKill-container .SecKill-container-text ul li p {
+      font: .6rem/1rem "Microsoft YaHei","Helvetica Neue"; }
+      .SecKill-container .SecKill-container-text ul li p i {
+        width: .6rem;
+        height: .6rem;
+        background: url("../images/time.png") no-repeat;
+        background-size: 100% 100%;
+        display: inline-block;
+        margin-right: .1rem; }
+  .SecKill-container .SecKill-container-text ul .active {
+    background-color: #aa11ff; }
+.SecKill-container .SecKill-container-text .all-text-list {
+  background-color: #aa11ff; }
+  .SecKill-container .SecKill-container-text .all-text-list .text-list {
+    padding: 2% 0 0;
+    height: auto;
+    overflow: hidden;
+    display: none; }
+    .SecKill-container .SecKill-container-text .all-text-list .text-list .tl {
+      float: left;
+      width: 50%;
+      position: relative; }
+      .SecKill-container .SecKill-container-text .all-text-list .text-list .tl img {
+        width: 100%; }
+      .SecKill-container .SecKill-container-text .all-text-list .text-list .tl:nth-child(odd) {
+        padding: 0 1% 2% 2%; }
+        .SecKill-container .SecKill-container-text .all-text-list .text-list .tl:nth-child(odd) .laryer-list {
+          position: absolute;
+          left: 4%;
+          right: 2%;
+          top: 0;
+          bottom: 3%;
+          background: rgba(0, 0, 0, 0.7); }
+          .SecKill-container .SecKill-container-text .all-text-list .text-list .tl:nth-child(odd) .laryer-list p {
+            font: .75rem/1 "Microsoft YaHei","Helvetica Neue";
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            top: 50%;
+            position: absolute; }
+            .SecKill-container .SecKill-container-text .all-text-list .text-list .tl:nth-child(odd) .laryer-list p i {
+              width: .75rem;
+              height: .75rem;
+              background: url("../images/time.png") no-repeat;
+              background-size: 100% 100%;
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: .1rem; }
+      .SecKill-container .SecKill-container-text .all-text-list .text-list .tl:nth-child(even) {
+        padding: 0 2% 2% 1%; }
+        .SecKill-container .SecKill-container-text .all-text-list .text-list .tl:nth-child(even) .laryer-list {
+          position: absolute;
+          left: 2%;
+          right: 4%;
+          top: 0;
+          bottom: 3%;
+          background: rgba(0, 0, 0, 0.7); }
+          .SecKill-container .SecKill-container-text .all-text-list .text-list .tl:nth-child(even) .laryer-list p {
+            font: .75rem/1 "Microsoft YaHei","Helvetica Neue";
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            top: 50%;
+            position: absolute; }
+            .SecKill-container .SecKill-container-text .all-text-list .text-list .tl:nth-child(even) .laryer-list p i {
+              width: .75rem;
+              height: .75rem;
+              background: url("../images/time.png") no-repeat;
+              background-size: 100% 100%;
+              display: inline-block;
+              vertical-align: middle;
+              margin-right: .1rem; }
+      .SecKill-container .SecKill-container-text .all-text-list .text-list .tl .tl-text {
+        background-color: #fff;
+        padding: 2%;
+        margin-top: -1px; }
+        .SecKill-container .SecKill-container-text .all-text-list .text-list .tl .tl-text p {
+          font: .7rem/1.5 "Microsoft YaHei","Helvetica Neue"; }
+        .SecKill-container .SecKill-container-text .all-text-list .text-list .tl .tl-text a {
+          background-color: #ff8400;
+          font: bold .65rem/2 "Microsoft YaHei","Helvetica Neue";
+          display: block;
+          color: #fff;
+          text-decoration: none;
+          border-radius: 3px;
+          padding: 0 5%;
+          text-align: center;
+          margin: .3rem auto 0;
+          width: 80%; }
+        .SecKill-container .SecKill-container-text .all-text-list .text-list .tl .tl-text .on {
+          background-color: #b6b6b6; }
+
+.free-container-text {
+  position: relative;
+  background-color: #a1f;
+  padding: 2%; }
+  .free-container-text .text-bg {
+    background-color: #fff;
+    border-radius: 5px; }
+    .free-container-text .text-bg > img {
+      width: 100%;
+      border-radius: 5px; }
+  .free-container-text a {
+    position: absolute;
+    width: 30%;
+    left: 35%;
+    bottom: -2%;
+    display: block; }
+    .free-container-text a img {
+      width: 100%; }
+
+.title1 .coupon {
+  background-color: #fff;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: .2rem 0; }
+  .title1 .coupon a {
+    -webkit-flex: 1;
+    flex: 1;
+    margin: 0 .2rem; }
+    .title1 .coupon a img {
+      width: 100%; }
+
+.title2 .new-user {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex; }
+  .title2 .new-user .hotel-list {
+    -webkit-flex: 1;
+    flex: 1;
+    margin: 0 .2rem; }
+    .title2 .new-user .hotel-list > img {
+      width: 90%;
+      margin-bottom: .1rem; }
+    .title2 .new-user .hotel-list .text {
+      background-color: #fff; }
+      .title2 .new-user .hotel-list .text img {
+        width: 100%; }
+      .title2 .new-user .hotel-list .text .text-container {
+        padding: 5%; }
+        .title2 .new-user .hotel-list .text .text-container h3 {
+          font: .7rem/1.2 "Microsoft YaHei","Helvetica Neue";
+          color: #333;
+          display: -webkit-box !important;
+          overflow: hideen;
+          text-overflow: ellipsis;
+          word-break: break-all;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          margin-bottom: 5%; }
+        .title2 .new-user .hotel-list .text .text-container p {
+          font: .6rem/2 "Microsoft YaHei","Helvetica Neue";
+          color: #333; }
+          .title2 .new-user .hotel-list .text .text-container p span {
+            font: bold .7rem/2 "Microsoft YaHei","Helvetica Neue";
+            color: #ff8400; }
+            .title2 .new-user .hotel-list .text .text-container p span del {
+              margin-left: .1rem;
+              font: .6rem/2 "Microsoft YaHei","Helvetica Neue";
+              color: #999; }
+          .title2 .new-user .hotel-list .text .text-container p a {
+            background-color: #ff8400;
+            font: bold .65rem/2 "Microsoft YaHei","Helvetica Neue";
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            float: right;
+            border-radius: 3px;
+            padding: 0 5%; }
+
+.title3 .hot-cake .hot-cake-list {
+  position: relative;
+  margin-bottom: .5rem; }
+  .title3 .hot-cake .hot-cake-list img {
+    width: 100%; }
+    .title3 .hot-cake .hot-cake-list img:first-child {
+      width: 15%;
+      position: absolute;
+      top: 0;
+      left: .5rem; }
+  .title3 .hot-cake .hot-cake-list .text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 50%;
+    height: 100%;
+    padding: 3% 5% 0 5%; }
+    .title3 .hot-cake .hot-cake-list .text h3 {
+      font: .7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+      color: #fff;
+      text-align: center; }
+      .title3 .hot-cake .hot-cake-list .text h3 span {
+        color: #ffe400; }
+        .title3 .hot-cake .hot-cake-list .text h3 span strong {
+          font-weight: bold; }
+    .title3 .hot-cake .hot-cake-list .text p {
+      font: .6rem/1.2 "Microsoft YaHei","Helvetica Neue";
+      color: #999; }
+    .title3 .hot-cake .hot-cake-list .text .money {
+      margin-top: .5rem; }
+      .title3 .hot-cake .hot-cake-list .text .money span {
+        font: bold .8rem/1.2 "Microsoft YaHei","Helvetica Neue";
+        color: #ffe400; }
+        .title3 .hot-cake .hot-cake-list .text .money span strong {
+          font-size: 1rem; }
+      .title3 .hot-cake .hot-cake-list .text .money del {
+        font: .6rem/1.2 "Microsoft YaHei","Helvetica Neue";
+        color: #999; }
+    .title3 .hot-cake .hot-cake-list .text a {
+      background-color: #ff8400;
+      font: bold .65rem/2 "Microsoft YaHei","Helvetica Neue";
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 3px;
+      padding: 0 5%;
+      text-align: center;
+      margin: .3rem auto 0;
+      width: 60%; }
+
+.title4 .recommend {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: .2rem 0; }
+  .title4 .recommend a {
+    -webkit-flex: 1;
+    flex: 1;
+    margin: 0 .2rem; }
+    .title4 .recommend a img {
+      width: 100%; }
+
+.layer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2.8rem;
+  background-color: #4a0b6d;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex; }
+  .layer a {
+    font: .7rem/2.8rem "Microsoft YaHei","Helvetica Neue";
+    color: #fff;
+    text-decoration: none;
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center; }
+    .layer a i {
+      width: 1rem;
+      height: 1rem;
+      background: url("../images/bottom-icon01.png") no-repeat;
+      background-size: 100% 100%;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: .1rem; }
+    .layer a:nth-child(2) i {
+      background: url("../images/bottom-icon02.png") no-repeat;
+      background-size: 100% 100%; }
+    .layer a:nth-child(3) i {
+      background: url("../images/bottom-icon03.png") no-repeat;
+      background-size: 100% 100%; }
+
+.wrapper-detailed {
+  width: 100%;
+  max-width: 640px;
+  min-height: 320px;
+  padding-bottom: 2.8rem;
+  margin: 0 auto;
+  background-color: #e5e5e5; }
+
+.swiper-container {
+  font-size: 0; }
+
+.title-name {
+  padding: 3% 0;
+  margin-bottom: .5rem;
+  background-color: #fff; }
+  .title-name h2 {
+    position: relative;
+    padding: 0 3% .5rem 3%;
+    font: .75rem/1.2 "Microsoft YaHei","Helvetica Neue";
+    color: #333; }
+    .title-name h2:before {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px solid #ccc;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5); }
+  .title-name p {
+    padding: 3% 3% 0 3%;
+    font: .6rem/1.2 "Microsoft YaHei","Helvetica Neue";
+    color: #666; }
+    .title-name p span {
+      margin-right: .3rem; }
+      .title-name p span i {
+        color: #007aff;
+        margin-right: .1rem;
+        vertical-align: middle; }
+
+.see-more {
+  padding: 3% 0 0 0;
+  margin-bottom: .5rem;
+  background-color: #fff;
+  display: block;
+  text-decoration: none; }
+  .see-more h3 {
+    position: relative;
+    padding: 0 3% .5rem 3%;
+    font: .75rem/1.2 "Microsoft YaHei","Helvetica Neue";
+    color: #333; }
+    .see-more h3:before {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px solid #ccc;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5); }
+    .see-more h3 i {
+      float: right;
+      color: #ccc; }
+
+.need-to-know {
+  padding: 3% 0 0 0;
+  margin-bottom: .5rem;
+  background-color: #fff; }
+  .need-to-know h3 {
+    position: relative;
+    padding: 0 3% .5rem 3%;
+    font: .75rem/1.2 "Microsoft YaHei","Helvetica Neue";
+    color: #333; }
+    .need-to-know h3:before {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px solid #ccc;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5); }
+    .need-to-know h3 i {
+      float: right;
+      color: #ccc; }
+  .need-to-know .text {
+    padding: 3%; }
+    .need-to-know .text p {
+      font: .7rem/1.2 "Microsoft YaHei","Helvetica Neue";
+      margin-bottom: .2rem;
+      color: #666; }
+
+.info {
+  background-color: #fff; }
+  .info ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    position: relative; }
+    .info ul:before {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px solid #ccc;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5); }
+    .info ul li {
+      -webkit-flex: 1;
+      flex: 1;
+      text-align: center;
+      font: .7rem/3 "Microsoft YaHei","Helvetica Neue"; }
+    .info ul .underline {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 33.333333%;
+      height: 2px;
+      background-color: #007aff;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s; }
+  .info .info-list-all .info-list {
+    display: none;
+    padding: 2% 2% 0 2%;
+    font-size: 0; }
+    .info .info-list-all .info-list img {
+      margin-bottom: .2rem;
+      width: 100%; }
+      .info .info-list-all .info-list img:last-child {
+        margin-bottom: 0; }
+    .info .info-list-all .info-list p {
+      font: .7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+      margin-bottom: .2rem;
+      color: #666; }
+      .info .info-list-all .info-list p:last-child {
+        margin-bottom: 0; }
+
+.layer-detailed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2.8rem;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex; }
+  .layer-detailed .layer-detailed-list {
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+    color: #ff5b45; }
+    .layer-detailed .layer-detailed-list .money {
+      float: left;
+      width: 40%; }
+      .layer-detailed .layer-detailed-list .money p {
+        font: bold 1rem/2.8rem "Microsoft YaHei","Helvetica Neue"; }
+    .layer-detailed .layer-detailed-list .time {
+      margin-top: .3rem;
+      float: left;
+      width: 60%;
+      padding-left: 5%;
+      border-left: 1px solid #ff5b45; }
+      .layer-detailed .layer-detailed-list .time p {
+        font: normal .7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+        text-align: left; }
+    .layer-detailed .layer-detailed-list:last-child a {
+      background-color: #ff5b45;
+      color: #fff;
+      font: normal .9rem/2.8rem "Microsoft YaHei","Helvetica Neue";
+      text-decoration: none;
+      display: block; }
+    .layer-detailed .layer-detailed-list:last-child .on {
+      background-color: #ccc;
+      display: block; }
 
 /*# sourceMappingURL=index.css.map */

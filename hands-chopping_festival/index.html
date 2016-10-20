@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans">
+<html id="html" lang="zh-cmn-Hans">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -8,12 +8,331 @@
 <meta name="author" content="name, sycbbb@sina.com"/>
 <meta name="robots" content="index,follow"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!-- <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no"> -->
 <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
 <meta name="msapplication-tap-highlight" content="no">
-<title>东呈“剁手”节</title>
+<title>东呈剁手节</title>
+<link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-	
+	<div class="wrapper" id="wrapper">
+		<header class="header">
+			<div class="logo"><img src="images/logo.png" alt=""></div>
+			<div class="strategy"><img src="images/strategy.png" alt=""></div>
+		</header>
+		<nav class="nav">
+			<div class="nav-list discount active"></div>
+			<div class="nav-list SecKill"></div>
+			<div class="nav-list free"></div>
+		</nav>
+		<section class="prize-draw">
+		    <div class="prize-draw-container">
+		        <div class="prize-draw-list">
+					<div id="machine1" class="slotMachine">
+						<div class="slot slot1"></div>
+						<div class="slot slot2"></div>
+						<div class="slot slot3"></div>
+						<div class="slot slot4"></div>
+						<div class="slot slot5"></div>
+						<div class="slot slot6"></div>
+					</div>					
+					<div id="machine2" class="slotMachine">
+						<div class="slot slot1"></div>
+						<div class="slot slot2"></div>
+						<div class="slot slot3"></div>
+						<div class="slot slot4"></div>
+						<div class="slot slot5"></div>
+						<div class="slot slot6"></div>
+					</div>				
+					<div id="machine3" class="slotMachine">
+						<div class="slot slot1"></div>
+						<div class="slot slot2"></div>
+						<div class="slot slot3"></div>
+						<div class="slot slot4"></div>
+						<div class="slot slot5"></div>
+						<div class="slot slot6"></div>
+					</div>
+		        </div>
+		    	<div id="slotMachineButton1" class="prize-draw-btn"></div>
+		    </div>
+		    <div style="clear:both; display:none;">
+				<div id="machine1Result" class="slotMachine noBorder" style="text-align:left">Index: 0</div>
+				<div id="machine2Result" class="slotMachine noBorder" style="text-align:left">Index: 1</div>
+				<div id="machine3Result" class="slotMachine noBorder" style="text-align:left">Index: 2</div>
+				<div class="slotMachine noBorder"></div>
+			</div>
+			<div class="prize-draw-text">
+			   <i></i>
+			   <div class="prize-draw-text-list" id="prizeList">
+				   <ul class="list">
+				   	  <li>1某某某某某... 抽中了 200元优惠券礼包</li>
+				   	  <li>2某某某某某... 抽中了 200元优惠券礼包</li>
+				   	  <li>3某某某某某... 抽中了 200元优惠券礼包</li>
+				   	  <li>4某某某某某... 抽中了 200元优惠券礼包</li>
+				   </ul>
+			   </div>		   
+			</div>
+		</section>
+		<section class="all-list">
+		    <div class="all-list-container SecKill-list">
+		    	<div class="SecKill-container">
+		    		<img src="images/title-b1.png" alt="1元秒杀 火力全开">
+		    		<p>11月11日至18日 每天10:00/20:00秒杀</p>
+		    		<div class="SecKill-container-text">
+		    			<ul>
+		    				<li class="active">
+		    				  <h3>11月11日</h3>
+		    				  <p><i></i>10:00 开抢</p>		    				  
+		    				</li>
+		    				<li>
+			    				<h3>11月12日</h3>
+			    				<p><i></i>20:00 开抢</p>
+		    				</li>
+		    			</ul>
+		    			<div class="all-text-list">
+		    				<div class="text-list" style="display:block;">
+		    					<div class="tl">
+		    						<img src="images/hotel01.jpg" alt="">
+		    						<div class="tl-text">
+		    							<p>广州体育西路地铁站店1晚房券</p>
+			    						<a href="detailed.html">1元秒杀</a>
+			    						<a class="on" href="" style="display:none;">已卖光</a>
+		    						</div>	     						
+		    					</div>
+		    					<div class="tl">
+		    						<img src="images/hotel02.jpg" alt="">
+		    						<div class="tl-text">
+		    							<p>广州体育西路地铁站店1晚房券</p>
+			    						<a href="detailed.html">1元秒杀</a>
+			    						<a class="on" href="" style="display:none;">已卖光</a>
+		    						</div>
+		    					</div>
+		    					<div class="tl">
+		    						<img src="images/hotel01.jpg" alt="">
+		    						<div class="tl-text">
+		    							<p>广州体育西路地铁站店1晚房券</p>
+			    						<a href="detailed.html">1元秒杀</a>
+			    						<a class="on" href="" style="display:none;">已卖光</a>
+		    						</div> 
+		    					</div>
+		    					<div class="tl">
+		    						<img src="images/hotel02.jpg" alt="">
+		    					    <div class="tl-text">
+		    							<p>广州体育西路地铁站店1晚房券</p>
+			    						<a href="detailed.html" style="display:none;">1元秒杀</a>
+			    						<a class="on" href="">已卖光</a>
+		    						</div>
+		    					</div>
+		    				</div>
+		    				<div class="text-list">
+		    					<div class="tl">
+		    						<img src="images/hotel01.jpg" alt="">
+		    						<div class="tl-text">
+		    							<p>广州体育西路地铁站店1晚房券</p>
+			    						<a href="">1元秒杀</a>
+			    						<a class="on" href="" style="display:none;">已卖光</a>
+		    						</div> 						
+		    					</div>
+		    					<div class="tl">
+		    						<img src="images/hotel02.jpg" alt="">
+		    						<div class="tl-text">
+		    							<p>广州体育西路地铁站店1晚房券</p>
+			    						<a href="">1元秒杀</a>
+			    						<a class="on" href="" style="display:none;">已卖光</a>
+		    						</div>
+		    					</div>
+		    					<div class="tl">
+		    						<img src="images/hotel01.jpg" alt="">
+		    						<div class="tl-text">
+		    							<p>广州体育西路地铁站店1晚房券</p>
+			    						<a href="">1元秒杀</a>
+			    						<a class="on" href="" style="display:none;">已卖光</a>
+		    						</div>
+		    					</div>
+		    					<div class="tl">
+		    						<img src="images/hotel02.jpg" alt="">
+		    					    <div class="tl-text">
+		    							<p>广州体育西路地铁站店1晚房券</p>
+			    						<a href="">1元秒杀</a>
+			    						<a class="on" href="" style="display:none;">已卖光</a>
+		    						</div>
+		    					</div>
+		    				</div>
+		    			</div>
+		    		</div>
+		    	</div>
+		    </div>
+		    <div class="all-list-container free-list">
+		    	<div class="free-container">
+		    		<img src="images/title-c1.png" alt="">
+		    		<div class="free-container-text">
+		    		    <div class="text-bg">
+		    		    	<img src="images/explosion02.jpg" alt="">
+		    		    </div>
+		    		    <a href=""><img src="images/0btn.png" alt=""></a>
+		    		</div>
+		    	</div>
+		    </div>
+			<div class="all-list-container discount-list">
+				<div class="title1">
+					<img src="images/title-a1.png" alt="没人品免费领">
+					<div class="coupon">
+						<a href="#"><img src="images/coupon01.jpg" alt=""></a>
+						<a href="#"><img src="images/coupon02.jpg" alt=""></a>
+					</div>
+				</div>
+				<div class="title2">
+					<img src="images/title-a2.png" alt="新会员尊享">
+					<div class="new-user">
+						<div class="hotel-list">
+							<img src="images/user_l.png" alt="">
+							<div class="text">
+								<img src="images/hotel01.jpg" alt="">
+								<div class="text-container">
+									<h3>【新会员福利】1元享5折，中档酒店超值住</h3>
+									<p><span>￥1<del>￥200</del></span> <a href="detailed.html">立即购买</a></p>
+							    </div>
+							</div>
+						</div>
+						<div class="hotel-list">
+							<img src="images/user_r.png" alt="">
+							<div class="text">
+								<img src="images/hotel02.jpg" alt="">
+								<div class="text-container">
+									<h3>【新会员福利】1元享5折，中档酒店超值住</h3>
+									<p><span>￥1<del>￥200</del></span> <a href="detailed.html">立即购买</a></p>
+								</div>					
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="title3" id="title3">
+					<img src="images/title-a3.png" alt="人气爆款">
+                    <div class="hot-cake">
+                    	<div class="hot-cake-list">
+                    	    <img src="images/icon01.png" alt="">
+                    		<img src="images/explosion01.jpg" alt="">
+                    		<div class="text">
+                    			<h3>268元享<span><strong>2</strong>晚</span>精品酒店</h3>
+                    			<p>低至134元/晚 短期出行最优选</p>
+                    			<div class="money"><span>￥<strong>268</strong></span><del>￥600</del></div>
+                    			<a href="">去抢购</a>
+                    		</div>
+                    	</div>
+                    	<div class="hot-cake-list">
+                    	    <img src="images/icon02.png" alt="">
+                    		<img src="images/explosion02.jpg" alt="">
+                    		<div class="text">
+                    			<h3>389元享<span><strong>3</strong>晚</span>精品酒店</h3>
+                    			<p>低至130元/晚  商务出行最适合</p>
+                    			<div class="money"><span>￥<strong>389</strong></span><del>￥900</del></div>
+                    			<a href="">去抢购</a>
+                    		</div>
+                    	</div>
+                    	<div class="hot-cake-list">
+                    	    <img src="images/icon03.png" alt="">
+                    		<img src="images/explosion03.jpg" alt="">
+                    		<div class="text">
+                    			<h3>588元享<span><strong>5</strong>晚</span>精品酒店</h3>
+                    			<p>低至117元/晚 可拆分 随时退 行无忧</p>
+                    			<div class="money"><span>￥<strong>588</strong></span><del>￥1500</del></div>
+                    			<a href="">去抢购</a>
+                    		</div>
+                    	</div>
+                    </div>
+				</div>
+				<div class="title4" id="title4">
+					<img src="images/title-a4.png" alt="超值推荐">
+					<div class="recommend">
+						<a href="#"><img src="images/recommend01.png" alt=""></a>
+						<a href="#"><img src="images/recommend02.png" alt=""></a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="layer">
+		<a href="#wrapper"><i></i>返回顶部抽奖</a>
+		<a href="#title3"><i></i>人气爆款</a>
+		<a href="#title4"><i></i>超值推荐</a>
+	</div>
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script src="scripts/jquery.slotmachine.js"></script>
+	<script>
+	    $(document).ready(function(){       
+           //1元秒杀 火力全开
+           $(".SecKill-container-text ul li").on("click",function(){
+               $(this).addClass("active").siblings().removeClass("active");
+               $(".all-text-list .text-list").eq($(this).index()).show().siblings().hide();
+           });
+           //抽中了滚动
+           var liHeight=$("#prizeList .list li").height();
+           setInterval(function(){
+           	  $("#prizeList").find(".list").animate({  
+                   marginTop : -liHeight
+               },500,function(){  
+                   $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);  
+               })  
+           },3000); 
+
+	    });
+	    //控制字体
+		window.onload=function(){
+		  var html=document.getElementById("html"),
+		      windowWidth=window.screen.width;
+		  if(windowWidth>640){
+		    html.style.fontSize=32+"px";
+		  }else{
+		    html.style.fontSize=windowWidth/20+"px";
+		  }
+		}
+	</script>
+	<script>
+		$(document).ready(function(){
+			var machine1 = $("#machine1").slotMachine({
+				active	: 0,
+				delay	: 500
+			});
+			
+			var machine2 = $("#machine2").slotMachine({
+				active	: 0,
+				delay	: 500
+			});
+			
+			var machine3 = $("#machine3").slotMachine({
+				active	: 0,
+				delay	: 500
+			});
+			
+			function onComplete($el, active){
+				switch($el[0].id){
+					case 'machine1':
+						$("#machine1Result").text("Index: "+active.index);
+						break;
+					case 'machine2':
+						$("#machine2Result").text("Index: "+active.index);
+						break;
+					case 'machine3':
+						$("#machine3Result").text("Index: "+active.index);
+						break;
+				}
+			}
+			
+			$("#slotMachineButton1").click(function(){
+				
+				machine1.shuffle(3, onComplete);
+				
+				setTimeout(function(){
+					machine2.shuffle(3, onComplete);
+				}, 500);
+				
+				setTimeout(function(){
+					machine3.shuffle(3, onComplete);
+				}, 1000);
+				
+			})
+		});
+	</script>
 </body>
 </html>
