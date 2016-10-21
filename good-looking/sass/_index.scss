@@ -1,0 +1,150 @@
+@import "base";
+html{
+    font-size:32px;
+}
+@media(min-device-width:320px){
+html{
+  font-size:32px;
+}
+}
+@media(min-device-width:360px){
+html{
+  font-size:36px;
+}
+}
+@media(min-device-width:375px){
+html{
+  font-size:37.5px;
+}
+}
+@media(min-device-width:384px){
+html{
+  font-size:38.4px;
+}
+}
+@media(min-device-width:400px){
+html{
+  font-size:40px;
+}
+}
+@media(min-device-width:414px){
+html{
+  font-size:41.4px;
+}
+}
+@media(min-device-width:480px){
+html{
+  font-size:48px;
+}
+}
+@media(min-device-width:568px){
+html{
+  font-size:56.8px;
+}
+}
+@media(min-device-width:533px){
+html{
+  font-size:53.3px;
+}
+}
+@media(min-device-width:600px){
+html{
+  font-size:600px;
+}
+}
+@media(min-device-width:640px){
+html{
+  font-size:64px;
+}
+}
+body{
+	background-color:#058be1;
+}
+.wrapper{
+	width:100%;
+	max-width:640px;
+	min-height:320px;
+	height:auto;
+	margin:0 auto;
+}
+.top{
+	width:100%;
+	font-size:0;
+	img{
+		width:100%;
+	}
+}
+.good-looking-text{
+	position:relative;
+	margin:0 auto;
+	padding:8% 0 2%;
+	width:90%;
+	background-color:#fff;
+	border-radius:15px;
+	img{
+		position:absolute;
+		width:100%;
+		top: -25%;
+	}
+	h2{
+		font:bold .5rem/2 "Microsoft YaHei","Helvetica Neue";
+		color:#004d7f;
+		text-align:center;
+	}
+	p{
+		font:.4rem/1.5 "Microsoft YaHei","Helvetica Neue";
+		color:#004d7f;
+		text-align:center;
+	}
+	.p-text{
+		margin-top:.2rem;
+	}
+}
+.camera{
+	position:relative;
+	padding: 5% 0;
+	width:100%;
+	>img{
+		position:absolute;
+		top:25%;
+		right:9%;
+        width:25%;
+	}
+	.camera-center{
+		margin:0 auto;
+		width:2.4rem;
+		height:2.4rem;
+		background-color:#fff;
+		border-radius:100%;
+		border: 1px solid #058be1;   
+	    -webkit-border-radius:100%;   
+	    -moz-border-radius: 100%;   
+	    border-radius:100%;   
+	    -webkit-box-shadow: 0 0 0 10px #fff;   
+	    box-shadow: 0 0 0 10px #fff; 
+	    text-align:center;
+	    line-height: 2.8rem; 
+	    img{
+	    	width:70%;
+	    } 
+	}
+}
+.footer{
+	width:90%;
+	margin:.2rem auto;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+	a{
+		-webkit-flex:1;
+		flex:1;	
+		font:.4rem/.5rem "Microsoft YaHei","Helvetica Neue";
+		color:#fff;
+		text-align:center;
+		text-decoration:none;
+		&:nth-child(2){
+			border-right:2px solid #fff;
+			border-left:2px solid #fff;
+		}
+	}
+}
