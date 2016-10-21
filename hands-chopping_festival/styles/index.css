@@ -328,6 +328,17 @@ table {
           width: 80%; }
         .SecKill-container .SecKill-container-text .all-text-list .text-list .tl .tl-text .on {
           background-color: #b6b6b6; }
+    .SecKill-container .SecKill-container-text .all-text-list .text-list:last-child .tl-text a {
+      background-color: #ccc;
+      font: bold .65rem/2 "Microsoft YaHei","Helvetica Neue";
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 3px;
+      padding: 0 5%;
+      text-align: center;
+      margin: .3rem auto 0;
+      width: 80%; }
 
 .free-container-text {
   position: relative;

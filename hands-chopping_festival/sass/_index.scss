@@ -332,6 +332,22 @@
 				    	}
 				    }
 				}
+				&:last-child{
+					.tl-text{
+						a{
+							background-color:#ccc;
+		            		font:bold .65rem/2 "Microsoft YaHei","Helvetica Neue";
+		            		display:block;
+		            		color:#fff;
+		            		text-decoration: none;
+						    border-radius: 3px;
+						    padding: 0 5%;
+						    text-align:center;
+						    margin:.3rem auto 0;
+						    width:80%;
+						}
+					}
+				}
 			}
 		}
 	}

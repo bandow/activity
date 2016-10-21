@@ -130,7 +130,7 @@
 		    						<img src="images/hotel01.jpg" alt="">
 		    						<div class="tl-text">
 		    							<p>广州体育西路地铁站店1晚房券</p>
-			    						<a href="">1元秒杀</a>
+			    						<a href="">即将开始</a>
 			    						<a class="on" href="" style="display:none;">已卖光</a>
 		    						</div> 						
 		    					</div>
@@ -138,7 +138,7 @@
 		    						<img src="images/hotel02.jpg" alt="">
 		    						<div class="tl-text">
 		    							<p>广州体育西路地铁站店1晚房券</p>
-			    						<a href="">1元秒杀</a>
+			    						<a href="">即将开始</a>
 			    						<a class="on" href="" style="display:none;">已卖光</a>
 		    						</div>
 		    					</div>
@@ -146,7 +146,7 @@
 		    						<img src="images/hotel01.jpg" alt="">
 		    						<div class="tl-text">
 		    							<p>广州体育西路地铁站店1晚房券</p>
-			    						<a href="">1元秒杀</a>
+			    						<a href="">即将开始</a>
 			    						<a class="on" href="" style="display:none;">已卖光</a>
 		    						</div>
 		    					</div>
@@ -154,7 +154,7 @@
 		    						<img src="images/hotel02.jpg" alt="">
 		    					    <div class="tl-text">
 		    							<p>广州体育西路地铁站店1晚房券</p>
-			    						<a href="">1元秒杀</a>
+			    						<a href="">即将开始</a>
 			    						<a class="on" href="" style="display:none;">已卖光</a>
 		    						</div>
 		    					</div>
@@ -387,17 +387,20 @@
 		$(document).ready(function(){
 			var machine1 = $("#machine1").slotMachine({
 				active	: 0,
-				delay	: 500
+				delay	: 500,
+				stopIndex: 4 
 			});
 			
 			var machine2 = $("#machine2").slotMachine({
 				active	: 0,
-				delay	: 500
+				delay	: 500,
+				stopIndex: 4 
 			});
 			
 			var machine3 = $("#machine3").slotMachine({
 				active	: 0,
-				delay	: 500
+				delay	: 500,
+				stopIndex: 4 
 			});
 			
 			function onComplete($el, active){
@@ -415,15 +418,15 @@
 			}
 			
 			$("#slotMachineButton1").click(function(){
-				
-				machine1.shuffle(3, onComplete);
-				
+
+				machine1.shuffle(3);
+							
 				setTimeout(function(){
-					machine2.shuffle(3, onComplete);
+					machine2.shuffle(3);
 				}, 500);
 				
 				setTimeout(function(){
-					machine3.shuffle(3, onComplete);
+					machine3.shuffle(3);
 				}, 1000);
 				
 			})
