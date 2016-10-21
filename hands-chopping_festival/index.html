@@ -419,15 +419,15 @@
 			
 			$("#slotMachineButton1").click(function(){
 
-				machine1.shuffle(3);
-							
-				setTimeout(function(){
-					machine2.shuffle(3);
-				}, 500);
-				
-				setTimeout(function(){
-					machine3.shuffle(3);
-				}, 1000);
+				 machine1.shuffle(3, onComplete,1);
+
+	            setTimeout(function(){
+	                machine2.shuffle(3, onComplete,2);
+	            }, 500);
+
+	            setTimeout(function(){
+	                machine3.shuffle(3, onComplete,3);
+	            }, 1000);
 				
 			})
 		});
