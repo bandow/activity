@@ -257,6 +257,61 @@
 		<a href="#title3"><i></i>人气爆款</a>
 		<a href="#title4"><i></i>超值推荐</a>
 	</div>
+
+    <!-- layer-pop before -->
+	<div class="layer-pop"></div>
+	<!-- layer-pop end -->
+	<!-- strategy-pop before -->
+    <div class="strategy-pop">
+        <img src="images/strategy-top.png" alt="">
+    	<div class="strategy-pop-text">
+	    	<div class="text-list">
+	    		<P>磨刀不误砍柴工，看完攻略再动工！</P>
+	    		<P>按步进行，才能让优惠最大化哟！</P>
+	    		<P>第一步：参与【拼人品，抽大奖】，点击抽奖！每天抽1次，预订送次数！爱疯大奖等你拿！</P>
+	    		<P>第二步：前往【没人品 免费领】，优惠券免费领</P>
+	    		<P>第三步：来到【新会员专享】，1元抢5折券，99元享首住券</P>
+	    		<P>第四步：看看【人气爆款】，超值套票跳楼价！今天不抢再等一年！</P>
+	    		<P>第五步（预告）：【1元秒杀】，1元住店谁能比，每天2场近百名额，连秒8天，总有一个属于你！</P>
+	    		<P>第六步（预告）：【砍价】，手气不佳别蓝瘦，朋友帮忙住免房！</P>
+	    	</div>	
+    	</div>
+    	<div class="strategy-pop-btn">
+    		<img src="images/strategy-btn.png" alt="">
+    	</div>
+    </div>
+    <!-- strategy-pop end -->
+    <!-- not-winning-pop before -->
+    <div class="not-winning-pop">
+    	<img src="images/not-winning.png" alt="">
+    	<div class="not-winning-pop-text">
+	    	<div class="text-list">
+	    	    <img src="images/not-winning-c.png" alt="">
+	    		<p>哎呀，差一点就中啦！</p>
+	    	</div>	
+	    	<p>剩余抽奖次数：0</p>
+    	</div>
+    	<div class="not-winning-pop-btn">
+    		<img src="images/play-again.png" alt="">
+    	</div>
+    </div>
+    <!-- not-winning-pop end -->
+    <!-- winning-pop before -->
+ <!--    <div class="winning-pop">
+    	<img src="images/winning.png" alt="">
+    	<div class="winning-pop-text">
+	    	<div class="text-list">
+	    	    <p>天了噜，爱疯7到手赶紧奔走相告吧！</p>
+	    	    <img src="images/winning01.png" alt="">	
+	    	</div>	
+	    	<p>剩余抽奖次数：0</p>
+    	</div>
+    	<div class="winning-pop-btn">
+    		<img src="images/play-again.png" alt="">
+    	</div>
+    </div> -->
+    <!-- winning-pop end -->
+
 	<script src="scripts/jquery-3.1.1.min.js"></script>
 	<script src="scripts/jquery.slotmachine.js"></script>
 	<script>
@@ -265,6 +320,21 @@
            $(".SecKill-container-text ul li").on("click",function(){
                $(this).addClass("active").siblings().removeClass("active");
                $(".all-text-list .text-list").eq($(this).index()).show().siblings().hide();
+           });
+           //攻略
+           $(".strategy").on("click",function(){
+               $(".layer-pop").show();
+               $(".strategy-pop").show();
+               // popWin()
+           });
+           $(".strategy-pop-btn,.layer-pop").on("click",function(){
+               $(".layer-pop").hide();
+               $(".strategy-pop").hide();
+           });
+           //没中奖
+           $(".not-winning-pop-btn,.layer-pop").on("click",function(){
+               $(".layer-pop").hide();
+               $(".not-winning-pop").hide();
            });
            //抽中了滚动
            var liHeight=$("#prizeList .list li").height();
@@ -275,6 +345,31 @@
                    $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);  
                })  
            },3000); 
+
+           var arrText = [];
+           arrText[1]={text:'天了噜，爱疯7到手赶紧奔走相告吧！',img:'winning01.png',isbook:true};
+           arrText[2]={text:'1天了噜，爱疯7到手赶紧奔走相告吧！',img:'winning02.png',isbook:true};
+           function popWin(){
+               var html='<div class="winning-pop">';
+	           html+='<img src="images/winning.png" alt="">';
+	           html+='<div class="winning-pop-text">';
+	           html+='<div class="text-list">';
+	    	   html+='<p>'+arrText[1].text+'</p>';
+	    	   html+='<img src="images/'+arrText[1].img+'" alt="">';
+	    	   html+='</div>';
+	    	   html+='<p>剩余抽奖次数：0</p>';
+    	       html+='</div>';
+    	       html+='<div class="winning-pop-btn">';
+    		   html+='<img src="images/play-again.png" alt="">';
+    	       html+='</div>';
+               html+='</div>';
+               $("body").append(html);
+               $(".layer-pop").show();
+               $(".winning-pop-btn,.layer-pop").on("click",function(){
+	               $(".layer-pop").hide();
+	               $(".winning-pop").hide();
+	           });
+           }
 
 	    });
 	    //控制字体
