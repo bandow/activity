@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content="不超过80个字符"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!-- <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no"> -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>东呈拼颜值</title>
+<link rel="stylesheet" href="styles/index.css">
+<link rel="stylesheet" href="styles/swiper.min.css">
+</head>
+<body>
+	<div class="wrapper" id="detailedWrapper">
+	    <div class="swiper-container top">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide"><img src="images/detailed_top.png"/></div>
+	            <div class="swiper-slide"><img src="images/detailed_top.png"/></div>
+	            <div class="swiper-slide"><img src="images/detailed_top.png"/></div>
+	        </div>
+	    </div>
+		<div class="detaile">
+		    <img src="images/detailed_title.png" alt="">
+		    <div class="detaile-text">
+		    	<p class="mb1rem">1、活动时间：9月23日-10月31日</p>
+				<p>2、活动三部曲：</p>
+				<p>① 测验值：上传照片测基础颜值（只有1次机会哦~）</p>
+				<p>② 拼颜值：四处撒网，好友帮你加颜值</p>
+				<p class="mb1rem">③ 高颜值秘籍：新会员可以帮你瞬间飙升颜值哦！</p>
+				<p>3、活动大奖：总排行榜前100名均可获得奖品</p>
+				<p>1-5名，赠价值888元颜值宝盒一个（含颜值礼券）</p>
+				<p>6-10名，赠2折体验券；</p>
+				<p>11-15名，赠3折体验券；</p>
+				<p>16-20名，赠4折体验券；</p>
+				<p>21-25名，赠5折体验券；</p>	
+				<p>26-30名，赠6折体验券；</p>
+				<p>31-50名，赠7折体验券；</p>
+				<p class="mb1rem">51-100名，赠8折体验券</p>
+				<p class="mb1rem">4、活动中奖名单以东呈公布的数据为准，邀请人数一致的，按时间先后排名，活动结束后10个工作日内统一发放奖品</p>
+				<p class="mb1rem">5、一经发现任何违规套取奖励的行为，将不予奖励、追回相关奖励并取消活动资格。在法律允许范围内，东呈</p>
+		    </div>	
+		</div>
+		<footer class="footer detaile-footer">
+		    <a href="good-looking.html">我的颜值</a>
+		    <a href="detailed.html">活动详情</a>
+		    <a id="share" href="javascript:;">分享好友</a>  
+		</footer>
+	</div>
+	<div class="layer" id="layer"></div>
+	<div class="share-layer" id="shareLayer">
+		<img class="share-img1" src="images/share_top.png" alt="">
+		<p>分享给好友或朋友圈，拼颜值赢大奖</p>
+		<img class="share-img2" src="images/share_c.jpg" alt="">
+		<p>扫码赠价值38元银卡体验卡，再拼颜值！</p>
+	</div>
+	<!-- script begin -->
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script src="scripts/swiper.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var winHeight=$(window).height(),
+			    topHeight=$(".top").outerHeight(true),
+			    footerHeight=$(".detaile-footer").outerHeight(true),
+			    detaileHeight=winHeight-topHeight-footerHeight;
+			    console.log(winHeight,topHeight,footerHeight,detaileHeight);
+            $(".detaile").height(detaileHeight-30);
+
+            var mySwiper = new Swiper('.swiper-container',{
+			  loop : true,       //循环
+			  autoplay: 3000,    //可选选项，自动滑动
+			});
+		});
+		//分享好友
+        window.onload=function(){
+          	var share=document.getElementById("share"),
+          	    layer=document.getElementById("layer"),
+          	    shareLayer=document.getElementById("shareLayer");
+          	share.onclick=function(){
+                layer.style.display="block";
+                shareLayer.style.display="block";
+          	}
+          	layer.onclick=function(){
+                layer.style.display="none";
+                shareLayer.style.display="none";
+          	}
+        } 
+	</script>
+	<!-- script end -->
+</body>
+</html>

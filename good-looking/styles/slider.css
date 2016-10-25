@@ -1,0 +1,227 @@
+/**
+ * 开发时间：2016/5/24
+ * 开发人员：boxUnll
+ * 开发项目：移动端滑动验证代码
+ */
+.slider{position:absolute;height:52px;box-shadow:0 0 3px #999;background-color:#ddd;left:0;right:0;}
+.label {
+    background: -webkit-gradient(linear, left top, right top, color-stop(0, #4d4d4d), color-stop(.4, #4d4d4d), color-stop(.5, white), color-stop(.6, #4d4d4d), color-stop(1, #4d4d4d));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: slidetounlock 3s infinite;
+    -webkit-text-size-adjust: none;
+    line-height:1rem;
+    height:1rem;
+    text-align: center;
+    font:.35rem/1rem "Microsoft YaHei","Helvetica Neue";
+    width: 100%;
+    color: #aaa;
+}
+@keyframes slidetounlock
+{
+    0%     {background-position:-200px 0;}
+    100%   {background-position:200px 0;}
+}
+@-webkit-keyframes slidetounlock
+{
+    0%     {background-position:-200px 0;}
+    100%   {background-position:200px 0;}
+}
+.button{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: #fff;
+    transition: left 0s;
+    -webkit-transition: left 0s;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.button-on{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:1rem;
+    height:1rem;
+    background-color: #fff;
+    transition: left 1s;
+    -webkit-transition: left .5s;
+}
+.button1{
+    position: absolute;
+    display: none;
+    right: 0;
+    top: 0;
+    width:1rem;
+    height:1rem;
+    background-color: #fff;
+}
+.track{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    transition: width 0s;
+    -webkit-transition: width 0s;
+}
+.track-on{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    transition: width 1s;
+    -webkit-transition: width .5s;
+}
+.icon  {
+    width: .8rem;
+    height: .8rem;
+    position: relative;
+    top: .1rem;
+    left: .3rem;
+    font-family: sans-serif;
+}
+.icon:before{
+    content:'>>';
+    color:#ccc;
+    line-height:.8rem;
+    font-size:.4rem;
+}
+.button1 .ok  {
+    width: .8rem;
+    height: .8rem;
+    position: relative;
+    display: none;
+    top: .1rem;
+    left: .3rem;
+    font-family: sans-serif;
+}
+.button1 .ok:before{
+    position: absolute;
+    content:'';
+    color:#ccc;
+    width: 10px;
+    height: 2px;
+    top: 60%;
+    left: -5%;
+    transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    background-color:#78c430;
+}
+.button1 .ok:after{
+    position: absolute;
+    content:'';
+    color:#ccc;
+    width: 20px;
+    height: 2px;
+    top: 52%;
+    left: 47%;
+    transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+    background-color:#78c430;
+    margin: -1px 0 0 -11px;
+}
+.spinner {
+    margin: 16px auto;
+    display: none;
+    width: 20px;
+    height: 20px;
+    position: relative;
+}
+.container1 > div, .container2 > div, .container3 > div {
+    width: 6px;
+    height: 6px;
+    background-color: #ccc;
+    border-radius: 100%;
+    position: absolute;
+    -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+    animation: bouncedelay 1.2s infinite ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.spinner .spinner-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.container2 {
+    -webkit-transform: rotateZ(45deg);
+    transform: rotateZ(45deg);
+}
+.container3 {
+    -webkit-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
+}
+.circle1 { top: 0; left: 0; }
+.circle2 { top: 0; right: 0; }
+.circle3 { right: 0; bottom: 0; }
+.circle4 { left: 0; bottom: 0; }
+.container2 .circle1 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+.container3 .circle1 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+.container1 .circle2 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+.container2 .circle2 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+.container3 .circle2 {
+    -webkit-animation-delay: -0.7s;
+    animation-delay: -0.7s;
+}
+.container1 .circle3 {
+    -webkit-animation-delay: -0.6s;
+    animation-delay: -0.6s;
+}
+.container2 .circle3 {
+    -webkit-animation-delay: -0.5s;
+    animation-delay: -0.5s;
+}
+.container3 .circle3 {
+    -webkit-animation-delay: -0.4s;
+    animation-delay: -0.4s;
+}
+.container1 .circle4 {
+    -webkit-animation-delay: -0.3s;
+    animation-delay: -0.3s;
+}
+.container2 .circle4 {
+    -webkit-animation-delay: -0.2s;
+    animation-delay: -0.2s;
+}
+.container3 .circle4 {
+    -webkit-animation-delay: -0.1s;
+    animation-delay: -0.1s;
+}
+@-webkit-keyframes bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0.0) }
+    40% { -webkit-transform: scale(1.0) }
+}
+@keyframes bouncedelay {
+    0%, 80%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 40% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+      }
+}
+.bg-green {
+    line-height:1rem;
+    height: 1rem;
+    text-align: center;
+    font-size: 16px;
+    background-color: #78c430;
+}

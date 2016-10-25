@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content="不超过80个字符"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!-- <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no"> -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>东呈拼颜值</title>
+<link rel="stylesheet" href="styles/index.css">
+</head>
+<body id="goodLooking">
+	<div class="wrapper" id="wrapper" style="background:url('images/good_looking_bg.jpg') #17c3a9 no-repeat;background-size:100% auto;">
+	    <div class="top">
+	    	<img src="images/good_looking_title.png" alt="">
+	    </div>
+		<div class="fraction">
+		    <div class="fraction-img" style="background:url('images/good_looking_head.png') no-repeat;background-size:100% auto;">
+		    	<img class="head" src="images/head.jpg" alt="">
+		    	<img class="right" src="images/good_looking_right.png" alt="">
+		    </div>
+		    <div class="fraction-text" style="background:url('images/good_looking_me_bg.png') no-repeat;background-size:100% auto; display:none;">
+		    	<h2>想试试名字到底可以有多长的坂本桑</h2>
+                 <div class="fraction-value">
+                    <img src="images/good_looking_me.png" alt="">
+                 	<p><strong>25</strong>分</p>
+                 </div>
+		    	<p>老实巴交的沙和尚非你莫属啦~</p>
+		    </div>
+		    <div class="fraction-text fraction-text-on" style="background:url('images/good_looking_me_bg.png') no-repeat;background-size:100% auto;">
+		    	<h2>想试试名字到底可以有多长的坂本桑</h2>
+		    	<p>老实巴交的沙和尚非你莫属啦~</p>
+		    	<p>目前颜值：25分</p>
+                <div class="fraction-value" id="fractionValue">
+                 	<p>挑逗<br>一下</p>
+                </div>
+		    	<p class="bottom" style="background:url('images/icon_bg.png') no-repeat;background-size:100% auto;">颜值达到<strong>100分</strong>，才能领取到<strong>免费房</strong>哦~~</p>
+		    </div>
+		    <div class="appeal">
+		    	<p>呼唤好友点赞攒颜值</p>
+		    </div>
+		</div>
+		<div class="fraction-list">
+			<h3>已有4位好友点赞</h3>
+			<div class="name-list">
+				<img src="images/head.jpg" alt="">
+				<p><span>我的昵称是...</span><span>为颜值点赞</span><span>+5</span></p>
+			</div>
+			<div class="name-list">
+				<img src="images/head.jpg" alt="">
+				<p><span>我的昵称是...</span><span>为颜值点赞</span><span>+5</span></p>
+			</div>
+		</div>
+		<footer class="footer">
+		    <a href="good-looking.html">我的颜值</a>
+		    <a href="detailed.html">活动详情</a>
+		    <a id="share" href="javascript:;">分享好友</a>  
+		</footer>
+	</div>
+	<div class="layer" id="layer"></div>
+	<div class="share-layer" id="shareLayer">
+		<img class="share-img1" src="images/share_top.png" alt="">
+		<p>分享给好友或朋友圈，拼颜值赢大奖</p>
+		<img class="share-img2" src="images/share_c.jpg" alt="">
+		<p>扫码赠价值38元银卡体验卡，再拼颜值！</p>
+	</div>
+	<div class="invite-layer" id="inviteLayer">
+	    <img class="head" src="images/invite_top_bg.png" alt="">
+	    <img class="close" id="close" src="images/close.png" alt="关闭">
+		<p>您只能帮 想试试名字到底可以有多长的坂本桑 助力一次哦！</p>
+		<a id="inviteBtn" href="javascript:;">确定</a>
+	</div>
+	<!-- script begin -->
+	<script>
+		//分享好友
+        window.onload=function(){
+          	var share=document.getElementById("share"),
+          	    layer=document.getElementById("layer"),
+          	    shareLayer=document.getElementById("shareLayer"),
+          	    inviteLayer=document.getElementById("inviteLayer"),
+          	    close=document.getElementById("close"),
+          	    fractionValue=document.getElementById("fractionValue");
+          	share.onclick=function(){
+                layer.style.display="block";
+                shareLayer.style.display="block";
+          	}
+          	layer.onclick=function(){
+                layer.style.display="none";
+                shareLayer.style.display="none";
+                inviteLayer.style.display="none";
+          	}
+          	fractionValue.onclick=function(){
+          		layer.style.display="block";
+                inviteLayer.style.display="block";
+          	}
+          	close.onclick=function(){
+          		layer.style.display="none";
+                inviteLayer.style.display="none";
+          	}
+        } 
+	</script>
+	<!-- script end -->
+</body>
+</html>

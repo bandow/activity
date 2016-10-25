@@ -31,19 +31,42 @@
 		<div class="camera">
 			<img src="images/index_left.png" alt="">
 			<div class="camera-center">
-			    	<img src="images/index_camera.png" alt="">
+			    <input type = "file" accept="image/*" capture="camera" id="img" class="input-upload-image"/>
+			    <img src="images/index_camera.png" alt="">
+			    <img id="imgInfo" style="display:none;" src="" alt="">
 			</div>
 		</div>
 		<footer class="footer">
-		    <a href="">我的颜值</a>
-		    <a href="">活动详情</a>
-		    <a href="">分享好友</a>  
+		    <a href="good-looking.html">我的颜值</a>
+		    <a href="detailed.html">活动详情</a>
+		    <a id="share" href="javascript:;">分享好友</a>  
 		</footer>
 	</div>
+	<div class="layer" id="layer"></div>
+	<div class="share-layer" id="shareLayer">
+		<img class="share-img1" src="images/share_top.png" alt="">
+		<p>分享给好友或朋友圈，拼颜值赢大奖</p>
+		<img class="share-img2" src="images/share_c.jpg" alt="">
+		<p>扫码赠价值38元银卡体验卡，再拼颜值！</p>
+	</div>
+	<!-- script begin -->
+	<script src="scripts/upload.js"></script>
 	<script>
-		window.onload=function(){
-
-		}
+        //分享好友
+        window.onload=function(){
+          	var share=document.getElementById("share"),
+          	    layer=document.getElementById("layer"),
+          	    shareLayer=document.getElementById("shareLayer");
+          	share.onclick=function(){
+                layer.style.display="block";
+                shareLayer.style.display="block";
+          	}
+          	layer.onclick=function(){
+                layer.style.display="none";
+                shareLayer.style.display="none";
+          	}
+        } 
 	</script>
+	<!-- script end -->
 </body>
 </html>

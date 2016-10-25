@@ -143,6 +143,7 @@ body {
     right: 9%;
     width: 25%; }
   .camera .camera-center {
+    position: relative;
     margin: 0 auto;
     width: 2.4rem;
     height: 2.4rem;
@@ -158,6 +159,17 @@ body {
     line-height: 2.8rem; }
     .camera .camera-center img {
       width: 70%; }
+    .camera .camera-center .input-upload-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+      -webkit-opacity: 0;
+      opacity: 0; }
 
 .footer {
   width: 90%;
@@ -175,5 +187,416 @@ body {
     .footer a:nth-child(2) {
       border-right: 2px solid #fff;
       border-left: 2px solid #fff; }
+
+.layer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: none;
+  background: rgba(0, 0, 0, 0.8); }
+
+.share-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: none;
+  width: 100%;
+  text-align: center;
+  font-size: 0; }
+  .share-layer .share-img1 {
+    width: 8%;
+    margin: 5% 0 5% 80%; }
+  .share-layer .share-img2 {
+    width: 40%;
+    margin: .5rem 0; }
+  .share-layer p {
+    font: .4rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #fff; }
+
+.mb1rem {
+  margin-bottom: .3rem; }
+
+#detailedWrapper {
+  height: 100%;
+  background-color: #fff3d9;
+  overflow: hidden; }
+  #detailedWrapper .detaile {
+    position: relative;
+    width: 100%;
+    padding-top: 30px; }
+    #detailedWrapper .detaile img {
+      position: absolute;
+      top: -1.8rem;
+      left: 1%;
+      width: 98%;
+      z-index: 2; }
+    #detailedWrapper .detaile .detaile-text {
+      margin: 0 auto;
+      width: 85%;
+      height: 100%;
+      overflow: scroll; }
+      #detailedWrapper .detaile .detaile-text p {
+        font: .35rem/1.5 "Microsoft YaHei","Helvetica Neue";
+        color: #791515; }
+  #detailedWrapper .detaile-footer a {
+    color: #e29510; }
+    #detailedWrapper .detaile-footer a:nth-child(2) {
+      border-right: 2px solid #e29510;
+      border-left: 2px solid #e29510; }
+
+.login-list {
+  overflow: inherit !important; }
+  .login-list .input-container {
+    position: relative;
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    overflow: hidden;
+    margin-top: .5rem;
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 0;
+    border: 1px solid #f0c680; }
+    .login-list .input-container input {
+      border-radius: 0;
+      border: none;
+      display: inline-block;
+      outline: none; }
+    .login-list .input-container .telphone {
+      width: 100%;
+      height: 100%;
+      padding: 0 .1rem; }
+  .login-list .slider-container {
+    position: relative;
+    width: 100%;
+    height: 1rem;
+    line-height: 1rem;
+    overflow: hidden;
+    margin-top: .5rem;
+    border-radius: 5px;
+    font-size: 0; }
+  .login-list .input-box {
+    position: relative; }
+    .login-list .input-box .input-container {
+      width: 60%;
+      height: 1rem;
+      line-height: 1rem;
+      overflow: hidden;
+      margin-top: .5rem;
+      background-color: #fff;
+      border-radius: 5px;
+      font-size: 0;
+      border: 1px solid #f0c680; }
+      .login-list .input-box .input-container input {
+        border-radius: 0;
+        border: none;
+        display: inline-block;
+        outline: none; }
+      .login-list .input-box .input-container .telCode {
+        width: 100%;
+        height: 100%;
+        padding: 0 .1rem; }
+    .login-list .input-box button {
+      position: absolute;
+      width: 35%;
+      height: 1rem;
+      right: 0;
+      top: 0;
+      background-color: #ffcc00;
+      border: 0;
+      border-radius: 5px;
+      color: #000;
+      font: .35rem/1rem "Microsoft YaHei","Helvetica Neue"; }
+  .login-list .submit .btn {
+    width: 100%;
+    height: 1rem;
+    font: .35rem/1rem "Microsoft YaHei","Helvetica Neue";
+    border-radius: 5px;
+    margin-top: .5rem;
+    background-color: #fc0;
+    color: #c07d0a;
+    border: 0; }
+
+#goodLooking {
+  background-color: #17c3a9; }
+
+.fraction {
+  width: 86%;
+  margin: -.2rem auto 0; }
+  .fraction .fraction-img {
+    position: relative;
+    margin: 0 auto;
+    width: 60%;
+    height: 3rem;
+    text-align: center; }
+    .fraction .fraction-img .head {
+      width: 2.9rem;
+      height: 2.9rem;
+      border-radius: 100%; }
+    .fraction .fraction-img .right {
+      position: absolute;
+      width: 60%;
+      top: 0; }
+  .fraction .fraction-text {
+    margin-top: -.9rem;
+    text-align: center; }
+    .fraction .fraction-text h2 {
+      font: .4rem/1.5 "Microsoft YaHei","Helvetica Neue";
+      padding-top: 1rem;
+      color: #666; }
+    .fraction .fraction-text .fraction-value {
+      margin: .7rem auto .2rem;
+      width: 3rem;
+      height: 3rem;
+      position: relative;
+      border: 3px solid #ff7992;
+      border-radius: 100%; }
+      .fraction .fraction-text .fraction-value img {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: -.55rem; }
+      .fraction .fraction-text .fraction-value p {
+        margin: .225rem auto;
+        display: block;
+        width: 2.4rem;
+        height: 2.4rem;
+        border-radius: 100%;
+        background-color: #ff7992;
+        color: #fff;
+        font: .35rem/2.4rem "Microsoft YaHei","Helvetica Neue"; }
+        .fraction .fraction-text .fraction-value p strong {
+          font-size: 1rem;
+          font-weight: bold; }
+    .fraction .fraction-text p {
+      font: .35rem/1.5 "Microsoft YaHei","Helvetica Neue";
+      color: #ff7992;
+      padding-bottom: .4rem; }
+  .fraction .fraction-text-on {
+    padding-bottom: .5rem; }
+    .fraction .fraction-text-on > p {
+      padding-bottom: 0; }
+    .fraction .fraction-text-on .fraction-value {
+      margin: .2rem auto;
+      width: 2.4rem;
+      height: 2.4rem; }
+      .fraction .fraction-text-on .fraction-value p {
+        margin: .1rem auto;
+        line-height: 1.5;
+        padding-top: 25%;
+        width: 2rem;
+        height: 2rem; }
+    .fraction .fraction-text-on .bottom {
+      color: #fff;
+      width: 100%;
+      margin: 0 auto; }
+      .fraction .fraction-text-on .bottom strong {
+        font-weight: bold;
+        color: #ffff00; }
+  .fraction .appeal {
+    margin: .3rem auto 0;
+    width: 60%;
+    height: 1rem;
+    background-color: #ffee2d;
+    border-radius: 5px;
+    box-shadow: 0 4px 1px #ffc34a; }
+    .fraction .appeal p {
+      font: .35rem/1rem "Microsoft YaHei","Helvetica Neue";
+      color: #f60;
+      text-align: center; }
+
+.fraction-list {
+  margin: 0 auto;
+  width: 80%;
+  padding: 5% 0; }
+  .fraction-list h3 {
+    position: relative;
+    font: .4rem/1rem "Microsoft YaHei","Helvetica Neue";
+    color: #fff;
+    text-align: center; }
+    .fraction-list h3:before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 30%;
+      height: 1px;
+      background-color: #fff;
+      content: ""; }
+    .fraction-list h3:after {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 30%;
+      height: 1px;
+      background-color: #fff;
+      content: ""; }
+  .fraction-list .name-list {
+    position: relative;
+    height: auto;
+    padding: 3% 0; }
+    .fraction-list .name-list:before {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px solid #fff;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5); }
+    .fraction-list .name-list img {
+      float: left;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 100%; }
+    .fraction-list .name-list p {
+      font: .35rem/1rem "Microsoft YaHei","Helvetica Neue";
+      margin-left: 1.2rem;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      color: #fff; }
+      .fraction-list .name-list p span {
+        -webkit-flex: 1;
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+        .fraction-list .name-list p span:first-child {
+          -webkit-flex: 4;
+          flex: 4; }
+        .fraction-list .name-list p span:nth-child(2) {
+          -webkit-flex: 2;
+          flex: 2; }
+        .fraction-list .name-list p span:last-child {
+          color: #ffff00;
+          font-size: .5rem; }
+
+.invite-layer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: none;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: #fff;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 5% 0; }
+  .invite-layer .head {
+    width: 100%;
+    position: absolute;
+    top: -1rem; }
+  .invite-layer .close {
+    position: absolute;
+    top: -.5rem;
+    right: .5rem;
+    width: .5rem; }
+  .invite-layer p {
+    width: 70%;
+    margin: 0 auto;
+    font: .35rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #666; }
+  .invite-layer a {
+    margin: .3rem auto 0;
+    width: 70%;
+    height: 1rem;
+    background-color: #ffee2d;
+    border-radius: 5px;
+    box-shadow: 0 4px 1px #ffc34a;
+    display: block;
+    font: .35rem/1rem "Microsoft YaHei","Helvetica Neue";
+    color: #f60;
+    text-align: center;
+    text-decoration: none; }
+
+.ranking-list {
+  position: relative;
+  width: 100%; }
+  .ranking-list > img {
+    position: absolute;
+    top: -1.8rem;
+    left: 1%;
+    width: 98%;
+    z-index: 2; }
+  .ranking-list h2 {
+    font: .4rem/1rem "Microsoft YaHei","Helvetica Neue";
+    color: #791515;
+    text-align: center; }
+  .ranking-list .ranking-text {
+    margin: 0 auto;
+    width: 85%;
+    height: 100%;
+    overflow: scroll;
+    background-color: #fff;
+    border-radius: 5px; }
+    .ranking-list .ranking-text h3 {
+      font: .4rem/1rem "Microsoft YaHei","Helvetica Neue";
+      color: #e71f19;
+      text-align: center; }
+    .ranking-list .ranking-text ul li {
+      position: relative;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      padding: .2rem .3rem; }
+      .ranking-list .ranking-text ul li:before {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px solid #ddd;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5); }
+      .ranking-list .ranking-text ul li:first-child {
+        background-color: #f2f2f2; }
+      .ranking-list .ranking-text ul li .li-list {
+        -webkit-flex: 1;
+        flex: 1; }
+      .ranking-list .ranking-text ul li .list-number {
+        font: .4rem/1rem "Microsoft YaHei","Helvetica Neue";
+        color: #e71f19;
+        text-align: center; }
+        .ranking-list .ranking-text ul li .list-number img {
+          width: .65rem;
+          height: auto;
+          vertical-align: middle; }
+      .ranking-list .ranking-text ul li .list-img {
+        text-align: center;
+        font-size: 0;
+        -webkit-flex: 1.2;
+        flex: 1.2; }
+        .ranking-list .ranking-text ul li .list-img img {
+          width: 1rem;
+          height: 1rem;
+          border-radius: 100%; }
+      .ranking-list .ranking-text ul li .name-number {
+        -webkit-flex: 3;
+        flex: 3; }
+        .ranking-list .ranking-text ul li .name-number h4 {
+          font: .4rem/1.5 "Microsoft YaHei","Helvetica Neue";
+          color: #333; }
+        .ranking-list .ranking-text ul li .name-number p {
+          font: .35rem/1.5 "Microsoft YaHei","Helvetica Neue";
+          color: #999; }
+      .ranking-list .ranking-text ul li .recommend-number {
+        -webkit-flex: 1.5;
+        flex: 1.5;
+        text-align: center;
+        font-size: 0;
+        border-left: 1px solid #efefef; }
+        .ranking-list .ranking-text ul li .recommend-number img {
+          width: 30%; }
+        .ranking-list .ranking-text ul li .recommend-number p {
+          font: .4rem/1.5 "Microsoft YaHei","Helvetica Neue";
+          color: #e71f19; }
 
 /*# sourceMappingURL=index.css.map */

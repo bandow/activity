@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content="不超过80个字符"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!-- <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no"> -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>东呈拼颜值</title>
+<link rel="stylesheet" href="styles/index.css">
+<link rel="stylesheet" href="styles/slider.css">
+<link rel="stylesheet" href="styles/swiper.min.css">
+</head>
+<body>
+	<div class="wrapper" id="detailedWrapper">
+	    <div class="swiper-container top">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide"><img src="images/detailed_top.png"/></div>
+	            <div class="swiper-slide"><img src="images/detailed_top.png"/></div>
+	            <div class="swiper-slide"><img src="images/detailed_top.png"/></div>
+	        </div>
+	    </div>
+		<div class="detaile">
+		    <img src="images/login_title.png" alt="">
+		    <div class="detaile-text login-list">
+		        <div class="input-container">
+		        	<input class="telphone" type="text" placeholder="请输入手机号">
+		        </div>
+		        <div class="slider-container">
+		        	<div class="slider" id="slider">
+			        <div class="label">请按住滑块，拖到最右边</div>
+			        <div class="track" id="track">
+			            <div class="bg-green"></div>
+			        </div>
+			        <div class="button" id="btn">
+			            <div class="icon" id="icon"></div>
+			        </div>
+			        <div class="button1" id="btn1">
+			            <div class="spinner" id="spinner">
+			                <div class="spinner-container container1">
+			                    <div class="circle1"></div>
+			                    <div class="circle2"></div>
+			                    <div class="circle3"></div>
+			                    <div class="circle4"></div>
+			                </div>
+			                <div class="spinner-container container2">
+			                    <div class="circle1"></div>
+			                    <div class="circle2"></div>
+			                    <div class="circle3"></div>
+			                    <div class="circle4"></div>
+			                </div>
+			                <div class="spinner-container container3">
+			                    <div class="circle1"></div>
+			                    <div class="circle2"></div>
+			                    <div class="circle3"></div>
+			                    <div class="circle4"></div>
+			                </div>
+			            </div>
+			            <div class="ok" id="ok"></div>
+			        </div>
+			    </div>
+		        </div>
+		        <div class="input-box">
+		        	<div class="input-container">
+			        	<input class="telCode" type="text" placeholder="请输入验证码">
+			        </div>
+			        <button>获取验证码</button>
+		        </div>	       
+		        <div class="submit">
+		        	<button class="btn">确定</button>
+		        </div>   
+		    </div>	
+		</div>
+		<footer class="footer detaile-footer">
+		    <a href="good-looking.html">我的颜值</a>
+		    <a href="detailed.html">活动详情</a>
+		    <a id="share" href="javascript:;">分享好友</a>  
+		</footer>
+	</div>
+	<div class="layer" id="layer"></div>
+	<div class="share-layer" id="shareLayer">
+		<img class="share-img1" src="images/share_top.png" alt="">
+		<p>分享给好友或朋友圈，拼颜值赢大奖</p>
+		<img class="share-img2" src="images/share_c.jpg" alt="">
+		<p>扫码赠价值38元银卡体验卡，再拼颜值！</p>
+	</div>
+	<!-- script begin -->
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script src="scripts/slider.js"></script>
+	<script src="scripts/swiper.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var winHeight=$(window).height(),
+			    topHeight=$(".top").outerHeight(true),
+			    footerHeight=$(".detaile-footer").outerHeight(true),
+			    detaileHeight=winHeight-topHeight-footerHeight;
+			    console.log(winHeight,topHeight,footerHeight,detaileHeight);
+            $(".detaile").height(detaileHeight-30);
+
+            var mySwiper = new Swiper('.swiper-container',{
+			  loop : true,       //循环
+			  autoplay: 3000,    //可选选项，自动滑动
+			});
+		});
+		//分享好友
+        window.onload=function(){
+          	var share=document.getElementById("share"),
+          	    layer=document.getElementById("layer"),
+          	    shareLayer=document.getElementById("shareLayer");
+          	share.onclick=function(){
+                layer.style.display="block";
+                shareLayer.style.display="block";
+          	}
+          	layer.onclick=function(){
+                layer.style.display="none";
+                shareLayer.style.display="none";
+          	}
+        } 
+	</script>
+	<script>
+	     ok();
+	    if(1!=1){
+	       
+	        loading();
+	    }
+	</script>
+	<!-- script end -->
+</body>
+</html>
