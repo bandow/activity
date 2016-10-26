@@ -585,8 +585,10 @@ body{
         	display:-webkit-flex;
         	display:flex;
         	padding:.2rem 0;
+        	//兼容新的垂直居中
         	justify-content:center;
             align-items:center;
+            //兼容旧的垂直居中
             -webkit-box-pack: center; 
 		    box-pack: center;
 		    -webkit-box-align: center;
