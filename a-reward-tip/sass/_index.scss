@@ -1,0 +1,505 @@
+@import "base";
+html{
+    font-size:18px;
+}
+@media(min-device-width:320px){
+html{
+  font-size:18px;
+}
+}
+@media(min-device-width:360px){
+html{
+  font-size:20px;
+}
+}
+@media(min-device-width:375px){
+html{
+  font-size:21px;
+}
+}
+@media(min-device-width:384px){
+html{
+  font-size:21px;
+}
+}
+@media(min-device-width:400px){
+html{
+  font-size:22px;
+}
+}
+@media(min-device-width:414px){
+html{
+  font-size:23px;
+}
+}
+@media(min-device-width:480px){
+html{
+  font-size:26px;
+}
+}
+@media(min-device-width:568px){
+html{
+  font-size:28px;
+}
+}
+@media(min-device-width:533px){
+html{
+  font-size:28px;
+}
+}
+@media(min-device-width:600px){
+html{
+  font-size:30px;
+}
+}
+@media(min-device-width:640px){
+html{
+  font-size:24px;
+}
+}
+
+.wrapper{
+	width:100%;
+	max-width:640px;
+	min-height:320px;
+	height:100%;
+	margin:0 auto;
+	overflow:hidden;
+}
+.tip-header{	
+	width:100%;
+	p{
+		position:absolute;
+		top:3%;
+		left:5%;
+		width:90%;
+		text-align:center;
+		font:.65rem/2 "Microsoft YaHei","Helvetica Neue";
+		color:#4d778b;
+		display:-webkit-box;
+		display:-webkit-flex;
+		display:flex;
+		span{
+			margin:0 .5rem;
+		}
+		i{
+            position: relative;
+            -webkit-flex:1;
+            flex:1;
+			&:last-child{
+                &:before{
+                	content:"";
+                	position:absolute;
+                	top:50%;
+                	left:0;
+                	width:100%;
+                	height:1px;
+                	background-color:#4d778b;
+                }
+		    }
+		    &:first-child{
+                &:before{
+                	content:"";
+                	position:absolute;
+                	top:50%;
+                	left:0;
+                	width:100%;
+                	height:1px;
+                	background-color:#4d778b;
+                }
+		    }
+	    }
+	}
+	img{
+		width:100%;
+	}
+}
+.tip-content{
+	position:absolute;
+    bottom:18vh;
+	text-align:center;
+    .package{
+    	width:55%;
+    	height:auto;
+    	margin:0 auto;
+    }
+    .tip-content-img{
+    	position: absolute;
+	    width:60%;
+	    top: 0;
+	    left: 20%;
+	    right: 0;
+	    bottom: 0;
+    	.money{
+	    	position:absolute;
+	    	width: 70%;
+	        left: 15%;
+	        bottom:60%;
+	        img{
+	        	// position:absolute;
+	        	width:100%;
+	        	&:first-child{
+                   display:none;
+	        	}
+	        	&:nth-child(2){
+                   display:none;
+	        	}
+	        	&:nth-child(3){
+                    display:none;
+	        	}
+	        	&:last-child{
+	        		display:none;
+	        	}
+	        }
+	    }
+	    .money01{
+	    	position:absolute;
+	    	width:22%;
+	    	bottom:40%;
+	        left:35%;
+	    }
+	    .money02{
+	    	position:absolute;
+	    	width:22%;
+	    	bottom:35%;
+	        left: 20%;
+	    }
+	    .money03{
+	    	position:absolute;
+	    	width:22%;
+		    bottom:34%;
+		    left: 55%;
+	    }
+	    .money04{
+	    	position:absolute;
+	    	width:22%;
+		    bottom:31%;
+		    left: 38%;
+	    }
+	    .active1{
+            -webkit-animation:myActive1 .3s; 
+            animation:myActive1 .3s;
+	    }
+	    .active2{
+            -webkit-animation:myActive2 .8s; 
+            animation:myActive2 .8s;
+	    }
+	    .active3{
+            -webkit-animation:myActive3 .8s; 
+            animation:myActive3 .8s;
+	    }
+	    .active4{
+            -webkit-animation:myActive4 1.7s; 
+            animation:myActive4 1.7s;
+	    }
+	    .turn-btn{
+	    	position:absolute;
+	    	width:22%;
+		    bottom:11.5%;
+		    left:39%;
+	    }
+	    .turn-btn-active{
+	    	-webkit-transform:rotate(18deg);
+	    	transform:rotate(18deg);
+            -webkit-transition: all .5s;
+	    	transition: all .5s;
+	    }
+    }  
+}
+@keyframes myActive1{
+	0%{
+		bottom:45%
+	}
+	100%{
+		bottom:40%
+	}
+}
+@-webkit-keyframes myActive1{
+	0%{
+		bottom:45%
+	}
+	100%{
+		bottom:30%
+	}
+}
+@keyframes myActive2{
+	0%{
+		bottom:40%
+	}
+	100%{
+		bottom:35%
+	}
+}
+@-webkit-keyframes myActive2{
+	0%{
+		bottom:40%
+	}
+	100%{
+		bottom:35%
+	}
+}
+@keyframes myActive3{
+	0%{
+		bottom:39%
+	}
+	100%{
+		bottom:34%
+	}
+}
+@-webkit-keyframes myActive3{
+	0%{
+		bottom:39%
+	}
+	100%{
+		bottom:34%
+	}
+}
+@keyframes myActive4{
+	0%{
+		bottom:36%
+	}
+	100%{
+		bottom:31%
+	}
+}
+@-webkit-keyframes myActive4{
+	0%{
+		bottom:36%
+	}
+	100%{
+		bottom:31%
+	}
+}
+.tip-footer{
+	position:absolute;
+	left:25vw;
+	bottom:5vh;
+	width:50vw;
+    height:auto;
+    .btn{
+    	font-size:0;
+    	img{
+	    	width:100%;
+	    }
+    }
+    .question-mark{
+       position:absolute;
+       width:20%;
+	   top: 0;
+	   right: -30%;
+       img{
+	    	width:100%;
+	    }
+    }
+}
+
+// layer css begin
+.layer{
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:1;
+	//display:none;
+	background:rgba(0,0,0,.8);
+}
+.kindly-reminder-layer{
+	position:fixed;
+	top:50%;
+	left:50%;
+	z-index:2;
+	display:none;
+	width:70%;
+	-webkit-transform:translate3d(-50%,-50%,0);
+	transform:translate3d(-50%,-50%,0);
+	.top{
+		position:relative;
+        .top-img{
+       	    width:100%;
+        }
+        .close{
+        	position:absolute;
+        	top: 18%;
+    		right: 8%;
+        	width:8%;
+        }
+	}
+	.container{
+	   position: relative;
+	   margin: -5% auto 0;
+	   width: 90%;
+	   padding:8%;
+       background-color:#fff;
+	   border-bottom-left-radius:10px;
+	   border-bottom-right-radius:10px;
+	   p{
+	   	  font:.65rem/1.5 "Microsoft YaHei","Helvetica Neue";
+	   	  color:#999;
+	   }
+	   .tc{
+	   	  text-align:center;
+	   }
+	   .fs0-8{
+	   	  font-size:.8rem;
+	   }
+	   .btn{
+	   	    width:70%;
+		    font-size: 0;
+		    display: block;
+		    margin:.8rem auto 0;
+	   	   img{
+	   	   	  width:100%;
+	   	   }
+	   }
+	}
+}
+.a-reward-layer{
+	position:fixed;
+	top:50%;
+	left:50%;
+	z-index:2;
+	//display:none;
+	width:80%;
+	-webkit-transform:translate3d(-50%,-50%,0);
+	transform:translate3d(-50%,-50%,0);
+	.top{
+		position:relative;
+        .top-img{
+       	    width:100%;
+        }
+        .close{
+        	position:absolute;
+        	top: 18%;
+    		right: 8%;
+        	width:8%;
+        }
+	}
+	.container{
+	   position: relative;
+	   margin: -5% auto 0;
+	   width: 90%;
+	   padding:5%;
+       background-color:#fff;
+	   border-bottom-left-radius:10px;
+	   border-bottom-right-radius:10px;
+	   p{
+	   	  font:.65rem/1.5 "Microsoft YaHei","Helvetica Neue";
+	   	  color:#999;
+	   }
+	   .tc{
+	   	  text-align:center;
+	   }
+	   .fs0-8{
+	   	  font-size:.8rem;
+	   }
+	   .text{
+	   	    text-align:center;
+	   	    display:-webkit-box;
+			display:-webkit-flex;
+			display:flex;
+			margin-top:.5rem;
+	    	span{
+	    		font:.6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+	    		color:#999;
+	    		margin:0 .5rem;
+	    	}
+	    	i{
+	            position: relative;
+	            -webkit-flex:1;
+	            flex:1;
+				&:last-child{
+	                &:before{
+	                	content:"";
+	                	position:absolute;
+	                	top:50%;
+	                	left:0;
+	                	width:100%;
+	                	height:1px;
+	                	background-color:#999;
+	                }
+			    }
+			    &:first-child{
+	                &:before{
+	                	content:"";
+	                	position:absolute;
+	                	top:50%;
+	                	left:0;
+	                	width:100%;
+	                	height:1px;
+	                	background-color:#999;
+	                }
+			    }
+		    }
+	    }
+	   .oc-star-n {
+	   	    margin:.5em auto;
+		    height: 1.6em;
+		    ul{
+		    	display:-webkit-box;
+				display:-webkit-flex;
+				display:flex;
+		    	li{
+		    		-webkit-flex:1;
+			    	flex:1;
+				    height:1.6rem;
+				    text-indent: -999px;
+				    overflow: hidden;
+				    padding: 0;
+			    }
+		    }  
+		}
+		.star-text{
+          font:.75rem/1.5 "Microsoft YaHei","Helvetica Neue";
+	   	  color:#999;
+	   	  text-align:center;
+		}
+		.text-list{
+			width:100%;
+			margin:.5rem 0;
+			height:auto;
+			overflow:hidden;
+			li{
+				float:left;
+	            font:.6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			   	color:#999;
+			   	text-align:center;
+			   	border:1px solid #999;
+			   	border-radius:5px;
+			   	width:30%;
+			   	margin-right:5%;
+			   	margin-bottom:3%;
+			   	&:nth-child(3n){
+			   		margin-right:0;
+			   	}
+			}
+			.text-list-active{
+				border:1px solid #2d9fc4;
+				color:#2d9fc4;
+			}
+		}
+		.input{
+           width:100%;
+           height:1.5rem;
+           border:1px solid #ccc;
+           border-radius:30px;
+           padding:0 5%;
+           input{
+	           	border:0;
+	           	background:none;
+	           	outline:none;
+	           	width:100%;
+	           	height:100%;
+           }
+		}
+	    .btn{
+	   	    width:70%;
+		    font-size: 0;
+		    display: block;
+		    margin:.8rem auto 0;
+	   	   img{
+	   	   	  width:100%;
+	   	   }
+	    }
+	}
+}

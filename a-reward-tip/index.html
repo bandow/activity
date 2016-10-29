@@ -16,8 +16,171 @@
 <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-	<div class="wrapper" id="wrapper" style="background:url('images/index_bg.jpg') #058be1 no-repeat;background-size:100% auto;">
-	   
+	<div class="wrapper" id="wrapper" style="background:url('images/bottom.png') bottom center no-repeat;background-size:100% auto;">
+	   <header class="tip-header">
+	       <p><i></i><span>我是广州白云山店前台一二三，很高兴为您服务</span><i></i></p>
+	       <img src="images/top.png" alt="">
+	   </header>
+	   <div class="tip-content">
+	       <img class="package" src="images/package.png" alt="">
+	       <div class="tip-content-img">
+	           <div class="money">
+	              <img class="money4" src="images/money4.png" alt="">
+	           	  <img class="money1" src="images/money1.png" alt="">
+	           	  <img class="money2" src="images/money2.png" alt="">
+	           	  <img class="money3" style="display:block;" src="images/money3.png" alt="">
+	           </div> 	   
+		   	   <img class="money01" src="images/0.png" alt="">
+		   	   <img class="money02" src="images/2.33.png" alt="">
+		   	   <img class="money03" src="images/5.20.png" alt="">
+		   	   <img class="money04" src="images/6.66.png" alt="">
+		   	   <img class="turn-btn" src="images/turn_btn.png" alt="">
+	       </div>   	   
+	   </div>
+	   <footer class="tip-footer">
+	   	 <a href="#" class="btn"><img src="images/btn.png" alt=""></a>
+	   	 <a href="javascript:;" class="question-mark"><img src="images/question_mark.png" alt=""></a>
+	   </footer>
 	</div>	
+	<!-- layer begin -->
+	<div class="layer"></div>
+	<!-- layer end -->
+	<!-- 温馨提示 begin -->
+	<!-- <div class="kindly-reminder-layer">
+	    <div class="top">
+		    <img class="top-img" src="images/kindly_reminder_top.png" alt="">
+		    <img class="close" src="images/close.png" alt="">
+	    </div>  
+	    <div class="container">
+	    	<p>打赏费是您对员工幼稚服务的肯定，费用将用语奖励该员工，支付后不支持退款哟！</p>
+		    <a class="btn" href="javascript:;"><img src="images/layer_btn.png" alt=""></a>
+	    </div>
+	</div> -->
+	<!-- 温馨提示 end -->
+	<!-- 打赏成功 begin -->
+	<div class="a-reward-layer">
+		<div class="top">
+		    <img class="top-img" src="images/kindly_reminder_top.png" alt="">
+		    <img class="close" src="images/close.png" alt="">
+	    </div>  
+	    <div class="container">
+	    	<p class="tc">这是您的第x次打赏，</p>
+			<p class="tc">非常感谢您的支持！</p>
+			<p class="tc">您还能对我进行评价哦~</p>
+			<div class="text"><i></i><span>匿名评价</span><i></i></div>
+        	<div class="oc-star-n" style="background: url('images/star.png') no-repeat;background-size:100% auto;background-position: 0 -1.9rem;"> 
+            	<ul style="background:url('images/star.png') no-repeat;background-size:100% auto;background-position: 0 -1.9rem;">  
+	            	<li val="1"></li>  
+	            	<li val="2"></li>  
+	            	<li val="3"></li>  
+	            	<li val="4"></li>  
+	            	<li val="5"></li>  
+            	</ul> 
+        	</div>
+            <div class="star-text">完美！灰常满意</div>
+            <ul class="text-list">
+            	<li>办理神速</li>
+            	<li>办理神速</li>
+            	<li>办理神速</li>
+            	<li>办理神速</li>
+            	<li>办理神速</li>
+            	<li>办理神速</li>
+            </ul>
+            <div class="input" style="background:url('images/pen.png') 95% center no-repeat;background-size:auto 70%;">
+                <input type="text" placeholder="我有话要说">
+            </div>
+		    <a class="btn" href="javascript:;"><img src="images/comment_btn.png" alt=""></a>
+	    </div>
+	</div>
+	<!-- 打赏成功 end -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+	$(function(){
+        $(".turn-btn").on("click",function(){
+            $(".money01").addClass("active1");
+            $(".money02").addClass("active2");
+            $(".money03").addClass("active3");
+            $(".money04").addClass("active4");
+            $(this).addClass("turn-btn-active");
+            setTimeout(function(){
+            	$(".money01").removeClass("active1");
+            	$(".money02").removeClass("active2");
+            	$(".money03").removeClass("active3");
+            	$(".money04").removeClass("active4");
+            	$(".turn-btn").removeClass("turn-btn-active");
+            },500)
+            
+            var randomNum = Math.random()*4;
+            var num=Math.floor(randomNum);
+            $(".money img").eq(num).show().siblings().hide();
+        });
+
+        //温馨提示弹出框  评价弹出框
+       	var arrText = [];
+       	arrText[1]={
+       		text:'<p>打赏费是您对员工幼稚服务的肯定，费用将用语奖励该员工，支付后不支持退款哟！</p>',
+       		img:'kindly_reminder_top.png'
+       	};
+       	arrText[2]={
+       		text:'<p class="tc fs0-8">点评成功！</p><p class="tc fs0-8">这是您的第x次点评，</p><p class="tc">非常感谢您的支持！</p>',
+       		img:'comment_on_top.png'
+       	};
+       	function popWin(){
+           var html='<div class="kindly-reminder-layer">';
+           html+='<div class="top">';
+           html+='<img class="top-img" src="images/'+arrText[1].img+'" alt="">';
+    	   html+='<img class="close" src="images/close.png" alt="">';
+    	   html+='</div>';
+    	   html+='<div class="container">';
+    	   html+=''+arrText[1].text+'';
+	       html+='<a class="btn" href="javascript:;"><img src="images/layer_btn.png" alt=""></a>';
+           html+='</div>';
+           html+='</div>';
+           $("body").append(html);
+           $(".kindly-reminder-layer .close,.kindly-reminder-layer  .btn,.layer").on("click",function(){
+	            $(".layer").hide();
+	            $(".kindly-reminder-layer").hide();
+	       });
+       	}
+        $(".question-mark").on("click",function(){
+        	popWin();
+            $(".layer").show();
+            $(".kindly-reminder-layer").show();
+        });
+        
+
+        //评论星星
+        $(".oc-star-n ul li").eq(0).on("click",function(){
+        	$(this).parent().css("background-position","-9.85rem 0")
+        	$(".star-text").text("朕心寒至极！");
+        })
+        $(".oc-star-n ul li").eq(1).on("click",function(){
+        	$(this).parent().css("background-position","-7.44rem 0")
+        	$(".star-text").text("一般般，待提升！");
+        })
+        $(".oc-star-n ul li").eq(2).on("click",function(){
+        	$(this).parent().css("background-position","-4.95rem 0")
+        	$(".star-text").text("还行吧，中规中矩！");
+        })
+        $(".oc-star-n ul li").eq(3).on("click",function(){
+        	$(this).parent().css("background-position","-2.44rem 0")
+        	$(".star-text").text("不错，棒棒哒！");
+        })
+        $(".oc-star-n ul li").eq(4).on("click",function(){
+        	$(this).parent().css("background-position","0 0")
+        	$(".star-text").text("完美！灰常满意！");
+        })
+
+        $(".text-list li").on("click",function(){
+           $(this).addClass("text-list-active");
+        });
+
+
+        $(".a-reward-layer .close,.a-reward-layer .btn,.layer").on("click",function(){
+            $(".layer").hide();
+            $(".a-reward-layer").hide();
+        });
+	});
+</script>
 </body>
 </html>
