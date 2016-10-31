@@ -24,16 +24,16 @@
 	   <div class="tip-content">
 	       <img class="package" src="images/package.png" alt="">
 	       <div class="tip-content-img">
-	           <div class="money">
-	              <img class="money4" src="images/money4.png" alt="">
-	           	  <img class="money1" src="images/money1.png" alt="">
-	           	  <img class="money2" src="images/money2.png" alt="">
-	           	  <img class="money3" style="display:block;" src="images/money3.png" alt="">
+	           <div class="money">              
+	           	  <img class="money1 flip out" src="images/money1.png" alt="">
+	           	  <img class="money2 flip out" src="images/money2.png" alt="">
+	           	  <img class="money3 flip in" src="images/money3.png" alt="">
+	           	  <img class="money4 flip out" src="images/money4.png" alt="">
 	           </div> 	   
-		   	   <img class="money01" src="images/0.png" alt="">
-		   	   <img class="money02" src="images/2.33.png" alt="">
-		   	   <img class="money03" src="images/5.20.png" alt="">
-		   	   <img class="money04" src="images/6.66.png" alt="">
+		   	   <img class="money01 money-list" src="images/0.png" alt="">
+		   	   <img class="money02 money-list" src="images/2.33.png" alt="">
+		   	   <img class="money03 money-list" src="images/5.20.png" alt="">
+		   	   <img class="money04 money-list" src="images/6.66.png" alt="">
 		   	   <img class="turn-btn" src="images/turn_btn.png" alt="">
 	       </div>   	   
 	   </div>
@@ -79,15 +79,16 @@
         	</div>
             <div class="star-text">完美！灰常满意</div>
             <ul class="text-list">
+            	<!-- <li>办理神速</li>
             	<li>办理神速</li>
             	<li>办理神速</li>
             	<li>办理神速</li>
             	<li>办理神速</li>
-            	<li>办理神速</li>
-            	<li>办理神速</li>
+            	<li>办理神速</li> -->
             </ul>
             <div class="input" style="background:url('images/pen.png') 95% center no-repeat;background-size:auto 70%;">
-                <input type="text" placeholder="我有话要说">
+                <!-- <input type="text" placeholder="我有话要说"> -->
+                <textarea name=""  placeholder="我有话要说"></textarea>
             </div>
 		    <a class="btn" href="javascript:;"><img src="images/comment_btn.png" alt=""></a>
 	    </div>
@@ -96,25 +97,72 @@
 <script src="scripts/jquery-3.1.1.min.js"></script>
 <script>
 	$(function(){
-        $(".turn-btn").on("click",function(){
-            $(".money01").addClass("active1");
-            $(".money02").addClass("active2");
-            $(".money03").addClass("active3");
-            $(".money04").addClass("active4");
-            $(this).addClass("turn-btn-active");
-            setTimeout(function(){
-            	$(".money01").removeClass("active1");
-            	$(".money02").removeClass("active2");
-            	$(".money03").removeClass("active3");
-            	$(".money04").removeClass("active4");
-            	$(".turn-btn").removeClass("turn-btn-active");
-            },500)
-            
-            var randomNum = Math.random()*4;
-            var num=Math.floor(randomNum);
-            $(".money img").eq(num).show().siblings().hide();
-        });
+		$(".turn-btn").each(function(index){
+            $(this).on("click",function(){
+               $(".tip-content-img .money-list").addClass("active"+(index+1));
+               $(this).addClass("turn-btn-active");
+               setTimeout(function(){
+               	    $(".tip-content-img .money-list").removeClass("active"+(index+1));
+	            	$(".turn-btn").removeClass("turn-btn-active");
+                },500);
 
+                //随机金额
+                var randomNum = Math.random()*4;
+	            var num=Math.floor(randomNum);
+	            if(num==0){
+	               console.log(1);
+	               $(".money img").eq(num).addClass("in").siblings().removeClass("in");
+	               $(".money img").eq(num).removeClass("out").siblings().addClass("out");
+	            }else if(num==1){
+	               console.log(2);
+	               $(".money img").eq(num).addClass("in").siblings().removeClass("in");
+	               $(".money img").eq(num).removeClass("out").siblings().addClass("out");
+	            }else if(num==2){
+	               console.log(3);
+	               $(".money img").eq(num).addClass("in").siblings().removeClass("in");
+	               $(".money img").eq(num).removeClass("out").siblings().addClass("out");
+	            }else if(num==3){
+	               console.log(4);
+	               $(".money img").eq(num).addClass("in").siblings().removeClass("in");
+	               $(".money img").eq(num).removeClass("out").siblings().addClass("out");
+	            }
+            });
+		});
+        // $(".turn-btn").on("click",function(){
+        //     $(".money01").addClass("active1");
+        //     $(".money02").addClass("active2");
+        //     $(".money03").addClass("active3");
+        //     $(".money04").addClass("active4");
+        //     $(this).addClass("turn-btn-active");
+        //     setTimeout(function(){
+        //     	$(".money01").removeClass("active1");
+        //     	$(".money02").removeClass("active2");
+        //     	$(".money03").removeClass("active3");
+        //     	$(".money04").removeClass("active4");
+        //     	$(".turn-btn").removeClass("turn-btn-active");
+        //     },500);         
+        //     var randomNum = Math.random()*4;
+        //     var num=Math.floor(randomNum);
+        //     if(num==0){
+        //        console.log(1);
+        //     }else if(num==1){
+        //        console.log(2);
+        //     }else if(num==2){
+        //        console.log(3);
+        //     }else if(num==3){
+        //        console.log(4);
+        //     }
+        //     $(".money img").eq(num).show().siblings().hide();
+        // });
+        
+        //点击小球
+        $(".tip-content-img>img").each(function(index){
+            $(this).on("click",function(){
+               $(".money img").eq(index).addClass("in").siblings().removeClass("in");
+	           $(".money img").eq(index).removeClass("out").siblings().addClass("out");
+            });
+        });
+        
         //温馨提示弹出框  评价弹出框
        	var arrText = [];
        	arrText[1]={
@@ -150,36 +198,101 @@
         
 
         //评论星星
-        $(".oc-star-n ul li").eq(0).on("click",function(){
-        	$(this).parent().css("background-position","-9.85rem 0")
-        	$(".star-text").text("朕心寒至极！");
-        })
-        $(".oc-star-n ul li").eq(1).on("click",function(){
-        	$(this).parent().css("background-position","-7.44rem 0")
-        	$(".star-text").text("一般般，待提升！");
-        })
-        $(".oc-star-n ul li").eq(2).on("click",function(){
-        	$(this).parent().css("background-position","-4.95rem 0")
-        	$(".star-text").text("还行吧，中规中矩！");
-        })
-        $(".oc-star-n ul li").eq(3).on("click",function(){
-        	$(this).parent().css("background-position","-2.44rem 0")
-        	$(".star-text").text("不错，棒棒哒！");
-        })
-        $(".oc-star-n ul li").eq(4).on("click",function(){
-        	$(this).parent().css("background-position","0 0")
-        	$(".star-text").text("完美！灰常满意！");
-        })
-
-        $(".text-list li").on("click",function(){
-           $(this).addClass("text-list-active");
+        var arrComment=[];
+        arrComment[0]={
+        	text:'<li>办理神速1</li>',
+        	starText:'朕心寒至极！',
+        	num:'-9.85rem 0'
+       	};
+       	arrComment[1]={
+        	text:'<li>办理神速2</li>',
+        	starText:'一般般，待提升！',
+        	num:'-7.44rem 0'
+       	};
+       	arrComment[2]={
+        	text:'<li>办理神速3</li>',
+        	starText:'还行吧，中规中矩！',
+        	num:'-4.95rem 0'
+       	};
+       	arrComment[3]={
+        	text:'<li>办理神速4</li><li>办理神速4</li><li>办理神速4</li>',
+        	starText:'不错，棒棒哒！',
+        	num:'-2.44rem 0'
+       	};
+       	arrComment[4]={
+        	text:'<li>办理神速5</li>',
+        	starText:'完美！灰常满意！',
+        	num:'0 0'
+       	};
+        function textList(){
+        	$(".text-list li").on("click",function(){
+	           $(this).toggleClass("text-list-active");
+	        });
+        }
+        $(".oc-star-n ul li").each(function(index){
+           $(this).on("click",function(){
+	            $(this).parent().css("background-position",arrComment[index].num)
+	        	$(".star-text").text(arrComment[index].starText);
+	        	$(".text-list").html(arrComment[index].text);
+	        	textList();
+           })
         });
+
+
+
+        // $(".oc-star-n ul li").eq(0).on("click",function(){
+        // 	$(this).parent().css("background-position","-9.85rem 0")
+        // 	$(".star-text").text("朕心寒至极！");
+        // 	$(".text-list").html(arrComment[1].text);
+        // 	textList();
+        // })
+        // $(".oc-star-n ul li").eq(1).on("click",function(){
+        // 	$(this).parent().css("background-position","-7.44rem 0")
+        // 	$(".star-text").text("一般般，待提升！");
+        // 	$(".text-list").html(arrComment[2].text);
+        // 	textList();
+        // })
+        // $(".oc-star-n ul li").eq(2).on("click",function(){
+        // 	$(this).parent().css("background-position","-4.95rem 0")
+        // 	$(".star-text").text("还行吧，中规中矩！");
+        // 	$(".text-list").html(arrComment[3].text);
+        // 	textList();
+        // })
+        // $(".oc-star-n ul li").eq(3).on("click",function(){
+        // 	$(this).parent().css("background-position","-2.44rem 0")
+        // 	$(".star-text").text("不错，棒棒哒！");
+        // 	$(".text-list").html(arrComment[4].text);
+        // 	textList();
+        // })
+        // $(".oc-star-n ul li").eq(4).on("click",function(){
+        // 	$(this).parent().css("background-position","0 0")
+        // 	$(".star-text").text("完美！灰常满意！");
+        // 	$(".text-list").html(arrComment[5].text);
+        // 	textList();
+        // })
+        
+        
+       
 
 
         $(".a-reward-layer .close,.a-reward-layer .btn,.layer").on("click",function(){
             $(".layer").hide();
             $(".a-reward-layer").hide();
         });
+
+
+
+        //我有话要说
+        $(".input textarea").on("focus",function(){
+            $(this).parent().css({
+            	background:"none",
+            	height:"3.5rem",
+            	borderRadius:0,
+            	paddingLeft:"3px",
+            	paddingRight:0,
+            })
+        });
+
 	});
 </script>
 </body>

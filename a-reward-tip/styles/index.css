@@ -155,22 +155,40 @@ html {
     top: 0;
     left: 20%;
     right: 0;
-    bottom: 0; }
+    bottom: 0;
+    -webkit-perspective: 1000;
+    perspective: 1000; }
     .tip-content .tip-content-img .money {
       position: absolute;
       width: 70%;
       left: 15%;
-      bottom: 60%; }
+      bottom: 80%; }
       .tip-content .tip-content-img .money img {
-        width: 100%; }
-        .tip-content .tip-content-img .money img:first-child {
-          display: none; }
-        .tip-content .tip-content-img .money img:nth-child(2) {
-          display: none; }
-        .tip-content .tip-content-img .money img:nth-child(3) {
-          display: none; }
-        .tip-content .tip-content-img .money img:last-child {
-          display: none; }
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-transition: all .5s;
+        transition: all .5s; }
+      .tip-content .tip-content-img .money .flip {
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translateX(0);
+        backface-visibility: hidden;
+        transform: translateX(0); }
+      .tip-content .tip-content-img .money .flip.out {
+        -webkit-transform: rotateX(90deg) scale(0.9);
+        -webkit-animation-name: flipouttoleft;
+        -webkit-animation-duration: 175ms;
+        transform: rotateX(90deg) scale(0.9);
+        animation-name: flipouttoleft;
+        animation-duration: 175ms;
+        opacity: 0; }
+      .tip-content .tip-content-img .money .flip.in {
+        -webkit-animation-name: flipintoright;
+        -webkit-animation-duration: 225ms;
+        animation-name: flipintoright;
+        animation-duration: 225ms;
+        opacity: 1; }
     .tip-content .tip-content-img .money01 {
       position: absolute;
       width: 22%;
@@ -214,6 +232,16 @@ html {
       -webkit-transition: all .5s;
       transition: all .5s; }
 
+@-webkit-keyframes flipouttoleft {
+  from {
+    -webkit-transform: rotateX(0); }
+  to {
+    -webkit-transform: rotateX(-90deg) scale(0.9); } }
+@keyframes flipouttoleft {
+  from {
+    transform: rotateX(0); }
+  to {
+    transform: rotateX(-90deg) scale(0.9); } }
 @keyframes myActive1 {
   0% {
     bottom: 45%; }
@@ -427,13 +455,17 @@ html {
       height: 1.5rem;
       border: 1px solid #ccc;
       border-radius: 30px;
-      padding: 0 5%; }
-      .a-reward-layer .container .input input {
+      padding: 2% 15% 0 5%;
+      overflow: hidden;
+      -webkit-transition: all .5s;
+      transition: all .5s; }
+      .a-reward-layer .container .input textarea {
         border: 0;
         background: none;
         outline: none;
         width: 100%;
-        height: 100%; }
+        height: 100%;
+        font: .6rem/1.5 "Microsoft YaHei","Helvetica Neue"; }
     .a-reward-layer .container .btn {
       width: 70%;
       font-size: 0;

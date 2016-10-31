@@ -130,27 +130,43 @@ html{
 	    left: 20%;
 	    right: 0;
 	    bottom: 0;
+	    -webkit-perspective: 1000;
+        perspective: 1000;
     	.money{
 	    	position:absolute;
 	    	width: 70%;
 	        left: 15%;
-	        bottom:60%;
+	        bottom:80%;
 	        img{
-	        	// position:absolute;
 	        	width:100%;
-	        	&:first-child{
-                   display:none;
-	        	}
-	        	&:nth-child(2){
-                   display:none;
-	        	}
-	        	&:nth-child(3){
-                    display:none;
-	        	}
-	        	&:last-child{
-	        		display:none;
-	        	}
+	        	position: absolute;
+			    top: 0;
+			    left: 0;
+			    -webkit-transition: all .5s;
+                transition: all .5s;
 	        }
+			.flip {
+			  -webkit-backface-visibility: hidden;
+			  -webkit-transform: translateX(0); 
+			  backface-visibility: hidden;
+			  transform: translateX(0);
+			}
+			.flip.out {
+			  -webkit-transform: rotateX(90deg) scale(.9);
+			  -webkit-animation-name: flipouttoleft;
+			  -webkit-animation-duration: 175ms;
+			  transform: rotateX(90deg) scale(.9);
+			  animation-name: flipouttoleft;
+			  animation-duration: 175ms;
+			  opacity:0;
+			}
+			.flip.in {
+			  -webkit-animation-name: flipintoright;
+			  -webkit-animation-duration: 225ms;
+			  animation-name: flipintoright;
+			  animation-duration: 225ms;
+			  opacity:1;
+			}
 	    }
 	    .money01{
 	    	position:absolute;
@@ -206,6 +222,16 @@ html{
 	    }
     }  
 }
+@-webkit-keyframes flipouttoleft {
+    from { -webkit-transform: rotateX(0); }
+    to { -webkit-transform: rotateX(-90deg) scale(.9); }
+}
+@keyframes flipouttoleft {
+    from { transform: rotateX(0); }
+    to { transform: rotateX(-90deg) scale(.9); }
+}
+
+
 @keyframes myActive1{
 	0%{
 		bottom:45%
@@ -483,13 +509,17 @@ html{
            height:1.5rem;
            border:1px solid #ccc;
            border-radius:30px;
-           padding:0 5%;
-           input{
+           padding:2% 15% 0 5%;
+           overflow: hidden;
+           -webkit-transition:all .5s;
+           transition:all .5s;
+           textarea{
 	           	border:0;
 	           	background:none;
 	           	outline:none;
 	           	width:100%;
 	           	height:100%;
+	           	font:.6rem/1.5 "Microsoft YaHei","Helvetica Neue";
            }
 		}
 	    .btn{
