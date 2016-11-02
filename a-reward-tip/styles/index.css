@@ -118,6 +118,7 @@ html {
     display: flex; }
     .tip-header p span {
       margin: 0 .5rem;
+      -webkit-flex: 6;
       flex: 6;
       text-align: left; }
     .tip-header p i {

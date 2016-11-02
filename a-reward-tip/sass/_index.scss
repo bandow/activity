@@ -81,8 +81,9 @@ html{
 		display:flex;
 		span{
 			margin:0 .5rem;
+			-webkit-flex:6;
 			flex:6;
-            text-align: left;
+            text-align:left;
 		}
 		i{
             position: relative;
