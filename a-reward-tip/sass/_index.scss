@@ -70,17 +70,19 @@ html{
 	width:100%;
 	p{
 		position:absolute;
-		top:3%;
+		top:2%;
 		left:5%;
 		width:90%;
 		text-align:center;
-		font:.65rem/2 "Microsoft YaHei","Helvetica Neue";
+		font:.65rem/1.2 "Microsoft YaHei","Helvetica Neue";
 		color:#4d778b;
 		display:-webkit-box;
 		display:-webkit-flex;
 		display:flex;
 		span{
 			margin:0 .5rem;
+			flex:6;
+            text-align: left;
 		}
 		i{
             position: relative;
