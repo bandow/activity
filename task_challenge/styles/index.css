@@ -1,0 +1,295 @@
+@charset "UTF-8";
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2016-10-18
+* Version:0.0.1
+* ================================================================== */
+html {
+  font-family: "Microsoft YaHei","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  /*-webkit-text-size-adjust是解决 iPhone 横屏时默认会放大文字的问题*/
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+html, body {
+  /*-webkit-user-select:none禁止用户进行复制.选择.*/
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  /*使用min-height:100%代替height：100%*/
+  height: 100%;
+  min-height: 100%; }
+
+body {
+  /*弹性滚动-局部滚动开启弹性滚动：将属性挂在body上，可以避免很多奇怪的bug。*/
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, div, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  /*把所有元素的内边距和边框不再会增加它的宽度*/
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  box-sizing: border-box; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-size: 18px; }
+
+@media (min-device-width: 320px) {
+  html {
+    font-size: 18px; } }
+@media (min-device-width: 360px) {
+  html {
+    font-size: 20px; } }
+@media (min-device-width: 375px) {
+  html {
+    font-size: 21px; } }
+@media (min-device-width: 384px) {
+  html {
+    font-size: 21px; } }
+@media (min-device-width: 400px) {
+  html {
+    font-size: 22px; } }
+@media (min-device-width: 414px) {
+  html {
+    font-size: 23px; } }
+@media (min-device-width: 480px) {
+  html {
+    font-size: 26px; } }
+@media (min-device-width: 568px) {
+  html {
+    font-size: 28px; } }
+@media (min-device-width: 533px) {
+  html {
+    font-size: 28px; } }
+@media (min-device-width: 600px) {
+  html {
+    font-size: 30px; } }
+@media (min-device-width: 640px) {
+  html {
+    font-size: 24px; } }
+body {
+  background-color: #000; }
+
+.wrapper {
+  width: 100%;
+  max-width: 640px;
+  min-height: 320px;
+  margin: 0 auto;
+  overflow: hidden; }
+
+.header {
+  padding: 1%;
+  margin-bottom: 32%;
+  justify-content: space-between;
+  display: -webkit-flex; }
+  .header > div {
+    width: 20%; }
+    .header > div img {
+      width: 100%; }
+
+.rule a {
+  text-decoration: none;
+  font: 0.65rem/1.8 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  color: #fddb80;
+  text-align: center;
+  display: block; }
+
+.container {
+  margin: 0 auto;
+  width: 90%; }
+
+.news {
+  margin-bottom: .3rem; }
+  .news h3 {
+    color: #010101;
+    background-color: #fddb80;
+    font: 0.65rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    float: left;
+    border-radius: 30px;
+    padding: 0 .5rem; }
+  .news ul {
+    margin-left: 4rem; }
+    .news ul li {
+      color: #fddb80;
+      font: 0.65rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap; }
+
+.content {
+  padding: 2%;
+  margin-bottom: .5rem;
+  background: rgba(72, 42, 18, 0.5);
+  border-radius: 5px;
+  border: 1px solid #41350b; }
+
+.taskList {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex; }
+  .taskList li {
+    position: relative;
+    height: 2rem;
+    -webkit-flex: 1;
+    flex: 1;
+    color: #fbd789;
+    font: bold 0.8rem/1.8rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    text-align: center; }
+    .taskList li:first-child {
+      margin-right: .3rem; }
+    .taskList li:last-child {
+      margin-left: .3rem; }
+    .taskList li i {
+      position: absolute;
+      top: -.2rem;
+      right: -.3rem;
+      display: block;
+      width: 1rem;
+      height: 1rem;
+      border-radius: 100%;
+      background-color: #fe391e;
+      font: normal 0.5rem/1rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      color: #fff; }
+
+.allList .list {
+  display: none;
+  min-height: 15rem; }
+
+.activeTask .item {
+  padding: 2%;
+  margin: .5rem 0;
+  background-color: #fff0b5;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .activeTask .item > div {
+    -webkit-flex: 1;
+    flex: 1; }
+    .activeTask .item > div:nth-child(2) {
+      padding: 0 .5rem 0 .2rem;
+      -webkit-flex: 3;
+      flex: 3; }
+  .activeTask .item .img {
+    height: 2.8rem;
+    overflow: hidden; }
+    .activeTask .item .img img {
+      width: 100%; }
+  .activeTask .item .text h3 {
+    color: #ff6600;
+    font: bold 0.8rem/1 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin-bottom: .3rem; }
+  .activeTask .item .text p {
+    color: #211309;
+    font: 0.6rem/1.2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+    .activeTask .item .text p strong {
+      color: #e71f19; }
+  .activeTask .item .btn {
+    border-radius: 3px;
+    height: 2.8rem; }
+    .activeTask .item .btn a {
+      display: block;
+      text-align: center;
+      color: #fff;
+      font: 0.85rem/2.8rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      text-decoration: none; }
+.activeTask .bottom {
+  color: #fbd789;
+  font: 0.8rem/2.2rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  text-align: center; }
+
+.centrality .notCentrality p {
+  padding: 0 .5rem;
+  margin: .5rem auto 5rem;
+  width: 90%;
+  background-color: #fbd789;
+  font: normal 0.65rem/1.2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  border-radius: 5px;
+  color: #211309; }
+.centrality .notCentrality h5 {
+  text-align: center;
+  font: 0.8rem/1.2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  color: #fbd789; }
+.centrality .haveCentrality {
+  padding: 2%; }
+  .centrality .haveCentrality > p {
+    padding: 0 .5rem;
+    margin: .5rem auto 0;
+    width: 90%;
+    height: 1rem;
+    background-color: #fbd789;
+    font: normal 0.65rem/1.1rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    border-radius: 5px;
+    color: #211309;
+    text-align: center; }
+  .centrality .haveCentrality .item {
+    padding-bottom: .5rem;
+    margin: .5rem auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .centrality .haveCentrality .item > div {
+      -webkit-flex: 1;
+      flex: 1; }
+    .centrality .haveCentrality .item .itemText {
+      -webkit-flex: .6;
+      flex: .6; }
+      .centrality .haveCentrality .item .itemText p {
+        color: #fbd789;
+        font: bold 0.7rem/1.2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+        .centrality .haveCentrality .item .itemText p strong {
+          color: #fe391e; }
+    .centrality .haveCentrality .item .itemName {
+      -webkit-flex: 1.2;
+      flex: 1.2; }
+      .centrality .haveCentrality .item .itemName dl dd {
+        margin: .5rem auto;
+        color: #fbd789;
+        font: bold 0.6rem/1.2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+        .centrality .haveCentrality .item .itemName dl dd img {
+          width: 1rem;
+          height: 1rem;
+          vertical-align: middle;
+          margin-right: .3rem; }
+    .centrality .haveCentrality .item .itemCinema dl dd {
+      margin: .5rem auto;
+      color: #fbd789;
+      font: bold 0.6rem/1.2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+    .centrality .haveCentrality .item .itemCinema img {
+      height: .5rem;
+      vertical-align: middle;
+      margin-right: .3rem; }
+
+/*# sourceMappingURL=index.css.map */
