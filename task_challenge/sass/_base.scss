@@ -61,3 +61,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+a{
+  -webkit-tap-highlight-color:transparent;  /*去掉闪光*/
+  cursor:pointer;
+}

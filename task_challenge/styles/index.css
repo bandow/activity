@@ -59,6 +59,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+a {
+  -webkit-tap-highlight-color: transparent;
+  /*去掉闪光*/
+  cursor: pointer; }
+
 html {
   font-size: 18px; }
 
@@ -127,11 +132,14 @@ body {
   width: 90%; }
 
 .news {
+  height: 1rem;
+  overflow: hidden;
   margin-bottom: .3rem; }
   .news h3 {
+    height: 1rem;
     color: #010101;
     background-color: #fddb80;
-    font: 0.65rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    font: 0.65rem/1.1rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
     float: left;
     border-radius: 30px;
     padding: 0 .5rem; }
@@ -139,7 +147,7 @@ body {
     margin-left: 4rem; }
     .news ul li {
       color: #fddb80;
-      font: 0.65rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      font: 0.65rem/1rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap; }
@@ -161,7 +169,7 @@ body {
     -webkit-flex: 1;
     flex: 1;
     color: #fbd789;
-    font: bold 0.8rem/1.8rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    font: bold 0.8rem/1.9rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
     text-align: center; }
     .taskList li:first-child {
       margin-right: .3rem; }
@@ -291,5 +299,117 @@ body {
       height: .5rem;
       vertical-align: middle;
       margin-right: .3rem; }
+
+.ruleLayer, .integralLayer, .loginLayer {
+  position: fixed;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: none;
+  background-color: #211309;
+  border: 1px solid #41350b;
+  border-radius: 5px;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+  .ruleLayer a, .integralLayer a, .loginLayer a {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    width: .6rem; }
+    .ruleLayer a img, .integralLayer a img, .loginLayer a img {
+      width: 100%; }
+
+.ruleText, .loginText {
+  padding: 5%; }
+  .ruleText img, .loginText img {
+    padding: .5rem 0;
+    width: 100%; }
+  .ruleText p, .loginText p {
+    font: 0.65rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #fbd789;
+    margin-bottom: .2rem; }
+
+.integralLayer {
+  padding: 5%; }
+  .integralLayer h2 {
+    text-align: center;
+    font: 0.8rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #fbd789; }
+    .integralLayer h2 strong {
+      color: #e71f19;
+      font-weight: bold; }
+  .integralLayer a {
+    position: initial;
+    display: block;
+    width: 100%;
+    font: 0.65rem/3 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #fff;
+    text-align: center; }
+  .integralLayer button {
+    margin: 0 auto;
+    display: block;
+    outline: none;
+    border: none;
+    width: 50%;
+    height: 1.5rem;
+    font: 0.65rem/1.6rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    background-color: #fbd789;
+    color: #211309;
+    border-radius: 30px; }
+
+.loginLayer > button {
+  margin: 0 auto 5%;
+  display: block;
+  outline: none;
+  border: none;
+  width: 50%;
+  height: 1.5rem;
+  font: 0.65rem/1.6rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  background-color: #fbd789;
+  border-radius: 30px; }
+
+.phoneName, .phoneCode {
+  margin: 0 auto .5rem;
+  width: 90%;
+  height: 1.75rem; }
+  .phoneName input, .phoneCode input {
+    padding: 0 10%;
+    border: 0;
+    background: none;
+    outline: none;
+    width: 80%;
+    height: 100%;
+    color: #fbd789;
+    -webkit-appearance: none;
+    appearance: none; }
+    .phoneName input::-webkit-input-placeholder, .phoneCode input::-webkit-input-placeholder {
+      color: #fbd789;
+      font: 0.65rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+
+.phoneCode {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex; }
+  .phoneCode > div {
+    -webkit-flex: 1;
+    flex: 1; }
+    .phoneCode > div:first-child {
+      -webkit-flex: 1.4;
+      flex: 1.4;
+      margin-right: .5rem; }
+  .phoneCode .left input {
+    padding-left: 15%; }
+  .phoneCode .right button {
+    outline: none;
+    border: 0;
+    background: none;
+    width: 100%;
+    height: 100%;
+    font: 0.65rem/1.6rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #fbd789; }
 
 /*# sourceMappingURL=index.css.map */

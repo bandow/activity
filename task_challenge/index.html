@@ -24,15 +24,17 @@
 	<div class="wrapper" id="wrapper" style="background:url('images/task_challenge_top.jpg') #000 no-repeat;background-size:100% auto;">
 		<header class="header">
             <div class="logo"><img src="images/logo.png" alt=""></div>
-            <div class="rule" style="background:url('images/rule_btn.png') no-repeat;background-size:100% auto;">
-                <a href="">活动规则</a>
+            <div id="rule" class="rule" style="background:url('images/rule_btn.png') no-repeat;background-size:100% auto;">
+                <a href="javascript:;">活动规则</a>
             </div>
 		</header>
 		<div class="container">
-			<div class="news">
+			<div class="news" id="news">
 				<h3>最新战报</h3>
 				<ul>
 					<li>恭喜某**获得调研砖员任务奖励10000积分</li>
+					<li>恭喜某**获得调任务奖励100积分</li>
+					<li>恭喜某**获得调任务奖励500积分</li>
 				</ul>
 			</div>
 			<div class="content">
@@ -285,14 +287,85 @@
 			</div>
 		</div>
 	</div>
+	<!-- 活动规则弹出层 begin -->
+	<div class="ruleLayer">
+	    <a id="close" href="javascript:;"><img src="images/colse.png" alt=""></a>
+	    <div class="ruleText">
+	    	<img src="images/rule_title.png" alt="">
+	    	<p>1. 活动时间：12月1日-1月31日</p>
+	    	<p>2. 东呈会员均可参与挑战任务，在活动期间前挑战成功即可领取相应奖励。</p>
+	    	<p>3. 抢闸中心：最先每项任务的前3名奖励电影票2张。</p>
+	    	<p>4. 每人每任务限领取1次奖励。</p>
+	    	<p>5. 完成任务后即可点击领取积分，活动结束后一周内仍可领取已完成奖励。过期未领取默认放弃。</p>
+	    	<p>6. 赠送积分2年有效。</p>
+	    	<p>7. 一经发现任何违规套取奖励的行为，将不予奖励、追回所有奖励并取消活动资格。在法律允许的范围内，东呈酒店集团对此活动拥有最终解释权。</p>
+	    </div>
+	</div>
+	<!-- 活动规则弹出层 end -->
+	<!-- 积分弹窗 begin -->
+    <div class="integralLayer">
+    	<h2>恭喜您获得【高级特工】任务<br>奖励<strong>300积分</strong></h2>
+        <a href="">查看积分明细></a>
+        <button class="know">我知道了</button>
+    </div>
+	<!-- 积分弹窗 end -->
+	<!-- 登录弹窗 begin -->
+	<div class="loginLayer">
+		<a id="loginClose" href="javascript:;"><img src="images/colse.png" alt=""></a>
+		<div class="loginText">
+			<img src="images/login_title.png" alt="">
+			<div class="phoneName" style="background:url('images/phone_bg.png') no-repeat;background-size:100% auto;">
+				<input type="text" placeholder="请填写手机号码">
+			</div>
+			<div class="phoneCode">
+			    <div class="left" style="background:url('images/code_l_bg.png') no-repeat;background-size:100% auto;">
+			    	<input type="text" placeholder="手机验证码">
+			    </div>
+				<div class="right" style="background:url('images/code_r_bg.png') no-repeat;background-size:100% auto;">
+					<button>获取验证码</button>
+				</div>
+			</div>
+		</div>
+		<button class="loginKnow">我知道了</button>
+	</div>
+	<!-- 登录弹窗 end -->
 	<!-- script begin -->
 	<script src="scripts/jquery-3.1.1.min.js"></script>
 	<script>
 		$(function(){
+			//活动任务抢闸中心切换
             $(".taskList li").on("click",function(){
                 $(this).addClass("active").siblings().removeClass("active");
                 $(".allList .list").eq($(this).index()).show().siblings().hide();
             });
+            //最新战报
+            var liHeight=$("#news ul li").height();
+            setInterval(function(){
+           	  $("#news").find("ul").animate({  
+                   marginTop : -liHeight
+               },500,function(){  
+                   $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);  
+               })  
+            },3000); 
+            //活动规则
+            $("#rule").on("touchstart",function(){
+                $(".ruleLayer").show();
+            });
+            $("#close").on("click",function(){
+                $(".ruleLayer").hide();
+            });
+            //积分弹窗
+            $(".know").on("click",function(){
+                $(".integralLayer").hide();
+            });
+            //登录弹窗
+            $(".loginKnow").on("click",function(){
+                $(".loginLayer").hide();
+            });
+            $("#loginClose").on("click",function(){
+                $(".loginLayer").hide();  
+            });
+            
 		});
 	</script>
 	<!-- script end -->

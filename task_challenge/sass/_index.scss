@@ -89,11 +89,14 @@ body{background-color:#000;}
 	width:90%;
 }
 .news{
+	height: 1rem;
+    overflow: hidden;
 	margin-bottom:.3rem;
     h3{
+    	height: 1rem;
     	color:#010101;
     	background-color:$ruleColour;
-    	font:.65rem/1.5 $plainFont;
+    	font:.65rem/1.1rem $plainFont;
     	float:left;
     	border-radius:30px;
     	padding: 0 .5rem;
@@ -102,7 +105,7 @@ body{background-color:#000;}
     	margin-left:4rem;
     	li{
 	    	color:$ruleColour;
-	    	font:.65rem/1.5 $plainFont;
+	    	font:.65rem/1rem $plainFont;
 	    	text-overflow: ellipsis;
 		    overflow: hidden;
 		    white-space: nowrap;
@@ -126,7 +129,7 @@ body{background-color:#000;}
 		-webkit-flex:1;
 		flex:1;
 		color:$taskListColour;
-		font:bold .8rem/1.8rem $plainFont;
+		font:bold .8rem/1.9rem $plainFont;
 		text-align:center;
 		&:first-child{
            margin-right:.3rem;
@@ -296,4 +299,137 @@ body{background-color:#000;}
 		}
 	}
 }
-
+.ruleLayer{
+	position:fixed;
+	width:90%;
+	top:50%;
+	left:50%;
+	z-index:1;
+	display:none;
+	background-color:$textColour;
+	border:1px solid #41350b;
+	border-radius:5px;
+	@include transform(translate(-50%, -50%));
+	a{
+		position:absolute;
+		top:2%;
+		right:2%;
+		width:.6rem;
+		img{
+			width:100%;
+		}
+	}
+}
+.ruleText{
+	padding:5%;
+	img{
+		padding:.5rem 0;
+		width:100%;
+	}
+	p{
+		font:.65rem/1.5 $plainFont;
+		color:$taskListColour;
+		margin-bottom:.2rem;
+	}
+}
+.integralLayer{
+	@extend .ruleLayer;
+	padding:5%;
+	h2{
+		text-align:center;
+		font:.8rem/1.5 $plainFont;
+		color:$taskListColour;
+		strong{
+            color:$strongColour;
+            font-weight:bold;
+		}
+	}
+	a{
+		position: initial;
+        display: block;
+		width:100%;
+		font:.65rem/3 $plainFont;
+		color:$whiteColour;
+		text-align:center;
+	}
+	button{
+        margin:0 auto;
+        display: block;
+        outline:none;
+        border:none;
+        width:50%;
+        height:1.5rem;
+        font:.65rem/1.6rem $plainFont;
+        background-color:$taskListColour;
+        color:$textColour;
+        border-radius:30px;
+	}
+}
+.loginLayer{
+	@extend .ruleLayer;
+	>button{
+		margin:0 auto 5%;
+        display: block;
+        outline:none;
+        border:none;
+        width:50%;
+        height:1.5rem;
+        font:.65rem/1.6rem $plainFont;
+        background-color:$taskListColour;
+        border-radius:30px;
+	}
+}
+.loginText{
+    @extend	.ruleText;
+}
+.phoneName{
+	margin:0 auto .5rem;
+	width:90%;
+	height:1.75rem;
+	input{
+		padding: 0 10%;
+	    border:0;
+	   	background:none;
+	   	outline:none;
+       	width:80%;
+       	height:100%;
+       	color:$taskListColour;
+       	-webkit-appearance:none;
+       	appearance:none;
+       	&::-webkit-input-placeholder{
+       	    color:$taskListColour;
+       	    font:.65rem/1.5 $plainFont;
+       	}
+	}
+}
+.phoneCode{
+	@extend .phoneName;
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:flex;
+	>div{
+		-webkit-flex:1;
+		flex:1;
+		&:first-child{
+			-webkit-flex:1.4;
+		    flex:1.4;
+		    margin-right:.5rem;
+		}
+	}
+	.left{
+		input{
+			padding-left: 15%;
+		}
+	}
+	.right{
+		button{
+			outline:none;
+			border:0;
+			background:none;
+			width: 100%;
+            height: 100%;
+            font:.65rem/1.6rem $plainFont;
+            color:$taskListColour;
+		}
+	}
+}
