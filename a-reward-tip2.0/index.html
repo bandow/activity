@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content="不超过80个字符"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>我的鼓励金</title>
+<link rel="stylesheet" href="styles/index.css">
+<style>
+.starN{
+  width:130px;
+  height:20px;
+  background: url("images/star.png") no-repeat;
+  overflow:hidden;
+}
+.starN ul {
+    background: url("images/star.png") no-repeat;
+    height: auto;
+    overflow: hidden;
+}
+</style>
+</head>
+<body>
+<div class="wrapper" id="wrapper">
+  <header class="encourageHeader"><h1>我的鼓励金</h1></header>
+  <div class="encourageContainer">
+    <div class="userInfo">
+       <div class="head">
+         <input type = "file" accept="image/*" capture="camera" id="img" class="input-upload-image"/>
+         <p id="text">点击上传</p>
+         <img id="imgInfo" src="images/head.jpg" alt="">
+       </div>
+       <div class="text">
+         <h3>黄石大道店<span>左兰</span></h3>
+         <p>今天共获鼓励金<em>10</em>元</p>
+         <p>累计获得鼓励金<strong>2000</strong>元</p>
+         <div class="score">
+           <p>当前得分：</p>
+           <div class="starN">
+             <ul class="star5">
+               <li>star1</li>
+               <li>star2</li>
+               <li>star3</li>
+               <li>star4</li>
+               <li>star5</li>
+             </ul>
+           </div>  
+         </div>
+       </div>
+    </div>
+    <div class="userDetailed">
+      <ul>
+        <li>鼓励金</li>
+        <li>我的点评</li>
+        <li>排行榜</li>
+      </ul>
+      <div class="encourageContent">
+        <div class="list">
+           1
+        </div>
+        <div class="list">2</div>
+        <div class="list">3</div>
+      </div>
+    </div>
+  </div>
+</div>	
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script src="scripts/upload.js"></script>
+</body>
+</html>
