@@ -159,6 +159,7 @@ body{background-color:#000;}
 }
 .activeTask{
 	.item{
+		position:relative;
 		padding: 2%;
 		margin: .5rem 0;
 		background-color:#fff0b5;
@@ -208,6 +209,24 @@ body{background-color:#000;}
 			    font:.85rem/2.8rem $plainFont;
 			    text-decoration:none;
 			}	
+		}
+		.accomplish{
+           position:absolute;
+           top: .5rem;
+		   right: 3.5rem;
+		   text-align: right;
+           img{
+           	width:60%;
+           }
+		}
+		.receive{
+            position:absolute;
+            top:.5rem;
+            right:.5rem;
+            text-align: right;
+            img{
+           	   width:60%;
+            }
 		}
 	}
 	.bottom{

@@ -192,6 +192,7 @@ body {
   min-height: 15rem; }
 
 .activeTask .item {
+  position: relative;
   padding: 2%;
   margin: .5rem 0;
   background-color: #fff0b5;
@@ -231,6 +232,20 @@ body {
       color: #fff;
       font: 0.85rem/2.8rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
       text-decoration: none; }
+  .activeTask .item .accomplish {
+    position: absolute;
+    top: .5rem;
+    right: 3.5rem;
+    text-align: right; }
+    .activeTask .item .accomplish img {
+      width: 60%; }
+  .activeTask .item .receive {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    text-align: right; }
+    .activeTask .item .receive img {
+      width: 60%; }
 .activeTask .bottom {
   color: #fbd789;
   font: 0.8rem/2.2rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
