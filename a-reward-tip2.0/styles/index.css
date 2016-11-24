@@ -100,7 +100,7 @@ html {
   width: 100%;
   max-width: 640px;
   min-height: 320px;
-  height: 100%;
+  height: auto;
   margin: 0 auto;
   overflow: hidden; }
 
@@ -264,7 +264,187 @@ html {
     .score .starN .star5 {
       background-position: 0 -30px; }
 
-.userDetailed ul {
+.userDetailed > ul {
+  width: 100%;
+  height: auto;
+  overflow: hidden; }
+  .userDetailed > ul li {
+    position: relative;
+    float: left;
+    color: #fff;
+    width: 40%;
+    text-align: center;
+    font: 0.75rem/2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    margin-left: -10%; }
+    .userDetailed > ul li:first-child {
+      margin-left: 0; }
+
+.encourageContent .list {
+  display: none; }
+  .encourageContent .list > div {
+    padding: 0 3%; }
+  .encourageContent .list .ranking {
+    padding: 0; }
+
+.listIncite .title {
+  background-color: #f2f2f2;
+  font: 0.75rem/2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  color: #000; }
+  .listIncite .title span:last-child {
+    float: right; }
+.listIncite .incite .item {
+  padding: 5% 0;
+  /*old*/
+  display: -webkit-box;
+  /*new*/
+  display: -webkit-flex;
+  display: flex;
+  /*old*/
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  /*new*/
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #ccc; }
+  .listIncite .incite .item > div {
+    -webkitflex: 1;
+    flex: 1; }
+  .listIncite .incite .item .time p {
+    font: 0.75rem/1.2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #999; }
+    .listIncite .incite .item .time p:last-child {
+      font-size: .6rem; }
+  .listIncite .incite .item .user {
+    -webkitflex: 4;
+    flex: 4; }
+    .listIncite .incite .item .user .img {
+      float: left;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 100%;
+      overflow: hidden; }
+      .listIncite .incite .item .user .img img {
+        width: 100%; }
+    .listIncite .incite .item .user .name p {
+      margin-left: 1.8rem;
+      font: 0.75rem/1.5rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      color: #333; }
+  .listIncite .incite .item .mouey p {
+    font: 0.75rem/1.2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #333;
+    text-align: right; }
+
+.listComment .title {
+  background-color: #f2f2f2;
+  height: 30px; }
+  .listComment .title .left {
+    float: left; }
+    .listComment .title .left p {
+      float: left;
+      font: 0.75rem/2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      color: #000; }
+    .listComment .title .left .starN {
+      margin-left: 3.5rem;
+      position: relative;
+      top: 3px; }
+      .listComment .title .left .starN ul li {
+        float: left;
+        display: block;
+        width: 20px;
+        height: 20px;
+        text-indent: -999px;
+        overflow: hidden;
+        margin-left: 6px; }
+        .listComment .title .left .starN ul li:first-child {
+          margin-left: 0; }
+      .listComment .title .left .starN .star1 {
+        background-position: -104px -60px; }
+      .listComment .title .left .starN .star2 {
+        background-position: -78px -60px; }
+      .listComment .title .left .starN .star3 {
+        background-position: -52px -30px; }
+      .listComment .title .left .starN .star4 {
+        background-position: -26px -30px; }
+      .listComment .title .left .starN .star5 {
+        background-position: 0 -30px; }
+  .listComment .title .right {
+    float: right; }
+    .listComment .title .right select {
+      position: relative;
+      top: 3px;
+      padding-left: 10px;
+      width: 69px;
+      height: 20px;
+      font: 0.75rem/20px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      color: #666;
+      border: 0;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none; }
+
+.commentItem {
+  padding: 3%;
+  border-bottom: 1px solid #ccc; }
+  .commentItem > p {
+    font: 0.65rem/1.2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #666; }
+  .commentItem .head {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    /*old*/
+    display: -webkit-box;
+    /*new*/
+    display: -webkit-flex;
+    display: flex;
+    /*old*/
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    /*new*/
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .3rem; }
+    .commentItem .head .img {
+      margin-right: .3rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 100%;
+      overflow: hidden; }
+      .commentItem .head .img img {
+        width: 100%; }
+    .commentItem .head .name {
+      -webkitflex: 1;
+      flex: 1; }
+      .commentItem .head .name p {
+        font: 0.75rem/1.2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        color: #333; }
+    .commentItem .head .starN {
+      -webkitflex: 1;
+      flex: 1; }
+      .commentItem .head .starN ul li {
+        float: left;
+        display: block;
+        width: 20px;
+        height: 20px;
+        text-indent: -999px;
+        overflow: hidden;
+        margin-left: 6px; }
+        .commentItem .head .starN ul li:first-child {
+          margin-left: 0; }
+      .commentItem .head .starN .star1 {
+        background-position: -104px -60px; }
+      .commentItem .head .starN .star2 {
+        background-position: -78px -60px; }
+      .commentItem .head .starN .star3 {
+        background-position: -52px -30px; }
+      .commentItem .head .starN .star4 {
+        background-position: -26px -30px; }
+      .commentItem .head .starN .star5 {
+        background-position: 0 -30px; }
+
+.rankingMeun {
+  background-color: #f2f2f2;
+  height: 40px;
   /*old*/
   display: -webkit-box;
   /*new*/
@@ -276,24 +456,99 @@ html {
   /*new*/
   justify-content: center;
   align-items: center; }
-  .userDetailed ul li {
-    position: relative;
-    float: left;
-    background-color: #ed304e;
+  .rankingMeun li {
+    font: 0.75rem/41px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #333;
     -webkitflex: 1;
     flex: 1;
-    color: #fff;
-    text-align: center;
-    font: 0.75rem/2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-    border-radius: 10px 10px 0 0; }
-    .userDetailed ul li:before {
+    text-align: center; }
+  .rankingMeun .meunActive {
+    position: relative; }
+    .rankingMeun .meunActive:before {
       position: absolute;
+      left: 50%;
+      bottom: 0;
       content: "";
-      border-radius: 100%;
-      width: 3rem;
-      height: 3rem;
-      opacity: .5;
-      left: -1.5rem;
-      top: 0; }
+      width: 0;
+      height: 0;
+      border: 10px solid;
+      border-color: transparent transparent #fff transparent;
+      -moz-transform: translate(-50%, 0);
+      -o-transform: translate(-50%, 0);
+      -ms-transform: translate(-50%, 0);
+      -webkit-transform: translate(-50%, 0);
+      transform: translate(-50%, 0); }
+
+.wholeArea .wholeAreaList {
+  display: none; }
+  .wholeArea .wholeAreaList .item {
+    padding: 3%;
+    border-bottom: 1px solid #ccc;
+    /*old*/
+    display: -webkit-box;
+    /*new*/
+    display: -webkit-flex;
+    display: flex;
+    /*old*/
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    /*new*/
+    justify-content: center;
+    align-items: center; }
+    .wholeArea .wholeAreaList .item > div {
+      -webkit-flex: 1;
+      flex: 1; }
+    .wholeArea .wholeAreaList .item .num {
+      font: 0.6rem/1 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      color: #e9443d;
+      text-align: center; }
+      .wholeArea .wholeAreaList .item .num img {
+        width: 30%; }
+    .wholeArea .wholeAreaList .item .user {
+      -webkit-flex: 2;
+      flex: 2;
+      /*old*/
+      display: -webkit-box;
+      /*new*/
+      display: -webkit-flex;
+      display: flex;
+      /*old*/
+      -webkit-box-pack: center;
+      -webkit-box-align: center;
+      /*new*/
+      justify-content: center;
+      align-items: center; }
+      .wholeArea .wholeAreaList .item .user .img {
+        margin-right: .3rem;
+        float: left;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 100%;
+        overflow: hidden; }
+        .wholeArea .wholeAreaList .item .user .img img {
+          width: 100%; }
+      .wholeArea .wholeAreaList .item .user .name {
+        -webkit-flex: 1;
+        flex: 1; }
+        .wholeArea .wholeAreaList .item .user .name h3 {
+          font: 0.75rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+          color: #333; }
+        .wholeArea .wholeAreaList .item .user .name p {
+          font: 0.6rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+          color: #666; }
+    .wholeArea .wholeAreaList .item .text {
+      -webkit-flex: 1.5;
+      flex: 1.5;
+      font: 0.6rem/1 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      color: #666;
+      text-align: right; }
+  .wholeArea .wholeAreaList .meItem {
+    border-bottom: 0; }
+  .wholeArea .wholeAreaList > p {
+    background-color: #f2f2f2;
+    height: 24px;
+    font: 0.7rem/25px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #333;
+    text-align: center; }
 
 /*# sourceMappingURL=index.css.map */

@@ -14,17 +14,13 @@
 <title>我的鼓励金</title>
 <link rel="stylesheet" href="styles/index.css">
 <style>
-.starN{
-  width:130px;
-  height:20px;
-  background: url("images/star.png") no-repeat;
-  overflow:hidden;
-}
-.starN ul {
-    background: url("images/star.png") no-repeat;
-    height: auto;
-    overflow: hidden;
-}
+.starN{width:130px;height:20px;background: url("images/star.png") no-repeat;overflow:hidden;}
+.starN ul {background: url("images/star.png") no-repeat;height:auto; overflow:hidden;}
+.menuIncite{background: url("images/menu1.png") no-repeat;background-size: 100% auto;z-index:2;}
+.menuComment{background: url("images/menu2.png") no-repeat;background-size: 100% auto;z-index:1;}
+.menuRanking{background: url("images/menu3.png") no-repeat;background-size: 100% auto;z-index:0;}
+.active{background:url("images/menu_active.png") no-repeat;background-size: 100% auto;z-index:2;}
+.listComment .right select{background:url("images/select.png") no-repeat;background-size: 100% auto;}
 </style>
 </head>
 <body>
@@ -56,22 +52,322 @@
        </div>
     </div>
     <div class="userDetailed">
-      <ul>
-        <li>鼓励金</li>
-        <li>我的点评</li>
-        <li>排行榜</li>
+      <ul class="menu">
+        <li class="menuList menuIncite active">鼓励金</li>
+        <li class="menuList menuComment">我的点评</li>
+        <li class="menuList menuRanking">排行榜</li>
       </ul>
       <div class="encourageContent">
-        <div class="list">
-           1
+        <div class="list listIncite" style="display:block;">
+           <div class="title"><p>10月<span>打赏总数：16.52元</span></p></div>
+           <div class="incite">
+             <div class="item">
+               <div class="time">
+                <p>周一</p>
+                <p>10-31</p>
+               </div>
+               <div class="user">
+                 <div class="img"><img src="images/head.jpg" alt=""></div>
+                 <div class="name"><p>会员昵称</p></div>
+               </div>
+               <div class="mouey"><p>2.33元</p></div>
+             </div>
+              <div class="item">
+               <div class="time">
+                <p>周一</p>
+                <p>10-31</p>
+               </div>
+               <div class="user">
+                 <div class="img"><img src="images/head.jpg" alt=""></div>
+                 <div class="name"><p>会员昵称</p></div>
+               </div>
+               <div class="mouey"><p>2.33元</p></div>
+             </div>
+              <div class="item">
+               <div class="time">
+                <p>周一</p>
+                <p>10-31</p>
+               </div>
+               <div class="user">
+                 <div class="img"><img src="images/head.jpg" alt=""></div>
+                 <div class="name"><p>会员昵称</p></div>
+               </div>
+               <div class="mouey"><p>2.33元</p></div>
+             </div>
+              <div class="item">
+               <div class="time">
+                <p>周一</p>
+                <p>10-31</p>
+               </div>
+               <div class="user">
+                 <div class="img"><img src="images/head.jpg" alt=""></div>
+                 <div class="name"><p>会员昵称</p></div>
+               </div>
+               <div class="mouey"><p>2.33元</p></div>
+             </div>
+              <div class="item">
+               <div class="time">
+                <p>周一</p>
+                <p>10-31</p>
+               </div>
+               <div class="user">
+                 <div class="img"><img src="images/head.jpg" alt=""></div>
+                 <div class="name"><p>会员昵称</p></div>
+               </div>
+               <div class="mouey"><p>2.33元</p></div>
+             </div>
+           </div>
         </div>
-        <div class="list">2</div>
-        <div class="list">3</div>
+        <div class="list listComment">
+           <div class="title">
+             <div class="left">
+                <p>整体评价</p>
+                <div class="starN">
+                  <ul class="star4">
+                   <li>star1</li>
+                   <li>star2</li>
+                   <li>star3</li>
+                   <li>star4</li>
+                   <li>star5</li>
+                  </ul>
+                </div>  
+             </div>
+             <div class="right">
+               <select>
+                 <option value="">全部</option>
+                 <option value="">1星</option>
+                 <option value="">2星</option>
+                 <option value="">3星</option>
+                 <option value="">4星</option>
+                 <option value="">5星</option>
+               </select>
+             </div>
+           </div>
+           <div class="comment">
+              <div class="commentItem">
+                 <div class="head">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name"><p>会员昵称</p></div>
+                     <div class="starN">
+                      <ul class="star4">
+                       <li>star1</li>
+                       <li>star2</li>
+                       <li>star3</li>
+                       <li>star4</li>
+                       <li>star5</li>
+                      </ul>
+                    </div>  
+                 </div>
+                 <p>这里是会员点评文本，直接读程序。具体是甚么不要问我 我只负责用文字填充满这块地方而已。这里是会员点评文本，直接读程序。具体是甚么不要问我 我只负责用文字填充满这块地方而已。</p>
+              </div>
+              <div class="commentItem">
+                 <div class="head">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name"><p>会员昵称</p></div>
+                     <div class="starN">
+                      <ul class="star4">
+                       <li>star1</li>
+                       <li>star2</li>
+                       <li>star3</li>
+                       <li>star4</li>
+                       <li>star5</li>
+                      </ul>
+                    </div>  
+                 </div>
+                 <p>这里是会员点评文本，直接读程序。具体是甚么不要问我 我只负责用文字填充满这块地方而已。这里是会员点评文本，直接读程序。具体是甚么不要问我 我只负责用文字填充满这块地方而已。</p>
+              </div>
+              <div class="commentItem">
+                 <div class="head">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name"><p>会员昵称</p></div>
+                     <div class="starN">
+                      <ul class="star4">
+                       <li>star1</li>
+                       <li>star2</li>
+                       <li>star3</li>
+                       <li>star4</li>
+                       <li>star5</li>
+                      </ul>
+                    </div>  
+                 </div>
+                 <p>这里是会员点评文本，直接读程序。具体是甚么不要问我 我只负责用文字填充满这块地方而已。这里是会员点评文本，直接读程序。具体是甚么不要问我 我只负责用文字填充满这块地方而已。</p>
+              </div>
+           </div>
+        </div>
+        <div class="list listRanking">
+          <div class="ranking">
+            <ul class="rankingMeun">
+              <li class="meunActive">区域排名</li>
+              <li>全国排名</li>
+            </ul>
+            <div class="wholeArea">
+              <div class="wholeAreaList" style="display:block;">
+                <div class="meItem item">
+                  <div class="num">99999</div>
+                  <div class="user">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name">
+                      <h3>员工姓名</h3>
+                      <p>广州黄石大道店</p>
+                    </div>
+                  </div>
+                  <div class="text">被打赏89次</div>
+                </div>
+                <p>以下排名为当月排名</p>
+                <div class="item">
+                  <div class="num"><img src="images/one.png" alt=""></div>
+                  <div class="user">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name">
+                      <h3>员工姓名</h3>
+                      <p>广州黄石大道店</p>
+                    </div>
+                  </div>
+                  <div class="text">被打赏89次</div>
+                </div>
+                <div class="item">
+                  <div class="num"><img src="images/two.png" alt=""></div>
+                  <div class="user">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name">
+                      <h3>员工姓名</h3>
+                      <p>广州黄石大道店</p>
+                    </div>
+                  </div>
+                  <div class="text">被打赏89次</div>
+                </div>
+                <div class="item">
+                  <div class="num"><img src="images/three.png" alt=""></div>
+                  <div class="user">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name">
+                      <h3>员工姓名</h3>
+                      <p>广州黄石大道店</p>
+                    </div>
+                  </div>
+                  <div class="text">被打赏89次</div>
+                </div>
+                <div class="item">
+                  <div class="num">4</div>
+                  <div class="user">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name">
+                      <h3>员工姓名</h3>
+                      <p>广州黄石大道店</p>
+                    </div>
+                  </div>
+                  <div class="text">被打赏89次</div>
+                </div>
+                <div class="item">
+                  <div class="num">5</div>
+                  <div class="user">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name">
+                      <h3>员工姓名</h3>
+                      <p>广州黄石大道店</p>
+                    </div>
+                  </div>
+                  <div class="text">被打赏89次</div>
+                </div>
+              </div>
+              <div class="wholeAreaList">
+                <div class="meItem item">
+                  <div class="num">88888</div>
+                  <div class="user">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name">
+                      <h3>员工姓名</h3>
+                      <p>广州黄石大道店</p>
+                    </div>
+                  </div>
+                  <div class="text">被打赏89次</div>
+                </div>
+                <p>以下排名为当月排名</p>
+                <div class="item">
+                  <div class="num"><img src="images/one.png" alt=""></div>
+                  <div class="user">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name">
+                      <h3>员工姓名</h3>
+                      <p>广州黄石大道店</p>
+                    </div>
+                  </div>
+                  <div class="text">被打赏89次</div>
+                </div>
+                <div class="item">
+                  <div class="num"><img src="images/two.png" alt=""></div>
+                  <div class="user">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name">
+                      <h3>员工姓名</h3>
+                      <p>广州黄石大道店</p>
+                    </div>
+                  </div>
+                  <div class="text">被打赏89次</div>
+                </div>
+                <div class="item">
+                  <div class="num"><img src="images/three.png" alt=""></div>
+                  <div class="user">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name">
+                      <h3>员工姓名</h3>
+                      <p>广州黄石大道店</p>
+                    </div>
+                  </div>
+                  <div class="text">被打赏89次</div>
+                </div>
+                <div class="item">
+                  <div class="num">4</div>
+                  <div class="user">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name">
+                      <h3>员工姓名</h3>
+                      <p>广州黄石大道店</p>
+                    </div>
+                  </div>
+                  <div class="text">被打赏89次</div>
+                </div>
+                <div class="item">
+                  <div class="num">5</div>
+                  <div class="user">
+                    <div class="img"><img src="images/head.jpg" alt=""></div>
+                    <div class="name">
+                      <h3>员工姓名</h3>
+                      <p>广州黄石大道店</p>
+                    </div>
+                  </div>
+                  <div class="text">被打赏89次</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>	
-<script src="scripts/jquery-3.1.1.min.js"></script>
 <script src="scripts/upload.js"></script>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+$(function(){
+  $(".menu li").each(function(index){
+    $(this).on("click",function(){ 
+      if(index==2){
+        $(".menuIncite").addClass("menuRanking");
+      }
+      if(index==0 || index==1){
+        $(".menuIncite").removeClass("menuRanking");
+      }
+      $(this).addClass("active").siblings().removeClass("active");
+      $(".encourageContent .list").eq($(this).index()).show().siblings().hide(); 
+    }); 
+  });
+  $(".rankingMeun li").on("click",function(){
+     $(this).addClass("meunActive").siblings().removeClass("meunActive");
+     $(".wholeArea .wholeAreaList").eq($(this).index()).show().siblings().hide(); 
+  });
+});
+</script>
+
 </body>
 </html>
