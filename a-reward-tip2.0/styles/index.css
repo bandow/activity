@@ -182,13 +182,7 @@ html {
   display: -webkit-box;
   /*new*/
   display: -webkit-flex;
-  display: flex;
-  /*old*/
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-  /*new*/
-  justify-content: center;
-  align-items: center; }
+  display: flex; }
   .userInfo .head {
     position: relative;
     -webkitflex: 1;
@@ -267,7 +261,9 @@ html {
 .userDetailed > ul {
   width: 100%;
   height: auto;
-  overflow: hidden; }
+  overflow: hidden;
+  background: #fff;
+  z-index: 2; }
   .userDetailed > ul li {
     position: relative;
     float: left;
@@ -335,52 +331,63 @@ html {
     text-align: right; }
 
 .listComment .title {
+  position: relative;
   background-color: #f2f2f2;
-  height: 30px; }
+  height: auto;
+  overflow: hidden; }
   .listComment .title .left {
     float: left; }
     .listComment .title .left p {
       float: left;
       font: 0.75rem/2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
       color: #000; }
-    .listComment .title .left .starN {
-      margin-left: 3.5rem;
-      position: relative;
-      top: 3px; }
-      .listComment .title .left .starN ul li {
-        float: left;
-        display: block;
-        width: 20px;
-        height: 20px;
-        text-indent: -999px;
-        overflow: hidden;
-        margin-left: 6px; }
-        .listComment .title .left .starN ul li:first-child {
-          margin-left: 0; }
-      .listComment .title .left .starN .star1 {
-        background-position: -104px -60px; }
-      .listComment .title .left .starN .star2 {
-        background-position: -78px -60px; }
-      .listComment .title .left .starN .star3 {
-        background-position: -52px -30px; }
-      .listComment .title .left .starN .star4 {
-        background-position: -26px -30px; }
-      .listComment .title .left .starN .star5 {
-        background-position: 0 -30px; }
-  .listComment .title .right {
-    float: right; }
-    .listComment .title .right select {
-      position: relative;
-      top: 3px;
-      padding-left: 10px;
-      width: 69px;
+  .listComment .title .starN {
+    margin-left: 3.5rem;
+    position: absolute;
+    top: 50%;
+    -moz-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
+    .listComment .title .starN ul li {
+      float: left;
+      display: block;
+      width: 20px;
       height: 20px;
-      font: 0.75rem/20px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-      color: #666;
-      border: 0;
-      outline: none;
-      appearance: none;
-      -webkit-appearance: none; }
+      text-indent: -999px;
+      overflow: hidden;
+      margin-left: 6px; }
+      .listComment .title .starN ul li:first-child {
+        margin-left: 0; }
+    .listComment .title .starN .star1 {
+      background-position: -104px -60px; }
+    .listComment .title .starN .star2 {
+      background-position: -78px -60px; }
+    .listComment .title .starN .star3 {
+      background-position: -52px -30px; }
+    .listComment .title .starN .star4 {
+      background-position: -26px -30px; }
+    .listComment .title .starN .star5 {
+      background-position: 0 -30px; }
+  .listComment .title select {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    -moz-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    padding-left: 10px;
+    width: 69px;
+    height: 20px;
+    font: 0.75rem/20px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #666;
+    border: 0;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none; }
 
 .commentItem {
   padding: 3%;
@@ -419,8 +426,7 @@ html {
         font: 0.75rem/1.2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
         color: #333; }
     .commentItem .head .starN {
-      -webkitflex: 1;
-      flex: 1; }
+      width: 125px; }
       .commentItem .head .starN ul li {
         float: left;
         display: block;
@@ -482,7 +488,8 @@ html {
 .wholeArea .wholeAreaList {
   display: none; }
   .wholeArea .wholeAreaList .item {
-    padding: 3%;
+    padding: 3% 0;
+    margin: 0 3%;
     border-bottom: 1px solid #ccc;
     /*old*/
     display: -webkit-box;
@@ -495,15 +502,14 @@ html {
     /*new*/
     justify-content: center;
     align-items: center; }
-    .wholeArea .wholeAreaList .item > div {
-      -webkit-flex: 1;
-      flex: 1; }
     .wholeArea .wholeAreaList .item .num {
+      -webkit-flex: .7;
+      flex: .7;
       font: 0.6rem/1 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
       color: #e9443d;
       text-align: center; }
       .wholeArea .wholeAreaList .item .num img {
-        width: 30%; }
+        width: 40%; }
     .wholeArea .wholeAreaList .item .user {
       -webkit-flex: 2;
       flex: 2;
@@ -550,5 +556,44 @@ html {
     font: 0.7rem/25px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
     color: #333;
     text-align: center; }
+
+#updown {
+  position: fixed;
+  right: 2%;
+  bottom: 5%;
+  z-index: 2;
+  display: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-indent: -999px;
+  overflow: hidden;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.8); }
+  #updown:before {
+    content: "";
+    position: absolute;
+    top: .65rem;
+    left: .35rem;
+    width: .5rem;
+    height: .15rem;
+    background-color: #fff;
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  #updown:after {
+    content: "";
+    position: absolute;
+    top: .65rem;
+    right: .35rem;
+    width: .5rem;
+    height: .15rem;
+    background-color: #fff;
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg); }
 
 /*# sourceMappingURL=index.css.map */
