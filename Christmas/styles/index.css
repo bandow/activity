@@ -186,8 +186,22 @@ html {
     background-color: #fff; }
     .lampList em:nth-child(2n) {
       background-color: #fff9aa;
-      box-shadow: 1px 0 1px rgba(255, 249, 170, 0.8), -1px 0 1px rgba(255, 249, 170, 0.8), 0 -1px 1px rgba(255, 249, 170, 0.8), 0 1px 1px rgba(255, 249, 170, 0.8); }
+      box-shadow: 1px 0 1px rgba(255, 249, 170, 0.8), -1px 0 1px rgba(255, 249, 170, 0.8), 0 -1px 1px rgba(255, 249, 170, 0.8), 0 1px 1px rgba(255, 249, 170, 0.8);
+      -webkit-transition: all .5s;
+      transition: all .5s;
+      -webkit-animation: irradiance 2s infinite;
+      animation: irradiance 2s infinite; }
 
+@-webkit-keyframes irradiance {
+  from {
+    box-shadow: 1px 0 1px rgba(255, 255, 255, 0.8), -1px 0 1px rgba(255, 255, 255, 0.8), 0 -1px 1px rgba(255, 255, 255, 0.8), 0 1px 1px rgba(255, 255, 255, 0.8); }
+  to {
+    box-shadow: none; } }
+@keyframes irradiance {
+  from {
+    box-shadow: 1px 0 1px rgba(255, 255, 255, 0.8), -1px 0 1px rgba(255, 255, 255, 0.8), 0 -1px 1px rgba(255, 255, 255, 0.8), 0 1px 1px rgba(255, 255, 255, 0.8); }
+  to {
+    box-shadow: none; } }
 .prizeList {
   padding: 0 .5rem;
   margin: 0 .5rem;

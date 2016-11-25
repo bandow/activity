@@ -163,7 +163,33 @@ html{
 			-1px 0 1px rgba(255,249,170,.8),
 			0 -1px 1px rgba(255,249,170,.8),
 			0 1px 1px rgba(255,249,170,.8);
+			-webkit-transition:all .5s;
+			transition:all .5s;
+			-webkit-animation:irradiance 2s infinite;
+	        animation:irradiance 2s infinite;
 		}
+	}
+}
+@-webkit-keyframes irradiance{
+	from {
+		box-shadow:1px 0 1px rgba(255,255,255,.8),
+			-1px 0 1px rgba(255,255,255,.8),
+			0 -1px 1px rgba(255,255,255,.8),
+			0 1px 1px rgba(255,255,255,.8);
+		}
+	to{
+		box-shadow:none;
+	}
+}
+@keyframes irradiance{
+	from {
+		box-shadow:1px 0 1px rgba(255,255,255,.8),
+			-1px 0 1px rgba(255,255,255,.8),
+			0 -1px 1px rgba(255,255,255,.8),
+			0 1px 1px rgba(255,255,255,.8);
+		}
+	to{
+		box-shadow:none;
 	}
 }
 .prizeList{
