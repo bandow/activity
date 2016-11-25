@@ -105,10 +105,10 @@
   </div>
   <div class="ChristmasBtn">
     <a class="ruleBtn" href="javascript:;">活动规则</a>
-    <a href="#">我的奖品</a>
+    <a class="mePrize" href="javascript:;">我的奖品</a>
   </div>
   <div class="ChristmasFooter" style="background:url('images/Christmas_bottom.png') no-repeat;background-size:100% auto;">
-    <p>本次活动解释权归金逸影视、东呈酒店集团所有</p>
+    <p>本次活动解释权归金逸电影、东呈酒店集团所有</p>
   </div>
   <!-- 活动规则 begin-->
   <div class="layer ruleMask">
@@ -119,7 +119,7 @@
       <p>2. 每个用户限参加1次抽奖，分享本次活动到朋友圈可额外增加1次抽奖；</p>
       <p>3. 同一手机号码视为同一用户；</p>
       <p>4. 如发现通过非法手段作弊刷取奖品，活动主办方有权取消其获奖资格；</p>
-      <p>5. 奖品解释权归金逸电影、东呈酒店集团所有。</p>
+      <p>5. 本次活动解释权归金逸电影、东呈酒店集团所有。</p>
     </div>
   </div>
   <!-- 活动规则 end-->
@@ -196,8 +196,14 @@ $(function(){
       ruleMask();
   });
   //亲，您还参与没抽奖呢
-  $(".partake .btn,.partake .close").on("click",function(){
+  function mePrize(){
+    $(".partake").show();
+    $(".partake .btn,.partake .close").on("click",function(){
       $(".partake").hide();
+    });
+  }
+  $(".mePrize").on("click",function(){
+      mePrize();
   });
   //登录弹出框
   $(".loginMask .btn,.loginMask .close").on("click",function(){
