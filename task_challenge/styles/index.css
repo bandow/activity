@@ -153,11 +153,23 @@ body {
       white-space: nowrap; }
 
 .content {
+  position: relative;
   padding: 2%;
   margin-bottom: .5rem;
-  background: rgba(72, 42, 18, 0.5);
-  border-radius: 5px;
-  border: 1px solid #41350b; }
+  border-radius: 10px; }
+  .content .contentTop, .content .contentBottom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 0;
+    height: auto;
+    overflow: hidden; }
+    .content .contentTop img, .content .contentBottom img {
+      width: 100%; }
+  .content .contentBottom {
+    bottom: 0;
+    top: inherit; }
 
 .taskList {
   display: -webkit-box;
@@ -322,9 +334,7 @@ body {
   left: 50%;
   z-index: 1;
   display: none;
-  background-color: #211309;
-  border: 1px solid #41350b;
-  border-radius: 5px;
+  border-radius: 10px;
   -moz-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -337,9 +347,16 @@ body {
     width: .6rem; }
     .ruleLayer a img, .integralLayer a img, .loginLayer a img {
       width: 100%; }
+  .ruleLayer .ruleLayerTop, .integralLayer .ruleLayerTop, .loginLayer .ruleLayerTop, .ruleLayer .ruleLayerBottom, .integralLayer .ruleLayerBottom, .loginLayer .ruleLayerBottom {
+    width: 100%;
+    font-size: 0;
+    height: auto;
+    overflow: hidden; }
+    .ruleLayer .ruleLayerTop img, .integralLayer .ruleLayerTop img, .loginLayer .ruleLayerTop img, .ruleLayer .ruleLayerBottom img, .integralLayer .ruleLayerBottom img, .loginLayer .ruleLayerBottom img {
+      width: 100%; }
 
 .ruleText, .loginText {
-  padding: 5%; }
+  padding: 0 5%; }
   .ruleText img, .loginText img {
     padding: .5rem 0;
     width: 100%; }
@@ -348,23 +365,23 @@ body {
     color: #fbd789;
     margin-bottom: .2rem; }
 
-.integralLayer {
-  padding: 5%; }
-  .integralLayer h2 {
+.integralLayer .integralLayerMiddle {
+  padding: 0 5%; }
+  .integralLayer .integralLayerMiddle h2 {
     text-align: center;
     font: 0.8rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
     color: #fbd789; }
-    .integralLayer h2 strong {
+    .integralLayer .integralLayerMiddle h2 strong {
       color: #e71f19;
       font-weight: bold; }
-  .integralLayer a {
+  .integralLayer .integralLayerMiddle a {
     position: initial;
     display: block;
     width: 100%;
     font: 0.65rem/3 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
     color: #fff;
     text-align: center; }
-  .integralLayer button {
+  .integralLayer .integralLayerMiddle button {
     margin: 0 auto;
     display: block;
     outline: none;
@@ -375,9 +392,16 @@ body {
     background-color: #fbd789;
     color: #211309;
     border-radius: 30px; }
+.integralLayer .integralLayerTop, .integralLayer .integralLayerBottom {
+  width: 100%;
+  font-size: 0;
+  height: auto;
+  overflow: hidden; }
+  .integralLayer .integralLayerTop img, .integralLayer .integralLayerBottom img {
+    width: 100%; }
 
 .loginLayer > button {
-  margin: 0 auto 5%;
+  margin: 0 auto;
   display: block;
   outline: none;
   border: none;
@@ -386,6 +410,13 @@ body {
   font: 0.65rem/1.6rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
   background-color: #fbd789;
   border-radius: 30px; }
+.loginLayer .loginLayerTop, .loginLayer .loginLayerBottom {
+  width: 100%;
+  font-size: 0;
+  height: auto;
+  overflow: hidden; }
+  .loginLayer .loginLayerTop img, .loginLayer .loginLayerBottom img {
+    width: 100%; }
 
 .phoneName, .phoneCode {
   margin: 0 auto .5rem;

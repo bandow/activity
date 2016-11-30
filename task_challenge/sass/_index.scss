@@ -113,11 +113,27 @@ body{background-color:#000;}
     } 
 }
 .content{
+    position:relative;
 	padding:2%;
 	margin-bottom: .5rem;
-	background:rgba(72,42,18,.5);
-	border-radius:5px;
-	border:1px solid #41350b;
+	border-radius:10px;
+    .contentTop{
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        font-size:0;
+        height:auto;
+        overflow:hidden;
+        img{
+            width:100%
+        }
+    }
+    .contentBottom{
+        @extend .contentTop;
+        bottom:0;
+        top: inherit;
+    }
 }
 .taskList{
 	display:-webkit-box;
@@ -325,9 +341,7 @@ body{background-color:#000;}
 	left:50%;
 	z-index:1;
 	display:none;
-	background-color:$textColour;
-	border:1px solid #41350b;
-	border-radius:5px;
+	border-radius:10px;
 	@include transform(translate(-50%, -50%));
 	a{
 		position:absolute;
@@ -338,9 +352,21 @@ body{background-color:#000;}
 			width:100%;
 		}
 	}
+	.ruleLayerTop{
+        width:100%;
+        font-size:0;
+        height:auto;
+        overflow:hidden;
+        img{
+            width:100%
+        }
+    }
+    .ruleLayerBottom{
+        @extend .ruleLayerTop;
+    }
 }
 .ruleText{
-	padding:5%;
+	padding:0 5%;
 	img{
 		padding:.5rem 0;
 		width:100%;
@@ -353,41 +379,55 @@ body{background-color:#000;}
 }
 .integralLayer{
 	@extend .ruleLayer;
-	padding:5%;
-	h2{
-		text-align:center;
-		font:.8rem/1.5 $plainFont;
-		color:$taskListColour;
-		strong{
-            color:$strongColour;
-            font-weight:bold;
-		}
+	.integralLayerMiddle{
+	    padding:0 5%;
+    	h2{
+            text-align:center;
+            font:.8rem/1.5 $plainFont;
+            color:$taskListColour;
+            strong{
+                color:$strongColour;
+                font-weight:bold;
+            }
+        }
+        a{
+            position: initial;
+            display: block;
+            width:100%;
+            font:.65rem/3 $plainFont;
+            color:$whiteColour;
+            text-align:center;
+        }
+        button{
+            margin:0 auto;
+            display: block;
+            outline:none;
+            border:none;
+            width:50%;
+            height:1.5rem;
+            font:.65rem/1.6rem $plainFont;
+            background-color:$taskListColour;
+            color:$textColour;
+            border-radius:30px;
+        }
 	}
-	a{
-		position: initial;
-        display: block;
-		width:100%;
-		font:.65rem/3 $plainFont;
-		color:$whiteColour;
-		text-align:center;
-	}
-	button{
-        margin:0 auto;
-        display: block;
-        outline:none;
-        border:none;
-        width:50%;
-        height:1.5rem;
-        font:.65rem/1.6rem $plainFont;
-        background-color:$taskListColour;
-        color:$textColour;
-        border-radius:30px;
-	}
+	.integralLayerTop{
+        width:100%;
+        font-size:0;
+        height:auto;
+        overflow:hidden;
+        img{
+            width:100%
+        }
+    }
+    .integralLayerBottom{
+        @extend .integralLayerTop;
+    }
 }
 .loginLayer{
 	@extend .ruleLayer;
 	>button{
-		margin:0 auto 5%;
+		margin:0 auto;
         display: block;
         outline:none;
         border:none;
@@ -397,6 +437,18 @@ body{background-color:#000;}
         background-color:$taskListColour;
         border-radius:30px;
 	}
+	.loginLayerTop{
+        width:100%;
+        font-size:0;
+        height:auto;
+        overflow:hidden;
+        img{
+            width:100%
+        }
+    }
+    .loginLayerBottom{
+        @extend .loginLayerTop;
+    }
 }
 .loginText{
     @extend	.ruleText;
