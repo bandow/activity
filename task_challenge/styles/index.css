@@ -329,7 +329,7 @@ body {
 
 .ruleLayer, .integralLayer, .loginLayer {
   position: fixed;
-  width: 90%;
+  width: 80%;
   top: 50%;
   left: 50%;
   z-index: 1;
@@ -342,17 +342,10 @@ body {
   transform: translate(-50%, -50%); }
   .ruleLayer a, .integralLayer a, .loginLayer a {
     position: absolute;
-    top: 2%;
+    top: 0;
     right: 2%;
     width: .6rem; }
     .ruleLayer a img, .integralLayer a img, .loginLayer a img {
-      width: 100%; }
-  .ruleLayer .ruleLayerTop, .integralLayer .ruleLayerTop, .loginLayer .ruleLayerTop, .ruleLayer .ruleLayerBottom, .integralLayer .ruleLayerBottom, .loginLayer .ruleLayerBottom {
-    width: 100%;
-    font-size: 0;
-    height: auto;
-    overflow: hidden; }
-    .ruleLayer .ruleLayerTop img, .integralLayer .ruleLayerTop img, .loginLayer .ruleLayerTop img, .ruleLayer .ruleLayerBottom img, .integralLayer .ruleLayerBottom img, .loginLayer .ruleLayerBottom img {
       width: 100%; }
 
 .ruleText, .loginText {
@@ -362,15 +355,15 @@ body {
     width: 100%; }
   .ruleText p, .loginText p {
     font: 0.65rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-    color: #fbd789;
-    margin-bottom: .2rem; }
+    color: #211309;
+    padding-bottom: .2rem; }
 
 .integralLayer .integralLayerMiddle {
-  padding: 0 5%; }
+  padding: 5%; }
   .integralLayer .integralLayerMiddle h2 {
     text-align: center;
     font: 0.8rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-    color: #fbd789; }
+    color: #211309; }
     .integralLayer .integralLayerMiddle h2 strong {
       color: #e71f19;
       font-weight: bold; }
@@ -379,7 +372,7 @@ body {
     display: block;
     width: 100%;
     font: 0.65rem/3 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-    color: #fff;
+    color: #0000ff;
     text-align: center; }
   .integralLayer .integralLayerMiddle button {
     margin: 0 auto;
@@ -389,34 +382,25 @@ body {
     width: 50%;
     height: 1.5rem;
     font: 0.65rem/1.6rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-    background-color: #fbd789;
+    background-color: #fee2a1;
     color: #211309;
     border-radius: 30px; }
-.integralLayer .integralLayerTop, .integralLayer .integralLayerBottom {
-  width: 100%;
-  font-size: 0;
-  height: auto;
-  overflow: hidden; }
-  .integralLayer .integralLayerTop img, .integralLayer .integralLayerBottom img {
-    width: 100%; }
 
-.loginLayer > button {
-  margin: 0 auto;
-  display: block;
-  outline: none;
-  border: none;
-  width: 50%;
-  height: 1.5rem;
-  font: 0.65rem/1.6rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
-  background-color: #fbd789;
-  border-radius: 30px; }
-.loginLayer .loginLayerTop, .loginLayer .loginLayerBottom {
-  width: 100%;
-  font-size: 0;
-  height: auto;
-  overflow: hidden; }
-  .loginLayer .loginLayerTop img, .loginLayer .loginLayerBottom img {
-    width: 100%; }
+.loginLayer {
+  display: block; }
+  .loginLayer .loginLayerMiddle {
+    padding-bottom: 3%; }
+    .loginLayer .loginLayerMiddle > button {
+      margin: 0 auto;
+      display: block;
+      outline: none;
+      border: none;
+      width: 50%;
+      height: 1.5rem;
+      font: 0.65rem/1.6rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      background-color: #fee2a1;
+      border-radius: 30px;
+      color: #211309; }
 
 .phoneName, .phoneCode {
   margin: 0 auto .5rem;
@@ -429,11 +413,11 @@ body {
     outline: none;
     width: 80%;
     height: 100%;
-    color: #fbd789;
+    color: #211309;
     -webkit-appearance: none;
     appearance: none; }
     .phoneName input::-webkit-input-placeholder, .phoneCode input::-webkit-input-placeholder {
-      color: #fbd789;
+      color: #211309;
       font: 0.65rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
 
 .phoneCode {

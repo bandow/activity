@@ -18,7 +18,10 @@
 	.taskList li.active{background:url("images/nav_active_btn.png") no-repeat;background-size:100% auto;}
 	.allList .list .btn{background:url("images/btn.png") #fe391e no-repeat;background-size:100% 100%;}
 	.centrality .haveCentrality .item{background:url("images/line.png") center bottom no-repeat;background-size:100% 1px;}
-	.content,.ruleLayer,.integralLayer,.loginLayer{background: url(images/border_middle.png) repeat-y;background-size:100% auto;}
+	.content{background: url(images/border_middle.png) repeat-y;background-size:100% auto;}
+	.ruleText,.integralLayerMiddle,.loginLayerMiddle{background: url(images/mask_middle.png) repeat-y;background-size:100% auto;}
+	.ruleLayerTop,.integralLayerTop,.loginLayerTop{background: url(images/mask_top.png) no-repeat;background-size:100% auto;height:.4rem;}
+	.ruleLayerBottom,.integralLayerBottom,.loginLayerBottom{background: url(images/mask_bottom.png) top center no-repeat;background-size:100% auto;height:.4rem;}
 </style>
 </head>
 <body>
@@ -294,7 +297,7 @@
 	</div>
 	<!-- 活动规则弹出层 begin -->
 	<div class="ruleLayer">
-		<div class="ruleLayerTop"><img src="images/border_top.png" alt="" /></div>
+		<div class="ruleLayerTop"></div>
 	    <a id="close" href="javascript:;"><img src="images/colse.png" alt=""></a>
 	    <div class="ruleText">
 	    	<img src="images/rule_title.png" alt="">
@@ -306,25 +309,26 @@
 	    	<p>6. 赠送积分2年有效。</p>
 	    	<p>7. 一经发现任何违规套取奖励的行为，将不予奖励、追回所有奖励并取消活动资格。在法律允许的范围内，东呈酒店集团对此活动拥有最终解释权。</p>
 	    </div>
-	    <div class="ruleLayerBottom"><img src="images/border_bottom.png" alt="" /></div>
+	    <div class="ruleLayerBottom"></div>
 	</div>
 	<!-- 活动规则弹出层 end -->
 	<!-- 积分弹窗 begin -->
     <div class="integralLayer">
-    	<div class="integralLayerTop"><img src="images/border_top.png" alt="" /></div>
+    	<div class="integralLayerTop"></div>
     	<div class="integralLayerMiddle">
     		<h2>恭喜您获得【高级特工】任务<br>奖励<strong>300积分</strong></h2>
 	        <a href="">查看积分明细></a>
 	        <button class="know">我知道了</button>
     	</div>
-        <div class="integralLayerBottom"><img src="images/border_bottom.png" alt="" /></div>
+        <div class="integralLayerBottom"></div>
     </div>
 	<!-- 积分弹窗 end -->
 	<!-- 登录弹窗 begin -->
 	<div class="loginLayer">
-		<div class="loginLayerTop"><img src="images/border_top.png" alt="" /></div>
+		<div class="loginLayerTop"></div>
 		<a id="loginClose" href="javascript:;"><img src="images/colse.png" alt=""></a>
-		<div class="loginText">
+		<div class="loginLayerMiddle">
+			<div class="loginText">
 			<img src="images/login_title.png" alt="">
 			<div class="phoneName" style="background:url('images/phone_bg.png') no-repeat;background-size:100% auto;">
 				<input type="text" placeholder="请填写手机号码">
@@ -339,7 +343,8 @@
 			</div>
 		</div>
 		<button class="loginKnow">我知道了</button>
-		<div class="loginLayerBottom"><img src="images/border_bottom.png" alt="" /></div>
+		</div>
+		<div class="loginLayerBottom"></div>
 	</div>
 	<!-- 登录弹窗 end -->
 	<!-- script begin -->
