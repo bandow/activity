@@ -161,6 +161,11 @@
     </div>
   </div> -->
   <!-- 中奖弹出框 end-->
+  <!--分享朋友圈 begin-->
+  <div class="share">
+  	<img src="images/share.png"/>
+  </div>
+  <!--分享朋友圈 end-->
 </div>	
 <script src="scripts/jquery-3.1.1.min.js"></script>
 <script src="scripts/jquery.slotmachine.js"></script>
@@ -208,6 +213,10 @@ $(function(){
   //登录弹出框
   $(".loginMask .btn,.loginMask .close").on("click",function(){
       $(".loginMask").hide();
+  });
+  //分享朋友圈
+  $(".share").on("click",function(){
+  	$(this).hide();
   });
   //中奖弹出框
   var arrText = [];

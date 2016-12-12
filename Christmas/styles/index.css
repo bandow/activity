@@ -83,12 +83,18 @@ html {
 @media (min-device-width: 480px) {
   html {
     font-size: 26px; } }
-@media (min-device-width: 568px) {
+@media (min-device-width: 520px) {
   html {
-    font-size: 28px; } }
+    font-size: 27px; } }
 @media (min-device-width: 533px) {
   html {
     font-size: 28px; } }
+@media (min-device-width: 560px) {
+  html {
+    font-size: 29px; } }
+@media (min-device-width: 568px) {
+  html {
+    font-size: 29px; } }
 @media (min-device-width: 600px) {
   html {
     font-size: 30px; } }
@@ -454,5 +460,19 @@ html {
     text-align: center;
     text-decoration: none;
     border-radius: 5px; }
+
+.share {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  background-color: #000;
+  opacity: .8;
+  text-align: right; }
+  .share img {
+    width: 60%;
+    height: auto; }
 
 /*# sourceMappingURL=index.css.map */

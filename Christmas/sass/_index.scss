@@ -476,3 +476,19 @@ html{font-size:18px;}
        	border-radius:5px;
 	}
 }
+
+.share{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:3;
+    background-color:#000;
+    opacity:.8;
+    text-align: right;
+    img{
+        width:60%;
+        height:auto;
+    }
+}
