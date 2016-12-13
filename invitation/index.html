@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content="不超过80个字符"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<!-- <meta name="viewport" content="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no"> -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>邀请函</title>
+<link rel="stylesheet" href="styles/index.css">
+<style>
+	.page1{
+	    background:url(images/page1_bg.jpg) no-repeat;
+	    background-size:100% 100%;
+	}
+	.page2{
+	    background:url(images/page2_bg.jpg) no-repeat;
+	    background-size:100% 100%;
+	}
+	.start b{
+		background:url(images/arrow.png) no-repeat;
+		background-size: 100% 100%;
+	}
+</style>
+<body>
+<div class="wp">
+    <div class="wp-inner">
+        <div class="page page1">
+            <!--<div class="js-animate animated" data-animate="bounce">bounce</div>-->
+            <div class="pageList1">
+            	<img src="images/page1-1.png"/>
+            </div>
+             <div class="pageList2">
+            	<img src="images/page1-2.png"/>
+            </div>
+             <div class="pageList3">
+            	<img src="images/page1-3.png"/>
+            </div>
+        </div>
+        <div class="page page2">
+            <!--<div class="js-animate animated" data-animate="bounceIn">bounceIn</div>-->
+            <div class="pageList1-1">
+            	<img src="images/page2-1.png"/>
+            </div>
+             <div class="pageList1-2">
+            	<img src="images/page2-2.png"/>
+            </div>
+             <div class="pageList1-3">
+            	<img src="images/page2-3.png"/>
+            </div>
+             <div class="pageList1-4">
+            	<img src="images/page2-4.png"/>
+            </div>
+             <div class="pageList1-5">
+            	<img src="images/page2-5.png"/>
+            </div>
+             <div class="pageList1-6">
+            	<img src="images/page2-6.png"/>
+            </div>
+             <div class="pageList1-7">
+            	<img src="images/page2-7.png"/>
+            </div>
+             <div class="pageList1-8">
+            	<img src="images/page2-8.png"/>
+            </div>
+            <div class="pageList1-9">
+            	<button id="signUp">马上报名</button>
+            </div>
+        </div>
+    </div>
+</div>	
+<span class="start"><b></b></span>
+<!--login mask begin-->
+<div class="mask loginMask" id="loginMask">
+	<div class="close"><img src="images/close.png"/></div>
+	<h2>报名参与</h2>
+	<form action="#">
+	  <label class="name"><input type="text" name="" id="" value="" placeholder="姓名" /></label>
+	  <label class="phone"><input type="text" name="" id="" value="" placeholder="手机号" /></label>
+	  <button class="btn" id="loginBtn" type="submit">确定</button>
+	</form>
+</div>
+<!--login mask end-->
+<!--text mask begin-->
+<div class="mask textMask" id="textMask">
+	<div class="close"><img src="images/close.png"/></div>
+	<h2>报名参与</h2>
+    <p class="content">您好！感谢你报名参加东呈会新品发布会，由于报名人数火爆，具体邀请成功后客服会第一时间联系到您。</p>
+	<button class="btn" id="textBtn" type="submit">确定</button>
+</div>
+<!--text mask end-->
+
+
+<!--scripts begin-->
+<script src="scripts/index.js"></script>
+<script>
+	var forEach = [].forEach;
+    document.getElementsByClassName('wp-inner')[0].fullpage({
+        change: function (e) {
+            // 移除动画属性
+            forEach.call(document.querySelectorAll('.page')[e.cur].querySelectorAll('.js-animate'), function (v) {
+                v.classList.remove(v.dataset['animate']);
+                v.classList.add('hide');
+            });
+        },
+        afterChange: function (e) {
+            // 添加动画属性
+            forEach.call(document.querySelectorAll('.page')[e.cur].querySelectorAll('.js-animate'), function(v) {
+                v.classList.add(v.dataset['animate']);
+                v.classList.remove('hide');
+            });
+        }
+    });
+    
+    function $(id){
+	    if(typeof id === 'string' && id.constructor === String){
+	        return document.getElementById(id);
+	    }else{
+	        return;
+	    }
+	}  
+    function loginMaskShow(){ 	
+    	var close=$('loginMask').getElementsByTagName("div")[0];
+    	$('loginMask').style.display='block';
+    	close.addEventListener("touchstart", loginMaskHide);
+    }
+    function loginMaskHide(){
+    	$('loginMask').style.display='none';
+    }
+    function textMaskShow(){ 	
+    	var close=$('textMask').getElementsByTagName("div")[0];
+    	$('textMask').style.display='block';
+    	$('loginMask').style.display='none';
+    	close.addEventListener("touchstart", textMaskHide);
+    }
+    function textMaskHide(){
+    	$('textMask').style.display='none';
+    }
+    window.onload=function(){	
+    	$('signUp').addEventListener("touchstart", loginMaskShow);
+    	$('loginBtn').addEventListener("touchstart", textMaskShow);
+    	$('textBtn').addEventListener("touchstart", textMaskHide);	
+    }
+</script>
+<!--scripts end-->
+</body>
+</html>
