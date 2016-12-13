@@ -174,11 +174,12 @@ $(function(){
   //wrapper高度控制
   var wrapperH=$(".wrapper").height();
   var windowH=$(window).height();
+  console.log(wrapperH,windowH);
   if(windowH>wrapperH){
-    $(".wrapper").css("height","100%");
+    $(".wrapper").css({height:"100%"});
     $(".ChristmasFooter").css("position","absolute");
   }else if(wrapperH>=windowH){
-    $(".wrapper").css("height","auto");
+    $(".wrapper").css({height:"auto"});
     $(".ChristmasFooter").css("position","inherit");
   } 
   //抽中了滚动
