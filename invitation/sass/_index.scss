@@ -116,7 +116,7 @@ html{font-size:18px;}
     }
 }
 .start{
-    position: fixed;
+    position: absolute;
     left: 50%;
     margin-left: -17px;
     top: 95%;
@@ -241,7 +241,7 @@ html{font-size:18px;}
         -webkit-transition:all .3s 1.2s;
         transition:all .3s 1.2s;
         img{
-            width:40%;
+            width:60%;
         }
     }
     .pageList1-5{
@@ -278,19 +278,45 @@ html{font-size:18px;}
     }
     .pageList1-9{
         top:80%;
+        left: 25%;
+        width: 50%;
+        margin: 0 auto;
+        overflow: hidden;
         button{
             border:none;
             outline:none;
             background:none;
             background-color:#efa511;
             border-radius:5px;
-            width:30%;
+            width:60%;
             color:$colorWhite;
             font:.7rem/2rem $publicFont;
-            -webkit-transition:all .5s;
-            transition:all .5s;
+            -webkit-transition:all .2s;
+            transition:all .2s;
+        }
+        .lineLight{
+            position: absolute;
+            top: 0;
+            left:0%;
+            width: 100%;
+            height: 20px;
+            background:rgba(255,255,255,.1);
+            @include transform(rotate(45deg));
+            -webkit-animation:lineL 1s infinite;
+            animation:lineL 1s infinite;
         }
     }
+}
+@keyframes lineL
+{
+from {left:35%;}
+to {left:-100%;}
+}
+
+@-webkit-keyframes lineL /*Safari and Chrome*/
+{
+from {left:35%;;}
+to {left:-100%;}
 }
 .cur{
     position:relative;
@@ -322,7 +348,7 @@ html{font-size:18px;}
     .pageList1-4{
         top:25%;
         img{
-            width:40%;
+            width:60%;
         }
     }
     .pageList1-5{
@@ -349,15 +375,19 @@ html{font-size:18px;}
             width:40%;
         }
     }
-    .pageList1-9{
+    .pageList1-9{ 
         top:80%;
+        left: 25%;
+        width: 50%;
+        margin: 0 auto;
+        overflow: hidden;
         button{
             border:none;
             outline:none;
             background:none;
             background-color:#efa511;
             border-radius:5px;
-            width:50%;
+            width:100%;
             color:$colorWhite;
             font:.7rem/2rem $publicFont;
         }
