@@ -186,7 +186,7 @@ html {
   position: relative; }
   .page1 .pageList1, .page1 .pageList2, .page1 .pageList3 {
     position: absolute;
-    top: 28%;
+    top: 33%;
     width: 100%;
     height: auto;
     opacity: 0;
@@ -195,11 +195,11 @@ html {
     .page1 .pageList1 img, .page1 .pageList2 img, .page1 .pageList3 img {
       width: 60%; }
   .page1 .pageList2 {
-    top: 45%;
+    top: 50%;
     -webkit-transition: all .3s .6s;
     transition: all .3s .6s; }
   .page1 .pageList3 {
-    top: 55%;
+    top: 60%;
     -webkit-transition: all .3s .9s;
     transition: all .3s .9s; }
 
@@ -225,49 +225,49 @@ html {
     font-size: 0;
     opacity: 0; }
   .page2 .pageList1-1 {
-    top: 10%;
+    top: 15%;
     -webkit-transition: all .3s;
     transition: all .3s; }
     .page2 .pageList1-1 img {
       width: 40%; }
   .page2 .pageList1-2 {
-    top: 15%;
+    top: 20%;
     -webkit-transition: all .3s .6s;
     transition: all .3s .6s; }
     .page2 .pageList1-2 img {
       width: 60%; }
   .page2 .pageList1-3 {
-    top: 20%;
+    top: 25%;
     -webkit-transition: all .3s .9s;
     transition: all .3s .9s; }
     .page2 .pageList1-3 img {
       width: 40%; }
   .page2 .pageList1-4 {
-    top: 25%;
+    top: 30%;
     -webkit-transition: all .3s 1.2s;
     transition: all .3s 1.2s; }
     .page2 .pageList1-4 img {
       width: 40%; }
   .page2 .pageList1-5 {
-    top: 30%;
+    top: 35%;
     -webkit-transition: all .3s 1.5s;
     transition: all .3s 1.5s; }
     .page2 .pageList1-5 img {
       width: 90%; }
   .page2 .pageList1-6 {
-    top: 40%;
+    top: 45%;
     -webkit-transition: all .3s 1.8s;
     transition: all .3s 1.8s; }
     .page2 .pageList1-6 img {
       width: 80%; }
   .page2 .pageList1-7 {
-    top: 65%;
+    top: 70%;
     -webkit-transition: all .3s 2.1s;
     transition: all .3s 2.1s; }
     .page2 .pageList1-7 img {
       width: 60%; }
   .page2 .pageList1-8 {
-    top: 72%;
+    top: 77%;
     -webkit-transition: all .3s 2.4s;
     transition: all .3s 2.4s; }
     .page2 .pageList1-8 img {
@@ -337,6 +337,53 @@ html {
       width: 50%;
       color: #fff;
       font: 0.7rem/2rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+
+.page3 {
+  position: relative; }
+  .page3 .pageList2-1, .page3 .pageList2-2, .page3 .pageList2-3 {
+    font-size: 0;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+  .page3 .pageList2-2 {
+    top: 20%;
+    -webkit-transition: all .3s .6s;
+    transition: all .3s .6s; }
+  .page3 .pageList2-3 {
+    top: inherit;
+    bottom: 0;
+    -webkit-transition: all .3s .9s;
+    transition: all .3s .9s;
+    -moz-transform: scale(10);
+    -o-transform: scale(10);
+    -ms-transform: scale(10);
+    -webkit-transform: scale(10);
+    transform: scale(10); }
+
+.cur .pageList2-1, .cur .pageList2-2, .cur .pageList2-3 {
+  position: absolute;
+  top: 8%;
+  width: 100%;
+  height: auto;
+  opacity: 1; }
+  .cur .pageList2-1 img, .cur .pageList2-2 img, .cur .pageList2-3 img {
+    width: 80%; }
+.cur .pageList2-2 {
+  top: 16%; }
+.cur .pageList2-3 {
+  top: inherit;
+  bottom: 0;
+  -moz-transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1); }
+  .cur .pageList2-3 img {
+    width: 60%; }
 
 .mask {
   position: fixed;

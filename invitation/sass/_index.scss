@@ -160,7 +160,7 @@ html{font-size:18px;}
      position:relative;
     .pageList1{
         position:absolute;
-        top:28%;
+        top:33%;
         width:100%;
         height:auto;
         opacity:0;
@@ -172,13 +172,13 @@ html{font-size:18px;}
     }
     .pageList2{
         @extend .pageList1;
-        top:45%;
+        top:50%;
         -webkit-transition:all .3s .6s;
         transition:all .3s .6s;
     }
     .pageList3{
         @extend .pageList1;
-        top:55%;
+        top:60%;
          -webkit-transition:all .3s .9s;
         transition:all .3s .9s;
     }
@@ -213,7 +213,7 @@ html{font-size:18px;}
         opacity:0;
     }
     .pageList1-1{
-        top:10%;
+        top:15%;
         -webkit-transition:all .3s;
         transition:all .3s;
         img{
@@ -221,7 +221,7 @@ html{font-size:18px;}
         }
     }
     .pageList1-2{
-        top:15%;
+        top:20%;
         -webkit-transition:all .3s .6s;
         transition:all .3s .6s;
         img{
@@ -229,7 +229,7 @@ html{font-size:18px;}
         }
     }
     .pageList1-3{
-        top:20%;
+        top:25%;
         -webkit-transition:all .3s .9s;
         transition:all .3s .9s;
         img{
@@ -237,7 +237,7 @@ html{font-size:18px;}
         }
     }
     .pageList1-4{
-        top:25%;
+        top:30%;
         -webkit-transition:all .3s 1.2s;
         transition:all .3s 1.2s;
         img{
@@ -245,7 +245,7 @@ html{font-size:18px;}
         }
     }
     .pageList1-5{
-        top:30%;
+        top:35%;
         -webkit-transition:all .3s 1.5s;
         transition:all .3s 1.5s;
         img{
@@ -253,7 +253,7 @@ html{font-size:18px;}
         }
     }
     .pageList1-6{
-        top:40%;
+        top:45%;
         -webkit-transition:all .3s 1.8s;
         transition:all .3s 1.8s;
         img{
@@ -261,7 +261,7 @@ html{font-size:18px;}
         }
     }
     .pageList1-7{
-        top:65%;
+        top:70%;
         -webkit-transition:all .3s 2.1s;
         transition:all .3s 2.1s;
         img{
@@ -269,7 +269,7 @@ html{font-size:18px;}
         }
     }
     .pageList1-8{
-        top:72%;
+        top:77%;
         -webkit-transition:all .3s 2.4s;
         transition:all .3s 2.4s;
         img{
@@ -363,7 +363,58 @@ html{font-size:18px;}
         }
     }
 }
-
+.page3{
+    position:relative;
+    .pageList2-1{
+        font-size:0;
+        position:absolute;
+        top:10%;
+        width:100%;
+        height:auto;
+        opacity:0;
+        -webkit-transition:all .3s;
+        transition:all .3s;
+    }
+    .pageList2-2{
+        @extend .pageList2-1;
+        top:20%;
+        -webkit-transition:all .3s .6s;
+        transition:all .3s .6s;
+    }
+    .pageList2-3{
+        @extend .pageList2-1;
+        top:inherit;
+        bottom:0;
+        -webkit-transition:all .3s .9s;
+        transition:all .3s .9s;
+        @include transform(scale(10));
+    }
+}
+.cur{
+    .pageList2-1{
+        position:absolute;
+        top:8%;
+        width:100%;
+        height:auto;
+        opacity:1;
+        img{
+            width:80%;
+        }
+    }
+    .pageList2-2{
+        @extend .pageList2-1;
+        top:16%;
+    }
+    .pageList2-3{
+        @extend .pageList2-1;    
+        top:inherit;
+        bottom:0;
+        @include transform(scale(1));
+        img{
+            width:60%;
+        }
+    }
+}
 .mask{
     position:fixed;
     top:50%;
