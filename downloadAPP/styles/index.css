@@ -1,0 +1,356 @@
+@charset "UTF-8";
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2016-10-18
+* Version:0.0.1
+* ================================================================== */
+html {
+  font-family: "Microsoft YaHei","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  /*-webkit-text-size-adjust是解决 iPhone 横屏时默认会放大文字的问题*/
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+html, body {
+  /*-webkit-user-select:none禁止用户进行复制.选择.*/
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  /*使用min-height:100%代替height：100%*/
+  height: 100%;
+  min-height: 100%; }
+
+body {
+  /*弹性滚动-局部滚动开启弹性滚动：将属性挂在body上，可以避免很多奇怪的bug。*/
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, div, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  /*把所有元素的内边距和边框不再会增加它的宽度*/
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  box-sizing: border-box; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-size: 18px; }
+
+@media (min-device-width: 320px) {
+  html {
+    font-size: 18px; } }
+@media (min-device-width: 360px) {
+  html {
+    font-size: 20px; } }
+@media (min-device-width: 375px) {
+  html {
+    font-size: 21px; } }
+@media (min-device-width: 384px) {
+  html {
+    font-size: 21px; } }
+@media (min-device-width: 400px) {
+  html {
+    font-size: 22px; } }
+@media (min-device-width: 414px) {
+  html {
+    font-size: 23px; } }
+@media (min-device-width: 480px) {
+  html {
+    font-size: 26px; } }
+@media (min-device-width: 520px) {
+  html {
+    font-size: 27px; } }
+@media (min-device-width: 533px) {
+  html {
+    font-size: 28px; } }
+@media (min-device-width: 560px) {
+  html {
+    font-size: 29px; } }
+@media (min-device-width: 568px) {
+  html {
+    font-size: 29px; } }
+@media (min-device-width: 600px) {
+  html {
+    font-size: 30px; } }
+@media (min-device-width: 640px) {
+  html {
+    font-size: 24px; } }
+/* public css begin */
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  min-height: 320px;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden; }
+
+.wp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; }
+
+.page {
+  text-align: center;
+  background-color: #020202; }
+
+/* 箭头 */
+@-webkit-keyframes start {
+  0%,30% {
+    opacity: 0.2;
+    -webkit-transform: translate(0, 10px); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0); }
+  100% {
+    opacity: 0.2;
+    -webkit-transform: translate(0, -5px); } }
+@keyframes start {
+  0%,30% {
+    opacity: 0.2;
+    transform: translate(0, 10px); }
+  60% {
+    opacity: 1;
+    transform: translate(0, 0); }
+  100% {
+    opacity: 0.2;
+    transform: translate(0, -5px); } }
+.start {
+  position: absolute;
+  left: 50%;
+  margin-left: -17px;
+  top: 95%;
+  margin-top: -34px;
+  width: 34px;
+  height: 34px; }
+
+.start b {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  margin-left: -9px;
+  width: 19px;
+  height: 12px;
+  -webkit-animation: start 1.5s infinite ease-in-out;
+  animation: start 1.5s infinite ease-in-out; }
+
+.fullPage-wp {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+  .fullPage-wp:after {
+    display: block;
+    content: ' ';
+    height: 0;
+    clear: both; }
+
+.fullPage-wp.anim {
+  -webkit-transition: all 500ms ease-out 0s;
+  transition: all 500ms ease-out 0s; }
+
+.fullPage-page {
+  display: block;
+  overflow: hidden; }
+
+.fullPage-dir-h {
+  float: left; }
+
+.page1 {
+  position: relative; }
+  .page1 .page1-t {
+    position: absolute;
+    top: 20%;
+    left: -100%;
+    width: 70%;
+    font-size: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+    .page1 .page1-t img {
+      width: 100%; }
+  .page1 .page1-b {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    font-size: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+    .page1 .page1-b img {
+      width: 100%; }
+
+.page2 {
+  position: relative; }
+  .page2 .page2-t {
+    position: absolute;
+    top: 10%;
+    left: -100%;
+    width: 70%;
+    font-size: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+    .page2 .page2-t img {
+      width: 100%; }
+  .page2 .page2-b {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    font-size: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+    .page2 .page2-b img {
+      width: 100%; }
+
+.page3 {
+  position: relative; }
+  .page3 .page3-t {
+    position: absolute;
+    top: 20%;
+    left: -100%;
+    width: 70%;
+    font-size: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+    .page3 .page3-t img {
+      width: 100%; }
+  .page3 .page3-b {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    font-size: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+    .page3 .page3-b img {
+      width: 100%; }
+
+.page4 {
+  position: relative; }
+  .page4 .page4-t {
+    position: absolute;
+    top: 10%;
+    left: -100%;
+    width: 100%;
+    font-size: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+    .page4 .page4-t img {
+      width: 80%; }
+  .page4 .page4-c {
+    position: absolute;
+    top: 80%;
+    left: 15%;
+    width: 70%;
+    font-size: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+    .page4 .page4-c img {
+      width: 70%; }
+  .page4 .page4-b {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    width: 100%;
+    font-size: 0;
+    -webkit-transition: all 1s;
+    transition: all 1s; }
+    .page4 .page4-b img {
+      width: 100%; }
+
+.cur .page1-t {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 70%;
+  font-size: 0; }
+  .cur .page1-t img {
+    width: 100%; }
+.cur .page1-b {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0; }
+  .cur .page1-b img {
+    width: 100%; }
+.cur .page2-t {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 70%;
+  font-size: 0; }
+  .cur .page2-t img {
+    width: 100%; }
+.cur .page2-b {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0; }
+  .cur .page2-b img {
+    width: 100%; }
+.cur .page3-t {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 70%;
+  font-size: 0; }
+  .cur .page3-t img {
+    width: 100%; }
+.cur .page3-b {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0; }
+  .cur .page3-b img {
+    width: 100%; }
+.cur .page4-t {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  font-size: 0; }
+  .cur .page4-t img {
+    width: 80%; }
+.cur .page4-c {
+  position: absolute;
+  top: 70%;
+  left: 15%;
+  z-index: 1;
+  width: 70%;
+  font-size: 0; }
+  .cur .page4-c img {
+    width: 70%; }
+.cur .page4-b {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0;
+  opacity: 1; }
+  .cur .page4-b img {
+    width: 100%; }
+
+/*# sourceMappingURL=index.css.map */

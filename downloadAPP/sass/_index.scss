@@ -1,0 +1,366 @@
+@import "base","variable";
+html{font-size:18px;}
+@media(min-device-width:320px){
+	html{
+	  font-size:18px;
+	}
+}
+@media(min-device-width:360px){
+	html{
+	  font-size:20px;
+	}
+}
+@media(min-device-width:375px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:384px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:400px){
+	html{
+	  font-size:22px;
+	}
+}
+@media(min-device-width:414px){
+	html{
+	  font-size:23px;
+	}
+}
+@media(min-device-width:480px){
+	html{
+	  font-size:26px;
+	}
+}
+@media(min-device-width:520px){
+	html{
+	  font-size:27px;
+	}
+}
+@media(min-device-width:533px){
+	html{
+	  font-size:28px;
+	}
+}
+@media(min-device-width:560px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:568px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:600px){
+	html{
+	  font-size:30px;
+	}
+}
+@media(min-device-width:640px){
+	html{
+	  font-size:24px;
+	}
+}
+/* public css begin */
+.wrapper{
+	position:relative;
+	width:100%;
+	max-width:640px;
+	min-height:320px;
+	height:auto;
+	margin:0 auto;
+	overflow:hidden;
+}
+.wp{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;            
+}
+.page{
+    text-align: center;
+    background-color:#020202;
+}
+/* 箭头 */
+@-webkit-keyframes start {
+    0%,30% {
+        opacity: 0.2;
+        -webkit-transform: translate(0,10px);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate(0,0);
+    }
+    100% {
+        opacity: 0.2;
+        -webkit-transform: translate(0, -5px);
+    }
+}
+@keyframes start {
+    0%,30% {
+        opacity: 0.2;
+        transform: translate(0,10px);
+    }
+    60% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+    100% {
+        opacity: 0.2;
+        transform: translate(0, -5px);
+    }
+}
+.start{
+    position: absolute;
+    left: 50%;
+    margin-left: -17px;
+    top: 95%;
+    margin-top: -34px;
+    width: 34px;
+    height: 34px;
+}
+.start b{
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    margin-left: -9px;
+    width: 19px;
+    height: 12px;
+    -webkit-animation: start 1.5s infinite ease-in-out;
+    animation: start 1.5s infinite ease-in-out;
+}
+.fullPage-wp{   
+    -webkit-transform: translate3d(0,0,0);     
+    transform: translate3d(0,0,0);  
+    &:after{
+        display: block;
+        content: ' ';
+        height: 0;
+        clear: both; 
+    }   
+}
+.fullPage-wp.anim{
+    -webkit-transition: all 500ms ease-out 0s;
+    transition: all 500ms ease-out 0s; 
+}
+.fullPage-page{
+    display: block;
+    overflow: hidden;
+}
+
+.fullPage-dir-h {
+    float: left;
+}
+.page1{
+     position:relative;
+     .page1-t{
+        position:absolute;
+        top:20%;
+        left:-100%;
+        width:70%;
+        font-size:0;
+        -webkit-transition:all .3s;
+        transition:all .3s;
+        img{
+            width:100%;
+        }
+    }
+    .page1-b{
+        position:absolute;
+        bottom:-100%;
+        width:100%;
+        font-size:0;
+        -webkit-transition:all .3s;
+        transition:all .3s;
+        img{
+            width:100%;
+        }
+    }
+}
+.page2{
+    position:relative;
+    .page2-t{
+        position:absolute;
+        top:10%;
+        left:-100%;
+        width:70%;
+        font-size:0;
+        -webkit-transition:all .3s;
+        transition:all .3s;
+        img{
+            width:100%;
+        }
+    }
+    .page2-b{
+        position:absolute;
+        bottom:-100%;
+        width:100%;
+        font-size:0;
+        -webkit-transition:all .3s;
+        transition:all .3s;
+        img{
+            width:100%;
+        }
+    }
+}
+.page3{
+    position:relative;
+    .page3-t{
+        position:absolute;
+        top:20%;
+        left:-100%;
+        width:70%;
+        font-size:0;
+        -webkit-transition:all .3s;
+        transition:all .3s;
+        img{
+            width:100%;
+        }
+    }
+    .page3-b{
+        position:absolute;
+        bottom:-100%;
+        width:100%;
+        font-size:0;
+        -webkit-transition:all .3s;
+        transition:all .3s;
+        img{
+            width:100%;
+        }
+    }
+}
+.page4{
+    position:relative;
+    .page4-t{
+        position:absolute;
+        top:10%;
+        left:-100%;
+        width:100%;
+        font-size:0;
+        -webkit-transition:all .3s;
+        transition:all .3s;
+        img{
+            width:80%;
+        }
+    }
+    .page4-c{
+        position:absolute;
+        top:80%;
+        left:15%;
+        width:70%;
+        font-size:0;
+        -webkit-transition:all .3s;
+        transition:all .3s;
+        img{
+            width:70%;
+        }
+    }
+    .page4-b{
+        position:absolute;
+        bottom:0;
+        opacity:0;
+        width:100%;
+        font-size:0;
+        -webkit-transition:all 1s;
+        transition:all 1s;
+        img{
+            width:100%;
+        }
+    }
+}
+.cur{
+   .page1-t{
+        position:absolute;
+        top:20%;
+        left:0;
+        width:70%;
+        font-size:0;
+        img{
+            width:100%;
+        }
+    }
+    .page1-b{
+        position:absolute;
+        bottom:0;
+        width:100%;
+        font-size:0;
+        img{
+            width:100%;
+        }
+    } 
+    .page2-t{
+        position:absolute;
+        top:10%;
+        left:0;
+        width:70%;
+        font-size:0;
+        img{
+            width:100%;
+        }
+    }
+    .page2-b{
+        position:absolute;
+        bottom:0;
+        width:100%;
+        font-size:0;
+        img{
+            width:100%;
+        }
+    }
+    .page3-t{
+        position:absolute;
+        top:20%;
+        left:0;
+        width:70%;
+        font-size:0;
+        img{
+            width:100%;
+        }
+    }
+    .page3-b{
+        position:absolute;
+        bottom:0;
+        width:100%;
+        font-size:0;
+        img{
+            width:100%;
+        }
+    }
+    .page4-t{
+        position:absolute;
+        top:10%;
+        left: 0;
+        width:100%;
+        font-size:0;
+        img{
+            width:80%;
+        }
+    }
+    .page4-c{
+        position:absolute;
+        top:70%;
+        left:15%;
+        z-index:1;
+        width:70%;
+        font-size:0;
+        img{
+            width:70%;
+        }
+    }
+    .page4-b{
+        position:absolute;
+        bottom:0;
+        width:100%;
+        font-size:0;
+        opacity:1;
+        img{
+            width:100%;
+        }
+    }
+}
