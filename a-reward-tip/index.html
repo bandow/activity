@@ -24,12 +24,14 @@
 	   <div class="tip-content">
 	       <img class="package" src="images/package.png" alt="">
 	       <div class="tip-content-img">
-	           <div class="money">              
+	           <div class="money">  
+                <img class="money0 flip out" src="images/money0.png" alt="">            
 	           	  <img class="money1 flip out" src="images/money1.png" alt="">
 	           	  <img class="money2 flip out" src="images/money2.png" alt="">
 	           	  <img class="money3 flip in" src="images/money3.png" alt="">
 	           	  <img class="money4 flip out" src="images/money4.png" alt="">
-	           </div> 	   
+	           </div> 
+           <img class="money00 money-list" src="images/0.01.png" alt="">	   
 		   	   <img class="money01 money-list" src="images/0.png" alt="">
 		   	   <img class="money02 money-list" src="images/2.33.png" alt="">
 		   	   <img class="money03 money-list" src="images/5.20.png" alt="">
@@ -107,7 +109,7 @@
                 },500);
 
                 //随机金额
-                var randomNum = Math.random()*4;
+                var randomNum = Math.random()*6;
 	            var num=Math.floor(randomNum);
 	            if(num==0){
 	               console.log(1);
@@ -125,7 +127,11 @@
 	               console.log(4);
 	               $(".money img").eq(num).addClass("in").siblings().removeClass("in");
 	               $(".money img").eq(num).removeClass("out").siblings().addClass("out");
-	            }
+	            }else if(num==4){
+                 console.log(5);
+                 $(".money img").eq(num).addClass("in").siblings().removeClass("in");
+                 $(".money img").eq(num).removeClass("out").siblings().addClass("out");
+              }
             });
 		});
         // $(".turn-btn").on("click",function(){

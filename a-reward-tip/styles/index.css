@@ -192,6 +192,11 @@ html {
         animation-name: flipintoright;
         animation-duration: 225ms;
         opacity: 1; }
+    .tip-content .tip-content-img .money00 {
+      position: absolute;
+      width: 22%;
+      bottom: 40%;
+      left: 13%; }
     .tip-content .tip-content-img .money01 {
       position: absolute;
       width: 22%;
