@@ -278,12 +278,12 @@ html {
     margin-top: -1.8em;
     background-color: #f2e0a8; }
 
-.prompt {
+.promptWarm {
   margin-top: .5rem;
   font: 0.65rem/1 "SimHei", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
   color: #999;
   text-align: center; }
-  .prompt a {
+  .promptWarm a {
     margin-left: .3rem;
     display: inline-block;
     width: .7rem;
