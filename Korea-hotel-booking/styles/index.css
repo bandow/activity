@@ -1,0 +1,343 @@
+@charset "UTF-8";
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2016-10-18
+* Version:0.0.1
+* ================================================================== */
+html {
+  font-family: "SimHei","Microsoft YaHei","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  /*-webkit-text-size-adjust是解决 iPhone 横屏时默认会放大文字的问题*/
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+html, body {
+  /*-webkit-user-select:none禁止用户进行复制.选择.*/
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  /*使用min-height:100%代替height：100%*/
+  height: 100%;
+  min-height: 100%; }
+
+body {
+  /*弹性滚动-局部滚动开启弹性滚动：将属性挂在body上，可以避免很多奇怪的bug。*/
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, div, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  /*把所有元素的内边距和边框不再会增加它的宽度*/
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  box-sizing: border-box; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-size: 18px; }
+
+@media (min-device-width: 320px) {
+  html {
+    font-size: 18px; } }
+@media (min-device-width: 360px) {
+  html {
+    font-size: 20px; } }
+@media (min-device-width: 375px) {
+  html {
+    font-size: 21px; } }
+@media (min-device-width: 384px) {
+  html {
+    font-size: 21px; } }
+@media (min-device-width: 400px) {
+  html {
+    font-size: 22px; } }
+@media (min-device-width: 414px) {
+  html {
+    font-size: 23px; } }
+@media (min-device-width: 480px) {
+  html {
+    font-size: 26px; } }
+@media (min-device-width: 520px) {
+  html {
+    font-size: 27px; } }
+@media (min-device-width: 533px) {
+  html {
+    font-size: 28px; } }
+@media (min-device-width: 560px) {
+  html {
+    font-size: 29px; } }
+@media (min-device-width: 568px) {
+  html {
+    font-size: 29px; } }
+@media (min-device-width: 600px) {
+  html {
+    font-size: 30px; } }
+@media (min-device-width: 640px) {
+  html {
+    font-size: 24px; } }
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden; }
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: auto; }
+  .title > img {
+    width: 100%; }
+  .title .logo {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 2.2rem;
+    height: 2.2rem;
+    background-color: #fff;
+    text-align: center;
+    border: 2px solid #42210b;
+    border-radius: 100%; }
+    .title .logo img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 80%;
+      -moz-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%); }
+
+.titleLeft {
+  position: absolute;
+  top: 10rem;
+  left: 0;
+  width: 8%; }
+  .titleLeft img {
+    width: 100%; }
+
+.titleRight {
+  position: absolute;
+  top: 10rem;
+  right: 0;
+  width: 8%; }
+  .titleRight img {
+    width: 100%; }
+
+.box {
+  position: relative;
+  padding: 5%;
+  margin: 8.7rem auto 5%;
+  width: 90%;
+  height: auto;
+  border: 1px solid #1a1a1a;
+  border-radius: 10px;
+  background-color: #fff; }
+  .box .l {
+    top: 2.5%;
+    left: 6%; }
+  .box .r {
+    top: 2.5%;
+    right: 5%; }
+
+.smallBox {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: #ff9595;
+  border-radius: 100%;
+  border: 2px solid #1a1a1a; }
+
+.hotelDetailed {
+  position: relative;
+  z-index: 2;
+  font: 0.75rem/1.5 "SimHei", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  text-align: right;
+  display: block;
+  margin-top: 1rem;
+  color: #999;
+  text-decoration: none; }
+
+.boxSubmit .item {
+  position: relative;
+  padding: 0 5%;
+  margin-top: 1rem;
+  width: 100%;
+  height: 2rem;
+  border: 1px solid #333;
+  border-radius: 5px; }
+  .boxSubmit .item select {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    height: 100%;
+    font: 0.75rem/1.5 "SimHei", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #333; }
+  .boxSubmit .item p {
+    font: 0.75rem/2rem "SimHei", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #333; }
+    .boxSubmit .item p .dayText {
+      font-size: .7rem;
+      color: #999; }
+  .boxSubmit .item input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    height: 100%;
+    font: 0.75rem/1.5 "SimHei", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #333; }
+    .boxSubmit .item input::-webkit-input-placeholder {
+      color: #b8b8b8; }
+  .boxSubmit .item .arrow {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #333;
+    background-color: #ff9595;
+    border-radius: 100%;
+    -moz-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
+    .boxSubmit .item .arrow:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      margin-top: -3px;
+      width: 6px;
+      height: 6px;
+      border: 1px solid;
+      border-bottom: 0;
+      border-right: 0;
+      color: #333;
+      -moz-transform: rotateZ(135deg);
+      -o-transform: rotateZ(135deg);
+      -ms-transform: rotateZ(135deg);
+      -webkit-transform: rotateZ(135deg);
+      transform: rotateZ(135deg); }
+.boxSubmit .btn {
+  margin-top: 1.5rem;
+  display: block;
+  font: bold 0.85rem/2rem "SimHei", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0); }
+  .boxSubmit .btn > div {
+    margin: 0 auto;
+    width: 86%;
+    height: 2rem;
+    border: 2px solid #1a1a1a;
+    border-radius: 30px; }
+  .boxSubmit .btn .btnTop {
+    position: relative;
+    z-index: 1;
+    background-color: #f44661; }
+    .boxSubmit .btn .btnTop span {
+      font-size: .7rem; }
+  .boxSubmit .btn .btnBotton {
+    margin-top: -1.8em;
+    background-color: #f2e0a8; }
+
+.prompt {
+  margin-top: .5rem;
+  font: 0.65rem/1 "SimHei", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  color: #999;
+  text-align: center; }
+  .prompt a {
+    margin-left: .3rem;
+    display: inline-block;
+    width: .7rem;
+    height: .7rem;
+    border: 1px solid #333;
+    background-color: #ff9595;
+    border-radius: 100%;
+    text-decoration: none;
+    color: #333; }
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: none;
+  background: rgba(0, 0, 0, 0.8); }
+
+.maskContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  display: none;
+  padding: 5%;
+  width: 86%;
+  height: auto;
+  overflow: hidden;
+  background-color: #fff;
+  border: 2px solid #1a1a1a;
+  border-radius: 5px;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+  .maskContainer h2 {
+    margin-bottom: .3rem;
+    font: 0.85rem/1.5 "SimHei", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #333;
+    text-align: center; }
+  .maskContainer p {
+    font: 0.75rem/1.5 "SimHei", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #666; }
+  .maskContainer button {
+    margin: .5rem auto 0;
+    display: block;
+    width: 80%;
+    background-color: #f44661;
+    border: 1px solid #333;
+    font: 0.75rem/2 "SimHei", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #fff;
+    border-radius: 5px; }
+
+/*# sourceMappingURL=index.css.map */

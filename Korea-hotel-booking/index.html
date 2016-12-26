@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content="不超过80个字符"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>韩国酒店预订页面</title>
+<link rel="stylesheet" href="styles/index.css">
+<body>
+<div class="wrapper" id="wrapper" style="background:url('images/bg.jpg') repeat-y;background-size:100% auto;">
+    <div class="title"><img src="images/title.png" alt=""><div class="logo"><img src="images/logo.png" alt=""></div></div>
+    <div class="titleLeft"><img src="images/title_l.png" alt=""></div>
+    <div class="titleRight"><img src="images/title_r.png" alt=""></div>
+    <div class="box">
+        <div class="smallBox l"></div>
+        <div class="smallBox r"></div>
+        <a class="hotelDetailed" href="javascript:;">酒店详情></a>
+        <form class="boxSubmit" action="">
+            <div class="item roomList">
+                <select name="" id="">
+                    <option value="高级大床房">高级大床房</option>
+                    <option value="高级双床房">高级双床房</option>
+                </select>
+                <i class="arrow"></i>
+            </div>
+            <div class="item date">
+                <p><span id="checkInDay">12月26日</span><span class="dayText" id="checkInWeek">今天</span><span>/</span><span id="checkOutDay">12月27日</span><span class="dayText" id="checkOutWeek">明天</span>
+                </p>
+                <i class="arrow"></i>
+            </div>
+            <div class="item">
+                <input type="text" placeholder="入住人名字">
+            </div>
+            <div class="item">
+                 <input type="tel" placeholder="入住人手机号">
+            </div>
+            <div class="item">
+                 <input type="text" placeholder="联系邮箱">
+            </div>
+            <a class="btn" href="javascript:;">
+              <div class="btnTop">提交<span>（￥258）</span></div>
+              <div class="btnBotton"></div>
+            </a>
+        </form>
+        <p class="prompt">注：订单实际价格以当天汇率为准<a class="question" href="javascript:;">?</a></p>
+    </div>
+</div>
+<!-- mask begin -->
+<div class="mask"></div>
+<div class="maskContainer">
+    <h2>预订说明</h2>
+    <p></p>
+    <button>知道了</button>
+</div>  
+<!-- mask end -->
+<!--scripts begin-->
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+    var arrayText=['人民币兑韩元的汇率约为1:0.0063即10000韩元约等于63元人民币，具体以当天汇率为准','0000']
+    $(function(){
+        $(".prompt").on("click",function(){
+            $(".mask").show();
+            $(".maskContainer").show().find("p").text(arrayText[0]);
+        });
+        $(".maskContainer button,.mask").on("click",function(){
+            $(".mask").hide();
+            $(".maskContainer").hide();
+        });
+        $(".hotelDetailed").on("click",function(){
+            $(".mask").show();
+            $(".maskContainer").show();
+            $(".maskContainer").show().find("p").text(arrayText[1]);
+        });
+    });
+</script>
+<!--scripts end-->
+</body>
+</html>

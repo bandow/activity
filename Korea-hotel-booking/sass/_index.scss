@@ -1,0 +1,315 @@
+@import "base","variable";
+html{font-size:18px;}
+@media(min-device-width:320px){
+	html{
+	  font-size:18px;
+	}
+}
+@media(min-device-width:360px){
+	html{
+	  font-size:20px;
+	}
+}
+@media(min-device-width:375px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:384px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:400px){
+	html{
+	  font-size:22px;
+	}
+}
+@media(min-device-width:414px){
+	html{
+	  font-size:23px;
+	}
+}
+@media(min-device-width:480px){
+	html{
+	  font-size:26px;
+	}
+}
+@media(min-device-width:520px){
+	html{
+	  font-size:27px;
+	}
+}
+@media(min-device-width:533px){
+	html{
+	  font-size:28px;
+	}
+}
+@media(min-device-width:560px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:568px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:600px){
+	html{
+	  font-size:30px;
+	}
+}
+@media(min-device-width:640px){
+	html{
+	  font-size:24px;
+	}
+}
+.wrapper{
+	position:relative;
+	width:100%;
+	max-width:640px;
+	min-height:100%;
+	height:auto;
+	margin:0 auto;
+	overflow:hidden;
+}
+.title{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1;
+    height:auto;
+    >img{
+        width:100%;
+    }
+    .logo{
+        position:absolute;
+        top:2%;
+        left:2%; 
+        width:2.2rem;
+        height:2.2rem;
+        background-color:$colorWhite; 
+        text-align:center;
+        border:2px solid #42210b;
+        border-radius:100%;
+        img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            @include transform(translate(-50%, -50%));
+        }
+    }
+}
+.titleLeft{
+    position:absolute;
+    top:10rem;
+    left:0;
+    width:8%;
+    img{
+      width:100%;  
+    }
+}
+.titleRight{
+    position:absolute;
+    top:10rem;
+    right:0;
+    width:8%;
+    img{
+      width:100%;  
+    }
+}
+.box{
+    position:relative;
+    padding:5%;
+    margin:8.7rem auto 5%;
+    width:90%;
+    height:auto;
+    border:1px solid #1a1a1a;
+    border-radius:10px;
+    background-color:$colorWhite;
+    .l{
+        top: 2.5%;
+        left: 6%;
+    }
+    .r{
+        top: 2.5%;
+        right: 5%;
+    }
+}
+.smallBox{
+    position:absolute;
+    width:1rem;
+    height:1rem;
+    background-color:#ff9595;
+    border-radius:100%;
+    border:2px solid #1a1a1a;
+}
+.hotelDetailed{
+    position: relative;
+    z-index: 2;
+    font:.75rem/1.5 $publicFont;
+    text-align:right;
+    display: block;
+    margin-top: 1rem;
+    color: #999;
+    text-decoration: none;
+}
+.boxSubmit{
+    .item{
+        position:relative;
+        padding:0 5%;
+        margin-top:1rem;
+        width:100%;
+        height:2rem;
+        border:1px solid #333;
+        border-radius:5px;
+        select{
+            border:none;
+            outline:none;
+            background:none;
+            width:100%;
+            height:100%;
+            font:.75rem/1.5 $publicFont;
+            color: #333;  
+        }
+        p{
+            font:.75rem/2rem $publicFont;
+            color: #333;
+            .dayText{
+                font-size: .7rem;
+                color: #999;
+            }
+        }
+        input{
+            border:none;
+            outline:none;
+            background:none;
+            width:100%;
+            height:100%;
+            font:.75rem/1.5 $publicFont;
+            color: #333;
+            &::-webkit-input-placeholder {
+                color:#b8b8b8;
+            }
+        }
+        .arrow{
+            position:absolute;
+            top: 50%;
+            right: 5%;
+            display:inline-block;
+            width:1rem;
+            height:1rem;
+            border:1px solid #333;
+            background-color:#ff9595;
+            border-radius:100%;
+            @include transform(translate(0, -50%));
+            &:after{
+                content:"";
+                position: absolute;
+                top:50%;
+                right:50%;
+                margin-top:-3px;
+                width:6px;
+                height:6px;
+                border: 1px solid;
+                border-bottom: 0;
+                border-right: 0;
+                color: #333;
+                @include transform(rotateZ(135deg));
+            }
+        }
+    }
+    .btn{
+        margin-top:1.5rem;
+        display: block; 
+        font:bold .85rem/2rem $publicFont;
+        color:$colorWhite;
+        text-decoration:none;
+        text-align:center;
+        -webkit-tap-highlight-color:rgba(255,0,0,0);
+        >div{
+            margin:0 auto;
+            width:86%;
+            height:2rem;
+            border:2px solid #1a1a1a;
+            border-radius:30px;
+        }
+        .btnTop{
+            position:relative;
+            z-index:1;
+            background-color:#f44661;
+            span{
+                font-size:.7rem;
+            }
+        }
+        .btnBotton{
+            margin-top:-1.8em;
+            background-color:#f2e0a8;
+        }
+    }
+}
+.prompt{
+    margin-top:.5rem;
+    font:.65rem/1 $publicFont;
+    color:#999; 
+    text-align:center;
+    a{
+        margin-left:.3rem;
+        display:inline-block;
+        width:.7rem;
+        height:.7rem;
+        border:1px solid #333;
+        background-color:#ff9595;
+        border-radius:100%;
+        text-decoration:none;
+        color:#333;
+    }
+}
+.mask{
+    position:fixed; 
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:2;
+    display:none;
+    background:rgba(0,0,0,.8); 
+}
+.maskContainer{
+    position:fixed;
+    top:50%;
+    left:50%;
+    z-index:3;
+    display:none;
+    padding:5%;
+    width:86%;
+    height:auto;
+    overflow:hidden;
+    background-color:$colorWhite;
+    border:2px solid #1a1a1a;
+    border-radius:5px;
+    @include transform(translate(-50%,-50%));
+    h2{
+        margin-bottom:.3rem;
+        font:.85rem/1.5 $publicFont;
+        color: #333;
+        text-align:center;
+    }
+    p{
+       font:.75rem/1.5 $publicFont;
+       color: #666; 
+    }
+    button{
+        margin:.5rem auto 0;
+        display:block;
+        width:80%;
+        background-color:#f44661;
+        border:1px solid #333;
+        font:.75rem/2 $publicFont;
+        color:$colorWhite; 
+        border-radius:5px;
+    }
+}
