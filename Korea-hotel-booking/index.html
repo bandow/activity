@@ -49,7 +49,7 @@
               <div class="btnBotton"></div>
             </a>
         </form>
-        <p class="prompt">注：订单实际价格以当天汇率为准<a class="question" href="javascript:;">?</a></p>
+        <p class="promptWarm">注：订单实际价格以当天汇率为准<a class="question" href="javascript:;">?</a></p>
     </div>
 </div>
 <!-- mask begin -->
@@ -65,7 +65,7 @@
 <script>
     var arrayText=['人民币兑韩元的汇率约为1:0.0063即10000韩元约等于63元人民币，具体以当天汇率为准','0000']
     $(function(){
-        $(".prompt").on("click",function(){
+        $(".promptWarm").on("click",function(){
             $(".mask").show();
             $(".maskContainer").show().find("p").text(arrayText[0]);
         });
