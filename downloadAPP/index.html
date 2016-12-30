@@ -12,58 +12,114 @@
 <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
 <meta name="msapplication-tap-highlight" content="no">
 <title>酒店黑科技_APP</title>
+<link rel="stylesheet" href="styles/zepto.fullpage.css">
 <link rel="stylesheet" href="styles/index.css">
 <style>
+    .start {
+        left: initial;
+        top: 50%;
+        right: 10px;
+        -webkit-transform: rotate(90deg);
+    }
 	.start b{
 		background:url(images/arrow.png) no-repeat;
 		background-size: 100% 100%;
 	}
+    .indicator{
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        margin-left: -40px;
+    }
+    .indicator li{
+        float:left;
+        margin-left: 10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 100px;
+        /*background: rgba(0,0,0,0.5);*/
+        background-color:#da004b;
+        text-indent: -9999px;
+        list-style: none;
+    }
+    .indicator li.cur{
+        background: rgba(255,255,255,0.5);
+    }
 </style>
 <body>
 <div class="wp">
     <div class="wp-inner">
         <div class="page page1">
         	<div class="page1-t"><img src="images/page1-1.jpg" alt="" /></div>
-        	<div class="page1-b"><img src="images/page1-2.jpg" alt="" /></div>
-            <span class="start"><b></b></span>
+        	<div class="page1-b">
+                <div class="page1-circle"></div>
+                <div class="page1-circle one"></div>
+                <div class="page1-circle two"></div>
+                <img src="images/page1-2.png" alt="" />            
+            </div>
+            <!-- <span class="start"><b></b></span> -->
         </div>
         <div class="page page2">
         	<div class="page2-t"><img src="images/page2-1.jpg" alt="" /></div>
         	<div class="page2-b"><img src="images/page2-2.jpg" alt="" /></div>
-            <span class="start"><b></b></span>
+            <!-- <span class="start"><b></b></span> -->
         </div>
         <div class="page page3">
         	<div class="page3-t"><img src="images/page3-1.jpg" alt="" /></div>
         	<div class="page3-b"><img src="images/page3-2.jpg" alt="" /></div>
-           <span class="start"><b></b></span>
+           <!-- <span class="start"><b></b></span> -->
         </div>
         <div class="page page4">
             <div class="page4-t"><img src="images/page4-1.png" alt="" /></div>
             <div class="page4-c"><img src="images/page4-2.png" alt="" /></div>
             <div class="page4-b"><img src="images/page4-2.jpg" alt="" /></div>
         </div>
+        
     </div>
+    <ul class="indicator">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
 </div>	
 <!--scripts begin-->
-<script src="scripts/index.js"></script>
+<script src="scripts/zepto.min.js"></script>
+<script src="scripts/zepto.fullpage.js"></script>
+<!-- <script src="scripts/index.js"></script> -->
 <script>
-    var forEach = [].forEach;
-    document.getElementsByClassName('wp-inner')[0].fullpage({
-    	change: function (e) {
-            // 移除动画属性
-            forEach.call(document.querySelectorAll('.page')[e.cur].querySelectorAll('.js-animate'), function (v) {
-                v.classList.remove(v.dataset['animate']);
-                v.classList.add('hide');
-            });
+    $('.wp-inner').fullpage({
+        dir: 'h',
+        change: function (e) {
+            console.log('change', e.next, e.cur);
+            $('.indicator li').removeClass('cur').eq(e.cur).addClass('cur');
+        },
+        beforeChange: function (e) {
+            console.log('beforeChange', e.next, e.cur);
         },
         afterChange: function (e) {
-            // 添加动画属性
-            forEach.call(document.querySelectorAll('.page')[e.cur].querySelectorAll('.js-animate'), function(v) {
-                v.classList.add(v.dataset['animate']);
-                v.classList.remove('hide');
-            });
+            console.log('afterChange', e.next, e.cur);
         }
     });
+    var imgHeight=$(".page1-b img").height();
+    $(".page1-b").height(imgHeight);
+    // var forEach = [].forEach;
+    // document.getElementsByClassName('wp-inner')[0].fullpage({
+    // 	change: function (e) {
+    //         // 移除动画属性
+    //         forEach.call(document.querySelectorAll('.page')[e.cur].querySelectorAll('.js-animate'), function (v) {
+    //             v.classList.remove(v.dataset['animate']);
+    //             v.classList.add('hide');
+    //         });
+    //     },
+    //     afterChange: function (e) {
+    //         // 添加动画属性
+    //         forEach.call(document.querySelectorAll('.page')[e.cur].querySelectorAll('.js-animate'), function(v) {
+    //             v.classList.add(v.dataset['animate']);
+    //             v.classList.remove('hide');
+    //         });
+    //     }
+    // });
 </script>
 <!--scripts end-->
 </body>
