@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="styles/zepto.fullpage.css">
 <link rel="stylesheet" href="styles/index.css">
 <style>
+    body{background-color: #020202;}
     .start {
         left: initial;
         top: 50%;
@@ -38,12 +39,13 @@
         height: 10px;
         border-radius: 100px;
         /*background: rgba(0,0,0,0.5);*/
-        background-color:#da004b;
+        background: rgba(255,255,255,0.5);
+        
         text-indent: -9999px;
         list-style: none;
     }
     .indicator li.cur{
-        background: rgba(255,255,255,0.5);
+        background-color:#da004b;
     }
 </style>
 <body>
@@ -55,7 +57,7 @@
                 <div class="page1-circle"></div>
                 <div class="page1-circle one"></div>
                 <div class="page1-circle two"></div>
-                <img src="images/page1-2.png" alt="" />            
+                <img id="img" src="images/page1-2.png" alt="" />            
             </div>
             <!-- <span class="start"><b></b></span> -->
         </div>
@@ -67,7 +69,6 @@
         <div class="page page3">
         	<div class="page3-t"><img src="images/page3-1.jpg" alt="" /></div>
         	<div class="page3-b"><img src="images/page3-2.jpg" alt="" /></div>
-           <!-- <span class="start"><b></b></span> -->
         </div>
         <div class="page page4">
             <div class="page4-t"><img src="images/page4-1.png" alt="" /></div>
@@ -88,21 +89,25 @@
 <script src="scripts/zepto.fullpage.js"></script>
 <!-- <script src="scripts/index.js"></script> -->
 <script>
-    $('.wp-inner').fullpage({
-        dir: 'h',
-        change: function (e) {
-            console.log('change', e.next, e.cur);
-            $('.indicator li').removeClass('cur').eq(e.cur).addClass('cur');
-        },
-        beforeChange: function (e) {
-            console.log('beforeChange', e.next, e.cur);
-        },
-        afterChange: function (e) {
-            console.log('afterChange', e.next, e.cur);
-        }
+    $(function(){
+       var imgHeight=$("#img").height();
+       $(".page1-b").height(imgHeight);
+
+       $('.wp-inner').fullpage({
+            dir: 'h',
+            change: function (e) {
+                console.log('change', e.next, e.cur);
+                $('.indicator li').removeClass('cur').eq(e.cur).addClass('cur');
+            },
+            beforeChange: function (e) {
+                console.log('beforeChange', e.next, e.cur);
+            },
+            afterChange: function (e) {
+                console.log('afterChange', e.next, e.cur);
+            }
+        }); 
     });
-    var imgHeight=$(".page1-b img").height();
-    $(".page1-b").height(imgHeight);
+    
     // var forEach = [].forEach;
     // document.getElementsByClassName('wp-inner')[0].fullpage({
     // 	change: function (e) {
