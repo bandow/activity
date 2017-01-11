@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="想不到我的鸡年新春运气如此的好！竟然抽中了……"/>
+<meta name="keywords" content="想不到我的鸡年新春运气如此的好！竟然抽中了……"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>金鸡贺岁，新春抢福利！</title>
+<link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+<div class="wrapper" id="wrapper" style="background:url('images/bg.jpg') repeat;background-size:80px 80px;">
+  <div class="logo"> <img src="images/logo.png" alt=""></div>
+  <div class="ChristmasHeader">
+    <img src="images/year_top.png" alt="">
+  </div>
+  <div class="lotteryDraw">
+    <div class="prizeList">
+       <div id="machine1" class="slotMachine">
+          <div class="slot slot1"></div>
+          <div class="slot slot2"></div>
+          <div class="slot slot3"></div>
+        </div>
+        <div id="machine2" class="slotMachine">
+          <div class="slot slot1"></div>
+          <div class="slot slot2"></div>
+          <div class="slot slot3"></div>
+        </div>
+        <div id="machine3" class="slotMachine">
+          <div class="slot slot1"></div>
+          <div class="slot slot2"></div>
+          <div class="slot slot3"></div>
+        </div>
+    </div>
+    <div class="lampList">
+      <em></em>
+      <em></em>
+      <em></em>
+      <em></em>
+      <em></em>
+      <em></em>
+      <em></em>
+      <em></em>
+      <em></em>
+      <em></em>
+      <em></em>
+      <em></em>
+      <em></em>
+      <em></em>
+      <em></em>
+    </div>
+    
+  </div>
+ <div id="slotMachineButton1" class="btn">立即抽奖</div>
+  <div class="ChristmasBtn">
+    <a class="ruleBtn" href="javascript:;">活动规则</a>
+    <a class="mePrize" href="javascript:;">我的奖品</a>
+  </div>
+  <div class="ChristmasFooter" style="background:url('images/year_bottom.png') no-repeat;background-size:100% auto;">
+  </div>
+  <!-- 活动规则 begin-->
+  <div class="layer ruleMask">
+    <div class="layerContent">
+      <a class="close" href="javascript:;">关闭</a>
+      <h3>活动规则：</h3>
+      <p>1. 点击【立即抽奖】按钮，等待抽奖结果，同时显示3个相同图案的即为抽中奖品；</p>
+      <p>2. 每个用户限参加1次抽奖，分享本次活动到朋友圈可额外增加1次抽奖；</p>
+      <p>3. 同一手机号码视为同一用户；</p>
+      <p>4. 如发现通过非法手段作弊刷取奖品，活动主办方有权取消其获奖资格；</p>
+      <p>5. 本次活动解释权归金逸电影、东呈酒店集团所有。</p>
+    </div>
+  </div>
+  <!-- 活动规则 end-->
+  <!-- 亲，您还参与没抽奖呢~ begin-->
+  <div class="layer partake">
+    <div class="layerContent">
+      <a class="close" href="javascript:;">关闭</a>
+      <h3>亲，您还参与没抽奖呢~</h3>
+      <p>赶紧抽奖，赢取圣诞奖品哦！</p>
+      <a class="btn" href="javascript:;">马上参加大抽奖</a>
+    </div>
+  </div>
+  <!-- 亲，您还参与没抽奖呢~ end-->
+  <!-- 登录弹出框 begin-->
+  <div class="layer loginMask">
+    <div class="layerContent">
+      <a class="close" href="javascript:;">关闭</a>
+      <form action="">
+        <div class="phone">
+           <label><input type="tel" placeholder="请输入11位手机号码"></label>
+        </div>
+        <div class="code">
+           <label><input type="tel" placeholder="请输入验证码"></label>
+           <button>获得验证码</button>
+        </div>
+        <a class="btn" href="javascript:;">马上参加大抽奖</a>
+      </form> 
+    </div>
+  </div>
+  <!--登录弹出框 end-->
+  <!-- 中奖弹出框 begin-->
+ <!--  <div class="layer prizeWinning">
+    <div class="layerContent">
+      <a class="close" href="javascript:;">关闭</a>
+      <img src="images/slot4.png" alt="">
+      <p>电影票要用才算赚！赶紧去消费吧！</p>
+      <p>奖品详情可在活动页面“<a href="#">我的奖品</a>”查看！</p>
+      <a class="btn" href="javascript:;">分享朋友圈再玩一次</a>
+    </div>
+  </div> -->
+  <!-- 中奖弹出框 end-->
+  <!--分享朋友圈 begin-->
+ <!--  <div class="share">
+  	<img src="images/share.png"/>
+  </div> -->
+  <!--分享朋友圈 end-->
+</div>	
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script src="scripts/jquery.slotmachine.js"></script>
+<script>
+$(function(){
+  //wrapper高度控制
+  var wrapperH=$(".wrapper").height();
+  var windowH=$(window).height();
+  console.log(wrapperH,windowH);
+  if(windowH>wrapperH){
+    $(".wrapper").css({height:"100%"});
+    $(".ChristmasFooter").css("position","absolute");
+  }else if(wrapperH>=windowH){
+    $(".wrapper").css({height:"auto"});
+    $(".ChristmasFooter").css("position","inherit");
+  } 
+  //抽中了滚动
+ var liHeight=$("#rollList .list li").height();
+ setInterval(function(){
+    $("#rollList").find(".list").animate({  
+         marginTop : -liHeight
+     },500,function(){  
+         $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);  
+     })  
+ },3000); 
+  //活动规则
+  function ruleMask(){
+    $(".ruleMask").show();
+    $(".close").on("click",function(){
+        $(".ruleMask").hide();
+    });
+  }
+  $(".ruleBtn").on("click",function(){
+      ruleMask();
+  });
+  //亲，您还参与没抽奖呢
+  function mePrize(){
+    $(".partake").show();
+    $(".partake .btn,.partake .close").on("click",function(){
+      $(".partake").hide();
+    });
+  }
+  $(".mePrize").on("click",function(){
+      mePrize();
+  });
+  //登录弹出框
+  $(".loginMask .btn,.loginMask .close").on("click",function(){
+      $(".loginMask").hide();
+  });
+  //分享朋友圈
+  $(".share").on("click",function(){
+  	$(this).hide();
+  });
+  //中奖弹出框
+  var arrText = [];
+  arrText[1]={
+    text1:'天了噜，免房券到手赶紧奔走相告吧！',
+    text2:'奖品详情可在活动页面“<a href="#">我的奖品</a>”查看！',
+    img:'slot1.png'
+  };
+  arrText[2]={
+    text1:'酒店大礼包到手！说走马上走！',
+    text2:'奖品详情可在活动页面“<a href="#">我的奖品</a>”查看！',
+    img:'slot2.png'
+  };
+  arrText[3]={
+    text1:'电影票要用才算赚！赶紧去消费吧！',
+    text2:'奖品详情可在活动页面“<a href="#">我的奖品</a>”查看！',
+    img:'slot3.png'
+  };
+  arrText[4]={
+    text1:'50积分马上到账！',
+    text2:'可在“东呈酒店”微信公众号“<a href="#">我的账户</a>”查看哦！',
+    img:'slot4.png'
+  };
+  function prizeWinning(){
+    var html='<div class="layer prizeWinning">';
+    html+='<div class="layerContent">';
+    html+='<a class="close" href="javascript:;">关闭</a>';
+    html+='<img src="images/'+arrText[1].img+'" alt="">';
+    html+='<p>'+arrText[1].text1+'</p>';
+    html+='<p>'+arrText[1].text2+'</p>';
+    html+='<a class="btn" href="javascript:;">分享朋友圈再玩一次</a>';
+    html+='</div>';
+    html+='</div>';
+    $("body").append(html);
+    $(".prizeWinning").show();
+    $(".prizeWinning .close").on("click",function(){
+      $(".prizeWinning").hide();
+    });
+    $(".prizeWinning .btn").on("click",function(){
+      console.log("分享朋友页面");
+    });
+  }
+  prizeWinning();
+  //立即抽奖
+  var machine1 = $("#machine1").slotMachine({
+      active  : 0,
+      delay : 500,
+      stopIndex: 4 
+  });
+  var machine2 = $("#machine2").slotMachine({
+    active  : 0,
+    delay : 500,
+    stopIndex: 4 
+  });
+  var machine3 = $("#machine3").slotMachine({
+    active  : 0,
+    delay : 500,
+    stopIndex: 4 
+  });
+  function onComplete($el, active){
+    switch($el[0].id){
+      case 'machine1':
+        $("#machine1Result").text("Index: "+active.index);
+        break;
+      case 'machine2':
+        $("#machine2Result").text("Index: "+active.index);
+        break;
+      case 'machine3':
+        $("#machine3Result").text("Index: "+active.index);
+        break;
+    }
+  }
+  $("#slotMachineButton1").click(function(){
+     machine1.shuffle(3, onComplete,1);
+          setTimeout(function(){
+              machine2.shuffle(3, onComplete,2);
+          }, 500);
+          setTimeout(function(){
+              machine3.shuffle(3, onComplete,3);
+          }, 1000); 
+  })
+});
+</script>
+</body>
+</html>

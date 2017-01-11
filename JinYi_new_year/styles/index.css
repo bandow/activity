@@ -1,0 +1,506 @@
+@charset "UTF-8";
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2016-10-18
+* Version:0.0.1
+* ================================================================== */
+html {
+  font-family: "Microsoft YaHei","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  /*-webkit-text-size-adjust是解决 iPhone 横屏时默认会放大文字的问题*/
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+html, body {
+  /*-webkit-user-select:none禁止用户进行复制.选择.*/
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  /*使用min-height:100%代替height：100%*/
+  height: 100%;
+  min-height: 100%; }
+
+body {
+  /*弹性滚动-局部滚动开启弹性滚动：将属性挂在body上，可以避免很多奇怪的bug。*/
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, .layerContent p, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, div, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  /*把所有元素的内边距和边框不再会增加它的宽度*/
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  box-sizing: border-box; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-size: 18px; }
+
+@media (min-device-width: 320px) {
+  html {
+    font-size: 18px; } }
+@media (min-device-width: 360px) {
+  html {
+    font-size: 20px; } }
+@media (min-device-width: 375px) {
+  html {
+    font-size: 21px; } }
+@media (min-device-width: 384px) {
+  html {
+    font-size: 21px; } }
+@media (min-device-width: 400px) {
+  html {
+    font-size: 22px; } }
+@media (min-device-width: 414px) {
+  html {
+    font-size: 23px; } }
+@media (min-device-width: 480px) {
+  html {
+    font-size: 26px; } }
+@media (min-device-width: 520px) {
+  html {
+    font-size: 27px; } }
+@media (min-device-width: 533px) {
+  html {
+    font-size: 28px; } }
+@media (min-device-width: 560px) {
+  html {
+    font-size: 29px; } }
+@media (min-device-width: 568px) {
+  html {
+    font-size: 29px; } }
+@media (min-device-width: 600px) {
+  html {
+    font-size: 30px; } }
+@media (min-device-width: 640px) {
+  html {
+    font-size: 24px; } }
+/* public css begin */
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  min-height: 320px;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden; }
+
+.logo {
+  position: absolute;
+  left: 0;
+  top: 1%;
+  right: 0;
+  width: 100%;
+  font-size: 0; }
+  .logo img {
+    width: 100%;
+    height: auto; }
+
+.ChristmasHeader {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto; }
+  .ChristmasHeader img {
+    width: 100%; }
+
+.ChristmasPrize {
+  margin: -1rem auto 0;
+  width: 80%; }
+  .ChristmasPrize dl {
+    /*old*/
+    display: -webkit-box;
+    /*new*/
+    display: -webkit-flex;
+    display: flex;
+    /*old*/
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+    /*new*/
+    justify-content: center;
+    align-items: center; }
+    .ChristmasPrize dl dd {
+      position: relative;
+      -webkit-flex: 1;
+      flex: 1;
+      text-align: center; }
+      .ChristmasPrize dl dd p {
+        font: 0.6rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        color: #861d20; }
+      .ChristmasPrize dl dd img {
+        width: 80%; }
+      .ChristmasPrize dl dd:nth-child(2):before, .ChristmasPrize dl dd:nth-child(2):after {
+        content: "";
+        position: absolute;
+        top: 25%;
+        right: 0;
+        width: 1px;
+        height: 50%;
+        background-color: #b27e7b; }
+      .ChristmasPrize dl dd:nth-child(2):after {
+        left: 0; }
+
+.lotteryDraw {
+  position: relative;
+  z-index: 1;
+  margin: -1.4rem auto;
+  width: 80%;
+  height: auto;
+  overflow: hidden;
+  background-color: #32876e;
+  border-radius: 15px; }
+  .lotteryDraw .btn {
+    margin: 0 .5rem .5rem;
+    height: 2rem;
+    background-color: #fff1b2;
+    border-radius: 10px;
+    font: bold 0.75rem/2.1rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #861d20;
+    text-align: center;
+    box-shadow: 0 2px 3px #ffc076; }
+
+.lampList {
+  margin: .5rem;
+  /*old*/
+  display: -webkit-box;
+  /*new*/
+  display: -webkit-flex;
+  display: flex;
+  /*old*/
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  /*new*/
+  justify-content: center;
+  align-items: center; }
+  .lampList em {
+    margin: 0 .2rem;
+    display: block;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 100%;
+    background-color: #fff; }
+    .lampList em:nth-child(2n) {
+      background-color: #fff9aa;
+      box-shadow: 1px 0 1px rgba(255, 249, 170, 0.8), -1px 0 1px rgba(255, 249, 170, 0.8), 0 -1px 1px rgba(255, 249, 170, 0.8), 0 1px 1px rgba(255, 249, 170, 0.8);
+      -webkit-transition: all .5s;
+      transition: all .5s;
+      -webkit-animation: irradiance 2s infinite;
+      animation: irradiance 2s infinite; }
+
+@-webkit-keyframes irradiance {
+  from {
+    box-shadow: 1px 0 1px rgba(255, 255, 255, 0.8), -1px 0 1px rgba(255, 255, 255, 0.8), 0 -1px 1px rgba(255, 255, 255, 0.8), 0 1px 1px rgba(255, 255, 255, 0.8); }
+  to {
+    box-shadow: none; } }
+@keyframes irradiance {
+  from {
+    box-shadow: 1px 0 1px rgba(255, 255, 255, 0.8), -1px 0 1px rgba(255, 255, 255, 0.8), 0 -1px 1px rgba(255, 255, 255, 0.8), 0 1px 1px rgba(255, 255, 255, 0.8); }
+  to {
+    box-shadow: none; } }
+.prizeList {
+  padding: 0 .5rem;
+  height: 5rem;
+  background-color: #32876e;
+  border-radius: 15px;
+  /*old*/
+  display: -webkit-box;
+  /*new*/
+  display: -webkit-flex;
+  display: flex;
+  /*old*/
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  /*new*/
+  justify-content: center;
+  align-items: center; }
+  .prizeList .slotMachine {
+    margin: 0 .1rem;
+    height: 4rem;
+    overflow: hidden;
+    background-color: #ffffff;
+    -webkit-flex: 1;
+    flex: 1; }
+    .prizeList .slotMachine:first-child {
+      border-radius: 8px 0 0 8px; }
+    .prizeList .slotMachine:last-child {
+      border-radius: 0 8px 8px 0; }
+    .prizeList .slotMachine .slot {
+      width: 100%;
+      height: 4rem;
+      background-size: 100% 100%; }
+    .prizeList .slotMachine .slot1 {
+      background-image: url("../images/slot1.png"); }
+    .prizeList .slotMachine .slot2 {
+      background-image: url("../images/slot2.png"); }
+    .prizeList .slotMachine .slot3 {
+      background-image: url("../images/slot3.png"); }
+    .prizeList .slotMachine .slot4 {
+      background-image: url("../images/slot4.png"); }
+    .prizeList .slotMachine .slot5 {
+      background-image: url("../images/slot5.png"); }
+    .prizeList .slotMachine .slot6 {
+      background-image: url("../images/slot6.png"); }
+
+#slotMachineButton1 {
+  margin: 2rem auto .5rem;
+  display: block;
+  width: 80%;
+  background-color: #f2ef54;
+  font: bold 0.7rem/2rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  color: #c3261f;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: -1px 0 5px #c3261f,1px 0 5px #c3261f,0 -1px 5px #c3261f, 0 1px #c3261f; }
+
+.roll {
+  margin: .5rem auto 0;
+  width: 80%;
+  height: 1.5rem;
+  border-radius: 30px;
+  background: rgba(246, 200, 113, 0.8);
+  overflow: hidden; }
+  .roll i {
+    width: .8rem;
+    height: 1rem;
+    display: block;
+    vertical-align: middle;
+    float: left;
+    margin: .25rem .1rem 0 .5rem; }
+  .roll ul {
+    margin-left: 1.5rem; }
+    .roll ul li {
+      color: #fff;
+      font: .65rem/1.5rem "Microsoft YaHei","Helvetica Neue";
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; }
+
+.ChristmasBtn {
+  margin: 0 auto 1.4rem;
+  width: 80%;
+  height: auto;
+  overflow: hidden;
+  /*old*/
+  display: -webkit-box;
+  /*new*/
+  display: -webkit-flex;
+  display: flex;
+  /*old*/
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  /*new*/
+  justify-content: center;
+  align-items: center; }
+  .ChristmasBtn a {
+    margin: .5rem .5rem 0;
+    font: 0.75rem/1.5rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #e73a3c;
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+    background-color: #fefdbe;
+    border-radius: 8px;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: 0 3px 3px #c3261f; }
+
+.ChristmasFooter {
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2.4rem; }
+  .ChristmasFooter p {
+    font: 0.6rem/3.2rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #27807d;
+    text-align: center; }
+
+.layer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: 3%;
+  width: 90%;
+  height: auto;
+  background-color: #2a927e;
+  border-radius: 10px;
+  overflow: hidden;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.layerContent {
+  padding: 5%;
+  background-color: #fff;
+  border-radius: 10px; }
+  .layerContent .close {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-indent: -999px;
+    -webkit-tap-highlight-color: transparent; }
+    .layerContent .close:before, .layerContent .ChristmasPrize dl dd.close:nth-child(2):after, .ChristmasPrize dl .layerContent dd.close:nth-child(2):after {
+      content: "";
+      position: absolute;
+      top: .7rem;
+      left: .3rem;
+      width: 1rem;
+      height: .15rem;
+      background-color: #ce2e2e;
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+    .layerContent .close:after {
+      content: "";
+      position: absolute;
+      top: .7rem;
+      left: .3rem;
+      width: 1rem;
+      height: .15rem;
+      background-color: #ce2e2e;
+      -moz-transform: rotate(-135deg);
+      -o-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+      transform: rotate(-135deg); }
+  .layerContent h3, .layerContent p {
+    font: bold 0.7rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #363636; }
+  .layerContent p {
+    font-weight: normal; }
+
+.ruleMask {
+  display: none; }
+
+.loginMask {
+  display: none; }
+  .loginMask form {
+    margin-top: 1rem; }
+    .loginMask form > div {
+      width: 100%;
+      margin-bottom: .5rem;
+      overflow: hidden; }
+      .loginMask form > div label {
+        padding: 0 5%;
+        display: block;
+        height: 2rem;
+        border: 1px solid #ccc;
+        border-radius: 5px; }
+        .loginMask form > div label input {
+          border: 0;
+          outline: none;
+          background: none;
+          width: 100%;
+          height: 100%;
+          font: 0.7rem/2rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+    .loginMask form .code label {
+      float: left;
+      width: 50%; }
+    .loginMask form .code button {
+      margin-left: 5%;
+      float: left;
+      display: block;
+      width: 45%;
+      height: 2rem;
+      border-radius: 5px;
+      border: 0;
+      outline: none;
+      background: none;
+      background-color: #fff1b2;
+      color: #a81f29;
+      font: 0.7rem/2rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+  .loginMask .btn {
+    margin: 0.5rem auto;
+    display: block;
+    width: 60%;
+    background-color: #c3261f;
+    font: bold 0.7rem/2rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; }
+
+.partake {
+  display: none; }
+  .partake h3, .partake .layerContent p, .layerContent .partake p {
+    text-align: center; }
+  .partake p {
+    text-align: center;
+    line-height: 2rem; }
+  .partake .btn {
+    margin: 0.5rem auto;
+    display: block;
+    width: 60%;
+    background-color: #c3261f;
+    font: bold 0.7rem/2rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; }
+
+.prizeWinning {
+  display: block;
+  text-align: center; }
+  .prizeWinning img {
+    width: 30%; }
+  .prizeWinning .btn {
+    margin: 0.5rem auto;
+    display: block;
+    width: 60%;
+    background-color: #c3261f;
+    font: bold 0.7rem/2rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px; }
+
+.share {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  background-color: #000;
+  opacity: .8;
+  text-align: right; }
+  .share img {
+    width: 60%;
+    height: auto; }
+
+/*# sourceMappingURL=index.css.map */
