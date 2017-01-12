@@ -1,0 +1,228 @@
+@import "base","variable";
+html{font-size:18px;}
+@media(min-device-width:320px){
+	html{
+	  font-size:18px;
+	}
+}
+@media(min-device-width:360px){
+	html{
+	  font-size:20px;
+	}
+}
+@media(min-device-width:375px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:384px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:400px){
+	html{
+	  font-size:22px;
+	}
+}
+@media(min-device-width:414px){
+	html{
+	  font-size:23px;
+	}
+}
+@media(min-device-width:480px){
+	html{
+	  font-size:26px;
+	}
+}
+@media(min-device-width:520px){
+	html{
+	  font-size:27px;
+	}
+}
+@media(min-device-width:533px){
+	html{
+	  font-size:28px;
+	}
+}
+@media(min-device-width:560px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:568px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:600px){
+	html{
+	  font-size:30px;
+	}
+}
+@media(min-device-width:640px){
+	html{
+	  font-size:24px;
+	}
+}
+/* public css begin */
+.wrapper{
+	position:relative;
+	width:100%;
+	max-width:640px;
+	min-height:320px;
+	height:auto;
+	margin:0 auto;
+	overflow:hidden;
+}
+.header{
+	position:absolute;
+	bottom:85%;
+	width: 100%;
+}
+.title{
+    margin:0 auto;
+	width:50%;
+	font-size:0;
+	img{
+		width:100%;
+		height:auto;
+	}
+}
+.memberName{
+	width:100%;
+	p{
+		font:1rem/1.5 $publicFont;
+		color:#3b94b5;
+		text-align:center;
+	}
+}
+.streamer{
+	position:absolute;
+	top:62%;
+	left:5%;
+	width:90%;
+	font-size:0;
+	img{
+		width:100%;
+		height:auto;
+	}
+}
+.btn{
+	position:absolute;
+	bottom:5%;
+	left:25%;
+	width:50%;
+	a{
+		text-decoration:none;
+		-webkit-tap-highlight-color:rgba(255,0,0,0);
+	}
+	img{
+		width:100%;
+		height:auto;
+		-webkit-animation: changeBtn 5s infinite;
+		animation: changeBtn 5s infinite;
+	}
+	p{
+		position:absolute;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+		font:bold 1rem/3 $publicFont;
+		text-align:center;
+		color:#fff;
+		letter-spacing:8px;
+	}
+}
+@keyframes changeBtn{
+	0%{
+		@include transform(scale(1,1));
+	}
+	50%{
+		@include transform(scale(1.1,.9));
+	}
+	100%{
+		@include transform(scale(1,1));
+	}
+}
+@-webkit-keyframes changeBtn{
+	0%{
+		@include transform(scale(1,1));
+	}
+	50%{
+		@include transform(scale(1.1,.9));
+	}
+	100%{
+		@include transform(scale(1,1));
+	}
+}
+.rule{
+	position:absolute;
+	bottom:2%;
+	right:2%;
+	width:20%;
+	font-size:0;
+	img{
+		width:100%;
+		height:auto;
+	}
+}
+.ruleMask{
+	position:fixed;
+	top:50%;
+	left:50%;
+	z-index:1;
+	padding:20% 10%;
+	display:none;
+	width:80%;
+    height: 12rem;
+	@include transform(translate(-50%, -50%));
+	.close{
+		position:absolute;
+		top:10%;
+	    right:7%;
+	    z-index:1;
+		width:10%;
+		img{
+			width:100%;
+		}
+	}
+	.top{
+		position:absolute;
+	    width: 90%;
+	    top: 0;
+	    left: 5%;
+		img{
+			width:100%;
+			height:auto;
+		}
+	}
+	p{
+		font:.65rem/1.5 $publicFont;
+		color:#7b7b7b;
+	}
+	.maskBtn{
+		position:absolute;
+		bottom:10%;
+		left:35%;
+		width:30%;
+		a{
+			text-decoration:none;
+			-webkit-tap-highlight-color:rgba(255,0,0,0);
+		}
+		img{
+			width:100%;
+			height:auto;
+		}
+		p{
+			position:absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+			font:bold .65rem/2.4 $publicFont;
+			text-align:center;
+			color:#fff;
+			letter-spacing:3px;
+		}
+	}
+}

@@ -19,3 +19,5 @@
 #JinYi_new_year     
 2017-01-11 金鸡贺岁，新春抢福利！            
 想不到我的鸡年新春运气如此的好！竟然抽中了……
+#member_birthday_present  
+会员生日礼品大派送        

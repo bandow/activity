@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>会员生日礼品大派送</title>
+<link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <!-- 主体 begin -->
+	<div class="wrapper" style="background:url(images/bg.png) center center no-repeat;background-size:100% auto;">
+	    <div class="header">
+	    	<div class="title"><img src="images/title.png" alt=""></div>
+			<!-- 登录后显示 begin -->
+			<!-- <div class="memberName"><p>DC****1234</p></div> -->
+			<!-- 登录后显示 end -->
+	    </div>
+		<div class="streamer"><img src="images/no_login.png" alt=""></div>
+		<!-- 登录后显示 begin -->
+		<!-- <div class="streamer"><img src="images/streamer.png" alt=""></div> -->
+		<!-- 登录后显示 end -->
+		<div class="btn">
+			<a href="#">
+				<img src="images/btn.png" alt="">
+				<p>点击登录</p>
+			</a>
+		</div>
+		<div class="rule"><img src="images/rule.png" alt=""></div>
+	</div>
+	<!-- 主体 end -->
+	<!-- 活动规则 begin -->
+	<div class="ruleMask" style="background:url(images/rule_bg.png) center center no-repeat;background-size:100% auto;">
+	    <div class="close"><img src="images/close.png" alt=""></div>
+		<div class="top"><img src="images/rule_title.png" alt=""></div>
+		<p>东呈会银卡、金卡会员在生日当月可领取生日礼品一份，黑金卡会员可预订生日当天生日免费房一间（以个人资料中的身份证等有效证件上生日日期为准）。</p>
+		<div class="maskBtn">
+			<a href="#">
+				<img src="images/mask_btn.png" alt="">
+				<p>确定</p>
+			</a>
+		</div>
+	</div>
+	<!-- 活动规则 end -->
+	<!-- script begin -->
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+            var windowHeight=$(window).height(),wrapperHeight=$(".wrapper").height();
+            if(windowHeight>=wrapperHeight){
+            	$(".wrapper").css("height",windowHeight);
+            }else{
+            	$(".wrapper").css("height","auto");
+            }
+            //活动规则
+            $(".rule").on("click",function(){
+                 $(".ruleMask").show();
+            });
+            $(".maskBtn,.close").on("click",function(){
+                 $(".ruleMask").hide();
+            });
+
+		});
+	</script>
+	<!-- script end -->
+</body>
+</html>
