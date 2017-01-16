@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>会员邮箱完善</title>
+<link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+    <!-- 主体 begin -->
+	<div class="wrapper" style="background:url(images/bg.png) #fff center center no-repeat;background-size:80% auto;">
+	   <header class="mailboxHeader">
+	   		<img src="images/logo.png" alt="">
+	   </header>
+	   <div class="mailboxRule">
+	        <div class="bg"></div>
+	   	    <p>活动说明</p>
+	   </div>
+	   <footer class="mailboxFooter">
+	  		 <a style="background:url(images/btn.png) no-repeat;background-size:100% auto;" href="">验证邮箱领积分</a>
+	   </footer>
+	</div>
+	<!-- 主体 end -->
+	<!-- script begin -->
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+            var windowHeight=$(window).height(),wrapperHeight=$(".wrapper").height();
+            if(windowHeight>=wrapperHeight){
+            	$(".wrapper").css("height",windowHeight);
+            }else{
+            	$(".wrapper").css("height","auto");
+            }    
+		});
+	</script>
+	<!-- script end -->
+</body>
+</html>

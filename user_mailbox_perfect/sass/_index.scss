@@ -1,0 +1,155 @@
+@import "base","variable";
+html{font-size:18px;}
+@media(min-device-width:320px){
+	html{
+	  font-size:18px;
+	}
+}
+@media(min-device-width:360px){
+	html{
+	  font-size:20px;
+	}
+}
+@media(min-device-width:375px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:384px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:400px){
+	html{
+	  font-size:22px;
+	}
+}
+@media(min-device-width:414px){
+	html{
+	  font-size:23px;
+	}
+}
+@media(min-device-width:480px){
+	html{
+	  font-size:26px;
+	}
+}
+@media(min-device-width:520px){
+	html{
+	  font-size:27px;
+	}
+}
+@media(min-device-width:533px){
+	html{
+	  font-size:28px;
+	}
+}
+@media(min-device-width:560px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:568px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:600px){
+	html{
+	  font-size:30px;
+	}
+}
+@media(min-device-width:640px){
+	html{
+	  font-size:24px;
+	}
+}
+/* public css begin */
+.wrapper{
+	position:relative;
+	width:100%;
+	max-width:640px;
+	min-height:320px;
+	height:auto;
+	margin:0 auto;
+	overflow:hidden;
+}
+.mailboxHeader{
+	margin:5% auto;
+	width:30%;
+	font-size:0;
+	img{
+		width:100%;
+	}
+}
+.mailboxFooter{
+	position:absolute;
+    left:22.5%;
+    bottom:10%;
+	width:55%;
+	a{
+		display: block;
+	    text-align: center;
+	    height: 3.2rem;
+	    font:.9rem/3.2rem $publicFont;
+	    color:#fff;
+	    text-decoration:none;
+	    -webkit-tap-highlight-color:rgba(255,0,0,0);
+	}
+}
+.mailboxRule{
+	position:absolute;
+    right: 10%;
+    bottom: 30%;
+	width:3rem;
+	.bg{
+	    height:1.5rem;
+		background-color:#fff9db;
+		@include transform(rotate(-20deg));
+		-webkit-animation: changeBtn1 2s infinite;
+		animation: changeBtn1 2s infinite;
+		&:before{
+			position:absolute;
+			left:0;
+			top:0;
+			width:0;
+			height:0;
+			border:1.5rem solid;
+			border-color:#fbf0bb transparent transparent transparent;
+			content:"";
+		}
+	}
+	p{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		@include transform(rotate(-20deg));
+		font:.65rem/1.5rem $publicFont;
+		color:#a79b60;
+	    text-align: center;
+	}
+}
+@keyframes changeBtn{
+	0%{
+		@include transform(scale(1,1));
+	}
+	50%{
+		@include transform(scale(.6,1.3));
+	}
+	100%{
+		@include transform(scale(1,1));
+	}
+}
+@-webkit-keyframes changeBtn{
+	0%{
+		@include transform(scale(1,1));
+	}
+	50%{
+		@include transform(scale(.6,1.3));
+	}
+	100%{
+		@include transform(scale(1,1));
+	}
+}
