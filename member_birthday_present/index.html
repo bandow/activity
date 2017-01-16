@@ -37,7 +37,7 @@
 	</div>
 	<!-- 主体 end -->
 	<!-- 活动规则 begin -->
-	<div class="ruleMask" style="background:url(images/rule_bg.png) center center no-repeat;background-size:100% auto;">
+	<div class="ruleMask mask" style="background:url(images/rule_bg.png) center center no-repeat;background-size:100% auto;">
 	    <div class="close"><img src="images/close.png" alt=""></div>
 		<div class="top"><img src="images/rule_title.png" alt=""></div>
 		<p>东呈会银卡、金卡会员在生日当月可领取生日礼品一份，黑金卡会员可预订生日当天生日免费房一间（以个人资料中的身份证等有效证件上生日日期为准）。</p>
@@ -49,6 +49,78 @@
 		</div>
 	</div>
 	<!-- 活动规则 end -->
+	<!-- 登录弹出框 begin -->
+	<div class="loginMask mask" style="background:url(images/rule_bg.png) center center no-repeat;background-size:100% auto;">
+		<div class="close"><img src="images/close.png" alt=""></div>
+		<div class="top"><img src="images/login_title.png" alt=""></div>
+		<div class="loginMaskContainer">
+		    <div>
+		   		<label><input type="text" placeholder="请填写手机号码"></label>
+		    </div>
+			<div>
+				<label>
+					<input type="text" placeholder="手机验证码">
+				</label>
+				<button>获取验证码</button>
+			</div>	
+		</div>
+		<div class="maskBtn">
+			<a href="#">
+				<img src="images/mask_btn.png" alt="">
+				<p>确定</p>
+			</a>
+		</div>
+		<a href="#" class="aRegister">立即注册</a>
+	</div>
+	<!-- 登录弹出框 end -->
+	<!-- 注册弹出框 begin -->
+	<div class="registerMask mask" style="background:url(images/register_bg.png) center center no-repeat;background-size:100% auto;">
+		<div class="close"><img src="images/close.png" alt=""></div>
+		<div class="top"><img src="images/login_title.png" alt=""></div>
+		<div class="registerMaskContainer">
+		    <div>
+		   		<label><input type="text" placeholder="请填写真实姓名"></label>
+		    </div>
+		    <div>
+		   		<label><input type="text" placeholder="请填写身份证号码"></label>
+		    </div>
+		    <div>
+		   		<label><input type="text" placeholder="请填写手机号码"></label>
+		    </div>
+			<div>
+				<label>
+					<input type="text" placeholder="手机验证码">
+				</label>
+				<button>获取验证码</button>
+			</div>	
+		</div>
+		<div class="maskBtn">
+			<a href="#">
+				<img src="images/mask_btn.png" alt="">
+				<p>确定</p>
+			</a>
+		</div>
+	</div>
+	<!-- 注册弹出框 end -->
+	<!-- 温馨提示 begin -->
+	<div class="promptMask mask" style="background:url(images/rule_bg.png) center center no-repeat;background-size:100% auto;">
+		<div class="close"><img src="images/close.png" alt=""></div>
+		<div class="top"><img src="images/prompt_title.png" alt=""></div>
+		<div class="promptMaskContainer">  
+			<p>亲~生日礼物仅限银卡及以上会员领取哦~</p>
+		</div>
+		<div class="maskBtnLR">
+			<a href="#">
+				<img src="images/mask_btn_l.png" alt="">
+				<p>最新攻略</p>
+			</a>
+			<a href="#">
+				<img src="images/mask_btn_r.png" alt="">
+				<p>更多会员权益</p>
+			</a>
+		</div>	
+	</div>
+	<!-- 温馨提示 end -->
 	<!-- script begin -->
 	<script src="scripts/jquery-3.1.1.min.js"></script>
 	<script>
@@ -63,10 +135,27 @@
             $(".rule").on("click",function(){
                  $(".ruleMask").show();
             });
-            $(".maskBtn,.close").on("click",function(){
+            $(".ruleMask .maskBtn,.ruleMask .close").on("click",function(){
                  $(".ruleMask").hide();
             });
-
+            //登录
+            $(".btn").on("click",function(){
+                 $(".loginMask").show();
+            });
+            $(".loginMask .maskBtn,.loginMask .close").on("click",function(){
+                 $(".loginMask").hide();
+            });
+            //注册
+            $(".aRegister").on("click",function(){
+                 $(".registerMask").show();
+            });
+            $(".registerMask .maskBtn,.registerMask .close").on("click",function(){
+                 $(".registerMask").hide();
+            });
+            //温馨提示
+            $(".promptMask .close").on("click",function(){
+                 $(".promptMask").hide();
+            });
 		});
 	</script>
 	<!-- script end -->
