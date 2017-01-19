@@ -11,38 +11,41 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
 <meta name="msapplication-tap-highlight" content="no">
-<title>会员邮箱完善</title>
+<title>更换邮箱</title>
 <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
     <!-- 主体 begin -->
-	<div class="wrapper" style="background:url(images/bg.png) #fff center center no-repeat;background-size:80% auto;">
-	   <header class="mailboxHeader">
-	   		<img src="images/logo.png" alt="">
-	   </header>
-	   <div class="mailboxRule">
-	        <div class="bg"></div>
-	   	    <p>活动说明</p>
-	   </div>
-	   <footer class="mailboxFooter">
-	  		 <a style="background:url(images/btn.png) no-repeat;background-size:100% auto;" href="change.html">验证邮箱领积分</a>
-	   </footer>
+	<div class="wrapper" style="background:url(images/page_bg.png) #fff center bottom no-repeat;background-size:100% auto;">
+	  <div class="changeTitle">
+	  	<img src="images/page_title.png" alt="">
+	  </div>
+	  <div class="changeContainer">
+        <div class="bindingInput">
+        	<div class="bindingMailboxInput">
+        	    <div class="l">
+        	    	<input type="text" placeholder="请输入邮箱">
+        	    </div>
+        		<div class="r">
+        			<select name="" id="">
+						<option value ="">@qq.com</option>
+					    <option value ="">@163.com</option>
+					    <option value="">@sina.com</option>
+					</select>
+        		</div>
+        	</div>
+        	<img src="images/change_icon.png" alt="">
+        </div>
+        <div class="bindingCode">
+        	<div class="l"><input type="text" placeholder="填写验证码"></div>
+        	<div class="r"><img src="images/code.jpg" alt=""></div>
+        </div>
+	  </div>
+	  <footer class="changeFooter">
+	  		 <a style="background:url(images/btn.png) no-repeat;background-size:100% auto;" href="#">确定</a>
+	  </footer>
 	</div>
 	<!-- 主体 end -->
-	<!-- 活动说明 begin -->
-	<div class="rule">
-	    <div class="title">
-	    	<img src="images/rule_title.png" alt="">
-	    </div>
-		<h3>1. 活动时间：<span>2017年2月1-28日</span></h3>
-		<h3>2. 活动方式：</h3>
-		<p>① 会员首次验证邮箱，即可获取200积分奖励</p>
-		<p>② 验证邮箱后，填写酒店体验问卷，即有机会获取免费房A份、X元代金券B份、城市便捷早餐券C份</p>
-		<h3>3. 奖品发放：</h3>
-		<p>积分将于验证后24小时内到账，其他奖品将在活动结束后7个工作日内发放到会员账户中。</p>
-		<img class="close" src="images/rule_close.png" alt="">
-	</div>
-	<!-- 活动说明 end -->
 	<!-- script begin -->
 	<script src="scripts/jquery-3.1.1.min.js"></script>
 	<script>

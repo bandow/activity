@@ -144,9 +144,7 @@ html {
     -o-transform: rotate(-20deg);
     -ms-transform: rotate(-20deg);
     -webkit-transform: rotate(-20deg);
-    transform: rotate(-20deg);
-    -webkit-animation: changeBtn1 2s infinite;
-    animation: changeBtn1 2s infinite; }
+    transform: rotate(-20deg); }
     .mailboxRule .bg:before {
       position: absolute;
       left: 0;
@@ -170,43 +168,218 @@ html {
     color: #a79b60;
     text-align: center; }
 
-@keyframes changeBtn {
-  0% {
-    -moz-transform: scale(1, 1);
-    -o-transform: scale(1, 1);
-    -ms-transform: scale(1, 1);
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1); }
-  50% {
-    -moz-transform: scale(0.6, 1.3);
-    -o-transform: scale(0.6, 1.3);
-    -ms-transform: scale(0.6, 1.3);
-    -webkit-transform: scale(0.6, 1.3);
-    transform: scale(0.6, 1.3); }
-  100% {
-    -moz-transform: scale(1, 1);
-    -o-transform: scale(1, 1);
-    -ms-transform: scale(1, 1);
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1); } }
-@-webkit-keyframes changeBtn {
-  0% {
-    -moz-transform: scale(1, 1);
-    -o-transform: scale(1, 1);
-    -ms-transform: scale(1, 1);
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1); }
-  50% {
-    -moz-transform: scale(0.6, 1.3);
-    -o-transform: scale(0.6, 1.3);
-    -ms-transform: scale(0.6, 1.3);
-    -webkit-transform: scale(0.6, 1.3);
-    transform: scale(0.6, 1.3); }
-  100% {
-    -moz-transform: scale(1, 1);
-    -o-transform: scale(1, 1);
-    -ms-transform: scale(1, 1);
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1); } }
+.rule {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  display: none;
+  padding: 0 5% 5%;
+  width: 14rem;
+  background-color: #fff9db;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+  .rule .title {
+    position: relative;
+    margin: .5rem auto 1.5rem;
+    width: 50%; }
+    .rule .title img {
+      width: 100%;
+      height: auto; }
+  .rule h3 {
+    position: relative;
+    margin-bottom: .3rem;
+    font: bold 0.7rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #9a7843; }
+    .rule h3 span {
+      font-weight: normal; }
+  .rule p {
+    position: relative;
+    margin-bottom: .3rem;
+    font: 0.7rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #9a7843; }
+  .rule .close {
+    position: absolute;
+    right: .2rem;
+    top: .2rem;
+    width: .8rem;
+    height: auto; }
+  .rule:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 7rem solid transparent;
+    border-right: 7rem solid transparent;
+    border-top: 3.5rem solid #fbf0bb; }
+
+.changeTitle {
+  margin: 10% auto;
+  width: 70%; }
+  .changeTitle img {
+    width: 100%;
+    height: auto; }
+
+.changeContainer p {
+  font: 0.65rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  color: #666;
+  text-align: center; }
+  .changeContainer p strong {
+    font: bold 0.9rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #e62c2c; }
+
+.changeInput {
+  position: relative;
+  margin: 10% 0; }
+  .changeInput .mailboxInput {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    padding: 0 5%;
+    width: 60%;
+    height: 2rem;
+    border: 1px solid #cd0a4b;
+    border-radius: 5px;
+    background-color: #fff; }
+    .changeInput .mailboxInput input {
+      background: none;
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 100%;
+      color: #999;
+      font-size: .7rem;
+      font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+      .changeInput .mailboxInput input::-webkit-input-placeholder {
+        color: #ccc;
+        font-size: .7rem;
+        font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+  .changeInput img {
+    position: absolute;
+    left: 9%;
+    top: -78%;
+    width: 15%;
+    z-index: 1; }
+
+.changeFooter {
+  margin: 0 auto;
+  width: 55%; }
+  .changeFooter a {
+    display: block;
+    text-align: center;
+    height: 3.2rem;
+    font: 0.9rem/3.2rem "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #fff;
+    text-decoration: none;
+    -webkit-tap-highlight-color: rgba(255, 0, 0, 0); }
+
+.bindingInput {
+  position: relative;
+  margin: 10% 0 3%; }
+  .bindingInput img {
+    position: absolute;
+    left: 4%;
+    top: -78%;
+    width: 15%;
+    z-index: 1; }
+
+.bindingMailboxInput {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  width: 70%;
+  height: 2rem;
+  border: 1px solid #cd0a4b;
+  border-radius: 5px;
+  background-color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center; }
+  .bindingMailboxInput .l {
+    padding: 0 5%;
+    width: 60%; }
+    .bindingMailboxInput .l input {
+      background: none;
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 100%;
+      color: #999;
+      font-size: .7rem;
+      font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+      .bindingMailboxInput .l input::-webkit-input-placeholder {
+        color: #ccc;
+        font-size: .7rem;
+        font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+  .bindingMailboxInput .r {
+    width: 40%; }
+    .bindingMailboxInput .r select {
+      background: none;
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 100%; }
+
+.bindingCode {
+  margin: 0 auto 10%;
+  width: 70%;
+  height: 2rem;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center; }
+  .bindingCode .l {
+    border: 1px solid #cd0a4b;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 0 5%;
+    width: 55%;
+    height: 2rem;
+    margin-right: 5%; }
+    .bindingCode .l input {
+      background: none;
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 100%;
+      color: #999;
+      font-size: .7rem;
+      font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+      .bindingCode .l input::-webkit-input-placeholder {
+        color: #ccc;
+        font-size: .7rem;
+        font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+  .bindingCode .r {
+    border: 1px solid #cd0a4b;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 40%;
+    height: 2rem;
+    overflow: hidden; }
+    .bindingCode .r img {
+      width: 100%;
+      height: 100%; }
+
+.login .l {
+  padding: 0 5%;
+  width: 100%; }
+
+.bindingSuccess {
+  margin: 10% auto;
+  width: 70%; }
+  .bindingSuccess img {
+    margin: 5% 35%;
+    width: 30%;
+    height: auto; }
+  .bindingSuccess p {
+    font: 0.65rem/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #666;
+    text-align: center; }
+    .bindingSuccess p a {
+      color: #dc106e; }
 
 /*# sourceMappingURL=index.css.map */

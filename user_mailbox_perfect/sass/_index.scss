@@ -107,8 +107,6 @@ html{font-size:18px;}
 	    height:1.5rem;
 		background-color:#fff9db;
 		@include transform(rotate(-20deg));
-		-webkit-animation: changeBtn1 2s infinite;
-		animation: changeBtn1 2s infinite;
 		&:before{
 			position:absolute;
 			left:0;
@@ -131,25 +129,249 @@ html{font-size:18px;}
 	    text-align: center;
 	}
 }
-@keyframes changeBtn{
-	0%{
-		@include transform(scale(1,1));
+.rule{
+	position:fixed;
+	left:50%;
+	top:50%;
+	z-index:1;
+	display:none;
+	padding:0 5% 5%;
+	width:14rem;
+	background-color:#fff9db;
+	@include transform(translate(-50%,-50%));
+	.title{
+		position: relative;
+		margin:.5rem auto 1.5rem;
+		width:50%;
+		img{
+			width:100%;
+			height:auto;
+		}
 	}
-	50%{
-		@include transform(scale(.6,1.3));
+	h3{
+		position: relative;
+		margin-bottom:.3rem;
+		font:bold .7rem/1.5 $publicFont;
+	    color:#9a7843;
+	    span{
+	    	font-weight:normal;
+	    }
 	}
-	100%{
-		@include transform(scale(1,1));
+	p{
+		position: relative;
+		margin-bottom:.3rem;
+		font:.7rem/1.5 $publicFont;
+	    color:#9a7843;
+	}
+	.close{
+		position:absolute;
+		right:.2rem;
+		top:.2rem;
+		width:.8rem;
+		height:auto;
+	}
+	&:before{
+		position:absolute;
+		content:"";
+		top:0;
+		left:0;
+		width: 0; 
+		height: 0; 
+		border-left:7rem solid transparent; 
+		border-right:7rem solid transparent; 
+		border-top:3.5rem solid #fbf0bb; 
 	}
 }
-@-webkit-keyframes changeBtn{
-	0%{
-		@include transform(scale(1,1));
+//更换邮箱
+.changeTitle{
+	margin:10% auto;
+	width:70%;
+	img{
+		width:100%;
+		height:auto;
 	}
-	50%{
-		@include transform(scale(.6,1.3));
+}
+.changeContainer{
+	p{
+		font:.65rem/1.5 $publicFont;
+	    color:#666;
+	    text-align:center;
+	    strong{
+	    	font:bold .9rem/1.5 $publicFont;
+	    	color:#e62c2c;
+	    }
 	}
-	100%{
-		@include transform(scale(1,1));
+}
+.changeInput{
+	position:relative;
+    margin:10% 0;
+    .mailboxInput{
+    	position: relative;
+    	z-index: 2;
+    	margin:0 auto;
+    	padding:0 5%;
+    	width:60%;
+    	height:2rem;
+    	border:1px solid #cd0a4b;
+    	border-radius:5px;
+    	background-color:#fff;
+    	input{
+    		background:none;
+			border:none;
+			outline:none;
+			width:100%;
+			height:100%;
+			color:#999;
+	   		font-size:.7rem;
+	   		font-family:$publicFont;
+	   		&::-webkit-input-placeholder{
+	   			color:#ccc;
+	   			font-size:.7rem;
+	   			font-family:$publicFont;
+	   		}
+    	}
+    }
+    img{
+	    position: absolute;
+	    left:9%;
+	    top:-78%;
+	    width: 15%;
+	    z-index: 1;
+    }
+}
+.changeFooter{
+	margin:0 auto;
+	width:55%;
+	a{
+		display: block;
+	    text-align: center;
+	    height: 3.2rem;
+	    font:.9rem/3.2rem $publicFont;
+	    color:#fff;
+	    text-decoration:none;
+	    -webkit-tap-highlight-color:rgba(255,0,0,0);
+	}
+}
+//绑定邮箱
+.bindingInput{
+	position: relative;
+    margin: 10% 0 3%;
+    img{
+	    position: absolute;
+	    left:4%;
+	    top:-78%;
+	    width: 15%;
+	    z-index: 1;
+    }
+}
+.bindingMailboxInput{
+	position: relative;
+	z-index: 2;
+	margin:0 auto;
+	width:70%;
+	height:2rem;
+	border:1px solid #cd0a4b;
+	border-radius:5px;
+	background-color:#fff;
+	display:-webkit-flex;
+	display:flex;
+	align-items:center;
+	.l{
+		padding:0 5%;
+		width:60%;
+   		input{
+			background:none;
+			border:none;
+			outline:none;
+			width:100%;
+			height:100%;
+			color:#999;
+	   		font-size:.7rem;
+	   		font-family:$publicFont;
+	   		&::-webkit-input-placeholder{
+	   			color:#ccc;
+	   			font-size:.7rem;
+	   			font-family:$publicFont;
+	   		}
+		}	
+	}
+	.r{
+		width:40%;
+   		select{
+			background:none;
+			border:none;
+			outline:none;	
+			width:100%;
+			height:100%;
+		}
+	}
+}
+.bindingCode{
+	margin:0 auto 10%;
+	width:70%;
+	height:2rem;
+	display:-webkit-flex;
+	display:flex;
+	align-items:center;
+	.l{
+		border:1px solid #cd0a4b;
+		border-radius:5px;
+		background-color:#fff;
+		padding:0 5%;
+		width:55%;
+		height:2rem;
+		margin-right:5%;
+   		input{
+			background:none;
+			border:none;
+			outline:none;
+			width:100%;
+			height:100%;
+			color:#999;
+	   		font-size:.7rem;
+	   		font-family:$publicFont;
+	   		&::-webkit-input-placeholder{
+	   			color:#ccc;
+	   			font-size:.7rem;
+	   			font-family:$publicFont;
+	   		}
+		}	
+	}
+	.r{
+		border:1px solid #cd0a4b;
+		border-radius:5px;
+		background-color:#fff;
+		width:40%;
+		height:2rem;
+		overflow:hidden;
+		img{
+			width:100%;
+			height:100%;
+		}
+	}
+}
+//登录/注册
+.login{
+	.l{
+		padding:0 5%;
+		width:100%;
+	}
+}
+//绑定完成
+.bindingSuccess{
+	margin:10% auto;
+	width:70%;
+	img{
+		margin:5% 35%;
+		width:30%;
+		height:auto;
+	}
+	p{
+		font:.65rem/1.5 $publicFont;
+	    color:#666;
+	    text-align:center;
+	    a{
+	    	color:#dc106e;
+	    }
 	}
 }
