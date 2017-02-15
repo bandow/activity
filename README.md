@@ -22,4 +22,6 @@
 #member_birthday_present  
 会员生日礼品大派送   
 #user_mailbox_perfect
-会员邮箱完善活动原型        
+会员邮箱完善活动原型  
+#downloadAPP2.0
+2017-02-15下载app活动页面    
