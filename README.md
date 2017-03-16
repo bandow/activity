@@ -9,7 +9,6 @@
 # a-reward-tip2.0
 小费打赏登录页面  我的鼓励金      
 # Christmas
-<<<<<<< HEAD
 2016年金逸-东呈圣诞活动     
 # invitation
 2016年 邀请函 H5页面-酒店黑科技·新品发布会    
@@ -18,8 +17,7 @@
 # Korea-hotel-booking
 2016-12-26 韩国酒店预订活动页面         
 # JinYi_new_year     
-2017-01-11 金鸡贺岁，新春抢福利！                    
-想不到我的鸡年新春运气如此的好！竟然抽中了……          
+2017-01-11 金鸡贺岁，新春抢福利!想不到我的鸡年新春运气如此的好！竟然抽中了……          
 # member_birthday_present  
 会员生日礼品大派送     
 # user_mailbox_perfect
