@@ -1,0 +1,452 @@
+@charset "UTF-8";
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2016-10-18
+* Version:0.0.1
+* ================================================================== */
+html {
+  font-family: "SimHei","Microsoft YaHei","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  /*-webkit-text-size-adjust是解决 iPhone 横屏时默认会放大文字的问题*/
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+html, body {
+  /*-webkit-user-select:none禁止用户进行复制.选择.*/
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  /*使用min-height:100%代替height：100%*/
+  height: 100%;
+  min-height: 100%; }
+
+body {
+  /*弹性滚动-局部滚动开启弹性滚动：将属性挂在body上，可以避免很多奇怪的bug。*/
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, div, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  /*把所有元素的内边距和边框不再会增加它的宽度*/
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  box-sizing: border-box; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-size: 18px; }
+
+@media (min-device-width: 320px) {
+  html {
+    font-size: 18px; } }
+@media (min-device-width: 360px) {
+  html {
+    font-size: 20px; } }
+@media (min-device-width: 375px) {
+  html {
+    font-size: 21px; } }
+@media (min-device-width: 384px) {
+  html {
+    font-size: 21px; } }
+@media (min-device-width: 400px) {
+  html {
+    font-size: 22px; } }
+@media (min-device-width: 414px) {
+  html {
+    font-size: 23px; } }
+@media (min-device-width: 480px) {
+  html {
+    font-size: 26px; } }
+@media (min-device-width: 520px) {
+  html {
+    font-size: 27px; } }
+@media (min-device-width: 533px) {
+  html {
+    font-size: 28px; } }
+@media (min-device-width: 560px) {
+  html {
+    font-size: 29px; } }
+@media (min-device-width: 568px) {
+  html {
+    font-size: 29px; } }
+@media (min-device-width: 600px) {
+  html {
+    font-size: 30px; } }
+@media (min-device-width: 640px) {
+  html {
+    font-size: 24px; } }
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden; }
+
+.logo {
+  position: absolute;
+  top: 3.5%;
+  left: 4%;
+  width: 23%; }
+  .logo img {
+    width: 100%; }
+
+.lotteryDraw {
+  position: absolute;
+  top: 9%;
+  left: 7%;
+  right: 4%;
+  width: 86%;
+  height: 66%; }
+  .lotteryDraw > p {
+    position: absolute;
+    top: 8%;
+    width: 100%;
+    text-align: center;
+    font: .6rem/1 "Microsoft YaHei","Helvetica Neue";
+    color: #6a077c; }
+    .lotteryDraw > p strong {
+      font-weight: bold; }
+
+#lottery {
+  width: 80%;
+  margin: 27% auto; }
+  #lottery table tr {
+    text-align: center;
+    display: -webkit-flex;
+    display: flex; }
+    #lottery table tr td {
+      position: relative;
+      padding: 0 0 .2rem 0;
+      flex: 1;
+      background: #fff;
+      border: 2px solid #6a077c; }
+      #lottery table tr td img {
+        width: 60%; }
+      #lottery table tr td p {
+        font: .6rem/1 "Microsoft YaHei","Helvetica Neue"; }
+      #lottery table tr td a {
+        padding-top: .1rem;
+        font: bold .8rem/1.4 "Microsoft YaHei","Helvetica Neue";
+        color: #fff000;
+        text-decoration: none;
+        width: 60%;
+        height: 100%;
+        display: block;
+        margin: 0 auto; }
+      #lottery table tr td .mask {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: none; }
+    #lottery table tr .active .mask {
+      display: block; }
+    #lottery table tr:nth-child(2) td:nth-child(2) p {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-color: #000;
+      width: 100%;
+      font: .55rem/1.5 "Microsoft YaHei","Helvetica Neue";
+      color: #fff; }
+      #lottery table tr:nth-child(2) td:nth-child(2) p strong {
+        font-weight: bold; }
+
+.roster {
+  position: absolute;
+  left: 0;
+  bottom: 3rem;
+  width: 100%;
+  height: 3.6rem;
+  overflow: hidden; }
+  .roster h3 {
+    text-align: center;
+    font: bold .9rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #fff; }
+
+.rosterList {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden; }
+  .rosterList p {
+    font: .65rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #fff;
+    text-align: center;
+    display: -webkit-flex;
+    display: flex; }
+    .rosterList p span {
+      padding: 0 .3rem; }
+      .rosterList p span:first-child {
+        width: 25%;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2rem;
+  background-color: #6a077c;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  text-align: center; }
+  .footer:before {
+    content: "";
+    width: 1px;
+    height: 1.2rem;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  .footer a {
+    flex: 1;
+    font: bold .8rem/1 "Microsoft YaHei","Helvetica Neue";
+    color: #fff;
+    text-decoration: none; }
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: #000;
+  opacity: .8; }
+
+.ruleMask, .prizeListMask {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: none;
+  width: 80%;
+  height: auto;
+  padding: 5%;
+  background-color: #fff;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  border-radius: 5px; }
+  .ruleMask .title, .prizeListMask .title {
+    position: relative;
+    width: 70%;
+    margin: 0 auto; }
+    .ruleMask .title img, .prizeListMask .title img {
+      width: 100%;
+      font-size: 0; }
+    .ruleMask .title h3, .prizeListMask .title h3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font: bold 1.2rem/1.5 "Microsoft YaHei","Helvetica Neue";
+      color: #fff; }
+  .ruleMask .content, .prizeListMask .content {
+    margin: 5% 0 10%; }
+    .ruleMask .content p, .prizeListMask .content p {
+      font: .7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+      color: #363333; }
+  .ruleMask .foot p, .prizeListMask .foot p {
+    font: .6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #dd0014;
+    text-align: center; }
+  .ruleMask .close, .prizeListMask .close {
+    position: absolute;
+    top: -.5rem;
+    right: -.5rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #fff;
+    border-radius: 100%; }
+    .ruleMask .close:before, .prizeListMask .close:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1px;
+      height: .6rem;
+      background-color: #000;
+      -moz-transform: translate(-50%, -50%) rotate(45deg);
+      -o-transform: translate(-50%, -50%) rotate(45deg);
+      -ms-transform: translate(-50%, -50%) rotate(45deg);
+      -webkit-transform: translate(-50%, -50%) rotate(45deg);
+      transform: translate(-50%, -50%) rotate(45deg); }
+    .ruleMask .close:after, .prizeListMask .close:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1px;
+      height: .6rem;
+      background-color: #000;
+      -moz-transform: translate(-50%, -50%) rotate(-45deg);
+      -o-transform: translate(-50%, -50%) rotate(-45deg);
+      -ms-transform: translate(-50%, -50%) rotate(-45deg);
+      -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+      transform: translate(-50%, -50%) rotate(-45deg); }
+
+.prizeListMask .content {
+  margin: 5% 0;
+  overflow: auto;
+  height: 11rem; }
+  .prizeListMask .content .item {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    padding: .3rem 0;
+    border-bottom: 1px dotted #b5acad; }
+    .prizeListMask .content .item .img {
+      width: 3rem;
+      height: 3rem;
+      border: 1px solid #000;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .prizeListMask .content .item .img img {
+        width: 80%;
+        font-size: 0; }
+    .prizeListMask .content .item p {
+      flex: 1;
+      text-align: center;
+      font: .65rem/1.5 "Microsoft YaHei","Helvetica Neue";
+      color: #ed264d; }
+      .prizeListMask .content .item p:last-child {
+        flex: .8;
+        font-weight: bold;
+        color: #9e999a; }
+    .prizeListMask .content .item .not:last-child {
+      color: #ed264d; }
+
+.successMask {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: none;
+  width: 80%;
+  height: auto;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+  .successMask h3 {
+    font: bold 1.2rem/2.4 "Microsoft YaHei","Helvetica Neue";
+    color: #fff;
+    text-align: center; }
+  .successMask p {
+    font: .7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #fff;
+    text-align: center; }
+
+.prizeMask {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  -moz-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0); }
+  .prizeMask > img {
+    width: 100%;
+    font-size: 0; }
+    .prizeMask > img:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      width: 100%; }
+
+.prizeTxt {
+  position: absolute;
+  top: 40%;
+  padding: 5%;
+  width: 72%;
+  left: 14%;
+  background-color: #fff;
+  border-radius: 0 0 5px 5px; }
+  .prizeTxt .text {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center; }
+    .prizeTxt .text .img {
+      width: 4rem;
+      height: 4rem;
+      border: 1px solid #000;
+      padding: .1rem 0;
+      text-align: center; }
+      .prizeTxt .text .img img {
+        width: 70%;
+        font-size: 0; }
+      .prizeTxt .text .img p {
+        font: .5rem/1 "Microsoft YaHei","Helvetica Neue"; }
+    .prizeTxt .text .textList {
+      margin-left: .5rem;
+      flex: 1; }
+      .prizeTxt .text .textList p {
+        font: .7rem/1.5 "Microsoft YaHei","Helvetica Neue"; }
+        .prizeTxt .text .textList p span {
+          font-weight: bold;
+          color: #f12753;
+          padding: 0 .2rem; }
+  .prizeTxt > a {
+    margin: 1rem auto 0;
+    width: 40%;
+    text-decoration: none;
+    font: .7rem/2 "Microsoft YaHei","Helvetica Neue";
+    color: #fff;
+    background-color: #6a077c;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #8b8788; }
+
+/*# sourceMappingURL=index.css.map */
