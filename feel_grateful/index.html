@@ -148,7 +148,7 @@
 				<p>立刻领取奖品吧</p>
 			</div>
 		</div>
-		<a href="javascript:;">立即领取</a>
+		<a href="javascript:;" onclick="receive();">立即领取</a>
 	</div>
 </div>
 <!-- mask end -->
@@ -254,6 +254,7 @@
 	            lottery.speed=100;
 	            roll();    //转圈过程不响应click事件，会将click置为false
 	            click=true; //一次抽奖完成后，设置click为true，可继续抽奖
+	            setTimeout(prizeLayer,4500);//中奖弹出框
 	            return false;
 	        }
 	    });
@@ -279,12 +280,23 @@
 		$(".ruleMask").hide();
 		$(".prizeListMask").hide();
 		$(".successMask").hide();
+		$(".prizeMask").removeClass("prizeMaskActive");
 		$(".mask").hide();
 	}
 	//点击关闭
 	function closeHide(){
 		$(".ruleMask").hide();
 		$(".prizeListMask").hide();
+		$(".mask").hide();
+	}
+	//中奖了
+	function prizeLayer(){
+		$(".mask").show();
+		$(".prizeMask").addClass("prizeMaskActive");
+	}
+	//立即领取
+	function receive(){
+		$(".prizeMask").removeClass("prizeMaskActive");
 		$(".mask").hide();
 	}
 

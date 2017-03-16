@@ -127,7 +127,7 @@ html {
   height: 66%; }
   .lotteryDraw > p {
     position: absolute;
-    top: 8%;
+    top: 9.5%;
     width: 100%;
     text-align: center;
     font: .6rem/1 "Microsoft YaHei","Helvetica Neue";
@@ -250,6 +250,7 @@ html {
   right: 0;
   bottom: 0;
   z-index: 1;
+  display: none;
   background-color: #000;
   opacity: .8; }
 
@@ -390,11 +391,16 @@ html {
   z-index: 2;
   width: 100%;
   height: auto;
-  -moz-transform: translate(-50%, 0);
-  -o-transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
-  -webkit-transform: translate(-50%, 0);
-  transform: translate(-50%, 0); }
+  -moz-transform: translate(-50%, -100%);
+  -o-transform: translate(-50%, -100%);
+  -ms-transform: translate(-50%, -100%);
+  -webkit-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
   .prizeMask > img {
     width: 100%;
     font-size: 0; }
@@ -404,6 +410,18 @@ html {
       left: 0;
       z-index: 3;
       width: 100%; }
+
+.prizeMaskActive {
+  -moz-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
 
 .prizeTxt {
   position: absolute;
