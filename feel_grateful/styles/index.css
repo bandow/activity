@@ -272,7 +272,7 @@ html {
   border-radius: 5px; }
   .ruleMask .title, .prizeListMask .title {
     position: relative;
-    width: 70%;
+    width: 90%;
     margin: 0 auto; }
     .ruleMask .title img, .prizeListMask .title img {
       width: 100%;
@@ -298,36 +298,18 @@ html {
     position: absolute;
     top: -.5rem;
     right: -.5rem;
-    width: 1rem;
-    height: 1rem;
+    z-index: 4;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: #fff;
-    border-radius: 100%; }
+    border-radius: 100%;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
     .ruleMask .close:before, .prizeListMask .close:before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 1px;
-      height: .6rem;
-      background-color: #000;
-      -moz-transform: translate(-50%, -50%) rotate(45deg);
-      -o-transform: translate(-50%, -50%) rotate(45deg);
-      -ms-transform: translate(-50%, -50%) rotate(45deg);
-      -webkit-transform: translate(-50%, -50%) rotate(45deg);
-      transform: translate(-50%, -50%) rotate(45deg); }
-    .ruleMask .close:after, .prizeListMask .close:after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 1px;
-      height: .6rem;
-      background-color: #000;
-      -moz-transform: translate(-50%, -50%) rotate(-45deg);
-      -o-transform: translate(-50%, -50%) rotate(-45deg);
-      -ms-transform: translate(-50%, -50%) rotate(-45deg);
-      -webkit-transform: translate(-50%, -50%) rotate(-45deg);
-      transform: translate(-50%, -50%) rotate(-45deg); }
+      content: "\2716";
+      color: #000; }
 
 .prizeListMask .content {
   margin: 5% 0;
@@ -384,7 +366,7 @@ html {
     color: #fff;
     text-align: center; }
 
-.prizeMask {
+.prizeMask, .receivePrizesMask, .receivePrizesIDMask {
   position: fixed;
   top: 0;
   left: 50%;
@@ -401,15 +383,23 @@ html {
   -ms-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   transition: all 0.5s; }
-  .prizeMask > img {
+  .prizeMask > img, .receivePrizesMask > img, .receivePrizesIDMask > img {
     width: 100%;
     font-size: 0; }
-    .prizeMask > img:nth-child(2) {
+    .prizeMask > img:nth-child(2), .receivePrizesMask > img:nth-child(2), .receivePrizesIDMask > img:nth-child(2) {
       position: absolute;
       top: 0;
       left: 0;
       z-index: 3;
       width: 100%; }
+  .prizeMask .close, .receivePrizesMask .close, .receivePrizesIDMask .close {
+    position: absolute;
+    top: 33%;
+    right: 18%;
+    z-index: 4; }
+    .prizeMask .close:before, .receivePrizesMask .close:before, .receivePrizesIDMask .close:before {
+      content: "\2716";
+      color: #fff; }
 
 .prizeMaskActive {
   -moz-transform: translate(-50%, 0);
@@ -423,7 +413,7 @@ html {
   -webkit-transition: all 0.5s;
   transition: all 0.5s; }
 
-.prizeTxt {
+.prizeTxt, .receivePrizesTxt {
   position: absolute;
   top: 40%;
   padding: 5%;
@@ -431,31 +421,31 @@ html {
   left: 14%;
   background-color: #fff;
   border-radius: 0 0 5px 5px; }
-  .prizeTxt .text {
+  .prizeTxt .text, .receivePrizesTxt .text {
     display: -webkit-flex;
     display: flex;
     align-items: center; }
-    .prizeTxt .text .img {
+    .prizeTxt .text .img, .receivePrizesTxt .text .img {
       width: 4rem;
       height: 4rem;
       border: 1px solid #000;
       padding: .1rem 0;
       text-align: center; }
-      .prizeTxt .text .img img {
+      .prizeTxt .text .img img, .receivePrizesTxt .text .img img {
         width: 70%;
         font-size: 0; }
-      .prizeTxt .text .img p {
+      .prizeTxt .text .img p, .receivePrizesTxt .text .img p {
         font: .5rem/1 "Microsoft YaHei","Helvetica Neue"; }
-    .prizeTxt .text .textList {
+    .prizeTxt .text .textList, .receivePrizesTxt .text .textList {
       margin-left: .5rem;
       flex: 1; }
-      .prizeTxt .text .textList p {
+      .prizeTxt .text .textList p, .receivePrizesTxt .text .textList p {
         font: .7rem/1.5 "Microsoft YaHei","Helvetica Neue"; }
-        .prizeTxt .text .textList p span {
+        .prizeTxt .text .textList p span, .receivePrizesTxt .text .textList p span {
           font-weight: bold;
           color: #f12753;
           padding: 0 .2rem; }
-  .prizeTxt > a {
+  .prizeTxt > a, .receivePrizesTxt > a {
     margin: 1rem auto 0;
     width: 40%;
     text-decoration: none;
@@ -466,5 +456,127 @@ html {
     text-align: center;
     border-radius: 5px;
     box-shadow: 2px 2px 5px #8b8788; }
+
+.receivePrizesMaskActive {
+  -moz-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
+
+.receivePrizesTxt .textList p {
+  color: #f12753; }
+  .receivePrizesTxt .textList p strong {
+    font-weight: bold; }
+.receivePrizesTxt .importInformation .item {
+  margin-top: .5rem;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center; }
+  .receivePrizesTxt .importInformation .item label {
+    color: #f12753;
+    font: .7rem/1rem "Microsoft YaHei","Helvetica Neue";
+    margin-right: .5rem; }
+  .receivePrizesTxt .importInformation .item input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+    height: 1rem; }
+.receivePrizesTxt > p {
+  margin-top: .3rem;
+  font: .5rem/1.2 "Microsoft YaHei","Helvetica Neue"; }
+
+.receivePrizesIDMaskActive {
+  -moz-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
+
+.notPrize {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  display: none;
+  width: 90%;
+  height: 12rem;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+  .notPrize > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    width: 100%;
+    height: auto;
+    font-size: 0; }
+    .notPrize > img:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 2; }
+  .notPrize .notPrizeTxt {
+    position: absolute;
+    top: 23%;
+    left: 7%;
+    z-index: 2;
+    padding: 5%;
+    background-color: #fff;
+    width: 86%;
+    border-radius: 5px; }
+    .notPrize .notPrizeTxt .txt {
+      display: -webkit-flex;
+      display: flex;
+      align-items: center; }
+      .notPrize .notPrizeTxt .txt .l {
+        width: 4rem;
+        margin-right: .5rem; }
+        .notPrize .notPrizeTxt .txt .l img {
+          width: 100%; }
+      .notPrize .notPrizeTxt .txt .r {
+        flex: 1; }
+        .notPrize .notPrizeTxt .txt .r p {
+          font: .7rem/1.2 "Microsoft YaHei","Helvetica Neue";
+          color: #141414; }
+          .notPrize .notPrizeTxt .txt .r p strong {
+            font-weight: bold; }
+    .notPrize .notPrizeTxt > a {
+      margin: .5rem auto 0;
+      width: 40%;
+      text-decoration: none;
+      font: .7rem/2 "Microsoft YaHei","Helvetica Neue";
+      color: #fff;
+      background-color: #6a077c;
+      display: block;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px #8b8788; }
+  .notPrize .close {
+    position: absolute;
+    top: 5%;
+    right: 10%;
+    z-index: 4; }
+    .notPrize .close:before {
+      content: "\2716";
+      color: #fff; }
 
 /*# sourceMappingURL=index.css.map */

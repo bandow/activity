@@ -150,6 +150,85 @@
 		</div>
 		<a href="javascript:;" onclick="receive();">立即领取</a>
 	</div>
+	<div class="close" onclick="closeHide();"></div>
+</div>
+<div class="receivePrizesMask">
+	<img src="images/prize_bg.png" alt="">
+	<img src="images/prize_title1.png" alt="">
+	<div class="receivePrizesTxt">
+		<div class="text">
+			<div class="img">
+				<img src="images/coupon10.png" alt="">
+				<p>优惠券</p>
+			</div>
+			<div class="textList">
+				<p>恭喜你</p>
+				<p>获得实物奖品</p>
+				<p><strong>【一堆积分】x 1</strong></p>
+			</div>
+		</div>
+		<div class="importInformation">
+			<div class="item">
+				<label>姓名</label>
+				<input type="text">
+			</div>
+			<div class="item">
+				<label>手机</label>
+				<input type="text">
+			</div>
+			<div class="item">
+				<label>地址</label>
+				<input type="text">
+			</div>
+		</div>
+		<a href="javascript:;" onclick="submit();">确定提交</a>
+		<p>注：因实物奖品需快递发送，请填写准确的地址信息</p>
+	</div>
+	<div class="close" onclick="closeHide();"></div>
+</div>
+<div class="receivePrizesIDMask">
+	<img src="images/prize_bg.png" alt="">
+	<img src="images/prize_title1.png" alt="">
+	<div class="receivePrizesTxt">
+		<div class="text">
+			<div class="img">
+				<img src="images/coupon10.png" alt="">
+				<p>优惠券</p>
+			</div>
+			<div class="textList">
+				<p>恭喜你</p>
+				<p>获得实物奖品</p>
+				<p><strong>【一堆积分】x 1</strong></p>
+			</div>
+		</div>
+		<div class="importInformation">
+			<div class="item">
+				<label>身份证</label>
+				<input type="text">
+			</div>
+		</div>
+		<a href="javascript:;" onclick="">确定提交</a>
+	</div>
+	<div class="close" onclick="closeHide();"></div>
+</div>
+<div class="notPrize">
+	<img src="images/not_prize_title.png" alt="">
+	<img src="images/not_prize_bg.png" alt="">
+	<div class="notPrizeTxt">
+		<div class="txt">
+			<div class="l"><img src="images/dog.png" alt=""></div>
+			<div class="r">
+				<p>嗯，</p>
+				<p>一定是今天还没有</p>
+				<p><strong>默念：爱上城市便捷</strong></p>
+			</div>
+		</div>
+		<a href="javascript:;">once again</a>
+	</div>
+	<div class="close" onclick="closeHide();"></div>
+</div>
+<div class="loginMask">
+	
 </div>
 <!-- mask end -->
 <!-- script begin -->
@@ -281,13 +360,18 @@
 		$(".prizeListMask").hide();
 		$(".successMask").hide();
 		$(".prizeMask").removeClass("prizeMaskActive");
+		$(".receivePrizesMask").removeClass("receivePrizesMaskActive");
 		$(".mask").hide();
 	}
 	//点击关闭
 	function closeHide(){
 		$(".ruleMask").hide();
 		$(".prizeListMask").hide();
+		$(".notPrize").hide();
 		$(".mask").hide();
+		$(".prizeMask").removeClass("prizeMaskActive");
+		$(".receivePrizesMask").removeClass("receivePrizesMaskActive");
+		$(".receivePrizesIDMask").removeClass("receivePrizesIDMaskActive");
 	}
 	//中奖了
 	function prizeLayer(){
@@ -298,6 +382,19 @@
 	function receive(){
 		$(".prizeMask").removeClass("prizeMaskActive");
 		$(".mask").hide();
+		setTimeout(function(){
+    		$(".receivePrizesMask").addClass("receivePrizesMaskActive");
+    		$(".mask").show();
+		},500);
+	}
+	//领取奖品btn
+	function submit(){
+		$(".receivePrizesMask").removeClass("receivePrizesMaskActive");
+		$(".mask").hide();
+		setTimeout(function(){
+    		$(".receivePrizesIDMask").addClass("receivePrizesIDMaskActive");
+    		$(".mask").show();
+		},500);
 	}
 
 </script>
