@@ -1,0 +1,422 @@
+@charset "UTF-8";
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2016-10-18
+* Version:0.0.1
+* ================================================================== */
+html {
+  font-family: "SimHei","Microsoft YaHei","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  /*-webkit-text-size-adjust是解决 iPhone 横屏时默认会放大文字的问题*/
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+html, body {
+  /*-webkit-user-select:none禁止用户进行复制.选择.*/
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  /*使用min-height:100%代替height：100%*/
+  height: 100%;
+  min-height: 100%; }
+
+body {
+  /*弹性滚动-局部滚动开启弹性滚动：将属性挂在body上，可以避免很多奇怪的bug。*/
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, div, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  /*把所有元素的内边距和边框不再会增加它的宽度*/
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  box-sizing: border-box; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html {
+  font-size: 18px; }
+
+@media (min-device-width: 320px) {
+  html {
+    font-size: 18px; } }
+@media (min-device-width: 360px) {
+  html {
+    font-size: 20px; } }
+@media (min-device-width: 375px) {
+  html {
+    font-size: 21px; } }
+@media (min-device-width: 384px) {
+  html {
+    font-size: 21px; } }
+@media (min-device-width: 400px) {
+  html {
+    font-size: 22px; } }
+@media (min-device-width: 414px) {
+  html {
+    font-size: 23px; } }
+@media (min-device-width: 480px) {
+  html {
+    font-size: 26px; } }
+@media (min-device-width: 520px) {
+  html {
+    font-size: 27px; } }
+@media (min-device-width: 533px) {
+  html {
+    font-size: 28px; } }
+@media (min-device-width: 560px) {
+  html {
+    font-size: 29px; } }
+@media (min-device-width: 568px) {
+  html {
+    font-size: 29px; } }
+@media (min-device-width: 600px) {
+  html {
+    font-size: 30px; } }
+@media (min-device-width: 640px) {
+  html {
+    font-size: 24px; } }
+.wp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; }
+
+.page {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+.page1 {
+  background: white; }
+
+.page2 {
+  background: white; }
+
+/* 箭头 */
+@-webkit-keyframes start {
+  0%,30% {
+    opacity: 0.2;
+    -webkit-transform: translate(0, 10px); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0); }
+  100% {
+    opacity: 0.2;
+    -webkit-transform: translate(0, -5px); } }
+@keyframes start {
+  0%,30% {
+    opacity: 0.2;
+    transform: translate(0, 10px); }
+  60% {
+    opacity: 1;
+    transform: translate(0, 0); }
+  100% {
+    opacity: 0.2;
+    transform: translate(0, -5px); } }
+.start {
+  position: fixed;
+  left: 50%;
+  margin-left: -17px;
+  top: 95%;
+  margin-top: -34px;
+  width: 34px;
+  height: 34px;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-animation: start 1.5s infinite ease-in-out;
+  animation: start 1.5s infinite ease-in-out; }
+  .start:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border: 2px solid;
+    border-bottom: 0;
+    border-right: 0;
+    color: #ccc;
+    -moz-transform: rotateZ(-135deg);
+    -o-transform: rotateZ(-135deg);
+    -ms-transform: rotateZ(-135deg);
+    -webkit-transform: rotateZ(-135deg);
+    transform: rotateZ(-135deg); }
+
+/*城市便捷*/
+.cspj .page1 .header {
+  padding: 5% 0;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .cspj .page1 .header img {
+    width: 20%; }
+.cspj .page1 .middle {
+  margin: 5% 7%;
+  width: 86%;
+  border-radius: 5px;
+  overflow: hidden; }
+  .cspj .page1 .middle img {
+    width: 100%; }
+.cspj .page1 .footer {
+  margin: 10% 15%;
+  width: 70%; }
+  .cspj .page1 .footer img {
+    width: 100%; }
+
+.cspj .page2 .header {
+  padding-top: 3vh;
+  margin: 0 auto;
+  width: 90vw;
+  height: 50vh; }
+  .cspj .page2 .header h3 {
+    font: 1rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #0f979f; }
+  .cspj .page2 .header h4 {
+    font: .6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #929292; }
+  .cspj .page2 .header img {
+    padding: 5% 0 0;
+    width: 100%;
+    font-size: 0; }
+.cspj .page2 .footer {
+  padding-top: 3vh;
+  margin: 0 auto;
+  width: 90vw;
+  height: 50vh; }
+  .cspj .page2 .footer p {
+    font: .7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #0f979f; }
+    .cspj .page2 .footer p:nth-child(2) {
+      font: .6rem/1.2 "Microsoft YaHei","Helvetica Neue";
+      color: #929292; }
+  .cspj .page2 .footer .img {
+    margin-top: 5%;
+    text-align: right; }
+    .cspj .page2 .footer .img img {
+      width: 70%; }
+
+/*怡程宜尚*/
+.yc .page1 .header, .ys .page1 .header {
+  padding: 5% 0;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .yc .page1 .header img, .ys .page1 .header img {
+    width: 30%; }
+.yc .page1 .middle, .ys .page1 .middle {
+  margin: 5% 7%;
+  width: 86%;
+  border-radius: 5px;
+  overflow: hidden; }
+  .yc .page1 .middle img, .ys .page1 .middle img {
+    width: 100%; }
+.yc .page1 .footer, .ys .page1 .footer {
+  margin: 10% 15%;
+  width: 70%; }
+  .yc .page1 .footer img, .ys .page1 .footer img {
+    width: 100%; }
+
+.yc .page2 .header, .ys .page2 .header {
+  padding-top: 3vh;
+  margin: 0 auto;
+  width: 90vw;
+  height: 50vh; }
+  .yc .page2 .header h3, .ys .page2 .header h3 {
+    font: 1rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #b0a263; }
+  .yc .page2 .header h4, .ys .page2 .header h4 {
+    font: .6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #929292; }
+  .yc .page2 .header img, .ys .page2 .header img {
+    padding: 5% 0 0;
+    width: 100%;
+    font-size: 0; }
+.yc .page2 .footer, .ys .page2 .footer {
+  padding-top: 3vh;
+  margin: 0 auto;
+  width: 90vw;
+  height: 50vh; }
+  .yc .page2 .footer p, .ys .page2 .footer p {
+    font: .7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #b0a263; }
+  .yc .page2 .footer .img, .ys .page2 .footer .img {
+    margin-top: 5%;
+    text-align: right; }
+    .yc .page2 .footer .img img, .ys .page2 .footer .img img {
+      width: 70%; }
+
+.ys .page1 .middle {
+  margin: 2% 7%; }
+.ys .page1 .footer {
+  margin: 5% 15%; }
+
+/*铂顿*/
+.bd .page1 .header {
+  padding: 5% 0;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .bd .page1 .header img {
+    width: 30%; }
+.bd .page1 .middle {
+  margin: 4% 7%;
+  width: 86%;
+  border-radius: 5px;
+  overflow: hidden; }
+  .bd .page1 .middle img {
+    width: 100%; }
+.bd .page1 .footer {
+  margin: 10% 15%;
+  width: 70%; }
+  .bd .page1 .footer img {
+    width: 100%; }
+
+.bd .page2 .header {
+  padding-top: 3vh;
+  margin: 0 auto;
+  width: 90vw;
+  height: 50vh; }
+  .bd .page2 .header h3 {
+    font: 1rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #b0a263; }
+  .bd .page2 .header h4 {
+    font: .6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #929292; }
+  .bd .page2 .header img {
+    padding: 5% 0 0;
+    width: 100%;
+    font-size: 0; }
+.bd .page2 .footer {
+  padding-top: 3vh;
+  margin: 0 auto;
+  width: 90vw;
+  height: 50vh; }
+  .bd .page2 .footer p {
+    font: .7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #b0a263; }
+    .bd .page2 .footer p:nth-child(2) {
+      margin-top: 5%;
+      font: .6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+      color: #929292; }
+
+/*精途*/
+.jt .page1 .header {
+  padding: 40vh 0 0;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .jt .page1 .header img {
+    width: 30%; }
+.jt .page1 .footer {
+  margin: 10% 15%;
+  width: 70%; }
+  .jt .page1 .footer img {
+    width: 100%; }
+
+.jt .page2 .header {
+  padding-top: 3vh;
+  margin: 0 auto;
+  width: 90vw;
+  height: 50vh; }
+  .jt .page2 .header h3 {
+    font: 1rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #b0a263; }
+  .jt .page2 .header h4 {
+    font: .6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #929292; }
+  .jt .page2 .header img {
+    padding: 5% 0 0;
+    width: 100%;
+    font-size: 0; }
+.jt .page2 .footer {
+  padding-top: 3vh;
+  margin: 0 auto;
+  width: 90vw;
+  height: 50vh; }
+  .jt .page2 .footer p {
+    font: .7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #b0a263; }
+    .jt .page2 .footer p:nth-child(2) {
+      font: .6rem/1.2 "Microsoft YaHei","Helvetica Neue";
+      color: #929292; }
+  .jt .page2 .footer .img {
+    margin-top: 5%;
+    text-align: right; }
+    .jt .page2 .footer .img img {
+      width: 70%; }
+
+/*隐沫*/
+.ym .page1 .header {
+  padding: 40vh 0 0;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .ym .page1 .header img {
+    width: 35%; }
+.ym .page1 .footer {
+  margin: 10% 15%;
+  width: 70%; }
+  .ym .page1 .footer img {
+    width: 100%; }
+
+.ym .page2 .header {
+  padding-top: 3vh;
+  margin: 0 auto;
+  width: 90vw;
+  height: 50vh; }
+  .ym .page2 .header h3 {
+    font: .9rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #b0a263; }
+  .ym .page2 .header h4 {
+    font: .6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #929292; }
+  .ym .page2 .header img {
+    padding: 5% 0 0;
+    width: 100%;
+    font-size: 0; }
+.ym .page2 .footer {
+  padding-top: 3vh;
+  margin: 0 auto;
+  width: 90vw;
+  height: 50vh; }
+  .ym .page2 .footer p {
+    font: .7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #b0a263; }
+    .ym .page2 .footer p:nth-child(2) {
+      margin-top: 5%;
+      font: .6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+      color: #929292; }
+
+/*# sourceMappingURL=brand.css.map */

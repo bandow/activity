@@ -1,0 +1,469 @@
+@import "base","variable";
+html{font-size:18px;}
+@media(min-device-width:320px){
+	html{
+	  font-size:18px;
+	}
+}
+@media(min-device-width:360px){
+	html{
+	  font-size:20px;
+	}
+}
+@media(min-device-width:375px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:384px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:400px){
+	html{
+	  font-size:22px;
+	}
+}
+@media(min-device-width:414px){
+	html{
+	  font-size:23px;
+	}
+}
+@media(min-device-width:480px){
+	html{
+	  font-size:26px;
+	}
+}
+@media(min-device-width:520px){
+	html{
+	  font-size:27px;
+	}
+}
+@media(min-device-width:533px){
+	html{
+	  font-size:28px;
+	}
+}
+@media(min-device-width:560px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:568px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:600px){
+	html{
+	  font-size:30px;
+	}
+}
+@media(min-device-width:640px){
+	html{
+	  font-size:24px;
+	}
+}
+.wp{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;            
+}
+.page{
+    width:100%;
+    height:100%;
+    position:relative;
+}
+.page1{
+    background: white;
+}
+.page2{
+    background: white;
+}
+/* 箭头 */
+@-webkit-keyframes start {
+    0%,30% {
+        opacity: 0.2;
+        -webkit-transform: translate(0,10px);
+    }
+    60% {
+        opacity: 1;
+        -webkit-transform: translate(0,0);
+    }
+    100% {
+        opacity: 0.2;
+        -webkit-transform: translate(0, -5px);
+    }
+}
+@keyframes start {
+    0%,30% {
+        opacity: 0.2;
+        transform: translate(0,10px);
+    }
+    60% {
+        opacity: 1;
+        transform: translate(0,0);
+    }
+    100% {
+        opacity: 0.2;
+        transform: translate(0, -5px);
+    }
+}
+.start{
+    position: fixed;
+    left: 50%;
+    margin-left: -17px;
+    top: 95%;
+    margin-top: -34px;
+    width: 34px;
+    height: 34px;
+    display:-webkit-flex;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+    -webkit-animation: start 1.5s infinite ease-in-out;
+    animation: start 1.5s infinite ease-in-out;
+    &:after{
+        content:"";
+        width:10px;
+        height:10px;
+        border: 2px solid;
+        border-bottom: 0;
+        border-right: 0;
+        color: #ccc;
+        @include transform(rotateZ(-135deg));
+    }
+}
+/*城市便捷*/
+.cspj .page1{
+	.header{
+		padding:5% 0;
+		display:-webkit-flex;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		img{
+			width:20%;
+		}
+	}
+	.middle{
+		margin:5% 7%;
+		width:86%;
+		border-radius:5px;
+		overflow:hidden;
+		img{
+			width:100%;
+		}
+	}
+	.footer{
+		margin:10% 15%;
+		width:70%;
+		img{
+			width:100%;
+		}
+	}
+}
+.cspj .page2{
+	.header{
+		padding-top:3vh;
+		margin:0 auto;
+		width:90vw;
+		height:50vh;
+		h3{
+			font:1rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#0f979f;
+		}
+		h4{
+			font:.6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#929292;
+		}
+		img{
+			padding:5% 0 0;
+			width:100%;
+			font-size:0;
+		}
+	}
+	.footer{
+		padding-top:3vh;
+		margin:0 auto;
+		width:90vw;
+		height:50vh;
+		p{
+			font:.7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#0f979f;
+			&:nth-child(2){
+				font:.6rem/1.2 "Microsoft YaHei","Helvetica Neue";
+				color:#929292;
+			}
+		}
+		.img{
+			margin-top:5%;
+			text-align:right;
+			img{
+				width:70%;
+			}
+		}
+	}
+}
+/*怡程宜尚*/
+.yc .page1,.ys .page1{
+	.header{
+		padding:5% 0;
+		display:-webkit-flex;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		img{
+			width:30%;
+		}
+	}
+	.middle{
+		margin:5% 7%;
+		width:86%;
+		border-radius:5px;
+		overflow:hidden;
+		img{
+			width:100%;
+		}
+	}
+	.footer{
+		margin:10% 15%;
+		width:70%;
+		img{
+			width:100%;
+		}
+	}
+}
+.yc .page2,.ys .page2{
+	.header{
+		padding-top:3vh;
+		margin:0 auto;
+		width:90vw;
+		height:50vh;
+		h3{
+			font:1rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#b0a263;
+		}
+		h4{
+			font:.6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#929292;
+		}
+		img{
+			padding:5% 0 0;
+			width:100%;
+			font-size:0;
+		}
+	}
+	.footer{
+		padding-top:3vh;
+		margin:0 auto;
+		width:90vw;
+		height:50vh;
+		p{
+			font:.7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#b0a263;
+		}
+		.img{
+			margin-top:5%;
+			text-align:right;
+			img{
+				width:70%;
+			}
+		}
+	}
+}
+.ys .page1{
+	.middle{
+		margin:2% 7%;
+	}
+	.footer{
+		margin:5% 15%;
+	}
+}
+/*铂顿*/
+.bd .page1{
+	.header{
+		padding:5% 0;
+		display:-webkit-flex;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		img{
+			width:30%;
+		}
+	}
+	.middle{
+		margin:4% 7%;
+		width:86%;
+		border-radius:5px;
+		overflow:hidden;
+		img{
+			width:100%;
+		}
+	}
+	.footer{
+		margin:10% 15%;
+		width:70%;
+		img{
+			width:100%;
+		}
+	}
+}
+.bd .page2{
+	.header{
+		padding-top:3vh;
+		margin:0 auto;
+		width:90vw;
+		height:50vh;
+		h3{
+			font:1rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#b0a263;
+		}
+		h4{
+			font:.6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#929292;
+		}
+		img{
+			padding:5% 0 0;
+			width:100%;
+			font-size:0;
+		}
+	}
+	.footer{
+		padding-top:3vh;
+		margin:0 auto;
+		width:90vw;
+		height:50vh;
+		p{
+			font:.7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#b0a263;
+			&:nth-child(2){
+				margin-top:5%;
+				font:.6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+				color:#929292;
+			}
+		}
+	}
+}
+/*精途*/
+.jt .page1{
+	.header{
+		padding:40vh 0 0;
+		display:-webkit-flex;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		img{
+			width:30%;
+		}
+	}
+	.footer{
+		margin:10% 15%;
+		width:70%;
+		img{
+			width:100%;
+		}
+	}
+}
+.jt .page2{
+	.header{
+		padding-top:3vh;
+		margin:0 auto;
+		width:90vw;
+		height:50vh;
+		h3{
+			font:1rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#b0a263;
+		}
+		h4{
+			font:.6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#929292;
+		}
+		img{
+			padding:5% 0 0;
+			width:100%;
+			font-size:0;
+		}
+	}
+	.footer{
+		padding-top:3vh;
+		margin:0 auto;
+		width:90vw;
+		height:50vh;
+		p{
+			font:.7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#b0a263;
+			&:nth-child(2){
+				font:.6rem/1.2 "Microsoft YaHei","Helvetica Neue";
+				color:#929292;
+			}
+		}
+		.img{
+			margin-top:5%;
+			text-align:right;
+			img{
+				width:70%;
+			}
+		}
+	}
+}
+/*隐沫*/
+.ym .page1{
+	.header{
+		padding:40vh 0 0;
+		display:-webkit-flex;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		img{
+			width:35%;
+		}
+	}
+	.footer{
+		margin:10% 15%;
+		width:70%;
+		img{
+			width:100%;
+		}
+	}
+}
+.ym .page2{
+	.header{
+		padding-top:3vh;
+		margin:0 auto;
+		width:90vw;
+		height:50vh;
+		h3{
+			font:.9rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#b0a263;
+		}
+		h4{
+			font:.6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#929292;
+		}
+		img{
+			padding:5% 0 0;
+			width:100%;
+			font-size:0;
+		}
+	}
+	.footer{
+		padding-top:3vh;
+		margin:0 auto;
+		width:90vw;
+		height:50vh;
+		p{
+			font:.7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#b0a263;
+			&:nth-child(2){
+				margin-top:5%;
+				font:.6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+				color:#929292;
+			}
+		}
+	}
+}
