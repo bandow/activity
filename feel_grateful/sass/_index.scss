@@ -234,7 +234,7 @@ html{font-size:18px;}
     right:0;
     bottom:0;
     z-index:1;
-    display:none;
+    // display:none;
     background-color:#000;
     opacity:.8;
 }
@@ -584,5 +584,74 @@ html{font-size:18px;}
             color:#fff;
         }
        
+    }
+}
+.loginMask{
+    position:fixed;
+    top:50%;
+    left:50%;
+    z-index:2;
+    // display:none;
+    padding:5%;
+    width:80%;
+    height:auto;
+    background-color:#fff;
+    @include transform(translate(-50%,-50%));
+    >img{
+        width:40%;
+        margin:0 auto;
+        display: block;
+    }
+    form{
+        width:100%;
+        .item{
+            display:-webkit-flex;
+            display:flex;
+            align-items:center;
+            padding:0 3%;
+            margin-bottom:.5rem;
+            width:100%;
+            height:2rem;
+            border:1px solid #ccc;
+            img{
+                width:15px;
+                height:auto;
+                margin-right:15px;
+            }
+            input{
+                border:none;
+                background:none;
+                outline:none; 
+                height:100%;
+            }
+        }
+        .phone{
+            input{
+                flex:1; 
+            }
+        }
+        .code{
+            input{ 
+               width:40%;
+            }
+            p{
+                flex:1;
+                font:.7rem/1 "Microsoft YaHei","Helvetica Neue";  
+                text-align:right;
+                color:#999;
+            }
+        }
+        >a{
+            margin: 1rem auto 0;
+            width: 40%;
+            text-decoration: none;
+            font: .7rem/2.4 "Microsoft YaHei","Helvetica Neue";
+            color: #fff;
+            background-color: #a40001;
+            display: block;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px #8b8788;
+        }
     }
 }

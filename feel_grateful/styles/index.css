@@ -250,7 +250,6 @@ html {
   right: 0;
   bottom: 0;
   z-index: 1;
-  display: none;
   background-color: #000;
   opacity: .8; }
 
@@ -578,5 +577,64 @@ html {
     .notPrize .close:before {
       content: "\2716";
       color: #fff; }
+
+.loginMask {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: 5%;
+  width: 80%;
+  height: auto;
+  background-color: #fff;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+  .loginMask > img {
+    width: 40%;
+    margin: 0 auto;
+    display: block; }
+  .loginMask form {
+    width: 100%; }
+    .loginMask form .item {
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      padding: 0 3%;
+      margin-bottom: .5rem;
+      width: 100%;
+      height: 2rem;
+      border: 1px solid #ccc; }
+      .loginMask form .item img {
+        width: 15px;
+        height: auto;
+        margin-right: 15px; }
+      .loginMask form .item input {
+        border: none;
+        background: none;
+        outline: none;
+        height: 100%; }
+    .loginMask form .phone input {
+      flex: 1; }
+    .loginMask form .code input {
+      width: 40%; }
+    .loginMask form .code p {
+      flex: 1;
+      font: .7rem/1 "Microsoft YaHei","Helvetica Neue";
+      text-align: right;
+      color: #999; }
+    .loginMask form > a {
+      margin: 1rem auto 0;
+      width: 40%;
+      text-decoration: none;
+      font: .7rem/2.4 "Microsoft YaHei","Helvetica Neue";
+      color: #fff;
+      background-color: #a40001;
+      display: block;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 2px 2px 5px #8b8788; }
 
 /*# sourceMappingURL=index.css.map */
