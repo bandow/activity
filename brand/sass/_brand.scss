@@ -347,6 +347,13 @@ html{font-size:18px;}
 				color:#929292;
 			}
 		}
+		.img{
+			margin-top:5%;
+			text-align:right;
+			img{
+				width:70%;
+			}
+		}
 	}
 }
 /*精途*/
@@ -465,5 +472,33 @@ html{font-size:18px;}
 				color:#929292;
 			}
 		}
+		.img{
+			margin-top:5%;
+			text-align:right;
+			img{
+				width:70%;
+			}
+		}
+	}
+}
+
+@media(min-device-width:375px){
+	.cspj .page2 .header{
+		padding-top:7vh;
+	}
+	.yc .page2 .header{
+		padding-top:7vh;
+	}
+	.ys .page2 .header{
+		padding-top:7vh;
+	}
+	.ym .page2 .header{
+		padding-top:7vh;
+	}
+	.jt .page2 .header{
+		padding-top:7vh;
+	}
+	.bd .page2 .header{
+		padding-top:7vh;
 	}
 }

@@ -328,6 +328,11 @@ html {
       margin-top: 5%;
       font: .6rem/1.5 "Microsoft YaHei","Helvetica Neue";
       color: #929292; }
+  .bd .page2 .footer .img {
+    margin-top: 5%;
+    text-align: right; }
+    .bd .page2 .footer .img img {
+      width: 70%; }
 
 /*精途*/
 .jt .page1 .header {
@@ -418,5 +423,29 @@ html {
       margin-top: 5%;
       font: .6rem/1.5 "Microsoft YaHei","Helvetica Neue";
       color: #929292; }
+  .ym .page2 .footer .img {
+    margin-top: 5%;
+    text-align: right; }
+    .ym .page2 .footer .img img {
+      width: 70%; }
+
+@media (min-device-width: 375px) {
+  .cspj .page2 .header {
+    padding-top: 7vh; }
+
+  .yc .page2 .header {
+    padding-top: 7vh; }
+
+  .ys .page2 .header {
+    padding-top: 7vh; }
+
+  .ym .page2 .header {
+    padding-top: 7vh; }
+
+  .jt .page2 .header {
+    padding-top: 7vh; }
+
+  .bd .page2 .header {
+    padding-top: 7vh; } }
 
 /*# sourceMappingURL=brand.css.map */
