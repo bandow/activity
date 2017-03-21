@@ -131,7 +131,7 @@ html{font-size:18px;}
                 display: block;
                 margin:0 auto;
             }
-            .mask{
+            .maskT{
                 width:100%;
                 height:100%;
                 position:absolute;
@@ -141,7 +141,7 @@ html{font-size:18px;}
                 display:none;
             }
        }
-       .active .mask{
+       .active .maskT{
             display:block;
        }
        &:nth-child(2){
