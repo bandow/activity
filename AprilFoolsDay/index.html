@@ -13,16 +13,137 @@
 <meta name="msapplication-tap-highlight" content="no">
 <title>愚人节活动</title>
 <link rel="stylesheet" href="styles/index.css">
+<link rel="stylesheet" href="styles/swiper.min.css">
+<style>
+	.swiper-container{
+		position:absolute;
+		top:50%;
+		left:50%;
+		width:60%;
+		height:auto;
+		-webkit-transform:translate(-50%,-50%);
+		transform:translate(-50%,-50%);
+	}
+	.swiper-slide img{
+		width:100%;
+	}
+	.swiper-button-prev{
+		background-image:url(images/r.png);
+		left:1rem;
+		-webkit-animation:myPrev .5s infinite;
+		animation:myPrev .5s infinite;
+	}
+    .swiper-button-next{
+		background-image:url(images/l.png);
+		right:1rem;
+		-webkit-animation:myNext .5s infinite;
+		animation:myNext .5s infinite;
+    }
+    .swiper-button-disabled{
+    	-webkit-animation:myPrev1 .5s infinite;
+		animation:myPrev1 .5s infinite;
+    }
+    @keyframes myPrev
+	{
+		from {left:1rem;} 
+		to {left:.5rem;}
+	}
+	@-webkit-keyframes myPrev 
+	{
+		from {left:1rem;}
+		to {left:.5rem;}
+	}
+	 @keyframes myNext
+	{
+		from {right:1rem;}
+		to {right:.5rem;}
+	}
+	@-webkit-keyframes myNext 
+	{
+		from {right:1rem;}
+		to {right:.5rem;}
+	}
+</style>
 </head>
 <body>
 <div class="wrapper" id="wrapper" style="background:url('images/bg.jpg') #f5ca33 no-repeat;background-size:100% auto;">
+	<section class="page page1">
+		<img src="images/page1.png" alt="">
+	</section>
+	<section class="page page2">
+		<img src="images/page2.png" alt="">
+        <div class="swiper-container">
+	        <div class="swiper-wrapper">
+	            <div class="swiper-slide"><img src="images/1.jpg"/></div>
+	            <div class="swiper-slide"><img src="images/2.jpg"/></div>
+	            <div class="swiper-slide"><img src="images/3.jpg"/></div>
+	        </div>       
+	    </div>
+	     <div class="swiper-button-prev"></div>
+    		<div class="swiper-button-next"></div>
+		<div class="btn">
+			<a class="btnL" href="javascript:;"><img src="images/btn1.png" alt=""><img src="images/btn1_top.png" alt=""></a>
+			<a class="btnR" href="javascript:;"><img src="images/btn2.png" alt=""></a>
+		</div>
+	</section>
 </div>
 <!-- script begin -->
 <script src="scripts/jquery-3.1.1.min.js"></script>
+<script src="scripts/swiper.min.js"></script>
 <script>
 	$(document).ready(function(){
+		$("body,html").css("overflow","hidden");
+		var windowH=$(window).height(),
+		    windowW=$(window).width();
+		$(".page").css({
+			width:windowW,
+			height:windowH
+		});  
+		setTimeout(function(){
+			$(".wrapper").addClass("wrapperActive");
+		},1000);
 
+		var mySwiper = new Swiper('.swiper-container',{
+			//loop : true,       //循环
+			//autoplay: 3000,    //可选选项，自动滑动
+			prevButton:'.swiper-button-prev',
+			nextButton:'.swiper-button-next',
+			onInit: function(swiper){
+				btnL();
+				$(".btnL").on("click",function(){
+					$(".swiper-wrapper .swiper-slide-active img").attr("src","images/a"+ swiper.activeIndex +".jpg");
+					btnR();
+				});
+		    },
+			onSlideChangeEnd: function(swiper){
+				btnL();
+				$(".btnL").on("click",function(){
+					$(".swiper-wrapper .swiper-slide-active img").attr("src","images/a"+ swiper.activeIndex +".jpg");
+					btnR();
+				});
+			},
+			onTransitionEnd: function(swiper){
+          		btnL();
+          		$(".btnL").on("click",function(){
+					$(".swiper-wrapper .swiper-slide-active img").attr("src","images/a"+ swiper.activeIndex +".jpg");
+					btnR();
+				});
+        	},
+		});
     });
+
+    function btnL(){
+    	$(".btnL").addClass("btnLactive");
+		setTimeout(function(){
+			$(".btnL").removeClass("btnLactive");
+		},4000);
+    }
+    function btnR(){
+    	$(".btnR").addClass("btnLactive");
+		setTimeout(function(){
+			$(".btnR").removeClass("btnLactive");
+		},4000);
+    }
 </script>
 <!-- script end -->
 </body>
