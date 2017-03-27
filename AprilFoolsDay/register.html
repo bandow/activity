@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="愚人节活动"/>
+<meta name="keywords" content="愚人节活动"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>愚人节活动</title>
+<link rel="stylesheet" href="styles/index.css">
+<style>
+	.imgBg img{width:100%;height:auto;}
+	.btn img{width:40%;margin:4% auto;display:block;}
+	.foot {width:90%;margin:0 auto;}
+	.foot img{width:100%;}
+    .page form{
+    	position:relative;
+    	z-index:2;
+    	width:70%;
+    	margin:-8% auto 0;
+    }
+    .phone{
+    	width:90%;
+    	margin:0 auto;
+    	display:-webkit-flex;
+    	display:flex;
+    	align-items:center;
+    }
+    .phone label{
+    	font:.7rem/1.5 "Microsoft YaHei","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    	color:#ce2117;
+    }
+    .phone input{
+    	border:0;
+    	background:none;
+    	outline:none;
+    	flex: 1;
+    	border-bottom:1px solid #ce2117;
+    	width:50%;
+    }
+    .slider{margin-top:4%;position:relative;height:2rem;background-color:#ddd;overflow: hidden;}
+	.label {
+	    background: -webkit-gradient(linear, left top, right top, color-stop(0, #4d4d4d), color-stop(.4, #4d4d4d), color-stop(.5, white), color-stop(.6, #4d4d4d), color-stop(1, #4d4d4d));
+	    -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+	    -webkit-animation: slidetounlock 3s infinite;
+	    -webkit-text-size-adjust: none;
+	    line-height: 2rem;
+	    height: 2rem;
+	    text-align: center;
+	    font-size: 16px;
+	    width: 100%;
+	    color: #aaa;
+	}
+	@keyframes slidetounlock
+	{
+	    0%     {background-position:-200px 0;}
+	    100%   {background-position:200px 0;}
+	}
+	@-webkit-keyframes slidetounlock
+	{
+	    0%     {background-position:-200px 0;}
+	    100%   {background-position:200px 0;}
+	}
+	.button{
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    width: 2rem;
+	    height: 2rem;
+	    background-color: #fff;
+	    transition: left 0s;
+	    -webkit-transition: left 0s;
+	}
+	.button-on{
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    width: 2rem;
+	    height: 2rem;
+	    background-color: #fff;
+	    transition: left 1s;
+	    -webkit-transition: left .5s;
+	}
+	.button1{
+	    position: absolute;
+	    display: none;
+	    right: 0;
+	    top: 0;
+	    width: 2rem;
+	    height: 2rem;
+	    background-color: #fff;
+	}
+	.track{
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    height: 100%;
+	    width: 0;
+	    overflow: hidden;
+	    transition: width 0s;
+	    -webkit-transition: width 0s;
+	}
+	.track-on{
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    height: 100%;
+	    width: 0;
+	    overflow: hidden;
+	    transition: width 1s;
+	    -webkit-transition: width .5s;
+	}
+	.icon  {
+	    width: 2rem;
+	    height: 2rem;
+	    position: relative;
+	    font-family: sans-serif;
+        display: -webkit-flex;
+        display: flex;
+	    align-items: center;
+	    justify-content: center;
+	}
+	.icon:before{
+	    content:'>>';
+	    color:#ccc;
+	    line-height:32px;
+	    font-family: monospace;
+	}
+	.button1 .ok  {
+	    width: 2rem;
+	    height: 2rem;
+	    position: relative;
+	    display:none;
+	    font-family: sans-serif;
+        display: flex;
+	    align-items: center;
+	    justify-content: center;
+	}
+	.button1 .ok:before{
+	    position: absolute;
+	    content:'\2714';
+	    color:#78c430;
+	}
+	.spinner {
+	    margin: 16px auto;
+	    display: none;
+	    width: 20px;
+	    height: 20px;
+	    position: relative;
+	}
+	.container1 > div, .container2 > div, .container3 > div {
+	    width: 6px;
+	    height: 6px;
+	    background-color: #ccc;
+	    border-radius: 100%;
+	    position: absolute;
+	    -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+	    animation: bouncedelay 1.2s infinite ease-in-out;
+	    -webkit-animation-fill-mode: both;
+	    animation-fill-mode: both;
+	}
+	.spinner .spinner-container {
+	    position: absolute;
+	    width: 100%;
+	    height: 100%;
+	}
+	.container2 {
+	    -webkit-transform: rotateZ(45deg);
+	    transform: rotateZ(45deg);
+	}
+	.container3 {
+	    -webkit-transform: rotateZ(90deg);
+	    transform: rotateZ(90deg);
+	}
+	.circle1 { top: 0; left: 0; }
+	.circle2 { top: 0; right: 0; }
+	.circle3 { right: 0; bottom: 0; }
+	.circle4 { left: 0; bottom: 0; }
+	.container2 .circle1 {
+	    -webkit-animation-delay: -1.1s;
+	    animation-delay: -1.1s;
+	}
+	.container3 .circle1 {
+	    -webkit-animation-delay: -1.0s;
+	    animation-delay: -1.0s;
+	}
+	.container1 .circle2 {
+	    -webkit-animation-delay: -0.9s;
+	    animation-delay: -0.9s;
+	}
+	.container2 .circle2 {
+	    -webkit-animation-delay: -0.8s;
+	    animation-delay: -0.8s;
+	}
+	.container3 .circle2 {
+	    -webkit-animation-delay: -0.7s;
+	    animation-delay: -0.7s;
+	}
+	.container1 .circle3 {
+	    -webkit-animation-delay: -0.6s;
+	    animation-delay: -0.6s;
+	}
+	.container2 .circle3 {
+	    -webkit-animation-delay: -0.5s;
+	    animation-delay: -0.5s;
+	}
+	.container3 .circle3 {
+	    -webkit-animation-delay: -0.4s;
+	    animation-delay: -0.4s;
+	}
+	.container1 .circle4 {
+	    -webkit-animation-delay: -0.3s;
+	    animation-delay: -0.3s;
+	}
+	.container2 .circle4 {
+	    -webkit-animation-delay: -0.2s;
+	    animation-delay: -0.2s;
+	}
+	.container3 .circle4 {
+	    -webkit-animation-delay: -0.1s;
+	    animation-delay: -0.1s;
+	}
+	@-webkit-keyframes bouncedelay {
+	    0%, 80%, 100% { -webkit-transform: scale(0.0) }
+	    40% { -webkit-transform: scale(1.0) }
+	}
+	@keyframes bouncedelay {
+	    0%, 80%, 100% {
+	        transform: scale(0.0);
+	        -webkit-transform: scale(0.0);
+	    } 40% {
+	          transform: scale(1.0);
+	          -webkit-transform: scale(1.0);
+	      }
+	}
+	.bg-green {
+	    line-height: 52px;
+	    height: 52px;
+	    text-align: center;
+	    font-size: 16px;
+	    background-color: #78c430;
+	}
+</style>
+</head>
+<body>
+<div class="wrapper" id="wrapper" style="background:url('images/bg.jpg') #f5ca33 no-repeat;background-size:100% auto;">
+   <div class="page">	
+   		<div class="imgBg">
+   			<img src="images/prize_bg.png" alt="">
+   		</div>	
+        <form action="">
+            <div class="phone">
+            	<label>手机号：</label>
+        		<input type="text">
+            </div>
+        	<div class="slider" id="slider">
+		        <div class="label">向右滑动验证</div>
+		        <div class="track" id="track">
+		            <div class="bg-green"></div>
+		        </div>
+		        <div class="button" id="btn">
+		            <div class="icon" id="icon"></div>
+		        </div>
+		        <div class="button1" id="btn1">
+		            <div class="spinner" id="spinner">
+		                <div class="spinner-container container1">
+		                    <div class="circle1"></div>
+		                    <div class="circle2"></div>
+		                    <div class="circle3"></div>
+		                    <div class="circle4"></div>
+		                </div>
+		                <div class="spinner-container container2">
+		                    <div class="circle1"></div>
+		                    <div class="circle2"></div>
+		                    <div class="circle3"></div>
+		                    <div class="circle4"></div>
+		                </div>
+		                <div class="spinner-container container3">
+		                    <div class="circle1"></div>
+		                    <div class="circle2"></div>
+		                    <div class="circle3"></div>
+		                    <div class="circle4"></div>
+		                </div>
+		            </div>
+		            <div class="ok" id="ok"></div>
+		        </div>
+		    </div>
+        </form>
+   		<div class="btn">
+   			<a href=""><img src="images/prize_btn.png" alt=""></a>
+   		</div>
+   		<div class="foot">
+   			<img src="images/logo.png" alt="">
+   		</div>
+   </div>	
+</div>
+<!-- script begin -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+	var oW,touches,oLeft;
+	var oSlider=document.getElementById('slider');
+	var oTrack=document.getElementById('track');
+	var oBtn = document.getElementById('btn');
+	var oBtn1=document.getElementById('btn1');
+	var oSpinner=document.getElementById('spinner');
+	var Ok=document.getElementById('ok');
+
+	oBtn.addEventListener('touchstart',function(e){
+	    console.log(e);
+	    touches = e.touches[0];
+	    oW = touches.clientX - oBtn.offsetLeft;
+	    oLeft = touches.clientX - oW;
+	    // oBtn.className="button";
+	    // oTrack.className="track";
+	    document.addEventListener("touchmove",defaultEvent,false);//阻止页面的滑动默认事件
+	},false);
+
+	oBtn.addEventListener("touchmove", function(e) {
+	    touches = e.touches[0];
+	    oLeft = touches.clientX - oW;
+	    if(oLeft < 0) {
+	        oLeft = 0;
+	    }else if(oLeft > document.documentElement.clientWidth - oBtn.offsetWidth) {
+	        oLeft = (document.documentElement.clientWidth - oBtn.offsetWidth);
+	    }
+	    oBtn.style.left = oLeft + "px";
+	    oTrack.style.width=oLeft+ 'px';
+	},false);
+
+	var loading= function(){
+	    oSpinner.style.display='block';
+	    Ok.style.display='none';
+	}
+	var ok=function(){
+	    Ok.style.display='flex';
+	    oSpinner.style.display='none';
+	}
+	oBtn.addEventListener("touchend",function(e) {
+	    if(oLeft>=(oSlider.clientWidth-oBtn.clientWidth)){
+	        oBtn.style.left = (document.documentElement.clientWidth - oBtn.offsetWidth);
+	        oTrack.style.width= (document.documentElement.clientWidth - oBtn.offsetWidth);
+	        oBtn.style.display='none';
+	        oBtn1.style.display='block';
+	    }else{
+	        oBtn.style.left = 0;
+	        oTrack.style.width= 0;
+	        oBtn.className="button-on";
+	        oTrack.className="track-on";
+	    }
+	    document.removeEventListener("touchmove",defaultEvent,false);
+	},false);
+
+	function defaultEvent(e) {
+	    e.preventDefault();
+	}
+
+	ok();
+</script>
+<!-- script end -->
+</body>
+</html>

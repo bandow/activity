@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="愚人节活动"/>
+<meta name="keywords" content="愚人节活动"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>愚人节活动</title>
+<link rel="stylesheet" href="styles/index.css">
+<style>
+	.null img{
+		padding-top:20%;
+		width:100%;
+	}
+	.list .imgBg{
+		position:relative;
+		width:100%;
+		font-size:0;
+	}
+	.list .imgBg>img{
+		width:100%;
+	}
+	.list .imgBg h3{
+	    position: absolute;
+	    left: 26%;
+	    top: 7%;
+	    width: 18%;
+	    text-align: center;
+	    color: #ffff00;
+	    font:bold 1.4rem/1 "SimHei","Microsoft YaHei","Helvetica Neue";
+	}
+	.list .imgBg ul{
+		position: absolute;
+	    left: 20%;
+	    top: 20%;
+	    width:60%;
+	    display: -webkit-flex;
+		display: flex;
+		align-items:center;
+		flex-wrap:wrap ;
+	}
+	.list ul li{
+		width:15vw;
+		padding:1vw;
+	    overflow: hidden;
+	}
+	.list ul li img{width:100%;}
+	.list .btn{
+		position: absolute;
+		left:0;
+		right: 0;
+		bottom:1rem;
+	}
+	.list .btn a{
+		display: -webkit-flex;
+		display: flex;
+		align-items:center;
+		justify-content:center;
+	}
+	.list .btn a img{
+		width: 50%;
+	}
+	.list .code{
+		position:absolute;
+	    right:5%;
+	    bottom:1vh;
+	    width:20%;
+	}
+	.list .code img{
+		width:100%;
+	}
+</style>
+</head>
+<body>
+<div class="wrapper" id="wrapper" style="background:url('images/bg.jpg') #f5ca33 no-repeat;background-size:100% auto;">
+    <!-- 空列表 begin -->
+	<!-- <div class="page null">
+		<img src="images/list_unll.png" alt="">
+	</div> -->
+	<!-- 空列表 end -->
+	<!-- 有内容列表 begin -->
+	<div class="page list">  
+	    <div class="imgBg">
+	    	<img src="images/list.png" alt="">
+	    	<h3>10</h3>	
+	    	<ul>
+				<li><img src="images/woman_hear.jpg" alt=""></li>
+				<li><img src="images/man_hear.jpg" alt=""></li>
+				<li><img src="images/woman_hear.jpg" alt=""></li>
+				<li><img src="images/man_hear.jpg" alt=""></li>
+				<li><img src="images/woman_hear.jpg" alt=""></li>
+				<li><img src="images/woman_hear.jpg" alt=""></li>
+				<li><img src="images/man_hear.jpg" alt=""></li>
+				<li><img src="images/woman_hear.jpg" alt=""></li>
+			</ul>
+	    </div>
+		<div class="btn"><a href=""><img src="images/list_btn.png" alt=""></a></div>
+		<div class="code"><img src="images/list_code.png" alt=""></div>
+	</div>	
+	<!-- 有内容列表 end -->
+</div>
+<!-- script begin -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("body,html").css("overflow","hidden");
+		var windowH=$(window).height(),
+		    windowW=$(window).width();
+		$(".page").css({
+			width:windowW,
+			height:windowH
+		});  
+    });
+</script>
+<!-- script end -->
+</body>
+</html>

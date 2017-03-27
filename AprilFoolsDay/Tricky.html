@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="愚人节活动"/>
+<meta name="keywords" content="愚人节活动"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>愚人节活动</title>
+<link rel="stylesheet" href="styles/index.css">
+<style>
+	.page .imgBg{
+		position:relative;
+		margin:0 auto;
+		display:block;
+		width:92%;
+	}
+	.page .imgBg img{
+		width:100%;
+		height:auto;
+	}
+	.page .imgBg h3{
+    	position:absolute;
+    	left:50%;
+    	top:19.5%;
+	    width: 18%;
+	    text-align:center;
+	    color: #ffff00;
+    	font: bold 1.2rem/1 "SimHei","Microsoft YaHei","Helvetica Neue";
+    }
+    .page .imgBg .lr{
+    	position: absolute;
+    	top:40%;
+    	left:15%;
+    	width:70%;
+    	-webkit-transform:rotate(15deg);
+    	transform:rotate(15deg);
+    	-webkit-animation:mymove 1s infinite;
+    	animation:mymove 1s infinite;
+    }
+    @keyframes mymove
+	{
+		0% {-webkit-transform:rotate(15deg);transform:rotate(15deg);}
+		25% {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+		50% {-webkit-transform:rotate(-10deg);transform:rotate(-10deg);}
+		75% {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+		100% {-webkit-transform:rotate(15deg);transform:rotate(015deg);}
+	}
+	@-webkit-keyframes mymove 
+	{
+		0% {-webkit-transform:rotate(15deg);transform:rotate(15deg);}
+		25% {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+		50% {-webkit-transform:rotate(-10deg);transform:rotate(-10deg);}
+		75% {-webkit-transform:rotate(0deg);transform:rotate(0deg);}
+		100% {-webkit-transform:rotate(15deg);transform:rotate(015deg);}
+	}
+     .page .imgBg .active1{
+		-webkit-transform:rotate(-10deg);
+    	transform:rotate(-10deg);
+     }
+     .page .imgBg .active2{
+		-webkit-transform:rotate(15deg);
+    	transform:rotate(15deg);
+     }
+	.page .text p{
+		font:bold .75rem/1.8"Microsoft YaHei", "SimHei","Helvetica Neue";
+		color:#ce2117;
+		text-align:center;
+	}
+	.page .btn{
+		position: absolute;
+		left:5%;
+		right: 5%;
+		bottom:1rem;
+		display:-webkit-flex;
+		display:flex;
+		align-items:center;
+	}
+	.page .btn a{
+		flex: 1;
+	}
+	.page .btn a img{
+		width: 80%;
+		margin:0 auto;
+		display:block;
+	}
+</style>
+</head>
+<body>
+<div class="wrapper" id="wrapper" style="background:url('images/bg.jpg') #f5ca33 no-repeat;background-size:100% auto;">
+   <div class="page">	
+   		<div class="imgBg">
+   			<img src="images/Tricky.png" alt="">
+   			<h3>10</h3>
+   			<div class="lr">
+   				<img src="images/lr.png" alt="">
+   			</div>
+   		</div>	
+   		<div class="text">
+   			<p>虽然床照是假的，但我送你价值38元的</p>
+			<p>东呈国际集团银卡体验礼包却是真的！</p>
+			<p>入住旗下8个酒店品牌都有优惠哦！</p>
+   		</div>
+   		<div class="btn">
+   			<a href=""><img src="images/Tricky_btn1.png" alt=""></a>
+   			<a href=""><img src="images/Tricky_btn2.png" alt=""></a>
+   		</div>
+   </div>	
+</div>
+<!-- script begin -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+	var times=0;
+	$(document).ready(function(){
+		$("body,html").css("overflow","hidden");
+		var windowH=$(window).height(),
+		    windowW=$(window).width();
+		$(".page").css({
+			width:windowW,
+			height:windowH
+		});  
+
+		// times = setInterval(jump,800); 
+    });
+
+    function jump(){
+	　　if($(".lr").hasClass("active1")){
+			$(".lr").removeClass("active1");
+			$(".lr").addClass("active2");
+		}else if($(".lr").hasClass("active2")){
+			$(".lr").removeClass("active2");
+			$(".lr").addClass("active1");
+		}else{
+			$(".lr").addClass("active1");
+		}
+	}
+   
+</script>
+<!-- script end -->
+</body>
+</html>
