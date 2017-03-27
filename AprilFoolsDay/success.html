@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="愚人节活动"/>
+<meta name="keywords" content="愚人节活动"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>愚人节活动</title>
+<link rel="stylesheet" href="styles/index.css">
+<style>
+	.page img{
+		width:100%;
+	}
+	.share{
+		position:fixed;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		background:rgba(0,0,0,.5);
+	}
+	.share img{
+		padding:5% 0 0 10%;
+		width:100%;
+	}
+</style>
+</head>
+<body>
+<div class="wrapper" id="wrapper" style="background:url('images/bg.jpg') #f5ca33 no-repeat;background-size:100% auto;">
+	<div class="page">
+		<img src="images/success.png" alt="">
+	</div>
+	<div class="share">
+		<img src="images/share.png" alt="">
+	</div>
+</div>
+<!-- script begin -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$("body,html").css("overflow","hidden");
+		var windowH=$(window).height(),
+		    windowW=$(window).width();
+		$(".page").css({
+			width:windowW,
+			height:windowH
+		});  
+		$(".share").on("click",function(){
+			$(this).hide();
+		});
+    });
+</script>
+<!-- script end -->
+</body>
+</html>
