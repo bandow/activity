@@ -42,6 +42,7 @@
     	flex: 1;
     	border-bottom:1px solid #ce2117;
     	width:50%;
+    	font:.7rem/1.5 "Microsoft YaHei","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
     }
     .slider{margin-top:4%;position:relative;height:2rem;background-color:#ddd;overflow: hidden;}
 	.label {
@@ -246,6 +247,44 @@
 	    font-size: 16px;
 	    background-color: #78c430;
 	}
+	.mask {
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    z-index: 4;
+	    /*display: none;*/
+	    background-color: #000;
+	    opacity: .6;
+	}
+	.successMask {
+	    position: fixed;
+	    top: 50%;
+	    left: 50%;
+	    z-index: 5;
+	    /*display: none;*/
+	    width:70%;
+	    min-height:8.2rem;
+	    -webkit-transform: translate(-50%,-50%);
+	    transform: translate(-50%,-50%);
+	    background:url(images/mask_bg.png) no-repeat;
+	    background-size:100% auto;
+	}
+	.successMask p{
+		padding:10%;
+		font:.7rem/1.5 "Microsoft YaHei","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+		color:#0c7663;
+	}
+	.successMask a{
+		display:block;
+		width:50%;
+		font-size:0;
+		margin:0 auto;
+	}
+	.successMask a img{
+		width:100%;
+	}
 </style>
 </head>
 <body>
@@ -299,6 +338,11 @@
    			<img src="images/logo.png" alt="">
    		</div>
    </div>	
+</div>
+<div class="mask"></div>
+<div class="successMask">
+	<p>领取成功！请关注东呈酒店微信公众号查看。</p>
+	<a href=""><img src="images/mask_btn.png" alt=""></a>
 </div>
 <!-- script begin -->
 <script src="scripts/jquery-3.1.1.min.js"></script>

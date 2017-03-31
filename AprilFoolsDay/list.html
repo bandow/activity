@@ -14,6 +14,7 @@
 <title>愚人节活动</title>
 <link rel="stylesheet" href="styles/index.css">
 <style>
+.null { position: relative; }
 	.null img{
 		padding-top:20%;
 		width:100%;
@@ -75,14 +76,40 @@
 	.list .code img{
 		width:100%;
 	}
+	.null .btn{
+		position: absolute;
+		left:0;
+		right: 0;
+		bottom:1rem;
+	}
+	.null .btn a{
+		display: -webkit-flex;
+		display: flex;
+		align-items:center;
+		justify-content:center;
+	}
+	.null .btn a img{
+		width: 50%;
+	}
+	.null .code{
+		position:absolute;
+	    right:5%;
+	    bottom:1vh;
+	    width:20%;
+	}
+	.null .code img{
+		width:100%;
+	}
 </style>
 </head>
 <body>
 <div class="wrapper" id="wrapper" style="background:url('images/bg.jpg') #f5ca33 no-repeat;background-size:100% auto;">
     <!-- 空列表 begin -->
-	<!-- <div class="page null">
+	<div class="page null">
 		<img src="images/list_unll.png" alt="">
-	</div> -->
+		<div class="btn"><a href=""><img src="images/list_btn.png" alt=""></a></div>
+		<div class="code"><img src="images/list_code.png" alt=""></div>
+	</div>
 	<!-- 空列表 end -->
 	<!-- 有内容列表 begin -->
 	<div class="page list">  
