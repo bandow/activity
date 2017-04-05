@@ -1,0 +1,156 @@
+@import "base","variable";
+html{font-size:18px;}
+@media(min-device-width:320px){
+	html{
+	  font-size:18px;
+	}
+}
+@media(min-device-width:360px){
+	html{
+	  font-size:20px;
+	}
+}
+@media(min-device-width:375px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:384px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:400px){
+	html{
+	  font-size:22px;
+	}
+}
+@media(min-device-width:414px){
+	html{
+	  font-size:23px;
+	}
+}
+@media(min-device-width:480px){
+	html{
+	  font-size:26px;
+	}
+}
+@media(min-device-width:520px){
+	html{
+	  font-size:27px;
+	}
+}
+@media(min-device-width:533px){
+	html{
+	  font-size:28px;
+	}
+}
+@media(min-device-width:560px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:568px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:600px){
+	html{
+	  font-size:30px;
+	}
+}
+@media(min-device-width:640px){
+	html{
+	  font-size:24px;
+	}
+}
+.wrapper{
+	position:relative;
+	width:100%;
+	max-width:640px;
+	min-height:320px;
+	height:auto;
+	margin:0 auto;
+	overflow:hidden;
+}
+.springFair .title{
+	padding:5% 5% 0 5%;
+	img{
+		width:100%;
+	}
+}
+.springFair .titleText{
+	padding:0 5%;
+	h3{
+		margin-top:.5rem;
+		font:bold .9rem/1.5 $publicFont;
+		color:#434a66;
+	}
+	p{
+		font:.65rem/1.5 $publicFont;
+		color:#434a66;
+	}
+}
+.springFair .item{
+	position:relative;
+	padding:5%;
+	margin:10% 5%;
+	background-color:#ffa531;
+	border-radius:5px;
+	.imgIcon{
+		position:absolute;
+		width:3.5rem;
+		height:3.5rem;
+		top:-1rem;
+		left:-.5rem;
+		border-radius:100%;
+		background-color:#e3e3e3;
+		box-shadow:1px 2px 5px rgba(0,0,0,.5);
+		display:-webkit-flex;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		img{
+			width:50%;
+		}
+	}
+	h2{
+		font:bold .85rem/1.5 $publicFont;
+		color:#fff;
+		text-align:center;
+		margin-bottom:1rem;
+	}
+	p{
+		font:.75rem/1.5 $publicFont;
+		color:#fff;
+	}
+}
+.springFair .cnvenienceService{
+	background-color:#c5bcbc;
+	h2{
+		color:#434a66;
+	}
+	p{
+		text-align:center;
+		color:#434a66;
+	}
+}
+.springFair .booking{
+	a{
+		margin:0 auto;
+		display:block;
+		background-color:#434a66;
+		color:#fff;
+		border-radius:5px;
+		width:70%;
+		text-align:center;
+		font:bold 1rem/2rem $publicFont;
+		text-decoration:none;
+	}
+	img{
+		margin:1rem auto;
+		display: block;
+		width:40%;
+	}
+}
