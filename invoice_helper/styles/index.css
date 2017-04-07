@@ -1,0 +1,438 @@
+@charset "UTF-8";
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2016-10-18
+* Version:0.0.1
+* ================================================================== */
+html {
+  font-family: "Microsoft YaHei","Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+  /*-webkit-text-size-adjust是解决 iPhone 横屏时默认会放大文字的问题*/
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+html, body {
+  /*-webkit-user-select:none禁止用户进行复制.选择.*/
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  /*使用min-height:100%代替height：100%*/
+  height: 100%;
+  min-height: 100%; }
+
+body {
+  /*弹性滚动-局部滚动开启弹性滚动：将属性挂在body上，可以避免很多奇怪的bug。*/
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, div, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  /*把所有元素的内边距和边框不再会增加它的宽度*/
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  box-sizing: border-box; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.w960 {
+  width: 960px;
+  margin: 0 auto; }
+
+.header {
+  width: 100%;
+  height: 60px; }
+  .header .title {
+    float: left;
+    width: 180px;
+    height: 70px;
+    background-color: #ff0058;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); }
+    .header .title h1 {
+      font: 20px/60px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      color: #fff;
+      text-align: center; }
+  .header .hotelName {
+    margin-top: 23px;
+    padding: 0 10px 0 2px;
+    float: right;
+    border-right: 1px solid #fff; }
+    .header .hotelName img {
+      float: left; }
+    .header .hotelName p {
+      margin-left: 24px;
+      font: 14px/1 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      color: #fff; }
+  .header .exitLogin {
+    float: right;
+    margin: 15px 0 0 15px; }
+    .header .exitLogin a {
+      font: 14px/30px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      color: #fff; }
+
+.search {
+  margin: 50px auto; }
+  .search table {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #ddd;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); }
+    .search table tr td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      background-color: #fff; }
+      .search table tr td p {
+        font: 14px/30px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        color: #da004b; }
+      .search table tr td .date {
+        height: auto;
+        overflow: hidden; }
+        .search table tr td .date input {
+          float: left;
+          width: 110px;
+          background: none;
+          border: none;
+          outline: none;
+          border-bottom: 1px solid #ddd;
+          color: #333;
+          font: 16px/30px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+        .search table tr td .date .arrowhead {
+          float: left;
+          margin: 10px 10px 10px 5px; }
+        .search table tr td .date .close {
+          float: left;
+          margin: 10px 5px;
+          cursor: pointer; }
+      .search table tr td input {
+        width: 140px;
+        background: none;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #ddd;
+        color: #333;
+        font: 16px/30px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+      .search table tr td .selectStatus ul li, .search table tr td .selecType ul li {
+        float: left;
+        margin-right: 20px; }
+        .search table tr td .selectStatus ul li i, .search table tr td .selecType ul li i {
+          margin: 5px;
+          float: left;
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background: url("../images/select.png") no-repeat;
+          background-position: 0 0;
+          cursor: pointer; }
+        .search table tr td .selectStatus ul li span, .search table tr td .selecType ul li span {
+          float: left;
+          margin-left: 5px;
+          font: 16px/30px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+          color: #999; }
+      .search table tr td .selectStatus ul li.active i, .search table tr td .selecType ul li.active i {
+        background-position: -22px 0; }
+      .search table tr td button {
+        width: 104px;
+        background: none;
+        border: none;
+        outline: none;
+        background-color: #ff0058;
+        border-radius: 5px;
+        font: 18px/40px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        color: #fff;
+        display: block;
+        cursor: pointer; }
+      .search table tr td a {
+        font: 14px/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        color: #0091ff; }
+    .search table .hidden {
+      display: none; }
+    .search table .rowTd {
+      width: 124px;
+      text-align: center;
+      vertical-align: middle; }
+    .search table .order {
+      width: 240px; }
+    .search table .phone {
+      width: 276px; }
+
+.invoiceList {
+  padding: 30px 0 50px;
+  background-color: #fafafa; }
+
+.titleText {
+  margin-bottom: 30px;
+  height: auto;
+  overflow: hidden; }
+  .titleText p {
+    float: left;
+    font: 14px/26px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #999; }
+    .titleText p span {
+      color: #da004b; }
+  .titleText .r {
+    float: right; }
+    .titleText .r p {
+      float: left; }
+    .titleText .r .checkbox {
+      position: relative;
+      float: left;
+      margin-left: 15px;
+      width: 42px;
+      height: 26px;
+      border-radius: 30px;
+      background-color: #ccc;
+      cursor: pointer; }
+      .titleText .r .checkbox .round {
+        position: absolute;
+        left: 19px;
+        top: 3px;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: 100%; }
+    .titleText .r .checkbox.active {
+      background-color: #da004b; }
+
+.item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 30px; }
+  .item .top {
+    border-bottom: 1px solid #ddd;
+    height: auto;
+    overflow: hidden;
+    padding-right: 10px; }
+    .item .top p {
+      font: 14px/36px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      color: #333;
+      float: left; }
+      .item .top p span {
+        display: inline-block;
+        width: 30px;
+        font: 16px/38px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        text-align: center;
+        background-color: #f29c9f;
+        color: #fff;
+        border-radius: 5px 0 0 0;
+        margin-right: 20px; }
+    .item .top a {
+      margin-top: 6px;
+      padding: 0 15px;
+      float: right;
+      border: 1px solid #0091ff;
+      color: #0091ff;
+      border-radius: 5px;
+      font: 14px/22px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+      text-decoration: none; }
+  .item .content {
+    padding: 20px 10px;
+    height: auto;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd; }
+    .item .content ul li {
+      position: relative;
+      float: left;
+      width: 50%;
+      margin-bottom: 5px; }
+      .item .content ul li span {
+        margin-right: 5px;
+        width: 160px;
+        display: inline-block;
+        text-align: right;
+        font: 14px/24px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+        .item .content ul li span i {
+          margin: 3px 0 0 36px;
+          float: left;
+          width: 18px;
+          height: 18px;
+          display: inline-block;
+          background: url("../images/question.png") no-repeat;
+          cursor: pointer; }
+      .item .content ul li .name {
+        width: 128px; }
+      .item .content ul li input {
+        background: none;
+        border: none;
+        outline: none;
+        color: #999;
+        width: 222px;
+        font: 14px/22px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        padding: 0 8px; }
+      .item .content ul li .addBorder {
+        border: 1px solid #ddd;
+        border-radius: 3px; }
+      .item .content ul li em {
+        font: 14px/24px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        color: #999; }
+      .item .content ul li a.duplicate {
+        font: 14px/24px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        color: #0091ff;
+        text-decoration: none; }
+  .item .foot {
+    padding: 10px; }
+    .item .foot .footTop {
+      height: auto;
+      overflow: hidden; }
+      .item .foot .footTop p {
+        float: left;
+        font: 14px/24px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        color: #333; }
+      .item .foot .footTop a {
+        float: right;
+        font: 14px/24px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+        color: #0091ff;
+        text-decoration: none; }
+    .item .foot .footList {
+      margin-top: 10px; }
+      .item .foot .footList table {
+        margin-bottom: 20px;
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #ddd;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        overflow: hidden; }
+        .item .foot .footList table thead {
+          background-color: #fff; }
+          .item .foot .footList table thead tr td {
+            border: 1px solid #ddd; }
+          .item .foot .footList table thead tr p {
+            margin: 10px 0 10px 15px;
+            font: 14px/24px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            color: #da004b; }
+            .item .foot .footList table thead tr p i {
+              margin: 3px 5px 0 0;
+              float: left;
+              width: 18px;
+              height: 18px;
+              display: inline-block;
+              background: url("../images/question.png") no-repeat;
+              cursor: pointer; }
+            .item .foot .footList table thead tr p input {
+              background: none;
+              border: none;
+              outline: none;
+              font: 14px/22px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+              color: #999;
+              padding: 0 8px; }
+            .item .foot .footList table thead tr p .invoiceNumActive {
+              border: 1px solid #ddd;
+              border-radius: 3px; }
+        .item .foot .footList table tbody th {
+          padding: 8px 0;
+          border: 1px solid #ddd;
+          font: 14px/1.2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+          color: #999;
+          text-align: center;
+          background-color: #f2f2f2; }
+        .item .foot .footList table tbody td {
+          padding: 15px 0;
+          background-color: #f2f2f2;
+          border: 1px solid #ddd;
+          font: 14px/1.2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+          color: #333;
+          text-align: center;
+          vertical-align: middle; }
+          .item .foot .footList table tbody td i {
+            margin: 0 10px;
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: url(../images/select.png) no-repeat;
+            background-position: -22px 0;
+            cursor: pointer; }
+          .item .foot .footList table tbody td .round {
+            background-position: 0 0; }
+          .item .foot .footList table tbody td p {
+            margin: 0 auto;
+            width: 60px;
+            font: 14px/24px "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+            color: #fff;
+            border-radius: 30px; }
+          .item .foot .footList table tbody td .open {
+            background-color: #22ac38; }
+          .item .foot .footList table tbody td .wait {
+            background-color: #f90; }
+          .item .foot .footList table tbody td .loseEfficacy {
+            background-color: #999; }
+
+.promptMask {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: 15px 20px 0 20px;
+  min-width: 100px;
+  height: 100px;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  text-align: center; }
+  .promptMask p {
+    color: #fff;
+    font: 16px/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+
+.moneyPrompt {
+  position: absolute;
+  top: -30px;
+  left: 60px;
+  display: none;
+  padding: 5px;
+  width: 380px;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 5px; }
+  .moneyPrompt p {
+    color: #fff !important;
+    font: 14px/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+
+.numberPrompt {
+  position: absolute;
+  top: 0;
+  left: 60px;
+  display: none;
+  padding: 10px;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 5px; }
+  .numberPrompt p {
+    margin: 0 !important;
+    padding: 0 !important;
+    color: #fff !important;
+    font: 14px/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
+  .numberPrompt img {
+    font-size: 0;
+    margin-top: 5px; }
+
+/*# sourceMappingURL=index.css.map */

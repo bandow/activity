@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="description" content="东呈开票小助手"/>
+	<meta name="keywords" content="东呈开票小助手"/>
+	<meta name="author" content="name, sycbbb@sina.com"/>
+	<title>东呈开票小助手</title>
+	<link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+	<header class="header" style="background:url(images/header_bg.jpg) repeat-x;">
+		<div class="w960">
+			<div class="title"><h1>东呈开票小助手</h1></div>
+			<div class="exitLogin"><a href="">退出登录</a></div>
+			<div class="hotelName">
+				<img src="images/city_icon.png" alt="">
+				<p>城市便捷（广州白云山店）</p>
+			</div>
+		</div>
+	</header>
+	<div class="wrapper">
+		<div class="search w960">
+			<table>
+				<tr>
+					<td>
+						<p>时间</p>
+						<div class="date">
+							<input type="text" placeholder="住店时间">
+							<img class="arrowhead" src="images/arrowhead.png" alt="">
+							<input type="text" placeholder="离店时间">
+							<img class="close" src="images/close.png" alt="">
+						</div>
+					</td>
+					<td class="phone">
+						<p>手机号</p>
+						<input type="text" placeholder="填写手机号码">
+					</td>
+					<td class="order">
+						<p>预订人</p>
+						<input type="text" placeholder="输入预订人姓名">
+					</td>
+					<td class="rowTd" rowspan="2">
+						<button>搜索</button>
+						<a class="spread" onclick="spread();" href="javascript:;">展开高级搜索↓</a>
+					</td>
+				</tr>
+				<tr class="hidden">
+					<td>
+						<p>状态</p>
+						<div class="selectStatus">
+							<ul>
+								<li class="active"><i></i><span>待开票</span></li>
+								<li><i></i><span>已开票</span></li>
+								<li style="margin-right:0;"><i></i><span>已失效</span></li>
+							</ul>	
+						</div>
+					</td>
+					<td>
+						<p>发票类型</p>
+						<div class="selecType">
+							<ul>
+								<li class="active"><i></i><span>普通发票</span></li>
+								<li class="active"><i></i><span>专用发票</span></li>
+							</ul>	
+						</div>
+					</td>
+					<td>
+						<p>发票抬头</p>
+						<input type="text" placeholder="输入发票抬头内容">
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="invoiceList">
+			<div class="titleText w960">
+				<p>根据您的搜索条件，共搜索出<span>3</span>条相关发票信息</p>
+				<div class="r">
+					<p>设置为默认展开订单详情</p>
+					<div class="checkbox active" onclick="allShrink()">
+					    <div class="round"></div>
+					</div>
+				</div>
+			</div>
+			<div class="item w960">
+				<div class="top">
+					<p><span>1</span>预订人：王明 / 手机号：13820002000</p><a class="edit" onclick="edit();" href="javascript:;">编辑</a>
+				</div>
+				<div class="content">
+					<ul>
+						<li><span class="name">发票抬头（名称）：</span><input type="text" value="广西东呈酒店管理有限公司"><a href="javascript:;" class="duplicate">复制</a></li>
+						<li><span>纳税人识别号/信用代码：</span><input type="text" value="91450100799710205N"><a href="javascript:;" class="duplicate">复制</a></li>
+						<li><span class="name">注册地址：</span><input type="text" value="南宁市壮锦大道39号B-3栋"><a href="javascript:;" class="duplicate">复制</a></li>
+						<li><span>注册电话：</span><input type="text" value="0771-2290605"><a href="javascript:;" class="duplicate">复制</a></li>
+						<li><span class="name">开户行：</span><input type="text" value="中国工商银行南宁市新城支行"><a href="javascript:;" class="duplicate">复制</a></li>
+						<li><span>开户行账号：</span><input type="text" value="2102103009300111728"><a href="javascript:;" class="duplicate">复制</a></li>
+						<li>
+							<span class="name"><i class="invoiceMoneyPrompt"></i>开票金额：</span>
+							<em>￥593.00（仅供参考，请以离店实际消费金额为准）</em>
+							<div class="moneyPrompt">
+							    <p>目前金额只包括基本房费不包含免费房，购卡，小商品消费，早餐购买及优惠券抵扣的等部分，需要以最终离店消费为准，请再次核实确认金额</p>
+							</div>
+						</li>
+						<li><span>发票类型：</span><em>专用发票</em></li>
+					</ul>
+				</div>
+				<div class="foot">
+					<div class="footTop">
+						<p>1张发票，含3个订单：</p><a class="retractOrder" href="javascript:;">收起订单详情 ↑</a>
+					</div>
+					<div class="footList">
+						<table>
+							<thead>
+								<tr>
+									<td style="position:relative;" colspan="7">
+										<p>
+											<i class="invoiceNumberPrompt"></i>发票号：
+											<input class="invoiceNum" type="text" value="852135453131">
+											<div class="numberPrompt">
+												<p>纸质发票右上角的NO后数字为发票号</p>
+												<img src="images/invoice_number.png" alt="">
+											</div>
+										</p>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>选项</th>
+									<th>订单号</th>
+									<th>金额</th>
+									<th>订单状态</th>
+									<th>入住人</th>
+									<th>入住/离店日期</th>
+									<th>开票状态</th>
+								</tr>
+								<tr>
+									<td><i></i></td>
+									<td>R0020001170315000183</td>
+									<td>￥4960.00</td>
+									<td>离店</td>
+									<td>李刚</td>
+									<td>2017-03-29 ~ 2017-03-30</td>
+									<td><p class="open">已开票</p></td>
+								</tr>
+								<tr>
+									<td><i></i></td>
+									<td>R0020001170315000893</td>
+									<td>￥4960.00</td>
+									<td>入住中</td>
+									<td>杨幂</td>
+									<td>2017-03-29 ~ 2017-03-30</td>
+									<td><p class="open">已开票</p></td>
+								</tr>
+							</tbody>
+						</table>
+						<table>
+							<tbody>
+								<tr>
+									<th>选项</th>
+									<th>订单号</th>
+									<th>金额</th>
+									<th>订单状态</th>
+									<th>入住人</th>
+									<th>入住/离店日期</th>
+									<th>开票状态</th>
+								</tr>
+								<tr>
+									<td><i class="round"></i></td>
+									<td>R0020001170315000183</td>
+									<td>￥4960.00</td>
+									<td>离店</td>
+									<td>李刚</td>
+									<td>2017-03-29 ~ 2017-03-30</td>
+									<td><p class="wait">待开票</p></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="item w960">
+				<div class="top">
+					<p><span>2</span>预订人：王明 / 手机号：13820002000</p><a class="edit" onclick="edit();" href="javascript:;">编辑</a>
+				</div>
+				<div class="content">
+					<ul>
+						<li><span class="name">发票抬头（名称）：</span><input type="text" value="广西东呈酒店管理有限公司"><a href="javascript:;" class="duplicate">复制</a></li>
+						<li><span>纳税人识别号/信用代码：</span><input type="text" value="91450100799710205N"><a href="javascript:;" class="duplicate">复制</a></li>
+						<li><span class="name">注册地址：</span><input type="text" value="南宁市壮锦大道39号B-3栋"><a href="javascript:;" class="duplicate">复制</a></li>
+						<li><span>注册电话：</span><input type="text" value="0771-2290605"><a href="javascript:;" class="duplicate">复制</a></li>
+						<li><span class="name">开户行：</span><input type="text" value="中国工商银行南宁市新城支行"><a href="javascript:;" class="duplicate">复制</a></li>
+						<li><span>开户行账号：</span><input type="text" value="2102103009300111728"><a href="javascript:;" class="duplicate">复制</a></li>
+						<li>
+							<span class="name"><i class="invoiceMoneyPrompt"></i>开票金额：</span>
+							<em>￥593.00（仅供参考，请以离店实际消费金额为准）</em>
+							<div class="moneyPrompt">
+							    <p>目前金额只包括基本房费不包含免费房，购卡，小商品消费，早餐购买及优惠券抵扣的等部分，需要以最终离店消费为准，请再次核实确认金额</p>
+							</div>
+						</li>
+						<li><span>发票类型：</span><em>专用发票</em></li>
+					</ul>
+				</div>
+				<div class="foot">
+					<div class="footTop">
+						<p>1张发票，含3个订单：</p><a class="retractOrder" href="javascript:;">收起订单详情 ↑</a>
+					</div>
+					<div class="footList">
+						<table>
+							<thead>
+								<tr>
+									<td style="position:relative;" colspan="7">
+										<p>
+											<i class="invoiceNumberPrompt"></i>发票号：
+											<input class="invoiceNum" type="text" value="852135453131">
+											<div class="numberPrompt">
+												<p>纸质发票右上角的NO后数字为发票号</p>
+												<img src="images/invoice_number.png" alt="">
+											</div>
+										</p>
+									</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>选项</th>
+									<th>订单号</th>
+									<th>金额</th>
+									<th>订单状态</th>
+									<th>入住人</th>
+									<th>入住/离店日期</th>
+									<th>开票状态</th>
+								</tr>
+								<tr>
+									<td><i></i></td>
+									<td>R0020001170315000183</td>
+									<td>￥4960.00</td>
+									<td>离店</td>
+									<td>李刚</td>
+									<td>2017-03-29 ~ 2017-03-30</td>
+									<td><p class="open">已开票</p></td>
+								</tr>
+								<tr>
+									<td><i></i></td>
+									<td>R0020001170315000893</td>
+									<td>￥4960.00</td>
+									<td>入住中</td>
+									<td>杨幂</td>
+									<td>2017-03-29 ~ 2017-03-30</td>
+									<td><p class="open">已开票</p></td>
+								</tr>
+							</tbody>
+						</table>
+						<table>
+							<tbody>
+								<tr>
+									<th>选项</th>
+									<th>订单号</th>
+									<th>金额</th>
+									<th>订单状态</th>
+									<th>入住人</th>
+									<th>入住/离店日期</th>
+									<th>开票状态</th>
+								</tr>
+								<tr>
+									<td><i class="round"></i></td>
+									<td>R0020001170315000183</td>
+									<td>￥4960.00</td>
+									<td>离店</td>
+									<td>李刚</td>
+									<td>2017-03-29 ~ 2017-03-30</td>
+									<td><p class="wait">待开票</p></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- script begin -->
+	<script src="scripts/jquery-3.2.0.min.js"></script>
+	<script src="scripts/jquery.zclip.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var flag;
+			//状态
+			$(".selectStatus li").on("click",function(){
+				$(this).toggleClass("active");
+			});
+			//发票类型
+			$(".selecType li").on("click",function(){
+				$(this).toggleClass("active");
+			});
+			//只读input
+			$(".content ul li input").attr("readonly","readonly");
+			$(".invoiceNum").attr("readonly","readonly");
+			//复制
+			$(".duplicate").zclip({
+				path: "scripts/ZeroClipboard.swf",
+				copy: function(){
+					return $(this).parent().find("input").val();
+				},
+				beforeCopy:function(){/* 按住鼠标时的操作 */
+					$(this).css("color","orange");
+				},
+				afterCopy:function(){/* 复制成功后的操作 */
+					promptMask('prompt_icon','复制成功');
+				}
+			});
+			//开票金额提示
+			$(".invoiceMoneyPrompt").hover(function(){
+			    $(".moneyPrompt").show();
+			},function(){
+			    $(".moneyPrompt").hide();
+			});
+			//发票号提示
+			$(".invoiceNumberPrompt").hover(function(){
+			    $(".numberPrompt").show();
+			},function(){
+			    $(".numberPrompt").hide();
+			});	
+			//编辑 保存
+			$(".edit").on("click",function(){
+				$(this).parent().parent().find("input").addClass("addBorder");
+				if(flag){
+					$(this).text("编辑");
+					flag=false;
+				}else{
+					$(this).text("保存");
+					flag=true;
+				}
+			});
+			//收起订单详情 展开订单详情
+			$(".retractOrder").on("click",function(){
+               $(this).parent().parent().parent().find(".footList").slideToggle();
+               if(flag){
+                    $(this).text("收起订单详情 ↓");
+                    flag=false;
+               }else{
+               		$(this).text("展开订单详情 ↓");
+               		flag=true;
+               }
+			})
+		});
+
+		//收起高级搜索↑
+		function spread(){
+			$(".spread").text("收起高级搜索↑").attr("onclick","shrink()");
+			$(".hidden").show();
+		}
+		//展开高级搜索↓
+		function shrink(){
+			$(".spread").text("展开高级搜索↓").attr("onclick","spread()");
+			$(".hidden").hide();
+		}
+		//设置为默认展开订单详情
+		function allSpread(){
+			$(".checkbox").addClass("active").attr("onclick","allShrink()");
+			$(".checkbox .round").animate({
+				left:"19px",
+			});
+		}
+		function allShrink(){
+			$(".checkbox").removeClass("active").attr("onclick","allSpread()");
+			$(".checkbox .round").animate({
+				left:"3px",
+			});
+		}
+		//编辑
+		function edit1(){
+			$(".edit").text("保存").attr("onclick","preserve()");
+			$(".content ul li input").removeAttr("readonly").addClass("addBorder");
+			$(".invoiceNum").removeAttr("readonly").addClass("invoiceNumActive");
+			$(".duplicate").hide();
+			//修改状态
+			$(".addBorder").on("focus",function(){
+				$(this).css({
+					backgroundColor:"#da004b",
+					color:"#fff"
+				});
+			});
+			$(".addBorder").on("blur",function(){
+				$(this).css({
+					backgroundColor:"#fff",
+					color:"#333"
+				});
+			});
+		}
+		//保存
+		function preserve(){
+			//发票号判断
+			if($(".invoiceNum").val()==""){
+				promptMask('prompt_icon1','请输入发票号');
+			}else{
+				$(".edit").text("编辑").attr("onclick","edit()");
+				$(".content ul li input").attr("readonly","readonly").removeClass("addBorder");
+				$(".invoiceNum").attr("readonly","readonly").removeClass("invoiceNumActive");
+				$(".duplicate").show();
+				promptMask('prompt_icon','保存成功');
+			}	
+		}
+		//提示框
+		function promptMask(img,message){
+           var html='<div class="promptMask">';
+               html+='<img src="images/'+img+'.png" alt="">';
+               html+='<p>'+message+'</p>';
+               html+='</div>';
+            $("body").append(html);
+
+            setTimeout(function(){
+            	$(".promptMask").remove();
+			},3000);
+		}
+	</script>
+	<!-- script end -->
+</body>
+</html>
