@@ -435,4 +435,38 @@ table {
     font-size: 0;
     margin-top: 5px; }
 
+.qa {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  z-index: 2;
+  width: 120px;
+  height: auto;
+  text-align: center; }
+  .qa .top {
+    font-size: 0; }
+  .qa .foot {
+    font-size: 0;
+    display: none; }
+
+.invoiceQuestions {
+  margin-top: 50px;
+  height: auto;
+  overflow: hidden; }
+  .invoiceQuestions h1 {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    font: bold 28px/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #f1236d;
+    border-bottom: 1px solid #ddd; }
+  .invoiceQuestions .content h3 {
+    font: bold 16px/2 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #f1236d;
+    margin-top: 30px; }
+  .invoiceQuestions .content p {
+    font: 16px/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    color: #666; }
+  .invoiceQuestions .content img {
+    margin-top: 20px; }
+
 /*# sourceMappingURL=index.css.map */

@@ -279,6 +279,10 @@
 			</div>
 		</div>
 	</div>
+	<div class="qa">
+		<div class="top"><a href="questions.html" target="_block"><img src="images/QA.png" alt=""></a></div>
+		<div class="foot"><a href="javascript:;"><img src="images/blockTop.png" alt=""></a></div>
+	</div>
 	<!-- script begin -->
 	<script src="scripts/jquery-3.2.0.min.js"></script>
 	<script>
@@ -299,18 +303,19 @@
 			$(".duplicate").on("click",function(){
 				$(this).prev("input").select();
 				document.execCommand("Copy"); // 执行浏览器复制命令
+				promptMask('prompt_icon','复制成功');
 			});
 			//开票金额提示
 			$(".invoiceMoneyPrompt").hover(function(){
-			    $(".moneyPrompt").show();
+			    $(this).parent().parent().find(".moneyPrompt").show();
 			},function(){
-			    $(".moneyPrompt").hide();
+			    $(this).parent().parent().find(".moneyPrompt").hide();
 			});
 			//发票号提示
 			$(".invoiceNumberPrompt").hover(function(){
-			    $(".numberPrompt").show();
+			    $(this).parent().next().show();
 			},function(){
-			    $(".numberPrompt").hide();
+			    $(this).parent().next().hide();
 			});	
 			//编辑 保存
 			$(".edit").on("click",function(){
@@ -318,18 +323,6 @@
 					$(this).text("保存").parent().parent().find(".content input").removeAttr("readonly").addClass("addBorder");
 					$(this).parent().parent().find(".invoiceNum").removeAttr("readonly").addClass("invoiceNumActive");
 					$(this).parent().parent().find(".duplicate").hide();
-					//修改状态
-					// var addBorder=$(".addBorder");
-					// for(var i=0; i<addBorder.length;i++){
-					// 	addBorder[i].onfocus=function(){
-					// 		this.style.backgroundColor='#da004b';
-					// 		this.style.color='#fff';
-					// 	}
-					// 	addBorder[i].onblur=function(){
-					// 		this.style.backgroundColor='#fff';
-					// 		this.style.color='#333';
-					// 	}
-					// }
 					flag=true;
 				}else{
 					if($(".invoiceNum").val()==""){
@@ -343,6 +336,18 @@
 					flag=false;
 				}
 			});
+			//修改状态
+			var addBorder=$(".addBorder");
+			for(var i=0; i<addBorder.length;i++){
+				addBorder[i].onfocus=function(){
+					this.style.backgroundColor='#da004b';
+					this.style.color='#fff';
+				}
+				addBorder[i].onblur=function(){
+					this.style.backgroundColor='#fff';
+					this.style.color='#333';
+				}
+			}
 			//收起订单详情 展开订单详情
 			$(".retractOrder").on("click",function(){
                $(this).parent().parent().parent().find(".footList").slideToggle();
@@ -353,7 +358,16 @@
                		$(this).text("展开订单详情 ↓");
                		flag=true;
                }
-			})
+			});
+			//置顶
+		    $(window).scroll(function() {       
+		        if($(window).scrollTop() >= window.screen.availHeight/2){
+		            $(".qa .foot").fadeIn(300); 
+		        }else{    
+		            $(".qa .foot").fadeOut(300);    
+		        }  
+		    });
+		    $(".qa .foot").click(function(){$('html,body').animate({scrollTop: '0px'}, 800);});
 		});
 
 		//收起高级搜索↑
