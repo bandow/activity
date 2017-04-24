@@ -141,7 +141,7 @@ html {
     font: 0.7rem/1.5 "SimHei", "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif; }
 
 .yc .logo img {
-  width: 40%; }
+  width: 30%; }
 
 .yc .video {
   background-color: #a72125; }
@@ -151,6 +151,9 @@ html {
 .yc .text h4 {
   color: #a72125; }
 
+.ys .logo img {
+  width: 25%; }
+
 .ys .video {
   background-color: #dcdcdc; }
 
@@ -159,6 +162,9 @@ html {
 .ys .text h4 {
   color: #a1a781; }
 
+.cspj .logo img {
+  width: 20%; }
+
 .cspj .video {
   background-color: #2e9197; }
 
@@ -166,6 +172,9 @@ html {
   color: #0f979f; }
 .cspj .text h4 {
   color: #147a80; }
+
+.jt .logo img {
+  width: 22%; }
 
 .jt .video {
   background-color: #cfa972; }

@@ -113,7 +113,7 @@ html{font-size:18px;}
 .yc .logo{
 	@extend .logo;
 	img{
-		width:40%;
+		width:30%;
 	}
 }
 .yc .video{
@@ -131,6 +131,9 @@ html{font-size:18px;}
 }
 .ys .logo{
 	@extend .logo;
+	img{
+		width:25%;
+	}
 }
 .ys .video{
 	@extend .video;
@@ -147,6 +150,9 @@ html{font-size:18px;}
 }
 .cspj .logo{
 	@extend .logo;
+	img{
+		width:20%;
+	}
 }
 .cspj .video{
 	@extend .video;
@@ -163,6 +169,9 @@ html{font-size:18px;}
 }
 .jt .logo{
 	@extend .logo;
+	img{
+		width:22%;
+	}
 }
 .jt .video{
 	@extend .video;
