@@ -1,0 +1,18 @@
+{
+  "result":{
+    "list":[
+      {
+        "name":" 特惠酒店",
+        "message":"精选高品质低价酒店",
+        "date":"02/14~03/20",
+        "listImg":"images/area_list1.jpg"
+      },
+      {
+        "name":" 新手礼包",
+        "message":"超值百元券包无限量免费派送",
+        "date":"",
+        "listImg":"images/area_list2.jpg"
+      }   
+    ]
+  }
+}

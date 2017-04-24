@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="description" content="不超过150个字符"/>
+	<meta name="keywords" content="不超过80个字符"/>
+	<meta name="author" content="name, sycbbb@sina.com"/>
+	<meta name="robots" content="index,follow"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+	<meta name="msapplication-tap-highlight" content="no">
+	<title>活动专区</title>
+	<link rel="stylesheet" href="styles/activityArea.css">
+</head>
+<body>
+<div class="wrapper" id="app">
+	<header class="areaHeader">
+		<h1 v-text="title"></h1>
+	</header>
+	<section>
+		<a href="#" class="item" v-for="(item,index) in list">
+			<div class="new" v-if="index==0"><img src="images/new.png" alt=""></div>
+			<div class="text">
+				<h2>{{item.name}}</h2>   
+				<p><span>{{item.message}}</span><time>{{item.date}}</time></p> 
+			</div>
+			<img class="list" v-bind:src="item.listImg">
+		</a>
+	</section>
+</div>
+<!-- script begin -->
+<script src="scripts/vue.min.js"></script>
+<script src="scripts/axios.js"></script>
+<script src="scripts/activityArea.js"></script>
+<!-- script end -->
+</body>
+</html>
