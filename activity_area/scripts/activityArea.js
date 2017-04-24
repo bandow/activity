@@ -2,7 +2,7 @@ var app = new Vue({
 	el:"#app",
 	data:{
 		title:'活动专区',
-		list:new Array()
+		list:new Array(),
 	},
 	mounted:function(){
 		var _this = this;

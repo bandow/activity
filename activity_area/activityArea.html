@@ -24,7 +24,10 @@
 			<div class="new" v-if="index==0"><img src="images/new.png" alt=""></div>
 			<div class="text">
 				<h2>{{item.name}}</h2>   
-				<p><span>{{item.message}}</span><time>{{item.date}}</time></p> 
+				<p>
+					<span>{{item.message}}</span>
+					<time v-if="item.date!=''">{{item.date}}</time>
+				</p>
 			</div>
 			<img class="list" v-bind:src="item.listImg">
 		</a>
