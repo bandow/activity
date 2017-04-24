@@ -1,0 +1,212 @@
+@import "base","variable";
+html{font-size:18px;}
+@media(min-device-width:320px){
+	html{
+	  font-size:18px;
+	}
+}
+@media(min-device-width:360px){
+	html{
+	  font-size:20px;
+	}
+}
+@media(min-device-width:375px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:384px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:400px){
+	html{
+	  font-size:22px;
+	}
+}
+@media(min-device-width:414px){
+	html{
+	  font-size:23px;
+	}
+}
+@media(min-device-width:480px){
+	html{
+	  font-size:26px;
+	}
+}
+@media(min-device-width:520px){
+	html{
+	  font-size:27px;
+	}
+}
+@media(min-device-width:533px){
+	html{
+	  font-size:28px;
+	}
+}
+@media(min-device-width:560px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:568px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:600px){
+	html{
+	  font-size:30px;
+	}
+}
+@media(min-device-width:640px){
+	html{
+	  font-size:24px;
+	}
+}
+.wrapper{
+	position:relative;
+	width:100%;
+	max-width:640px;
+	height:auto;
+	min-height: 100%;
+	margin:0 auto;
+	overflow:hidden;
+}
+.logo{
+	padding:8% 5%;
+	text-align:center;
+    font-size: 0;
+	img{
+		width:30%;
+	}
+}
+.video{
+	padding:5%;
+	.content{
+		background-color:#fff;
+		border-radius:5px;
+		padding:1%;
+		font-size: 0;
+		iframe{
+			width:100%;
+			height:8.88rem;
+		}
+	}
+}
+.text{
+	padding:5%;
+	text-align:center;
+	h3{
+		font:1rem/1.5 $publicFont;
+	}
+	h4{
+		font:.6rem/1.5 $publicFont;
+	}
+	p{
+		margin-top:5%;
+		color:#666;
+		font:.7rem/1.5 $publicFont;
+	}
+}
+.yc .logo{
+	@extend .logo;
+	img{
+		width:40%;
+	}
+}
+.yc .video{
+	@extend .video;
+	background-color:#a72125;
+}
+.yc .text{
+	@extend .text;
+	h3{
+		color:#a72125;
+	}
+	h4{
+		color:#a72125;
+	}
+}
+.ys .logo{
+	@extend .logo;
+}
+.ys .video{
+	@extend .video;
+	background-color:#dcdcdc;
+}
+.ys .text{
+	@extend .text;
+	h3{
+		color:#a1a781;
+	}
+	h4{
+		color:#a1a781;
+	}
+}
+.cspj .logo{
+	@extend .logo;
+}
+.cspj .video{
+	@extend .video;
+	background-color:#2e9197;
+}
+.cspj .text{
+	@extend .text;
+	h3{
+		color:#0f979f;
+	}
+	h4{
+		color:#147a80;
+	}
+}
+.jt .logo{
+	@extend .logo;
+}
+.jt .video{
+	@extend .video;
+	background-color:#cfa972;
+}
+.jt .text{
+	@extend .text;
+	h3{
+		color:#a2793e;
+	}
+	h4{
+		color:#a2793e;
+	}
+}
+.ym .logo{
+	@extend .logo;
+}
+.ym .video{
+	@extend .video;
+	background-color:#d2c8b2;
+}
+.ym .text{
+	@extend .text;
+	h3{
+		color:#b0a263;
+	}
+	h4{
+		color:#b0a263;
+	}
+}
+.bd .logo{
+	@extend .logo;
+}
+.bd .video{
+	@extend .video;
+	background-color:#b99d64;
+}
+.bd .text{
+	@extend .text;
+	h3{
+		color:#b0a263;
+	}
+	h4{
+		color:#b99d64;
+	}
+}
+

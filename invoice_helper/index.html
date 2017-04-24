@@ -8,6 +8,7 @@
 	<meta name="author" content="name, sycbbb@sina.com"/>
 	<title>东呈开票小助手</title>
 	<link rel="stylesheet" href="styles/index.css">
+	<link rel="stylesheet" href="styles/dateRange.css">
 </head>
 <body>
 	<header class="header" style="background:url(images/header_bg.jpg) repeat-x;">
@@ -24,14 +25,23 @@
 		<div class="search w960">
 			<table>
 				<tr>
-					<td>
+					<td style="position:relative;">
 						<p>时间</p>
 						<div class="date">
-							<input type="text" placeholder="住店时间">
+							<input type="text" id="startDate" name="startDate" value="" placeholder="住店时间">
 							<img class="arrowhead" src="images/arrowhead.png" alt="">
-							<input type="text" placeholder="离店时间">
+							<input type="text" id="endDate" name="endDate" placeholder="离店时间">
 							<img class="close" src="images/close.png" alt="">
 						</div>
+
+						<div style="opacity:0;position:absolute;top:40px;left:0;" class="ta_date" id="div_date_demo3">
+		                    <span class="date_title" id="date_demo3"></span>
+		                    <a class="opt_sel" id="input_trigger_demo3" href="#">
+		                        <i class="i_orderd"></i>
+		                    </a>
+		                </div>
+		                <div id="datePicker"></div>
+
 					</td>
 					<td class="phone">
 						<p>手机号</p>
@@ -285,6 +295,7 @@
 	</div>
 	<!-- script begin -->
 	<script src="scripts/jquery-3.2.0.min.js"></script>
+	<script src="scripts/dateRange.js"></script>
 	<script>
 		$(document).ready(function(){
 			var flag;
@@ -441,6 +452,20 @@
 			},3000);
 		}
 	</script>
+	<script type="text/javascript"> 
+		var dateRange = new pickerDateRange('date_demo3', {
+				isTodayValid : true,
+				startDate : '2012-06-14',
+				endDate : '2012-07-10',
+				needCompare : false,
+				defaultText : ' 至 ',
+				inputTrigger : 'input_trigger_demo3',
+				theme : 'ta',
+				success : function(obj) {
+					$("#dCon_demo3").html('开始时间 : ' + obj.startDate + '<br/>结束时间 : ' + obj.endDate);
+				}
+			});
+	</script> 
 	<!-- script end -->
 </body>
 </html>
