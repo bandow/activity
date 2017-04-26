@@ -169,13 +169,6 @@ html {
   border-radius: 5px;
   box-shadow: 1px 2px 5px #a1c53d;
   background-color: #fff; }
-  .list .listHear {
-    width: 80%;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 0; }
-    .list .listHear img {
-      width: 70%; }
   .list .content {
     display: -webkit-flex;
     display: flex;
@@ -251,6 +244,15 @@ html {
   margin-top: -3rem; }
   .seckill .list {
     position: relative; }
+    .seckill .list .listHear {
+      width: 80%;
+      margin: 0 auto;
+      text-align: center; }
+      .seckill .list .listHear p {
+        font: 0.7rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+        color: #7b9f18; }
+        .seckill .list .listHear p span {
+          margin-left: .5rem; }
     .seckill .list .item .btnActive {
       background-color: #ccc; }
     .seckill .list .maskList {

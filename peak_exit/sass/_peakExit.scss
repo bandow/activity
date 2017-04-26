@@ -140,15 +140,6 @@ html{font-size:18px;}
 	border-radius:5px;
 	box-shadow:1px 2px 5px #a1c53d;
 	background-color:#fff;
-	.listHear{
-		width:80%;
-		margin:0 auto;
-		text-align:center;
-		font-size:0;
-		img{
-			width:70%;
-		}
-	}
 	.content{
 		display:-webkit-flex;
 		display:flex;
@@ -241,6 +232,18 @@ html{font-size:18px;}
 	.list{
 		position:relative;
 		@extend .list;
+		.listHear{
+			width:80%;
+			margin:0 auto;
+			text-align:center;
+			p{
+				font:.7rem/1.2 $publicFont;
+				color:#7b9f18;
+				span{
+					margin-left:.5rem;
+				}
+			}
+		}
 		.item{
 			.btnActive{
 				background-color:#ccc;
