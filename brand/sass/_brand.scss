@@ -481,6 +481,75 @@ html{font-size:18px;}
 		}
 	}
 }
+/*柏曼*/
+.bm .page1{
+	.header{
+		padding:5% 0;
+		display:-webkit-flex;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		img{
+			width:35%;
+		}
+	}
+	.middle{
+		width:100%;
+		img{
+			width:100%;
+		}
+	}
+	.footer{
+		margin:10% 15%;
+		width:70%;
+		img{
+			width:100%;
+		}
+	}
+}
+.bm .page2{
+	.header{
+		padding-top:3vh;
+		margin:0 auto;
+		width:90vw;
+		height:50vh;
+		h3{
+			font:.9rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#b0a263;
+		}
+		h4{
+			font:.6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#929292;
+		}
+		img{
+			padding:5% 0 0;
+			width:100%;
+			font-size:0;
+		}
+	}
+	.footer{
+		padding-top:3vh;
+		margin:0 auto;
+		width:90vw;
+		height:50vh;
+		p{
+			font:.7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+			color:#b0a263;
+			&:nth-child(2){
+				margin-top:5%;
+				font:.6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+				color:#929292;
+			}
+		}
+		.img{
+			margin-top:5%;
+			text-align:right;
+			img{
+				width:70%;
+			}
+		}
+	}
+}
 
 @media(min-device-width:375px){
 	.cspj .page2 .header{

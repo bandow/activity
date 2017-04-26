@@ -429,6 +429,58 @@ html {
     .ym .page2 .footer .img img {
       width: 70%; }
 
+/*柏曼*/
+.bm .page1 .header {
+  padding: 5% 0;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .bm .page1 .header img {
+    width: 35%; }
+.bm .page1 .middle {
+  width: 100%; }
+  .bm .page1 .middle img {
+    width: 100%; }
+.bm .page1 .footer {
+  margin: 10% 15%;
+  width: 70%; }
+  .bm .page1 .footer img {
+    width: 100%; }
+
+.bm .page2 .header {
+  padding-top: 3vh;
+  margin: 0 auto;
+  width: 90vw;
+  height: 50vh; }
+  .bm .page2 .header h3 {
+    font: .9rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #b0a263; }
+  .bm .page2 .header h4 {
+    font: .6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #929292; }
+  .bm .page2 .header img {
+    padding: 5% 0 0;
+    width: 100%;
+    font-size: 0; }
+.bm .page2 .footer {
+  padding-top: 3vh;
+  margin: 0 auto;
+  width: 90vw;
+  height: 50vh; }
+  .bm .page2 .footer p {
+    font: .7rem/1.5 "Microsoft YaHei","Helvetica Neue";
+    color: #b0a263; }
+    .bm .page2 .footer p:nth-child(2) {
+      margin-top: 5%;
+      font: .6rem/1.5 "Microsoft YaHei","Helvetica Neue";
+      color: #929292; }
+  .bm .page2 .footer .img {
+    margin-top: 5%;
+    text-align: right; }
+    .bm .page2 .footer .img img {
+      width: 70%; }
+
 @media (min-device-width: 375px) {
   .cspj .page2 .header {
     padding-top: 7vh; }
