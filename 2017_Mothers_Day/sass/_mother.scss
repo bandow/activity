@@ -105,10 +105,11 @@ html{font-size:18px;}
     }
 }
 .start{
-    position: fixed;
+    position: absolute;
     left: 50%;
     margin-left: -17px;
-    top: 95%;
+    bottom:5%;
+    z-index:10;
     margin-top: -34px;
     width: 34px;
     height: 34px;
@@ -122,17 +123,6 @@ html{font-size:18px;}
     height: 12px;
     -webkit-animation: start 1.5s infinite ease-in-out;
     animation: start 1.5s infinite ease-in-out;
-}
-.music{
-	position:fixed;
-	top:2%;
-	right:4%;
-	z-index:1;
-	width:1rem;
-	height:1rem;
-	img{
-		width:100%;
-	}
 }
 .wp{
     position: absolute;
@@ -175,9 +165,11 @@ html{font-size:18px;}
 }
 .page0{
 	.allItem{
-		position:absolute;
-		left:22.5%;
-		bottom:20%;
+		// position:absolute;
+		// left:22.5%;
+		// bottom:20%;
+		padding-top:85%;
+		margin:0 auto;
 		width:55%;
 		.item{
 			position:relative;
@@ -202,9 +194,11 @@ html{font-size:18px;}
 		}
 	}
 	.btn{
-		position:absolute;
-		left:20%;
-		bottom:5%;
+		// position:absolute;
+		// left:20%;
+		// bottom:5%;
+		padding-top:5%;
+		margin:0 auto;
 		width:60%;
 		font-size:0;
 		img{

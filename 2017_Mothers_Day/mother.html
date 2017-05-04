@@ -27,11 +27,31 @@
 			background:url(images/start.png) no-repeat;
 			background-size: 100% 100%;
 		}
+		.music{
+            position: absolute;
+            z-index: 1000;
+            right:10px;
+            top:15px;
+            width: 25px;
+            height: 25px;
+        }
+        .music .music-btn {
+            display: block;
+            padding-left: 1px;
+            width: 25px;
+            height: 25px;
+            background-image: url(images/music1.png);
+            background-size: 100% 100%;
+        }
+        .music .music-btn.play {
+            background-image: url(images/music.png);
+        }
 	</style>
 </head>
 <body>
-	<div class="music"><img src="images/music.png" alt=""></div>
-	<span class="start"><b></b></span>
+	<div id="music" class="music">
+        <a class="music-btn"></a>
+    </div>
 	<div class="wp">
 		<div class="page page0">
 			<div class="allItem">
@@ -50,18 +70,21 @@
 					<span>999</span>
 					<img src="images/page1_text.png" alt="">
 				</div>
+				<span class="start"><b></b></span>
 			</div>
 			<div class="page page2">
 				<div class="t"><img src="images/1.png" alt=""></div>
 				<div class="b">
 					<img src="images/page2_text.png" alt="">
 				</div>
+				<span class="start"><b></b></span>
 			</div>
 			<div class="page page3">
 				<div class="t"><img src="images/1.png" alt=""></div>
 				<div class="b">
 					<img src="images/page3_text.png" alt="">
 				</div>
+				<span class="start"><b></b></span>
 			</div>
 			<div class="page page4">
 				<div class="t"><img src="images/1.png" alt=""></div>
@@ -70,6 +93,7 @@
 					<span>9999</span>
 					<img src="images/page4_text.png" alt="">
 				</div>
+				<span class="start"><b></b></span>
 			</div>
 			<div class="page page5">
 				<div class="t"><img src="images/1.png" alt=""></div>
@@ -78,6 +102,7 @@
 					<span>99</span>
 					<img src="images/page5_text.png" alt="">
 				</div>
+				<span class="start"><b></b></span>
 			</div>
 			<div class="page page6">
 				<div class="t"><img src="images/1.png" alt=""></div>
@@ -93,7 +118,6 @@
 		</div>
 	</div>
 	<!-- script begin -->
-	<!-- <script src="scripts/jquery-3.1.1.min.js"></script> -->
 	<script src="scripts/zepto.min.js"></script>
 	<script src="scripts/zepto.fullpage.js"></script>
 	<script>
@@ -113,22 +137,60 @@
 			$(".btn").on("click",function(){
 				$(".page0").hide();
 			});
-			
-			$('.wp-inner').fullpage({
-	            // dir: 'h',
-	            change: function (e) {
-	                console.log('change', e.next, e.cur);
-	                // $('.indicator li').removeClass('cur').eq(e.cur).addClass('cur');
-	            },
-	            beforeChange: function (e) {
-	                console.log('beforeChange', e.next, e.cur);
-	            },
-	            afterChange: function (e) {
-	                console.log('afterChange', e.next, e.cur);
-	            }
-	        }); 
-		});		
+		});	
+		$('.wp-inner').fullpage();	
 	</script>
+	<script>
+        var bgAudio = new Audio();
+        bgAudio.loadStatus = 'unload';
+        bgAudio.loop = true;
+        function loadAudio(audio, url, callback) {
+            audio.src = url;
+            audio.load();
+            audio.addEventListener('canplay', function () {
+                bgAudio.loadStatus = 'loaded';
+                callback();
+            });
+            audio.addEventListener('loadstart', function () {
+                bgAudio.loadStatus = 'loading';
+            });
+        }
+        function playAudio(){
+            if (bgAudio.loadStatus === 'unload') {
+                loadAudio(bgAudio, 'scripts/m.mp3', function () {
+                    playAudio();
+                });
+                return 1;
+            }
+
+            bgAudio.play();
+        }
+        function stopAudio() {
+            bgAudio.pause();
+        }
+        bgAudio.addEventListener('playing' ,function (e) {
+            $('#music .music-btn').addClass('play');
+        });
+        bgAudio.addEventListener('pause' ,function (e) {
+            $('#music .music-btn').removeClass('play');
+        });
+
+        $('body').one('touchstart', function () {
+            playAudio();
+            $('#music').on('touchstart', function (e) {
+                if (bgAudio.paused) {
+                    playAudio();
+                    return 0;
+                }
+                stopAudio();
+                return 1;
+            });
+        });
+        window.onload = function() {
+            if (bgAudio.loadStatus !== 'unload') {return;}
+            playAudio();
+        };
+    </script>
 	<!-- script end -->
 </body>
 </html>
