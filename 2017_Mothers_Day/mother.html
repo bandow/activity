@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="description" content="2017母亲节"/>
+	<meta name="keywords" content="2017母亲节"/>
+	<meta name="author" content="name, sycbbb@sina.com"/>
+	<meta name="robots" content="index,follow"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+	<meta name="msapplication-tap-highlight" content="no">
+	<title>2017母亲节</title>
+	<link rel="stylesheet" href="styles/zepto.fullpage.css">
+	<link rel="stylesheet" href="styles/mother.css">
+	<style>
+		.page0{
+			background:url(images/page1_bg.jpg) no-repeat;
+			background-size:100% auto;
+		}
+		.wp-inner .page1,.wp-inner .page2,.wp-inner .page3{
+			background:url(images/page2_bg.jpg) no-repeat;
+			background-size:100% auto;
+		}
+		.start b{
+			background:url(images/start.png) no-repeat;
+			background-size: 100% 100%;
+		}
+	</style>
+</head>
+<body>
+	<div class="music"><img src="images/music.png" alt=""></div>
+	<span class="start"><b></b></span>
+	<div class="wp">
+		<div class="page page0">
+			<div class="allItem">
+				<div class="item"><img src="images/page1_1.png" alt=""><input type="tel"></div>
+				<div class="item"><img src="images/page1_2.png" alt=""><input type="tel"></div>
+				<div class="item"><img src="images/page1_3.png" alt=""><input type="tel"></div>
+			</div>
+            <div class="btn">
+            	<a href="javascript:;"><img src="images/page1_btn.png" alt=""></a>
+            </div>
+		</div>
+		<div class="wp-inner">
+			<div class="page page1">
+				<div class="t"><img src="images/1.png" alt=""></div>
+				<div class="b">
+					<span>999</span>
+					<img src="images/page1_text.png" alt="">
+				</div>
+			</div>
+			<div class="page page2">
+				<div class="t"><img src="images/1.png" alt=""></div>
+				<div class="b">
+					<img src="images/page2_text.png" alt="">
+				</div>
+			</div>
+			<div class="page page3">
+				<div class="t"><img src="images/1.png" alt=""></div>
+				<div class="b">
+					<img src="images/page3_text.png" alt="">
+				</div>
+			</div>
+			<div class="page page4">
+				<div class="t"><img src="images/1.png" alt=""></div>
+				<div class="b">
+					<span>999</span>
+					<span>9999</span>
+					<img src="images/page4_text.png" alt="">
+				</div>
+			</div>
+			<div class="page page5">
+				<div class="t"><img src="images/1.png" alt=""></div>
+				<div class="b">
+					<span>30</span>
+					<span>99</span>
+					<img src="images/page5_text.png" alt="">
+				</div>
+			</div>
+			<div class="page page6">
+				<div class="t"><img src="images/1.png" alt=""></div>
+				<div class="b">
+					<img src="images/page6_text.png" alt="">
+					<div class="btn">
+						<a href="motherCity.html">
+							<img src="images/page6_btn.png" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- script begin -->
+	<!-- <script src="scripts/jquery-3.1.1.min.js"></script> -->
+	<script src="scripts/zepto.min.js"></script>
+	<script src="scripts/zepto.fullpage.js"></script>
+	<script>
+		$(function(){
+			var onInput=$(".item input");
+			onInput.on("keyup",function(){
+				if($(this).val()==""){
+					$(this).css({
+	                   borderBottom:"1px solid #d73b67"
+					});
+				}else if($(this).val()!=""){
+					$(this).css({
+	                   borderBottom:"none"
+					});
+				}	
+			});
+			$(".btn").on("click",function(){
+				$(".page0").hide();
+			});
+			
+			$('.wp-inner').fullpage({
+	            // dir: 'h',
+	            change: function (e) {
+	                console.log('change', e.next, e.cur);
+	                // $('.indicator li').removeClass('cur').eq(e.cur).addClass('cur');
+	            },
+	            beforeChange: function (e) {
+	                console.log('beforeChange', e.next, e.cur);
+	            },
+	            afterChange: function (e) {
+	                console.log('afterChange', e.next, e.cur);
+	            }
+	        }); 
+		});		
+	</script>
+	<!-- script end -->
+</body>
+</html>
