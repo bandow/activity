@@ -44,7 +44,7 @@ var ok=function(){
     oSpinner.style.display='none';
 }
 oBtn.addEventListener("touchend",function(e) {
-    if(oLeft>=(oSlider.clientWidth-oBtn.clientWidth)){
+    if(oLeft>=(oSlider.clientWidth-oBtn.clientWidth-5)){
         oBtn.style.left = (document.documentElement.clientWidth - oBtn.offsetWidth);
         oTrack.style.width= (document.documentElement.clientWidth - oBtn.offsetWidth);
         oBtn.style.display='none';
@@ -52,8 +52,8 @@ oBtn.addEventListener("touchend",function(e) {
     }else{
         oBtn.style.left = 0;
         oTrack.style.width= 0;
-        oBtn.className="button-on";
-        oTrack.className="track-on";
+        // oBtn.className="button-on";
+        // oTrack.className="track-on";
     }
     document.removeEventListener("touchmove",defaultEvent,false);
 },false);

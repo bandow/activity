@@ -57,6 +57,9 @@
     width:1.5rem;
     height:1.5rem;
     background-color: #fff;
+    transition: left 0s;
+    -webkit-transition: left 0s;
+    border: 1px solid #ccc;
 }
 .track{
     position: absolute;

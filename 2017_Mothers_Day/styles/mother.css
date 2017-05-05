@@ -61,6 +61,18 @@ table {
   /*去掉表格的双行线*/
   border-spacing: 0; }
 
+/*取消a标签在移动端点击时的背景颜色*/
+a, a:hover, a:active, a:visited, a:link, a:focus {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  background: none;
+  text-decoration: none; }
+
+input {
+  -webkit-appearance: none;
+  /*去除input默认样式*/ }
+
 html {
   font-size: 18px; }
 
@@ -176,7 +188,7 @@ html {
   .page .b {
     position: absolute;
     left: 15%;
-    bottom: 12%;
+    bottom: 15%;
     width: 70%;
     font-size: 0; }
     .page .b img {
@@ -198,18 +210,23 @@ html {
     margin: 8% 0; }
     .page0 .allItem .item img {
       width: 100%; }
-    .page0 .allItem .item input {
+    .page0 .allItem .item label {
       position: absolute;
-      right: 13%;
+      right: 15%;
       bottom: 0;
-      width: 35%;
-      border: none;
-      background: none;
-      outline: none;
+      width: 30%;
+      height: 1.2rem;
       border-bottom: 1px solid #d73b67;
-      text-align: center;
-      color: #d73b67;
-      font: bold 1rem/1 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif; }
+      overflow: hidden; }
+      .page0 .allItem .item label input {
+        border: none;
+        background: none;
+        outline: none;
+        text-align: center;
+        width: 80%;
+        height: 100%;
+        color: #d73b67;
+        font: bold 1rem/1 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif; }
 .page0 .btn {
   padding-top: 5%;
   margin: 0 auto;
