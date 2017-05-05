@@ -53,17 +53,17 @@
         <a class="music-btn"></a>
     </div>
 	<div class="wp">
-		<!-- <div class="page page0">
+		<div class="page page0">
 			<div class="allItem">
-				<div class="item"><img src="images/page1_1.png" alt=""><input type="text"></div>
-				<div class="item"><img src="images/page1_2.png" alt=""><input type="text"></div>
-				<div class="item"><img src="images/page1_3.png" alt=""><input type="text"></div>
+				<div class="item"><img src="images/page1_1.png" alt=""><label><input type="tel"></label></div>
+				<div class="item"><img src="images/page1_2.png" alt=""><label><input type="tel"></label></div>
+				<div class="item"><img src="images/page1_3.png" alt=""><label><input type="tel"></label></div>
 			</div>
             <div class="btn">
             	<a href="javascript:;"><img src="images/page1_btn.png" alt=""></a>
             </div>
-		</div> -->
-		<div class="wp-inner">
+		</div>
+		<div class="wp-inner" style="display:none;">
 			<div class="page page1">
 				<div class="t"><img src="images/1.png" alt=""></div>
 				<div class="b">
@@ -122,20 +122,21 @@
 	<script src="scripts/zepto.fullpage.js"></script>
 	<script>
 		$(function(){
-			var onInput=$(".item input");
+			var onInput=$(".item label input");
 			onInput.on("keyup",function(){
 				if($(this).val()==""){
-					$(this).css({
+					$(this).parent().css({
 	                   borderBottom:"1px solid #d73b67"
 					});
 				}else if($(this).val()!=""){
-					$(this).css({
+					$(this).parent().css({
 	                   borderBottom:"none"
 					});
 				}	
 			});
 			$(".btn").on("click",function(){
 				$(".page0").hide();
+				$(".wp-inner").show();
 			});
 		});	
 		$('.wp-inner').fullpage();	
