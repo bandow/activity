@@ -1,0 +1,150 @@
+@import "base","variable";
+html{font-size:18px;}
+@media(min-device-width:320px){
+	html{
+	  font-size:18px;
+	}
+}
+@media(min-device-width:360px){
+	html{
+	  font-size:20px;
+	}
+}
+@media(min-device-width:375px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:384px){
+	html{
+	  font-size:21px;
+	}
+}
+@media(min-device-width:400px){
+	html{
+	  font-size:22px;
+	}
+}
+@media(min-device-width:414px){
+	html{
+	  font-size:23px;
+	}
+}
+@media(min-device-width:480px){
+	html{
+	  font-size:26px;
+	}
+}
+@media(min-device-width:520px){
+	html{
+	  font-size:27px;
+	}
+}
+@media(min-device-width:533px){
+	html{
+	  font-size:28px;
+	}
+}
+@media(min-device-width:560px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:568px){
+	html{
+	  font-size:29px;
+	}
+}
+@media(min-device-width:600px){
+	html{
+	  font-size:30px;
+	}
+}
+@media(min-device-width:640px){
+	html{
+	  font-size:24px;
+	}
+}
+.wrapper{
+	position:relative;
+	width:100%;
+	max-width:640px;
+	height:auto;
+	min-height: 100%;
+	margin:0 auto;
+	overflow:hidden;
+	background-color:#fff;
+}
+.header{
+	height:11rem;
+}
+.changeImg{
+	position:relative;
+	width:100%;
+	>img{
+		width:100%;
+	}
+	.rule{
+		position:absolute;
+		top:0;
+		right:6%;
+		width:1.5rem;
+		height:1.5rem;
+		img{
+			width:100%;
+		}
+	}
+	.change{
+		position:absolute;
+		top:20%;
+		left:2%;
+		width:96%;
+		height:auto;
+		ul{
+			display:-webkit-flex;
+			display:flex;
+			align-items:center;
+			li{
+				position:relative;
+				width:33.3333333%;
+				img{
+					width:100%;
+				}
+				span{
+					position:absolute;
+					top:42%;
+					left:16%;
+					font:.6rem/1 nth($publicFont,6);
+					color:#e60012;
+				}
+			}
+			.on{
+				span{
+					color:#fff;
+				}
+			}
+		}
+		.allImg{
+			width:100%;
+			height:auto;
+			background:#fff;
+			border-radius:5px;
+			overflow:hidden;
+			.img{
+				font-size:0;
+				display:none;
+				padding:.5%;
+				img{
+					width:100%;
+					border-radius:5px;
+				}
+			}
+		}
+	}
+}
+.list{
+	width:100%;
+	>img{
+		width:100%;
+	}
+}
