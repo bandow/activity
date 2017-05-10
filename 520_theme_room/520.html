@@ -35,31 +35,93 @@
 	</section>
 	<section class="list">
 		<img src="images/title2.png" alt="">
+		<div class="city">
+			<div class="cityContent">
+				<i></i><a href="">广州</a>
+			</div>
+		</div>
+		<ul>
+			<li>
+				<div class="img">
+					<img src="images/list1.jpg" alt="">
+					<div class="text"><p>天河区</p></div>
+				</div>
+				<p>城市便捷广州市白云山大金钟路分店城市便捷广州市白云山大金钟路分店</p>
+				<h4>￥<span>399</span><em>/</em>￥<span>520</span></h4>
+				<a href="">马上预订</a>
+			</li>
+			<li>
+				<div class="img">
+					<img src="images/list1.jpg" alt="">
+					<div class="text"><p>天河区</p></div>
+				</div>
+				<p>广州市白云山大金钟路分店</p>
+				<h4>￥<span>399</span></h4>
+				<a href="">马上预订</a>
+			</li>
+			<li>
+				<div class="img">
+					<img src="images/list1.jpg" alt="">
+					<div class="text"><p>天河区</p></div>
+				</div>
+				<p>城市便捷广州市白云山大金钟路分店城市便捷广州市白云山大金钟路分店</p>
+				<h4>￥<span>399</span></h4>
+				<a href="">马上预订</a>
+			</li>
+			<li>
+				<div class="img">
+					<img src="images/list1.jpg" alt="">
+					<div class="text"><p>天河区</p></div>
+				</div>
+				<p>广州市白云山大金钟路分店</p>
+				<h4>￥<span>399</span></h4>
+				<a href="">马上预订</a>
+			</li>
+		</ul>
+		<div class="foot">
+			<div class="img"><img src="images/topback.png" alt=""></div>
+			<p>没有更多了</p>
+		</div>
 	</section>
+	<div class="mask"></div>
+	<div class="ruleMask">
+		<div class="ruleContent">
+			<a href="javascript:;"><img src="images/close.png" alt=""></a>
+			<h2>活动规则</h2>
+			<p>1、可入住时间：5月19日-5月20日;</p>
+			<p>2、若入住当天预订（需提前3小时与酒店前台沟通）;</p>
+			<p>3、主题房配置说明：<br>
+			· 299元主题房：鲜花/花瓣+惊喜装饰；<br>
+			· 399元主题房：鲜花/花瓣+巧克力+惊喜装饰；<br>
+			· 520元主题房：鲜花/花瓣+巧克力+酒水类饮料+惊喜装饰；</p>
+			<span>一价格不同门店的布置情况均有不同，图片仅供参考，具体布置情况，可致电酒店前台咨询确认；</span>
+			<p>4、预订成功后订单不可取消;</p>
+			<p>5、前52名预订用户，可获得价值100元电影票2张入住离店后赠送至会员账户;</p>
+			<p>6、活动最终解释权归东呈国际集团所有！</p>
+		</div>
+	</div>
 </div>
 <!-- script begin -->
 <script src="scripts/jquery-3.1.1.min.js"></script>
 <script>
-	$(".change ul li").each(function(index,element){
-		$(this).on("click",function(){
-			$(this).addClass("on").siblings().removeClass("on");
-		});
-		console.log(element);
-	});
-
+$(document).ready(function(){
 	$(".change ul li").on("click",function(){
-		$(this).addClass("on").siblings().removeClass("on");
-		$(this).each(function(index,element){
-			$(this).find("img").attr("src","images/btn.png");
-			if($(this).hasClass("on")){
-				$(this).find("img").attr("src","images/btn_active.png").siblings().attr("src","images/btn.png");
-			}else{
-				$(this).find("img").attr("src","images/btn.png")
-			}
-
-		});
+		$(this).addClass("on").find("img").attr("src","images/btn_active.png").parent().siblings().removeClass("on").find("img").attr("src","images/btn.png");
+		$(".allImg .img").eq($(this).index()).show().siblings().hide();
+	})	
+	$(".rule").on("click",function(){
+		$(".mask,.ruleMask").show();
+	});
+	$(".ruleContent a,.mask").on("click",function(){
+		$(".mask,.ruleMask").hide();
 	});
 
+	$(".foot .img").on("click",function(){
+		$('html,body').animate({scrollTop: '0px'}, 800);
+	});
+
+});
+	
 </script>
 <!-- script end -->
 </body>
