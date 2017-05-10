@@ -52,7 +52,7 @@
 	<div id="music" class="music">
         <a class="music-btn"></a>
     </div>
-	<div class="wp">
+    <div class="wrapper" style="z-index: 8;">
 		<div class="page page0">
 			<div class="allItem">
 				<div class="item"><img src="images/page1_1.png" alt=""><label><input type="tel"></label></div>
@@ -60,10 +60,12 @@
 				<div class="item"><img src="images/page1_3.png" alt=""><label><input type="tel"></label></div>
 			</div>
             <div class="btn">
-            	<a href="javascript:;"><img src="images/page1_btn.png" alt=""></a>
+            	<a href="mother.html"><img src="images/page1_btn.png" alt=""></a>
             </div>
 		</div>
-		<div class="wp-inner" style="display:none;">
+	</div>
+	<div class="wp">
+		<div class="wp-inner">
 			<div class="page page1">
 				<div class="t"><img src="images/1.png" alt=""></div>
 				<div class="b">
@@ -135,11 +137,11 @@
 				}	
 			});
 			$(".btn").on("click",function(){
-				$(".page0").hide();
-				$(".wp-inner").show();
+				$(".wrapper").hide();
 			});
-		});	
-		$('.wp-inner').fullpage();	
+
+			$('.wp-inner').fullpage();	
+		});		
 	</script>
 	<script>
         var bgAudio = new Audio();
