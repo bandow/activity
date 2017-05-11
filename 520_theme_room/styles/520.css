@@ -145,7 +145,8 @@ html {
     position: absolute;
     top: 20%;
     left: 2%;
-    width: 96%;
+    width: 94%;
+    height: auto;
     height: auto; }
     .changeImg .change ul {
       display: -webkit-flex;
@@ -165,11 +166,12 @@ html {
       .changeImg .change ul .on span {
         color: #fff; }
     .changeImg .change .allImg {
-      width: 100%;
+      width: 97%;
       height: auto;
       background: #fff;
       border-radius: 5px;
-      overflow: hidden; }
+      overflow: hidden;
+      margin: 0 0 0 2%; }
       .changeImg .change .allImg .img {
         font-size: 0;
         display: none;
@@ -319,22 +321,33 @@ html {
     border: 1px dashed #e60012;
     border-radius: 5px; }
     .ruleMask .ruleContent > a {
-      margin: -20% -20% 0 0;
+      margin: -16% -16% 0 0;
       display: block;
-      width: 5rem;
-      height: 5rem;
+      width: 4rem;
+      height: 4rem;
       font-size: 0;
       background: #fff;
       float: right;
-      border: 1px dashed #e60012;
+      border: 1px dashed;
+      border-color: transparent transparent transparent #e60012;
       border-radius: 100%;
       display: -webkit-flex;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
       .ruleMask .ruleContent > a img {
-        margin: 30% 30% 0 0;
-        width: 20%; }
+        margin: 0% 40% 0 0;
+        width: 20%;
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg); }
     .ruleMask .ruleContent h2 {
       font: 0.9rem/2 "Microsoft Yahei";
       color: #e60012;
@@ -343,6 +356,8 @@ html {
       font: 0.7rem/1.4 "Microsoft Yahei";
       color: #5e5353;
       margin-top: 5%; }
+      .ruleMask .ruleContent p em {
+        color: #e60012; }
     .ruleMask .ruleContent span {
       font: 0.7rem/1.4 "Microsoft Yahei";
       color: #999;
