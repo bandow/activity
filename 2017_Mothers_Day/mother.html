@@ -27,7 +27,7 @@
 			background:url(images/start.png) no-repeat;
 			background-size: 100% 100%;
 		}
-		.music{
+		#music{
             position: absolute;
             z-index: 1000;
             right:10px;
@@ -35,21 +35,32 @@
             width: 25px;
             height: 25px;
         }
-        .music .music-btn {
+         .music .music-btn {
             display: block;
+            padding-left: 1px;
+            width: 25px;
+            height: 25px;
+        }
+        .play .music-btn{
+        	display: block;
+            padding-left: 1px;
+            width: 25px;
+            height: 25px;
+            background-image: url(images/music.png);
+            background-size: 100% 100%;
+        }
+        .pause .music-btn{
+        	display: block;
             padding-left: 1px;
             width: 25px;
             height: 25px;
             background-image: url(images/music1.png);
             background-size: 100% 100%;
         }
-        .music .music-btn.play {
-            background-image: url(images/music.png);
-        }
 	</style>
 </head>
 <body>
-	<div id="music" class="music">
+	<div id="music" class="music play">
         <a class="music-btn"></a>
     </div>
     <div class="wrapper" style="z-index: 8;">
@@ -119,7 +130,11 @@
 			</div>
 		</div>
 	</div>
+
+
+<audio id="bgMusic" src="scripts/m.mp3" autoplay="autoplay" loop="loop"></audio>
 	<!-- script begin -->
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 	<script src="scripts/zepto.min.js"></script>
 	<script src="scripts/zepto.fullpage.js"></script>
 	<script>
@@ -144,55 +159,34 @@
 		});		
 	</script>
 	<script>
-        var bgAudio = new Audio();
-        bgAudio.loadStatus = 'unload';
-        bgAudio.loop = true;
-        function loadAudio(audio, url, callback) {
-            audio.src = url;
-            audio.load();
-            audio.addEventListener('canplay', function () {
-                bgAudio.loadStatus = 'loaded';
-                callback();
-            });
-            audio.addEventListener('loadstart', function () {
-                bgAudio.loadStatus = 'loading';
-            });
-        }
-        function playAudio(){
-            if (bgAudio.loadStatus === 'unload') {
-                loadAudio(bgAudio, 'scripts/m.mp3', function () {
-                    playAudio();
-                });
-                return 1;
+	var music=document.getElementById('music');
+	var audio=document.getElementById('bgMusic');
+	function autoPlayAudio() {
+	    wx.config({
+	         // 配置信息, 即使不正确也能使用 wx.ready
+	         debug: false,
+	         appId: '',
+	         timestamp: 1,
+	         nonceStr: '',
+	         signature: '',
+	         jsApiList: []
+	    });
+	    wx.ready(function() { 
+	        audio.play();
+	    });
+	}
+    autoPlayAudio(); 
+    music.onclick=function(){
+    	if(audio!==null){
+            if(!audio.paused){ 
+                audio.pause();// 这个就是暂停
+                music.setAttribute("class", "pause"); 
+            }else{  
+                audio.play(); // 这个就是播放
+                music.setAttribute("class", "play"); 
             }
-
-            bgAudio.play();
         }
-        function stopAudio() {
-            bgAudio.pause();
-        }
-        bgAudio.addEventListener('playing' ,function (e) {
-            $('#music .music-btn').addClass('play');
-        });
-        bgAudio.addEventListener('pause' ,function (e) {
-            $('#music .music-btn').removeClass('play');
-        });
-
-        $('body').one('touchstart', function () {
-            playAudio();
-            $('#music').on('touchstart', function (e) {
-                if (bgAudio.paused) {
-                    playAudio();
-                    return 0;
-                }
-                stopAudio();
-                return 1;
-            });
-        });
-        window.onload = function() {
-            if (bgAudio.loadStatus !== 'unload') {return;}
-            playAudio();
-        };
+    }
     </script>
 	<!-- script end -->
 </body>
