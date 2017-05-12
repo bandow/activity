@@ -199,8 +199,12 @@ html{font-size:18px;}
 				position:relative;
 				width:100%;
 				font-size:0;
+				height:5.75rem;
+				overflow:hidden;
 				img{
 					width:100%;
+					max-width:100%;
+					min-height:5.75rem;
 				}
 				.text{
 					position:absolute;

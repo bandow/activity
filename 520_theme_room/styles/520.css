@@ -229,9 +229,13 @@ html {
       .list ul li .img {
         position: relative;
         width: 100%;
-        font-size: 0; }
+        font-size: 0;
+        height: 5.75rem;
+        overflow: hidden; }
         .list ul li .img img {
-          width: 100%; }
+          width: 100%;
+          max-width: 100%;
+          min-height: 5.75rem; }
         .list ul li .img .text {
           position: absolute;
           left: 0;
