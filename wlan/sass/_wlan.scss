@@ -409,7 +409,71 @@ html{font-size:18px;}
 			    color: #666;
 			    border-right: 1px solid #eaeaea;
     			border-bottom: 1px solid #eaeaea;
+    			i{
+    				width:.5rem;
+    				height:1px;
+    				background-color:#ccc;
+    				display:inline-block;
+    			}
+    			&:first-child{
+    				flex:1.5;
+    				line-height:1.5 !important;
+    			}
+    			.on{
+    				position:relative;
+    				width:1rem;
+    				height:.5rem;
+    				background:none;
+    				&:after{
+			            content:"";
+			            position: absolute;
+			            top:50%;
+			            left:50%;
+			            margin:-.25rem 0 0 -.125rem;
+			            width:.25rem;
+			            height:.5rem;
+			            border: 1px solid;
+			            border-bottom: 0;
+			            border-right: 0;
+			            color: #ccc;
+			            @include transform(rotateZ(-145deg));
+			        }
+    			}
     		}
+	    }
+	    tbody{
+			tr{
+				&:nth-child(1){
+	    			td{
+	    				line-height:3;
+	    			}
+	    		}
+	    		&:nth-child(2){
+	    			td{
+	    				line-height:3;
+	    			}
+	    		}
+	    		&:nth-child(9){
+	    			td{
+	    				line-height:3;
+	    			}
+	    		}
+	    		&:nth-child(10){
+	    			td{
+	    				line-height:3;
+	    			}
+	    		}
+	    		&:nth-child(12){
+	    			td{
+	    				line-height:3;
+	    			}
+	    		}
+	    		&:nth-child(13){
+	    			td{
+	    				line-height:3;
+	    			}
+	    		}
+			}
 	    }
 	}
 	.text-buttom{
