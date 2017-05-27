@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="description" content="2017端午节错峰游"/>
+	<meta name="keywords" content="2017端午节错峰游"/>
+	<meta name="author" content="name, sycbbb@sina.com"/>
+	<meta name="robots" content="index,follow"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+	<meta name="msapplication-tap-highlight" content="no">
+	<title>2017端午节错峰游</title>
+	<link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+<div class="wrapper" style="background:url(images/bg.jpg) #039be5 no-repeat; background-size:100% auto;">
+	<div class="btn">
+		<a href="javascript:ruleMask();"><img src="images/btn1.png" alt=""></a>
+		<a href="#"><img src="images/btn2.png" alt=""></a>
+	</div>
+	
+	<div class="mask" onclick="closeMask();"></div>
+	<div class="ruleMask">
+		<div class="ruleContent">
+			<a href="javascript:;"><img src="images/close.png" alt=""></a>
+			<h2>活动规则</h2>
+			<p>1、可入住时间：5月19日-5月20日;</p>
+			<p>2、若入住当天预订（需提前3小时与酒店前台沟通）;</p>
+			<p>3、主题房配置说明：<br>
+			· <em>299</em>元主题房：鲜花/花瓣+惊喜装饰；<br>
+			· <em>399</em>元主题房：鲜花/花瓣+巧克力+惊喜装饰；<br>
+			· <em>520</em>元主题房：鲜花/花瓣+巧克力+酒水类饮料+惊喜装饰；</p>
+			<span>一价格不同门店的布置情况均有不同，图片仅供参考，具体布置情况，可致电酒店前台咨询确认；</span>
+			<p>4、预订成功后订单不可取消;</p>
+			<p>5、<em>前52名预订用户，可获得价值100元电影票2张入住离店后赠送至会员账户;</em></p>
+			<p>6、活动最终解释权归东呈国际集团所有！</p>
+		</div>
+	</div>
+</div>
+<!-- script begin -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+function ruleMask(){
+	$(".mask").show();
+	$(".ruleMask").addClass("ruleMaskActive");
+}
+function closeMask(){
+	$(".mask").hide();
+	$(".ruleMask").removeClass("ruleMaskActive");
+}
+</script>
+<!-- script end -->
+</body>
+</html>

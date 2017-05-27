@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content="不超过80个字符"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title></title>
+<link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+<div class="wrapper" style="background:url('images/bg.jpg') #fff no-repeat;background-size:100% auto;">
+	<a class="know" href="javascript:;"><img src="images/know.png" alt=""></a>
+	<footer class="footer">
+		<p><i><img src="images/exclamatory.png" alt=""></i><span>考试过程杜绝舞弊行为</span></p>
+		<div class="big-btn">
+			<a href="examination.html">
+				<img src="images/btn1.png" alt="">
+				<img class="l" src="images/l.png" alt="">
+				<img class="r" src="images/r.png" alt="">
+			</a>
+		</div>
+		<div class="small-btn">
+			<a href="javascript:;"><img src="images/btn2.png" alt=""></a>
+		</div>
+	</footer>
+	<div class="mask"></div>
+	<div class="mask-know">
+		<h2>考场须知</h2>
+		<p>1.考试时间<span>6月8-15日</span>；</p>
+		<p>2.考试期间若监考老师不在场，可打小抄！</p>
+		<p>3.为防止小纸条泛滥，每次考试<span>打小抄不可超过2次！</span></p>
+		<p>4.每次考试≥80分的考生可参与瓜分高考奖学金；</p>
+		<p>5.每位学霸最多只能有<span>5次</span>瓜分奖学金的机会；</p>
+		<p>6.奖学金含：周X福黄金，微信红包、酒店红包和电影红包，合计奖学金奖金池超<span>100,000</span>元；</p>
+		<p>7.获得黄金的学霸我们会在活动结束后10个工作日之内发货；</p>
+		<p>8.获得其他奖金的学霸，教务处会通过会员账户发放奖学金；</p>
+		<p>9.为方便发放奖学金，<span>学霸们须关注东呈酒店并注册</span>；</p>
+		<p>10.奖学金可能存在延时1-2个工作日到账的情况发生，请各位学霸稍安勿躁；</p>
+		<a class="close" href="javascript:;">已阅</a>
+	</div>
+	<div class="scholarship">
+		<h2>我的奖学金</h2>
+		<div class="gift">
+			<ul>
+				<li><i><img src="images/gift1.png" alt=""></i></li>
+				<li><p>微信红包20元</p></li>
+				<li><i><img src="images/gift2.png" alt=""></i></li>
+				<li><p>电影票 X2</p></li>
+				<li><i><img src="images/gift3.png" alt=""></i></li>
+				<li><p>酒店红包50元</p></li>
+			</ul>
+		</div>
+		<a class="close" href="javascript:;">好</a>
+	</div>
+</div>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".know").on("click",function(){
+		showMask($(".mask-know"));
+	});
+	$(".small-btn a").on("click",function(){
+		showMask($(".scholarship"));
+	});
+	$(".mask,.mask-know .close,.scholarship .close").on("click",function(){
+		closeMask($(".mask-know"));
+		closeMask($(".scholarship"));
+	});
+});
+function showMask(obj){
+	$(".mask").show().css("opacity","0.7");
+	obj.addClass("on");
+}
+function closeMask(obj){
+	$(".mask").css("opacity","0");
+	setTimeout(function(){
+		$(".mask").hide();
+	},300)
+	obj.removeClass("on");
+}
+</script>
+</body>
+</html>

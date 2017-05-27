@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content="不超过80个字符"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<link rel="stylesheet" href="styles/index.css">
+<title></title>
+<style>
+	.examination-container .speech .content i{
+		background: url(images/speech_icon.png) no-repeat;
+		background-size:39px 20px;
+		background-position:-26px 0;
+	}
+	.examination-container .speech-active .content i{
+		background-position:-26px 0;
+		-webkit-animation: voiceplay 1s infinite step-start;
+		animation: voiceplay 1s infinite step-start;
+	}
+	@keyframes voiceplay {
+	  0%,
+	  100% {
+	    background-position:-26px 0;
+	  }
+	  33.333333% {
+	    background-position: -13px 0;
+	  }
+	  66.666666% {
+	    background-position: 0 0;
+	  }
+	}
+	@-webkit-keyframes voiceplay {
+	  0%,
+	  100% {
+	    background-position:-26px 0;
+	  }
+	  33.333333% {
+	    background-position: -13px 0;
+	  }
+	  66.666666% {
+	    background-position: 0 0;
+	  }
+	}
+</style>
+</head>
+<body>
+<div class="wrapper" style="background:url('images/bg1.jpg') #fff no-repeat;background-size:100% auto;">
+	<audio id="bgMusic" src="scripts/m.mp3"></audio>
+	<header class="examination-header">
+		<div class="hear"><img src="images/head.jpg" alt=""></div>
+		<h3>第一题：送分题</h3>
+		<a class="examination-know" href="javascript:;"><img src="images/know.png" alt=""></a>
+	</header>
+	<div class="examination-container">
+		<!-- <p>李雷和韩梅梅在东呈酒店复习，遇到了一道题不会，于是李雷决定打电话给酒店前台求助，韩梅梅觉得不好意思，想要假装自己知道答案，于是李雷说：“知之为知之，不知为不知，是知也”这句话出自哪里?</p> -->
+		<!-- 语音 -->
+		<div class="speech">
+			<img src="images/speech.png" alt="">
+			<div class="content">
+				<i></i>
+				<span>59’</span>
+			</div>
+		</div>
+		<ul class="examination-list">
+			<li><i><img src="images/no_select.png" alt=""></i><span>A.论语</span></li>
+			<li><i><img src="images/no_select.png" alt=""></i><span>B.论坛</span></li>
+			<li><i><img src="images/no_select.png" alt=""></i><span>C.论文</span></li>
+			<li><i><img src="images/no_select.png" alt=""></i><span>D.李雷</span></li>
+		</ul>
+	</div>
+	<footer class="examination-footer">
+		<!-- 前面4题 -->
+		<p>
+			<a href=""><img src="images/e_btn1.png" alt=""></a>
+			<a class="see-answer" href="javascript:;"><img src="images/e_btn2.png" alt=""></a>
+		</p>
+		<!-- 交卷 -->
+		<!-- <p>
+			<a class="submit" href="#"><img src="images/e_btn1_1.png" alt=""></a>
+			<a href="javascript:;"><img src="images/e_btn2_2.png" alt=""></a>
+		</p> -->
+	</footer>
+	<div class="mask"></div>
+	<div class="mask-know">
+		<h2>考场须知</h2>
+		<p>1.考试时间<span>6月8-15日</span>；</p>
+		<p>2.考试期间若监考老师不在场，可打小抄！</p>
+		<p>3.为防止小纸条泛滥，每次考试<span>打小抄不可超过2次！</span></p>
+		<p>4.每次考试≥80分的考生可参与瓜分高考奖学金；</p>
+		<p>5.每位学霸最多只能有<span>5次</span>瓜分奖学金的机会；</p>
+		<p>6.奖学金含：周X福黄金，微信红包、酒店红包和电影红包，合计奖学金奖金池超<span>100,000</span>元；</p>
+		<p>7.获得黄金的学霸我们会在活动结束后10个工作日之内发货；</p>
+		<p>8.获得其他奖金的学霸，教务处会通过会员账户发放奖学金；</p>
+		<p>9.为方便发放奖学金，<span>学霸们须关注东呈酒店并注册</span>；</p>
+		<p>10.奖学金可能存在延时1-2个工作日到账的情况发生，请各位学霸稍安勿躁；</p>
+		<a class="close" href="javascript:;">已阅</a>
+	</div>	
+	<div class="share">
+		<img src="images/share.png" alt="">
+	</div>
+</div>	
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+$(document).ready(function(){
+    //点击考场须知
+	$(".examination-know").on("click",function(){
+		showMask($(".mask-know"));
+	});
+	$(".mask,.mask-know .close").on("click",function(){
+		closeMask($(".mask-know"));
+		closeMask($(".mark"));
+	});
+	//点击打小抄
+	$(".see-answer").on("click",function(){
+		$(".share").show();
+	});
+	$(".share").on("click",function(){
+	    $(this).hide();
+		$(".mask").show().css("opacity","0.7");
+		seeAnswer("B")
+	});
+	//选择答案
+	$(".examination-list li").on("click",function(){
+		$(this).addClass("active").find("i img").attr("src","images/select.png").parent().parent().siblings().removeClass("active").find("i img").attr("src","images/no_select.png");
+	});
+	//点击语音
+	var audio=document.getElementById('bgMusic');
+	$(".speech").on("click",function(){
+		$(this).toggleClass("speech-active");
+		if(audio!==null){
+	        if(!audio.paused){ 
+	            audio.pause();// 这个就是暂停
+	        }else{  
+	            audio.play(); // 这个就是播放
+	        }
+	    }
+	});
+});
+function showMask(obj){
+	$(".mask").show().css("opacity","0.7");
+	obj.addClass("on");
+}
+function closeMask(obj){
+	$(".mask").css("opacity","0");
+	setTimeout(function(){
+		$(".mask").hide();
+	},300)
+	obj.removeClass("on");
+}
+function seeAnswer(msg){
+	var html='<div class="mask-answer">';
+        html+='<img src="images/abcd.png" alt="">';
+        html+='<a href="javascript:;"><img src="images/close.png" alt=""></a>';
+        html+=' <div class="text">';
+        html+='<p>来自小纸条的答案</p>';
+        html+='<p>本题答案是：'+msg+' </p>';
+        html+='</div>';
+        html+='</div>';
+    $(".wrapper").append(html);
+    $(".mask,.mask-answer>a").on("click",function(){
+		$(".mask").hide().css("opacity","0");
+		$(".mask-answer").remove(".mask-answer");
+	});
+}
+</script>
+</body>
+</html>
