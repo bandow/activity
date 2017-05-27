@@ -13,13 +13,6 @@
 <meta name="msapplication-tap-highlight" content="no">
 <title></title>
 <link rel="stylesheet" href="styles/index.css">
-<style>
-	 #container{width:310px;height:310px;margin:30px auto;}
- #ul1{width:310px;height:310px;list-style:none;}
- #ul1 li,#ul1 a{width:100px;height:100px;border:1px solid #565656;float:left;text-align:center;line-height:100px;}
- #ul1 a:hover{cursor:pointer;color:orange;font-size:18px;}
- #ul1 .active{background:red;color:#fff;}
-</style>
 </head>
 <body>
 <div class="wrapper" style="background:url('images/bg1.jpg') #fff no-repeat;background-size:100% auto;">
@@ -96,6 +89,7 @@
 </div>
 <script src="scripts/jquery-3.1.1.min.js"></script>
 <script>
+var oneClick=1;
 $(document).ready(function(){
 	$(".know").on("click",function(){
 		showMask($(".mask-know"));
@@ -105,7 +99,10 @@ $(document).ready(function(){
 		closeMask($(".mask-bonus"));
 	});
 	$(".middle-a").on("click",function(){
- 		start();
+	    if(oneClick){
+	      start();
+	      oneClick = 0;
+	    }
 	});
 });
 function showMask(obj){
@@ -176,6 +173,7 @@ function myPrize(img,msg,flag){
 		setTimeout(function(){
 			$(".prize").hide().remove();
 		},300);
+		oneClick = 1;
 	});
 }
 </script>
