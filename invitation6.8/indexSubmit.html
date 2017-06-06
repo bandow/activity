@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content="不超过80个字符"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<link rel="stylesheet" href="styles/invitation.css">
+<title></title>
+</head>
+<body>
+<div class="wrapper" style="background:url(images/page3_bg.jpg) #050c2e no-repeat;background-size:100% auto;">
+	<div class="invitation-submit">
+		<img src="images/bg4.png" alt="">
+		<div class="content">
+			<div class="img">
+				<img src="images/page4-0.png" alt="">
+			</div>
+			<div class="b1">
+				<div class="text">
+					<h2>出席发布会领取特权</h2>
+					<p>启呈一起趣发现，接受D的邀请</p>
+				</div>
+				<div class="text1">
+					<p><span>2017</span>年<span>6</span>月<span>23</span>日 <span>14:00</span></p>
+					<p>广西省南宁市青秀区双拥路30号</p>
+					<p>南宁南湖名都大酒店49楼</p>
+					<a onclick="flowPath();" href="javascript:;">活动流程</a>
+				</div>
+				<a class="submit submit1" href="javascript:;">
+					<p></p>
+					<p></p>
+					<p>报名</p>
+				</a>
+			</div>
+			<div class="b2">
+				<div class="text">
+					<h2>出席发布会领取特权</h2>
+					<p>神秘伴手礼 | 500积分 | 现场抽奖 | 大咖分享…</p>
+				</div>
+				<div class="item">
+					<input type="text" placeholder="名字">
+				</div>
+				<div class="item">
+					<input type="tel" placeholder="手机">
+				</div>
+				<div class="item">
+				 	<select name="selectAge" id="selectAge">   
+				        <option value="1">广州</option>   
+				        <option value="2">深圳</option>   
+				        <option value="3">佛山</option>   
+				        <option value="4">东莞</option>   
+				        <option value="5">南宁</option>      
+				    </select>   
+				</div>
+				<p>*报名成功后，将由专员联系您</p>
+				<a class="submit submit2" href="javascript:;">
+					<p></p>
+					<p></p>
+					<p>提交</p>
+				</a>
+			</div>
+			<div class="b3">
+				<div class="text">
+					<h2>东呈x互联网发布会</h2>
+					<p>您是第XXXXXX位报名参加发布会的人</p>
+				</div>
+				<div class="text1">
+					<p><span>2017</span>年<span>6</span>月<span>23</span>日 <span>14:00</span></p>
+					<p>广西省南宁市青秀区双拥路30号</p>
+					<p>南宁南湖名都大酒店49楼</p>
+				</div>
+				<a class="submit submit3" href="javascript:;">
+					<p></p>
+					<p></p>
+					<p>邀请好友</p>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="mask" onclick="closePage();"></div>
+	<div class="mask-flow-path">
+		<div class="close" onclick="closePage();"><img src="images/close.png" alt=""></div>
+		<h2>发布会流程 </h2>
+		<p>14:30-15:00   签到</p>
+		<p>15:00-15:10   开场</p>
+		<p>15:10-15:15   互动抽奖1</p>
+		<p>15:15-16:15   东呈见面会</p>
+		<p>16:15-17:00   合作伙伴沙龙</p>
+		<p>17:00-17:05   拼图仪式</p>
+		<p>17:05-17:10   互动抽奖2</p>
+		<p>17:10-17:25   结束语、合影</p>
+	</div>
+	<div class="share" onclick="closeShare();">
+		<img src="images/share.png" alt="">
+	</div>
+</div>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+	   $(".submit1").on("click",function(){
+			$(".b1").hide();
+			$(".b2").show();
+			$(".b3").hide();
+	   });
+	   $(".submit2").on("click",function(){
+			$(".b3").show();
+			$(".b2").hide();
+			$(".b1").hide();
+	   });
+	   $(".submit3").on("click",function(){
+			$(".share").show();
+	   });
+	});
+	function flowPath(){
+		$(".mask").show();
+		$(".mask-flow-path").addClass("on");
+	};
+	function closePage(){
+		$(".mask").hide();
+		$(".mask-flow-path").removeClass("on");
+	}
+	function closeShare(){
+		$(".share").hide();
+	}
+</script>
+</body>
+</html>
