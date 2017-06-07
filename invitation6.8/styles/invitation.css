@@ -824,6 +824,7 @@ html {
           color: #fff;
           border-bottom: 1px solid #fff; }
       .invitation-submit .content .b2 .item {
+        position: relative;
         padding: 0 5%;
         margin: 0 auto .3rem;
         width: 60%;
