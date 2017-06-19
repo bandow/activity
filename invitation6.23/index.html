@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content="不超过80个字符"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<link rel="stylesheet" href="styles/index.css">
+<title></title>
+</head>
+<body>
+<div class="wrapper" style="background:url(images/bg.jpg) no-repeat;background-size:100% auto">
+	<div class="invitation-content">
+		<img src="images/bg.png" alt="">
+		<div class="text">
+			<h3><i><img src="images/invitation_icon1.png" alt=""></i><span>活动时间</span></h3>
+			<p>2017年06月23日 下午14:00</p>
+			<h3><i><img src="images/invitation_icon2.png" alt=""></i><span>天气预报</span></h3>
+			<p id="weather"></p>   <!-- 6月23日（星期五），30℃，多云-->
+			<h3><i style="width:.6rem;"><img src="images/invitation_icon3.png" alt=""></i><span>详细地址</span></h3>
+			<p style="margin-bottom:.3rem;">南宁市青秀区双拥路30号南湖名都大酒店49楼凌云厅</p>
+			<div id="allmap" class="map"></div>
+			<h3><i style="width:.6rem;"><img src="images/invitation_icon4.png" alt=""></i><span>交通指引</span></h3>
+			<p>公交：双拥青山路口站（下车后步行约300米即可到酒店）</p>
+			<p>自驾：参加活动会员可自驾车到酒店，享免费停车服务，（签到时领取免费停车票）</p>
+			<p>总机：<a href="tel:0771-5881808;">0771-5881808</a></p>
+		</div>
+		<div class="btn"><img src="images/btn.jpg" alt=""></div>
+	</div>
+</div>
+<div class="invitation-mask"></div>
+<div class="invitation-rule">
+	<a class="close" href="javascript:;"><img src="images/close.png" alt=""></a>
+	<h2>注意事项</h2>
+	<p>1. 本次活动名额有限，仅限已确认报名会员本人及其家属朋友参加；</p>
+	<p>2. 签到：会员到达酒店后，直接搭乘电梯到49楼凌云厅门口出示短信，扫码签到；</p>
+	<p>3. 更多咨询，请拨打客服电话<a href="tel:4007007899;">4007007899</a>或者微信在线咨询。</p>
+</div>
+<!-- script begin -->
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ia21oG6eioiE5yKW2ERRB2P6lOcpAyGh"></script>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script src="scripts/jquery.leoweather.min.js"></script>
+<script>
+	$(function(){
+		$(".btn").on("touchstart",function(){
+			$(".invitation-mask").show();
+			$(".invitation-rule").addClass("active");
+		});
+		$(".invitation-rule .close,.invitation-mask").on("touchstart",function(){
+			$(".invitation-mask").hide();
+			$(".invitation-rule").removeClass("active");
+		});
+	});
+</script>
+<script type="text/javascript">
+	var oText='<p class="mapName">南湖名都大酒店</p>';
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	var point = new BMap.Point(116.331398,39.897445);
+	map.centerAndZoom(point,12);
+	// 创建地址解析器实例
+	var myGeo = new BMap.Geocoder();
+	// 将地址解析结果显示在地图上,并调整地图视野
+	myGeo.getPoint("广西南宁市青秀区双拥路30号南湖名都大酒店", function(point){
+		if (point) {
+			map.centerAndZoom(point, 15);
+			map.addOverlay(new BMap.Marker(point));
+		}else{
+			alert("您选择地址没有解析到结果!");
+		}
+	}, "广西南宁市青秀区双拥路30号南湖名都大酒店");
+	// 指定文本标注所在的地理位置
+	var opts = {
+	  position : point,    // 指定文本标注所在的地理位置
+	  offset   : new BMap.Size(0, 0)    //设置文本偏移量
+	}
+	var label = new BMap.Label(oText,opts);  // 创建文本标注对象
+	map.addOverlay(label);
+	label.setStyle({
+	 left : "100px",
+	 top : "0",
+	 border:"none"
+ });
+</script>
+<script>
+$('#weather').leoweather({
+	format:'{年}年{月}月{日}日（星期{周}）{气温}℃ , {天气}',
+	city:'南宁'
+});
+</script>
+<!-- script end -->
+</body>
+</html>
