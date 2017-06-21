@@ -16,8 +16,12 @@
 </head>
 <body>
 <div class="masterplate-wrapper" style="background:url(images/bg.jpg) #feeed7 no-repeat;background-size:100% auto">
-	<header class="masterplate-header"></header>
-	<div class="masterplate-title"></div>
+	<header class="masterplate-header">
+		<img src="images/head.png" alt="">
+	</header>
+	<div class="masterplate-title">
+		<img src="images/title.png" alt="">
+	</div>
 	<div class="masterplate-activity-list">
 		<div class="item">
 			<a href="#"><img src="images/activity1.jpg" alt=""></a>
@@ -30,8 +34,16 @@
 		</div>
 	</div>
 </div>
-
 <!-- script begin -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+	$(function(){
+		var titleHeight=$(".masterplate-title").height();
+		var titleImgHeight=$(".masterplate-title img").height();
+		var marginTopHeight=(titleHeight-titleImgHeight)/2;
+		$(".masterplate-title img").css('margin-top',marginTopHeight)
+	});
+</script>
 <!-- script end -->
 </body>
 </html>
