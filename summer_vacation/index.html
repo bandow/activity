@@ -21,27 +21,32 @@
 	</header>
 	<div class="masterplate-title">
 		<img src="images/title.png" alt="">
+		<img class="rule" src="images/rule.png" alt="">
 	</div>
-	<div class="masterplate-activity-list">
-		<div class="item">
-			<a href="#"><img src="images/activity1.jpg" alt=""></a>
-			<a href="#"><img src="images/activity2.jpg" alt=""></a>
-		</div>
-		<div class="item">
-			<a href="#"><img src="images/activity3.jpg" alt=""></a>
-			<a href="#"><img src="images/activity4.jpg" alt=""></a>
-			<a href="#"><img src="images/activity5.jpg" alt=""></a>
-		</div>
+	<div id="container" class="masterplate-activity-list">
+		<div class="item"><a href="#"><img src="images/activity2-1.png" alt=""></a></div>
+		<div class="item"><a href="#"><img src="images/activity2-2.png" alt=""></a></div>
+		<div class="item"><a href="#"><img src="images/activity2-3.png" alt=""></a></div>
+		<div class="item"><a href="#"><img src="images/activity2-4.png" alt=""></a></div>
+		<div class="item"><a href="#"><img src="images/activity2-5.png" alt=""></a></div>
 	</div>
 </div>
 <!-- script begin -->
 <script src="scripts/jquery-3.1.1.min.js"></script>
 <script>
 	$(function(){
+	    //设置标题
 		var titleHeight=$(".masterplate-title").height();
 		var titleImgHeight=$(".masterplate-title img").height();
 		var marginTopHeight=(titleHeight-titleImgHeight)/2;
-		$(".masterplate-title img").css('margin-top',marginTopHeight)
+		$(".masterplate-title img").css('margin-top',marginTopHeight);
+		
+		//设置列表尺寸比例
+		var containerW=$("#container").width();
+		var containerH=$("#container").height();	
+		$(".item").width(containerW/3).height(containerH/2);
+		$(".item:nth-child(2)").width(containerW/3*2).height(containerH/2);
+
 	});
 </script>
 <!-- script end -->
