@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content="不超过80个字符"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<link rel="stylesheet" href="styles/index.css">
+<title></title>
+</head>
+<body>
+<div class="masterplate-wrapper" style="background:url(images/minimum_price_bg.jpg) repeat-y;background-size:100% auto">
+	<header class="minimum-header">
+		<img src="images/minimum_price_head.jpg" alt="">
+		<div class="title">
+			<img src="images/minimum_price_title.png" alt="">
+			<div class="rule">
+				<img src="images/minimum_price_rule.png" alt="">
+			</div>
+		</div>
+		<div class="city">
+			<p><i></i><span>广州</span></p>
+		</div>
+	</header>
+</div>
+<!-- script begin -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+	$(function(){
+	    //设置标题
+		var titleHeight=$(".masterplate-title").height();
+		var titleImgHeight=$(".masterplate-title img").height();
+		var marginTopHeight=(titleHeight-titleImgHeight)/2;
+		$(".masterplate-title img").css('margin-top',marginTopHeight);
+		
+		//设置列表尺寸比例
+		var containerW=$("#container").width();
+		var containerH=$("#container").height();	
+		$(".item").width(containerW/3).height(containerH/2);
+		$(".item:nth-child(2)").width(containerW/3*2).height(containerH/2);
+
+	});
+</script>
+<!-- script end -->
+</body>
+</html>

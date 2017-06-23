@@ -166,4 +166,71 @@ html {
         width: 100%;
         height: 100%; }
 
+.minimum-header {
+  width: 100%;
+  height: auto;
+  font-size: 0; }
+  .minimum-header > img {
+    width: 100%; }
+  .minimum-header .title {
+    position: relative;
+    margin-top: -20%;
+    width: 100%;
+    font-size: 0;
+    text-align: center; }
+    .minimum-header .title > img {
+      width: 50%; }
+    .minimum-header .title .rule {
+      position: absolute;
+      top: 50%;
+      right: 5%;
+      z-index: 1;
+      width: 2rem;
+      height: 2rem;
+      -moz-transform: translate(0, -50%);
+      -o-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%); }
+      .minimum-header .title .rule img {
+        width: 100%;
+        height: 100%; }
+  .minimum-header .city {
+    position: relative;
+    width: 100%;
+    margin: 3% 0 5%; }
+    .minimum-header .city p {
+      margin: 0 auto;
+      width: 36%;
+      height: 1.4rem;
+      background-color: #fff;
+      border: 1px solid #feae21;
+      border-radius: 30px;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center; }
+      .minimum-header .city p i {
+        width: 2rem;
+        position: relative; }
+        .minimum-header .city p i:after {
+          position: absolute;
+          content: "";
+          width: 0;
+          height: 0;
+          top: -.1rem;
+          left: 50%;
+          border: .4rem solid;
+          border-color: #feae21 transparent transparent transparent;
+          -moz-transform: translate(-50%, 0);
+          -o-transform: translate(-50%, 0);
+          -ms-transform: translate(-50%, 0);
+          -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0); }
+      .minimum-header .city p span {
+        font: 0.7rem/1.4rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+        color: #feae21;
+        flex: 1;
+        border-left: 1px solid #feae21;
+        text-align: center; }
+
 /*# sourceMappingURL=index.css.map */
