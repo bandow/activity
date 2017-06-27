@@ -19,33 +19,22 @@
 <div class="masterplate-wrapper" style="background:#f9edcd;background-size:100% auto">
 	<header class="masterplate-header summer-header">
 		<img src="images/summer_price_head.jpg" alt="">
-		<div class="title">
-			<img src="images/summer_price_title.png" alt="">
-			<div class="rule">
-				<img src="images/summer_price_rule.png" alt="">
-			</div>
-		</div>
-		<div class="nav">
-			<ul>
-				<li><img src="images/nav1.png" alt=""></li>
-				<li><img src="images/nav2.png" alt=""></li>
-				<li><img src="images/nav3.png" alt=""></li>
-				<li><img src="images/nav4.png" alt=""></li>
-			</ul>
-			<div class="all-nav">
-				<div class="nav-list" style="display:block;">
-					<img src="images/summer_01.jpg" alt="">
-					<p>入住赠<em>送饮料</em>，离店<em>抽奖赢华为荣耀｜免房券｜电影票等大奖</em></p>
-				</div>
-			</div>
-		</div>
-		<div class="title2">
-			<img src="images/summer_price_title2.png" alt="">
-		</div>
-		<div class="city">
-			<p><i></i><span>广州</span></p>
-		</div>
 	</header>
+	<div class="masterplate-title summer-title">
+		<img src="images/summer_price_title.png" alt="">
+		<div class="rule">
+			<img src="images/summer_price_rule.png" alt="">
+		</div>
+	</div>
+	<div class="nav-ag">
+		<img src="images/nav_ag.png" alt="">
+	</div>
+	<div class="masterplate-title2 summer-title2">
+		<img src="images/summer_price_title2.png" alt="">
+	</div>
+	<div class="masterplate-city summer-city">
+		<p><i></i><span>广州</span></p>
+	</div>
 	<div class="room-list summer-room-list">
 		<div class="lists">
 			<a href="" class="item">
@@ -58,7 +47,7 @@
 					<h3>城市便捷广州市白云区钟落潭大金钟路分店城市便捷广州市白云区钟落潭大金钟路分店</h3>
 					<div class="money-btn">
 						<div class="money">
-							<p><strong>142</strong>／晚起</p>
+							<p><em>¥<strong>142</strong></em>／晚起</p>
 						</div>
 						<div class="btn">
 							<!-- <span>5.02-5.08可用</span> -->
@@ -77,7 +66,7 @@
 					<h3>城市便捷广州市白云区钟落潭大金钟路分店城市便捷广州市白云区钟落潭大金钟路分店</h3>
 					<div class="money-btn">
 						<div class="money">
-							<p><strong>142</strong>／晚起</p>
+							<p><em>¥<strong>142</strong></em>／晚起</p>
 						</div>
 						<div class="btn">
 							<!-- <span>5.02-5.08可用</span> -->
@@ -96,7 +85,7 @@
 					<h3>城市便捷广州市白云区钟落潭大金钟路分店城市便捷广州市白云区钟落潭大金钟路分店</h3>
 					<div class="money-btn">
 						<div class="money">
-							<p><strong>142</strong>／晚起</p>
+							<p><em>¥<strong>142</strong></em>／晚起</p>
 						</div>
 						<div class="btn">
 							<!-- <span>5.02-5.08可用</span> -->
@@ -115,7 +104,7 @@
 					<h3>城市便捷广州市白云区钟落潭大金钟路分店城市便捷广州市白云区钟落潭大金钟路分店</h3>
 					<div class="money-btn">
 						<div class="money">
-							<p><strong>142</strong>／晚起</p>
+							<p><em>¥<strong>142</strong></em>／晚起</p>
 						</div>
 						<div class="btn">
 							<!-- <span>5.02-5.08可用</span> -->
@@ -144,7 +133,7 @@
 <script>
     //点击弹出框
     jQuery(function($){
-	    $(".summer-header .title .rule").on("click",function(){
+	    $(".masterplate-title .rule").on("click",function(){
 			$(".masterplate-mask").show();
 			$(".masterplate-rule").addClass("active");
 	    });
@@ -184,7 +173,7 @@
 							+'<h3>城市便捷广州市白云区钟落潭大金钟路分店城市便捷广州市白云区钟落潭大金钟路分店</h3>'
 							+'<div class="money-btn">'
 							+'<div class="money">'
-							+'<p><strong>142</strong>／晚起</p>'
+							+'<p><em>¥<strong>142</strong></em>／晚起</p>'
 							+'</div>'
 							+'<div class="btn">'
 							+'<button style="background-color:#29b6c4;">立即预定</button>'

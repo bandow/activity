@@ -19,16 +19,16 @@
 <div class="masterplate-wrapper" style="background:url(images/minimum_price_bg.jpg) repeat-y;background-size:100% auto">
 	<header class="masterplate-header minimum-header">
 		<img src="images/minimum_price_head.jpg" alt="">
-		<div class="title">
-			<img src="images/minimum_price_title.png" alt="">
-			<div class="rule">
-				<img src="images/minimum_price_rule.png" alt="">
-			</div>
-		</div>
-		<div class="city">
-			<p><i></i><span>广州</span></p>
-		</div>
 	</header>
+	<div class="masterplate-title minimum-title">
+		<img src="images/minimum_price_title.png" alt="">
+		<div class="rule">
+			<img src="images/minimum_price_rule.png" alt="">
+		</div>
+	</div>
+	<div class="masterplate-city minimum-city">
+		<p><i></i><span>广州</span></p>
+	</div>
 	<div class="room-list minimum-room-list">
 		<div class="lists">
 			<a href="" class="item">
@@ -41,7 +41,7 @@
 					<h3>城市便捷广州市白云区钟落潭大金钟路分店城市便捷广州市白云区钟落潭大金钟路分店</h3>
 					<div class="money-btn">
 						<div class="money">
-							<p><strong>142</strong>／晚起</p>
+							<p><em>¥<strong>142</strong></em>／晚起</p>
 						</div>
 						<div class="btn">
 							<span>5.02-5.08可用</span>
@@ -60,7 +60,7 @@
 					<h3>城市便捷广州市白云区钟落潭大金钟路分店城市便捷广州市白云区钟落潭大金钟路分店</h3>
 					<div class="money-btn">
 						<div class="money">
-							<p><strong>142</strong>／晚起</p>
+							<p><em>¥<strong>142</strong></em>／晚起</p>
 						</div>
 						<div class="btn">
 							<span>5.02-5.08可用</span>
@@ -79,7 +79,7 @@
 					<h3>城市便捷广州市白云区钟落潭大金钟路分店城市便捷广州市白云区钟落潭大金钟路分店</h3>
 					<div class="money-btn">
 						<div class="money">
-							<p><strong>142</strong>／晚起</p>
+							<p><em>¥<strong>142</strong></em>／晚起</p>
 						</div>
 						<div class="btn">
 							<span>5.02-5.08可用</span>
@@ -98,7 +98,7 @@
 					<h3>城市便捷广州市白云区钟落潭大金钟路分店城市便捷广州市白云区钟落潭大金钟路分店</h3>
 					<div class="money-btn">
 						<div class="money">
-							<p><strong>142</strong>／晚起</p>
+							<p><em>¥<strong>142</strong></em>／晚起</p>
 						</div>
 						<div class="btn">
 							<span>5.02-5.08可用</span>
@@ -127,7 +127,7 @@
 <script>
     //点击弹出框
     jQuery(function($){
-	    $(".minimum-header .title .rule").on("click",function(){
+	    $(".masterplate-title .rule").on("click",function(){
 			$(".masterplate-mask").show();
 			$(".masterplate-rule").addClass("active");
 	    });

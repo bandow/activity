@@ -1,5 +1,80 @@
 @import 'base','variable','common';
 //public
+.masterplate-header{
+	width:100%;
+	height:auto;
+	font-size:0;
+	>img{
+		width:100%;
+	}
+}
+.masterplate-title{
+	position:relative;
+	margin-top:-15%;
+	width:100%;
+	padding:2% 0;
+	font-size:0;
+	text-align:center;
+	>img{
+		width:100%;
+	}
+	.rule{
+		position:absolute;
+		top:50%;
+		right:5%;
+		z-index:1;
+		width:1.8rem;
+		height:1.8rem;
+		@include transform(translate(0, -50%));
+		img{
+			width:100%;
+			height:100%;
+		}
+	}
+}
+.masterplate-city{
+    position: relative;
+	width:100%;
+	margin:2% 0 5%;
+	p{
+		margin:0 auto;
+		width:36%;
+		height:1.4rem;
+		background-color:#fff;
+		border:1px solid #feae21;
+		border-radius:30px;
+		display:-webkit-flex;
+		display:flex;
+		align-items:center;
+		i{
+			width:2rem;
+			position:relative;
+			&:after{
+				position:absolute;
+				content:"";
+				width:0;
+				height:0;
+				top:-.1rem;
+				left:50%;
+				border:.4rem solid;
+				border-color:#feae21 transparent transparent transparent;
+				@include transform(translate(-50%,0));
+			}	
+		}
+		span{
+			font:.7rem/1.4rem $publicFont;
+			color:#feae21;
+			flex:1;
+			border-left:1px solid #feae21;
+			text-align:center;
+			overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    width: 4rem;
+		    padding: 0 .3rem;
+		}
+	}
+}
 .dropload-down{
 	height:auto !important;
 }
@@ -63,10 +138,13 @@
 					p{
 						font:.6rem/1.5 $publicFont;
 						color:#353535;
-						strong{
+						em{
 							color:#f95858;
-							font:bold .75rem/1.5 $publicFont;
-						}
+							font:.6rem/1.5 $publicFont;
+							strong{
+								font:bold .8rem/1.5 nth($publicFont,6);
+							}
+						}	
 					}
 				}
 				.btn{
@@ -146,8 +224,8 @@
 	margin-bottom:1rem;
 	.img{
 		margin:1rem auto .3rem;
-		width:80px;
-		height:82px;
+		width:50px;
+		height:52px;
 	}
 	.loading-bottom{
 		position:relative;
@@ -175,77 +253,7 @@
 	@include transition(all .5s);
 	@include transform(translate(-50%, -50%));
 }
-.masterplate-header{
-	width:100%;
-	height:auto;
-	font-size:0;
-	>img{
-		width:100%;
-	}
-	.title{
-		position:relative;
-		margin-top:-15%;
-		width:100%;
-		padding:2% 0;
-		background-color:transparent;
-		font-size:0;
-		text-align:center;
-		>img{
-			width:50%;
-		}
-		.rule{
-			position:absolute;
-			top:50%;
-			right:5%;
-			z-index:1;
-			width:2rem;
-			height:2rem;
-			@include transform(translate(0, -50%));
-			img{
-				width:100%;
-				height:100%;
-			}
-		}
-	}
-	.city{
-	    position: relative;
-		width:100%;
-		margin:2% 0 5%;
-		p{
-			margin:0 auto;
-			width:36%;
-			height:1.4rem;
-			background-color:#fff;
-			border:1px solid #feae21;
-			border-radius:30px;
-			display:-webkit-flex;
-			display:flex;
-			align-items:center;
-			i{
-				width:2rem;
-				position:relative;
-				&:after{
-					position:absolute;
-					content:"";
-					width:0;
-					height:0;
-					top:-.1rem;
-					left:50%;
-					border:.4rem solid;
-					border-color:#feae21 transparent transparent transparent;
-					@include transform(translate(-50%,0));
-				}	
-			}
-			span{
-				font:.7rem/1.4rem $publicFont;
-				color:#feae21;
-				flex:1;
-				border-left:1px solid #feae21;
-				text-align:center;
-			}
-		}
-	}
-}
+
 
 //index
 .index-wrapper{
@@ -278,7 +286,7 @@
 	}
 	.rule{
 		position:absolute;
-		top:0;
+		top:20%;
 		right:0;
 		width:2rem;
 		height:2rem;
@@ -322,16 +330,15 @@
 //minmum header begin
 .minimum-header{
 	@extend .masterplate-header;
-	.title{
-		background-color:transparent;
-		>img{
-			width:50%;
-		}
-	}
-	.city{
-		p{
-			background-color:#fff;
-		}
+}
+.minimum-title{
+	@extend .masterplate-title;
+	background-color:transparent;
+}
+.minimum-city{
+	@extend .masterplate-city;
+	p{
+		background-color:#fff;
 	}
 }
 .minimum-room-list{
@@ -359,6 +366,12 @@
 	}
 }
 //seckill header begin
+.seckill-city{
+	@extend .masterplate-city;
+	p{
+		background-color:#031129;
+	}
+}
 .seckill-header{
 	@extend .masterplate-header;
 	.title{
@@ -504,73 +517,36 @@
 //summer header begin
 .summer-header{
 	@extend .masterplate-header;
-	.title{
-		background-color:transparent;
-		>img{
-			width:50%;
-		}
+}
+.summer-title{
+
+}
+.summer-title2{
+	margin:.5rem 0;
+	text-align:center;
+	background-color:transparent;
+	>img{
+		width:100%;
 	}
-	.title2{
-		margin:.5rem 0;
-		text-align:center;
-		background-color:transparent;
-		>img{
-			width:50%;
-		}
+}
+.nav-ag{
+	padding:3%;
+	img{
+		width:100%;
 	}
-	.nav{
-		margin:0 3%;
-		ul{
-			display:-webkit-flex;
-			display:flex;
-			align-items:center;
-			li{
-				flex:1;
-				img{
-					width:100%;
-				}
-			}
+}
+.summer-city{
+	p{
+		background-color:#fff;
+	    border: 1px solid #29b6c4;
+		i{
+			&:after{
+				border-color:#29b6c4 transparent transparent transparent;
+			}	
 		}
-		.all-nav{
-			margin:.5rem 0 1rem 0;
-			.nav-list{
-				position:relative;
-				display:none;
-				font-size:0;
-				border-radius: 5px 5px 0 0;
-    			overflow: hidden;
-				img{
-					width:100%;
-				}
-				p{
-					position:absolute;
-					left:0;
-					bottom:0;
-					width:100%;
-					font:.55rem/2.4 $publicFont;
-					background:rgba(0,0,0,.5);
-					color:#fff;
-					text-align:center;
-					em{
-						color:#29b6c4;
-					}
-				}
-			}
-		}
-	}
-	.city{
-		p{
-			background-color:#fff;
-		    border: 1px solid #29b6c4;
-			i{
-				&:after{
-					border-color:#29b6c4 transparent transparent transparent;
-				}	
-			}
-			span{
-				color:#29b6c4;
-			    border-left: 1px solid #29b6c4;
-			}
+		span{
+			color:#29b6c4;
+		    border-left: 1px solid #29b6c4;
 		}
 	}
 }

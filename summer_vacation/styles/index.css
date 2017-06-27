@@ -112,6 +112,81 @@ html {
 @media (min-device-width: 640px) {
   html {
     font-size: 24px; } }
+.masterplate-header, .minimum-header, .seckill-header, .prepay-header, .monday-header, .summer-header {
+  width: 100%;
+  height: auto;
+  font-size: 0; }
+  .masterplate-header > img, .minimum-header > img, .seckill-header > img, .prepay-header > img, .monday-header > img, .summer-header > img {
+    width: 100%; }
+
+.masterplate-title, .minimum-title {
+  position: relative;
+  margin-top: -15%;
+  width: 100%;
+  padding: 2% 0;
+  font-size: 0;
+  text-align: center; }
+  .masterplate-title > img, .minimum-title > img {
+    width: 100%; }
+  .masterplate-title .rule, .minimum-title .rule {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    z-index: 1;
+    width: 1.8rem;
+    height: 1.8rem;
+    -moz-transform: translate(0, -50%);
+    -o-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
+    .masterplate-title .rule img, .minimum-title .rule img {
+      width: 100%;
+      height: 100%; }
+
+.masterplate-city, .minimum-city, .seckill-city {
+  position: relative;
+  width: 100%;
+  margin: 2% 0 5%; }
+  .masterplate-city p, .minimum-city p, .seckill-city p {
+    margin: 0 auto;
+    width: 36%;
+    height: 1.4rem;
+    background-color: #fff;
+    border: 1px solid #feae21;
+    border-radius: 30px;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center; }
+    .masterplate-city p i, .minimum-city p i, .seckill-city p i {
+      width: 2rem;
+      position: relative; }
+      .masterplate-city p i:after, .minimum-city p i:after, .seckill-city p i:after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        top: -.1rem;
+        left: 50%;
+        border: .4rem solid;
+        border-color: #feae21 transparent transparent transparent;
+        -moz-transform: translate(-50%, 0);
+        -o-transform: translate(-50%, 0);
+        -ms-transform: translate(-50%, 0);
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0); }
+    .masterplate-city p span, .minimum-city p span, .seckill-city p span {
+      font: 0.7rem/1.4rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+      color: #feae21;
+      flex: 1;
+      border-left: 1px solid #feae21;
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 4rem;
+      padding: 0 .3rem; }
+
 .dropload-down {
   height: auto !important; }
 
@@ -171,9 +246,11 @@ html {
       .room-list .item .info .money-btn .money p {
         font: 0.6rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
         color: #353535; }
-        .room-list .item .info .money-btn .money p strong {
+        .room-list .item .info .money-btn .money p em {
           color: #f95858;
-          font: bold 0.75rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif; }
+          font: 0.6rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif; }
+          .room-list .item .info .money-btn .money p em strong {
+            font: bold 0.8rem/1.5 "Microsoft Yahei"; }
       .room-list .item .info .money-btn .btn span {
         display: block;
         font: 0.5rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
@@ -247,8 +324,8 @@ html {
   margin-bottom: 1rem; }
   .masterplate-loading .img {
     margin: 1rem auto .3rem;
-    width: 80px;
-    height: 82px; }
+    width: 50px;
+    height: 52px; }
   .masterplate-loading .loading-bottom {
     position: relative;
     width: 100%;
@@ -284,75 +361,6 @@ html {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-.masterplate-header, .minimum-header, .seckill-header, .prepay-header, .monday-header, .summer-header {
-  width: 100%;
-  height: auto;
-  font-size: 0; }
-  .masterplate-header > img, .minimum-header > img, .seckill-header > img, .prepay-header > img, .monday-header > img, .summer-header > img {
-    width: 100%; }
-  .masterplate-header .title, .minimum-header .title, .seckill-header .title, .prepay-header .title, .monday-header .title, .summer-header .title {
-    position: relative;
-    margin-top: -15%;
-    width: 100%;
-    padding: 2% 0;
-    background-color: transparent;
-    font-size: 0;
-    text-align: center; }
-    .masterplate-header .title > img, .minimum-header .title > img, .seckill-header .title > img, .prepay-header .title > img, .monday-header .title > img, .summer-header .title > img {
-      width: 50%; }
-    .masterplate-header .title .rule, .minimum-header .title .rule, .seckill-header .title .rule, .prepay-header .title .rule, .monday-header .title .rule, .summer-header .title .rule {
-      position: absolute;
-      top: 50%;
-      right: 5%;
-      z-index: 1;
-      width: 2rem;
-      height: 2rem;
-      -moz-transform: translate(0, -50%);
-      -o-transform: translate(0, -50%);
-      -ms-transform: translate(0, -50%);
-      -webkit-transform: translate(0, -50%);
-      transform: translate(0, -50%); }
-      .masterplate-header .title .rule img, .minimum-header .title .rule img, .seckill-header .title .rule img, .prepay-header .title .rule img, .monday-header .title .rule img, .summer-header .title .rule img {
-        width: 100%;
-        height: 100%; }
-  .masterplate-header .city, .minimum-header .city, .seckill-header .city, .prepay-header .city, .monday-header .city, .summer-header .city {
-    position: relative;
-    width: 100%;
-    margin: 2% 0 5%; }
-    .masterplate-header .city p, .minimum-header .city p, .seckill-header .city p, .prepay-header .city p, .monday-header .city p, .summer-header .city p {
-      margin: 0 auto;
-      width: 36%;
-      height: 1.4rem;
-      background-color: #fff;
-      border: 1px solid #feae21;
-      border-radius: 30px;
-      display: -webkit-flex;
-      display: flex;
-      align-items: center; }
-      .masterplate-header .city p i, .minimum-header .city p i, .seckill-header .city p i, .prepay-header .city p i, .monday-header .city p i, .summer-header .city p i {
-        width: 2rem;
-        position: relative; }
-        .masterplate-header .city p i:after, .minimum-header .city p i:after, .seckill-header .city p i:after, .prepay-header .city p i:after, .monday-header .city p i:after, .summer-header .city p i:after {
-          position: absolute;
-          content: "";
-          width: 0;
-          height: 0;
-          top: -.1rem;
-          left: 50%;
-          border: .4rem solid;
-          border-color: #feae21 transparent transparent transparent;
-          -moz-transform: translate(-50%, 0);
-          -o-transform: translate(-50%, 0);
-          -ms-transform: translate(-50%, 0);
-          -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0); }
-      .masterplate-header .city p span, .minimum-header .city p span, .seckill-header .city p span, .prepay-header .city p span, .monday-header .city p span, .summer-header .city p span {
-        font: 0.7rem/1.4rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-        color: #feae21;
-        flex: 1;
-        border-left: 1px solid #feae21;
-        text-align: center; }
-
 .index-wrapper {
   position: relative;
   width: 100%;
@@ -381,7 +389,7 @@ html {
     width: 100%; }
   .index-title .rule {
     position: absolute;
-    top: 0;
+    top: 20%;
     right: 0;
     width: 2rem;
     height: 2rem; }
@@ -413,11 +421,10 @@ html {
 .index-rule p em {
   color: #f88f4a; }
 
-.minimum-header .title {
+.minimum-title {
   background-color: transparent; }
-  .minimum-header .title > img {
-    width: 50%; }
-.minimum-header .city p {
+
+.minimum-city p {
   background-color: #fff; }
 
 .minimum-room-list .masterplate-loading .img {
@@ -431,6 +438,9 @@ html {
   border: 1px solid #ffa030; }
 .minimum-rule p em {
   color: #ffa030; }
+
+.seckill-city p {
+  background-color: #031129; }
 
 .seckill-header .title {
   background-color: #031129; }
@@ -505,53 +515,24 @@ html {
 .monday-rule p em {
   color: #40957b; }
 
-.summer-header .title {
-  background-color: transparent; }
-  .summer-header .title > img {
-    width: 50%; }
-.summer-header .title2 {
+.summer-title2 {
   margin: .5rem 0;
   text-align: center;
   background-color: transparent; }
-  .summer-header .title2 > img {
-    width: 50%; }
-.summer-header .nav {
-  margin: 0 3%; }
-  .summer-header .nav ul {
-    display: -webkit-flex;
-    display: flex;
-    align-items: center; }
-    .summer-header .nav ul li {
-      flex: 1; }
-      .summer-header .nav ul li img {
-        width: 100%; }
-  .summer-header .nav .all-nav {
-    margin: .5rem 0 1rem 0; }
-    .summer-header .nav .all-nav .nav-list {
-      position: relative;
-      display: none;
-      font-size: 0;
-      border-radius: 5px 5px 0 0;
-      overflow: hidden; }
-      .summer-header .nav .all-nav .nav-list img {
-        width: 100%; }
-      .summer-header .nav .all-nav .nav-list p {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        font: 0.55rem/2.4 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-        background: rgba(0, 0, 0, 0.5);
-        color: #fff;
-        text-align: center; }
-        .summer-header .nav .all-nav .nav-list p em {
-          color: #29b6c4; }
-.summer-header .city p {
+  .summer-title2 > img {
+    width: 100%; }
+
+.nav-ag {
+  padding: 3%; }
+  .nav-ag img {
+    width: 100%; }
+
+.summer-city p {
   background-color: #fff;
   border: 1px solid #29b6c4; }
-  .summer-header .city p i:after {
+  .summer-city p i:after {
     border-color: #29b6c4 transparent transparent transparent; }
-  .summer-header .city p span {
+  .summer-city p span {
     color: #29b6c4;
     border-left: 1px solid #29b6c4; }
 
