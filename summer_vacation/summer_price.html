@@ -16,20 +16,37 @@
 <title></title>
 </head>
 <body>
-<div class="masterplate-wrapper" style="background:url(images/minimum_price_bg.jpg) repeat-y;background-size:100% auto">
-	<header class="masterplate-header minimum-header">
-		<img src="images/minimum_price_head.jpg" alt="">
+<div class="masterplate-wrapper" style="background:#f9edcd;background-size:100% auto">
+	<header class="masterplate-header summer-header">
+		<img src="images/summer_price_head.jpg" alt="">
 		<div class="title">
-			<img src="images/minimum_price_title.png" alt="">
+			<img src="images/summer_price_title.png" alt="">
 			<div class="rule">
-				<img src="images/minimum_price_rule.png" alt="">
+				<img src="images/summer_price_rule.png" alt="">
 			</div>
+		</div>
+		<div class="nav">
+			<ul>
+				<li><img src="images/nav1.png" alt=""></li>
+				<li><img src="images/nav2.png" alt=""></li>
+				<li><img src="images/nav3.png" alt=""></li>
+				<li><img src="images/nav4.png" alt=""></li>
+			</ul>
+			<div class="all-nav">
+				<div class="nav-list" style="display:block;">
+					<img src="images/summer_01.jpg" alt="">
+					<p>入住赠<em>送饮料</em>，离店<em>抽奖赢华为荣耀｜免房券｜电影票等大奖</em></p>
+				</div>
+			</div>
+		</div>
+		<div class="title2">
+			<img src="images/summer_price_title2.png" alt="">
 		</div>
 		<div class="city">
 			<p><i></i><span>广州</span></p>
 		</div>
 	</header>
-	<div class="room-list minimum-room-list">
+	<div class="room-list summer-room-list">
 		<div class="lists">
 			<a href="" class="item">
 				<div class="img">
@@ -44,8 +61,8 @@
 							<p><strong>142</strong>／晚起</p>
 						</div>
 						<div class="btn">
-							<span>5.02-5.08可用</span>
-							<button>立即预定</button>
+							<!-- <span>5.02-5.08可用</span> -->
+							<button style="background-color:#29b6c4;">立即预定</button>
 						</div>
 					</div>
 				</div>
@@ -63,8 +80,8 @@
 							<p><strong>142</strong>／晚起</p>
 						</div>
 						<div class="btn">
-							<span>5.02-5.08可用</span>
-							<button>立即预定</button>
+							<!-- <span>5.02-5.08可用</span> -->
+							<button style="background-color:#29b6c4;">立即预定</button>
 						</div>
 					</div>
 				</div>
@@ -82,8 +99,8 @@
 							<p><strong>142</strong>／晚起</p>
 						</div>
 						<div class="btn">
-							<span>5.02-5.08可用</span>
-							<button>立即预定</button>
+							<!-- <span>5.02-5.08可用</span> -->
+							<button style="background-color:#29b6c4;">立即预定</button>
 						</div>
 					</div>
 				</div>
@@ -101,8 +118,8 @@
 							<p><strong>142</strong>／晚起</p>
 						</div>
 						<div class="btn">
-							<span>5.02-5.08可用</span>
-							<button>立即预定</button>
+							<!-- <span>5.02-5.08可用</span> -->
+							<button style="background-color:#29b6c4;">立即预定</button>
 						</div>
 					</div>
 				</div>
@@ -111,14 +128,14 @@
 	</div>
 </div>
 <div class="masterplate-mask"></div>
-<div class="masterplate-rule minimum-rule">
-	<div class="close"><img src="images/minimum_close.png" alt=""></div>
+<div class="masterplate-rule summer-rule">
+	<div class="close"><img src="images/summer_close.png" alt=""></div>
 	<h2>活动规则</h2>
-	<p>1、活动时间：2017年6月23日—8月31日;   </p>   
-	<p>2、活动对象：仅限东呈个人会员；</p>
-	<p>3、活动期间，预订并预付即可享受门市价<em>72折</em>起优惠；</p>
+	<p>1、活动时间：2017年7月6日—8月31日；  </p>  
+    <p>2、活动对象：仅限东呈个人会员；</p>
+	<p>3、活动期间，通过东呈官方微信预订并预付夏日缤纷房，办理入住后即可获赠<em>免费饮料2瓶</em>，并参与“荣耀”抽奖赢取<em>華为荣耀手机</em>；</p>
 	<p>4、活动房不可续住，房量有限，先订先得，不包含特惠房；</p>
-	<p>5、不与其它优惠同时享受，折扣部分不可开具发票。</p>
+	<p>5、不与其它优惠同时享受，折扣部分不可开具发</p>
 </div>
 <!-- script begin -->
 <script src="scripts/jquery-3.1.1.min.js"></script>
@@ -127,7 +144,7 @@
 <script>
     //点击弹出框
     jQuery(function($){
-	    $(".minimum-header .title .rule").on("click",function(){
+	    $(".summer-header .title .rule").on("click",function(){
 			$(".masterplate-mask").show();
 			$(".masterplate-rule").addClass("active");
 	    });
@@ -170,8 +187,7 @@
 							+'<p><strong>142</strong>／晚起</p>'
 							+'</div>'
 							+'<div class="btn">'
-							+'<span>5.02-5.08可用</span>'
-							+'<button>立即预定</button>'
+							+'<button style="background-color:#29b6c4;">立即预定</button>'
 							+'</div>'
 							+'</div>'
 							+'</div>'

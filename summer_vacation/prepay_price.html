@@ -16,20 +16,20 @@
 <title></title>
 </head>
 <body>
-<div class="masterplate-wrapper" style="background:url(images/minimum_price_bg.jpg) repeat-y;background-size:100% auto">
-	<header class="masterplate-header minimum-header">
-		<img src="images/minimum_price_head.jpg" alt="">
+<div class="masterplate-wrapper" style="background:#ff9a53;background-size:100% auto">
+	<header class="masterplate-header prepay-header">
+		<img src="images/prepay_price_head.jpg" alt="">
 		<div class="title">
-			<img src="images/minimum_price_title.png" alt="">
+			<img src="images/prepay_price_title.png" alt="">
 			<div class="rule">
-				<img src="images/minimum_price_rule.png" alt="">
+				<img src="images/prepay_price_rule.png" alt="">
 			</div>
 		</div>
 		<div class="city">
 			<p><i></i><span>广州</span></p>
 		</div>
 	</header>
-	<div class="room-list minimum-room-list">
+	<div class="room-list prepay-room-list">
 		<div class="lists">
 			<a href="" class="item">
 				<div class="img">
@@ -111,14 +111,13 @@
 	</div>
 </div>
 <div class="masterplate-mask"></div>
-<div class="masterplate-rule minimum-rule">
-	<div class="close"><img src="images/minimum_close.png" alt=""></div>
+<div class="masterplate-rule prepay-rule">
+	<div class="close"><img src="images/prepay_close.png" alt=""></div>
 	<h2>活动规则</h2>
-	<p>1、活动时间：2017年6月23日—8月31日;   </p>   
+	<p>1、活动时间：2017年6月23日—8月31日；</p>
 	<p>2、活动对象：仅限东呈个人会员；</p>
-	<p>3、活动期间，预订并预付即可享受门市价<em>72折</em>起优惠；</p>
-	<p>4、活动房不可续住，房量有限，先订先得，不包含特惠房；</p>
-	<p>5、不与其它优惠同时享受，折扣部分不可开具发票。</p>
+	<p>3、活动期间，提前1天预订并预付可享<em>立减10元</em>；</p>
+	<p>4、不与其它优惠同时享受，折扣部分不可开具发票。</p>
 </div>
 <!-- script begin -->
 <script src="scripts/jquery-3.1.1.min.js"></script>
@@ -127,7 +126,7 @@
 <script>
     //点击弹出框
     jQuery(function($){
-	    $(".minimum-header .title .rule").on("click",function(){
+	    $(".prepay-header .title .rule").on("click",function(){
 			$(".masterplate-mask").show();
 			$(".masterplate-rule").addClass("active");
 	    });

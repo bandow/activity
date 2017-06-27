@@ -16,20 +16,29 @@
 </head>
 <body>
 <div class="masterplate-wrapper" style="background:url(images/bg.jpg) #feeed7 no-repeat;background-size:100% auto">
-	<header class="masterplate-header">
+	<header class="masterplate-header index-header">
 		<img src="images/head.png" alt="">
 	</header>
-	<div class="masterplate-title">
+	<div class="masterplate-title index-title">
 		<img src="images/title.png" alt="">
 		<img class="rule" src="images/rule.png" alt="">
 	</div>
 	<div id="container" class="masterplate-activity-list">
-		<div class="item"><a href="#"><img src="images/activity2-1.png" alt=""></a></div>
-		<div class="item"><a href="#"><img src="images/activity2-2.png" alt=""></a></div>
-		<div class="item"><a href="#"><img src="images/activity2-3.png" alt=""></a></div>
-		<div class="item"><a href="#"><img src="images/activity2-4.png" alt=""></a></div>
-		<div class="item"><a href="#"><img src="images/activity2-5.png" alt=""></a></div>
+		<div class="item"><a href="minimum_price.html"><img src="images/activity2-1.png" alt=""></a></div>
+		<div class="item"><a href="summer_price.html"><img src="images/activity2-2.png" alt=""></a></div>
+		<div class="item"><a href="monday_price.html"><img src="images/activity2-3.png" alt=""></a></div>
+		<div class="item"><a href="prepay_price.html"><img src="images/activity2-4.png" alt=""></a></div>
+		<div class="item"><a href="seckill_price.html"><img src="images/activity2-5.png" alt=""></a></div>
 	</div>
+</div>
+<div class="masterplate-mask"></div>
+<div class="masterplate-rule index-rule">
+	<div class="close"><img src="images/prepay_close.png" alt=""></div>
+	<h2>活动规则</h2>
+	<p>1、活动时间：2017年6月23日—8月31日；</p>
+	<p>2、活动对象：仅限东呈个人会员；</p>
+	<p>3、活动期间，提前1天预订并预付可享<em>立减10元</em>；</p>
+	<p>4、不与其它优惠同时享受，折扣部分不可开具发票。</p>
 </div>
 <!-- script begin -->
 <script src="scripts/jquery-3.1.1.min.js"></script>
@@ -46,7 +55,16 @@
 		var containerH=$("#container").height();	
 		$(".item").width(containerW/3).height(containerH/2);
 		$(".item:nth-child(2)").width(containerW/3*2).height(containerH/2);
-
+		
+		//点击弹出框
+		$(".masterplate-title .rule").on("click",function(){
+			$(".masterplate-mask").show();
+			$(".masterplate-rule").addClass("active");
+	    });
+	    $(".masterplate-rule .close,.masterplate-mask").on("click",function(){
+			$(".masterplate-mask").hide();
+			$(".masterplate-rule").removeClass("active");
+	    })
 	});
 </script>
 <!-- script end -->
