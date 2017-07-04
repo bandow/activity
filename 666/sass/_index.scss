@@ -1,0 +1,59 @@
+@import "base","variable","common";
+.rule-btn{
+	display: block;
+    float:right;
+    margin: 2% 3%;
+	font:.7rem/1.2 nth($publicFont,6);
+	color:#42e3ff;
+}
+.container{
+	margin-top:30%;
+	time{
+		font:bold .8rem/1.2 nth($publicFont,6);
+		color:#ffff00;
+		@include transform(rotate(-4deg));
+	    display: block;
+	    margin-left: 13%;
+	}
+	.mascot{
+		position:absolute;
+		left:25%;
+		top:55%;
+		width:50%;
+		font-size:0;
+		@include transform(translate(0,-50%));
+		@include transition(all .5s);
+		@include animation(mascotMove 5s infinite);
+		img{
+			width:100%;
+		}
+	}
+	.btn{
+		position:absolute;
+		left:20%;
+		bottom:15%;
+		width:60%;
+		font-size:0;
+		img{
+			width:100%;
+		}
+	}
+	.flow-path{
+		position:absolute;
+		left:20%;
+		bottom:5%;
+		width:60%;
+		font-size:0;
+		img{
+			width:100%;
+		}
+	}
+}
+
+@include keyframes(mascotMove)
+{
+	0%,100% {top: 55%;}
+	25% {top: 50%;}
+	50% {top: 55%;}
+	75% {top: 50%;}
+}
