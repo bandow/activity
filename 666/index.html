@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="wrapper" style="background:url(images/bg.jpg) #17121a no-repeat;background-size:100% auto;">
-	<a class="rule-btn" href="">活动<br/>详情</a>
+	<a class="rule-btn" href="javascript:;">活动<br/>详情</a>
 	<div class="container">
 		<time>活动时间：2017.06.06~07.06</time>
 		<div class="mascot"><img src="images/mascot.png" alt=""></div>
@@ -27,7 +27,30 @@
 <!-- mask begin -->
 <div class="mask"></div>
 <!-- mask end -->
+<!-- rule-content begin -->
+<div class="rule-content">
+	<div class="close">
+		<img src="images/close.png" alt="">
+	</div>
+	<div class="rule_mascot"><img src="images/rule_mascot.png" alt=""></div>
+	<h2>扫描二维码</h2>
+	<p>这里是活动说明文字内容，具体内容貌似说他们自己手动添加，这里只是样式的展示，弹窗白色的位置要做适应长度，其他具体的找刘逗逼问。</p>
+	<p>这里是活动说明文字内容，具体内容貌似说他们自己手动添加，这里只是样式的展示，弹窗白色的位置要做适应长度，其他具体的找刘逗逼问。</p>
+	<p>这里是活动说明文字内容，具体内容貌似说他们自己手动添加，这里只是样式的展示，弹窗白色的位置要做适应长度，其他具体的找刘逗逼问。</p>
+</div>
+<!-- rule-content end -->
 <!-- script begin -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+	$(".rule-btn").on("click",function(){
+		$(".mask").show();
+		$(".rule-content").addClass("on");
+	});
+	$(".mask,.rule-content .close").on("click",function(){
+		$(".mask").hide();
+		$(".rule-content").removeClass("on");
+	});
+</script>
 <!-- script end -->
 </body>
 </html>

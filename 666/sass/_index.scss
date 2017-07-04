@@ -57,3 +57,62 @@
 	50% {top: 55%;}
 	75% {top: 50%;}
 }
+.mask{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	display:none;
+	z-index:4;
+	background-color:#000;
+	opacity:.7;
+}
+.rule-content{
+	position:fixed;
+	top:50%;
+	left:50%;
+	z-index:5;
+	width:80%;
+	border-radius:10px;
+	padding:5%;
+	background-color:#fff;
+	@include transition(all .5s);
+	@include transform(translate3d(-50%,-300%,0));
+	h2{
+		color:#406b8f;
+		font:bold .85rem/1.5 $publicFont;
+		text-align:center;
+	}
+	p{
+		margin-top:.5rem;
+		color:#000;
+		font:.65rem/1.5 $publicFont;
+	}
+	.close{
+		position:absolute;
+		right:1%;
+		top:1%;
+		width:25px;
+		height:25px;
+		font-size:0;
+		img{
+			width:100%;
+		}
+	}
+	.rule_mascot{
+		position:absolute;
+	    left: -1.1rem;
+	    top: -2rem;
+	    width: 3.8rem;
+	    height: auto;
+	    font-size: 0;
+		img{
+			width:100%;
+		}
+	}
+}
+.rule-content.on{
+	@include transition(all .5s);
+	@include transform(translate3d(-50%,-50%,0));
+}
