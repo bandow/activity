@@ -194,13 +194,15 @@ html {
   .container time {
     font: bold 0.8rem/1.2 "Microsoft Yahei";
     color: #ffff00;
-    -moz-transform: rotate(-4deg);
-    -o-transform: rotate(-4deg);
-    -ms-transform: rotate(-4deg);
-    -webkit-transform: rotate(-4deg);
-    transform: rotate(-4deg);
+    -moz-transform: rotate(-3.5deg);
+    -o-transform: rotate(-3.5deg);
+    -ms-transform: rotate(-3.5deg);
+    -webkit-transform: rotate(-3.5deg);
+    transform: rotate(-3.5deg);
     display: block;
     margin-left: 13%; }
+  .container .time2 {
+    margin-top: 32%; }
   .container .mascot {
     position: absolute;
     left: 25%;
@@ -230,6 +232,14 @@ html {
     width: 60%;
     font-size: 0; }
     .container .btn img {
+      width: 100%; }
+  .container .btn-top {
+    position: absolute;
+    left: 20%;
+    bottom: 27%;
+    width: 60%;
+    font-size: 0; }
+    .container .btn-top img {
       width: 100%; }
   .container .flow-path {
     position: absolute;
@@ -334,6 +344,347 @@ html {
       width: 100%; }
 
 .rule-content.on {
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -o-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0); }
+
+.ranking-list-container {
+  padding: 5%; }
+  .ranking-list-container > .title {
+    margin: 0 auto; }
+    .ranking-list-container > .title h2 {
+      display: -webkit-flex;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center; }
+      .ranking-list-container > .title h2 span {
+        font: bold 2rem/1.2 "Microsoft Yahei";
+        color: #ffff00;
+        font-style: italic; }
+      .ranking-list-container > .title h2 i {
+        margin-left: .2rem;
+        width: 4rem;
+        font-size: 0; }
+        .ranking-list-container > .title h2 i img {
+          width: 100%; }
+    .ranking-list-container > .title p {
+      text-align: center;
+      font: 0.7rem/2 "Microsoft Yahei";
+      color: #3ea9dd; }
+  .ranking-list-container .info {
+    padding: 0 5%;
+    margin: 5% 0; }
+    .ranking-list-container .info ul {
+      display: -webkit-flex;
+      display: flex;
+      align-items: center; }
+      .ranking-list-container .info ul li {
+        flex: 1;
+        text-align: center; }
+        .ranking-list-container .info ul li i {
+          display: block;
+          width: 50px;
+          height: 50px;
+          font-size: 0; }
+          .ranking-list-container .info ul li i img {
+            width: 100%; }
+        .ranking-list-container .info ul li h3 {
+          font: bold 0.75rem/1.8 "Microsoft Yahei";
+          color: #fff; }
+        .ranking-list-container .info ul li h4 {
+          display: -webkit-flex;
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          .ranking-list-container .info ul li h4 span {
+            font: bold 0.7rem/1.8 "Microsoft Yahei";
+            color: #ffff00; }
+          .ranking-list-container .info ul li h4 i {
+            margin-left: .2rem;
+            position: relative;
+            width: 10px;
+            height: 10px;
+            display: block; }
+            .ranking-list-container .info ul li h4 i:before {
+              position: absolute;
+              content: "";
+              width: 0;
+              height: 0;
+              border: 3px solid;
+              border-color: transparent transparent transparent white;
+              top: 50%;
+              right: 0;
+              -moz-transform: translate(0, -50%);
+              -o-transform: translate(0, -50%);
+              -ms-transform: translate(0, -50%);
+              -webkit-transform: translate(0, -50%);
+              transform: translate(0, -50%); }
+  .ranking-list-container .ranking-list .title ul {
+    width: 106%;
+    margin: 0 -3%;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 30px; }
+    .ranking-list-container .ranking-list .title ul li {
+      font: 0.7rem/1.5 "Microsoft Yahei";
+      color: #fff;
+      text-align: center; }
+      .ranking-list-container .ranking-list .title ul li:nth-child(1) {
+        width: 18%; }
+      .ranking-list-container .ranking-list .title ul li:nth-child(2) {
+        width: 22%; }
+      .ranking-list-container .ranking-list .title ul li:nth-child(3) {
+        width: 20%; }
+      .ranking-list-container .ranking-list .title ul li:nth-child(4) {
+        width: 40%; }
+  .ranking-list-container .ranking-list dl dd {
+    padding: 5% 0;
+    border-bottom: 1px solid #3ea9dd;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center; }
+    .ranking-list-container .ranking-list dl dd span {
+      font: 0.7rem/1.5 "Microsoft Yahei";
+      color: #fff;
+      text-align: center; }
+      .ranking-list-container .ranking-list dl dd span:nth-child(1) {
+        width: 15%;
+        font-weight: bold; }
+      .ranking-list-container .ranking-list dl dd span:nth-child(2) {
+        width: 25%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .ranking-list-container .ranking-list dl dd span:nth-child(3) {
+        width: 20%; }
+      .ranking-list-container .ranking-list dl dd span:nth-child(4) {
+        width: 40%; }
+    .ranking-list-container .ranking-list dl dd .one {
+      color: #ffff00; }
+    .ranking-list-container .ranking-list dl dd .two {
+      color: #ff7b7b; }
+    .ranking-list-container .ranking-list dl dd .three {
+      color: #3ea9dd; }
+  .ranking-list-container .user-ranking-title {
+    font: 3rem/2 "Microsoft Yahei";
+    color: #fff;
+    text-align: center; }
+    .ranking-list-container .user-ranking-title em {
+      font-size: .7rem;
+      color: #3ea9dd; }
+
+.user-ranking-wrapper {
+  padding-top: 44px; }
+  .user-ranking-wrapper .ranking-list-container {
+    padding: 0 5% 5% 5%; }
+
+.user-ranking-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 3;
+  padding: 0 3%;
+  width: 100%;
+  height: 44px;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  background-color: #ffe138; }
+  .user-ranking-header .left {
+    width: 10%; }
+  .user-ranking-header h1 {
+    width: 80%;
+    font: 0.8rem/40px "Microsoft Yahei";
+    color: #333;
+    text-align: center; }
+
+.ranking-list-container .prize-list {
+  padding: 5% 0; }
+  .ranking-list-container .prize-list .item {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem; }
+    .ranking-list-container .prize-list .item .l {
+      width: 75%;
+      border-radius: 5px;
+      padding: 1.5%; }
+      .ranking-list-container .prize-list .item .l .content {
+        padding: 3% 5%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 5px; }
+      .ranking-list-container .prize-list .item .l h2 {
+        font: bold 1.2rem/1.5 "Microsoft Yahei";
+        color: #fff; }
+      .ranking-list-container .prize-list .item .l h3 {
+        font: bold 0.75rem/1.2 "Microsoft Yahei";
+        color: #fff; }
+      .ranking-list-container .prize-list .item .l p {
+        margin-top: .2rem;
+        font: 0.7rem/1.5 "Microsoft Yahei";
+        color: #fff; }
+    .ranking-list-container .prize-list .item .r {
+      width: 25%;
+      border-radius: 5px;
+      padding: 1.5%; }
+      .ranking-list-container .prize-list .item .r .content {
+        padding: 3% 5%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 5px; }
+        .ranking-list-container .prize-list .item .r .content a {
+          display: block; }
+          .ranking-list-container .prize-list .item .r .content a p {
+            font: bold 0.75rem/1.5 "Microsoft Yahei";
+            color: #fff;
+            text-align: center; }
+  .ranking-list-container .prize-list .integral .l {
+    background-color: #ee5652; }
+  .ranking-list-container .prize-list .integral .r {
+    background-color: #ee5652; }
+  .ranking-list-container .prize-list .coupon .l {
+    background-color: #6693cc; }
+  .ranking-list-container .prize-list .coupon .r {
+    background-color: #6693cc; }
+  .ranking-list-container .prize-list .film .l {
+    background-color: #eeb552; }
+  .ranking-list-container .prize-list .film .r {
+    background-color: #eeb552; }
+  .ranking-list-container .prize-list .youku .l {
+    background-color: #54b264; }
+  .ranking-list-container .prize-list .youku .r {
+    background-color: #54b264; }
+
+.receive-prize-container {
+  padding: 25% 15%; }
+  .receive-prize-container > p {
+    font: 0.7rem/1.5 "Microsoft Yahei";
+    color: #fff;
+    text-align: center; }
+    .receive-prize-container > p strong {
+      color: #ffef38; }
+  .receive-prize-container .item {
+    margin: 12% 0 10% 0;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-end; }
+    .receive-prize-container .item span {
+      font: bold 0.7rem/1.5 "Microsoft Yahei";
+      color: #fff; }
+    .receive-prize-container .item .items {
+      flex: 1;
+      border-bottom: 1px solid #fff; }
+      .receive-prize-container .item .items input {
+        background: none;
+        border: none;
+        outline: none;
+        width: 100%;
+        height: 100%;
+        font: 0.7rem/1.5 "Microsoft Yahei";
+        color: #fff; }
+        .receive-prize-container .item .items input::-webkit-input-placeholder {
+          font: 0.65rem/1.5 "Microsoft Yahei";
+          color: #304a6f; }
+  .receive-prize-container .select {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center; }
+    .receive-prize-container .select i {
+      width: 1rem;
+      height: 1rem;
+      font-size: 0;
+      margin-right: .2rem; }
+      .receive-prize-container .select i img {
+        width: 100%; }
+    .receive-prize-container .select p {
+      font: 0.6rem/1.5 "Microsoft Yahei";
+      color: #fff; }
+      .receive-prize-container .select p a {
+        color: #ffef38; }
+  .receive-prize-container .btn {
+    margin: 15% auto 0;
+    width: 80%;
+    font-size: 0; }
+    .receive-prize-container .btn img {
+      width: 100%; }
+
+.code-mask {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  width: 80%;
+  border-radius: 10px;
+  padding: 5%;
+  background-color: #fff;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -moz-transform: translate3d(-50%, -400%, 0);
+  -o-transform: translate3d(-50%, -400%, 0);
+  -ms-transform: translate3d(-50%, -400%, 0);
+  -webkit-transform: translate3d(-50%, -400%, 0);
+  transform: translate3d(-50%, -400%, 0); }
+  .code-mask p {
+    color: #406b8f;
+    font: bold 0.7rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+    text-align: center; }
+  .code-mask .close {
+    position: absolute;
+    right: 1%;
+    top: 1%;
+    width: 25px;
+    height: 25px;
+    font-size: 0; }
+    .code-mask .close img {
+      width: 100%; }
+  .code-mask .item {
+    margin: 8% 0;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .code-mask .item span {
+      color: #333;
+      font: 0.7rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+      margin-right: .3rem; }
+    .code-mask .item button {
+      padding: 0 3%;
+      background: none;
+      border: none;
+      outline: none;
+      background-color: #ffe138;
+      border-radius: 5px;
+      color: #000;
+      font: 0.7rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif; }
+  .code-mask .input-yzm {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .code-mask .input-yzm input {
+      margin: 0 2%;
+      background: none;
+      border: none;
+      outline: none;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      border: 1px solid #ddd; }
+
+.code-mask.on {
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   -ms-transition: all 0.5s;

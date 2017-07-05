@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content="不超过80个字符"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title></title>
+<link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+<div class="wrapper user-ranking-wrapper" style="background:url(images/ranking_list_bg.jpg) #17121a no-repeat;background-size:100% auto;">
+	<header class="user-ranking-header">
+		<div class="left"><a class="dossen-header-left" href=""></a></div>
+		<h1>我的奖品</h1>
+	</header>
+	<div class="ranking-list-container">	
+		<div class="prize-list">
+			<div class="item integral">
+				<div class="l">
+					<div class="content">
+						<h2>100积分</h2>
+						<p>领取时间：2017-08-02</p>
+					</div>
+				</div>
+				<div class="r">
+					<div class="content"><a href=""><p>立即</p><p>兑换</p></a></div>
+				</div>
+			</div>
+			<div class="item coupon items">
+				<div class="l">
+					<div class="content">
+						<h2>100元优惠券</h2>
+						<h3>满100减20</h3>
+						<p>领取时间：2017-08-02</p>
+					</div>
+				</div>
+				<div class="r">
+					<div class="content"><a href=""><p>立即</p><p>使用</p></a></div>
+				</div>
+			</div>
+			<div class="item film">
+				<div class="l">
+					<div class="content">
+						<h2>50元电影票</h2>
+						<p>领取时间：2017-08-02</p>
+					</div>
+				</div>
+				<div class="r">
+					<div class="content"><a href=""><p>立即</p><p>兑换</p></a></div>
+				</div>
+			</div>
+			<div class="item youku">
+				<div class="l">
+					<div class="content">
+						<h2>优酷会员卡</h2>
+						<p>领取时间：2017-08-02</p>
+					</div>
+				</div>
+				<div class="r">
+					<div class="content"><a href=""><p>立即</p><p>兑换</p></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- script begin -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+	$(".prize-list .item .r").outerHeight($(".prize-list .item .l").outerHeight());
+	$(".prize-list .items .r").outerHeight($(".prize-list .items .l").outerHeight());
+	$(".ranking-list-container .prize-list .item .r .content").outerHeight($(".ranking-list-container .prize-list .item .l .content").outerHeight());
+	$(".ranking-list-container .prize-list .items .r .content").outerHeight($(".ranking-list-container .prize-list .coupon .l .content").outerHeight());
+	var pHeight=($(".ranking-list-container .prize-list .item .r .content").outerHeight()-$(".ranking-list-container .prize-list .item .r .content a").outerHeight())/2;
+	var pHeightCoupon=($(".ranking-list-container .prize-list .items .r .content").outerHeight()-$(".ranking-list-container .prize-list .items .r .content a").outerHeight())/2;
+	$(".ranking-list-container .prize-list .item .r .content").css("padding-top",pHeight);
+	$(".ranking-list-container .prize-list .items .r .content").css("padding-top",pHeightCoupon);
+</script>
+<!-- script end -->
+</body>
+</html>
+
+

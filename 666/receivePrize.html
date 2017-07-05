@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content="不超过150个字符"/>
+<meta name="keywords" content="不超过80个字符"/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title></title>
+<link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+<div class="wrapper user-ranking-wrapper" style="background:url(images/bg3.jpg) #17121a no-repeat;background-size:100% auto;">
+	<header class="user-ranking-header">
+		<div class="left"><a class="dossen-header-left" href=""></a></div>
+		<h1>领取东呈礼包</h1>
+	</header>
+	<div class="receive-prize-container">	
+		<p><strong>某某某</strong>送您一张东呈会</p>
+		<p>129元首住券+银卡体验资格</p>
+		<p>(3个月内入住一次即可永久有效)</p>
+		<div class="item">
+			<span>手机号：</span>
+			<div class="items"><input type="text" placeholder="输入手机号码"></div>
+		</div>
+		<div class="select">
+			<i><img src="images/select_icon.png" alt=""></i>
+			<p>勾选表示同意<a href="">《东呈会员注册条款》</a></p>
+		</div>
+		<div class="btn">
+			<a href=""><img src="images/btn3.png" alt=""></a>
+		</div>
+	</div>
+</div>
+<div class="mask" style="display:block;"></div>
+<div class="code-mask on">
+	<div class="close">
+		<img src="images/close.png" alt="">
+	</div>
+	<p>您已成功领取礼品</p>
+	<p>输入手机验证码即可查看哦</p>
+	<div class="item">
+		<span>12345678910</span>
+		<button>发送验证码</button>
+	</div>	
+	 <form class="input-yzm">
+        <input type="text" name="" id="" value="" maxlength="1" class="input-juli"/>        
+        <input type="text" name="" id="" value="" maxlength="1" class="input-juli" />
+        <input type="text" name="" id="" value="" maxlength="1" class="input-juli" />
+        <input type="text" name="" id="" value="" maxlength="1" />
+	</form>
+</div>
+<!-- script begin -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+	var flag=false;
+	$(".receive-prize-container .select i").on("click",function(){
+		if(!flag){
+			$(this).find("img").attr("src","images/no_select_icon.png");
+			flag=true;
+		}else{
+			$(this).find("img").attr("src","images/select_icon.png");
+			flag=false;
+		}		
+	});
+	$(".code-mask .close,.mask").on("click",function(){
+		$(".code-mask").removeClass("on");
+		$(".mask").hide();
+	});
+	$('.input-juli').on('keyup', function() {
+	    var $input = $(this).next('input');
+	    if($input.length > 0) {
+	        $input.focus();
+	    }
+	});
+</script>
+<!-- script end -->
+</body>
+</html>
+
+
