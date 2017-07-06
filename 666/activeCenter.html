@@ -17,36 +17,44 @@
 <body>
 <div class="wrapper" style="background:url(images/bg2.jpg) #17121a no-repeat;background-size:100% auto;">
 	<a class="rule-btn" href="javascript:;">活动<br/>详情</a>
-	<p>张**霖于10分钟前夺下电影票1张!</p>
+	<div class="roll-list">
+		<ul>
+			<li>张**霖于10分钟前夺下电影票1张!1</li>
+			<li>张**霖于10分钟前夺下电影票1张!2</li>
+			<li>张**霖于10分钟前夺下电影票1张!3</li>
+			<li>张**霖于10分钟前夺下电影票1张!4</li>
+		</ul>
+	</div>
 	<div class="container">
 		<time class="time2">活动时间：2017.06.06~07.06</time>
-		<div class="flow-path-content">
+		<div class="flow-path-content active6">
 			<img src="images/line.png" alt="">
 			<ul>
 				<li>
-					<i><img src="images/sphere1.png" alt=""></i>
+					<a class="gift gift1" href="javascript:;"><img src="images/sphere1.png" alt=""></a>
 					<p>已完成</p>
 					<h5>200积分</h5>
 				</li>
 				<li>
-					<i><img src="images/sphere2.png" alt=""></i>
+					<a class="gift gift2" href="javascript:;"><img src="images/sphere2.png" alt=""></a>
 					<p>2/3</p>
 					<h5>电影票1张</h5>
 				</li>
 				<li>
-					<i><img src="images/sphere3.png" alt=""></i>
+					<a class="gift gift3" href="javascript:;"><img src="images/sphere3.png" alt=""></a>
 					<p>6人</p>
 					<h5>电影票1张</h5>
 				</li>
 				<li>
-					<i><img src="images/sphere4.png" alt=""></i>
+					<a class="gift gift4" href="javascript:;"><img src="images/sphere4.png" alt=""></a>
 					<p>冲刺排行</p>
 					<h5>神秘大奖</h5>
 				</li>
 			</ul>
+			<div class="small-mascot"><img src="images/small_mascot.png" alt=""></div>
 		</div>
 		<a href="" class="btn-top"><img src="images/btn1.png" alt=""></a>
-		<a href="" class="btn"><img src="images/btn2.png" alt=""></a>
+		<a href="userRanking.html" class="btn"><img src="images/btn2.png" alt=""></a>
 		<div class="flow-path"><img src="images/flow_path.png" alt=""></div>
 	</div>
 </div>
@@ -65,6 +73,55 @@
 	<p>这里是活动说明文字内容，具体内容貌似说他们自己手动添加，这里只是样式的展示，弹窗白色的位置要做适应长度，其他具体的找刘逗逼问。</p>
 </div>
 <!-- rule-content end -->
+<div class="hortation-mask">
+	<div class="share"><img src="images/share.png" alt=""></div>
+	<div class="content">
+		<div class="close">
+			<img src="images/close.png" alt="">
+		</div>
+		<div class="rule_mascot"><img src="images/rule_mascot.png" alt=""></div>
+		<h2>完成3人奖励</h2>
+		<div class="gift">
+			<img src="images/gift.png" alt="">
+		</div>
+		<p>东呈50元券包+优酷会员卡</p>
+		<div class="btn">
+			<a href="javascript:;">立即领取</a>
+		</div>
+	</div>
+</div>
+<div class="gitf-receive-success">
+	<div class="share"><img src="images/share.png" alt=""></div>
+	<div class="content">
+		<div class="close">
+			<img src="images/close.png" alt="">
+		</div>
+		<div class="rule_mascot"><img src="images/rule_mascot.png" alt=""></div>
+		<h2>完成3人奖励</h2>
+		<div class="gift">
+			<img src="images/open_gift.png" alt="">
+		</div>
+		<p>东呈50元券包+优酷会员卡</p>
+		<div class="btn">
+			<a class="invite" href="javascript:;">邀好友助力</a>
+			<a href="">我的奖品</a>
+		</div>	
+	</div>
+</div>
+<div class="two-dimension-code">
+	<div class="share"><img src="images/share.png" alt=""></div>
+	<div class="content">
+		<div class="close">
+			<img src="images/close.png" alt="">
+		</div>
+		<div class="rule_mascot"><img src="images/rule_mascot.png" alt=""></div>
+		<h2>扫描二维码</h2>
+		<p>领取50元优惠券+东呈银卡体验卡</p>
+		<div class="code">
+			<img src="images/code.jpg" alt="">
+		</div>
+	</div>
+</div>
 <!-- script begin -->
 <script src="scripts/jquery-3.1.1.min.js"></script>
 <script>
@@ -76,6 +133,134 @@
 		$(".mask").hide();
 		$(".rule-content").removeClass("on");
 	});
+
+	$(".active1 .gift1").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+	$(".active2 .gift1").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+
+	$(".active3 .gift1").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+	$(".active3 .gift2").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+	$(".active4 .gift1").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+	$(".active4 .gift2").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+
+	$(".active5 .gift1").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+	$(".active5 .gift2").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+	$(".active5 .gift3").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+	$(".active6 .gift1").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+	$(".active6 .gift2").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+	$(".active6 .gift3").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+
+	$(".active7 .gift1").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+	$(".active7 .gift2").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+	$(".active7 .gift3").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+	$(".active7 .gift4").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").addClass("on");
+		$(this).css("width","1rem");
+	});
+
+	$(".mask,.hortation-mask .close").on("click",function(){
+		$(".mask").hide();
+		$(".hortation-mask").removeClass("on");
+	});
+
+
+	$(".hortation-mask .content .btn a").on("click",function(){
+		$(".mask").show();
+		$(".hortation-mask").removeClass("on");
+		$(".gitf-receive-success").addClass("on");	
+	});
+	$(".mask,.gitf-receive-success .close").on("click",function(){
+		$(".mask").hide();
+		$(".gitf-receive-success").removeClass("on");
+	});
+
+	$(".gitf-receive-success .invite").on("click",function(){
+		$(".mask").show();
+		$(".gitf-receive-success").removeClass("on");
+		$(".two-dimension-code").addClass("on");	
+	});
+	$(".mask,.two-dimension-code .close").on("click",function(){
+		$(".mask").hide();
+		$(".two-dimension-code").removeClass("on");
+	});
+
+
+
+    //无缝滚动 
+    $(function(){
+		var $this = $(".roll-list");
+	    var scrollTimer;
+	    scrollTimer = setInterval(function(){
+             scrollNews( $this );
+        }, 2000 );
+    });
+	function scrollNews(obj){
+	   var $self = obj.find("ul:first");
+	   var lineHeight = $self.find("li:first").height();  
+	   $self.animate({ "margin-top" : -lineHeight +"px" },600 , function(){
+	         $self.css({"margin-top":"0px"}).find("li:first").appendTo($self);
+	   })
+	}
 </script>
 <!-- script end -->
 </body>
