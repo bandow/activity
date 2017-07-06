@@ -292,6 +292,9 @@ html {
       width: 2rem; }
       .container .flow-path-content .small-mascot img {
         width: 100%; }
+  .container .active0 .small-mascot {
+    left: -5%;
+    top: -15%; }
   .container .active1 ul li:nth-child(1) a {
     width: 1.3rem; }
   .container .active1 .small-mascot {
