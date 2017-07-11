@@ -130,6 +130,7 @@
 				&:nth-child(1){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}	
 			}
@@ -145,6 +146,7 @@
 				&:nth-child(1){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}	
 			}
@@ -160,11 +162,13 @@
 				&:nth-child(1){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}	
 				&:nth-child(2){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}	
 			}
@@ -180,11 +184,13 @@
 				&:nth-child(1){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}	
 				&:nth-child(2){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}	
 			}
@@ -200,16 +206,19 @@
 				&:nth-child(1){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}	
 				&:nth-child(2){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}
 				&:nth-child(3){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}		
 			}
@@ -225,16 +234,19 @@
 				&:nth-child(1){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}	
 				&:nth-child(2){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}
 				&:nth-child(3){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}		
 			}
@@ -250,21 +262,25 @@
 				&:nth-child(1){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}	
 				&:nth-child(2){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}
 				&:nth-child(3){
 					a{
 						width:1.3rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}
 				&:nth-child(4){
 					a{
 						width:2.5rem;
+						@include animation(bigSmall .5s infinite);
 					}
 				}			
 			}
@@ -283,6 +299,17 @@
 	50% {top: 55%;}
 	75% {top: 50%;}
 }
+
+@include keyframes(bigSmall)
+{
+	0%,100% {
+		@include transform(scale(1.2))
+	}
+	50% {
+		@include transform(scale(1))
+	}
+}
+
 .mask{
 	position:fixed;
 	top:0;

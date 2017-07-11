@@ -296,55 +296,119 @@ html {
     left: -5%;
     top: -15%; }
   .container .active1 ul li:nth-child(1) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active1 .small-mascot {
     left: -5%;
     top: -15%; }
   .container .active2 ul li:nth-child(1) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active2 .small-mascot {
     top: -30%;
     left: 10%; }
   .container .active3 ul li:nth-child(1) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active3 ul li:nth-child(2) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active3 .small-mascot {
     top: -17%;
     left: 27%; }
   .container .active4 ul li:nth-child(1) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active4 ul li:nth-child(2) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active4 .small-mascot {
     top: -35%;
     left: 45%; }
   .container .active5 ul li:nth-child(1) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active5 ul li:nth-child(2) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active5 ul li:nth-child(3) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active5 .small-mascot {
     top: -19%;
     left: 63%; }
   .container .active6 ul li:nth-child(1) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active6 ul li:nth-child(2) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active6 ul li:nth-child(3) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active6 .small-mascot {
     top: -33%;
     left: 80%; }
   .container .active7 ul li:nth-child(1) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active7 ul li:nth-child(2) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active7 ul li:nth-child(3) a {
-    width: 1.3rem; }
+    width: 1.3rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active7 ul li:nth-child(4) a {
-    width: 2.5rem; }
+    width: 2.5rem;
+    -moz-animation: bigSmall 0.5s infinite;
+    -webkit-animation: bigSmall 0.5s infinite;
+    -o-animation: bigSmall 0.5s infinite;
+    animation: bigSmall 0.5s infinite; }
   .container .active7 .small-mascot {
     top: -21%;
     left: 94%; }
@@ -385,6 +449,58 @@ html {
     top: 55%; }
   75% {
     top: 50%; } }
+@-webkit-keyframes bigSmall {
+  0%,100% {
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  50% {
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+@-moz-keyframes bigSmall {
+  0%,100% {
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  50% {
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+@-o-keyframes bigSmall {
+  0%,100% {
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  50% {
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+@keyframes bigSmall {
+  0%,100% {
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); }
+  50% {
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
 .mask {
   position: fixed;
   top: 0;
