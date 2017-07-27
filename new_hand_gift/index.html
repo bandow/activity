@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>送你一份好友专属礼包</title>
+<link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+<div class="wrapper" id="app" style="background:url(images/bg.png) top center #fff no-repeat;background-size:100% auto;">
+	<header class="new-hand-gift-header">
+		<a class="left dossen-header-left" href="javascript:goback();"></a>
+		<h1 v-text="title"></h1>
+		<div class="right">
+			<i><img src="images/share_icon.png" alt=""></i>
+		</div>
+	</header>
+	<div class="container">
+		<div class="logo-title">
+			<div class="logo">
+				<i></i>
+				<i><img src="images/logo.png" alt=""></i>
+				<i></i>
+			</div>
+			<div class="text">
+				<h2>200元酒店礼包</h2>
+				<p>桃花潭水深千尺，不及老铁送我钱</p>
+			</div>
+		</div>
+		<div class="no-red-packet" v-bind:class="noRedPacket" style="background:url(images/no_red_top.jpg) top center no-repeat;background-size:100% auto;">
+			<div class="content">
+				<form action="">
+					<div class="item"><input type="tel" placeholder="输入手机号"></div>
+					<div class="code">
+						<div class="item"><input type="text" placeholder="输入右侧图形码"></div>
+						<i><img src="images/code_icon.jpg" alt=""></i>
+					</div>
+					<a href="javascript:;" class="but" v-on:click="but">接受好友美意</a>
+				</form>
+				<div class="activity-title" v-on:click="activityTitle">
+					<i></i>
+					<div class="text">
+						<i><img src="images/question_icon.png" alt=""></i>
+						<p>活动说明</p>
+					</div>
+					<i></i>
+				</div>
+			</div>
+		</div>
+		<div class="red-packet" v-bind:class="redPacket" style="background:url(images/red_top.png) top center no-repeat;background-size:100% auto;">
+			<div class="content">
+				<p>礼包已存入会员账户：{{tel}}</p>
+				<button>立即使用</button>
+				<div class="coupon-list">
+					<div class="item" v-for="(item,index) in couponList">
+						<div class="l">
+							<h2>{{item.couponMoney}}<span>优惠券</span></h2>
+							<p>{{item.message}}</p>
+						</div>
+						<div class="r">
+							{{item.num}}张
+						</div>
+					</div>
+				</div>
+				<div class="activity-title" v-on:click="activityTitle">
+					<i></i>
+					<div class="text">
+						<i><img src="images/question_icon.png" alt=""></i>
+						<p>活动说明</p>
+					</div>
+					<i></i>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-content">
+			<div class="title">
+				<i></i>
+				<h2>新人秒懂东呈会</h2>
+				<i></i>
+			</div>
+			<div class="text-list">
+				<div class="item">
+					<h3>1200家酒店任选</h3>
+					<p>全球200多个城市，超1200家酒店可供选择预订，全球标准化服务，无论在哪都有家的温暖。</p>
+				</div>
+				<div class="item">
+					<h3>8+1酒店品牌</h3>
+					<p>包括经济连锁、中高端等酒店类型，涵括城市便捷、宜尚、怡程、柏曼、隐沫、铂顿、精途、等酒店品牌。</p>
+				</div>
+				<div class="item">
+					<h3>尊享会员权益</h3>
+					<p>与1500+万东呈会员，同享会员价预订、入住权益、会员积分、积分兑免费房等权益。</p>
+				</div>
+				<div class="item">
+					<h3>智慧订房黑科技</h3>
+					<p>采用云图订房+卡片订房模式，订酒店像打车一样简单高效，随时随地、快查、快订，住宿无忧！</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mask" v-bind:class="{'mask-active':isActive,'no-mask-active':!isActive}" v-on:click="maskClick"></div>
+	<!-- 活动说明 begin -->
+	<div class="rule" v-bind:class="{'rule-active':isRuleActive,'no-rule-active':!isRuleActive}">
+		<div class="close" v-on:click="close"><img src="images/close.png" alt=""></div>
+		<h3>活动说明</h3>
+		<div class="text">
+			<p>1、领取条件：东呈会APP新用户（已领取过东呈会APP200元新人礼包的会员视为老用户）；</p>
+			<p>2、领取对象：东呈会员；</p>
+			<p>3、同一位用户（同一个账号、手机号和设备号均算作同一位用户）仅能领取1个礼包；</p>
+			<p>4、酒店礼包领取成功后，将会以2张10元优惠券、2张20元优惠券、3张30元优惠券、1张50元优惠券的形式发放至输入的手机号对应会员账户中，在东呈会app中登录 后，在“首页-个人中心（左上角）-优惠券”中查看；</p>
+			<p>5、非东呈会员，输入手机号及验证码确认领取礼包后，将会免费为该手机号注册成为会员，未确认的用户将无法成功领取礼包；</p>
+			<p>6、酒店礼包使用：可在东呈会APP中预订城市便捷、宜尚、怡程、柏曼、隐沫、铂顿、精途等品牌酒店时使用，具体使用规则详见优惠券详情；</p>
+			<p>7、在法律法规许可的范围内，东呈国际集团对本活动拥有解释权。如有疑问，可联系官方客服热线：400-700-7899</p>
+		</div>
+	</div>
+	<!-- 输入手机验证码 begin -->
+	<div class="identifying-code" v-bind:class="{'codeActive':isCodeActive,'noCodeActive':!isCodeActive}">
+		<div class="close" v-on:click="closeTwo">
+			<img src="images/close2.png" alt="">
+		</div>
+		<h3>输入手机验证码</h3>
+		<p>即可免费成为东呈会员并领取￥200酒店礼包</p>
+		 <form class="input-yzm">
+	        <input type="text" name="" id="" value="" maxlength="1" class="input-juli"/>        
+	        <input type="text" name="" id="" value="" maxlength="1" class="input-juli" />
+	        <input type="text" name="" id="" value="" maxlength="1" class="input-juli" />
+	        <input type="text" name="" id="" value="" maxlength="1" />
+		</form>
+		<p>没收到？<a href="">重新发送验证码</a></p>
+	</div>
+	<!-- 原来你已经领过新手礼包啦~ begin -->
+	<div class="gift-mask" v-bind:class="{'gift-mask-active':isGiftActive,'gift-mask-on-active':!isGiftActive}">
+		<h3>原来你已经领过新手礼包啦~</h3>
+		<p>把这个¥200 礼包送给好友吧</p>
+		<p>爱分享的人，运气都不会太差哦！ </p>
+		<div class="btn">
+			<a href="javascript:;" v-on:click="closeThree">稍后再说</a>
+			<a href="">马上送TA </a>
+		</div>
+	</div>
+</div>
+<!-- script begin -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script src="scripts/vue.min.js"></script>
+<script src="scripts/axios.js"></script>
+<script src="scripts/gift.js"></script>
+<script>
+	//返回上一页
+	function goback(){
+		window.history.go(-1);
+	}
+	$(document).ready(function(){
+		$('.input-juli').on('keyup', function() {
+		    var $input = $(this).next('input');
+		    if($input.length > 0) {
+		        $input.focus();
+		    }
+		});
+	});
+</script>
+<!-- script end -->
+</body>
+</html>

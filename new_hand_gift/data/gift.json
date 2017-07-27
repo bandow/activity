@@ -1,0 +1,27 @@
+{
+  "result":{
+    "couponList":[
+      {
+        "couponMoney":"50元",
+        "message":"满500元可用，有效期90天",
+        "num":"1"
+      },
+      {
+        "couponMoney":"30元",
+        "message":"满300元可用，有效期90天",
+        "num":"3"
+      },
+      {
+        "couponMoney":"20元",
+        "message":"满200元可用，有效期90天",
+        "num":"2"
+      },
+      {
+        "couponMoney":"10元",
+        "message":"满100元可用，有效期90天",
+        "num":"2"
+      }
+    ],
+    "tel":"123456789"
+  }
+}

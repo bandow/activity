@@ -7,7 +7,7 @@ var app = new Vue({
 	mounted:function(){
 		var _this = this;
 		this.$nextTick(function(){
-			axios.get('http://10.44.172.245/activity/activity_area/data/activity.json')
+			axios.get('http://10.44.61.23/activity/activity_area/data/activity.json')
 			.then(
 				function(retObj){
 					if(retObj.status == 200){
