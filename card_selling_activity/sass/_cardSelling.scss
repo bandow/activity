@@ -1,0 +1,199 @@
+@import "base","variable","common";
+.card-selling-header{
+	position:relative;
+	width:100%;
+	height:auto;
+	margin-bottom:1.5rem;
+	.user-entry{
+	    float:right;
+    	overflow: hidden;
+    	margin: -30px 3% 0;
+		display:block;
+		width:50px;
+		height:50px;
+		font-size:0;
+		img{
+			width:100%;
+		}
+	}
+	.count-down{
+		padding:8rem 0 0 0;
+		p{
+			margin-bottom:.3rem;
+			text-align:center;
+			color:#000;
+			font:.6rem/1.5 $publicFont;
+		}
+		#time{
+			text-align:center;
+			color:#fff;
+			font:.6rem/1.5 $publicFont;
+			em{
+				display:inline-block;
+				background-color:#1b1b1b;
+				color:#fff;
+				border-radius:3px;
+				padding:0 2px;
+				margin:0 3px;
+				font-size:.7rem;
+			}
+		}
+	}
+}
+.open-group{
+	.title{
+	    position:relative;
+		width:100%;
+		height:auto;
+		font-size:0;
+		a{
+		    position: absolute;
+		    top: 16%;
+		    right: 6%;
+		    z-index: 1;
+			color:#fff;
+			font:.55rem/1 $publicFont;
+		}
+		img{
+			width:100%;
+		}
+	}
+	.content{
+		padding:0 5% 20%;
+		margin-top:-1px;
+		background:#5d0af2;
+		background: -webkit-linear-gradient(-90deg, #ca3bde, #9f28e6); /* Safari 5.1 - 6.0 */
+		background: linear-gradient(-90deg, #ca3bde , #9f28e6); /* 标准的语法 */
+		>ul{
+			padding:3% 0 .1rem;
+			width:100%;
+			@include display(flex);
+			align-items:center;
+			li{
+				flex:1;
+				background-color:#8e24aa;
+				color:#fff;
+				font:.7rem/2.2 $publicFont;
+				text-align:center;
+				&:first-child{
+					border-radius:30px 0 0 30px;
+				}
+				&:last-child{
+					border-radius:0 30px 30px 0;
+				}
+			}
+			.active{
+				background-color:#e040fb;
+			}
+			.unactive{
+				background-color:#8e24aa;
+			}
+		}
+		.card-list{
+			.item{
+				padding:5%;
+				margin-top:1rem;
+				background-color:#fff;
+				border-radius:5px;
+				h2{
+					color:#2c008e;
+					text-align:center;
+					font:bold italic .7rem/2.2 $publicFont;
+				}
+				.item-content{
+					margin:.8rem 0;
+					@include display(flex);
+					align-items:center;
+					.l{
+						position:relative;
+						width:100px;
+						height:100px;
+						font-size:0;
+						border-radius:5px;
+						overflow:hidden;
+						img{
+							width:100%;
+							height:100%;
+						}
+						>p{
+							position:absolute;
+							left:0;
+							right:0;
+							bottom:0;
+							z-index:1;
+							background-color:#f50057;
+							color:#fff;
+							font:.55rem/1.5 $publicFont;
+							text-align:center;
+						}
+					}
+					.r{
+						flex:1;
+						p{
+							color:#999;
+							font:.7rem/1.5 $publicFont;
+							text-align:center;
+						}
+						h4{
+							color:#ff0062;
+							font:bold .8rem/1.5 $publicFont;
+							text-align:center;
+							strong{
+								font-size:1rem;
+							}
+						}
+						a{
+							margin:.5rem auto 0;
+							display:block;
+							width:80%;
+							background:#ff05ad;
+							background: -webkit-linear-gradient(90deg, #ff05ad, #ff440b); /* Safari 5.1 - 6.0 */
+							background: linear-gradient(90deg, #ff05ad , #ff440b); /* 标准的语法 */
+							border-radius:30px;
+							color:#fff;
+							font:.7rem/2 $publicFont;
+							text-align:center;
+							box-shadow: 1px 3px 5px #ffa9d8;
+						}
+					}
+				}
+				.foot{
+					padding-left:5%;
+					background-color:#651fff;
+					border-radius:5px;
+					@include display(flex);
+					align-items:center;
+					p{
+						@include display(flex);
+						align-items:center;
+						flex:1;
+						color:#fff;
+						font:.6rem/1.5 $publicFont;
+						em{
+							width:3rem;
+							color:#fffc00;
+							overflow: hidden;
+						    text-overflow: ellipsis;
+						    white-space: nowrap;
+						}
+						span{
+							flex:1;
+						}
+					}
+					a{
+						padding:2% 5%;
+						background-color:#ff009f;
+						border-radius:5px;
+						font:.65rem/1.5 $publicFont;
+						text-align:center;
+						color:#fff;
+					}
+				}
+			}
+		}
+	}
+}
+.scare-buying{
+	margin-top:-50px;
+	@extend .open-group;
+}

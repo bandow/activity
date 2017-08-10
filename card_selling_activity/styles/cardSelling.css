@@ -1,0 +1,355 @@
+@charset "UTF-8";
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2016-10-18
+* Version:0.0.1
+* ================================================================== */
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
+  /*-webkit-text-size-adjust是解决 iPhone 横屏时默认会放大文字的问题*/
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+html, body {
+  /*-webkit-user-select:none禁止用户进行复制.选择.*/
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  /*使用min-height:100%代替height：100%*/
+  height: 100%;
+  min-height: 100%; }
+
+body {
+  /*弹性滚动-局部滚动开启弹性滚动：将属性挂在body上，可以避免很多奇怪的bug。*/
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, div, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  /*把所有元素的内边距和边框不再会增加它的宽度*/
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  box-sizing: border-box; }
+
+ol, ul {
+  list-style: none;
+  /*去掉列表点*/ }
+
+table {
+  border-collapse: collapse;
+  /*去掉表格的双行线*/
+  border-spacing: 0; }
+
+/*取消a标签在移动端点击时的背景颜色*/
+a, a:hover, a:active, a:visited, a:link, a:focus {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  background: none;
+  text-decoration: none; }
+
+input {
+  -webkit-appearance: none;
+  /*ios去除input默认样式*/ }
+
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2017-06-01
+* Version:0.0.1
+* ================================================================== */
+html {
+  font-size: 18px; }
+
+@media (min-device-width: 320px) {
+  html {
+    font-size: 18px; } }
+@media (min-device-width: 360px) {
+  html {
+    font-size: 20.25px; } }
+@media (min-device-width: 375px) {
+  html {
+    font-size: 21.1px; } }
+@media (min-device-width: 384px) {
+  html {
+    font-size: 21.6px; } }
+@media (min-device-width: 400px) {
+  html {
+    font-size: 22.5px; } }
+@media (min-device-width: 412px) {
+  html {
+    font-size: 23.17px; } }
+@media (min-device-width: 414px) {
+  html {
+    font-size: 23.3px; } }
+@media (min-device-width: 480px) {
+  html {
+    font-size: 26.99px; } }
+@media (min-device-width: 533px) {
+  html {
+    font-size: 29.98px; } }
+@media (min-device-width: 568px) {
+  html {
+    font-size: 31.95px; } }
+@media (min-device-width: 600px) {
+  html {
+    font-size: 33.74px; } }
+@media (min-device-width: 640px) {
+  html {
+    font-size: 24px; } }
+.wrapper {
+  width: 100%;
+  max-width: 640px;
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  padding-top: 44px; }
+
+.dossen-header-left {
+  position: relative; }
+  .dossen-header-left:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid;
+    border-bottom: 0;
+    border-right: 0;
+    margin-top: -5px;
+    color: #333;
+    -webkit-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg); }
+
+.dossen-arrow-bottom {
+  position: relative; }
+  .dossen-arrow-bottom:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid;
+    border-bottom: 0;
+    border-right: 0;
+    margin-top: -5px;
+    color: #333;
+    -webkit-transform: rotateZ(-135deg);
+    transform: rotateZ(-135deg); }
+
+.dossen-arrow {
+  position: relative; }
+  .dossen-arrow:after {
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    width: 8px;
+    height: 8px;
+    border: 1px solid;
+    border-bottom: 0;
+    border-right: 0;
+    margin-top: -4px;
+    color: #ccc;
+    -webkit-transform: rotateZ(135deg);
+    transform: rotateZ(135deg); }
+
+.dossen-pr {
+  padding-right: 5%; }
+
+.card-selling-header {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem; }
+  .card-selling-header .user-entry {
+    float: right;
+    overflow: hidden;
+    margin: -30px 3% 0;
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 0; }
+    .card-selling-header .user-entry img {
+      width: 100%; }
+  .card-selling-header .count-down {
+    padding: 8rem 0 0 0; }
+    .card-selling-header .count-down p {
+      margin-bottom: .3rem;
+      text-align: center;
+      color: #000;
+      font: 0.6rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif; }
+    .card-selling-header .count-down #time {
+      text-align: center;
+      color: #fff;
+      font: 0.6rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif; }
+      .card-selling-header .count-down #time em {
+        display: inline-block;
+        background-color: #1b1b1b;
+        color: #fff;
+        border-radius: 3px;
+        padding: 0 2px;
+        margin: 0 3px;
+        font-size: .7rem; }
+
+.open-group .title, .scare-buying .title {
+  position: relative;
+  width: 100%;
+  height: auto;
+  font-size: 0; }
+  .open-group .title a, .scare-buying .title a {
+    position: absolute;
+    top: 16%;
+    right: 6%;
+    z-index: 1;
+    color: #fff;
+    font: 0.55rem/1 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif; }
+  .open-group .title img, .scare-buying .title img {
+    width: 100%; }
+.open-group .content, .scare-buying .content {
+  padding: 0 5% 20%;
+  margin-top: -1px;
+  background: #5d0af2;
+  background: -webkit-linear-gradient(-90deg, #ca3bde, #9f28e6);
+  /* Safari 5.1 - 6.0 */
+  background: linear-gradient(-90deg, #ca3bde, #9f28e6);
+  /* 标准的语法 */ }
+  .open-group .content > ul, .scare-buying .content > ul {
+    padding: 3% 0 .1rem;
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center; }
+    .open-group .content > ul li, .scare-buying .content > ul li {
+      flex: 1;
+      background-color: #8e24aa;
+      color: #fff;
+      font: 0.7rem/2.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+      text-align: center; }
+      .open-group .content > ul li:first-child, .scare-buying .content > ul li:first-child {
+        border-radius: 30px 0 0 30px; }
+      .open-group .content > ul li:last-child, .scare-buying .content > ul li:last-child {
+        border-radius: 0 30px 30px 0; }
+    .open-group .content > ul .active, .scare-buying .content > ul .active {
+      background-color: #e040fb; }
+    .open-group .content > ul .unactive, .scare-buying .content > ul .unactive {
+      background-color: #8e24aa; }
+  .open-group .content .card-list .item, .scare-buying .content .card-list .item {
+    padding: 5%;
+    margin-top: 1rem;
+    background-color: #fff;
+    border-radius: 5px; }
+    .open-group .content .card-list .item h2, .scare-buying .content .card-list .item h2 {
+      color: #2c008e;
+      text-align: center;
+      font: bold italic 0.7rem/2.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif; }
+    .open-group .content .card-list .item .item-content, .scare-buying .content .card-list .item .item-content {
+      margin: .8rem 0;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center; }
+      .open-group .content .card-list .item .item-content .l, .scare-buying .content .card-list .item .item-content .l {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        font-size: 0;
+        border-radius: 5px;
+        overflow: hidden; }
+        .open-group .content .card-list .item .item-content .l img, .scare-buying .content .card-list .item .item-content .l img {
+          width: 100%;
+          height: 100%; }
+        .open-group .content .card-list .item .item-content .l > p, .scare-buying .content .card-list .item .item-content .l > p {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 1;
+          background-color: #f50057;
+          color: #fff;
+          font: 0.55rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+          text-align: center; }
+      .open-group .content .card-list .item .item-content .r, .scare-buying .content .card-list .item .item-content .r {
+        flex: 1; }
+        .open-group .content .card-list .item .item-content .r p, .scare-buying .content .card-list .item .item-content .r p {
+          color: #999;
+          font: 0.7rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+          text-align: center; }
+        .open-group .content .card-list .item .item-content .r h4, .scare-buying .content .card-list .item .item-content .r h4 {
+          color: #ff0062;
+          font: bold 0.8rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+          text-align: center; }
+          .open-group .content .card-list .item .item-content .r h4 strong, .scare-buying .content .card-list .item .item-content .r h4 strong {
+            font-size: 1rem; }
+        .open-group .content .card-list .item .item-content .r a, .scare-buying .content .card-list .item .item-content .r a {
+          margin: .5rem auto 0;
+          display: block;
+          width: 80%;
+          background: #ff05ad;
+          background: -webkit-linear-gradient(90deg, #ff05ad, #ff440b);
+          /* Safari 5.1 - 6.0 */
+          background: linear-gradient(90deg, #ff05ad, #ff440b);
+          /* 标准的语法 */
+          border-radius: 30px;
+          color: #fff;
+          font: 0.7rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+          text-align: center;
+          box-shadow: 1px 3px 5px #ffa9d8; }
+    .open-group .content .card-list .item .foot, .scare-buying .content .card-list .item .foot {
+      padding-left: 5%;
+      background-color: #651fff;
+      border-radius: 5px;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center; }
+      .open-group .content .card-list .item .foot p, .scare-buying .content .card-list .item .foot p {
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        flex: 1;
+        color: #fff;
+        font: 0.6rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif; }
+        .open-group .content .card-list .item .foot p em, .scare-buying .content .card-list .item .foot p em {
+          width: 3rem;
+          color: #fffc00;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap; }
+        .open-group .content .card-list .item .foot p span, .scare-buying .content .card-list .item .foot p span {
+          flex: 1; }
+      .open-group .content .card-list .item .foot a, .scare-buying .content .card-list .item .foot a {
+        padding: 2% 5%;
+        background-color: #ff009f;
+        border-radius: 5px;
+        font: 0.65rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+        text-align: center;
+        color: #fff; }
+
+.scare-buying {
+  margin-top: -50px; }
+
+/*# sourceMappingURL=cardSelling.css.map */
