@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>我的团购</title>
+<link rel="stylesheet" href="styles/cardSelling.css">
+</head>
+<body>
+<div class="wrapper info-wrapper" id="app">
+	<header class="groupbuy-header">
+		<a class="dossen-header-left left" href="index.html">返回</a>
+		<h1>{{title}}</h1>
+	</header>
+	<div class="info-content">
+		<div class="info-header">
+			<div class="img">
+				<img src="images/info1.jpg" alt="">
+			</div>
+			<div class="text">
+				<h3>黑金卡1张+蓝海豚珠江夜游VIP舱票1张套票</h3>
+				<p>升级立享生日免房 / 赠2000元酒店红包 / 送2500积分</p>
+				<p class="price"><span>已售：555</span><span>单买价<del>¥588</del></span><span>3人团价</span><span>￥<strong>520</strong></span></p>
+			</div>
+		</div>
+		<div class="flow-path">
+			<p>选商品 </p>
+			<p>支付开团或拼团</p>
+			<p>邀请好友</p>
+			<p>拼团成功</p>
+		</div>
+		<div class="info-foot">
+			<h3>别人在开团</h3>
+			<ul>
+				<li>
+					<div class="l">
+						<div class="img"><img src="images/n.jpg" alt=""></div>
+						<div class="text">
+							<h4>AG只是来看看</h4>
+							<p>还差<span>1</span>人，剩余22:03:26</p>
+						</div>
+					</div>
+					<div class="r">
+						<a href="">去成团</a>
+					</div>
+				</li>
+				<li>
+					<div class="l">
+						<div class="img"><img src="images/n.jpg" alt=""></div>
+						<div class="text">
+							<h4>AG只是来看看</h4>
+							<p>还差<span>1</span>人，剩余22:03:26</p>
+						</div>
+					</div>
+					<div class="r">
+						<a href="">去成团</a>
+					</div>
+				</li>
+				<li>
+					<div class="l">
+						<div class="img"><img src="images/n.jpg" alt=""></div>
+						<div class="text">
+							<h4>AG只是来看看</h4>
+							<p>还差<span>1</span>人，剩余22:03:26</p>
+						</div>
+					</div>
+					<div class="r">
+						<a href="">去成团</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<footer class="info-footer">
+		<a href="payInfo.html">单买价￥588</a>
+		<a href="payInfo.html">3人团￥<strong>520</strong></a>
+	</footer>
+</div>
+<!-- script begin -->
+<script src="scripts/vue.min.js"></script>
+<script src="scripts/axios.js"></script>
+<script src="scripts/vue-router.js"></script>
+<script>
+var app = new Vue({
+	el:"#app",
+	data:{
+		title:'商品详情页'
+	}, 
+	mounted:function(){
+	},
+	methods:{
+	},
+	watch:{
+	},
+	computed:{	
+	},
+	filters:{
+	}
+});
+</script>
+<!-- script end -->
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>我的团购</title>
+<link rel="stylesheet" href="styles/cardSelling.css">
+</head>
+<body>
+<div class="wrapper groupbuy-wrapper" id="app">
+	<header class="groupbuy-header">
+		<a class="dossen-header-left left" href="index.html">返回</a>
+		<h1>{{title}}</h1>
+	</header>
+	<div class="step-content">
+		<div class="step-num">
+			<p>第一步：选择心仪商品。</p>
+			<div class="img"><img src="images/step1.jpg" alt=""></div>
+			<p>第二步：填写个人信息并支付开团或拼团。</p>
+			<div class="img"><img src="images/step2.jpg" alt=""></div>
+			<p>第三步：分享团链接邀请好友参团。</p>
+			<div class="img"><img src="images/step3.jpg" alt=""></div>
+			<p>第四步：达到3人即可拼团成功。</p>
+			<div class="img"><img src="images/step4.jpg" alt=""></div>
+			<p>拼团成功：在活动有效时间内分享团链接找到3位好友参团，即该拼团成功，参团者将收到对应的订单信息。</p>
+			<div class="img"><img src="images/step5.jpg" alt=""></div>
+			<p>拼团失败：活动时间结束后，若拼团人数未达3人，则该团失败；或在活动有效时间内，商品已经售罄，而拼团人数仍未达3人，则该团也失败</p>
+		</div>
+		<div class="step-rule">
+			<h2>拼团规则</h2>
+			<p>1.活动满1人起参团才能起效；</p>
+			<p>2.活动结束后，拼团失败的参团者已支付的款项将原路返回；</p>
+			<p>3.活动期间，所有用户可以通过推荐参与到任意陌生人团购当中，拼团同样起效；</p>
+			<p>4.参与陌生人拼团，参团者的个人信息将得到妥善保密；</p>
+			<p>5.活动商品数量有限，售完即止。</p>
+		</div>
+	</div>
+</div>
+<!-- script begin -->
+<script src="scripts/vue.min.js"></script>
+<script src="scripts/axios.js"></script>
+<script src="scripts/vue-router.js"></script>
+<script>
+var app = new Vue({
+	el:"#app",
+	data:{
+		title:'拼团玩法'
+	}, 
+	mounted:function(){
+	},
+	methods:{
+	},
+	watch:{
+	},
+	computed:{	
+	},
+	filters:{
+	}
+});
+</script>
+<!-- script end -->
+</body>
+</html>

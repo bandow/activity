@@ -15,9 +15,9 @@
 <link rel="stylesheet" href="styles/cardSelling.css">
 </head>
 <body>
-<div class="wrapper" id="app" style="background:url(images/bg.png) top center no-repeat;background-size:100% auto;">
+<div class="wrapper" id="app" style="background:url(images/bg.png) top center #e500c2 no-repeat;background-size:100% auto;">
 	<header class="card-selling-header">
-		<a class="user-entry"><img src="images/user_icon.png" alt=""></a>
+		<a href="user.html" class="user-entry"><img src="images/user_icon.png" alt=""></a>
 		<div class="count-down">
 			<p>活动结束倒计时</p>
 			<div id="time"></div>
@@ -26,7 +26,7 @@
 	<div class="open-group">
 		<div class="title">
 			<img src="images/title1.png" alt="">
-			<a href="">拼团<br>玩法</a>
+			<a href="step.html">拼团<br>玩法</a>
 		</div>
 		<div class="content" style="background:url(images/title1_bg.png) center bottom no-repeat, -webkit-linear-gradient(-135deg, #ca3bde, #5c09f2),linear-gradient(-135deg, #ca3bde , #5c09f2);background-size:100% auto;">
 			<ul>
@@ -43,7 +43,7 @@
 						<div class="r">
 							<p>单买价￥{{item.price}}</p>
 							<h4>3人团￥<strong>{{item.prices}}</strong></h4>
-							<a href="">去开团</a>
+							<a href="info.html">去开团</a>
 						</div>
 					</div>
 					<div class="foot">
@@ -57,14 +57,14 @@
 	<div class="scare-buying">
 		<div class="title">
 			<img src="images/title2.png" alt="">
-			<a href="">拼团<br>玩法</a>
+			<a href="">抢购<br>攻略</a>
 		</div>
 		<div class="content" style="background:url(images/title2_bg.png) center bottom #e500c2 no-repeat;background-size:100% auto;">
 			<ul>
-				<li v-for="(item,$index) in items" v-on:click="selectStyle (item, $index) " v-bind:class="{'active':item.active,'unactive':!item.active}" >{{item.select}}</li>
+				<li v-for="(item,$index) in buyingItems" v-on:click="buyingSelectStyle (item, $index) " v-bind:class="{'buyingActive':item.active,'unBuyingActive':!item.active}" >{{item.buyingselect}}</li>
 			</ul>
 			<div class="card-list">
-				<div class="item" v-for="(item,index) in list" style="background: url(images/list1_top_bg.png) no-repeat center top, url(images/list1_bottom_bg.png) no-repeat center bottom, #fff;background-size:100% auto;">
+				<div class="item" v-for="(item,index) in privilege" style="background: url(images/list2_top_bg.png) no-repeat center top, url(images/list2_bottom_bg.png) no-repeat center bottom, #fff;background-size:100% auto;">
 					<h2>{{item.name}}</h2>
 					<div class="item-content">
 						<div class="l">
@@ -72,19 +72,19 @@
 							<p>{{item.imgName}}</p>
 						</div>
 						<div class="r">
-							<p>单买价￥{{item.price}}</p>
-							<h4>3人团￥<strong>{{item.prices}}</strong></h4>
-							<a href="">去开团</a>
+							<p>原价<del>￥{{item.price}}</del></p>
+							<h4>现价 <strong>{{item.num}}</strong>积分+<strong>{{item.prices}}</strong>元</h4>
+							<a href="">去抢购</a>
 						</div>
-					</div>
-					<div class="foot">
-						<p><em>{{item.userName}}</em><span>的3人团还差{{item.num}}人成团</span></p>
-						<a href="">去成团</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<div class="period"><i></i><p>没有啦，往上翻吧！</p><i></i></div>
+	<footer class="card-selling-footer">
+		<img src="images/footer.jpg" alt="">
+	</footer>
 </div>
 <!-- script begin -->
 <!-- <script src="scripts/jquery-3.1.1.min.js"></script> -->

@@ -41,50 +41,88 @@
           "num":"2"
         }
       ],
-      "tel":"123456789"
+      "groupbuyList":[
+        {
+          "name":"黑金卡1张+蓝海豚珠江夜游VIP 舱票1张套票",
+          "img":"images/product_img.jpg",
+          "imgName":"黑金卡游轮派对",
+          "btn":"邀请参团",
+          "status":"进行中",
+          "isMarching":true
+        },
+        {
+          "name":"黑金卡1张+蓝海豚珠江夜游VIP 舱票1张套票",
+          "img":"images/product_img.jpg",
+          "imgName":"黑金卡观影沙龙",
+          "btn":"查看团购",
+          "status":"已结束",
+          "isFinish":true
+        },
+        {
+          "name":"黑金卡1张+蓝海豚珠江夜游VIP 舱票1张套票",
+          "img":"images/product_img.jpg",
+          "imgName":"黑金卡观影沙龙",
+          "btn":"查看订单",
+          "status":"",
+          "isNot":true
+        }
+      ]
     },
-    "list1":{
-      "goldCardtList":[
+    "privilege":{
+      "privilege1":[
         {
-          "name":"金卡1张+蓝海豚珠江夜游VIP舱票1张 套票",
+          "name":"珠江夜游VIP船票1张+30元优惠券礼包1",
           "img":"images/product_img.jpg",
           "imgName":"黑金卡游轮派对",
           "price":"558",
-          "prices":"520",
-          "userName":"JasonBot",
+          "prices":"60",
           "num":"1"
         },
         {
-          "name":"金卡1张+格瓦拉电影票1张 套票",
+          "name":"珠江夜游VIP船票1张+30元优惠券礼包1",
           "img":"images/product_img.jpg",
           "imgName":"黑金卡观影沙龙",
           "price":"599",
-          "prices":"539",
-          "userName":"Subconan",
+          "prices":"60",
           "num":"2"
         }
       ],
-      "CenturionCardtList":[
+      "privilege2":[
         {
-          "name":"黑金卡1张+蓝海豚珠江夜游VIP舱票1张 套票",
+          "name":"珠江夜游VIP船票1张+30元优惠券礼包2",
           "img":"images/product_img.jpg",
           "imgName":"黑金卡游轮派对",
           "price":"558",
-          "prices":"520",
-          "userName":"JasonBot",
+          "prices":"60",
           "num":"1"
         },
         {
-          "name":"黑金卡1张+格瓦拉电影票1张 套票",
+          "name":"珠江夜游VIP船票1张+30元优惠券礼包2",
           "img":"images/product_img.jpg",
           "imgName":"黑金卡观影沙龙",
           "price":"599",
-          "prices":"539",
-          "userName":"Subconan",
+          "prices":"60",
           "num":"2"
         }
       ],
-      "tel":"123456789"
+      "privilege3":[
+        {
+          "name":"珠江夜游VIP船票1张+30元优惠券礼包3",
+          "img":"images/product_img.jpg",
+          "imgName":"黑金卡游轮派对",
+          "price":"558",
+          "prices":"60",
+          "num":"1"
+        },
+        {
+          "name":"珠江夜游VIP船票1张+30元优惠券礼包3",
+          "img":"images/product_img.jpg",
+          "imgName":"黑金卡观影沙龙",
+          "price":"599",
+          "prices":"60",
+          "num":"2"
+        }
+      ]
     }
   }
 }

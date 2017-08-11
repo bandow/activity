@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html id="html" lang="zh-cmn-Hans">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<title>我的团购</title>
+<link rel="stylesheet" href="styles/cardSelling.css">
+</head>
+<body>
+<div class="wrapper pay-info-wrapper" id="app">
+	<header class="groupbuy-header">
+		<a class="dossen-header-left left" href="index.html">返回</a>
+		<h1>{{title}}</h1>
+	</header>
+	<div class="groupbuy-content">
+		<div class="title">
+			<img src="images/groupbuy_title.png" alt="">
+			<i><img src="images/n.jpg" alt=""></i>
+		</div>
+		<div class="pay-success-content">
+			<h3>开团成功</h3>
+			<p>还差 2 人，活动剩余时间</p>
+			<div id="time"></div>
+			<div class="submit-success">
+				<div class="img-list">
+					<div class="img">
+						<img src="images/n.jpg" alt="">
+						<p>团长</p>
+					</div>
+					<div class="img"></div>
+					<div class="img"></div>
+				</div>
+				<p>成团后，立即升级黑金卡及发送礼包</p>
+				<div class="flow-path-sucess">
+					<p>选商品 </p>
+					<p>支付开团或拼团</p>
+					<p>邀请好友</p>
+					<p>拼团成功</p>
+				</div>
+				<a href="">立即邀请好友参团</a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- script begin -->
+<script src="scripts/vue.min.js"></script>
+<script src="scripts/axios.js"></script>
+<script src="scripts/vue-router.js"></script>
+<script>
+var app = new Vue({
+	el:"#app",
+	data:{
+		title:'支付成功',
+		list:new Array(),	
+	}, 
+	mounted:function(){
+	},
+	methods:{
+	},
+	watch:{
+	},
+	computed:{	
+	},
+	filters:{
+	}
+});
+</script>
+<script>
+	window.onload=function(){           
+       getMyTime();     
+    }
+    //前面补0
+    function p(n){
+        return n<10?'0'+n:n;
+    }
+    //倒计时
+    function getMyTime(){           
+        var startDate=new Date();
+        var endDate=new Date('2017/8/20 13:15:00');
+        var countDown=(endDate.getTime()-startDate.getTime())/1000;
+        var day=parseInt(countDown/(24*60*60));
+        var h=parseInt(countDown/(60*60)%24);
+        var m=parseInt(countDown/60%60);
+        var s=parseInt(countDown%60);                
+        document.getElementById('time').innerHTML='<em>'+p(day)+'</em>天<em>'+p(h)+'</em>时<em>'+p(m)+'</em>分<em>'+p(s)+'</em>秒';
+        setTimeout('getMyTime()',500);
+        if(countDown<=0){
+          document.getElementById('time').innerHTML='活动结束'; 
+        }              
+    }
+</script>
+<!-- script end -->
+</body>
+</html>
