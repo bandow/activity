@@ -326,26 +326,30 @@ html {
           box-shadow: 1px 3px 5px #ffa9d8; }
     .open-group .content .card-list .item .foot, .scare-buying .content .card-list .item .foot {
       padding-left: 5%;
+      height: 1.5rem;
       background-color: #651fff;
       border-radius: 5px;
       display: -webkit-flex;
       display: flex;
       align-items: center; }
-      .open-group .content .card-list .item .foot p, .scare-buying .content .card-list .item .foot p {
-        display: -webkit-flex;
-        display: flex;
-        align-items: center;
+      .open-group .content .card-list .item .foot .roll, .scare-buying .content .card-list .item .foot .roll {
         flex: 1;
-        color: #fff;
-        font: 0.6rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif; }
-        .open-group .content .card-list .item .foot p em, .scare-buying .content .card-list .item .foot p em {
-          width: 3rem;
-          color: #fffc00;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap; }
-        .open-group .content .card-list .item .foot p span, .scare-buying .content .card-list .item .foot p span {
-          flex: 1; }
+        height: 1.5rem;
+        overflow: hidden; }
+        .open-group .content .card-list .item .foot .roll ul li, .scare-buying .content .card-list .item .foot .roll ul li {
+          display: -webkit-flex;
+          display: flex;
+          align-items: center;
+          color: #fff;
+          font: 0.6rem/1.5rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif; }
+          .open-group .content .card-list .item .foot .roll ul li em, .scare-buying .content .card-list .item .foot .roll ul li em {
+            width: 3rem;
+            color: #fffc00;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap; }
+          .open-group .content .card-list .item .foot .roll ul li span, .scare-buying .content .card-list .item .foot .roll ul li span {
+            flex: 1; }
       .open-group .content .card-list .item .foot a, .scare-buying .content .card-list .item .foot a {
         padding: 2% 5%;
         background-color: #ff009f;

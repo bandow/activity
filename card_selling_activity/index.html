@@ -47,7 +47,15 @@
 						</div>
 					</div>
 					<div class="foot">
-						<p><em>{{item.userName}}</em><span>的3人团还差{{item.num}}人成团</span></p>
+						<div class="roll">
+							<ul>
+								<li><em>{{item.userName}}</em><span>的3人团还差{{item.num}}人成团</span></li>
+								<li><em>1{{item.userName}}</em><span>的3人团还差{{item.num}}人成团</span></li>
+								<li><em>2{{item.userName}}</em><span>的3人团还差{{item.num}}人成团</span></li>
+								<li><em>3{{item.userName}}</em><span>的3人团还差{{item.num}}人成团</span></li>
+								<li><em>4{{item.userName}}</em><span>的3人团还差{{item.num}}人成团</span></li>
+							</ul>
+						</div>
 						<a href="clustering.html">去成团</a>
 					</div>
 				</div>
@@ -87,7 +95,7 @@
 	</footer>
 </div>
 <!-- script begin -->
-<!-- <script src="scripts/jquery-3.1.1.min.js"></script> -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
 <script src="scripts/vue.min.js"></script>
 <script src="scripts/axios.js"></script>
 <script src="scripts/card-selling.js"></script>
@@ -114,6 +122,16 @@
           document.getElementById('time').innerHTML='活动结束'; 
         }              
     }
+</script>
+<script>
+	function AutoScroll(obj){ 
+	    $(obj).find("ul:first").animate({ 
+	            marginTop:"-31px" 
+	    },1000,function(){ 
+	            $(this).css({marginTop:"0px"}).find("li:first").appendTo(this); 
+	    });         
+	} 
+	setInterval('AutoScroll(".open-group .roll")',2500) 
 </script>
 <!-- script end -->
 </body>

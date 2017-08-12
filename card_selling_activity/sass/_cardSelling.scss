@@ -164,25 +164,30 @@
 				}
 				.foot{
 					padding-left:5%;
+					height:1.5rem;
 					background-color:#651fff;
 					border-radius:5px;
 					@include display(flex);
 					align-items:center;
-					p{
-						@include display(flex);
-						align-items:center;
+					.roll{
 						flex:1;
-						color:#fff;
-						font:.6rem/1.5 $publicFont;
-						em{
-							width:3rem;
-							color:#fffc00;
-							overflow: hidden;
-						    text-overflow: ellipsis;
-						    white-space: nowrap;
-						}
-						span{
-							flex:1;
+						height:1.5rem;
+						overflow:hidden;
+						ul li{
+							@include display(flex);
+							align-items:center;
+							color:#fff;
+							font:.6rem/1.5rem $publicFont;
+							em{
+								width:3rem;
+								color:#fffc00;
+								overflow: hidden;
+							    text-overflow: ellipsis;
+							    white-space: nowrap;
+							}
+							span{
+								flex:1;
+							}
 						}
 					}
 					a{
