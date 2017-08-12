@@ -11,35 +11,26 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
 <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
 <meta name="msapplication-tap-highlight" content="no">
-<title>我的团购</title>
+<title>升级豪礼，三人成团</title>
 <link rel="stylesheet" href="styles/cardSelling.css">
 </head>
 <body>
-<div class="wrapper pay-success-wrapper" id="app">
+<div class="wrapper clustering-wrapper" id="app">
 	<header class="groupbuy-header">
 		<a class="dossen-header-left left" href="index.html">返回</a>
-		<h1>{{title}}</h1>
+		<h1>升级豪礼，三人成团</h1>
 	</header>
-	<div class="groupbuy-content">
+	<div class="clustering-content">
 		<div class="title">
 			<img src="images/groupbuy_title.png" alt="">
-			<i><img src="images/n.jpg" alt=""></i>
-		</div>
-		<div class="pay-success-content">
-			<!-- 一人团购买成功 begin-->
-			<!-- 
-			<h3>升级成功</h3>
-			<p style="margin:.5rem 0 .3rem">恭喜你！已成功升级黑金卡并获赠礼包</p> 
-			-->
-			<!-- 一人团购买成功 end-->
-
-			<!-- 开团成功 begin-->
-			<h3>开团成功</h3>
-			<p>还差 2 人，活动剩余时间</p>
+			<!-- 此团已结束 begin-->
+			<!-- <h3>此团已结束</h3> -->
+			<!-- 此团已结束 end-->
+			<p>活动结束倒计时</p>
 			<div id="time"></div>
-			<!-- 开团成功 end-->
-			<div class="submit-success">
-				<!-- 一人团购买成功 begin-->
+		</div>
+		<div class="clustering">
+			<div class="clustering-text">
 				<div class="list">
 					<div class="img"><img src="images/product_img.jpg" alt=""></div>
 					<div class="text">
@@ -52,33 +43,57 @@
 						</p>
 					</div>
 				</div>
-				<!-- 一人团购买成功 end-->
-
-				<!-- 开团成功 begin-->
+				<p>已有 1 人成功参团</p>
+				<!-- 此团已结束 begin-->
+				<!-- <p>结束啦~请抓紧时间关注其它团吧</p> -->
+				<!-- 此团已结束 end-->
 				<div class="img-list">
 					<div class="img">
 						<img src="images/n.jpg" alt="">
 						<p>团长</p>
 					</div>
-					<div class="img"></div>
+					<div class="img"><img src="images/product_img.jpg" alt=""></div>
 					<div class="img"></div>
 				</div>
-				<p>成团后，立即升级黑金卡及发送礼包</p>
-				<div class="flow-path-sucess">
-					<p>选商品 </p>
-					<p>支付开团或拼团</p>
-					<p>邀请好友</p>
-					<p>拼团成功</p>
+				<div class="submit">
+					<h6>—请确认升级黑金卡的会员信息—</h6>
+					<div class="items">
+						<span>姓名</span>
+						<p><input type="text" placeholder="请输入参团人的姓名"></p>
+					</div>
+					<div class="items">
+						<span>电话</span>
+						<p><input type="tel" placeholder="请输入参团人的电话"></p>
+					</div>
+					<div class="items">
+						<span>
+							<select>
+								<option value="">身份证</option>
+								<option value="">军人证</option>
+							</select>
+						</span>
+						<p><input type="tel" placeholder="请输入证件"></p>
+					</div>
 				</div>
-				<a href="javascript:;" v-on:click="share">立即邀请好友参团</a>
-				<!-- 开团成功 end-->
 
-				<!-- 恭喜你！已有3人成功参团 begin-->
-				<div class="btn"><p>订单详情请留意<a href="">微信消息</a>或<a href="">短信通知</a></p></div>
-				<!-- 恭喜你！已有3人成功参团 end-->
+				<!-- 查看团购 begin -->
+				<!-- <a href="javascript:;" v-on:click="share">立即邀请好友参团</a> -->
+				<!-- 查看团购 end -->
+
+				<!-- 团购超时 begin -->
+				<!-- <a href="javascript:;" v-on:click="share">去开团</a> -->
+				<!-- 团购超时 end -->
+
+				<!-- 组团成功 一人团升级成功  积分抢购成功begin-->
+				<!-- <div class="btn"><p>订单详情请留意<a href="">微信消息</a>或<a href="">短信通知</a></p></div> -->
+				<!-- 组团成功 一人团升级成功  积分抢购成功end-->
 			</div>
 		</div>
 	</div>
+	<footer class="clustering-info-footer">
+		<p>实付款：<strong>￥520</strong></p>
+		<a href="paySuccess.html">去支付</a>
+	</footer>
 	<div v-bind:class="{'share':isActive,'share-active':!isActive}" v-on:click="shareTex">
 		<div class="img-top">
 			<img src="images/arrowhead.png" alt="">
@@ -98,8 +113,6 @@
 var app = new Vue({
 	el:"#app",
 	data:{
-		title:'支付成功',
-		list:new Array(),	
 		isActive:true,
 	}, 
 	mounted:function(){
