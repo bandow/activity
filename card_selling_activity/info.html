@@ -45,7 +45,7 @@
 						<div class="img"><img src="images/n.jpg" alt=""></div>
 						<div class="text">
 							<h4>AG只是来看看</h4>
-							<p>还差<span>1</span>人，剩余22:03:26</p>
+							<p>还差<span>1</span>人<em>22:03:26</em></p>
 						</div>
 					</div>
 					<div class="r">
@@ -57,7 +57,7 @@
 						<div class="img"><img src="images/n.jpg" alt=""></div>
 						<div class="text">
 							<h4>AG只是来看看</h4>
-							<p>还差<span>1</span>人，剩余22:03:26</p>
+							<p>还差<span>1</span>人<em>22:03:26</em></p>
 						</div>
 					</div>
 					<div class="r">
@@ -69,7 +69,7 @@
 						<div class="img"><img src="images/n.jpg" alt=""></div>
 						<div class="text">
 							<h4>AG只是来看看</h4>
-							<p>还差<span>1</span>人，剩余22:03:26</p>
+							<p>还差<span>1</span>人<em>22:03:26</em></p>
 						</div>
 					</div>
 					<div class="r">
@@ -85,9 +85,60 @@
 	</footer>
 </div>
 <!-- script begin -->
+<script src="scripts/jquery-3.1.1.min.js"></script>
 <script src="scripts/vue.min.js"></script>
 <script src="scripts/axios.js"></script>
 <script src="scripts/vue-router.js"></script>
+<script>
+	//window.onload=function(){           
+      	var timeAttr=['2018-5-29 10:40:44','2017-8-29 10:40:44','2023-8-16 10:40:44'];
+        var liArr=$(".info-content .info-foot ul li");
+
+      /*  for(var i=0;liArr.length>i;i++){
+        	liArr[i].index=i;
+       		liArr[i].id="time"+i;
+       		countDown(timeAttr[liArr[i].index], function (msg) {
+       			for(var j=0;liArr.length>j;j++){
+					document.querySelector("#time"+j).innerHTML=msg;
+       			}
+            });
+        }*/
+
+        $(".info-content .info-foot ul li").each(function(index,element){
+            liArr.eq(index).attr("id","time"+index);
+            countDown(timeAttr[index], function (msg) {
+                $("#time"+index).find("em").text(msg);
+            });
+        });   
+    //}
+    //前面补0
+    function p(n){
+        return n<10?'0'+n:n;
+    }
+    //倒计时方法
+     function countDown(time, fn) {
+        var maxtime = (new Date(time) - new Date()) / 1000;//剩余秒
+        var timer = setInterval(function () {
+            if (maxtime >= 0) {
+                var dd = parseInt(maxtime / 60 / 60 / 24, 10);//计算剩余的天数
+                var hh = parseInt(maxtime / 60 / 60 % 24, 10);//计算剩余的小时数
+                var mm = parseInt(maxtime / 60 % 60, 10);//计算剩余的分钟数
+                var ss = parseInt(maxtime % 60, 10);//计算剩余的秒数
+                hh = p(hh);
+                mm = p(mm);
+                ss = p(ss);
+
+                msg ="，剩余"+ dd + "天" + hh + "时" + mm + "分" + ss + "秒";
+                fn(msg);
+                --maxtime;
+            }
+            else {
+                clearInterval(timer);
+                fn("已结束");
+            }
+        }, 1000);
+    }
+</script>
 <script>
 var app = new Vue({
 	el:"#app",
