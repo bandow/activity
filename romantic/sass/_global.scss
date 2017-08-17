@@ -1,0 +1,189 @@
+@charset "UTF-8";
+@import "mixins";
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2016-10-18
+* Version:0.0.1
+* ================================================================== */
+*{margin:0; padding:0;}
+html {
+  font-family: $publicFont;
+  /*-webkit-text-size-adjust是解决 iPhone 横屏时默认会放大文字的问题*/
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%; }
+
+html, body {
+  /*-webkit-user-select:none禁止用户进行复制.选择.*/
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  /*使用min-height:100%代替height：100%*/
+  height: 100%;
+  min-height: 100%; 
+}
+body {
+  /*弹性滚动-局部滚动开启弹性滚动：将属性挂在body上，可以避免很多奇怪的bug。*/
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, div, mark, audio, video,input{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  /*把所有元素的内边距和边框不再会增加它的宽度*/
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  box-sizing: border-box; 
+-webkit-tap-highlight-color: rgba(0,0,0,0);}
+a{ text-decoration: none;}
+ol, ul {
+  list-style: none; }
+input[type="text"],input[type="button"]{ 
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-appearance: none;}
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+img{ @include img-responsive;}
+
+.wrapper {
+  width: 9.6rem;
+/*   max-width: 640px; */
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  position:relative;
+}
+.flexBox{
+  @include display(flex);
+}
+.flex-item{   
+  @include box-flex(1);
+
+}
+.fl{ float:left; }
+.fr{ float:right;}
+/* .fixWrap{
+  display:none;
+  width: 9.6rem;
+  margin: 0 auto; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  height: 100%;
+  left: 50%;
+  margin-left: -50%;
+  z-index:10;
+  @include min-screen(640px) {
+      margin-left:-320px;
+  }  
+}
+.fixWrap.on{
+  display:block;
+} */
+.loading{
+    width: 100%;
+    height: 100%;
+    top: 0;    
+    left: 50%;
+    margin-left:-50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    font-size:18px;
+}
+.warpContent{
+  display:none;
+}
+.warpContent.on{
+  display:block;
+}
+/*弹窗*/
+.fixContainer{
+    display: none;
+    font-size: .3rem;
+    position: fixed;
+    top:0;
+    left: 50%;
+    margin-left: -50%;
+    width: 9.6rem;
+    height:100%;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.7);
+    overflow: hidden; 
+    @include min-screen(640px) {
+      margin-left:-320px;
+    }
+    .fixContainer-inner{ 
+      border-radius: .4rem;
+      position: relative;
+      top:2.5rem;
+      /* min-height:8rem; */
+      margin: 0 .7rem;
+      padding: .5rem;
+      background: #fff; 
+      #close{
+        position: absolute;
+        right: .2rem;
+        top: .2rem;
+        display: block;
+        width: .49rem;        
+    }
+    .overflowBox{
+      overflow: auto;
+      max-height: 420px; 
+      margin-bottom: .4rem;
+      margin-top: .4rem;
+      min-height:4rem;
+      line-height: 150%;
+      color: #0c355b;     
+      &::-webkit-scrollbar{ /*隐藏滚动条*/
+        width:0;
+        height:0
+      }               
+    }
+    p{
+      font-size:.3rem;
+      line-height: 150%;
+      color: #0c355b;
+    }
+    .closeBtn{
+      @include center-block;
+      width:3.95rem;
+      @include font(.36rem,.7rem,.65rem);
+      margin-top: .5rem;
+      color: #fff;  
+      background-image: url("../images/dialog-btn.png");
+      @include bgicon;
+      text-align: center;
+      border-radius: .3rem;      
+    }         
+    }
+}
+.fixContainer.on{
+  display:block;
+}

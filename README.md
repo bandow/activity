@@ -62,3 +62,5 @@
 2017-07-27 新手礼包H5
 # card_selling_activity
 2017-08-10 售卡X活动
+# romantic
+2017-08-17  七夕活动

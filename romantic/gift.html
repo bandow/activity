@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">	
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/rem.js"></script>
+	<title>测测你的城市浪漫指数</title>
+</head>
+<style>
+  .wrapper.on {background-image: url("images/wrapbg.png"); }
+  .btn{background-image: url("images/btn-default.png");}
+  .s-btn{background-image: url("images/s-btn-default.png");}
+  .s-btn1{background-image: url("images/s-btn1.png");}
+  span.xique {background-image: url("images/xique.png"); }
+  span.xique-blue {background-image: url("images/xique-blue.png"); }
+  #gift-container .gift-content .gift-list li.active .xique-p span {
+        background-image: url("images/xique.png"); }  
+  #gift-container .gift-content .gift-list li.disabled .xique-p span { background-image: url("images/xique-dis.png");}
+  .fixContainer .fixContainer-inner .closeBtn {background-image: url("images/dialog-btn.png");}
+</style>
+<body>
+	<div class="wrapper2 wrapper" :class="{ on:!loading}" id="app">
+    <div class="warpContent container"  :class="{ on:!loading}">
+		    <img src="images/topbg2.png" class="topbg2" width="100%">
+        <div id="gift-container">
+            <div class="gift-title">
+                <span class="portrait"><img src="images/topbg.png"></span>
+                <div class="userBox">
+                    <span class="username">村口的李狗嗨</span>
+                    <span class="xiqueNUm">
+                      <span class="xique"></span>
+                      <span class="xique-text">喜鹊数：88个</span>
+                    </span>                    
+                </div>
+            </div>
+            <div class="gift-content">
+            <h2>选择礼物</h2>
+            <ul class="gift-list">
+                <li v-for="(item,index) in gifts" @click="chooseGift(event,index)" :class="{active: flag==index}" >
+                <p class="title-p">{{item.name}}</p>
+                <p class="xique-p"><span></span>×{{item.num}}</p>                    
+                </li> 
+            </ul>
+           <p class="tips">Tips:只能兑奖1次，奖品发放至手机号对应的会员账户~ </p>
+           <div class="get-gift clearfix">
+              <div class="field">
+                    <div class="field-l">手机号码</div>
+                    <div class="field-r">
+                        <input type="text" name="phone"  class="input-text" placeholder="请输入手机号码" v-model="phone">
+                    </div>   
+              </div>  
+              <div class="field">
+                    <div class="field-l">验证码</div>
+                    <div class="flexBox field-r">
+                        <input type="text" name="verifyCode"  class="input-text" placeholder="请输入验证码" id="verifyCode" v-model="verifyCode">
+                        <input @click.prevent="getVerifyCode" v-show="!computedTime" type="button" name="get-verifyCode" value="获取验证码" id="get-verifyCode">
+                       <input @click.prevent v-show="computedTime" type="button" :value="computedTime+'S后重新获取'" id="get-verifyCode">
+                   </div>   
+              </div> 
+            <div class="field">
+                <div class="s-btn" id="exchange" @click="exchangeSubmit">立即兑奖</div>
+                <div class="s-btn1 s-btn" id="collet" @click="openShare">收集喜鹊</div>
+            </div>
+          </div>            
+         </div>
+         <div class="bottom-img"><a href="romantic.html"><img src="images/banner.png"></a></div>
+        </div>
+         <section class="menuBox">
+            <a href="javascript:void(0)" @click="ruleDialog=true"><img src="images/icon4.png"></a>        
+        </section>     
+         <section class="menuBox2">
+            <a href="index.html"><img src="images/icon1.png"></a>        
+        </section>    
+        <section class="shareBox fixContainer" @click="share=false" :class="{ on:share}">
+            <img src="images/share.png" width="100%">           
+        </section> 
+
+        <!--活动规则-->
+        <section class="fixContainer ruleDialog" :class="{ on:ruleDialog}">
+            <div class="fixContainer-inner">
+            <span id="close" @click="ruleDialog=false"><img src="images/close.png"></span>       
+            <h2><img src="images/ruleTitle.png"></h2>
+            <div class="overflowBox">
+             <p>1. 8月23-28日</p>
+             <p>2. 每个浪漫故事可为故事发生的城市贡献5个浪漫指数；</p>
+             <p>3. 每个浪漫故事每收获1个喜鹊即可为其所在城市贡献1个浪漫指数；</p>
+             <p>4. 每个浪漫城市成功入住一个浪漫主题房，即可为这个城市增加10个浪漫指数；</p>
+             <p>5. 为了便于领取浪漫奖品及获得活动信息发布浪漫故事前须提前关注“东呈酒店”微信公众号；</p>
+             <p>6. 每人只有1次提交浪漫故事的机会，提交审核后，暂不支持修改故事内容；</p>
+             <p>7. 提交浪漫故事后工作人员会在1个工作日内后台对故事进行审核，审核不通过的故事可再次编辑重新提交审核；</p>
+             <p>8. 你的浪漫故事可分享给您的好友为你送上喜鹊，每人每天有3次送出喜鹊的机会；</p>
+             <p>9. 喜鹊可支持兑换奖品：</p>
+            </div>
+            <a href="javascript:void(0)" @click="ruleDialog=false" class="closeBtn">朕知道了</a>
+            </div>
+        </section> 
+
+        <!--兑换结果结果提示-->
+         <section class="fixContainer resultTip" :class="{ on:resultTip}">
+            <div class="fixContainer-inner">
+            <span id="close" @click="resultTip=false"><img src="images/close.png"></span>       
+            <h2><img src="images/tip-tit.png"></h2>
+            <div class="overflowBox" v-text="resultText"></div>
+            <a href="javascript:void(0)" @click="resultTip=false" class="closeBtn">朕知道了</a>
+            </div>
+        </section> 
+
+      </div>
+      <div class="loading" v-show="loading">正在加载中...</div>                     
+	</div>
+    <script type="text/javascript" src="js/rem.js"></script>
+    <script type="text/javascript" src="js/vue.min.js"></script>    
+    <script type="text/javascript" src="js/axios.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script>  
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                loading:true,
+                ruleDialog:false,
+                resultTip:false,
+                share:false,
+                phone:'',
+                computedTime:0,  //倒数记时
+                verifyCode:'',
+                gifts:[
+                     {name:'100积分',num:'20'},
+                     {name:'30元酒店红包',num:'50'},
+                     {name:'优酷月卡',num:'80'},
+                     {name:'2D/3D通兑电影票×2',num:'100'},
+                     {name:'珠江夜游船票×2',num:'200'}
+                ],
+                flag:-1,
+                disabledFlag:[1,2],
+                resultText:"恭喜你，成功兑换七夕浪漫礼物！"
+            },
+            mounted(){
+               this.loading=false;  
+            },
+            methods:{              
+               exchangeSubmit(){
+                var _this=this;
+                var phone=_this.phone;
+                var verifyCode=_this.verifyCode;
+                
+                //兑换提交
+                if(phone==""){
+                    alert('请输入手机号码');
+                    return;
+                }else if(!_this.isPhone(phone)){
+                   alert('手机号号码格式错误');
+                   return
+                }else if(verifyCode==""){
+                    alert('请输入验证码');
+                    return;
+                }
+                axios.post('/', {
+                    phone:phone,
+                    verifyCode:verifyCode
+                  }).then(function (response) {
+                    //成功
+                    //领取结果显示
+                    _this.resultText=response;
+                    _this.resultTip=true; 
+
+                  }).catch(function (response) {
+                    //失败
+                    alert(response);                 
+                });               
+               },
+               openShare(){
+                this.share=true;
+               },
+               chooseGift(event,index){
+                var target=event.currentTarget;
+                if(this.hasClass(target,'disabled')){
+                    return;
+                }
+                this.flag=index;
+              },            
+              getVerifyCode(){
+                //获取短信验证码
+                var _this=this;
+                if(_this.phone==''){
+                  alert('请输入您的手机号码');
+                  return
+                }else if(!_this.isPhone(_this.phone)){
+                   alert('手机号号码格式错误');
+                   return
+                }               
+                _this.computedTime = 60;
+                _this.timer=setInterval(function(){
+                  _this.computedTime --;
+                  console.log(_this.computedTime)
+                  if(_this.computedTime==0){
+                    clearInterval(_this.timer)
+                  }
+                },1000);
+                axios.get('/', {
+                  }).then(function (response) {
+                    //成功
+                  }).catch(function (response) {
+                    //失败
+                    alert(response);
+                 });
+              },
+              addClass(obj, cls) {  //js添加class函数
+                if (!this.hasClass(obj, cls)) obj.className +=' ' + cls;  
+              },
+              hasClass(obj, cls) {  //js判断是不是有该class函数
+                return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));  
+              },
+              isPhone: function (string) {
+                var reg =/^1(3|4|5|7|8)\d{9}$/; 
+                return reg.test(string);
+              }   
+            }          
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+@charset "UTF-8";
+$publicFont:"Microsoft YaHei";
+$global-font-size-small:0.3rem;
+$global-font-size:0.75rem;
+$text-color:#3c3c3c;
+$border-color:#ddd;
+$border-radius:0.15rem;
+$global-color:#0096f0; 
+$ui-select-h:2rem; //下拉框高度
+$red:#f00;
+
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+@mixin bgicon(){
+  background-size: 100%;
+  background-repeat:no-repeat;
+  background-position: center center;
+}
+@mixin font($size,$height,$lineHeight){
+  font-size: $size;
+  height: $height;
+  line-height: $lineHeight;
+}
+
+@mixin center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@mixin img-responsive($display: block) {
+  display: $display;
+  max-width: 100%;
+  height: auto; 
+}
+// Requires inline-block or block for proper styling
+@mixin text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+          box-shadow: $shadow;
+}
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+     -moz-box-sizing: $boxmodel;
+          box-sizing: $boxmodel;
+}
+//box-shadow
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;  // iOS <4.3 & Android <4.1
+  -moz-box-shadow: $shadow;
+  -ms-box-shadow: $shadow;
+  -o-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+  -moz-box-sizing: $boxmodel;
+  -ms-box-sizing: $boxmodel;
+  -o-box-sizing: $boxmodel;
+  box-sizing: $boxmodel; 
+}
+
+//属性规定元素应该被划分的列数
+@mixin column-count($column-count){
+  -moz-column-count:$column-count;      /* Firefox */
+  -webkit-column-count:$column-count;  /* Safari 和 Chrome */
+  column-count:$column-count;          /* Internet Explorer 10 and Opera Support */
+}
+//属性规定列之间的间隔
+@mixin column-gap($column-count-gap){
+  -moz-column-gap:$column-count-gap;       /* Firefox */
+  -webkit-column-gap:$column-count-gap;   /* Safari 和 Chrome */
+  column-count:$column-count-gap;        /* Internet Explorer 10 and Opera Support */
+}
+//属性规定元素应横跨多少列
+@mixin column-span($column-span){      
+  -moz-column-span: $column-span;     /* Firefox */
+  -webkit-column-span: $column-span;  /* Safari 和 Chrome */    
+  column-span: $column-span;          /* Internet Explorer 10 and Opera Support */
+}
+//规定列之间的宽度、样式和颜色规则
+@mixin column-rule($column-rule){
+  -moz-column-rule: $column-rule;     /* Firefox */
+  -webkit-column-rule: $column-rule;  /* Safari 和 Chrome */  
+  column-rule: $column-rule;          /* Internet Explorer 10 and Opera Support */
+}
+//transform 
+@mixin transform($transforms){
+  -webkit-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  -o-transform: $transforms;
+  transform: $transforms;
+}
+//transform origin
+@mixin transform-origin ($origin) {
+  -webkit-transform-origin: $origin;
+  -moz-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -o-transform-origin: $origin;  
+  transform-origin: $origin;
+}
+//rotate
+@mixin rotate($deg){
+  @include transform(rotate(#{$deg}deg));
+}
+//scale
+@mixin scale($x,$y){
+  @include transform(scale(#{$x},#{$y}));
+}
+//translate
+@mixin translate($x,$y){
+  @include transform(translate(#{$x},#{$y}));
+}
+//skew
+@mixin skew($x,$y){
+  @include transform(skew(#{$x}deg,#{$y}deg));
+}
+//transition all
+@mixin transition($transition){
+  -moz-transition:$transition;
+  -o-transition:$transition;
+  -ms-transition:$transition;
+  -webkit-transition:$transition;
+  transition:$transition;
+}
+//transition-property css name
+@mixin transition-property($property){
+  -moz-transition-property:$property;
+  -o-transition-property:$property;
+  -ms-transition-property:$property;
+  -webkit-transition-property:$property;
+  transition-property:$property;
+}
+//transition-duration  time
+@mixin transition-duration($duration){
+  -moz-transition-duration:$duration;
+  -o-transition-duration:$duration;
+  -ms-transition-duration:$duration;
+  -webkit-transition-duration:$duration;
+  transition-duration:$duration;
+}
+//transition-timing-function curve
+@mixin transition-timing-function($timing){
+  -moz-transition-timing-function:$timing;
+  -o-transition-timing-function:$timing;
+  -ms-transition-timing-function:$timing;
+  -webkit-transition-timing-function:$timing;
+  transition-timing-function:$timing;
+}
+//transition-delay
+@mixin transition-delay($delay){
+  -moz-transition-delay:$delay;
+  -o-transition-delay:$delay;
+  -ms-transition-delay:$delay;
+  -webkit-transition-delay:$delay;
+  transition-delay:$delay;
+}
+//animation all
+@mixin keyframes($animationName) { 
+  @-webkit-keyframes #{$animationName}
+  { 
+    @content; 
+  } 
+  @-moz-keyframes #{$animationName}
+  { 
+    @content; 
+  } 
+  @-o-keyframes #{$animationName}
+  {
+    @content; 
+  } 
+  @keyframes #{$animationName}
+  { 
+    @content; 
+  }
+}
+@mixin animation($animation){ 
+  -moz-animation:$animation;
+  -webkit-animation:$animation;
+  -o-animation:$animation;
+  animation:$animation; 
+}
+//flex
+@mixin display($flex){
+    display: -webkit-flex;
+    display: flex;   
+    display: -moz-#{$flex}; 
+    display: -webkit-#{$flex}; 
+    display: #{$flex};
+}
+// box-flex
+@mixin  box-flex($num){
+      flex:$num;
+     -webkit-flex:$num;
+    -moz-box-flex: $num; 
+    -webkit-box-flex: $num; 
+    box-flex: $num;
+}
+//min-screen
+@mixin min-screen($res){
+  @media only screen and ( min-width: $res )
+  {
+    @content;
+  }
+}
+//max-screen
+@mixin max-screen($res){
+  @media only screen and ( max-width: $res )
+  {
+    @content;
+  }
+}
+

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">	
+    <link rel="stylesheet" type="text/css" href="css/index.css">   
+	<title>测测你的城市浪漫指数</title>
+</head>
+<style>
+  .wrapper.on {background-image: url("images/wrapbg.png"); }
+  .city-select-swiper {background-image: url("images/citybg.png"); }   
+  .city-select-swiper .city-select-swiper-wrap {background-image: url("images/line.png");} 
+  .btn{background-image: url("images/btn-default.png");}
+  .btn1 {background-image: url("images/btn1.png"); }
+  span.xique {background-image: url("images/xique.png"); }
+  span.xique-blue {background-image: url("../images/xique-blue.png");}
+  .fixContainer .fixContainer-inner .closeBtn {background-image: url("images/dialog-btn.png");}
+</style>
+<body>
+	<div class="wrapper" :class="{ on:!loading}" id="app">
+        <div class="warpContent container"  :class="{ on:!loading}">
+    		<img src="images/topbg.png" class="topbg" width="100%">
+    		<div id="home-container">
+    			<img src="images/ro-title1.png" class="title title2">
+                <div class="screen-list">
+                   <div class="screen-list-inner">                       
+                        <div class="screen-item" v-for="(item,key) in userData"  @click="openUserContainer(item)" ref="screenItem">
+                            <img :src="item.img">
+                            <div class="screenText">{{item.story}}</div>
+                        </div>
+                    </div>
+                </div>
+    		    <div class="city-select-swiper">
+    		        <div class="city-select-swiper-wrap">
+    			        <div class="swiper-container-wrap" @touchmove.prevent>
+    						<div class="swiper1 swiper-container" @touchmove.prevent>
+    						  <div class="swiper-wrapper" @touchmove.prevent>
+    						    <div class="swiper-slide" v-for="(item,key) in provinces" :id="key" @touchmove.prevent>{{item}}</div>
+    						  </div>
+    					    </div>
+    					</div>
+    					<div class="swiper-container-wrap" @touchmove.prevent>
+    						<div class="swiper2 swiper-container" @touchmove.prevent>
+    						  <div class="swiper-wrapper" @touchmove.prevent>
+    						    <div class="swiper-slide" v-for="(city,key) in citys" @touchmove.prevent>{{city}}</div>
+    						  </div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>	
+    			<div class="btn" @click="submit"><a href="romantic-result.html">来来来&nbsp;测一测</a></div>
+    			<div class="btn1 btn"><a href="romantic.html">不测了&nbsp;我足够浪漫</a></div>
+    		</div>
+            <section class="menuBoxAct menuBox" :class="{shou:menushou}">
+                <a href="javascript:void(0)" @click="menushou=!menushou"><img src="images/icon1.png"></a>
+                <a href="publish.html"><img src="images/icon2.png"></a>
+                <a href="gift.html"><img src="images/icon3.png"></a>
+                <a href="javascript:void(0)" @click="ruleDialog=true"><img src="images/icon4.png"></a>           
+            </section> 
+            <section class="shareBox fixContainer" @click="share=false" :class="{ on:share}">
+                <img src="images/share.png" width="100%">           
+            </section>             
+            <section class="fixContainer ruleDialog" :class="{ on:ruleDialog}">
+                <div class="fixContainer-inner">
+                <span id="close" @click="ruleDialog=false"><img src="images/close.png"></span>       
+                <h2><img src="images/ruleTitle.png"></h2>
+                <div class="overflowBox">
+                 <p>1. 8月23-28日</p>
+                 <p>2. 每个浪漫故事可为故事发生的城市贡献5个浪漫指数；</p>
+                 <p>3. 每个浪漫故事每收获1个喜鹊即可为其所在城市贡献1个浪漫指数；</p>
+                 <p>4. 每个浪漫城市成功入住一个浪漫主题房，即可为这个城市增加10个浪漫指数；</p>
+                 <p>5. 为了便于领取浪漫奖品及获得活动信息发布浪漫故事前须提前关注“东呈酒店”微信公众号；</p>
+                 <p>6. 每人只有1次提交浪漫故事的机会，提交审核后，暂不支持修改故事内容；</p>
+                 <p>7. 提交浪漫故事后工作人员会在1个工作日内后台对故事进行审核，审核不通过的故事可再次编辑重新提交审核；</p>
+                 <p>8. 你的浪漫故事可分享给您的好友为你送上喜鹊，每人每天有3次送出喜鹊的机会；</p>
+                 <p>9. 喜鹊可支持兑换奖品：</p>
+                </div>
+                <a href="javascript:void(0)" @click="ruleDialog=false" class="closeBtn">朕知道了</a>
+                </div>
+            </section>
+
+            <!--点击头像弹窗-->
+            <setion class="fixContainer userContainer" :class="{ on:userContainer}">
+                 <div class="fixContainer-inner">
+                     <span id="close" @click="closeUserContainer"><img src="images/close.png"></span> 
+                     <div class="user-title">
+                        <span class="portrait"><img :src="currentUser.img"></span>
+                        <div class="userBox">
+                            <span class="username">{{currentUser.name}}</span>
+                            <span class="xiqueNUm">
+                                <span class="xique-blue"></span>
+                                <span class="xique-text">喜鹊数：{{currentUser.xqNum}}个</span>
+                            </span>
+                        </div>
+                    </div> 
+                    <div class="overflowBox">
+                      {{currentUser.story}}
+                    </div> 
+                    <div class="field">
+                        <div class="s-btn" id="collet" @click="share=true">送他喜鹊</div>
+                    </div>                                
+                </div>                 
+            </setion> 
+        </div>
+        <div class="loading" v-show="loading">正在加载中...</div>              
+	</div>
+
+	<script type="text/javascript" src="js/rem.js"></script> 
+	<script type="text/javascript" src="js/vue.min.js"></script>	
+	<script type="text/javascript" src="js/axios.min.js"></script>
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script type="text/javascript" src="js/jsAddress.js"></script>
+  <script type="text/javascript" src="js/fastclick.js"></script> 
+    <script>
+        var swiper1,swiper2;
+    	var app=new Vue({
+    		el:'#app',
+    		data:{
+              loading:true,
+	            provinces:[],
+	            citys: [],
+	            dafaultProv: '广东',
+	            defaultCity: '广州市',
+	            dafaultProveIndex:3,
+	            defaultCityIndex:0,
+                ruleDialog:false,
+                menushou:false ,
+                share:false,
+                userContainer:false,
+                userData:[
+                   {name:"村口的李狗嗨",xqNum:"88",story:"故事内容故事内容故事内容故事内容",img:"images/topbg.png"},
+                   {name:"都喜欢都喜欢",xqNum:"34",story:"故事内容故事内容故事内容故事内容",img:"images/topbg1.png"},  
+                   {name:"发货多个",xqNum:"50",story:"故事内容故事内容故事内容故事内容",img:"images/citybg.png"},  
+                   {name:"名字名字",xqNum:"88",story:"故事内容故事内容故事内容故事内容",img:"images/btn1.png"},  
+                   {name:"额度由",xqNum:"20",story:"故事内容故事内容故事内容故事内容",img:"images/icon2.png"},
+                   {name:"我们的的世界",xqNum:"20",story:"多喜欢你都喜欢是这个是这个都喜欢得分最高",img:"images/icon3.png"},
+                   {name:"我们世界",xqNum:"20",story:"二三线在电话中好就是这个为啥这个吧市总工会是这个声音",img:"images/icon3.png"},
+                   {name:"我们世界",xqNum:"20",story:"二三线在电话中好就是这个为啥这个吧市总工会是这个声音",img:"images/icon3.png"},  
+                   {name:"我们世界",xqNum:"20",story:"二三线在电话中好就是这个为啥这个吧市总工会是这个声音",img:"images/icon3.png"},
+                   {name:"我们世界",xqNum:"20",story:"二三线在电话中好就是这个为啥这个吧市总工会是这个声音",img:"images/icon3.png"},  
+                   {name:"我们世界",xqNum:"20",story:"二三线在电话中好就是这个为啥这个吧市总工会是这个声音",img:"images/icon3.png"}              
+                ],
+                currentUser:[]           
+	        },
+    		created(){
+                this.provinceList=getProvince(); 
+                this.provinces=getCityProv();
+                this.citys=getCityByProv(this.dafaultProv);                 
+                this.defaultCityFun();
+    		},
+    		mounted(){
+                var _this=this;
+                swiper2 = new Swiper('.swiper2', {
+                    height:0.8*getRem(),
+                    direction: 'vertical',
+                    initialSlide:this.defaultCityIndex,
+                    freeModeSticky:true,
+                    observer:true,
+                    observeParents:true,                    
+                    onTransitionEnd:function(swiper){
+                        //console.log(swiper.activeIndex);
+                    }
+                });                  
+                swiper1=new Swiper('.swiper1', {
+                    height:0.8*getRem(),
+                    direction: 'vertical',
+                    initialSlide:this.dafaultProveIndex,
+                    freeModeSticky:true,
+                    observer:true,
+                    observeParents:true,                    
+                    onTransitionEnd:function(swiper){                       
+                        _this.citys=getCityByProv(swiper.slides[swiper.activeIndex].innerHTML);
+                        swiper2.slideTo(0);
+                    }
+                });                
+               
+                this.loading=false; 
+                this.$refs.screenItem.map(function(obj,index){                   
+                    setTimeout(function(){
+                        obj.style.top=_this.randomTop()+'px';
+                        _this.addClass(obj,'on');
+                    },Math.random()*6000);
+                });                     
+    		},
+    		computed(){
+    		},
+    	    methods:{              
+               submit(){
+                var _this=this;
+                var province=swiper1.slides[swiper1.activeIndex].innerHTML;
+                var city=swiper2.slides[swiper2.activeIndex].innerHTML;
+                //数据提交
+                axios.post('/', {
+                    province:province,
+                    city:city
+                  }).then(function (response) {
+                    //成功
+                    console.log(province+','+city);
+                    //alert(response);
+                  }).catch(function (response) {
+                    //失败
+                    alert(response);
+                 });
+                },
+                defaultCityFun(){
+                    //默认省份和城市
+                    provinceList.map(function(obj,index){
+                        this.provinces.push(obj.name);
+                        if(obj.name==this.dafaultProv){
+                            this.dafaultProveIndex=index;
+                            var cityList=obj.cityList;
+                            cityList.map(function(cityobj,cityindex){
+                                this.citys.push(cityobj.name);
+                                if(cityobj.name==this.defaultCity){
+                                   this.defaultCityIndex=cityindex;
+                               }
+                            },this);            
+                        }
+                    },this);
+               },
+               openUserContainer(obj){
+                  //console.log(obj);
+                  //初始化个人信息
+                  this.currentUser.name=obj.name;
+                  this.currentUser.xqNum=obj.xqNum;
+                  this.currentUser.story=obj.story;
+                  this.currentUser.img=obj.img;
+                  this.userContainer=true;
+              },
+              closeUserContainer(){
+                this.userContainer=false;
+              },
+              randomTop(){
+                //console.log(Math.random()*getRem()*0.08+','+getRem());
+                //弹屏随机top
+                return Math.random()*getRem()*2.65;
+              },
+              addClass(obj, cls) {  //js添加class函数
+                if (!this.hasClass(obj, cls)) obj.className +=' ' + cls;  
+              },
+              hasClass(obj, cls) {  //js判断是不是有该class函数
+                return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));  
+             } 
+
+
+           }
+    });            
+    </script>
+</body>
+
+</html>

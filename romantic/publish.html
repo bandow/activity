@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">	
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+	<title>测测你的城市浪漫指数</title>
+<style>
+  .wrapper.on {background-image: url("images/wrapbg.png"); }
+  .btn{background-image: url("images/btn-default.png");}
+  .s-btn{background-image: url("images/s-btn-default.png");}
+  .s-btn1{background-image: url("images/s-btn1.png");}
+  .selectBox select{background-image: url("images/arrow.png");}
+  .fixContainer .fixContainer-inner .closeBtn {background-image: url("images/dialog-btn.png");}
+</style>    
+</head>
+<body>
+	<div class="wrapper"  :class="{ on:!loading}" id="app">
+        <div class="warpContent container"  :class="{ on:!loading}">
+    		<img src="images/topbg.png" class="topbg">
+            <div id="publish-container">
+                <img src="images/ro-title2.png" class="title title2">
+                <div class="pub-content">
+
+                    <!--还没有发布故事显示 start-->
+                    <div id="no-publish">
+                        <div class="pub-address">
+                            <div class="pub-label"><img src="/images/romantic-text.png"></div>
+                            <div class="pub-province pub-item">
+                                <div class="selectBox">
+                                    <select class="selectProvince" v-model="currentProv"  ref="selectProvince" @change="changeCity(event)">
+                                        <option v-for="(province,key) in provinces" :key="key" :value="province">{{province}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="pub-city pub-item">
+                                <div class="selectBox">
+                                    <select class="selectCity" ref="selectCity">
+                                        <option v-for="(city,key) in citys" :key="key" :value="city">{{city}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textareaBox">
+                            <textarea name="pubtext" rows="6" placeholder="点击输入你的爱情故事或浪漫宣言或你想怎么度过这个浪漫的七夕" v-model="romanticText"></textarea>    
+                        </div>           
+                		<div class="btn" @click="submit">发布故事</div>
+                    </div>
+                    <!--还没有发布故事显示 end-->
+
+                    <!--已经发布故事显示 start-->
+                    <div id="no-publish">
+                        <div class="pub-address">
+                            <div class="pub-label"><img src="/images/romantic-text.png"></div>
+                            <div class="pub-province pub-item">
+                                <div class="selectBox">
+                                    <div>广东</div>
+                                </div>
+                            </div>
+                            <div class="pub-city pub-item">
+                                <div class="selectBox">
+                                    <div>广州市</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="textareaBox disabled">
+                            <textarea rows="6" placeholder="点击输入你的爱情故事或浪漫宣言或你想怎么度过这个浪漫的七夕" disabled>已经输入故事内容已经输入故事内容已经输入故事内容</textarea> 
+                        </div> 
+                        <p class="tips">您的故事已经成功发布，为城市浪漫指数献上5分</p>             
+                        <div class="field">
+                            <div class="s-btn" id="exchange"><a href="gift.html">立即兑奖</a></div>
+                            <div class="s-btn1 s-btn" id="collet" @click="share=true">收集喜鹊</div>
+                        </div>   
+                    </div>
+                    <!--已经发布故事显示 end-->   
+
+                    <div class="bottom-img"><a href="romantic.html"><img src="images/banner.png"></a></div>
+                </div>
+            </div> 
+             <section class="menuBox">
+                <a href="javascript:void(0)" @click="ruleDialog=true"><img src="images/icon4.png"></a>        
+            </section>     
+             <section class="menuBox2">
+                <a href="index.html"><img src="images/icon1.png"></a>        
+            </section> 
+            <section class="shareBox fixContainer" @click="share=false" :class="{ on:share}">
+                <img src="images/share.png" width="100%">           
+            </section> 
+
+            <!--活动规则-->      
+            <section class="fixContainer ruleDialog" :class="{ on:ruleDialog}">
+                <div class="fixContainer-inner">
+                    <span id="close" @click="ruleDialog=false"><img src="images/close.png"></span>       
+                    <h2><img src="images/ruleTitle.png"></h2>
+                    <div class="overflowBox">
+                        <p>1. 8月23-28日</p>
+                        <p>2. 每个浪漫故事可为故事发生的城市贡献5个浪漫指数；</p>
+                        <p>3. 每个浪漫故事每收获1个喜鹊即可为其所在城市贡献1个浪漫指数；</p>
+                        <p>4. 每个浪漫城市成功入住一个浪漫主题房，即可为这个城市增加10个浪漫指数；</p>
+                        <p>5. 为了便于领取浪漫奖品及获得活动信息发布浪漫故事前须提前关注“东呈酒店”微信公众号；</p>
+                        <p>6. 每人只有1次提交浪漫故事的机会，提交审核后，暂不支持修改故事内容；</p>
+                        <p>7. 提交浪漫故事后工作人员会在1个工作日内后台对故事进行审核，审核不通过的故事可再次编辑重新提交审核；</p>
+                        <p>8. 你的浪漫故事可分享给您的好友为你送上喜鹊，每人每天有3次送出喜鹊的机会；</p>
+                        <p>9. 喜鹊可支持兑换奖品：</p>
+                    </div>
+                    <a href="javascript:void(0)" @click="ruleDialog=false" class="closeBtn">朕知道了</a>
+                </div>
+            </section>
+            <!--微信二维码-->
+           <setion class="fixContainer wxContainer" :class="{ on:wxContainer}">
+              <div class="fixContainer-inner">
+                  <span id="close" @click="wxContainer=false"><img src="images/close.png"></span> 
+                  <div class="wx-title">
+                       <img src="images/tip-tit.png">
+                  </div> 
+                 <div class="wx-text">
+                    <p>为便于领取奖品及获得活动信息</p>
+                    <p>发布故事前需关注"东呈酒店"噢</p>
+                 </div> 
+                 <div class="wx-code">
+                    <img src="images/wxcode.png">
+                 </div>
+                 <p>长按识别关注"东呈酒店"</p>                                
+             </div>                 
+         </setion>    
+        </div>
+        <div class="loading" v-show="loading">正在加载中...</div>                     
+	</div>   
+    <script type="text/javascript" src="js/rem.js"></script>
+    <script type="text/javascript" src="js/vue.min.js"></script>  
+    <script type="text/javascript" src="js/jsAddress.js"></script>   
+    <script type="text/javascript" src="js/axios.min.js"></script>
+    <script type="text/javascript" src="js/fastclick.js"></script> 
+    <script>
+        var vm=new Vue({
+            el:'#app',
+            data:{
+                loading:true,
+                provinceList:[],
+                provinces:[],
+                citys: [],            
+                currentProv: '广东',
+                currentCity: '广州市',             
+                ruleDialog:false,    //是否显活动规则
+                share:false,         //是否显示分享
+                wxContainer:false,   //是否显示关注二维码弹窗
+                romanticText:''      
+            },
+            created(){
+                this.provinceList=getProvince();
+                this.provinces=getCityProv();
+                this.citys=getCityByProv(this.currentProv);                    
+            },
+            mounted(){   
+               this.loading=false;        
+            },
+            computed:{
+            },
+            methods:{                  
+                submit(){
+                    if(this.romanticText==""){
+                      alert('输入你的爱情故事');
+                    return;
+                    }
+                    var province=this.$refs.selectProvince.value;
+                    var city=this.$refs.selectCity.value;                       
+                    var romanticText=this.romanticText;                
+                    axios.post('/', {
+                       province,province,
+                       city:city,
+                       romanticText:romanticText
+                    }).then(function (response) {
+                    //成功
+                       console.log(romanticText+','+province+','+city);
+                    }).catch(function (response) {
+                    //失败
+                       console.log(response);
+                    });               
+               },
+               changeCity(event){
+                var provin=event.target.value;
+                this.citys=getCityByProv(provin);                
+                this.$refs.selectCity.selectedIndex=0;
+               }
+           }          
+        });
+       
+    </script>    
+</body>
+</html>
