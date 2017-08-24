@@ -17,7 +17,7 @@ var app = new Vue({
 	mounted:function(){
 		var _this = this;
 		this.$nextTick(function(){
-			axios.get('http://10.44.61.25/activity/card_selling_activity/data/cardSelling.json')
+			axios.get('http://10.44.61.27/activity/card_selling_activity/data/cardSelling.json')
 			.then(
 				function(retObj){
 					if(retObj.status == 200){
@@ -38,7 +38,7 @@ var app = new Vue({
 　　　　　　　　　　Vue.set(item,'active',false);
 　　　　　　　　});
 　　　　　　　　Vue.set(item,'active',true);
-				axios.get('http://10.44.61.25/activity/card_selling_activity/data/cardSelling.json')
+				axios.get('http://10.44.61.27/activity/card_selling_activity/data/cardSelling.json')
 				.then(
 					function(retObj){
 						if(retObj.status == 200){
@@ -61,7 +61,7 @@ var app = new Vue({
 　　　　　　　　　　Vue.set(item,'active',false);
 　　　　　　　　});
 　　　　　　　　Vue.set(item,'active',true);
-				axios.get('http://10.44.61.25/activity/card_selling_activity/data/cardSelling.json')
+				axios.get('http://10.44.61.27/activity/card_selling_activity/data/cardSelling.json')
 				.then(
 					function(retObj){
 						if(retObj.status == 200){
