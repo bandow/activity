@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+<div class="wrapper enroll-wrapper" id="app" style="background:url(images/finish_bg.jpg) no-repeat;background-size:100% auto;">
+	<div class="enroll-content" v-bind:class="{active:!loading}">
+		<div class="top"><img src="images/enroll_title.png" alt=""></div>
+		<form v-on:submit.prevent="submit">
+			<div class="item">
+				<span>姓名</span>
+				<div><input type="text" v-model="name"></div>
+			</div>
+			<div class="item">
+				<span>手机号码</span>
+				<div><input type="tel" v-model="tel"></div>
+			</div>
+			<div class="item">
+				<span>试睡酒店</span>
+				<div>
+					<select v-model="selected">
+						<option value="">下拉框选择</option>
+						<option v-for="option in options" v-bind:id="option.id">  
+						    {{ option.text }}  
+						</option>  
+					</select>
+				</div>
+			</div>
+			<div class="item">
+				<span>报名宣言</span>
+				<div>
+					<textarea v-model="textareas"></textarea>
+				</div>	
+			</div>
+			<button type="submit">提交</button>
+		</form>
+	</div>
+	<div class="promptBox" v-bind:class="{active:alertShow}">
+		<p>{{alertText}}</p>
+	</div>
+	<div class="mask-share" v-bind:class="{active:maskShare}" v-on:click="clickMaskShare">
+		<div class="img"><img src="images/share.png" alt=""></div>
+	</div>
+	<div class="loading" v-show="loading">正在加载中...</div>
+</div>
+<!-- scripts begin -->
+<script src="scripts/flexible.js" async="async"></script>
+<script src="scripts/vue.min.js"></script>
+<script src="scripts/axios.js"></script>
+<script src="scripts/hotelConnoisseur.js"></script>
+<!-- scripts end -->
+</body>
+</html>

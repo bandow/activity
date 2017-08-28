@@ -64,3 +64,7 @@
 2017-08-10 售卡X活动
 # romantic
 2017-08-17  七夕活动
+# choose_coupons
+2017-08-20 选择优惠劵
+# hotel_connoisseur
+2017-08-25 试睡师

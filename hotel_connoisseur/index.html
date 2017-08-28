@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="author" content="name, sycbbb@sina.com"/>
+<meta name="robots" content="index,follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+<meta name="msapplication-tap-highlight" content="no">
+<link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+<div class="wrapper hotel-connoisseur-wrapper" id="app" style="background:url(images/index_bg.jpg) no-repeat;background-size:100% auto;">
+	<div class="hotel-connoisseur-content" v-bind:class="{active:!loading}">
+		<div class="top"><img src="images/index_top.png" alt=""></div>
+		<div class="bottom">
+			<a class="a-go" href="test.html"><img src="images/index_go.png" alt=""></a>
+			<a class="a-rule" href="javascript:;" v-on:click="clickRule"><img src="images/index_rule.png" alt=""></a>
+		</div>
+	</div>
+	<div class="loading" v-show="loading">正在加载中...</div>
+	<div class="mask" v-bind:class="{maskActive:isMaskActive}" v-on:click="clickMask"></div>
+	<div class="rule-mask" v-bind:class="{couponRuleActive:isCouponRuleActive}">
+		<div class="close" v-on:click="clickMask"><img src="images/index_close.png" alt=""></div>
+		<div class="title">
+			<img src="images/index_rule_title.png" alt="">
+		</div>
+		<div class="text">
+			<p>1、本游戏分为文字功底、艺术细胞、洞察能力三关；</p>
+			<p>2、每关一道题目；</p>
+			<p>3、三关通过后会根据情况完成资格认证；</p>
+			<p>4、认证后，可填写相关报名信息参加试睡师活动；</p>
+			<p>5、报名活动结束后，根据通关情况及报名信息，我们将在7个工作日内进行审核，且在审核通过后第一时间通知入选者；</p>
+			<p>6、入选者需自行先付费入住试睡酒店后，针对酒店的客房、服务、价格、餐饮、交通、床品等入住的真实感受发表1篇500字以上+5张实拍图片（需包括客房图片）的酒店点评，且将点评截图及试睡订单号发送至东呈酒店微信公众号，即视为完成试睡任务；</p>
+			<p>7、入选者发布的相关试睡文字或者图片，活动举办方均有权进行转载等操作；</p>
+			<p>8、我们将筛选出十遍优秀的试睡点评进行投票展示投票，第一名还可获得iPhone7一台。</p>
+		</div>
+		<div class="btn"><button v-on:click="clickMask">知道了</button></div>
+	</div>
+</div>
+<!-- scripts begin -->
+<script src="scripts/flexible.js" async="async"></script>
+<script src="scripts/vue.min.js"></script>
+<script src="scripts/axios.js"></script>
+<script src="scripts/hotelConnoisseur.js"></script>
+<!-- scripts end -->
+</body>
+</html>
