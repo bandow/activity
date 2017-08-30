@@ -22,28 +22,11 @@
 			<a class="nonuse-coupon" href="javascript:;">不使用优惠券</a>
 		</div>
 	</header>
-	<div class="choose-coupos-content" v-bind:class="{on:!loading}">
+	<div class="choose-coupos-content">
 		<div class="date-list">
-			<ul>
-				<!--  <li>
-	                <p class="date">{{item.date}}</p>
-					<p class="date-coupon">优惠{{item.price}}元</p> 
-					<p class="untapped">{{item.untapped}}</p>
-					<em></em>               
-                </li>  -->
-			</ul>
+			<ul></ul>
 		</div>
-		<div class="coupon-list">
-			<div class="item" v-for="(item,index) in couponList">
-				<div class="left"><div class="price"><i><img src="images/select_coupon_white_icon.png" alt=""></i></div></div>
-				<div class="right">
-					<h3>{{item.Name}}<span>（城市便捷专享）</span></h3>
-					<p>全国门店通用</p>
-					<time>有效期：{{item.StartTime}} 至{{item.EndTime}}</time>
-				</div>
-				<div class="select"><i><img src="images/no_select_icon.png" alt=""></i></div>
-			</div>
-		</div>
+		<div class="coupon-list"></div>
 	</div>
 	<footer class="choose-coupons-footer" ref="footerHeight">
 		<p class="clickPrompt"><span>温馨提示：为什么不能再选择优惠了</span><i><img src="images/question_mark.png" alt=""></i></p>
@@ -65,24 +48,45 @@
 		<h4>3.优惠券选择条件说明：</h4>
 		<p>比如订单1000元，如果使用满500减10元，则剩余可优惠券金额=1000-500=500元，再使用满200减10元的券，则剩余可优惠金额=500-200=300元，以此计算。</p>
 	</div>
+	<div class="coupon-mask">
+		<div class="close" v-on:click="clickClose">
+			<img src="images/close.png" alt="">
+		</div>
+		<h3><span>已选优惠券</span><em></em></h3>
+		<div class="empty-img"><img src="images/select_coupon_white_icon.png" alt=""></div>
+		<p class="empty-p">您还没有选择优惠券哦！</p>
+		<div class="list">
+			
+		</div>
+	</div>
 </div>
 <!-- scripts begin -->
 <script src="scripts/jquery-3.1.1.min.js"></script>
 <script>
 $(function(){
-	var wrapperPaddingTop=($(".choose-coupons-header").height())+$(".date-list").height();
-	var wrapperPaddingBottom=$(".choose-coupons-footer").height();
-	$(".choose-coupons-wrapper").css({
-		'padding-top':80,
-		'padding-bottom':wrapperPaddingBottom
-	});
+	//温馨提示
 	$(".clickPrompt").on("click",function(){
 		$(".mask").addClass("maskActive");
 		$(".coupon-rule").addClass("couponRuleActive");
 	});
-	$(".mask,.coupon-rule .close").on("click",function(){
+	$(".coupon-rule .close").on("click",function(){
 		$(".mask").removeClass("maskActive");
 		$(".coupon-rule").removeClass("couponRuleActive");
+	});
+	//查看已选
+	$(".ccfc-left").on("click",function(){
+		$(".mask").addClass("maskActive");
+		$(".coupon-mask").addClass("couponMaskActive");
+	});
+	$(".coupon-mask .close").on("click",function(){
+		$(".mask").removeClass("maskActive");
+		$(".coupon-mask").removeClass("couponMaskActive");
+	});
+	//点击覆盖层
+	$(".mask").on("click",function(){
+		$(".mask").removeClass("maskActive");
+		$(".coupon-rule").removeClass("couponRuleActive");
+		$(".coupon-mask").removeClass("couponMaskActive");
 	});
 
 	$.ajax({
@@ -91,112 +95,66 @@ $(function(){
 	    dataType: 'json',
 	    data: {},
 	    success: function(data){
-	        console.log(data.PricesRp[0].BizDay);
+	    	console.log(data);
+	    	//调用data日期列表
 	        var hotelListBox = $(".date-list ul");
-			var htmlArray;
-			if(data != null && data.length > 0) {
-			 	for(var i=0;data.length>i;i++){
-	        		htmlArray+= '<li>';
-		        	htmlArray+='<p class="date">'+data.PricesRp[i].BizDay+'</p>';
-		        	htmlArray+='<p class="date-coupon">优惠-30元</p> ';
-		        	htmlArray+='<p class="untapped">12</p>';
+	        var htmlArray="";
+	        var weekArr=['周一','周二','周三','周四','周五','周六','周日'];
+			if(data.PricesRp != null && data.PricesRp.length > 0){
+			 	for(var i=0;data.PricesRp.length>i;i++){
+			 		var discount=data.PricesRp[i].RackFee-data.PricesRp[i].RoomFee;
+			 		var weeks=weekArr[new Date(data.PricesRp[i].BizDay).getDay()];
+	        		htmlArray+='<li>';
+		        	htmlArray+='<p class="date">'+data.PricesRp[i].BizDay.slice(5,-8)+'('+weeks+')'+'</p>';
+		        	//htmlArray+='<p class="date-coupon">优惠-'+discount+'</p> ';
+		        	htmlArray+='<p class="untapped">未使用</p>';
 		        	htmlArray+='<em></em>';
 		        	htmlArray+='</li>';
 		        }
 			}
-	       
-	        console.log(htmlArray);
-	        hotelListBox.append("<li>"+data.PricesRp[0].BizDay+"</li>");
+	        hotelListBox.append(htmlArray);
+
+	        //修改DOM样式
+	        var wrapperPaddingTop=($(".choose-coupons-header").height())+$(".date-list").outerHeight();
+			var wrapperPaddingBottom=$(".choose-coupons-footer").height();
+			$(".choose-coupons-wrapper").css({
+				'padding-top':wrapperPaddingTop,
+				'padding-bottom':wrapperPaddingBottom
+			});
+			$(".date-list ul").css('width',5*$(".date-list ul li").length+'rem');
+
+			//点击data日期列表
+			$(".date-list ul li").on("click",function(){
+				$(this).addClass("active").siblings().removeClass("active");
+			});
+
+			//调用data优惠券列表
+			var hotelItems=$(".coupon-list");
+			var htmlItems="";
+			if(data.CouponRp.Coupons != null && data.CouponRp.Coupons.length > 0){
+			 	for(var i=0;data.CouponRp.Coupons.length>i;i++){
+	        		htmlItems+='<div class="item">';
+		        	htmlItems+='<div class="left"><div class="price"><i><img src="images/select_coupon_white_icon.png" alt=""></i></div></div>';
+		        	htmlItems+='<div class="right">';
+		        	htmlItems+='<h3>'+data.CouponRp.Coupons[i].Name+'<span>（'+data.CouponRp.Coupons[i].EnableHotels+'）</span></h3>';
+		        	htmlItems+='<time>有效期：'+data.CouponRp.Coupons[i].StartTime.replace(/00:00:00/, "")+'至'+data.CouponRp.Coupons[i].EndTime.replace(/00:00:00/, "")+'</time>';
+		        	htmlItems+='</div>';
+		        	htmlItems+='<div class="select"><i><img src="images/no_select_icon.png" alt=""></i></div>';
+		        	htmlItems+='</div>';
+		        }
+			}
+			hotelItems.append(htmlItems);
+
+			$(".coupon-list .item .select").on("click",function(){
+				$(this).parent().parent().toggleClass("on");
+				$(this).find("img").attr("src","images/select_icon.png");
+			});
 	    },
 	    error: function(){
-	          console.log('test')
+	          console.log('error')
 	    }
 	 })
 });
-/*var app = new Vue({
-	el:"#app",
-	data:{
-		title:'选择优惠券',
-		loading:true,
-		isDateCoupon:false,
-		selectItem:0,
-		dateList:[
-             {date:'07-28(周五)',price:'-30',untapped:'未使用'},
-             {date:'07-29(周六)',price:'-20',untapped:'未使用'},
-             {date:'07-30(周日)',price:'-10',untapped:'未使用'},
-             {date:'07-28(周五)',price:'-30',untapped:'未使用'},
-             {date:'07-29(周六)',price:'-20',untapped:'未使用'},
-             {date:'07-30(周日)',price:'-10',untapped:'未使用'},
-             {date:'07-31(周一)',price:'-50',untapped:'未使用'}
-        ],
-		couponList:new Array(),
-		paddingTop:0,
-		liNum:0,
-		footerHeight:0,
-		isMaskActive:true,
-		isCouponRuleActive:true,
-	}, 
-	created:function(){
-		var _this = this;
-		_this.getJsonCouponList();
-		
-	},
-	mounted:function(){
-		var _this = this;
-		_this.loading=false;
-		_this.reviseStyle();
-		console.log(_this.$refs.liList.length);	
-	},
-	methods:{
-		getJsonCouponList:function(item, index){
-			this.$nextTick(function(){
-				axios.get('http://10.44.61.27/activity/choose_coupons/data/CouponList.json')
-				.then(
-					function(retObj){
-						if(retObj.status == 200){
-							app.couponList = retObj.data.CouponList;
-						}
-					}
-				)
-				.catch(function(errorObj){
-					console.log("get data error...");
-				})
-			});
-		},
-		dateTab(key){
-            this.selectItem=key;
-            this.getJsonCouponList();
-        },
-        reviseStyle:function(){
-        	var _this = this;
-			_this.$nextTick(function(){
-				setTimeout(function(){
-					app.paddingTop=_this.$refs.dateDiv.clientHeight+44;
-					app.footerHeight=_this.$refs.footerHeight.clientHeight;
-				},0);
-				app.liNum=_this.$refs.liList.length;
-			});
-        },
-        clickPrompt:function(){
-			this.isMaskActive=false;
-			this.isCouponRuleActive=false;
-        },
-        clickMask:function(){
-        	this.isMaskActive=true;
-			this.isCouponRuleActive=true;
-        },
-        clickClose:function(){
-        	this.isMaskActive=true;
-			this.isCouponRuleActive=true;
-        }
-	},
-	watch:{
-	},
-	computed:{	
-	},
-	filters:{
-	}
-});*/
 </script>
 <!-- scripts end -->
 </body>
