@@ -22,7 +22,7 @@
 			<div class="img" v-else="currentData.Data.Part==3"><img src="images/3.png" alt=""></div>
 			<p>{{currentData.Data.Title}}</p>
 		</div>
-		<div class="test-img"><img :src="currentData.Data.Img" alt=""></div>
+		<div class="test-img"><img :src="currentData.Data.Img" alt=""><p v-bind:class="{on:isTiems}">{{countDown}}</p></div>
 		<ul class="test-fruit">
 			<li v-for="(item,index) in currentData.Data.AnswerCount" v-bind:class="{first:currentData.Data.AnswerCount==1}">{{answerArr[index]}}</li>
 		</ul>

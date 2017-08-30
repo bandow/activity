@@ -64,13 +64,29 @@
 		}
 	}
 	.test-img{
+		position:relative;
 		margin-top:.3rem;
 		background-color:#fff;
 		border-radius:5px;
 		font-size:0;
 		overflow:hidden;
+		@include display(flex);
+	    justify-content: center;
+	    align-items: center;
 		img{
 			width:100%;
+		}
+		p{
+			position:absolute;
+			top:50%;
+			left:50%;
+			font:bold 1.5rem/1rem $publicFont;
+ 			color:#000;
+ 			@include transform(translate(-50%,-50%));
+ 			display:none;
+		}
+		.on{
+			display:block;
 		}
 	}
 	.test-fruit{

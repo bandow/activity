@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="styles/chooseCoupons.css">
 </head>
 <body>
-<div class="wrapper choose-coupons-wrapper">
+<div class="wrapper choose-coupons-wrapper" id="app" ref="wrapperApp" v-bind:style="{paddingTop:paddingTop + 'px',paddingBottom:footerHeight+'px'}">
 	<header class="choose-coupons-header" style="background:url(images/header_bg.jpg) no-repeat; background-size:100% 100%;">
 		<a class="left dossen-header-left" href="javascript:goback();"></a>
 		<h1 v-text="title"></h1>
@@ -23,14 +23,14 @@
 		</div>
 	</header>
 	<div class="choose-coupos-content" v-bind:class="{on:!loading}">
-		<div class="date-list">
-			<ul>
-				<!--  <li>
-	                <p class="date">{{item.date}}</p>
-					<p class="date-coupon">优惠{{item.price}}元</p> 
-					<p class="untapped">{{item.untapped}}</p>
+		<div class="date-list" ref="dateDiv">
+			<ul v-bind:style="{width:liNum*5 + 'rem'}">
+				 <li v-for="(item,key) in dateList" v-on:click="dateTab(key)" v-bind:class="{active:key==selectItem}">
+	                <p class="date">{{item.BizDay|date}}({{item.BizDay|week}})</p>
+					<p class="date-coupon">优惠{{item.RackFee-item.RoomFee}}元</p> 
+					<p class="untapped">未使用</p>
 					<em></em>               
-                </li>  -->
+                </li> 
 			</ul>
 		</div>
 		<div class="coupon-list">
@@ -38,22 +38,22 @@
 				<div class="left"><div class="price"><i><img src="images/select_coupon_white_icon.png" alt=""></i></div></div>
 				<div class="right">
 					<h3>{{item.Name}}<span>（城市便捷专享）</span></h3>
-					<p>全国门店通用</p>
-					<time>有效期：{{item.StartTime}} 至{{item.EndTime}}</time>
+					<p>{{item.EnableHotels[0]}}</p>
+					<time>有效期：{{item.StartTime|capitalize}} 至{{item.EndTime|capitalize}}</time>
 				</div>
 				<div class="select"><i><img src="images/no_select_icon.png" alt=""></i></div>
 			</div>
 		</div>
 	</div>
 	<footer class="choose-coupons-footer" ref="footerHeight">
-		<p class="clickPrompt"><span>温馨提示：为什么不能再选择优惠了</span><i><img src="images/question_mark.png" alt=""></i></p>
+		<p v-on:click="clickPrompt"><span>温馨提示：为什么不能再选择优惠了</span><i><img src="images/question_mark.png" alt=""></i></p>
 		<div class="choose-coupons-footer-content">
 			<div class="ccfc-left"><span>查看已选</span><i></i></div>
 			<div class="ccfc-right"><button>确认使用</button></div>
 		</div>
 	</footer>
-	<div class="mask"></div>
-	<div class="coupon-rule">
+	<div class="mask" v-bind:class="{maskActive:!isMaskActive}" v-on:click="clickMask"></div>
+	<div class="coupon-rule" v-bind:class="{couponRuleActive:!isCouponRuleActive}">
 		<div class="close" v-on:click="clickClose">
 			<img src="images/close.png" alt="">
 		</div>
@@ -65,70 +65,19 @@
 		<h4>3.优惠券选择条件说明：</h4>
 		<p>比如订单1000元，如果使用满500减10元，则剩余可优惠券金额=1000-500=500元，再使用满200减10元的券，则剩余可优惠金额=500-200=300元，以此计算。</p>
 	</div>
+	<div class="loading" v-show="loading">正在加载中...</div>
 </div>
 <!-- scripts begin -->
-<script src="scripts/jquery-3.1.1.min.js"></script>
+<script src="scripts/vue.min.js"></script>
 <script>
-$(function(){
-	var wrapperPaddingTop=($(".choose-coupons-header").height())+$(".date-list").height();
-	var wrapperPaddingBottom=$(".choose-coupons-footer").height();
-	$(".choose-coupons-wrapper").css({
-		'padding-top':80,
-		'padding-bottom':wrapperPaddingBottom
-	});
-	$(".clickPrompt").on("click",function(){
-		$(".mask").addClass("maskActive");
-		$(".coupon-rule").addClass("couponRuleActive");
-	});
-	$(".mask,.coupon-rule .close").on("click",function(){
-		$(".mask").removeClass("maskActive");
-		$(".coupon-rule").removeClass("couponRuleActive");
-	});
-
-	$.ajax({
-	    url: 'http://10.44.61.27/activity/choose_coupons/data/CouponList.json',
-	    type: 'GET',
-	    dataType: 'json',
-	    data: {},
-	    success: function(data){
-	        console.log(data.PricesRp[0].BizDay);
-	        var hotelListBox = $(".date-list ul");
-			var htmlArray;
-			if(data != null && data.length > 0) {
-			 	for(var i=0;data.length>i;i++){
-	        		htmlArray+= '<li>';
-		        	htmlArray+='<p class="date">'+data.PricesRp[i].BizDay+'</p>';
-		        	htmlArray+='<p class="date-coupon">优惠-30元</p> ';
-		        	htmlArray+='<p class="untapped">12</p>';
-		        	htmlArray+='<em></em>';
-		        	htmlArray+='</li>';
-		        }
-			}
-	       
-	        console.log(htmlArray);
-	        hotelListBox.append("<li>"+data.PricesRp[0].BizDay+"</li>");
-	    },
-	    error: function(){
-	          console.log('test')
-	    }
-	 })
-});
-/*var app = new Vue({
+var app = new Vue({
 	el:"#app",
 	data:{
 		title:'选择优惠券',
 		loading:true,
 		isDateCoupon:false,
 		selectItem:0,
-		dateList:[
-             {date:'07-28(周五)',price:'-30',untapped:'未使用'},
-             {date:'07-29(周六)',price:'-20',untapped:'未使用'},
-             {date:'07-30(周日)',price:'-10',untapped:'未使用'},
-             {date:'07-28(周五)',price:'-30',untapped:'未使用'},
-             {date:'07-29(周六)',price:'-20',untapped:'未使用'},
-             {date:'07-30(周日)',price:'-10',untapped:'未使用'},
-             {date:'07-31(周一)',price:'-50',untapped:'未使用'}
-        ],
+		dateList:[],
 		couponList:new Array(),
 		paddingTop:0,
 		liNum:0,
@@ -139,28 +88,19 @@ $(function(){
 	created:function(){
 		var _this = this;
 		_this.getJsonCouponList();
-		
 	},
 	mounted:function(){
 		var _this = this;
 		_this.loading=false;
-		_this.reviseStyle();
-		console.log(_this.$refs.liList.length);	
+		
+		_this.$nextTick(function(){
+			_this.reviseStyle();
+		});
 	},
 	methods:{
 		getJsonCouponList:function(item, index){
 			this.$nextTick(function(){
-				axios.get('http://10.44.61.27/activity/choose_coupons/data/CouponList.json')
-				.then(
-					function(retObj){
-						if(retObj.status == 200){
-							app.couponList = retObj.data.CouponList;
-						}
-					}
-				)
-				.catch(function(errorObj){
-					console.log("get data error...");
-				})
+				showData();
 			});
 		},
 		dateTab(key){
@@ -169,13 +109,10 @@ $(function(){
         },
         reviseStyle:function(){
         	var _this = this;
-			_this.$nextTick(function(){
-				setTimeout(function(){
-					app.paddingTop=_this.$refs.dateDiv.clientHeight+44;
-					app.footerHeight=_this.$refs.footerHeight.clientHeight;
-				},0);
-				app.liNum=_this.$refs.liList.length;
-			});
+			setTimeout(function(){
+				app.paddingTop=_this.$refs.dateDiv.clientHeight+44;
+				app.footerHeight=_this.$refs.footerHeight.clientHeight;	
+			},0);
         },
         clickPrompt:function(){
 			this.isMaskActive=false;
@@ -195,8 +132,43 @@ $(function(){
 	computed:{	
 	},
 	filters:{
+		capitalize:function(val){     
+	        return val.replace(/00:00:00/, "");         
+	    },
+	    date:function(val){
+			return val.slice(5,-8);
+	    },
+	    week:function(val){
+	        var weeks=['周一','周二','周三','周四','周五','周六','周日'];
+			return weeks[new Date(val).getDay()];
+	    }
 	}
-});*/
+});
+
+function showData(){  
+	var xmlhttp;  
+	if(window.XMLHttpRequest){  
+	    xmlhttp = new XMLHttpRequest();  
+	}else if(window.ActiveXObject){  
+	    xmlhttp = new window.ActiveXObject();  
+	}else{  
+	    alert("请升级至最新版本的浏览器");  
+	}  
+	if(xmlhttp !=null){  
+	    xmlhttp.open("GET","http://10.44.61.27/activity/choose_coupons2.0/data/CouponList.json",true);  
+	    xmlhttp.send(null);  
+	    xmlhttp.onreadystatechange=function(){  
+	        if(xmlhttp.readyState==4 && xmlhttp.status==200){  
+	            var retObj = JSON.parse(xmlhttp.responseText); 
+	            console.log(retObj);       
+				app.couponList = retObj.CouponRp.Coupons;
+	            app.dateList= retObj.PricesRp;
+	            app.liNum= retObj.PricesRp.length;
+	        }  
+	    };  	  
+	}  
+}
+
 </script>
 <!-- scripts end -->
 </body>

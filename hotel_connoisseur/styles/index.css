@@ -200,13 +200,32 @@ input {
       font: 0.35rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
       color: #333; }
   .test-content .test-img {
+    position: relative;
     margin-top: .3rem;
     background-color: #fff;
     border-radius: 5px;
     font-size: 0;
-    overflow: hidden; }
+    overflow: hidden;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
     .test-content .test-img img {
       width: 100%; }
+    .test-content .test-img p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font: bold 1.5rem/1rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+      color: #000;
+      -moz-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      display: none; }
+    .test-content .test-img .on {
+      display: block; }
   .test-content .test-fruit {
     margin-top: .3rem;
     border-radius: 5px;

@@ -57,7 +57,8 @@ var app = new Vue({
         secondePartArray:new Array,
         thirdPartArray:new Array,
         currentPart:1,
-
+        countDown:30,
+        isTiems:false
     }, 
 	created:function(){
         const _this=this;
@@ -79,11 +80,15 @@ var app = new Vue({
                _this.thirdPartArray.push(_this.dataArray[j].Data);  
             }
         }
-      _this.currentData=_this.testList[1];
+        _this.currentData=_this.testList[1];  
 	},
 	mounted:function(){
 		const _this=this;
 		_this.loading=false;
+        _this.countTime();
+        setTimeout(function(){
+            _this.isTiems=true;
+        },25000)
 	},
 	methods:{
 		clickRule:function(){
@@ -150,7 +155,9 @@ var app = new Vue({
                     //处理数据*****************ajax
                     // _this.answerArr 用户答案
                     console.log(0);
-                } 
+                }
+                _this.countDown=30;
+                _this.isTiems=false;
         	}
         	return _this.answerArr;
         },
@@ -167,6 +174,34 @@ var app = new Vue({
         },
         clickChange:function(){
         	var _this=this;
+            //下一关方法
+            _this.passTest();
+        },
+        countTime:function(){
+            var _this=this;   
+            var t=window.setInterval(function(){
+                if(_this.countDown > 0){
+                   _this.countDown--
+                   if(_this.countDown==0){
+                        if(_this.currentPart<3){
+                            _this.currentPart++;
+                        }else{
+                           //调连接 大师菜鸟那个页面
+                            //处理数据*****************ajax
+                            // _this.answerArr 用户答案
+                            console.log(0); 
+                            clearInterval(t);
+                        }
+                        //下一关方法
+                        _this.passTest();
+                        _this.countDown=30;
+                        _this.isTiems=false;
+                   }
+                }
+            },1000);  
+        },
+        passTest:function(){
+            var _this=this; 
             var num;
             if(_this.currentPart==1){
                 num=Math.ceil(Math.random()*(_this.onePartArray.length));
@@ -178,7 +213,7 @@ var app = new Vue({
             if (_this.testList.length > 0) {  
                 _this.currentData=_this.testList[num];
             }
-        },
+        }
 	},
 	watch:{
 	},
