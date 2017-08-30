@@ -156,6 +156,7 @@ var app = new Vue({
                     // _this.answerArr 用户答案
                     console.log(0);
                 }
+                //倒计时初始化
                 _this.countDown=30;
                 _this.isTiems=false;
         	}
@@ -171,6 +172,12 @@ var app = new Vue({
             }else{
                 return false;
             }
+            //倒计时初始化
+            _this.countDown=30;
+            _this.isTiems=false;
+            setTimeout(function(){
+                _this.isTiems=true;
+            },25000);
         },
         clickChange:function(){
         	var _this=this;
@@ -194,6 +201,7 @@ var app = new Vue({
                         }
                         //下一关方法
                         _this.passTest();
+                        //倒计时初始化
                         _this.countDown=30;
                         _this.isTiems=false;
                         setTimeout(function(){

@@ -17,7 +17,7 @@
 <div class="wrapper choose-coupons-wrapper">
 	<header class="choose-coupons-header" style="background:url(images/header_bg.jpg) no-repeat; background-size:100% 100%;">
 		<a class="left dossen-header-left" href="javascript:goback();"></a>
-		<h1 v-text="title"></h1>
+		<h1>选择优惠券</h1>
 		<div class="right">
 			<a class="nonuse-coupon" href="javascript:;">不使用优惠券</a>
 		</div>
@@ -53,40 +53,90 @@
 			<img src="images/close.png" alt="">
 		</div>
 		<h3><span>已选优惠券</span><em></em></h3>
-		<div class="empty-img"><img src="images/select_coupon_white_icon.png" alt=""></div>
-		<p class="empty-p">您还没有选择优惠券哦！</p>
+		<!-- 已选优惠券-空数据 begin -->
+		<!-- <div class="empty-img"><img src="images/select_coupon_white_icon.png" alt=""></div>
+		<p class="empty-p">您还没有选择优惠券哦！</p> -->
+		<!-- 已选优惠券-空数据 end -->
 		<div class="list">
-			
+			<div class="item">
+				<div class="left">
+					<div class="price"><i><img src="images/select_coupon_white_icon.png" alt=""></i></div>
+				</div>
+				<div class="right">
+					<h3>20元优惠券<span>（全国酒店通用）</span></h3>
+					<time>有效期：2017-07-30 至2017-09-30 </time>
+				</div>
+				<div class="select"><i><img src="images/coupon_close.png" alt=""></i></div>
+				<div class="cose-valut" style="display:none;">20</div>
+			</div>
+			<div class="item">
+				<div class="left">
+					<div class="price"><i><img src="images/select_coupon_white_icon.png" alt=""></i></div>
+				</div>
+				<div class="right">
+					<h3>20元优惠券<span>（全国酒店通用）</span></h3>
+					<time>有效期：2017-07-30 至2017-09-30 </time>
+				</div>
+				<div class="select"><i><img src="images/coupon_close.png" alt=""></i></div>
+				<div class="cose-valut" style="display:none;">20</div>
+			</div>
+			<div class="item">
+				<div class="left">
+					<div class="price"><i><img src="images/select_coupon_white_icon.png" alt=""></i></div>
+				</div>
+				<div class="right">
+					<h3>20元优惠券<span>（全国酒店通用）</span></h3>
+					<time>有效期：2017-07-30 至2017-09-30 </time>
+				</div>
+				<div class="select"><i><img src="images/coupon_close.png" alt=""></i></div>
+				<div class="cose-valut" style="display:none;">20</div>
+			</div>
 		</div>
+		<p>温馨提示：点击可取消已选中优惠券</p>
 	</div>
 </div>
 <!-- scripts begin -->
 <script src="scripts/jquery-3.1.1.min.js"></script>
 <script>
+function height100(){
+	$(".choose-coupons-wrapper").css({
+		'height': '100%'
+	});
+}
+function heightAuto(){
+	$(".choose-coupons-wrapper").css({
+		'height':'auto'
+	});
+}
 $(function(){
 	//温馨提示
 	$(".clickPrompt").on("click",function(){
 		$(".mask").addClass("maskActive");
 		$(".coupon-rule").addClass("couponRuleActive");
+		height100();
 	});
 	$(".coupon-rule .close").on("click",function(){
 		$(".mask").removeClass("maskActive");
 		$(".coupon-rule").removeClass("couponRuleActive");
+		heightAuto();
 	});
 	//查看已选
 	$(".ccfc-left").on("click",function(){
 		$(".mask").addClass("maskActive");
 		$(".coupon-mask").addClass("couponMaskActive");
+		height100();  
 	});
 	$(".coupon-mask .close").on("click",function(){
 		$(".mask").removeClass("maskActive");
 		$(".coupon-mask").removeClass("couponMaskActive");
+		heightAuto();
 	});
 	//点击覆盖层
 	$(".mask").on("click",function(){
 		$(".mask").removeClass("maskActive");
 		$(".coupon-rule").removeClass("couponRuleActive");
 		$(".coupon-mask").removeClass("couponMaskActive");
+		heightAuto();
 	});
 
 	$.ajax({
@@ -104,9 +154,8 @@ $(function(){
 			 	for(var i=0;data.PricesRp.length>i;i++){
 			 		var discount=data.PricesRp[i].RackFee-data.PricesRp[i].RoomFee;
 			 		var weeks=weekArr[new Date(data.PricesRp[i].BizDay).getDay()];
-	        		htmlArray+='<li>';
+	        		htmlArray+='<li data-id="'+i+'">';
 		        	htmlArray+='<p class="date">'+data.PricesRp[i].BizDay.slice(5,-8)+'('+weeks+')'+'</p>';
-		        	//htmlArray+='<p class="date-coupon">优惠-'+discount+'</p> ';
 		        	htmlArray+='<p class="untapped">未使用</p>';
 		        	htmlArray+='<em></em>';
 		        	htmlArray+='</li>';
@@ -124,8 +173,10 @@ $(function(){
 			$(".date-list ul").css('width',5*$(".date-list ul li").length+'rem');
 
 			//点击data日期列表
+			$(".date-list ul li").eq(0).addClass("active");
 			$(".date-list ul li").on("click",function(){
 				$(this).addClass("active").siblings().removeClass("active");
+				$(".coupon-list .on").hide();
 			});
 
 			//调用data优惠券列表
@@ -140,18 +191,30 @@ $(function(){
 		        	htmlItems+='<time>有效期：'+data.CouponRp.Coupons[i].StartTime.replace(/00:00:00/, "")+'至'+data.CouponRp.Coupons[i].EndTime.replace(/00:00:00/, "")+'</time>';
 		        	htmlItems+='</div>';
 		        	htmlItems+='<div class="select"><i><img src="images/no_select_icon.png" alt=""></i></div>';
+		        	htmlItems+='<div class="cose-valut" style="display:none;">'+data.CouponRp.Coupons[i].CostValue+'</div>'
 		        	htmlItems+='</div>';
 		        }
 			}
 			hotelItems.append(htmlItems);
 
+			//选择优惠券列表
+			var sum=0;
 			$(".coupon-list .item .select").on("click",function(){
-				$(this).parent().parent().toggleClass("on");
-				$(this).find("img").attr("src","images/select_icon.png");
+				$(this).parent().each(function(index, element){
+					sum +=parseInt($(this).next().text());
+				});
+				$(this).parent().toggleClass("on");
+				if($(this).parent().hasClass("on")){
+					$(this).find("img").attr("src","images/select_icon.png");
+					$(".date-list ul .active .untapped").text("优惠-"+sum+"元");
+				}else{
+					$(this).find("img").attr("src","images/no_select_icon.png");
+				}
+
 			});
 	    },
 	    error: function(){
-	          console.log('error')
+	        console.log('error')
 	    }
 	 })
 });
