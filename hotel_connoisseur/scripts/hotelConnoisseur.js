@@ -196,6 +196,9 @@ var app = new Vue({
                         _this.passTest();
                         _this.countDown=30;
                         _this.isTiems=false;
+                        setTimeout(function(){
+                            _this.isTiems=true;
+                        },25000);
                    }
                 }
             },1000);  
@@ -213,6 +216,7 @@ var app = new Vue({
             if (_this.testList.length > 0) {  
                 _this.currentData=_this.testList[num];
             }
+            _this.answerArr=new Array;
         }
 	},
 	watch:{
