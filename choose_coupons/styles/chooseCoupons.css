@@ -604,16 +604,16 @@ html {
           display: block;
           font: 0.6rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
           color: #999; }
-      .coupon-mask .list .selected-item .select {
+      .coupon-mask .list .selected-item .select-img {
         position: absolute;
         top: 8%;
         right: 3%; }
-        .coupon-mask .list .selected-item .select i {
+        .coupon-mask .list .selected-item .select-img i {
           display: block;
           width: 1rem;
           height: 1rem;
           font-size: 0; }
-          .coupon-mask .list .selected-item .select i img {
+          .coupon-mask .list .selected-item .select-img i img {
             width: 100%; }
       .coupon-mask .list .selected-item:before {
         position: absolute;

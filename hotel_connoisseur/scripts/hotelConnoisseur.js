@@ -81,6 +81,7 @@ var app = new Vue({
             }
         }
         _this.currentData=_this.testList[1];  
+        _this.passTest();
 	},
 	mounted:function(){
 		const _this=this;
@@ -181,7 +182,7 @@ var app = new Vue({
         },
         clickChange:function(){
         	var _this=this;
-            //下一关方法
+            //随机方法
             _this.passTest();
         },
         countTime:function(){
@@ -199,7 +200,7 @@ var app = new Vue({
                             console.log(0); 
                             clearInterval(t);
                         }
-                        //下一关方法
+                        //随机方法
                         _this.passTest();
                         //倒计时初始化
                         _this.countDown=30;
