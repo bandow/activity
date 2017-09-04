@@ -24,7 +24,7 @@
 		</div>
 		<div class="test-img"><img :src="currentData.Data.Img" alt=""><p v-bind:class="{on:isTiems}">{{countDown}}</p></div>
 		<ul class="test-fruit">
-			<li v-for="(item,index) in currentData.Data.AnswerCount" v-bind:class="{first:currentData.Data.AnswerCount==1}">{{answerArr[index]}}</li>
+			<li v-for="(item,index) in currentData.Data.AnswerCount" v-bind:class="{first:currentData.Data.AnswerCount==1}" v-on:click="clickDump($event,index)">{{answerArr[index]}}</li>
 		</ul>
 		<div class="test-seletor">
 			<ul>

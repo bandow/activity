@@ -142,7 +142,18 @@ var app = new Vue({
         },
         clickSelect:function(item,index){
         	var _this=this;
-        	_this.answerArr.push(item);
+            var answerFlag=true;
+            for(var i=0;_this.answerArr.length>i;i++){
+                if(_this.answerArr[i]=='' && answerFlag==true){
+                    _this.$set(_this.answerArr,i,item);
+                     console.log('值：'+_this.answerArr[i])
+                    answerFlag=false;
+                }
+            }
+            if(answerFlag){
+                _this.answerArr.push(item);
+            }
+        	
         	if(_this.answerArr.length==_this.currentData.Data.AnswerCount){
                 _this.currentPart++; 
 
@@ -227,6 +238,13 @@ var app = new Vue({
                 _this.currentData=_this.testList[num];
             }
             _this.answerArr=new Array;
+        },
+        clickDump:function(e,index){
+          var _this=this;
+          var target=e.currentTarget;
+          if(target.innerHTML!=""){
+            _this.$set(_this.answerArr,index,'');
+          }
         }
 	},
 	watch:{
