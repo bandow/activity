@@ -58,6 +58,7 @@ var app = new Vue({
         thirdPartArray:new Array,
         currentPart:1,
         countDown:30,
+        t:null,  //定时器
         isTiems:false
     }, 
 	created:function(){
@@ -87,9 +88,6 @@ var app = new Vue({
 		const _this=this;
 		_this.loading=false;
         _this.countTime();
-        setTimeout(function(){
-            _this.isTiems=true;
-        },25000)
 	},
 	methods:{
 		clickRule:function(){
@@ -146,20 +144,23 @@ var app = new Vue({
         	var _this=this;
         	_this.answerArr.push(item);
         	if(_this.answerArr.length==_this.currentData.Data.AnswerCount){
-                _this.currentPart++;      		
+                _this.currentPart++; 
+
                 console.log(_this.currentPart);
+                
                 if(_this.currentPart<=3){
+                    //初始化
                     _this.answerArr=new Array;
-                    _this.clickChange();  
+                    _this.passTest();
+                    clearInterval(_this.t);
+                    _this.countDown=30;
+                    _this.countTime();
                 }else{
                     //调连接 大师菜鸟那个页面
                     //处理数据*****************ajax
                     // _this.answerArr 用户答案
                     console.log(0);
                 }
-                //倒计时初始化
-                _this.countDown=30;
-                _this.isTiems=false;
         	}
         	return _this.answerArr;
         },
@@ -168,17 +169,16 @@ var app = new Vue({
             _this.currentPart--
             console.log(_this.currentPart);
             if(_this.currentPart>=0){
+                //初始化
                 _this.answerArr=new Array;
-                _this.clickChange();  
+                _this.passTest();
+                clearInterval(_this.t);
+                _this.countDown=30;
+                _this.countTime();
+
             }else{
                 return false;
-            }
-            //倒计时初始化
-            _this.countDown=30;
-            _this.isTiems=false;
-            setTimeout(function(){
-                _this.isTiems=true;
-            },25000);
+            }    
         },
         clickChange:function(){
         	var _this=this;
@@ -187,27 +187,28 @@ var app = new Vue({
         },
         countTime:function(){
             var _this=this;   
-            var t=window.setInterval(function(){
+             _this.isTiems=false;
+            _this.t=window.setInterval(function(){
                 if(_this.countDown > 0){
                    _this.countDown--
-                   if(_this.countDown==0){
-                        if(_this.currentPart<3){
+                   if(_this.countDown==0){                                      
+                        if(_this.currentPart<3){                                                       
                             _this.currentPart++;
-                        }else{
-                           //调连接 大师菜鸟那个页面
-                            //处理数据*****************ajax
-                            // _this.answerArr 用户答案
-                            console.log(0); 
-                            clearInterval(t);
+                            _this.passTest();
+                            _this.countDown=30;
+                            _this.isTiems=false;
+                        }else{ 
+                            //if(_this.currentPart>3){
+                                //调连接 大师菜鸟那个页面
+                                //处理数据*****************ajax
+                                // _this.answerArr 用户答案
+                                console.log(0); 
+                               // clearInterval(_this.t);
+                            //}
                         }
-                        //随机方法
-                        _this.passTest();
-                        //倒计时初始化
-                        _this.countDown=30;
-                        _this.isTiems=false;
-                        setTimeout(function(){
-                            _this.isTiems=true;
-                        },25000);
+                   }else if(_this.countDown==5){
+                        //倒计时初始化                       
+                        _this.isTiems=true;                 
                    }
                 }
             },1000);  
