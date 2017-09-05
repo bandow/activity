@@ -561,4 +561,21 @@ input {
 .mask-share.active {
   display: block; }
 
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 0;
+  text-align: center; }
+  .loading img {
+    width: 50%; }
+  .loading p {
+    font: 0.4rem/0.9rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+    color: #000; }
+
 /*# sourceMappingURL=index.css.map */

@@ -438,3 +438,20 @@
 .mask-share.active{
 	display:block;
 }
+
+
+.loading{
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%,-50%));
+    font-size: 0;
+    text-align:center;
+    img{
+	    width: 50%;
+    }
+    p{
+    	font:.4rem/.9rem $publicFont;
+    	color:#000;
+    }
+}
