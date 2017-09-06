@@ -75,6 +75,7 @@ function heightAuto(){
 	});
 }
 $(function(){
+	var price=200;
 	//温馨提示
 	$(".clickPrompt").on("click",function(){
 		$(".mask").addClass("maskActive");
@@ -104,6 +105,13 @@ $(function(){
 		$(".coupon-mask").removeClass("couponMaskActive");
 		heightAuto();
 	});
+
+	//取消所有优惠劵
+	$(".choose-coupons-header .right a").on("click",function(){
+		$(".coupon-list .item").removeAttr("data-id").removeAttr("data-key").removeClass("on disabled").find(".select i img").attr("src","images/no_select_icon.png");
+		$(".coupon-mask .list .selected-item").remove();
+		$(".date-list ul li .untapped").text("未使用");
+	})
 
 	$.ajax({
 	    url: 'http://10.44.61.27/activity/choose_coupons/data/CouponList.json',
@@ -151,13 +159,14 @@ $(function(){
 			var htmlItems="";
 			if(data.CouponRp.Coupons != null && data.CouponRp.Coupons.length > 0){
 			 	for(var i=0;data.CouponRp.Coupons.length>i;i++){
-	        		htmlItems+='<div class="item">';
+	        		htmlItems+='<div class="item" data-type="'+data.CouponRp.Coupons[i].CouponDiscountType+'">';
 		        	htmlItems+='<div class="left"><div class="price"><i><img src="images/select_coupon_white_icon.png" alt=""></i></div></div>';
 		        	htmlItems+='<div class="right">';
 		        	htmlItems+='<h3>'+data.CouponRp.Coupons[i].Name+'</h3>';
 		        	htmlItems+='<p>'+data.CouponRp.Coupons[i].EnableHotels+'</p>';
 		        	htmlItems+='<time>有效期：'+data.CouponRp.Coupons[i].StartTime.replace(/00:00:00/, "")+'至'+data.CouponRp.Coupons[i].EndTime.replace(/00:00:00/, "")+'</time>';
 		        	htmlItems+='</div>';
+		        	htmlItems+='<p class="msg"><p>';
 		        	htmlItems+='<div class="select"><i><img src="images/no_select_icon.png" alt=""></i></div>';
 		        	htmlItems+='<div class="cose-valut" style="display:none;">'+data.CouponRp.Coupons[i].CostValue+'</div>'
 		        	htmlItems+='</div>';
@@ -168,12 +177,21 @@ $(function(){
 			//选择优惠券列表	
 			$(".coupon-list .item .select").on("click",function(even){
 				even.stopPropagation();
+
+				//点击不同类型显示不同类型
+                if($(this).parent().hasClass('disabled')){
+                	return;
+                }				
+                var type=$(this).parent().attr("data-type"); //房间原始价格
+				CouponDiscountType(type,"不可用原因：不能与当前选中优惠劵类型同用");
+
+
 				var sum=0;
 				var num=$(".coupon-mask .list .selected-item").length;
-                
+             
 				//已选优惠券弹出框
 				var htmlCouponMask='';
-					htmlCouponMask+='<div class="selected-item" data-key="'+num+'">';
+					htmlCouponMask+='<div class="selected-item" data-key="'+num+'" data-type="'+type+'">';
 					htmlCouponMask+='<div class="left">';
 					htmlCouponMask+='<div class="price"><i><img src="images/select_coupon_white_icon.png" alt=""></i></div>';
 					htmlCouponMask+='</div>';
@@ -191,20 +209,28 @@ $(function(){
 					$(this).parent().addClass("on");
 					$(this).find("img").attr("src","images/select_icon.png");
 					$(this).parent().attr('data-id', dataId);
-					$(".coupon-list .item[data-id='"+dataId+"']").each(function(index, element){
-						sum +=parseInt($(this).find(".cose-valut").text());
-					});
+					// $(".coupon-list .item[data-id='"+dataId+"']").each(function(index, element){
+					// 	sum +=parseInt($(this).find(".cose-valut").text());
+					// });
+					sum=discountPrice(dataId,type,price);
 					$(".date-list ul .active .untapped").text("优惠-"+sum+"元");
 					$(this).parent().attr("data-key",num);                     
 					//添加查看已选
 					$(".coupon-mask .list").append(htmlCouponMask);
 				}else{
+
+					//判断当前是否只有一个被点击
+					if($(".coupon-list .item.on").length==1){
+						CouponDiscountTypeReset(type);
+					}
+									
 					$(this).parent().removeClass("on");
 					$(this).find("img").attr("src","images/no_select_icon.png");
 					$(this).parent().attr('data-id', '');
-					$(".coupon-list .item[data-id='"+dataId+"']").each(function(index, element){
-						sum +=parseInt($(this).find(".cose-valut").text());
-					});
+					// $(".coupon-list .item[data-id='"+dataId+"']").each(function(index, element){
+					// 	sum +=parseInt($(this).find(".cose-valut").text());
+					// });
+					sum=discountPrice(dataId,type,price);
 					//删掉查看已选	
 					var dataKey=$(this).parent().attr("data-key");
 					$(".coupon-mask .list .selected-item[data-key='"+dataKey+"']").remove();
@@ -215,13 +241,22 @@ $(function(){
 				}else{
 					$(".date-list ul .active .untapped").text("优惠-"+sum+"元");	
 				}	
+
+
 			});
 
 			$('body').on('click','.coupon-mask .list .selected-item .select-img',function(e){
 				e.stopPropagation();
+                var type=$(this).parent().attr("data-type");
+				//判断当前是否只有一个被点击
+				if($(".coupon-list .item.on").length==1){
+					CouponDiscountTypeReset(type);
+				}
+
 				sum=0;
 				var dataIdS='';
 				var dataKey=$(this).parent().attr("data-key");	
+				
 				dataIdS=$(".coupon-list .item[data-key='"+dataKey+"']").attr("data-id");
 				$(".coupon-list .item[data-key='"+dataKey+"']").removeClass('on').find(".select i img").attr("src","images/no_select_icon.png");					
 				$(".coupon-list .item[data-key='"+dataKey+"']").attr("data-id",'');
@@ -230,9 +265,10 @@ $(function(){
 				if($(".coupon-list .item[data-id='"+dataIdS+"']").length==0){
 					sum=0;
 				}else{
-					$(".coupon-list .item[data-id='"+dataIdS+"']").each(function(index, element){
-						sum +=parseInt($(this).find(".cose-valut").text());		
-					});	
+					// $(".coupon-list .item[data-id='"+dataIdS+"']").each(function(index, element){
+					// 	sum +=parseInt($(this).find(".cose-valut").text());		
+					// });	
+					sum=discountPrice(dataIdS,type,price);
 					console.log(sum)						
 				}
 				if(sum==0){
@@ -254,6 +290,51 @@ $(function(){
 	    }
 	 })
 });
+
+
+//优惠价格的方法
+function discountPrice(dataId,type,price){
+	var sum=0;
+	if(type==2){
+		//折扣
+		$(".coupon-list .item[data-id='"+dataId+"']").each(function(index, element){
+			sum +=parseInt(price-($(this).find(".cose-valut").text())*price);
+		});			
+	}else if(type==3){
+		//优惠
+		$(".coupon-list .item[data-id='"+dataId+"']").each(function(index, element){
+			sum +=parseInt($(this).find(".cose-valut").text());		
+		});			
+	}
+	return sum;
+}
+
+
+
+//区分类型显示灰色 type:当前显示的type
+function CouponDiscountType(type,msg){
+	$('.coupon-list .item').each(function(val, index) {
+		var that=$(this);
+		if(that.attr('data-type')!=type){
+			that.addClass('disabled');
+			if(msg!="" || msg){
+				that.find('.msg').html(msg)
+			}else{
+				that.find('.msg').hide();
+			}
+		}
+	});
+}
+
+//灰色类型还原显示  type:当前显示的type
+function CouponDiscountTypeReset(type){
+	$('.coupon-list .item').each(function(val, index) {
+		var that=$(this);
+		if(that.attr('data-type')!=type){
+			that.removeClass('disabled');
+		}
+	});
+}
 </script>
 <!-- scripts end -->
 </body>

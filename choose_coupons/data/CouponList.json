@@ -3,7 +3,7 @@
     "Coupons": [
       {
         "CouponCode": "0000000",
-        "Name": "10元优惠券",
+        "Name": "7折",
         "MemberNo": null,
         "CouponId": null,
         "Memo": "",
@@ -17,12 +17,12 @@
         "EndTime": "2017-09-30 00:00:00",
         "StartTime": "2017-07-30 00:00:00",
         "ledgerCodes": null,
-        "CostValue": 10.0,
-        "CouponDiscountType": 3
+        "CostValue": 0.7,
+        "CouponDiscountType": 2
       },
       {
         "CouponCode": "0000000",
-        "Name": "10元优惠券",
+        "Name": "8折",
         "MemberNo": null,
         "CouponId": null,
         "Memo": "",
@@ -36,8 +36,8 @@
         "EndTime": "2017-09-30 00:00:00",
         "StartTime": "2017-07-30 00:00:00",
         "ledgerCodes": null,
-        "CostValue": 10.0,
-        "CouponDiscountType": 3
+        "CostValue": 0.8,
+        "CouponDiscountType": 2
       },
       {
         "CouponCode": "0000000",

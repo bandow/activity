@@ -320,6 +320,8 @@ html {
       display: block;
       font: 0.6rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
       color: #999; }
+  .coupon-list .item .msg {
+    display: none; }
   .coupon-list .item .select {
     position: absolute;
     top: 8%;
@@ -333,7 +335,7 @@ html {
         width: 100%; }
   .coupon-list .item:before {
     position: absolute;
-    top: 62%;
+    top: 3.7rem;
     left: -.4rem;
     content: "";
     width: .8rem;
@@ -342,7 +344,7 @@ html {
     border-radius: 100%; }
   .coupon-list .item:after {
     position: absolute;
-    top: 62%;
+    top: 3.7rem;
     right: -.4rem;
     content: "";
     width: .8rem;
@@ -351,6 +353,28 @@ html {
     border-radius: 100%; }
 .coupon-list .active {
   display: block; }
+.coupon-list .item.disabled .left .price {
+  background-color: #dfdfdf; }
+.coupon-list .item.disabled .right h3 {
+  font: 0.85rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #999; }
+  .coupon-list .item.disabled .right h3 span {
+    font: 0.6rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+    color: #999; }
+.coupon-list .item.disabled .right p {
+  font: 0.65rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #999;
+  margin-bottom: 1rem; }
+.coupon-list .item.disabled .msg {
+  width: 105%;
+  margin: 0 -2.5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
+  border-top: 1px dashed #eee;
+  display: block;
+  font: 0.55rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #999; }
 
 .choose-coupons-footer {
   position: fixed;

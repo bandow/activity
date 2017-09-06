@@ -162,6 +162,9 @@
 		 		color:#999;
 			}
 		}
+		.msg{
+			display:none;
+		}
 		.select{
 			position:absolute;
 			top:8%;
@@ -178,7 +181,7 @@
 		}
 		&:before{
 			position:absolute;
-			top:62%;
+			top:3.7rem;
 			left:-.4rem;
 			content:"";
 			width:.8rem;
@@ -188,7 +191,7 @@
 		}
 		&:after{
 			position:absolute;
-			top:62%;
+			top:3.7rem;
 			right:-.4rem;
 			content:"";
 			width:.8rem;
@@ -199,6 +202,39 @@
 	}
 	.active{
 		display:block;
+	}
+	.item.disabled{
+		.left{
+			.price{
+				background-color:#dfdfdf;
+			}
+		}
+		.right{
+			h3{
+				font:.85rem/1.5 $publicFont;
+		 		color:#999;
+		 		span{
+					font:.6rem/1.5 $publicFont;
+			 		color:#999;
+		 		}
+			}
+			p{
+				font:.65rem/1.5 $publicFont;
+		 		color:#999;
+		 		margin-bottom:1rem;
+			}
+		}
+		.msg{
+			width: 105%;
+		    margin: 0 -2.5%;
+		    padding-left: 5%;
+		    padding-right: 5%;
+		    padding-top: 2%;
+		    border-top: 1px dashed #eee;
+			display:block;
+			font:.55rem/1.5 $publicFont;
+	 		color:#999;
+		}
 	}
 }
 .choose-coupons-footer{
