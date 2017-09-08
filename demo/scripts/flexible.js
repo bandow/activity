@@ -16,7 +16,13 @@
   // set 1rem = viewWidth / 10
   function setRemUnit () {
     var rem = docEl.clientWidth / 10
-    docEl.style.fontSize = rem + 'px'
+    //docEl.style.fontSize = rem + 'px'
+    //针对PC端640的扩展
+    if(rem<64){
+      docEl.style.fontSize = rem + 'px'
+    }else{
+      docEl.style.fontSize = 64 + 'px'
+    }
   }
 
   setRemUnit()

@@ -62,15 +62,15 @@ var app = new Vue({
         isTiems:false
     }, 
 	created:function(){
-        const _this=this;
-		console.log(_this.currentData)
+        var _this=this;
+		console.log(_this.currentData);
 
         //处理数据*****************ajax
         //_this.testList=ajax回来的数据
 
 
         for(var i=0;_this.testList.length>i;i++){
-            _this.dataArray.push(_this.testList[i].Data)
+            _this.dataArray.push(_this.testList[i].Data);
         }
         for(var j=0; j<_this.dataArray.length;j++){
             if(_this.dataArray[j].Part==1){
@@ -85,7 +85,7 @@ var app = new Vue({
         _this.passTest();
 	},
 	mounted:function(){
-		const _this=this;
+		var _this=this;
 		_this.loading=false;
         _this.countTime();
 	},
@@ -201,7 +201,7 @@ var app = new Vue({
              _this.isTiems=false;
             _this.t=window.setInterval(function(){
                 if(_this.countDown > 0){
-                   _this.countDown--
+                   _this.countDown--;
                    if(_this.countDown==0){                                      
                         if(_this.currentPart<3){                                                       
                             _this.currentPart++;
@@ -230,9 +230,9 @@ var app = new Vue({
             if(_this.currentPart==1){
                 num=Math.ceil(Math.random()*(_this.onePartArray.length));
             }else if(_this.currentPart==2){
-                num=Math.ceil(Math.random()*_this.secondePartArray.length+_this.onePartArray.length)
+                num=Math.ceil(Math.random()*_this.secondePartArray.length+_this.onePartArray.length);
             }else if(_this.currentPart==3){
-                num=Math.ceil(Math.random()*_this.thirdPartArray.length+_this.onePartArray.length+_this.secondePartArray.length)
+                num=Math.ceil(Math.random()*_this.thirdPartArray.length+_this.onePartArray.length+_this.secondePartArray.length);
             }
             if (_this.testList.length > 0) {  
                 _this.currentData=_this.testList[num];

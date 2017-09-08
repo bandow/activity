@@ -3,14 +3,15 @@
 * Reset Style for Mobile
 * Author:雪丘行||Bandow
 * Author URI:http://www.unll123.com/
-* Date:2016-10-18
-* Version:0.0.1
+* Date:2017-09-08
+* Version:0.0.2
 * ================================================================== */
 html {
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
   /*-webkit-text-size-adjust是解决 iPhone 横屏时默认会放大文字的问题*/
   -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%; }
+  -webkit-text-size-adjust: 100%;
+}
 
 html, body {
   /*-webkit-user-select:none禁止用户进行复制.选择.*/
@@ -19,12 +20,14 @@ html, body {
   width: 100%;
   /*使用min-height:100%代替height：100%*/
   height: 100%;
-  min-height: 100%; }
+  min-height: 100%;
+}
 
 body {
   /*弹性滚动-局部滚动开启弹性滚动：将属性挂在body上，可以避免很多奇怪的bug。*/
   overflow: scroll;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -50,16 +53,19 @@ time, div, mark, audio, video {
   /* Firefox */
   -webkit-box-sizing: border-box;
   /* Safari */
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 ol, ul {
+  /*去掉列表点*/
   list-style: none;
-  /*去掉列表点*/ }
+}
 
 table {
-  border-collapse: collapse;
   /*去掉表格的双行线*/
-  border-spacing: 0; }
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 
 /*取消a标签在移动端点击时的背景颜色*/
 a, a:hover, a:active, a:visited, a:link, a:focus {
@@ -67,628 +73,121 @@ a, a:hover, a:active, a:visited, a:link, a:focus {
   -webkit-tap-highlight-color: transparent;
   outline: none;
   background: none;
-  text-decoration: none; }
+  text-decoration: none;
+}
+
+a, img {
+  /* 禁止长按链接与图片弹出菜单 */
+  -webkit-touch-callout: none;
+}
 
 input {
+  /*ios去除input默认样式*/
   -webkit-appearance: none;
-  /*ios去除input默认样式*/ }
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 640px;
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
+
+.dossen-header-left {
+  position: relative;
+}
+.dossen-header-left:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  border-bottom: 0;
+  border-right: 0;
+  margin-top: -5px;
+  color: #333;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+
+.dossen-arrow-bottom {
+  position: relative;
+}
+.dossen-arrow-bottom:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+  border-bottom: 0;
+  border-right: 0;
+  margin-top: -5px;
+  color: #333;
+  -webkit-transform: rotateZ(-135deg);
+  transform: rotateZ(-135deg);
+}
+
+.dossen-arrow {
+  position: relative;
+}
+.dossen-arrow:after {
+  content: ' ';
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  width: 8px;
+  height: 8px;
+  border: 1px solid;
+  border-bottom: 0;
+  border-right: 0;
+  margin-top: -4px;
+  color: #ccc;
+  -webkit-transform: rotateZ(135deg);
+  transform: rotateZ(135deg);
+}
+
+.dossen-pr {
+  padding-right: 5%;
+}
 
 /* =================================================================
 * Reset Style for Mobile
 * Author:雪丘行||Bandow
 * Author URI:http://www.unll123.com/
-* Date:2017-06-01
-* Version:0.0.1
+* Date:2017-09-08
+* Version:0.0.2
 * ================================================================== */
-/*html {
-  font-size: 18px; }
-
-@media (min-device-width: 320px) {
-  html {
-    font-size: 18px; } }
-@media (min-device-width: 360px) {
-  html {
-    font-size: 20.25px; } }
-@media (min-device-width: 375px) {
-  html {
-    font-size: 21.1px; } }
-@media (min-device-width: 384px) {
-  html {
-    font-size: 21.6px; } }
-@media (min-device-width: 400px) {
-  html {
-    font-size: 22.5px; } }
-@media (min-device-width: 412px) {
-  html {
-    font-size: 23.17px; } }
-@media (min-device-width: 414px) {
-  html {
-    font-size: 23.3px; } }
-@media (min-device-width: 480px) {
-  html {
-    font-size: 26.99px; } }
-@media (min-device-width: 533px) {
-  html {
-    font-size: 29.98px; } }
-@media (min-device-width: 568px) {
-  html {
-    font-size: 31.95px; } }
-@media (min-device-width: 600px) {
-  html {
-    font-size: 33.74px; } }
-@media (min-device-width: 640px) {
-  html {
-    font-size: 24px; } }*/
-.wrapper {
-  /*width:10rem;*/
-  max-width: 640px;
-  /*min-height: 100%;*/
-  /*height: auto;*/
-  margin: 0 auto;
-  overflow: hidden;
-  /*padding-top: 44px; */
-}
-
-.dossen-header-left {
-  position: relative; }
-  .dossen-header-left:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 3px;
-    width: 10px;
-    height: 10px;
-    border: 1px solid;
-    border-bottom: 0;
-    border-right: 0;
-    margin-top: -5px;
-    color: #333;
-    -webkit-transform: rotateZ(-45deg);
-    transform: rotateZ(-45deg); }
-
-.dossen-arrow-bottom {
-  position: relative; }
-  .dossen-arrow-bottom:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 3px;
-    width: 10px;
-    height: 10px;
-    border: 1px solid;
-    border-bottom: 0;
-    border-right: 0;
-    margin-top: -5px;
-    color: #333;
-    -webkit-transform: rotateZ(-135deg);
-    transform: rotateZ(-135deg); }
-
-.dossen-arrow {
-  position: relative; }
-  .dossen-arrow:after {
-    content: ' ';
-    position: absolute;
-    top: 50%;
-    right: 5%;
-    width: 8px;
-    height: 8px;
-    border: 1px solid;
-    border-bottom: 0;
-    border-right: 0;
-    margin-top: -4px;
-    color: #ccc;
-    -webkit-transform: rotateZ(135deg);
-    transform: rotateZ(135deg); }
-
-.dossen-pr {
-  padding-right: 5%; }
-
-.new-hand-gift-header {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 3;
-  padding: 0 3%;
-  width: 100%;
-  height: 44px;
-  background-color: #fff;
+div {
+  display: -moz-flex;
   display: -webkit-flex;
   display: flex;
-  align-items: center; }
-  .new-hand-gift-header .left {
-    width: 10%; }
-  .new-hand-gift-header h1 {
-    width: 80%;
-    font: 0.8rem/40px -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-    color: #333;
-    text-align: center; }
-  .new-hand-gift-header .right {
-    width: 10%;
-    display: -webkit-flex;
-    display: flex;
-    justify-content: flex-end; }
-    .new-hand-gift-header .right i {
-      width: auto;
-      height: 20px;
-      font-size: 0;
-      display: -webkit-flex;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-      .new-hand-gift-header .right i img {
-        width: auto;
-        height: auto;
-        max-height: 100%;
-        max-width: 100%; }
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
 
-.container {
-  padding: 5%; }
-  .container .logo-title {
-    padding-top: 20%;
-    margin: 1.5rem 3% 0;
-    border: 1px solid #ddd;
-    border-top: 0; }
-    .container .logo-title .logo {
-      display: -webkit-flex;
-      display: flex;
-      align-items: center;
-      margin-top: -5.28rem; }
-      .container .logo-title .logo i:nth-child(1) {
-        flex: 1;
-        height: 1px;
-        background-color: #ddd;
-        position: relative; }
-        .container .logo-title .logo i:nth-child(1):before {
-          position: absolute;
-          top: -2px;
-          right: -5px;
-          content: "";
-          width: 4px;
-          height: 4px;
-          border: 1px solid #a0a0a0;
-          border-radius: 100%; }
-      .container .logo-title .logo i:nth-child(2) {
-        width: 4rem;
-        margin: 0 .5rem;
-        font-size: 0; }
-        .container .logo-title .logo i:nth-child(2) img {
-          padding-top: 1.5rem;
-          width: 100%; }
-      .container .logo-title .logo i:nth-child(3) {
-        flex: 1;
-        height: 1px;
-        background-color: #ddd;
-        position: relative; }
-        .container .logo-title .logo i:nth-child(3):before {
-          position: absolute;
-          top: -2px;
-          left: -5px;
-          content: "";
-          width: 4px;
-          height: 4px;
-          border: 1px solid #a0a0a0;
-          border-radius: 100%; }
-    .container .logo-title .text {
-      padding: 10% 0 30%; }
-      .container .logo-title .text h2 {
-        font: bold 1.5rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-        color: #333;
-        text-align: center; }
-      .container .logo-title .text p {
-        font: 0.7rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-        color: #333;
-        text-align: center; }
-  .container .no-red-packet {
-    padding-top: 5rem;
-    margin-top: -3rem; }
-    .container .no-red-packet .content {
-      padding-top: 1rem;
-      background-color: #e65345; }
-      .container .no-red-packet .content form {
-        margin: 0 auto;
-        width: 80%; }
-        .container .no-red-packet .content form .item {
-          padding: 0 5%;
-          background: #fff;
-          border-radius: 30px;
-          height: 2rem; }
-          .container .no-red-packet .content form .item input {
-            background: none;
-            border: none;
-            outline: none;
-            width: 100%;
-            height: 100%;
-            font: 0.7rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-            color: #333; }
-            .container .no-red-packet .content form .item input::-webkit-input-placeholder {
-              font: 0.7rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-              color: #ccc; }
-        .container .no-red-packet .content form .code {
-          margin: 1rem 0;
-          display: -webkit-flex;
-          display: flex;
-          align-items: center; }
-          .container .no-red-packet .content form .code .item {
-            flex: 1; }
-          .container .no-red-packet .content form .code i {
-            margin-left: .5rem;
-            height: 2rem;
-            font-size: 0; }
-            .container .no-red-packet .content form .code i img {
-              width: auto;
-              height: 100%; }
-        .container .no-red-packet .content form .but {
-          display: block;
-          margin: 1rem auto;
-          width: 100%;
-          font: 0.75rem/2rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-          color: #fff;
-          text-align: center;
-          background-color: #ffb300;
-          border-radius: 30px;
-          box-shadow: 1px 2px 5px #e04233; }
-      .container .no-red-packet .content .activity-title {
-        padding: 0 3% 10%;
-        display: -webkit-flex;
-        display: flex;
-        align-items: center; }
-        .container .no-red-packet .content .activity-title i {
-          flex: 1;
-          height: 1px;
-          background-color: #c83a2d; }
-        .container .no-red-packet .content .activity-title .text {
-          padding: 1% 3%;
-          display: -webkit-flex;
-          display: flex;
-          align-items: center;
-          background-color: #c83a2d;
-          border-radius: 30px; }
-          .container .no-red-packet .content .activity-title .text i {
-            width: 15px;
-            height: 15px;
-            font-size: 0; }
-            .container .no-red-packet .content .activity-title .text i img {
-              width: 100%; }
-          .container .no-red-packet .content .activity-title .text p {
-            margin-left: .3rem;
-            font: bold 0.65rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-            color: #ff6152; }
-  .container .red-packet {
-    padding-top: 5rem;
-    margin-top: -3rem; }
-    .container .red-packet .content {
-      padding-top: 1rem;
-      background-color: #e65345; }
-      .container .red-packet .content > p {
-        font: 0.7rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-        color: #970d00;
-        text-align: center; }
-      .container .red-packet .content > button {
-        background: none;
-        border: none;
-        outline: none;
-        display: block;
-        margin: 1rem auto;
-        width: 80%;
-        font: 0.75rem/2rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-        color: #fff;
-        text-align: center;
-        background-color: #ffb300;
-        border-radius: 30px;
-        box-shadow: 1px 2px 5px #e04233; }
-      .container .red-packet .content .coupon-list {
-        padding: 5% 10%; }
-        .container .red-packet .content .coupon-list .item {
-          margin-bottom: .5rem;
-          background-color: #fff;
-          border-radius: 5px;
-          display: -webkit-flex;
-          display: flex;
-          align-items: center; }
-          .container .red-packet .content .coupon-list .item .l {
-            padding: 5%;
-            flex: 3;
-            border-right: 1px dashed #ddd; }
-            .container .red-packet .content .coupon-list .item .l h2 {
-              font: bold 1.2em/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-              color: #f3ab00; }
-              .container .red-packet .content .coupon-list .item .l h2 span {
-                margin-left: .5rem;
-                font-size: .7rem;
-                font-weight: normal; }
-            .container .red-packet .content .coupon-list .item .l p {
-              font: 0.6rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-              color: #999; }
-          .container .red-packet .content .coupon-list .item .r {
-            flex: 1;
-            font: bold 0.75rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-            color: #666;
-            text-align: center; }
-      .container .red-packet .content .activity-title {
-        padding: 0 3% 10%;
-        display: -webkit-flex;
-        display: flex;
-        align-items: center; }
-        .container .red-packet .content .activity-title i {
-          flex: 1;
-          height: 1px;
-          background-color: #c83a2d; }
-        .container .red-packet .content .activity-title .text {
-          padding: 1% 3%;
-          display: -webkit-flex;
-          display: flex;
-          align-items: center;
-          background-color: #c83a2d;
-          border-radius: 30px; }
-          .container .red-packet .content .activity-title .text i {
-            width: 15px;
-            height: 15px;
-            font-size: 0; }
-            .container .red-packet .content .activity-title .text i img {
-              width: 100%; }
-          .container .red-packet .content .activity-title .text p {
-            margin-left: .3rem;
-            font: bold 0.65rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-            color: #ff6152; }
-  .container .bottom-content {
-    margin-top: 1rem; }
-    .container .bottom-content .title {
-      display: -webkit-flex;
-      display: flex;
-      align-items: center; }
-      .container .bottom-content .title i {
-        flex: 1;
-        height: 1px;
-        background-color: #a0a0a0; }
-        .container .bottom-content .title i:first-child {
-          position: relative; }
-          .container .bottom-content .title i:first-child:before {
-            position: absolute;
-            top: -2.5px;
-            right: -5px;
-            content: "";
-            width: 4px;
-            height: 4px;
-            border: 1px solid #a0a0a0;
-            border-radius: 100%; }
-        .container .bottom-content .title i:last-child {
-          position: relative; }
-          .container .bottom-content .title i:last-child:before {
-            position: absolute;
-            top: -2.5px;
-            left: -5px;
-            content: "";
-            width: 4px;
-            height: 4px;
-            border: 1px solid #a0a0a0;
-            border-radius: 100%; }
-      .container .bottom-content .title h2 {
-        margin: 0 .8rem;
-        font: 0.8rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-        color: #000;
-        text-align: center; }
-    .container .bottom-content .text-list {
-      display: -webkit-flex;
-      display: flex;
-      flex-wrap: wrap; }
-      .container .bottom-content .text-list .item {
-        margin: 1rem 0 0 0;
-        width: 47.5%; }
-        .container .bottom-content .text-list .item:nth-child(2n) {
-          margin-left: 5%; }
-        .container .bottom-content .text-list .item h3 {
-          margin-bottom: .3rem;
-          font: bold 0.7rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-          color: #da004c; }
-        .container .bottom-content .text-list .item p {
-          font: 0.6rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-          color: #666; }
-
-.show {
-  display: block; }
-
-.hidden {
-  display: none; }
-
-.mask {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  background-color: #000;
-  opacity: .5; }
-
-.mask-active {
-  display: none; }
-
-.no-mask-active {
-  display: block; }
-
-.rule {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  padding: 5%;
-  background-color: #fff;
-  width: 80%;
-  border-radius: 5px; }
-  .rule .close {
-    position: absolute;
-    top: 3%;
-    right: 3%;
-    width: 16px;
-    height: 16px;
-    font-size: 0; }
-    .rule .close img {
-      width: 100%; }
-  .rule .text {
-    overflow: auto;
-    max-height: 14rem; }
-  .rule h3 {
-    font: 0.75rem/1.8 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-    color: #a50000;
-    text-align: center;
-    margin-bottom: .5rem; }
-  .rule p {
-    font: 0.7rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-    color: #666; }
-
-.rule-active {
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -moz-transform: translate3d(-50%, -300%, 0);
-  -o-transform: translate3d(-50%, -300%, 0);
-  -ms-transform: translate3d(-50%, -300%, 0);
-  -webkit-transform: translate3d(-50%, -300%, 0);
-  transform: translate3d(-50%, -300%, 0); }
-
-.no-rule-active {
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -moz-transform: translate3d(-50%, -50%, 0);
-  -o-transform: translate3d(-50%, -50%, 0);
-  -ms-transform: translate3d(-50%, -50%, 0);
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0); }
-
-.identifying-code {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  padding: 5%;
-  background-color: #fff;
-  width: 80%;
-  border-radius: 5px; }
-  .identifying-code .close {
-    position: absolute;
-    top: -2rem;
-    right: 0;
-    height: 2rem;
-    font-size: 0; }
-    .identifying-code .close img {
-      height: 100%; }
-  .identifying-code h3 {
-    font: 0.75rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-    color: #333;
-    text-align: center; }
-  .identifying-code p {
-    font: 0.6rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-    color: #999;
-    text-align: center; }
-    .identifying-code p a {
-      color: #0091ff;
-      text-decoration: underline; }
-  .identifying-code .input-yzm {
-    margin: 1rem 0;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .identifying-code .input-yzm input {
-      background: none;
-      border: none;
-      outline: none;
-      width: 2rem;
-      height: 2rem;
-      font: 0.7rem/2rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-      color: #333;
-      background: #eee;
-      margin-right: 1rem;
-      text-align: center; }
-      .identifying-code .input-yzm input:last-child {
-        margin-right: 0; }
-
-.codeActive {
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -moz-transform: translate3d(-50%, -300%, 0);
-  -o-transform: translate3d(-50%, -300%, 0);
-  -ms-transform: translate3d(-50%, -300%, 0);
-  -webkit-transform: translate3d(-50%, -300%, 0);
-  transform: translate3d(-50%, -300%, 0); }
-
-.noCodeActive {
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -moz-transform: translate3d(-50%, -50%, 0);
-  -o-transform: translate3d(-50%, -50%, 0);
-  -ms-transform: translate3d(-50%, -50%, 0);
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0); }
-
-.gift-mask {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  padding: 5%;
-  background-color: #fff;
-  width: 80%;
-  border-radius: 5px; }
-  .gift-mask h3 {
-    font: 0.75rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-    color: #333;
-    text-align: center; }
-  .gift-mask p {
-    font: 0.6rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-    color: #999;
-    text-align: center; }
-  .gift-mask .btn {
-    margin: .5rem auto 0;
-    width: 80%;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; }
-    .gift-mask .btn a {
-      padding: 0 7%;
-      font: 0.75rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-      border: 1px solid;
-      color: #999;
-      text-align: center;
-      border-radius: 30px; }
-      .gift-mask .btn a:last-child {
-        color: #333; }
-
-.gift-mask-active {
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -moz-transform: translate3d(-50%, -500%, 0);
-  -o-transform: translate3d(-50%, -500%, 0);
-  -ms-transform: translate3d(-50%, -500%, 0);
-  -webkit-transform: translate3d(-50%, -500%, 0);
-  transform: translate3d(-50%, -500%, 0); }
-
-.gift-mask-on-active {
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
-  -moz-transform: translate3d(-50%, -50%, 0);
-  -o-transform: translate3d(-50%, -50%, 0);
-  -ms-transform: translate3d(-50%, -50%, 0);
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0); }
+p {
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
 
 /*# sourceMappingURL=index.css.map */
