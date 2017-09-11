@@ -14,10 +14,44 @@
 <meta name="msapplication-tap-highlight" content="no">
 <link rel="stylesheet" href="styles/index.css">
 <title></title>
+<style>
+.div{
+	border:1px solid #000;
+}
+.p{
+    font-size:1rem;
+}
+
+
+
+</style>
 <body>
-	<div class="wrapper" style="background:red; height:5rem">
-		<p style="font-size:1rem">测试</p>
-		<div style="padding:10px;border:1px solid #fff;"></div>
-	</div>
+<div class="wrapper">
+<div class="div" style="margin-top:20px;width:200px;height:200px;background-color:#ccc;"></div>
+
+<div style="margin-top:20px;width:200px;height:200px;border:1px solid #000"></div>
+
+<p class="p">房价低至76折</p>
+</div>
+
+
+<!-- <script>
+!function(){
+    var target = document.getElementById("target");
+    var body = document.querySelector("body");
+    var touchstartBeginTime = 0;
+    function log(event){
+        if(event.type === "touchstart") touchstartBeginTime = Date.now();
+        console.log(event.type, Date.now() - touchstartBeginTime);
+    }
+    target.onclick = log;
+    target.ontouchstart = log;
+    target.ontouchend = log;
+    target.ontouchmove = log;
+    target.onmouseover = log;
+    target.onmousedown = log;
+    target.onmouseup = log;
+}();
+</script> -->
 </body>
 </html>

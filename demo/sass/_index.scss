@@ -1,12 +1,1 @@
 @import 'base','common','variable';
-
-div{
-	@include display(flex);
-	@include box-flex(1); 
-}
-p{
-	@include flex-wrap(nowrap);
-	@include box-flex(1);
-	@include align-items(center);
-	@include justify-content(center);
-}

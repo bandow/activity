@@ -11,6 +11,8 @@ html {
   /*-webkit-text-size-adjust是解决 iPhone 横屏时默认会放大文字的问题*/
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  /*取消掉300ms的延迟，chrome和safari可以生效*/
+  touch-action: manipulation;
 }
 
 html, body {
@@ -164,30 +166,5 @@ input {
 * Date:2017-09-08
 * Version:0.0.2
 * ================================================================== */
-div {
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: flex;
-  -moz-box-flex: 1;
-  -webkit-box-flex: 1;
-  box-flex: 1;
-  -webkit-flex: 1;
-  flex: 1;
-}
-
-p {
-  -webkit-flex-wrap: nowrap;
-  flex-wrap: nowrap;
-  -moz-box-flex: 1;
-  -webkit-box-flex: 1;
-  box-flex: 1;
-  -webkit-flex: 1;
-  flex: 1;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  justify-content: center;
-}
 
 /*# sourceMappingURL=index.css.map */

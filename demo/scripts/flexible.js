@@ -1,7 +1,6 @@
 (function flexible (window, document) {
   var docEl = document.documentElement
   var dpr = window.devicePixelRatio || 1
-
   // adjust body font size
   function setBodyFontSize () {
     if (document.body) {
@@ -15,14 +14,17 @@
 
   // set 1rem = viewWidth / 10
   function setRemUnit () {
-    var rem = docEl.clientWidth / 10
-    //docEl.style.fontSize = rem + 'px'
+    var rem = docEl.clientWidth / 10;
     //针对PC端640的扩展
-    if(rem<64){
-      docEl.style.fontSize = rem + 'px'
-    }else{
-      docEl.style.fontSize = 64 + 'px'
+    if(rem>64){
+      rem =64;
     }
+    //针对设计图宽度designWidth
+    var designWidth=75,
+    d=designWidth/100;     
+    if (!rem) return;
+    docEl.style.fontSize = rem/d+"px";
+    //docEl.style.fontSize = rem + 'px'
   }
 
   setRemUnit()
