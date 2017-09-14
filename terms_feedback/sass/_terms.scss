@@ -1,0 +1,56 @@
+@import 'base','common';
+.wrapper{
+	width:100%;
+	max-width:640px;
+	min-height:100%;
+	height:auto;
+	margin:0 auto;
+	overflow:hidden;
+	background-color:#fff;
+	padding-top:.95rem;
+}
+.content{
+	display:none;
+}
+.content.on{
+	display:block;
+}
+.header{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	max-width:640px;
+	height:.9rem;
+	margin:0 auto;
+	background-color:#fff;
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(center);
+    box-shadow: 1px 3px 5px #eee;
+	.left{
+	    position: absolute;
+	    z-index: 1;
+	    top: 50%;
+	    left: 0;
+		width:1rem
+	}
+	h1{
+		width:100%;
+		margin:0 -1rem;
+		text-align:center;
+		font:.32rem $publicFont;
+		color:#333;
+	}
+}
+.terms{
+	padding:.3rem;
+	h3{
+		font:bold .3rem/.56rem $publicFont;
+		color:#333;
+	}
+	p{
+		font:.28rem/.56rem $publicFont;
+		color:#666;
+	}
+}

@@ -1,0 +1,30 @@
+@import 'variable';
+@mixin arrow($angle,$num){
+	position:relative;
+	&:after {
+	    content:'';
+	    position:absolute;
+	    top:50%;
+	    left:50%;
+	    margin-top:$num;
+        width:.2rem;
+    	height:.2rem;
+	    border:1px solid;
+	    border-bottom:0;
+	    border-right:0;
+	    color:#a0a0a0;
+	    @include transform(translate3d(-50%,-50%,0) rotateZ($angle));
+	}
+}
+.arrow-left{
+    @include arrow(-45deg,0);
+}
+.arrow-bottom{
+    @include arrow(-135deg,-.05rem); 
+}
+.arrow-top{
+    @include arrow(45deg,.05rem); 
+}
+.arrow-right{
+    @include arrow(135deg,0); 
+}

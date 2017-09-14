@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/feedback.css">
+    <title>帮助与反馈</title>
+</head>
+<body>
+<div class="wrapper" id="app">
+    <div class="content" v-bind:class="{on:!loading}">
+        <header class="header">
+            <div class="left arrow-left"></div>
+            <h1 v-text="title"></h1>
+        </header>
+        <div class="feedback">
+            <form v-on:submit.prevent="submit">
+                <div class="feedback-textarea">
+                    <textarea maxlength="{{figure}}" v-on:input="descTextarea" v-model="desc" placeholder="您可以写产品的优化意见、需要的服务内容等"></textarea>
+                    <span>{{remnant}}/{{figure}}</span>
+                </div>
+                <div class="feedback-phone-email">
+                    <input type="text" placeholder="手机号 / 邮箱（选填,方便我们联系您)" v-model="phoneEmail">
+                </div>
+                <a href="javascript:;" v-if="isBtn" class="feedback-btn">提 交</a>
+                <button v-else type="submit" class="feedback-btn on">提 交</button>
+            </form>
+        </div>
+    </div>
+    <div class="promptBox" v-bind:class="{active:alertShow}">
+        <p>{{alertText}}</p>
+    </div>
+    <div class="loading" v-show="loading">正在加载中...</div>
+</div>
+<!-- scripts begin -->
+<script src="scripts/flexible.js"></script>
+<script src="scripts/vue.min.js"></script>
+<script>
+var app = new Vue({
+    el:"#app",
+    data:{
+        title:'帮助与反馈',
+        loading:true,
+        figure:140,
+        remnant:0,
+        desc:'',
+        phoneEmail:'',
+        isBtn:true,
+        alertText:'',
+        alertShow:false,
+    },
+    created:function(){},
+    mounted:function(){
+        var _this=this;
+        _this.loading=false;
+    },
+    methods:{
+        descTextarea:function(){
+            var _this=this;
+            var txtVal = _this.desc.length;
+            _this.remnant=txtVal;
+            if(_this.desc!=''){
+                _this.isBtn=false;
+            }else if(_this.desc==''){
+                _this.isBtn=true;
+                return
+            }
+        },
+        submit:function(){
+            var _this=this;
+            if(_this.phoneEmail==''){
+                _this.prompt('请输入您的手机号 / 邮箱');
+                return
+            }else if(!_this.isTel(_this.phoneEmail) && !isNaN(_this.phoneEmail)){
+                _this.prompt('手机号号码格式错误');
+                return
+            }else if(!_this.isEmail(_this.phoneEmail) && isNaN(_this.phoneEmail)){
+                 _this.prompt('邮箱格式错误');
+                return
+            }
+            console.log("提交内容......");
+        },
+        isTel: function (string) {
+            var reg =/^1(3|4|5|7|8)\d{9}$/; 
+            return reg.test(string);
+        },
+        isEmail:function(string){ 
+            var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/; 
+            return reg.test(string); 
+        } ,
+        prompt:function(str,callback){
+            var _this=this;
+            _this.alertText=str;
+            _this.alertShow=true;
+            setTimeout(function(){
+              _this.alertShow=false;
+              if(callback){
+                callback();
+              }
+            },1000);
+        },
+    },
+    watch:{},
+    computed:{},
+    filters:{}
+});
+</script>
+<!-- scripts end -->
+</body>
+</html>
