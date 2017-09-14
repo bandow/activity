@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/index.css">
+    <title></title>
+    <style>
+        .div{
+        	border:1px solid #000;
+            margin:20px auto;
+            width:200px;
+            height:200px;
+            background-color:#ccc;
+        }
+        .hairlines .div {
+          border-width: 0.5px;
+        }
+        .p{
+            font-size:.1869rem;
+            text-align:center;
+        }
+    </style>
+</head>
+<script src="scripts/WebP.js"></script>
+<body>
+<div class="wrapper">
+    <img style="width:100%" src="" alt="" data-url="images/1.jpg" data-original="images/1.webp">
+</div>
+<script>
+function checkWebp() {
+    try{
+        return(document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0);
+    }catch(err) {
+        return false;
+    }
+}
+console.log(checkWebp()); // true or false
+alert(checkWebp()); // true or false
+
+
+// var userAgent = navigator.userAgent;
+// var Android = userAgent.indexOf("Android");
+// var AppleWebKit=userAgent.indexOf('AppleWebKit');
+// var androidVersion = parseFloat(userAgent.slice(Android+8));
+var $img=document.getElementsByTagName('img');
+window.onload= function () {
+    // if(Android >= 0 && AppleWebKit>=0&&androidVersion>=4){
+    if(document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0){
+        forImg('data-original');
+    }else{
+        forImg('data-url');
+    }
+}
+function forImg(data){
+    for(var i=0;i<$img.length;i++){
+        $img[i].setAttribute('src',$img[i].getAttribute(data));
+    }
+}
+</script>
+<!-- scripts end -->
+</body>
+</html>

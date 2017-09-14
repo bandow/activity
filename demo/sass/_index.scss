@@ -1,1 +1,24 @@
-@import 'base','common','variable';
+@import 'base','common';
+.content{
+	display:none;
+}
+.content.on{
+	display:block;
+}
+.header{
+	height:.8rem;
+	@include display(flex);
+	@include align-items(center);
+	@include justify-content(center);
+	.left{
+		width:.5rem
+	}
+	.right{
+		width:.5rem
+	}
+	h1{
+		@include box-flex(1);
+		text-align:center;
+		font-size:.4rem;
+	}
+}

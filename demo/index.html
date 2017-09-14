@@ -1,57 +1,106 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
-<meta name="author" content="name, sycbbb@sina.com"/>
-<meta name="robots" content="index,follow"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-<script src="scripts/rem.js"></script>
-<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-<meta name="format-detection" content="telephone=no, email=no,adress=no"/>
-<meta name="msapplication-tap-highlight" content="no">
-<link rel="stylesheet" href="styles/index.css">
-<title></title>
-<style>
-.div{
-	border:1px solid #000;
-}
-.p{
-    font-size:1rem;
-}
-
-
-
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/index.css">
+    <title></title>
+    <style>
+        .div{
+        	border:1px solid #000;
+            margin:20px auto;
+            width:200px;
+            height:200px;
+            background-color:#ccc;
+        }
+        .hairlines .div {
+          border-width: 0.5px;
+        }
+        .p{
+            font-size:.1869rem;
+            text-align:center;
+        }
+    </style>
+</head>
 <body>
-<div class="wrapper">
-<div class="div" style="margin-top:20px;width:200px;height:200px;background-color:#ccc;"></div>
-
-<div style="margin-top:20px;width:200px;height:200px;border:1px solid #000"></div>
-
-<p class="p">房价低至76折</p>
+<div class="wrapper" id="app">
+    <div class="content" v-bind:class="{on:!loading}">
+        <header class="header" style="background:red;">
+            <div class="left arrow-left"></div>
+            <h1 v-text="title"></h1>
+            <div class="right arrow-right"></div>
+        </header>
+        <p>
+            <!-- 使用 router-link 组件来导航. -->
+            <!-- 通过传入 `to` 属性指定链接. -->
+            <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+            <router-link to="/foo">Go to Foo</router-link>
+            <router-link to="/bar">Go to Bar</router-link>
+        </p>
+        <!-- 路由出口 -->
+        <!-- 路由匹配到的组件将渲染在这里 -->
+        <router-view></router-view>
+    </div>
+    <div class="loading" v-show="loading">正在加载中...</div>
 </div>
+<!-- scripts begin -->
+<script src="scripts/flexible.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script>
+// 0. 如果使用模块化机制编程，導入Vue和VueRouter，要调用 Vue.use(VueRouter)
 
+// 1. 定义（路由）组件。
+// 可以从其他文件 import 进来
+const Foo = { template: '<div>foo</div>' }
+const Bar = { template: '<div>bar</div>' }
 
-<!-- <script>
-!function(){
-    var target = document.getElementById("target");
-    var body = document.querySelector("body");
-    var touchstartBeginTime = 0;
-    function log(event){
-        if(event.type === "touchstart") touchstartBeginTime = Date.now();
-        console.log(event.type, Date.now() - touchstartBeginTime);
-    }
-    target.onclick = log;
-    target.ontouchstart = log;
-    target.ontouchend = log;
-    target.ontouchmove = log;
-    target.onmouseover = log;
-    target.onmousedown = log;
-    target.onmouseup = log;
-}();
-</script> -->
+// 2. 定义路由
+// 每个路由应该映射一个组件。 其中"component" 可以是
+// 通过 Vue.extend() 创建的组件构造器，
+// 或者，只是一个组件配置对象。
+// 我们晚点再讨论嵌套路由。
+const routes = [
+  { path: '/foo', component: Foo },
+  { path: '/bar', component: Bar }
+]
+
+// 3. 创建 router 实例，然后传 `routes` 配置
+// 你还可以传别的配置参数, 不过先这么简单着吧。
+const router = new VueRouter({
+  routes // （缩写）相当于 routes: routes
+})
+
+// 4. 创建和挂载根实例。
+// 记得要通过 router 配置参数注入路由，
+// 从而让整个应用都有路由功能
+const app = new Vue({
+    el:"#app",
+    router,
+    data:{
+        title:'东呈国际集团酒店',
+        loading:true,
+    },
+    created:function(){},
+    mounted:function(){
+        var _this=this;
+        _this.loading=false;
+    },
+    methods:{},
+    watch:{},
+    computed:{},
+    filters:{}
+});
+// 现在，应用已经启动了！
+</script>
+<!-- scripts end -->
 </body>
 </html>

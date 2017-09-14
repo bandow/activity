@@ -88,6 +88,13 @@ input {
   -webkit-appearance: none;
 }
 
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2017-09-08
+* Version:0.0.2
+* ================================================================== */
 .wrapper {
   width: 100%;
   max-width: 640px;
@@ -98,73 +105,127 @@ input {
   background-color: #f7f7f7;
 }
 
-.dossen-header-left {
+.arrow-left {
   position: relative;
 }
-.dossen-header-left:after {
+.arrow-left:after {
   content: '';
   position: absolute;
   top: 50%;
-  left: 3px;
-  width: 10px;
-  height: 10px;
+  left: 50%;
+  margin-top: 0;
+  width: .2rem;
+  height: .2rem;
   border: 1px solid;
   border-bottom: 0;
   border-right: 0;
-  margin-top: -5px;
   color: #333;
-  -webkit-transform: rotateZ(-45deg);
-  transform: rotateZ(-45deg);
+  -moz-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  -o-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  -ms-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
 }
 
-.dossen-arrow-bottom {
+.arrow-bottom {
   position: relative;
 }
-.dossen-arrow-bottom:after {
+.arrow-bottom:after {
   content: '';
   position: absolute;
   top: 50%;
-  left: 3px;
-  width: 10px;
-  height: 10px;
+  left: 50%;
+  margin-top: -0.05rem;
+  width: .2rem;
+  height: .2rem;
   border: 1px solid;
   border-bottom: 0;
   border-right: 0;
-  margin-top: -5px;
   color: #333;
-  -webkit-transform: rotateZ(-135deg);
-  transform: rotateZ(-135deg);
+  -moz-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+  -o-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+  -ms-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+  transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
 }
 
-.dossen-arrow {
+.arrow-top {
   position: relative;
 }
-.dossen-arrow:after {
-  content: ' ';
+.arrow-top:after {
+  content: '';
   position: absolute;
   top: 50%;
-  right: 5%;
-  width: 8px;
-  height: 8px;
+  left: 50%;
+  margin-top: 0.05rem;
+  width: .2rem;
+  height: .2rem;
   border: 1px solid;
   border-bottom: 0;
   border-right: 0;
-  margin-top: -4px;
-  color: #ccc;
-  -webkit-transform: rotateZ(135deg);
-  transform: rotateZ(135deg);
+  color: #333;
+  -moz-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+  -o-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+  -ms-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+  transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
 }
 
-.dossen-pr {
-  padding-right: 5%;
+.arrow-right {
+  position: relative;
+}
+.arrow-right:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 0;
+  width: .2rem;
+  height: .2rem;
+  border: 1px solid;
+  border-bottom: 0;
+  border-right: 0;
+  color: #333;
+  -moz-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+  -o-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+  -ms-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+  transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
 }
 
-/* =================================================================
-* Reset Style for Mobile
-* Author:雪丘行||Bandow
-* Author URI:http://www.unll123.com/
-* Date:2017-09-08
-* Version:0.0.2
-* ================================================================== */
+.content {
+  display: none;
+}
+
+.content.on {
+  display: block;
+}
+
+.header {
+  height: .8rem;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.header .left {
+  width: 0.5rem;
+}
+.header .right {
+  width: 0.5rem;
+}
+.header h1 {
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: center;
+  font-size: .4rem;
+}
 
 /*# sourceMappingURL=index.css.map */
