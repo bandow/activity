@@ -1,13 +1,4 @@
 @import 'variable';
-.wrapper{
-	width:100%;
-	max-width:640px;
-	min-height:100%;
-	height:auto;
-	margin:0 auto;
-	overflow:hidden;
-	background-color:#f7f7f7;
-}
 @mixin arrow($angle,$num){
 	position:relative;
 	&:after {
