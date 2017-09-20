@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	//闭包方式
+	var plugin1=(function(){
+		function _firstFunc(str){
+			console.log(str);
+		}
+		return{
+			firstFunc:_firstFunc
+		}
+	})();
+	plugin1.firstFunc("plugin1 Hello");
+
+	//自定义类 
+	function plugin(){};
+	//提供默认参数
+	plugin.prototype.str="default param";
+	//提供方法(如果不传参,则使用默认参数)
+	plugin.prototype.firstFunc=function(str=this.str){
+		console.log(str);
+	}
+	//创建"对象"
+	var p=new plugin();
+	//调用方法
+	p.firstFunc();
+	p.firstFunc("Hello");
+
+	//闭包方式上修改
+	var plugin3=(function(){
+		var _options={
+			default_word:"OK"	
+		}
+		var _plugin_api={
+			firstFunc:function(str=_options.default_word){
+				console.log(str);
+				return this;
+			},
+			lastFunc:function(){
+				console.log("on");
+				return this;
+			}
+		}
+		this.CJPlugin=_plugin_api;
+	})();
+	CJPlugin.firstFunc("yes");
+	CJPlugin.firstFunc();
+	CJPlugin.lastFunc();
+</script>
+</body>
+</html>
