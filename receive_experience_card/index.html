@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>领取体验卡</title>
+</head>
+<body>
+<div class="wrapper" id="app">
+    <div class="content" v-bind:class="{on:!loading}" style="background:url(images/bg.jpg) no-repeat;background-size:100% auto;">
+        <div class="receive">
+            <div class="item">
+                <span>手机号码</span>
+                <div class="phone">
+                    <input type="tel" placeholder="输入手机号码" v-model="tel">
+                </div>
+            </div>
+            <div class="seletor">
+                <div class="img"><img src="images/selector_icon.png" alt=""></div>
+                <p>勾选表示同意<a href="">《东呈会员注册条款》</a></p>
+            </div>
+            <div class="btn" style="background:url(images/btn1.png) no-repeat;background-size:100% 100%;" v-on:click="btnClick">立即领取</div>
+            <div class="rule-btn" style="background:url(images/btn2.png) no-repeat;background-size:100% 100%;" v-on:click="ruleClick">活动说明</div>
+        </div>
+    </div>
+    <div class="loading" v-show="loading">正在加载中...</div>
+    <div class="mask" v-bind:class="{active:!isMaskActive}" v-on:click="maskClick"></div>
+    <div class="rule-mask" v-bind:class="{active:!isActive}">
+        <div class="close close-icon" v-on:click="closeClick"></div>
+        <h3>活动说明</h3>
+        <div class="rule-mask-content">
+            <p>1. 这里是活动说明的文案，具体文案后补，由淑芬提供。</p>
+            <p>2. 行距段距按照设计稿里面的来做，文案如果太长的话，需要做成滚动效果的。</p>
+            <p>1. 这里是活动说明的文案，具体文案后补，由淑芬提供。</p>
+            <p>2. 行距段距按照设计稿里面的来做，文案如果太长的话，需要做成滚动效果的。</p>
+            <p>1. 这里是活动说明的文案，具体文案后补，由淑芬提供。</p>
+            <p>2. 行距段距按照设计稿里面的来做，文案如果太长的话，需要做成滚动效果的。</p>
+            <p>1. 这里是活动说明的文案，具体文案后补，由淑芬提供。</p>
+            <p>2. 行距段距按照设计稿里面的来做，文案如果太长的话，需要做成滚动效果的。</p>
+        </div>
+    </div>
+    <div class="code-mask" v-bind:class="{active:!isCodeMask}">
+        <div class="close close-icon" v-on:click="closeCodeMask"></div> 
+        <div class="text" v-if="equalTel">
+            <p>您已成功领取礼品</p>
+            <p>输入手机验证码即可查看哦</p>
+        </div>
+        <p>
+            <span>{{number}}</span>
+            <button v-on:click.prevent="getVerifyCode" v-if="send">发送验证码</button>
+            <button v-else>{{computedTime}}S后重新获取</button>
+        </p>
+        <form class="list-input">
+            <input type="tel" v-for="(item,index) in items" v-on:input="inputClick($event,index)" v-model="items[index]" maxlength="1">
+        </form>
+    </div>
+    <div class="success-mask" v-bind:class="{active:!isSuccessMask}">
+        <div class="close close-icon" v-on:click="closeSuccessMask"></div>
+        <div class="text"><p>恭喜亲，成功领取体验卡!</p></div>
+        <div class="btn" style="background:url(images/btn1.png) no-repeat;background-size:100% 100%;" v-on:click="srcClick">点击马尔代夫活动</div>
+    </div>
+    <div class="promptBox" v-bind:class="{active:alertShow}"><p>{{alertText}}</p></div>
+</div>
+<!-- scripts begin -->
+<script src="scripts/flexible.js"></script>
+<script src="scripts/vue.min.js"></script>
+<script>
+var app = new Vue({
+    el:"#app",
+    data:{
+        telList:[
+            {"phone":13719236677},
+            {"phone":13544335506}
+        ],
+        items:['','','','',],
+        loading:true,
+        isActive:true,
+        isMaskActive:true,
+        isCodeMask:true,
+        tel:'',
+        alertText:'',
+        alertShow:false,
+        number:'',
+        equalTel:true,
+        computedTime:0,  //倒数记时
+        send:true,
+        isSuccessMask:true,
+        codeList:'',  
+    },
+    created:function(){
+        var _this=this; 
+        //后台调用数据这个输出对应telList*******************************************  
+    },
+    mounted:function(){
+        var _this=this;
+        _this.loading=false;
+    },
+    methods:{
+        ruleClick:function(){
+            this.isActive=false;
+            this.isMaskActive=false;
+        },
+        closeClick:function(){
+            this.isActive=true;
+            this.isMaskActive=true;
+        },
+        maskClick:function(){
+            this.isActive=true;
+            this.isMaskActive=true;
+            this.isCodeMask=true;
+            this.isSuccessMask=true;
+            //关闭初始化
+            this.equalTel=true;
+        },
+        btnClick:function(){
+            var _this=this;
+            if(_this.tel==''){
+                _this.prompt('请输入您的手机号码');
+                return
+            }else if(!_this.isTel(_this.tel)){
+                _this.prompt('手机号号码格式错误');
+                return
+            }
+            _this.number=_this.tel;
+            //获取数据库的已有的手机号码**********************************
+            for(var i=0;_this.telList.length>i;i++){    
+                if(_this.tel==_this.telList[i].phone){
+                    _this.equalTel=false;
+                }
+            }
+            _this.isCodeMask=false;
+            _this.isMaskActive=false;
+        },
+        getVerifyCode:function(){
+            var _this=this;
+            _this.send=false;
+            _this.computedTime = 60;
+            _this.timer=setInterval(function(){
+              _this.computedTime --;   
+              if(_this.computedTime==0){
+                clearInterval(_this.timer);
+                _this.send=true;
+              }
+            },1000);
+            //调用验证码----------------------------------------------------------------****
+        },
+        closeCodeMask:function(){
+            this.isCodeMask=true;
+            this.isMaskActive=true;
+            //关闭初始化
+            this.equalTel=true;
+        },
+        inputClick:function(e,index){
+            var _this=this;
+            var target=e.currentTarget; //获取当前
+            if(index<_this.items.length-1){
+                target.nextSibling.focus();   //下一个聚焦
+            }      
+            for(var i=0;_this.items.length>i;i++){
+                if(_this.items[_this.items.length-1]!='' && _this.items[_this.items.length-1]!=null){
+                    _this.isSuccessMask=false;
+                    _this.isMaskActive=false; 
+                    _this.isCodeMask=true; 
+                }
+            }   
+        },
+        closeSuccessMask:function(){
+            this.isSuccessMask=true;
+            this.isMaskActive=true;
+        },
+        srcClick:function(){
+            console.log("跳转链接");
+            //跳转页面-----------------------------------------------------------------****
+        },
+        isTel: function (string) {
+            var reg =/^1(3|4|5|7|8)\d{9}$/; 
+            return reg.test(string);
+        },
+        prompt:function(str,callback){
+            var _this=this;
+            _this.alertText=str;
+            _this.alertShow=true;
+            setTimeout(function(){
+              _this.alertShow=false;
+              if(callback){
+                callback();
+              }
+            },1000);
+        },
+    },
+    watch:{},
+    computed:{},
+    filters:{}
+});
+</script>
+</body>
+</html>

@@ -70,3 +70,5 @@
 2017-08-25 试睡师
 # terms_feedback  
 2017-09-14 服务条款-帮助与反馈
+# receive_experience_card
+2017-09-20  领取体验卡页面
