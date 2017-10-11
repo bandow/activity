@@ -1,0 +1,150 @@
+@import 'base','common';
+.wrapper{
+	width:100%;
+	max-width:640px;
+	min-height:100%;
+	height:100%;
+	margin:0 auto;
+	background-color:#fff;
+}
+.video-header{
+	position:relative;
+	width:100%;
+	height:4.25rem;
+	.video-arrow{
+		position:absolute;
+		top:.3rem;
+		left:.45rem;
+		z-index:9999;
+		width:.6rem;
+		height:.6rem;
+		background:rgba(0,0,0,.4);
+		border-radius:100%;
+	}
+	.arrow-left{
+		&:after{
+			color:#fff;
+		    margin-left: .05rem;
+		}
+	}
+}
+.fairfield-content{
+	padding:1.05rem .45rem .45rem .45rem;
+	.case-out{
+		position:relative;
+		padding:.1rem;
+		border:1px solid #b0a263;
+		>em{
+			position:absolute;
+			display: block;
+			width:.45rem;
+			height:.45rem;
+			border:1px solid #b0a263;
+			background-color:#fff;
+			&:nth-child(2){
+				top:-.06rem;
+				left:-.09rem;
+			}
+			&:nth-child(3){
+				top:-.06rem;
+				right:-.09rem;
+			}
+			&:nth-child(4){
+				bottom:-.06rem;
+				left:-.09rem;
+			}
+			&:nth-child(5){
+				bottom:-.06rem;
+				right:-.09rem;
+			}
+		}
+		.case-in{
+			border:1px solid #b0a263;
+			.title{
+				padding:.15rem 0;
+				margin:-.55rem 1.2rem 0 1.2rem;
+				background-color:#fff;
+				border:1px solid #b0a263;
+				text-align:center;
+				h2{
+					font:.3rem/1.5 $publicFont;
+					color:#b0a263;
+				}
+				h3{
+					font:.24rem/1.5 $publicFont;
+					color:#b0a263;
+				}
+			}
+			.logo{
+				margin:.9rem auto .4rem;
+				width:40%;
+				font-size:0;
+				img{
+					width:100%;
+				}
+			}
+			>h4{
+				font:.3rem/1.5 $publicFont;
+				color:#029ccf;
+				text-align:center;
+			}
+			>p{
+				font:.24rem/1.5 $publicFont;
+				color:#029ccf;
+				text-align:center;
+			}
+			.title-bottom{
+				position:relative;
+				margin-top:1rem;
+				>em{
+					position:absolute;
+					display: block;
+					width:.45rem;
+					height:.45rem;
+					border:1px solid #b0a263;
+					background-color:#fff;
+					&:nth-child(1){
+						top:.05rem;;
+						left:-.19rem;
+					}
+					&:nth-child(2){
+						top:.05rem;;
+						right:-.19rem;
+					}
+				}
+				.title-text{
+					@include display(flex);
+					@include align-items(center);
+					em{
+						height:1px;
+						width:2.06rem;
+						background-color:#b0a263;
+					}
+					h2{
+						font:.36rem/1.5 $publicFont;
+						color:#b0a263;
+						text-align:center;
+						@include box-flex(1);
+					}
+				}
+				>p{
+					padding:.5rem;
+					font:.24rem/1.5 $publicFont;
+					color:#999;
+					text-align:center;
+				}
+			}
+		}
+	}
+	.hairlines{
+		.case-out{
+			border-width: 0.5px;
+			.case-in{
+				border-width: 0.5px;	
+				.title{
+					border-width: 0.5px;
+				}
+			}
+		}
+	}
+}
