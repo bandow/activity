@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/subsudy.css">
+    <style>
+        .dropload-up,.dropload-down{
+            position: relative;
+            height: 0;
+            overflow: hidden;
+            font-size: 12px;
+            /* 开启硬件加速 */
+            -webkit-transform:translateZ(0);
+            transform:translateZ(0);
+        }
+        .dropload-refresh,.dropload-update,.dropload-load,.dropload-noData{
+            text-align: center;
+        }
+        .dropload-load .loading{
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+            border-radius: 100%;
+            margin: 6px;
+            border: 2px solid #666;
+            border-bottom-color: transparent;
+            vertical-align: middle;
+            -webkit-animation: rotate 0.75s linear infinite;
+            animation: rotate 0.75s linear infinite;
+        }
+        @-webkit-keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            50% {
+                -webkit-transform: rotate(180deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+<div class="wrapper" id="app">
+    <header class="header" style="background:url(images/subsidy_header_bg.jpg) repeat-y;background-size:100%; auto;">
+        <a class="arrow-left left" href="javascript:history.go(-1);"></a>
+        <h1>双11补贴金</h1>
+        <a class="right" href="javascript:;">赚钱攻略</a>
+    </header>
+    <section class="subsidy-title">
+        <h4>补贴金可以当钱用</h4>
+        <h5>双11东呈剁手节，直接抵扣现金</h5>
+        <h2>¥<strong>26.69</strong></h2>
+    </section>
+    <section class="subsidy-list" style="background:url(images/subsidy_list_bg.jpg) repeat-y;background-size:100%; auto;">
+        <p>温馨提示：全宇宙的补贴金会在11.11后被掳走，请尽快使用！</p>
+        <div class="subsidy-list-content">
+            <div class="items">
+                <div class="left">
+                    <h3>订房抽奖</h3>
+                    <p>2017-11-06  14:36</p>
+                </div>
+                <div class="right">
+                    <p class="add">+￥3.20</p>
+                </div>
+            </div>
+            <div class="items">
+                <div class="left">
+                    <h3>分享奖励</h3>
+                    <p>2017-11-05  17:15</p>
+                </div>
+                <div class="right">
+                    <p class="add">+￥0.28</p>
+                </div>
+            </div>
+            <div class="items">
+                <div class="left">
+                    <h3>预订房间</h3>
+                    <p>2017-11-05  12:09</p>
+                </div>
+                <div class="right">
+                    <p>-￥4.00</p>
+                </div>
+            </div>
+            <div class="items">
+                <div class="left">
+                    <h3>补贴金翻倍奖励</h3>
+                    <p>2017-11-05  12:09</p>
+                </div>
+                <div class="right">
+                    <p class="add">+￥5.00</p>
+                </div>
+            </div>
+            <div class="items">
+                <div class="left">
+                    <h3>订单返还</h3>
+                    <p>2017-11-05  12:09</p>
+                </div>
+                <div class="right">
+                    <p class="add">+￥6.00</p>
+                </div>
+            </div>
+            <div class="items">
+                <div class="left">
+                    <h3>订房抽奖</h3>
+                    <p>2017-11-06  14:36</p>
+                </div>
+                <div class="right">
+                    <p class="add">+￥3.20</p>
+                </div>
+            </div>
+            <div class="items">
+                <div class="left">
+                    <h3>分享奖励</h3>
+                    <p>2017-11-05  17:15</p>
+                </div>
+                <div class="right">
+                    <p class="add">+￥0.28</p>
+                </div>
+            </div>
+            <div class="items">
+                <div class="left">
+                    <h3>预订房间</h3>
+                    <p>2017-11-05  12:09</p>
+                </div>
+                <div class="right">
+                    <p>-￥4.00</p>
+                </div>
+            </div>
+            <div class="items">
+                <div class="left">
+                    <h3>补贴金翻倍奖励</h3>
+                    <p>2017-11-05  12:09</p>
+                </div>
+                <div class="right">
+                    <p class="add">+￥5.00</p>
+                </div>
+            </div>
+            <div class="items">
+                <div class="left">
+                    <h3>订单返还</h3>
+                    <p>2017-11-05  12:09</p>
+                </div>
+                <div class="right">
+                    <p class="add">+￥6.00</p>
+                </div>
+            </div>
+            <div class="dropload-load items-loading"><span class="loading"></span>加载中...</div>
+        </div>
+        <!-- 空数据 begin -->
+        <!-- 温馨提示：后端人员判断的时候把style="display:none"去掉 -->
+        <div class="subsidy-null" style="display:none">
+            <div class="null">
+                <div class="img"></div>
+                <p>点击右上角的赚钱攻略</p>
+                <p>了解更多赚补贴金技巧</p>
+            </div>
+        </div>
+        <!-- 空数据 end -->
+    </section>
+    <div class="subsidy-mask"><a href="index.html">去使用补贴金</a></div>
+</div>
+<div class="public-mask"></div>
+<!-- script begin -->
+<script src="scripts/flexible.js"></script>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var page=0;
+        var flag=true;
+        var windowHeight=$(window).height();
+        var headerHeight=$(".header").outerHeight();
+        var subsidyTitleHeight=$(".subsidy-title").outerHeight();
+        var pHeight=$(".subsidy-list p").outerHeight();
+        var itemsHeight=$(".subsidy-list-content .items").outerHeight();
+        var subsidyListContentHeight=windowHeight-headerHeight-subsidyTitleHeight-pHeight;
+        $(".subsidy-list-content").css("min-height",subsidyListContentHeight);
+        $(".subsidy-null").css("min-height",subsidyListContentHeight);
+     
+        $(window).scroll(function() {
+            var bottomsubmit = $('.items-loading').offset().top;
+            var nowtop = $(document).scrollTop()+windowHeight;
+            console.log(bottomsubmit,nowtop);
+            if(nowtop>bottomsubmit){
+                if(flag==true){
+                    flag=false;
+                    $(".items-loading").show();
+                    page++;
+                    console.log(page);
+                    setTimeout(function(){
+                        $(".items-loading").hide(); 
+                        // ajax加载第二页  定时器可以不需要的 调数据的时候定时器可以去掉
+                    },5000);
+                }   
+            }
+        });
+
+        $(".header .right").on("click",function(){
+            maskRule('赚钱攻略','<p>'+'1.点击右上角分享给好友，好友点击后您可获得补贴金'+'</p><p>'+'2.在扫码订房离店后,会有一条神秘消息，点击即可获得补贴金'+'</p><img src="images/subsidy_mask.jpg" alt=""><p>'+'3.通过APP订房，付款后也可获得补贴金奖励哦'+'</p><p>'+'4.每天在双11主会场可领取1次补贴金'+'</p>')
+        });
+    });
+    // 赚钱攻略方法
+    function maskRule(title,msg){
+        var documentBody=$(document.body);
+        var html='';
+        html+='<div class="mask-rule">';
+        html+='<div class="rule-content">';
+        html+='<h2>'+title+'</h2>';
+        html+='<div class="text">';
+        html+='<p>'+msg+'</p>';
+        html+='</div>';
+        html+='<a class="close" href="javascript:;">朕知道了</a>';
+        html+='</div>';
+        html+='</div>';
+        documentBody.append(html);
+        setTimeout(function(){
+            $(".mask-rule").addClass("mask-rule-active");
+        },0)
+        $(".public-mask").show();
+        $(".public-mask").on("click",function(){
+            $(".public-mask").hide();
+            $(".mask-rule").removeClass("mask-rule-active");
+            setTimeout(function(){
+                $(".mask-rule").remove();
+            },500)
+        });
+        $(".close").on("click",function(){
+            $(".public-mask").hide();
+            $(".mask-rule").removeClass("mask-rule-active");
+            setTimeout(function(){
+                $(".mask-rule").remove();
+            },500)
+        });
+    }
+</script>
+<!-- script end -->
+</body>
+</html>
