@@ -608,16 +608,45 @@
 		padding:.3rem .4rem;
 		border:1px dashed #a18f7e;
 		border-radius:5px;
-		h2{
-			font:.36rem/1.5 $publicFont;
+		>h2{
+			font:bold .36rem/1.5 $publicFont;
 			color:#261a00;
 			text-align:center;
 		}
 		.text{
-			margin:.4rem 0;
+			margin:.2rem 0;
+			max-height:6rem;
+    		overflow: auto;
+    		h4{
+				font:bold .26rem/1.5 $publicFont;
+				color:#261a00;
+				text-align:center;
+				margin-bottom:.2rem;
+    		}
+    		h5{
+    			font:bold .26rem/1.5 $publicFont;
+				color:#473406;
+				text-align:center;
+				margin-bottom:.2rem;
+    		}
+    		h2{
+    			font:bold .26rem/1.5 $publicFont;
+				color:#cf3737;
+				margin-bottom:.2rem;
+    		}
+    		h3{
+    			font:bold .26rem/1.5 $publicFont;
+				color:#cf3737;
+				margin-bottom:.2rem;
+    		}
 			p{
 				font:.26rem/1.5 $publicFont;
 				color:#261a00;
+				margin-bottom:.2rem;
+			}
+			strong{
+				font:bold .26rem/1.5 $publicFont;
+			    color: #261a00;
 			}
 		}
 		a{
