@@ -94,7 +94,7 @@
             </div>
         </div>
     </section>
-    <section class="free-single" style="background:url(images/free_single_bg.jpg) repeat-y;background-size:100% auto;">
+    <section class="free-single" id="1" style="background:url(images/free_single_bg.jpg) repeat-y;background-size:100% auto;">
         <div class="rule"><img src="images/rule2.png" alt=""></div>
         <div class="title">
             <img src="images/title1.png" alt="">
@@ -247,7 +247,7 @@
             </div>
         </div>
     </section>
-    <section class="app-content">
+    <section class="app-content" id="2">
         <div class="rule"><img src="images/rule3.png" alt=""></div>
         <div class="title">
             <img src="images/title3.png" alt="">
@@ -304,9 +304,9 @@
         <div class="swiper-pagination"></div>
     </div>
     <footer class="footer">
-        <a href="">我的福利</a>
-        <a href="">劲爆免单</a>
-        <a href="">超值特惠</a>
+        <a href="userOrders.html">我的福利</a>
+        <a href="#1">劲爆免单</a>
+        <a href="#2">超值特惠</a>
     </footer>
 </div>
 <div class="public-mask"></div>
@@ -440,7 +440,13 @@
         //特惠攻略
         $(".app-content .rule").on("click",function(){
             maskRule('我也要免单2','2文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字文字');
-        });   
+        });  
+        //锚点滚动 
+        $(".footer>a").on("click",function(){
+            var href= $(this).attr("href"),
+                pos = $(href).offset().top;
+            $("html,body").animate({scrollTop: pos}, 1000);
+        });
     });
 </script>
 <script>

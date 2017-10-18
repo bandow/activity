@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/bonus.css">
+    <title></title>
+</head>
+<body>
+<div class="wrapper" id="app">
+    <div class="bouns">
+        <img src="images/bonus.png" alt="">
+        <div class="bouns-hide">
+            <img src="images/bonus_on.png" alt="">
+            <div class="text">
+                <h3>恭喜获得补贴金</h3>
+                <p>补贴金可用在双11活动中抵扣现金哦！</p>
+                <h2>¥<strong>12.60</strong></h2>
+                <a href="subsidy.html">查看我的补贴金></a>
+            </div>
+        </div>
+    </div>
+    <div class="bouns-index">
+        <div class="bouns-index-content">
+            <a href="index.html"><span>进入东呈双11会场</span><i><img src="images/back_icon.png" alt=""></i></a>
+            <p>逢11免单 / 1元秒杀 / 首住99元 / 住4送1</p>
+        </div>
+    </div>
+    <a class="bouns-rule" href="javascript:;">补贴金领取攻略></a>
+</div>
+<div class="public-mask"></div>
+<!-- script begin -->
+<script src="scripts/flexible.js"></script>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".bouns > img").on("click",function(){
+            $(this).hide().next().show();
+        });
+        $(".bouns-rule").on("click",function(){
+            maskRule('赚钱攻略','<p>'+'1.点击右上角分享给好友，好友点击后您可获得补贴金'+'</p><p>'+'2.在扫码订房离店后,会有一条神秘消息，点击即可获得补贴金'+'</p><img src="images/subsidy_mask.jpg" alt=""><p>'+'3.通过APP订房，付款后也可获得补贴金奖励哦'+'</p><p>'+'4.每天在双11主会场可领取1次补贴金'+'</p>')
+        });
+    });
+    // 赚钱攻略方法
+    function maskRule(title,msg){
+        var documentBody=$(document.body);
+        var html='';
+        html+='<div class="mask-rule">';
+        html+='<div class="rule-content">';
+        html+='<h2>'+title+'</h2>';
+        html+='<div class="text">';
+        html+='<p>'+msg+'</p>';
+        html+='</div>';
+        html+='<a class="close" href="javascript:;">朕知道了</a>';
+        html+='</div>';
+        html+='</div>';
+        documentBody.append(html);
+        setTimeout(function(){
+            $(".mask-rule").addClass("mask-rule-active");
+        },0)
+        $(".public-mask").show();
+        $(".public-mask").on("click",function(){
+            $(".public-mask").hide();
+            $(".mask-rule").removeClass("mask-rule-active");
+            setTimeout(function(){
+                $(".mask-rule").remove();
+            },500)
+        });
+        $(".close").on("click",function(){
+            $(".public-mask").hide();
+            $(".mask-rule").removeClass("mask-rule-active");
+            setTimeout(function(){
+                $(".mask-rule").remove();
+            },500)
+        });
+    }
+</script>
+<!-- script end -->
+</body>
+</html>
