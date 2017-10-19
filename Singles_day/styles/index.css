@@ -230,7 +230,7 @@ input {
 }
 
 .wrapper {
-  padding-bottom: 2.6rem;
+  padding-bottom: 1rem;
   width: 100%;
   max-width: 640px;
   min-height: 100%;
@@ -859,6 +859,15 @@ input {
   -ms-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+}
+
+.foot {
+  padding: .4rem 0;
+  width: 100%;
+  font-size: 0;
+}
+.foot img {
+  width: 100%;
 }
 
 .footer {

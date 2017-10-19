@@ -1,6 +1,6 @@
 @import 'base','common';
 .wrapper{
-	padding-bottom:2.6rem;
+	padding-bottom:1rem;
 	width:100%;
 	max-width:640px;
 	min-height:100%;
@@ -546,6 +546,14 @@
     opacity: 1 !important;
     background: #d1c0a5 !important;
     @include transition(all .5s);
+}
+.foot{
+	padding:.4rem 0;
+	width:100%;
+	font-size:0;
+	img{
+		width:100%;
+	}
 }
 .footer{
 	position:fixed;
