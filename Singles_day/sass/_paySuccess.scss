@@ -99,6 +99,7 @@
 		border-radius:5px;
 		.coupon-top-content{
 			padding:.25rem .35rem;
+			display:block;
 			border:1px dashed #a18f7e;
 			border-radius:5px;
 			.ctc-receive{
@@ -120,7 +121,7 @@
 						color:#1c2302;
 					}
 				}
-				>a{
+				>p{
 					width:1.7rem;
 					height:.5rem;
 					border-radius:30px;

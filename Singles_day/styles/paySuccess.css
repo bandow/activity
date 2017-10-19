@@ -343,6 +343,7 @@ input {
 }
 .subsidy-list-content .coupon-top .coupon-top-content {
   padding: .25rem .35rem;
+  display: block;
   border: 1px dashed #a18f7e;
   border-radius: 5px;
 }
@@ -371,7 +372,7 @@ input {
   font: 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
   color: #1c2302;
 }
-.subsidy-list-content .coupon-top .coupon-top-content .ctc-receive > a {
+.subsidy-list-content .coupon-top .coupon-top-content .ctc-receive > p {
   width: 1.7rem;
   height: .5rem;
   border-radius: 30px;

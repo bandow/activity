@@ -71,7 +71,7 @@
     </header>
     <!-- 温馨提示：已获得枕头君|| 够1000元 || 未够1000元 后端要做判断把style="display:none;"都去掉-->
     <!-- 已获得枕头君 begin -->
-    <section class="subsidy-title" style="display:block;">
+    <section class="subsidy-title" style="display:none;">
         <h4>恭喜你已获得枕头君一个！</h4>
         <h5>限量版枕头君在向你跑来，请耐心等待哦~</h5>
         <div class="title-list">
@@ -90,7 +90,7 @@
         </div>
     </section>
     <!-- 够1000元 begin -->
-    <section class="subsidy-title" style="display:none;">
+    <section class="subsidy-title" style="display:block;">
         <h4>恭喜你已抢到限量版枕头君！</h4>
         <h5>温馨提示：若订单退款致订单累计金额低于1000元 </h5>
         <h5>将会扣除限量版枕头君的相应价值哦~</h5>
@@ -98,7 +98,7 @@
             <div class="items">
                 <div class="items-content">
                     <h3>确认领取</h3>
-                    <p>填写收货信息</p>
+                    <p class="information">填写收货信息</p>
                 </div>
             </div>
             <div class="items">
@@ -202,6 +202,28 @@
     </section>
 </div>
 <div class="public-mask"></div>
+<!-- 订单满1000元，点击填写地址 begin -->
+<div class="mask-rule" style="background-color:#f3ece4;">
+    <div class="rule-content">
+        <h2>收货信息</h2>
+        <div class="text">
+           <div class="item">
+               <span>联系人</span>
+               <label><input id="name" type="text"></label>
+           </div>
+           <div class="item">
+               <span>手机</span>
+               <label><input id="phone" type="tel"></label>
+           </div>
+           <div class="item">
+               <span>地址</span>
+               <label class="address"><textarea id="addressInfo"></textarea></label>
+           </div>
+        </div>
+        <a class="submit" href="javascript:;">提交</a>
+    </div>
+</div>
+<!-- 订单满1000元，点击填写地址 end -->
 <!-- script begin -->
 <script src="scripts/flexible.js"></script>
 <script src="scripts/jquery-3.1.1.min.js"></script>
@@ -241,9 +263,22 @@
         $(".integral").on("click",function(){
             maskRule('什么是待赠送积分','1.每邀请1位好友购买新会员首住99元/晚的产品，即可获得赠送200积分的资格；'+'<p>'+'2.好友入住离店后，这部分积分会发放到会员账户中'+'<p>'+'3.积分发放日期为好友入住离店后的次月15日，请耐心等待哦'+'<p>'+'4.若好友未入住或取消订单，则这部分的积分没办法赠送哦~');
         }); 
-         $(".see-info").on("click",function(){
+        $(".see-info").on("click",function(){
             maskRule('收货信息','福建人 ，136 0000 0000'+'<p>'+'广州市白云区大金钟路65号东呈国际集团有限公司9楼会员电商部');
-        }); 
+        });
+        //收货信息
+        $(".information").on("click",function(){
+            $(".public-mask").show();
+            $(".mask-rule").addClass("mask-rule-active");
+        });
+        $(".public-mask").on("click",function(){
+            $(".public-mask").hide();
+            $(".mask-rule").removeClass("mask-rule-active");
+        });
+        $(".submit").on("click",function(){
+            submitRegister();
+        });
+
     });
     // 疑问弹窗方法
     function maskRule(title,msg){
@@ -277,6 +312,37 @@
                 $(".mask-rule").remove();
             },500)
         });
+    }
+    //手机验证
+    function checkPhone(phone) {
+        var m = phone.match(/^\s*(\S+(\s+\S+)*)\s*$/);
+        phone = (m == null) ? "" : m[1];
+        return (/(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/.test(phone));
+    }
+    //注册提交
+    function submitRegister(){
+        var Name = $("#name").val().trim();
+        var Tel = $("#phone").val().trim();
+        var Address = $("#addressInfo").val().trim();
+        if (Name == "") {
+            console.log("联系人不能为空");
+            return false;
+        }
+        if (Tel == "") {
+            console.log("手机号不能为空");
+            return false;
+        }
+        else if (!checkPhone(Tel)) {
+            console.log("手机号输入有误!");
+            return false;
+        }
+        if(Address =="" ){
+            console.log("地址不能为空");
+            return false;
+        }
+        $(".public-mask").hide();
+        $(".mask-rule").removeClass("mask-rule-active");
+        console.log("注册成功");
     }
 </script>
 <!-- script end -->

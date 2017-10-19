@@ -303,8 +303,21 @@
         </div>
         <div class="swiper-pagination"></div>
     </div>
-    <footer class="footer">
-        <a href="userOrders.html">我的福利</a>
+    <footer class="footer"> 
+        <div class="boon">
+            <p>我的福利</p>
+            <div class="boon-list">
+                <a href="userOrders.html"><span>剁手节订单</span><i><img src="images/boon_icon.png" alt=""></i></a>
+                <a href="subsidy.html">
+                    <div class="l">
+                        <p>剁手节补贴金</p>
+                        <h6>￥156.60</h6>
+                    </div>
+                    <i><img src="images/boon_icon.png" alt=""></i>
+                    <div class="img"><img src="images/boon_bottom_iocn.png" alt=""></div>
+                </a>
+            </div>
+        </div>
         <a href="#1">劲爆免单</a>
         <a href="#2">超值特惠</a>
     </footer>
@@ -439,6 +452,10 @@
             var href= $(this).attr("href"),
                 pos = $(href).offset().top;
             $("html,body").animate({scrollTop: pos}, 1000);
+        });
+        //我的福利
+        $(".footer .boon p").on("click",function(){
+            $(this).next().show();
         });
     });
 </script>
