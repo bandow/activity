@@ -1,0 +1,82 @@
+@import 'base','common';
+.wrapper{
+	position:relative;
+	width:100%;
+	max-width:640px;
+	min-height:100%;
+	height:auto;
+	margin:0 auto;
+	background-color:#ffc207;
+}
+.wrapper-bg{
+	width:100%;
+	height:auto;
+	font-size:0;
+	>img{
+		width:100%;
+	}
+}
+.content{
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	z-index:1;
+	.title{
+		padding:0 .25rem;
+		height:auto;
+		font-size:0;
+		>img{
+			width:100%;
+		}
+	}
+	.middle{
+	    margin-top: -.35rem;
+		width:100%;
+		height:auto;
+		font-size:0;
+		>img{
+			width:100%;
+		}
+	}
+	.sub-middle{
+		position:absolute;
+		top:4.52rem;
+		left:50%;
+		z-index:2;
+		width:2.58rem;
+		height:2.44rem;
+		font-size:0;
+	    opacity: .8;
+		@include transform(translate(-50%, 0));
+		@include animation(myTop 1s infinite);
+		>img{
+			width:100%;
+			height:100%;
+		}
+	}
+	.activity-info{
+		position:fixed;
+		left:50%;
+		bottom:.35rem;
+		z-index:2;
+	    font-size:0;
+	    @include transform(translate(-50%, 0));
+		>a{
+			padding:0 .2rem;
+			background-color:#ff7e00;
+			border-radius:30px;
+			font:.26rem/1.5 $publicFont;
+			color:$white;
+		}
+	}
+}
+@include keyframes(myTop){
+	from {
+		top:4.52rem;
+	}
+	to {
+		top:4.2rem;
+	}
+}
