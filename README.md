@@ -76,3 +76,5 @@
 2017-10-11 万枫H5-video
 # Singles_day 
 2017-10-16 双十一活动  
+# challengsMission
+2017-10-31 挑战任务H5

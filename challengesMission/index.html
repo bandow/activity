@@ -31,13 +31,174 @@
        </div>
        <div class="activity-info"><a href="javascript:;">活动详情</a></div>
    </div>
-   <div class="loading">
-       
+   <div class="loading-wrapper" style="background:url(images/loading_bg.png) center center no-repeat;background-size:100% auto;">
+       <div class="loading">
+            <div class="radar" style="background:url(images/radar.png) no-repeat;background-size:100% 100%;">
+                <div class="radar-content">
+                    <img src="images/mascot_middle.png" alt="">
+                </div>
+            </div>
+            <p>正在测试您的幸运指数 <span id="num"></span>%...</p>
+       </div>
+   </div>
+   <div class="mask"></div>
+   <div class="rule">
+        <div class="mascot">
+            <img src="images/mascot_rule.png" alt="">
+        </div>
+        <div class="text">
+            <h2>活动详情</h2>
+            <p>1、2016年1月11日-2016年1月24日期间，每位客户限抽1次。</p>
+            <p>2、实物奖品抽中后，我们将为您免费配送至所选体验馆；到货后请凭中奖手机号（带手机）到店自提。在接到领奖通知次日起，7天内未领取的，直接取消领奖资格，实物奖品不退换、不补件。</p>
+            <p>3、红包奖品发放：抽中红包后，红包序列号将以短信形式发送至手机，请注意查收。</p>
+            <p>4、红包使用方法：凭序列号短信到对应体验馆在体验馆人员帮助下下单使用。</p>
+        </div>
+        <div class="close"><img src="images/close.png" alt=""></div>
+   </div>
+   <div class="login-mask">
+       <h3>登录挑战</h3>
+       <form>
+           <div class="item">
+               <label><input type="tel" id="phone" placeholder="请输入手机号"></label>
+           </div>
+           <div class="item">
+               <label><input type="text" id="imgCode" placeholder="请输入图形码"></label>
+               <div class="code-img">
+                   <img src="images/code_num.jpg" alt="">
+               </div>
+           </div>
+           <div class="item">
+               <label><input type="tel" id="code" placeholder="请输入短信验证码"></label>
+               <div class="msg"><a href="javascript:;">获取验证码</a></div>
+           </div>
+           <p class="prompt"></p>
+           <a href="javascript:;">确 认</a>
+       </form>
+       <p>点击“确认”表示同意并遵守<a id="termService" href="javascript:;">《东呈会服务条款》</a></p>
+   </div>
+   <div class="term-service-mask">
+       <div class="mascot">
+            <img src="images/mascot_rule.png" alt="">
+        </div>
+        <div class="text">
+            <h2>活动详情</h2>
+            <p>您使用本网站则表明您已明知并将遵守本服务条款的各项条款和条件。请您随时关注一大把网站的各项通知，一大把网站可随时自行全权决定更改“条款”，经修订的“条款”在一大把网站的公布后，即自动生效。如您不同意更改“条款”，请您立即停止使用各项“服务”，如果您有继续使用的行为，将视为您接受已经修订的“条款”。除另行明确声明外，任何使“服务”范围扩大或功能增强的新内容均受本服务条款约束。除非</p>
+            <a href="javascript:;">知道了</a>
+        </div>
    </div>
 </div>
 <!-- script begin -->
 <script src="scripts/flexible.js"></script>
 <script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+    //提示方法
+    function promptText(msg){
+        $(".prompt").html(msg).next().css("marginTop","0");
+    }
+    //手机验证
+    function checkPhone(phone) {
+        var m = phone.match(/^\s*(\S+(\s+\S+)*)\s*$/);
+        phone = (m == null) ? "" : m[1];
+        return (/(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/.test(phone));
+    }
+    //登录
+    function submitRegister(){
+        var Tel = $("#phone").val().trim();
+        var CheckCode = $("#code").val().trim();
+        var imgCode= $("#imgCode").val().trim();
+        if (Tel == "") {
+            promptText("手机号不能为空");
+            return false;
+        }
+        else if (!checkPhone(Tel)) {
+            promptText("手机号输入有误");
+            return false;
+        }
+        else if(CheckCode =="" ){
+            promptText("验证码不能为空");
+            return false;
+        }
+        else if(imgCode==""){
+            promptText("图片验证码不能为空");
+            return false;
+        }else{
+            promptText("");
+            $(".prompt").next().css("marginTop",".44rem");
+        }
+        console.log("登录成功");
+    }
+    $(function(){
+        //点击覆盖层
+        $(".mask").on("click",function(){
+            $(".mask").hide();
+            $(".rule").removeClass("rule-active");
+            $(".login-mask").removeClass("login-mask-active");
+            $(".term-service-mask").removeClass("term-service-mask-active");
+        });
+        //活动详情弹出框
+        $(".activity-info").on("click",function(){
+            $(".mask").show();
+            $(".rule").addClass("rule-active");
+        });
+        $(".rule .close").on("click",function(){
+            $(".mask").hide();
+            $(".rule").removeClass("rule-active");
+        });
+        //测一下未登录和登录
+        $(".sub-middle").on("click",function(){
+            //true表示未登录状态  false表示登录状态  *****后端需要修改****
+            if(false){
+               $(".mask").show();
+               $(".login-mask").addClass("login-mask-active");
+            }else{
+                console.log(321);
+                $(".content").hide();
+                $(".loading-wrapper").show();
+                var x=0;
+                var testTimes=setInterval(function(){
+                    x++
+                    $("#num").html(x);
+                    if(x==100){
+                        clearInterval(testTimes);
+                        window.location.href="lucky.html"; 
+                    }
+                },30)  
+            }
+        });
+        //登录确认
+        $(".login-mask form > a").on("click",function(){
+            submitRegister();
+        });
+        //获取验证码
+        $(".msg a").on("click",function(){
+            clearInterval(timer);
+            var time=60;  //60
+            var _this=$(this);
+            var timer=setInterval(function(){
+                time--;
+                //console.log(time);
+                _this.addClass('on').text('发送中'+time+'S');
+                if(time==0){
+                    clearInterval(timer);
+                    _this.removeClass('on').text('获取验证码');
+                    $(".speech .p1").show();
+                }
+            },1000);
+            /********************************************************************************************
+                动态后端生成短信验证码
+            **********************************************************************************************/
+        });
+        //东呈会服务条款
+        $("#termService").on("click",function(){
+            $(".login-mask").removeClass("login-mask-active");
+            $(".term-service-mask").addClass("term-service-mask-active");
+        });
+        $(".term-service-mask .text > a").on("click",function(){
+            $(".mask").hide();
+            $(".term-service-mask").removeClass("term-service-mask-active");
+        });
+    });
+</script>
 <!-- script end -->
 </body>
 </html>
