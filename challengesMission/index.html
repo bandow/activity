@@ -25,9 +25,9 @@
        </div>
        <div class="middle">
            <img src="images/middle.png" alt="">
-       </div>
-       <div class="sub-middle">
-           <img src="images/middle_com.png" alt="">
+           <div class="sub-middle">
+              <img src="images/middle_com.png" alt="">
+           </div>
        </div>
        <div class="activity-info"><a href="javascript:;">活动详情</a></div>
    </div>
@@ -147,7 +147,7 @@
         //测一下未登录和登录
         $(".sub-middle").on("click",function(){
             //true表示未登录状态  false表示登录状态  *****后端需要修改****
-            if(false){
+            if(true){
                $(".mask").show();
                $(".login-mask").addClass("login-mask-active");
             }else{
