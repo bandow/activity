@@ -35,6 +35,52 @@
 	margin:-.2rem 0 0 0;
 	background-color:#e0d3c7;
 	border-radius:10px 10px 0 0;
+	.all-integral{
+		padding:.1rem;
+		margin-bottom:.2rem;
+		background-color:#fff9ea;
+		border-radius:5px;
+		.all-integral-content{
+			padding:.2rem;
+			border:1px dashed #a18f7e;
+			border-radius:5px;
+			h2{
+				font:bold .3rem/1.5 $publicFont;
+				color:#cf3737;
+				text-align:center;
+				span{
+					margin:0 .15rem;
+					color:#534115;
+				}
+			}
+			.number{
+				margin:.2rem 0;
+				@include display(flex);
+				@include align-items(center);
+				@include justify-content(center);
+				span{
+					margin:0 .1rem;
+					width:.7rem;
+					height:.7rem;
+					border-radius:5px;
+					background-color:#e3c38a;
+					font:bold .48rem/.7rem $publicFont;
+					color:#fff;
+					text-align:center;
+				}
+			}
+			.mt-number-animate{ font-family: '微软雅黑'; line-height:40px; height: 40px;/*设置数字显示高度*/; font-size: 36px;/*设置数字大小*/ overflow: hidden; display: inline-block; position: relative; }
+.mt-number-animate .mt-number-animate-dot{ width: 15px;/*设置分割符宽度*/ line-height: 40px; float: left; text-align: center;}
+.mt-number-animate .mt-number-animate-dom{ width: 20px;/*设置单个数字宽度*/ text-align: center; float: left; position: relative; top: 0;}
+.mt-number-animate .mt-number-animate-dom .mt-number-animate-span{ width: 100%; float: left;}
+
+			p{
+				font:.2rem/1.5 $publicFont;
+				color:#64542c;
+				text-align:center;
+			}
+		}
+	}
 	.coupon-top{
 		padding:.1rem;
 		background-color:#fff9ea;

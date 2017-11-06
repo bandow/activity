@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/refund.css">
+    <title></title>
+</head>
+<body>
+<div class="wrapper" id="app">
+    <header class="header" style="background:url(images/subsidy_header_bg.jpg) repeat-y;background-size:100%; auto;">
+        <a class="arrow-left left" href="javascript:history.go(-1);"></a>
+        <h1>选择退款原因</h1>
+    </header>
+    <section class="refund-prompt" style="background:url(images/subsidy_list_bg.jpg) repeat-y;background-size:100% auto;">
+        <div class="refund-prompt-content">
+            <div class="refund-success">
+                <div class="img"><img src="images/refund_success.png" alt=""></div>
+                <h2>退款申请成功</h2>
+                <p>订单金额将在7个工作日内按原支付路径退回</p>
+                <p>敬请留意退款短信通知</p>
+                <a href="">返回订单</a>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- script begin -->
+<script src="scripts/flexible.js"></script>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var windowHeight=$(window).height();
+        var headerHeight=$(".header").outerHeight();
+        var refundTop=parseInt($(".refund-prompt").css("margin-top"));
+        var subsidyListContentHeight=windowHeight-headerHeight-refundTop;
+        $(".refund-prompt-content").css("min-height",subsidyListContentHeight);
+
+        $(".refund-select .items").on("click",function(){
+            $(this).toggleClass("active");
+            if(!$(this).hasClass("active")){
+                $(this).find("i img").attr("src","images/on_select.png");
+            }else{
+                $(this).find("i img").attr("src","images/select.png");
+            }
+        });
+    });
+</script>
+<!-- script end -->
+</body>
+</html>

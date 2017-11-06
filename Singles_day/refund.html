@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/refund.css">
+    <title></title>
+</head>
+<body>
+<div class="wrapper" id="app">
+    <header class="header" style="background:url(images/subsidy_header_bg.jpg) repeat-y;background-size:100%; auto;">
+        <a class="arrow-left left" href="javascript:history.go(-1);"></a>
+        <h1>退款提示</h1>
+    </header>
+    <section class="refund-prompt" style="background:url(images/subsidy_list_bg.jpg) repeat-y;background-size:100% auto;">
+        <div class="refund-prompt-content">
+            <div class="refund-info">
+                <div class="refund-info-product">
+                    <div class="img"></div>
+                    <div class="text">
+                        <h3>限量版枕头君</h3>
+                        <p><span>x1</span><span>¥<strong>68</strong></span></p>
+                    </div>
+                </div>
+                <div class="refund-info-price">
+                    <p>总计：¥328</p>
+                    <p>扣除：-¥68</p>
+                    <p>实退金额：<span>¥290</span></p>
+                </div>
+            </div>
+            <p>申请退款后将不满足赠送枕头君的条件，</p>
+            <p>需扣除限量版枕头君的价值68元，是否继续？</p>
+            <a href="refundCause.html">继续</a>
+        </div>
+    </section>
+</div>
+<!-- script begin -->
+<script src="scripts/flexible.js"></script>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        var windowHeight=$(window).height();
+        var headerHeight=$(".header").outerHeight();
+        var refundTop=parseInt($(".refund-prompt").css("margin-top"));
+        var subsidyListContentHeight=windowHeight-headerHeight-refundTop;
+        $(".refund-prompt-content").css("min-height",subsidyListContentHeight);
+    });
+</script>
+<!-- script end -->
+</body>
+</html>
