@@ -290,54 +290,13 @@ input {
 }
 .coupon .all-integral .all-integral-content .number {
   margin: .2rem 0;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  justify-content: center;
+  text-align: center;
 }
 .coupon .all-integral .all-integral-content .number span {
-  margin: 0 .1rem;
-  width: .7rem;
-  height: .7rem;
+  width: 30px;
+  height: 30px;
   border-radius: 5px;
   background-color: #e3c38a;
-  font: bold 0.48rem/0.7rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
-  color: #fff;
-  text-align: center;
-}
-.coupon .all-integral .all-integral-content .mt-number-animate {
-  font-family: '微软雅黑';
-  line-height: 40px;
-  height: 40px;
-  /*设置数字显示高度*/
-  font-size: 36px;
-  /*设置数字大小*/
-  overflow: hidden;
-  display: inline-block;
-  position: relative;
-}
-.coupon .all-integral .all-integral-content .mt-number-animate .mt-number-animate-dot {
-  width: 15px;
-  /*设置分割符宽度*/
-  line-height: 40px;
-  float: left;
-  text-align: center;
-}
-.coupon .all-integral .all-integral-content .mt-number-animate .mt-number-animate-dom {
-  width: 20px;
-  /*设置单个数字宽度*/
-  text-align: center;
-  float: left;
-  position: relative;
-  top: 0;
-}
-.coupon .all-integral .all-integral-content .mt-number-animate .mt-number-animate-dom .mt-number-animate-span {
-  width: 100%;
-  float: left;
 }
 .coupon .all-integral .all-integral-content p {
   font: 0.2rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
