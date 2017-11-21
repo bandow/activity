@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/index.css">
+    <title></title>
+</head>
+<body>
+<div class="wrapper" id="app" style="background:url(images/bg.jpg) #b9e8fa no-repeat;background-size:100% auto;">
+  <div class="rule"><a href="rule.html"><img src="images/rule.png" alt=""></a></div>
+  <div class="list">
+    <div class="scrollBox">
+      <ul>
+        <li><span>第1名</span><span>12345****7890</span><span>总分值70</span></li>
+        <li><span>第1名</span><span>12345****7890</span><span>总分值50</span></li>
+        <li><span>第1名</span><span>12345****7890</span><span>总分值40</span></li>
+        <li><span>第1名</span><span>12345****7890</span><span>总分值30</span></li>
+        <li><span>第1名</span><span>12345****7890</span><span>总分值20</span></li>
+        <li><span>第1名</span><span>12345****7890</span><span>总分值10</span></li>
+        <li><span>第1名</span><span>12345****7890</span><span>总分值90</span></li>
+        <li><span>第1名</span><span>12345****7890</span><span>总分值80</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="tltie">
+    <img src="images/title.png" alt="">
+  </div>
+  <div class="all-score"><p>★  我的总分值<strong>555</strong>分</p></div>
+  <div class="table">
+    <div class="mascot"><img src="images/mascot.png" alt=""></div>
+    <p>分值计算规则</p>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:30%">酒店类型</th>
+          <th style="width:35%">酒店品牌</th>
+          <th style="width:17%">分值<br>间夜数</th>
+          <th style="width:18%">点击加分</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>海外酒店</td>
+          <td>城市便捷、怡程</td>
+          <td>60</td>
+          <td><img src="images/speed1.png" alt=""></td>
+        </tr>
+        <tr>
+          <td>国内高端酒店</td>
+          <td>隐沫、铂顿</td>
+          <td>40</td>
+          <td><img src="images/speed2.png" alt=""></td>
+        </tr>
+        <tr>
+          <td>国内中端酒店</td>
+          <td>怡程、宜尚、柏曼</td>
+          <td>30</td>
+          <td><img src="images/speed3.png" alt=""></td>
+        </tr>
+        <tr>
+          <td>国内精选酒店</td>
+          <td>城市便捷、精途</td>
+          <td>20</td>
+          <td><img src="images/speed4.png" alt=""></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="footer">
+    <p class="footer-p">注：每酒店类型仅3间参与计算，分值相等时排名规则可查看活动规则</p>
+    <img src="images/footer.png" alt="">
+  </div>
+</div>
+<div class="mask"></div>
+<div class="login">
+  <div class="close"><i></i></div> 
+  <div class="items"><label><input type="tel" placeholder="请输入手机号码"></label></div>
+  <div class="items item"><label><input type="tel" placeholder="请输入验证码"></label><a href="javascript:;">获取验证码</a></div>
+  <button>登录</button>
+</div>
+<!-- script begin -->
+<script src="scripts/flexible.js"></script>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+  function autoScroll(obj){
+    var n=$(obj).find("li").height();
+    $(obj).find("ul").animate({
+      marginTop:-n
+    },500,function(){
+      $(this).css({marginTop:"0px"}).find("li:first").appendTo(this);
+    })
+  }
+  $(function(){
+     setInterval('autoScroll(".scrollBox")',3000);
+     $(".login .close,.mask").on("click",function(){
+        $(".login").hide();
+        $(".mask").hide();
+     });
+  })
+</script>
+<!-- script end -->
+</body>
+</html>
