@@ -1,0 +1,486 @@
+@charset "UTF-8";
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2017-09-08
+* Version:0.0.2
+* ================================================================== */
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2017-09-08
+* Version:0.0.2
+* ================================================================== */
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  /*-webkit-text-size-adjust是解决 iPhone 横屏时默认会放大文字的问题*/
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  /*取消掉300ms的延迟，chrome和safari可以生效*/
+  touch-action: manipulation;
+}
+
+html, body {
+  /*-webkit-user-select:none禁止用户进行复制.选择.*/
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  /*使用min-height:100%代替height：100%*/
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  /*弹性滚动-局部滚动开启弹性滚动：将属性挂在body上，可以避免很多奇怪的bug。*/
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, div, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  /*把所有元素的内边距和边框不再会增加它的宽度*/
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  box-sizing: border-box;
+}
+
+ol, ul {
+  /*去掉列表点*/
+  list-style: none;
+}
+
+table {
+  /*去掉表格的双行线*/
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*取消a标签在移动端点击时的背景颜色*/
+a, a:hover, a:active, a:visited, a:link, a:focus {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  background: none;
+  text-decoration: none;
+}
+
+a, img {
+  /* 禁止长按链接与图片弹出菜单 */
+  -webkit-touch-callout: none;
+}
+
+input {
+  /*ios去除input默认样式*/
+  -webkit-appearance: none;
+}
+
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2017-09-08
+* Version:0.0.2
+* ================================================================== */
+.arrow-left {
+  position: relative;
+}
+.arrow-left:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 0;
+  width: .2rem;
+  height: .2rem;
+  border: 1px solid;
+  border-bottom: 0;
+  border-right: 0;
+  color: #333;
+  -moz-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  -o-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  -ms-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+}
+
+.arrow-bottom {
+  position: relative;
+}
+.arrow-bottom:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.05rem;
+  width: .2rem;
+  height: .2rem;
+  border: 1px solid;
+  border-bottom: 0;
+  border-right: 0;
+  color: #333;
+  -moz-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+  -o-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+  -ms-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+  transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+}
+
+.arrow-top {
+  position: relative;
+}
+.arrow-top:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 0.05rem;
+  width: .2rem;
+  height: .2rem;
+  border: 1px solid;
+  border-bottom: 0;
+  border-right: 0;
+  color: #333;
+  -moz-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+  -o-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+  -ms-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+  transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+}
+
+.arrow-right {
+  position: relative;
+}
+.arrow-right:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 0;
+  width: .2rem;
+  height: .2rem;
+  border: 1px solid;
+  border-bottom: 0;
+  border-right: 0;
+  color: #333;
+  -moz-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+  -o-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+  -ms-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+  transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+}
+
+.close-icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50px;
+  background: #ff366f;
+  opacity: 1;
+}
+.close-icon:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.close-icon:before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 10%;
+  height: 2px;
+  margin-top: -1px;
+  border-radius: 5px;
+  background: #ffffff;
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.close-icon:after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 10%;
+  height: 2px;
+  margin-top: -1px;
+  border-radius: 5px;
+  background: #ffffff;
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-color: #f7f7f7;
+  overflow: hidden;
+}
+
+.lottery-draw {
+  position: relative;
+  margin-top: 3rem;
+  width: 100%;
+  height: 6.3rem;
+}
+.lottery-draw .prizeList {
+  position: absolute;
+  top: 1.8rem;
+  left: .935rem;
+  width: 4.53rem;
+  height: 1.2rem;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.lottery-draw .prizeList .slotMachine {
+  height: 1.2rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+.lottery-draw .prizeList .slotMachine:nth-child(2) {
+  margin: 0 10px;
+}
+.lottery-draw .prizeList .slotMachine .slot {
+  width: 100%;
+  height: 1.2rem;
+  background-size: 100% 100%;
+}
+.lottery-draw .btn {
+  position: absolute;
+  top: 3.92rem;
+  left: .9rem;
+  width: 4.6rem;
+  font-size: 0;
+}
+.lottery-draw .btn img {
+  width: 100%;
+}
+.lottery-draw .btn-list {
+  position: absolute;
+  bottom: .1rem;
+  left: .45rem;
+  width: 5.5rem;
+  height: 1.08rem;
+  border-radius: 5px;
+  background-color: #eea00c;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.lottery-draw .btn-list a {
+  margin: 0 .25rem;
+  width: 2.05rem;
+  font: bold 0.24rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+  border-radius: 30px;
+  text-align: center;
+  background-color: #dc7500;
+  box-shadow: 0px 5px 0 #c45d00;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: none;
+  background-color: #000;
+  opacity: .8;
+}
+
+.mask-public {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: .5rem;
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  background-color: #fff;
+  -moz-transform: translate(-50%, -500%);
+  -o-transform: translate(-50%, -500%);
+  -ms-transform: translate(-50%, -500%);
+  -webkit-transform: translate(-50%, -500%);
+  transform: translate(-50%, -500%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.mask-public .mascot {
+  position: absolute;
+  left: -.43rem;
+  top: -.8rem;
+  width: 1.78rem;
+  height: 2.22rem;
+  font-size: 0;
+}
+.mask-public .mascot img {
+  width: 100%;
+  height: 100%;
+}
+.mask-public .close {
+  position: absolute;
+  top: .1rem;
+  right: .13rem;
+  width: .35rem;
+  height: .35rem;
+  border-radius: 100%;
+  background-color: #f93b3b;
+  text-align: center;
+  font-size: 0;
+}
+.mask-public .close a {
+  margin-top: 10px;
+  display: inline-block;
+  width: .3rem;
+  height: 1px;
+  background: #fff;
+  line-height: 0;
+  font-size: 0;
+  vertical-align: middle;
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.mask-public .close a:after {
+  content: '';
+  display: block;
+  width: .3rem;
+  height: 1px;
+  background: #fff;
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.mask-public .items label {
+  padding-left: 5%;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  width: 100%;
+  height: .5rem;
+  display: inline-block;
+  font-size: 0;
+}
+.mask-public .items label input {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  font: 0.2rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+}
+.mask-public .code {
+  margin-top: .18rem;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.mask-public .code label {
+  width: 45%;
+}
+.mask-public .code a {
+  display: block;
+  padding: 0 5%;
+  font: bold 0.24rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #a81f29;
+  border-radius: 30px;
+  text-align: center;
+  background-color: #fff1b2;
+  box-shadow: 0px 5px 0 #e2cf7b;
+}
+.mask-public h2 {
+  font: bold 0.2667rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #363636;
+  text-align: center;
+}
+.mask-public p {
+  font: 0.241rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #363636;
+  text-align: center;
+}
+.mask-public > a {
+  margin: .3rem auto 0;
+  display: block;
+  width: 2.3rem;
+  font: bold 0.24rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+  border-radius: 30px;
+  text-align: center;
+  background-color: #f93b3b;
+  box-shadow: 0px 5px 0 #c30d0d;
+}
+
+.mask-public.on {
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/*# sourceMappingURL=index.css.map */
