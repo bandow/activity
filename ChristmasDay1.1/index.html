@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="description" content=""/>
+  <meta name="keywords" content=""/>
+  <meta name="author" content="name, sycbbb@sina.com"/>
+  <meta name="robots" content="index,follow"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 启用360浏览器的极速模式(webkit) -->  
+  <meta name="renderer" content="webkit">  
+  <!-- 避免IE使用兼容模式 -->  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->  
+  <meta name="HandheldFriendly" content="true">  
+  <!-- 微软的老式浏览器 -->  
+  <meta name="MobileOptimized" content="320">  
+  <!-- uc强制竖屏 -->  
+  <meta name="screen-orientation" content="portrait">  
+  <!-- QQ强制竖屏 -->  
+  <meta name="x5-orientation" content="portrait">  
+  <!-- UC强制全屏 -->  
+  <meta name="full-screen" content="yes">  
+  <!-- QQ强制全屏 -->  
+  <meta name="x5-fullscreen" content="true">  
+  <!-- UC应用模式 -->  
+  <meta name="browsermode" content="application">  
+  <!-- QQ应用模式 -->  
+  <meta name="x5-page-mode" content="app">  
+  <link rel="stylesheet" href="styles/index.css">
+  <title></title>
+  <style>
+    .recommend-img ul li{background:url(images/btn1.png) no-repeat; background-size:100% auto;}
+    .recommend-img ul li.on{background:url(images/btn2.png) no-repeat; background-size:100% auto;}
+  </style>
+</head>
+<body>
+<div class="wrapper" id="app" style="background:url(images/bg.jpg) #dbdee1 no-repeat;background-size:100% auto;">
+  <div class="recommend">
+    <div class="title">
+      <h2>圣诞主题房热荐</h2>
+      <a class="rule" href="javascript:;" onclick="ruleMask()">规则</a>
+    </div>
+    <div class="recommend-img">
+      <ul>
+        <li class="on"><a href="javascript:;">299元-童话小屋</a></li>
+        <li><a href="javascript:;">399元-甜蜜森林</a></li>
+        <li><a href="javascript:;">520元-梦幻世界</a></li>
+      </ul>
+      <div class="img-list">
+        <div class="items" style="display:block;">
+          <img src="images/299.jpg" alt="">
+          <p>鲜花+精美装饰：用浪漫的花，搞定你的TA</p>
+        </div>
+        <div class="items">
+          <img src="images/399.jpg" alt="">
+          <p>鲜花+巧克力+精美装饰：有TA在，连空气都是甜的</p>
+        </div>
+        <div class="items">
+          <img src="images/399.jpg" alt="">
+          <p>鲜花+巧克力+酒类饮料：浪漫是你的，TA也是你的</p>
+        </div>
+      </div> 
+    </div>
+  </div>
+  <div class="room-list">
+    <div class="title">
+      <h2>圣诞主题房抢订</h2>
+    </div>
+    <div class="select-city">
+      <div class="select-city-content">
+        <i></i><span>广州</span>
+      </div>
+    </div>
+    <div class="list">
+      <div class="items">
+        <div class="img">
+          <img src="images/1.jpg" alt="">
+          <p>白云区</p>
+        </div>
+        <p>城市便捷广州市白云山大金钟路分店</p>
+        <h5>￥<strong>299</strong>/￥<strong>520</strong></h5>
+        <a href="#">马上预订</a>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="images/1.jpg" alt="">
+          <p>白云区</p>
+        </div>
+        <p>城市便捷广州市白云山店</p>
+        <h5>￥<strong>299</strong></h5>
+        <a href="#">马上预订</a>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="images/1.jpg" alt="">
+          <p>白云区</p>
+        </div>
+        <p>城市便捷广州市白云山大金钟路分店</p>
+        <h5>￥<strong>299</strong>/￥<strong>520</strong></h5>
+        <a href="#">马上预订</a>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="images/1.jpg" alt="">
+          <p>海珠区</p>
+        </div>
+        <p>城市便捷广州市白云山店</p>
+        <h5>￥<strong>299</strong></h5>
+        <a href="#">马上预订</a>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="images/1.jpg" alt="">
+          <p>天河区</p>
+        </div>
+        <p>城市便捷广州市白云山大金钟路分店</p>
+        <h5>￥<strong>299</strong>/￥<strong>520</strong></h5>
+        <a href="#">马上预订</a>
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="images/1.jpg" alt="">
+          <p>越秀区</p>
+        </div>
+        <p>城市便捷广州市白云山店</p>
+        <h5>￥<strong>299</strong></h5>
+        <a href="#">马上预订</a>
+      </div>
+    </div>
+  </div>
+  <div class="back-to-top" onclick="backTop()">
+    <i><img src="images/top.png" alt=""></i>
+    <p><span>----------------</span><span>没有更多了</span><span>----------------</span></p>
+  </div>
+  <div class="ad">
+    <img src="images/b.jpg" alt="">
+  </div>
+</div>
+<div class="mask" onclick="closeMask();"></div>
+<div class="ruleMask">
+  <div class="ruleContent">
+    <a href="javascript:;" onclick="closeMask()"><img src="images/close.png" alt=""></a>
+    <h2>活动规则</h2>
+    <p>1、可入住时间：5月19日-5月20日;</p>
+    <p>2、若入住当天预订（需提前3小时与酒店前台沟通）;</p>
+    <p>3、主题房配置说明：<br>
+    · <em>299</em>元主题房：鲜花/花瓣+惊喜装饰；<br>
+    · <em>399</em>元主题房：鲜花/花瓣+巧克力+惊喜装饰；<br>
+    · <em>520</em>元主题房：鲜花/花瓣+巧克力+酒水类饮料+惊喜装饰；</p>
+    <span>一价格不同门店的布置情况均有不同，图片仅供参考，具体布置情况，可致电酒店前台咨询确认；</span>
+    <p>4、预订成功后订单不可取消;</p>
+    <p>5、前52名预订用户，可获得价值100元电影票2张入住离店后赠送至会员账户;</p>
+    <p>6、活动最终解释权归东呈国际集团所有！</p>
+  </div>
+</div>
+<!-- script begin -->
+<script src="scripts/flexible.js"></script>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+  $(document).ready(function(){  
+    $(".recommend-img ul li").on("click",function(){
+      $(this).addClass('on').siblings().removeClass('on');
+      $(".img-list .items").eq($(this).index()).show().siblings().hide();
+    })
+  });
+  function backTop(){
+    $('html,body').animate({scrollTop: '0px'}, 800);
+  }
+  function ruleMask(){
+    $(".mask").show();
+    $(".ruleMask").addClass("on");
+  }
+  function closeMask(){
+    $(".mask").hide();
+    $(".ruleMask").removeClass("on");
+  }
+</script>
+<!-- script end -->
+</body>
+</html>
