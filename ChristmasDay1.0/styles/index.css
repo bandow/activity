@@ -316,7 +316,8 @@ input {
 .lottery-draw .btn-list a {
   margin: 0 .25rem;
   width: 2.05rem;
-  font: bold 0.24rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  height: .52rem;
+  font: bold 0.24rem/0.6rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
   color: #fff;
   border-radius: 30px;
   text-align: center;
