@@ -23,7 +23,7 @@
   </header>
   <div class="content">
     <div class="credit">
-      <canvas id="canvas" width="1200px" height="900px" data-score='600'></canvas>
+      <canvas id="canvas" width="1200px" height="900px" data-score='800'></canvas>
     </div>
     <div class="credit-privilege">
       <div class="tielt"><img src="images/title.png" alt=""></div>
@@ -98,7 +98,7 @@
     deg0 = Math.PI / 9,
     deg1 = Math.PI * 11 / 45;
 
-    if(score < 0 || score > 1001) {
+    if(score < 0 || score > 1000) {
       alert('信用分数区间：0~1000');
     } else {
        var dot = new Dot(),
@@ -117,7 +117,7 @@
         dot.x = radius * Math.cos(angle);
         dot.y = radius * Math.sin(angle);
 
-        var aim = (score ) * deg1 / 100;
+        var aim = (score ) * deg1 / 200;   //角度
         if(angle < aim) {
           angle += dotSpeed;
         }
