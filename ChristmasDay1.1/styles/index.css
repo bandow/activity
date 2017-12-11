@@ -247,9 +247,16 @@ input {
   overflow: hidden;
 }
 
+.header-title {
+  width: 100%;
+  font-size: 0;
+}
+.header-title img {
+  width: 100%;
+}
+
 .recommend {
   padding: 0 .24rem;
-  margin-top: 4.25rem;
 }
 .recommend .title {
   position: relative;
@@ -259,11 +266,11 @@ input {
   margin: 0 auto;
   width: 3.94rem;
   height: .62rem;
-  font: bold 0.3586rem/0.65rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
-  color: #fff;
-  background-color: #876955;
-  border-radius: 30px;
-  text-align: center;
+  font-size: 0;
+}
+.recommend .title h2 img {
+  width: 100%;
+  height: 100%;
 }
 .recommend .rule {
   position: absolute;
@@ -271,11 +278,11 @@ input {
   top: 0;
   width: .6rem;
   height: .6rem;
-  background-color: #876955;
-  border-radius: 100%;
-  font: bold 0.18rem/0.65rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
-  color: #fff;
-  text-align: center;
+  font-size: 0;
+}
+.recommend .rule img {
+  width: 100%;
+  height: 100%;
 }
 
 .recommend-img ul {
@@ -292,16 +299,27 @@ input {
 .recommend-img ul li {
   width: 2.1rem;
   height: .98rem;
+  font-size: 0;
 }
-.recommend-img ul li a {
-  font: 0.21rem/1.1rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
-  color: #b52121;
-  text-align: center;
+.recommend-img ul li img {
+  width: 100%;
+  height: 100%;
+}
+.recommend-img ul li img:first-child {
   display: block;
-  padding-left: .1rem;
 }
-.recommend-img ul li.on a {
-  color: #fff;
+.recommend-img ul li img:last-child {
+  display: none;
+}
+.recommend-img ul li.on img {
+  width: 100%;
+  height: 100%;
+}
+.recommend-img ul li.on img:first-child {
+  display: none;
+}
+.recommend-img ul li.on img:last-child {
+  display: block;
 }
 .recommend-img .img-list .items {
   position: relative;
@@ -340,11 +358,11 @@ input {
   margin: 0 auto;
   width: 3.94rem;
   height: .62rem;
-  font: bold 0.3586rem/0.65rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
-  color: #fff;
-  background-color: #876955;
-  border-radius: 30px;
-  text-align: center;
+  font-size: 0;
+}
+.room-list .title h2 img {
+  width: 100%;
+  height: 100%;
 }
 .room-list .select-city {
   padding: .02rem;

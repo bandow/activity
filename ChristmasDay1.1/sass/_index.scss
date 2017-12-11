@@ -9,9 +9,16 @@
 	background-color:#f7f7f7;
     overflow: hidden;
 }
+.header-title{
+	width:100%;
+	font-size:0;
+	img{
+		width:100%;
+	}
+}
 .recommend{
 	padding:0 .24rem;
-	margin-top:4.25rem;
+	// margin-top:4.25rem;
 	.title{
 		position:relative;
 		margin-bottom: .1rem;
@@ -19,11 +26,16 @@
 			margin:0 auto;
 			width:3.94rem;
 			height:.62rem;
-			font:bold .3586rem/.65rem $publicFont;
-			color:$white;
-			background-color:#876955;
-			border-radius:30px;
-			text-align:center;
+			// font:bold .3586rem/.65rem $publicFont;
+			// color:$white;
+			// background-color:#876955;
+			// border-radius:30px;
+			// text-align:center;
+			font-size:0;
+			img{
+				width:100%;
+				height:100%;
+			}
 		}
 	}
 	.rule{
@@ -32,11 +44,16 @@
 		top:0;
 		width:.6rem;
 		height:.6rem;
-		background-color:#876955;
-		border-radius:100%;
-		font:bold .18rem/.65rem $publicFont;
-		color:$white;
-		text-align:center;
+		// background-color:#876955;
+		// border-radius:100%;
+		// font:bold .18rem/.65rem $publicFont;
+		// color:$white;
+		// text-align:center;
+		font-size:0;
+		img{
+			width:100%;
+			height:100%;
+		}
 	}
 }
 .recommend-img{
@@ -48,17 +65,38 @@
 		li{
 			width:2.1rem;
 			height:.98rem;
-			a{
-				font:.21rem/1.1rem $publicFont;
-				color:#b52121;
-				text-align:center;
-				display:block;
-				padding-left:.1rem;
+			font-size:0;
+			img{
+				width:100%;
+				height:100%;
+				&:first-child{
+					display:block;
+				}
+				&:last-child{
+					display:none;
+				}
 			}
+			// a{
+			// 	font:.21rem/1.1rem $publicFont;
+			// 	color:#b52121;
+			// 	text-align:center;
+			// 	display:block;
+			// 	padding-left:.1rem;
+			// }
 		}
 		li.on{
-			a{
-				color:#fff;
+			// a{
+			// 	color:#fff;
+			// }
+			img{
+				width:100%;
+				height:100%;
+				&:first-child{
+					display:none;
+				}
+				&:last-child{
+					display:block;
+				}
 			}
 		}
 	}
@@ -99,11 +137,16 @@
 			margin:0 auto;
 			width:3.94rem;
 			height:.62rem;
-			font:bold .3586rem/.65rem $publicFont;
-			color:$white;
-			background-color:#876955;
-			border-radius:30px;
-			text-align:center;
+			// font:bold .3586rem/.65rem $publicFont;
+			// color:$white;
+			// background-color:#876955;
+			// border-radius:30px;
+			// text-align:center;
+			font-size:0;
+			img{
+				width:100%;
+				height:100%;
+			}
 		}
 	}
 	.select-city{
