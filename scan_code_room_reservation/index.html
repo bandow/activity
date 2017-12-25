@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="description" content=""/>
+  <meta name="keywords" content=""/>
+  <meta name="author" content="name, sycbbb@sina.com"/>
+  <meta name="robots" content="index,follow"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 启用360浏览器的极速模式(webkit) -->  
+  <meta name="renderer" content="webkit">  
+  <!-- 避免IE使用兼容模式 -->  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->  
+  <meta name="HandheldFriendly" content="true">  
+  <!-- 微软的老式浏览器 -->  
+  <meta name="MobileOptimized" content="320">  
+  <!-- uc强制竖屏 -->  
+  <meta name="screen-orientation" content="portrait">  
+  <!-- QQ强制竖屏 -->  
+  <meta name="x5-orientation" content="portrait">  
+  <!-- UC强制全屏 -->  
+  <meta name="full-screen" content="yes">  
+  <!-- QQ强制全屏 -->  
+  <meta name="x5-fullscreen" content="true">  
+  <!-- UC应用模式 -->  
+  <meta name="browsermode" content="application">  
+  <!-- QQ应用模式 -->  
+  <meta name="x5-page-mode" content="app">  
+  <link rel="stylesheet" href="styles/index.css">
+  <title></title>
+</head>
+<body>
+<div class="wrapper" id="app" style="background:url(images/bg.jpg) repeat-y;background-size:100% auto;">
+  <div class="title">
+    <img src="images/title.png" alt="">
+  </div>
+  <div class="rule-prize">
+    <div><a href="javascript:;" onclick="openRule();">活动规则</a></div>
+    <div><a href="javascript:;" onclick="openPrize();">活动奖品</a></div>
+  </div>
+  <div class="tab">
+    <div class="card-content">
+      <em></em><em></em><em></em><em></em>
+      <p class="card-title">完成任务领卡片，三张卡片合一</p>
+      <div data-id="0" class="itmes" style="display:block;">
+        <h2>真土豪卡</h2>
+        <h3>次次有惊喜，处处有福利</h3>
+        <div class="img">
+          <img src="images/card.png" alt="">
+        </div>
+        <div class="tab-btn">
+          <a href="">微信订房解锁卡片</a>
+        </div>
+        <p>额外福利：金卡体验卡、首次下载APP200元券 </p>
+      </div>
+      <div data-id="1" class="itmes">1</div>
+      <div data-id="2" class="itmes">2</div>
+    </div>
+  </div>
+  <div class="tab-list">
+    <ul>
+      <li class="on">
+        <i>99+</i>
+        <p>小鲜肉卡</p>
+      </li>
+      <li>
+        <i>0</i>
+        <p>真土豪卡</p>
+      </li>
+      <li>
+        <i>0</i>
+        <p>老司机卡</p>
+      </li>
+    </ul>
+  </div>
+  <div class="btn">
+    <h3>抽免费房或现金红包</h3>
+    <p>亲，你还差1个任务就可抽奖</p>
+  </div>
+  <div class="btn-hide" onclick="submitBtn();">
+    <a href="javascript:;">抽免费房或现金红包</a>
+  </div>
+  <div class="strategy">
+    <h2>解锁攻略</h2>
+    <p>①通过“扫码订房”后入住可解锁“小鲜肉卡”，并获得30元酒店红包，每人限领一次；</p>
+    <p>②通过“微信订房”后入住可解锁“真土豪卡”，并获得100会员积分，每人限领一次；</p>
+    <p>③通过“APP订房”后入住可解锁“老司机卡”，并获得金卡体验卡一张，每人限领一次；</p>
+    <p>④集齐其余三张卡可合成1张“开房达人卡”，并赢取免费房券、微信红包等会员惊喜，领取次数不限。</p>
+  </div>
+  <div class="footer">
+    <a href="javascript:;" onclick="closeStatus($(this));">关闭</a>
+    <img src="images/foot.jpg" alt="">
+  </div>
+</div>
+<div class="mask"></div>
+<div class="rule">
+  <div class="rule-content">
+    <em></em><em></em><em></em><em></em>
+    <h2>解锁攻略</h2>
+    <p>①通过“扫码订房”后入住可解锁“小鲜肉卡”，并获得30元酒店红包，每人限领一次；</p>
+    <p>②通过“微信订房”后入住可解锁“真土豪卡”，并获得100会员积分，每人限领一次；</p>
+    <p>③通过“APP订房”后入住可解锁“老司机卡”，并获得金卡体验卡一张，每人限领一次；</p>
+    <p>④集齐其余三张卡可合成1张“开房达人卡”，并赢取免费房券、微信红包等会员惊喜，领取次数不限。</p>
+  </div>
+  <div class="rule-close" onclick="closeRule();"><a href="javascript:;"></a></div>
+</div>
+<div class="my-prize">
+  <div class="prize-title">
+    <i onclick="closePrize();"></i>
+    <h2>我的奖品</h2>
+  </div>
+  <div class="prize-list">
+    <div class="items">
+      <div class="img"></div>
+      <div class="text">
+        <h3>小鲜肉卡</h3>
+        <h5>一句文案描述</h5>
+        <p>领取时间：2017年11月12日</p>
+      </div>
+    </div>
+    <div class="items">
+      <div class="img"></div>
+      <div class="text">
+        <h3>6.66元现金红包</h3>
+        <h5>一句文案描述</h5>
+        <p>领取时间：2017年11月12日</p>
+      </div>
+    </div>
+    <div class="items">
+      <div class="img"></div>
+      <div class="text">
+        <h3>金卡体验卡</h3>
+        <h5>一句文案描述</h5>
+        <p>领取时间：2017年11月12日</p>
+      </div>
+    </div>
+    <div class="items">
+      <div class="img"></div>
+      <div class="text">
+        <h3>30元优惠券</h3>
+        <h5>一句文案描述</h5>
+        <p>领取时间：2017年11月12日</p>
+      </div>
+      <div class="items-btn"><a href="">立即预定</a></div>
+    </div>
+  </div>
+  <!-- 没奖品状态begin 后台做判断 前端是隐藏的记得去掉隐藏css-->
+  <div class="no-prize" style="display:none;">
+    <div class="img"><img src="images/no_prize.png" alt=""></div>
+    <p>暂无奖品哦</p>
+  </div>
+  <!-- 没奖品状态end -->
+</div>
+<!-- <div class="draw">
+  <div class="draw-content">
+    <em></em><em></em><em></em><em></em>
+    <div class="img"><img src="images/drawing.png" alt=""></div>
+    <p>抽奖中</p>
+  </div>
+  <div class="draw-close"><a href="javascript:;"></a></div>
+</div> -->
+<!-- <div class="draw-prize-out">
+  <div class="top-img">
+    <img src="images/mascot_top.png" alt="">
+  </div>
+  <div class="draw-prize">
+    <div class="draw-prize-content">
+      <em></em><em></em><em></em><em></em>
+      <h2>恭喜你获得了<span>一张优惠券</span></h2>
+      <p>可在“我的奖品”中查看与使用</p>
+      <div class="prize-img">
+        <img style="width:3.98rem;height:1.35rem;" src="images/coupon.png" alt="">
+      </div>
+      <div class="dpc-btn">
+        <a href="">立即使用</a>
+      </div>
+    </div>
+    <div class="draw-prize-close"><a href="javascript:;"></a></div>
+  </div>
+</div> -->
+<!-- script begin -->
+<script src="scripts/flexible.js"></script>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+  $(document).ready(function(){    
+    $(".tab-list ul li").on("click",function(){
+      $(this).addClass('on').siblings().removeClass('on');
+      var dataIndex=$(this).index();
+      //console.log(dataIndex);
+      $(".card-content .itmes").hide();
+      $('.card-content .itmes[data-id="'+dataIndex+'"]').show();
+    });
+    //点击mask层
+    $(".mask").on("click",function(){
+       closePrize();
+       closeRule();
+       closeDrawPrizeSuccess();
+    });
+    //抽免费房或现金红包条件满足温馨提示：设置true为满足
+    var flag=true;
+    if(flag){
+      $(".btn").addClass('hide');
+      $(".btn-hide").addClass('flex');
+    }else{
+      $(".btn").removeClass('hide');
+      $(".btn-hide").removeClass('flex');
+    }
+    //添加一个订单的效果 套的时候可以删掉
+    setTimeout(function(){
+      $(".tab-list ul li.on").addClass('active');
+    },1000)
+  });
+  //关闭状态方法
+  function closeStatus(obj){
+    $(obj).parent().remove();
+  }
+  //打开我的奖品 关闭我的奖品
+  function openPrize(){
+    $(".wrapper").css("height","100%");
+    $(".mask").show();
+    $(".my-prize").addClass('on');
+  }
+  function closePrize(){
+    $(".wrapper").css("height","auto");
+    $(".mask").hide();
+    $(".my-prize").removeClass('on');
+  }
+  //打开规则 关闭规则
+  function openRule(){
+    $(".wrapper").css("height","100%");
+    $(".mask").show();
+    $(".rule").addClass('on');
+  }
+  function closeRule(){
+    $(".wrapper").css("height","auto");
+    $(".mask").hide();
+    $(".rule").removeClass('on');
+  }
+  //抽奖中 抽奖失败
+  var drawFlag=true;
+  function drawIn(img,msg,drawFlag){
+    var html='';
+    if(!drawFlag){
+      html+='<div class="mask-draw" onclick="closeDrawIn();"></div>';
+    }else{
+      html+='<div class="mask-draw"></div>';
+    }
+    html+='<div class="draw">';
+    html+='<div class="draw-content">';
+    html+='<em></em><em></em><em></em><em></em>';
+    html+='<div class="img"><img src="'+img+'" alt=""></div>';
+    html+='<p>'+msg+'</p>';
+    html+='</div>';
+    if(!drawFlag){
+      html+='<div class="draw-close" onclick="closeDrawIn();"><a href="javascript:;"></a></div>';
+    }
+    html+='</div>';
+    $("body").append(html);
+  }
+  function closeDrawIn(){
+    $(".draw").remove();
+    $(".mask-draw").remove();
+  }
+  //抽奖成功
+  function drawPrizeSuccess(msg,img,src){
+    var html='';
+    html+='<div class="draw-prize-out">';
+    html+='<div class="top-img"><img src="images/mascot_top.png" alt="吉祥物"></div>';
+    html+='<div class="draw-prize">';
+    html+='<div class="draw-prize-content">';
+    html+='<em></em><em></em><em></em><em></em>';
+    html+='<h2>恭喜你获得了<span>'+msg+'</span></h2>';
+    html+='<p>可在“我的奖品”中查看与使用</p>';
+    html+='<div class="prize-img">'+img+'</div>';
+    html+='<div class="dpc-btn">';
+    html+='<a href="'+src+'">立即使用</a>';
+    html+='</div>';
+    html+='</div>';
+    html+='<div class="draw-prize-close" onclick="closeDrawPrizeSuccess();"><a href="javascript:;"></a></div>';
+    html+='</div>';
+    html+='</div>';
+    $("body").append(html);
+    setTimeout(function(){
+      $(".draw-prize-out").addClass("on");
+    },0);
+    $(".mask").show();
+  }
+  function closeDrawPrizeSuccess(){
+    $(".draw-prize-out").removeClass("on");
+    setTimeout(function(){
+      $(".draw-prize-out").remove();
+    },500);
+    $(".mask").hide();
+  }
+  //抽免费房或现金红包
+  function submitBtn(){
+    drawIn("images/drawing.png","抽奖中",true);
+    //ajax之后 才执行关闭closeDrawIn()这里用定时器模拟 套的时候去掉定时器
+    setTimeout(function(){
+      closeDrawIn();
+      //true 表示抽奖成功  false表示抽奖失败
+      if(true){
+        drawPrizeSuccess('一张优惠券','<img style="width:3.98rem;height:1.35rem;" src="images/coupon.png">','#');
+      }else{
+        drawIn("images/draw_fail.png","抽奖失败",false);
+      }
+    },1000)
+  }
+</script>
+<!-- script end -->
+</body>
+</html>

@@ -86,3 +86,5 @@
 2017-12-9 圣诞玩出人
 # ChristmasDay1.1
 2017-12-9 圣诞 . 拯救不浪漫
+# scan_code_room_reservation
+2017-12-21 扫码订房活动
