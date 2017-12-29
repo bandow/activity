@@ -49,32 +49,56 @@
       <em></em><em></em><em></em><em></em>
       <p class="card-title">完成任务领卡片，三张卡片合一</p>
       <div data-id="0" class="itmes" style="display:block;">
+        <h2>小鲜肉卡</h2>
+        <h3>欢迎进入酒店黑科技的新世界</h3>
+        <div class="img" style="width:3.54rem;height:2.27rem;">
+          <img src="images/card1.png" alt="">
+        </div>
+       <!--  <div class="tab-btn">
+          <a href="">微信订房解锁卡片</a>
+        </div> -->
+        <p>需要通过门店扫描订房二维码</p>
+        <p>完成下单并离店后即可解锁此卡</p>
+      </div>
+      <div data-id="1" class="itmes">
         <h2>真土豪卡</h2>
         <h3>次次有惊喜，处处有福利</h3>
-        <div class="img">
-          <img src="images/card.png" alt="">
+        <div class="img" style="width:2.62rem;height:2.37rem;">
+          <img src="images/card2.png" alt="">
         </div>
         <div class="tab-btn">
           <a href="">微信订房解锁卡片</a>
         </div>
-        <p>额外福利：金卡体验卡、首次下载APP200元券 </p>
+        <p>额外福利：100积分</p>
       </div>
-      <div data-id="1" class="itmes">1</div>
-      <div data-id="2" class="itmes">2</div>
+      <div data-id="2" class="itmes">
+        <h2>老司机卡</h2>
+        <h3>订房就像打车一样方便</h3>
+        <div class="img" style="width:3.49rem;height:2.24rem;">
+          <img src="images/card3.png" alt="">
+        </div>
+        <div class="tab-btn">
+          <a href="">APP订房解锁卡片</a>
+        </div>
+        <p>额外福利：金卡体验卡、首次下载APP200元券</p>
+      </div>
     </div>
   </div>
   <div class="tab-list">
     <ul>
       <li class="on">
-        <i>99+</i>
+        <i>9</i>
+        <img src="images/card_img1.png" alt="">
         <p>小鲜肉卡</p>
       </li>
       <li>
         <i>0</i>
+        <img src="images/card_img02.png" alt="">
         <p>真土豪卡</p>
       </li>
       <li>
         <i>0</i>
+        <img src="images/card_img03.png" alt="">
         <p>老司机卡</p>
       </li>
     </ul>
@@ -306,7 +330,8 @@
       closeDrawIn();
       //true 表示抽奖成功  false表示抽奖失败
       if(true){
-        drawPrizeSuccess('一张优惠券','<img style="width:3.98rem;height:1.35rem;" src="images/coupon.png">','#');
+        //drawPrizeSuccess('一张优惠券','<img style="width:3.98rem;height:1.35rem;" src="images/coupon.png">','#');
+        drawPrizeSuccess('小鲜肉卡！','<img style="width:3.54rem;height:2.27rem;" src="images/card1.png">','#');
       }else{
         drawIn("images/draw_fail.png","抽奖失败",false);
       }
