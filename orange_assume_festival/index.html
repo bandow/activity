@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="description" content=""/>
+  <meta name="keywords" content=""/>
+  <meta name="author" content="name, sycbbb@sina.com"/>
+  <meta name="robots" content="index,follow"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 启用360浏览器的极速模式(webkit) -->  
+  <meta name="renderer" content="webkit">  
+  <!-- 避免IE使用兼容模式 -->  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->  
+  <meta name="HandheldFriendly" content="true">  
+  <!-- 微软的老式浏览器 -->  
+  <meta name="MobileOptimized" content="320">  
+  <!-- uc强制竖屏 -->  
+  <meta name="screen-orientation" content="portrait">  
+  <!-- QQ强制竖屏 -->  
+  <meta name="x5-orientation" content="portrait">  
+  <!-- UC强制全屏 -->  
+  <meta name="full-screen" content="yes">  
+  <!-- QQ强制全屏 -->  
+  <meta name="x5-fullscreen" content="true">  
+  <!-- UC应用模式 -->  
+  <meta name="browsermode" content="application">  
+  <!-- QQ应用模式 -->  
+  <meta name="x5-page-mode" content="app">  
+  <link rel="stylesheet" href="styles/index.css">
+  <title></title>
+</head>
+<body>
+<div class="wrapper" id="app">
+  <header class="header-img">
+    <img src="images/header.jpg" alt="">
+    <a class="rule" href="javascript:;"><img src="images/rule.png" alt=""></a>
+  </header>
+  <div class="secKill-tilte"><img src="images/title.png" alt=""></div>
+  <div class="project-list">
+    <div class="items">
+      <div class="items-title" style="background:url(images/title_bg.png) no-repeat;background-size:100% auto;">
+        <h4>10:00<span>59.9元秒杀</span></h4>
+      </div>
+      <div class="items-show">
+        <div class="img">
+          <img src="images/1.jpg" alt="">
+        </div>
+        <div class="text">
+          <div class="text-top">
+            <h2>全国通用一晚房券全国通用一晚房券XXXXXX XXXX</h2>
+            <p>用最真诚的价格欢迎你的加入</p>
+          </div>
+          <div class="text-price">
+            <div class="text-price-left">
+              <del>原价 ¥XXX</del>
+              <h3>抢购价 ¥59.9</h3>
+            </div>
+            <div class="text-price-right">
+              <div class="btn"><a href="#">立即抢购</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="items">
+      <div class="items-title" style="background:url(images/title_bg.png) no-repeat;background-size:100% auto;">
+        <h4>12:00<span>9.9元秒杀</span></h4>
+      </div>
+      <div class="items-show">
+        <div class="img">
+          <img src="images/2.jpg" alt="">
+        </div>
+        <div class="text">
+          <div class="text-top">
+            <h2>黑金卡体验卡XXXXXXXXX XXXXX</h2>
+            <p>用最真诚的价格欢迎你的加入</p>
+          </div>
+          <div class="text-price">
+            <div class="text-price-left">
+              <del>原价 ¥XXX</del>
+              <h3>抢购价 ¥9.9</h3>
+            </div>
+            <div class="text-price-right">
+              <div class="btn"><a href="#">立即抢购</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="items">
+      <div class="items-title" style="background:url(images/title_bg.png) no-repeat;background-size:100% auto;">
+        <h4>20:00<span>9.9元秒杀</span></h4>
+      </div>
+      <div class="items-show">
+        <div class="img">
+          <img src="images/1.jpg" alt="">
+        </div>
+        <div class="text">
+          <div class="text-top">
+            <h2>全国通用一晚房券全国通用一晚房券XXXXXX XXXX</h2>
+            <p>用最真诚的价格欢迎你的加入</p>
+          </div>
+          <div class="text-price">
+            <div class="text-price-left">
+              <del>原价 ¥XXX</del>
+              <h3>抢购价 ¥59.9</h3>
+            </div>
+            <div class="text-price-right">
+              <div class="btn"><a href="#">立即抢购</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- script begin -->
+<script src="scripts/flexible.js"></script>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.rule').on('click',function(){
+      ruleMask('剁手锦囊','双11特惠仅限APP2.4.0以上版本享受哦，更有1元秒杀、逢11免单等活动，赶紧更新领取购物补贴金哦！');
+    });
+  });
+  function ruleMask(title,msg){
+    var html='';
+    html+='<div class="mask"></div>';
+    html+='<div class="mask-rule">';
+    html+='<div class="mask-rule-close"><a href="jacascript:;"></a></div>';
+    html+='<div class="mask-rule-centent">';
+    html+='<h2>'+title+'</h2>';
+    html+='<p>'+msg+'</p>';
+    html+='</div>';
+    html+='</div>';
+    $("body").append(html);
+    $(".mask").show();
+    setTimeout(function(){
+      $(".mask-rule").addClass("on");
+    },0)
+
+    $('.mask-rule-close,.mask').on('click',function(){
+       ruleMaskClose();
+    });
+  }
+  function ruleMaskClose(){
+    $(".mask-rule").removeClass("on");
+    $(".mask").hide();
+    setTimeout(function(){
+      $(".mask").remove();
+      $(".mask-rule").remove();
+    },250)
+  }
+</script>
+<!-- script end -->
+</body>
+</html>

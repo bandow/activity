@@ -1,0 +1,200 @@
+@import 'base','common';
+.wrapper{
+	position:relative;
+	width:100%;
+	max-width:640px;
+	min-height:100%;
+	height:auto;
+	margin:0 auto;
+	background-color:#ffc700;
+    overflow: hidden;
+}
+.header-img{
+	position:relative;
+	width:100%;
+	font-size:0;
+	>img{
+		width:100%;
+	}
+	a{
+		position:absolute;
+		top:.15rem;
+		right:.4rem;
+		display:block;
+		width:.89rem;
+		height:.9rem;
+		font-size:0;
+		>img{
+			width:100%;
+			height:100%;
+		}
+	}
+}
+.secKill-tilte{
+    position: relative;
+    margin-top:-.8rem;
+	width:100%;
+	font-size:0;
+	>img{
+		width:100%;
+	}
+}
+.project-list{
+	padding:0 .23rem;
+	margin:0 0 .64rem 0;
+	.items{
+	    margin-top: .5rem;
+		.items-title{
+			height:.7rem;
+			h4{
+				text-align:center;
+				font:.3rem/2.2 $publicFont;
+				color:#ad1000;
+				span{
+					margin-left:.3rem;
+				}
+			}
+		}
+		.items-show{
+			margin:.25rem 0;
+			background-color:#fff;
+			@include display(flex);
+			@include align-items(center);
+			.img{
+				width:2.4rem;
+				height:2.28rem;
+				font-size:0;
+				img{
+					width:100%;
+					height:100%;
+				}
+			}
+			.text{
+				padding:.15rem .2rem;
+				@include box-flex(1);
+				@include display(flex);
+				@include flex-direction(column);
+				min-height: 2.28rem;
+				.text-top{
+					@include box-flex(1);
+					h2{
+						font:.26rem/1.2 $publicFont;
+						color:#1c2302;
+					}
+					p{
+						font:.21rem/2 $publicFont;
+						color:#666;
+					}
+				}
+				.text-price{
+					@include display(flex);
+					@include align-items(center);
+					@include justify-content(space-between);
+					.text-price-left{
+						del{
+							display: block;
+							font:.2rem/1.5 $publicFont;
+							color:#a88e75;
+						}
+						h3{
+							font:.25rem/1.5 $publicFont;
+							color:#b21818;
+						}
+					}
+					.text-price-right{
+						.btn{
+							width:1.4rem;
+							height:.52rem;
+							background-color:#cf3737;
+							border-radius:3px;
+							@include display(flex);
+							@include align-items(center);
+							@include justify-content(center);
+							a{
+								display:block;
+								font:.22rem/1.5 $publicFont;
+								color:#fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.mask{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:1;
+	display:none;
+	background:#000;
+	opacity:.7;
+}
+.mask-rule{
+	position:fixed;
+	top:50%;
+	left:50%;
+	z-index:2;
+	padding:2%;
+	width:80%;
+	background:#fff;
+	border-radius:5px;
+	@include transform(translate(-50%, -500%));
+	@include transition(all .5s);
+    overflow: hidden;
+    .mask-rule-close{
+    	position:absolute;
+    	top:.25rem;
+    	right:.25rem;
+    	width:20px;
+    	height:20px;
+    	border-radius:100%;
+    	background-color:#e72c0e;
+    	font-size:0;
+    	@include display(flex);
+		@include align-items(center);
+		@include justify-content(center);
+    	a{
+		 	display: inline-block; 
+		 	width:15px;
+		 	height:1px; 
+		 	background:$white;
+		 	line-height: 0;
+		 	font-size:0;
+		 	vertical-align: middle;
+		 	@include transform(rotate(45deg));
+		 	&:after{
+		 		content:'';
+		 		display:block;
+		 		width:15px;
+		 		height:1px; 
+		 		background:$white;
+		 		@include transform(rotate(-90deg));
+		 	}
+		}
+    }
+	.mask-rule-centent{
+		padding:2%;
+		border:1px dashed #f6bc23;
+		border-radius:5px;
+	    max-height:6rem;
+    	overflow: auto;
+		h2{
+			font:.3073rem/2 nth($publicFont,6);
+			color:#e60012;
+			text-align:center;
+		}
+		p{
+			font:.2219rem/1.8 nth($publicFont,6);
+			color:#5e5353;
+			margin-top:5%;
+		}
+	}
+}
+.mask-rule.on{
+	@include transform(translate(-50%, -50%));
+	@include transition(all .5s);
+}
