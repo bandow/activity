@@ -1078,6 +1078,7 @@ input {
   right: -6px;
 }
 .draw-prize .draw-prize-content .prize-img {
+  position: relative;
   margin: .2rem 0;
   font-size: 0;
   display: -moz-flex;
@@ -1088,6 +1089,12 @@ input {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center;
+}
+.draw-prize .draw-prize-content .prize-img > p {
+  position: absolute;
+  color: #00a0e9;
+  font-size: .36rem;
+  margin-left: 15%;
 }
 .draw-prize .draw-prize-content h2 {
   font: bold 0.36rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;

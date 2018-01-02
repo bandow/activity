@@ -292,7 +292,8 @@
     $(".mask-draw").remove();
   }
   //抽奖成功
-  function drawPrizeSuccess(msg,img,src){
+  var drawPrizeFlag=true;
+  function drawPrizeSuccess(msg,msgTitle,img,src){
     var html='';
     html+='<div class="draw-prize-out">';
     html+='<div class="top-img"><img src="images/mascot_top.png" alt="吉祥物"></div>';
@@ -301,7 +302,11 @@
     html+='<em></em><em></em><em></em><em></em>';
     html+='<h2>恭喜你获得了<span>'+msg+'</span></h2>';
     html+='<p>可在“我的奖品”中查看与使用</p>';
-    html+='<div class="prize-img">'+img+'</div>';
+    if(!drawPrizeFlag){
+      html+='<div class="prize-img">'+img+'</div>';
+    }else{
+      html+='<div class="prize-img">'+img+'<p>'+msgTitle+'</p></div>'; 
+    }
     html+='<div class="dpc-btn">';
     html+='<a href="'+src+'">立即使用</a>';
     html+='</div>';
@@ -330,8 +335,14 @@
       closeDrawIn();
       //true 表示抽奖成功  false表示抽奖失败
       if(true){
-        //drawPrizeSuccess('一张优惠券','<img style="width:3.98rem;height:1.35rem;" src="images/coupon.png">','#');
-        drawPrizeSuccess('小鲜肉卡！','<img style="width:3.54rem;height:2.27rem;" src="images/card1.png">','#');
+        //获取优惠券以及其他css
+        drawPrizeSuccess('一张优惠券','30元优惠券','<img style="width:3.98rem;height:1.35rem;" src="images/c3.png">','#',true);
+        //获取红包css
+        //drawPrizeSuccess('一个红包','30元酒店红包','<img style="width:3.98rem;height:1.35rem;" src="images/c2.png">','#',true);
+        //获取房券css
+        //drawPrizeSuccess('免费房券','免费房券','<img style="width:3.98rem;height:1.35rem;" src="images/c1.png">','#',true);
+        //获取卡片css
+        //drawPrizeSuccess('小鲜肉卡！','','<img style="width:3.54rem;height:2.27rem;" src="images/card1.png">','#',false);
       }else{
         drawIn("images/draw_fail.png","抽奖失败",false);
       }

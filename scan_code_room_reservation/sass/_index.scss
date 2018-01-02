@@ -661,11 +661,18 @@
 			}
 		}
 		.prize-img{
+			position:relative;
 			margin:.2rem 0;
 			font-size:0;
 			@include display(flex);
 			@include align-items(center);
 			@include justify-content(center);
+			>p{
+				position: absolute;
+			    color: #00a0e9;
+			    font-size: .36rem;
+			    margin-left: 15%;
+			}
 		}
 		h2{
 			font:bold .36rem/2 $publicFont;
