@@ -90,3 +90,5 @@
 2017-12-21 扫码订房活动
 # orange_assume_festival
 2017-12-29 橙呈节
+# hotel_connoisseur2.0
+2018-01-03 试睡师平台

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/hotelConnoisseur.css">
+    <style>
+        .dropload-up,.dropload-down{
+            position: relative;
+            height: 0;
+            overflow: hidden;
+            font-size: 12px;
+            /* 开启硬件加速 */
+            -webkit-transform:translateZ(0);
+            transform:translateZ(0);
+        }
+        .dropload-refresh,.dropload-update,.dropload-load,.dropload-noData{
+            text-align: center;
+        }
+        .dropload-load .loading{
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+            border-radius: 100%;
+            margin:0 6px;
+            border: 2px solid #fff;
+            border-bottom-color: transparent;
+            -webkit-animation: rotate 0.75s linear infinite;
+            animation: rotate 0.75s linear infinite;
+        }
+        @-webkit-keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+            50% {
+                -webkit-transform: rotate(180deg);
+            }
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    <title>0元试睡活动邀你来</title>
+</head>
+<body>
+	<div class="wrapper hotel-connoisseur-wrapper" style="background-color:#fff;">
+		<header class="header hotel-connoisseur-header" style="background:#fff;border-bottom:1px solid #f5f5f5;">
+			<a href="javascript:history.go(-1);" class="dossen-header-left left"></a>
+			<h1>0元试睡活动邀你来</h1>
+			<div class="right"><a href="javascript:;">详细规则</a></div>
+		</header>
+		<div class="hotel-connoisseur-content">
+			<div class="ad-top">
+				<img src="images/hotel_connoisseur_ad.jpg" alt="">
+				<div class="btn">
+					<a href="javascript:;">立即兑换</a>
+				</div>
+			</div>
+			<div class="flow-path">
+				<span>试睡流程:</span>
+				<p>获取特权 >原价购买 >入住体验 >发表优评 >审核返现</p>
+			</div>
+			<div class="hotel-connoisseur-list">
+				<div class="items">
+					<div class="fixed"><i><img src="images/fixed_icon.png" alt=""></i><span>广州</span></div>
+					<div class="img"><img src="images/hotel_connoisseur1.jpg" alt=""></div>
+					<div class="text">
+						<div class="l">
+							<h2>宜尚酒店广州客村地铁站琶洲会展店</h2>
+							<p><span>试睡价:<em>￥<strong>0</strong></em></span><del>会员价:￥499</del></p>
+						</div>
+						<div class="btn">
+							<a href="">立即试睡</a>
+						</div>
+					</div>
+				</div>
+				<div class="items">
+					<div class="fixed"><i><img src="images/fixed_icon.png" alt=""></i><span>广州</span></div>
+					<div class="img"><img src="images/hotel_connoisseur2.jpg" alt=""></div>
+					<div class="text">
+						<div class="l">
+							<h2>广州城市便捷白云山店</h2>
+							<p><span>试睡价:<em>￥<strong>0</strong></em></span><del>会员价:￥499</del></p>
+						</div>
+						<div class="btn">
+							<a href="">立即试睡</a>
+						</div>
+					</div>
+				</div>
+				<div class="items">
+					<div class="fixed"><i><img src="images/fixed_icon.png" alt=""></i><span>广州</span></div>
+					<div class="img"><img src="images/hotel_connoisseur3.jpg" alt=""></div>
+					<div class="text">
+						<div class="l">
+							<h2>柏曼酒店广州天河时代广场店</h2>
+							<p><span>试睡价:<em>￥<strong>0</strong></em></span><del>会员价:￥499</del></p>
+						</div>
+						<div class="seconds-btn">
+							<a href="javascript::">已秒完</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hotel-connoisseur-footer">
+				<span>试睡免费房，免费的住的更舒服</span>
+			</div>
+		</div>
+	</div>
+	<div class="mask"></div>
+	<div class="exchange-mask">
+		<div class="exchange-mask-text">
+			<h3>试睡师资格兑换</h3>
+			<div class="img">
+				<img src="images/exchange_bg.jpg" alt="">
+				<div class="text">
+					<h4>试睡师特权券</h4>
+					<p>有效期2018-01-01<em>至</em>2018-12-31</p>
+				</div>
+			</div>
+			<p>试睡师特权券需要200积分兑换！</p>
+			<!-- 四种按钮状态 需要后端判断一下 判断哪些隐藏css去掉 -->
+			<a class="btn" href="" style="display:none"><span>200积分兑换</span></a>
+			<a class="btn" href="" style="display:flex">
+				<div class="dropload-load items-loading"><span class="loading"></span></div>
+        		<span>兑换中..</span>
+        	</a>
+			<a class="btn" href="" style="display:none"><span>确定</span></a>	
+			<a class="btn btn-null" href="" style="display:none"><span>积分不足</span></a>	
+			<p>我的积分：3691</p>
+		</div>
+		<div class="exchange-mask-close">
+			<img src="images/hotelinfo_close.png" alt="">
+		</div>
+	</div>
+	<!-- script begin -->
+	<script src="plugins/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function($){
+			$(".ad-top .btn").on("click",function(){
+				$(".mask").show();
+				$(".exchange-mask").addClass("on");
+			});
+			$(".exchange-mask-close,.mask").on("click",function(){
+				$(".mask").hide();
+				$(".exchange-mask").removeClass("on");
+			});
+			//图片居中
+			$(".items").each(function(){
+				imgTheMiddle($(this),$(this).find(".img img"));
+			});
+		});
+		//图片居中方法
+		function imgTheMiddle(obj,objImg) {
+	        var imgObjWidth=obj.width(),
+		        imgObjHeight=obj.height(),
+		        imgObjImgWidth=objImg.width(),
+		        imgObjImgHeight=objImg.height();
+	        if(imgObjWidth==imgObjImgWidth && imgObjHeight>imgObjImgHeight){
+	            objImg.css({
+	                maxHeight:"100%",
+	                width:"auto"
+	            });
+	            var imgObjWidth2=obj.width(),
+		            imgObjHeight2=obj.height(),
+		            imgObjImgWidth2=objImg.width(),
+		            imgObjImgHeight2=objImg.height();
+	            if(imgObjImgWidth2>imgObjWidth2 && imgObjHeight2==imgObjImgHeight2){
+	                objImg.css({
+	                    "margin-left":-((imgObjImgWidth2-imgObjWidth2)/2)
+	                });
+	            }
+	        }else if(imgObjWidth==imgObjImgWidth && imgObjHeight<imgObjImgHeight){
+	            objImg.css({
+	                "margin-top":-((imgObjImgHeight-imgObjHeight)/2)
+	            });
+	        }else if(imgObjHeight==imgObjImgHeight && imgObjWidth>imgObjImgWidth){
+	            setTimeout(function(){
+	                objImg.css({
+	                    hegiht:"auto",
+	                    maxWidth:"100%"
+	                });
+	            },30);
+	        }
+	    }
+	</script>
+	<!-- script end -->
+</body>
+</html>

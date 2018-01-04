@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/hotelConnoisseur.css">
+    <title>入住评价</title>
+</head>
+<body>
+	<div class="wrapper hotel-connoisseur-wrapper">
+		<header class="header hotel-connoisseur-header" style="background:url(images/headerbg.png) #f7f7f7 no-repeat;background-size:100% 100%;">
+			<a href="javascript:history.go(-1);" class="dossen-header-left left"></a>
+			<h1>入住评价</h1>
+		</header>
+		<div class="page-content">
+			<div class="big-star">
+				<ul class="big-star4"></ul>
+			</div>
+			<h3>非常满意，无可挑剔</h3>
+			<p>感谢您的用心评价，您的评价会让我们做的更好</p>
+			<div class="ad">
+				<img src="images/3.jpg" alt="">
+			</div>
+		</div>
+	</div>
+	<div class="mask"></div>
+	<div class="share">
+		<div class="img">
+			<img src="images/share.png" alt="">
+		</div>
+		<div class="text">
+			<h2>分享试睡活动</h2>
+			<h3>赚100积分</h3>
+		</div>
+	</div>
+	<!-- script begin -->
+	<script src="plugins/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function($){
+			$(".ad").on("click",function(){
+		    	$(".mask,.share").fadeIn();
+		    });
+			//点击覆盖层
+		    $(".mask,.share").on("click",function(){
+		    	$(".mask,.share").fadeOut();
+		    });
+		});
+	</script>
+	<!-- script end -->
+</body>
+</html>
