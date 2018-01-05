@@ -450,6 +450,52 @@ html {
 .hotel-connoisseur-user-comment .info p span {
   margin-left: .5rem;
 }
+.hotel-connoisseur-user-comment .hotel-connoisseur-btn {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2% 0;
+  box-shadow: 1px 3px 5px #000;
+  background-color: #fff;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.hotel-connoisseur-user-comment .hotel-connoisseur-btn a {
+  margin: 0 5%;
+  height: 1.8rem;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  border: 1px solid #da0450;
+  border-radius: 30px;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.hotel-connoisseur-user-comment .hotel-connoisseur-btn a span {
+  font: 0.75rem/1.8 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #da0450;
+}
+.hotel-connoisseur-user-comment .hotel-connoisseur-btn a:last-child {
+  background-color: #da0450;
+}
+.hotel-connoisseur-user-comment .hotel-connoisseur-btn a:last-child span {
+  color: #fff;
+}
 
 .mask {
   position: fixed;
@@ -461,6 +507,110 @@ html {
   z-index: 4;
   background-color: #000;
   opacity: .7;
+}
+
+.room-info {
+  padding: 5% 5% 20% 5%;
+  text-align: center;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.room-info i {
+  margin: 0 auto 1rem;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  font-size: 0;
+  border-radius: 100%;
+  overflow: hidden;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.room-info i img {
+  width: 100%;
+  height: 100%;
+}
+.room-info h2 {
+  font: bold 1rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #333;
+}
+.room-info p {
+  font: 0.7rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #999;
+}
+
+.tag-comment {
+  display: none;
+}
+.tag-comment .title-tag h3 {
+  font: 0.8rem/3 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #990036;
+  text-align: center;
+}
+.tag-comment .title-tag ul {
+  margin: 0 10%;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tag-comment .title-tag ul li {
+  margin: 1.5% 2.5%;
+  width: 45%;
+  font: 0.7rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #999;
+  border: 1px solid #eee;
+  border-radius: 30px;
+  text-align: center;
+}
+.tag-comment .title-tag ul .active {
+  background-color: #da004c;
+  color: #fff;
+}
+
+.import-comment {
+  margin: 5% 12.5%;
+  padding: 2%;
+  height: 3rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #eeeeee;
+}
+.import-comment textarea {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+}
+
+.select-comment {
+  position: relative;
+  margin: 0 5%;
+}
+.select-comment i {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+  display: block;
+}
+.select-comment p {
+  position: relative;
+  font: 0.7rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #999;
+  text-align: center;
+  background-color: #fff;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .page-album-info {
@@ -497,7 +647,10 @@ html {
   display: -moz-flex;
   display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
   justify-content: center;
 }
 .page-album-info .swiper-slide .img img {
@@ -635,6 +788,221 @@ html {
 .share .text h3 {
   font: 0.7rem/1.8 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
   color: #fcff00;
+}
+
+/*上传图片插件的样式*/
+.img-box {
+  margin-top: 0;
+}
+
+.z_photo {
+  padding: 5% 5% 0 5%;
+  display: -webkit-flex;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  /*border:2px dashed #E7E6E6;*/
+  /*padding: 18px;*/
+}
+
+.z_photo .up-p {
+  font-size: 12px;
+  color: #969696;
+  margin: 0;
+  margin-left: 10px;
+}
+
+.z_photo .z_file {
+  position: relative;
+}
+
+.z_file .file {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+}
+
+.z_photo .up-section {
+  position: relative;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+.up-section .close-upimg {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  display: none;
+  z-index: 10;
+  width: 20px;
+}
+
+.up-section:hover {
+  border: 2px solid #f15134;
+}
+
+.up-section:hover .close-upimg {
+  display: block;
+}
+
+.up-section:hover .up-span {
+  visibility: visible;
+}
+
+.z_photo .up-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.loading {
+  border: 1px solid #D1D1D1;
+}
+
+.up-opcity {
+  opacity: 0;
+}
+
+.img-name-p {
+  display: none;
+}
+
+.upimg-div .up-section {
+  width: 50px;
+  height: 50px;
+  border: 1px dashed #eee;
+}
+
+.img-box .upimg-div .z_file {
+  width: 50px;
+  height: 50px;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #eee;
+}
+
+.z_file .add-img {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  z-index: 4;
+  background-color: #000;
+  opacity: .7;
+}
+
+.select-name {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 5%;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.select-name i {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url("../images/pay_success_icon.png") no-repeat;
+  background-size: 100% 100%;
+  margin-right: .3rem;
+}
+.select-name span {
+  font: 0.7rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #999;
+}
+
+.select-name.active i {
+  background: url("../images/no_select_icon.png") no-repeat;
+  background-size: 100% 100%;
+}
+
+.btn {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  padding: 5%;
+}
+.btn a {
+  display: block;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  font: 0.7rem/2rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #999;
+  text-align: center;
+}
+
+.btn.active a {
+  background-color: #d92068;
+  color: #fff;
+}
+
+.title-input {
+  border-bottom: 1px solid #f5f5f5;
+  height: 2.4rem;
+  font-size: 0;
+}
+.title-input input {
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 0 5%;
+  width: 90%;
+  height: 100%;
+  font: 0.8rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #333;
+}
+.title-input input::-webkit-input-placeholder {
+  color: #999;
+}
+
+.text-write {
+  position: relative;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 0;
+}
+.text-write textarea {
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 3% 5%;
+  width: 90%;
+  height: 100%;
+  font: 0.6rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #666;
+}
+.text-write textarea::-webkit-input-placeholder {
+  color: #ccc;
+}
+.text-write p {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  font: 0.65rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+  color: #999;
 }
 
 .hotel-connoisseur-content .ad-top {

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/hotelConnoisseur.css">
+    <title>入住评价</title>
+</head>
+<body>
+	<div class="wrapper hotel-connoisseur-wrapper" style="background-color:#fff;">
+		<header class="header hotel-connoisseur-header" style="background:url(images/headerbg.png) #f7f7f7 no-repeat;background-size:100% 100%;">
+			<a href="javascript:history.go(-1);" class="dossen-header-left left"></a>
+			<h1>入住评价</h1>
+		</header>
+		<div class="page-content">
+			<div class="title-input">
+				<input type="text" placeholder="请填写标题">
+			</div>
+			<div class="text-write">
+				<textarea name="" id="" cols="30" rows="15" maxlength="2000" placeholder="试睡店铺字数不少于300字哦，开始写下您的感受吧~"></textarea>
+				<p></p>
+			</div>
+			<div class="upload img-box full">
+				<section class="img-section">
+					<div class="z_photo upimg-div clear">
+						<section class="z_file fl">
+							<img src="images/add_img_icon.png" class="add-img">
+							<input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple="multiple">
+						</section>
+			               	 <!-- <p class="up-p">最多上传3张照片</p> -->
+			         </div>
+				 </section>
+			</div>
+			<div class="btn" style="display:block;">
+				<a href="javascript:;">提交评价</a>
+			</div>
+		</div>
+	</div>
+	<!-- mask begin -->
+	<!-- <div class="mask"></div> -->
+	<!-- mask end -->
+	<!-- album info begin -->
+	<!-- <div class="page-album-info">
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide">	
+		        	<div class="img"><img src="images/star-2654c.png" alt=""></div>
+		        </div>
+		        <div class="swiper-slide">
+		        	<div class="img"><img src="images/display2-7ef03.jpg" alt=""></div>
+		        </div>
+		        <div class="swiper-slide">
+		        	<div class="img"><img src="images/display2-7ef03.jpg" alt=""></div>
+		        </div>
+		    </div>
+		</div> -->
+		<!-- 如果需要分页器  -->
+		<!-- <div class="swiper-pagination"></div>
+	</div> -->
+	<!-- <div class="delete">
+		<i><img src="images/delete_icon-b6c5c.png" alt=""></i>
+	</div> -->
+	<!-- album info end -->
+	<!-- script begin -->
+	<script src="plugins/jquery-3.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var num;
+			$(".title-input input").on("input",function(){
+				if(num>=10 && $(this).val!=""){
+					$(".btn").addClass("active").find("a").attr("href","hotelConnoisseurSubmitCommentSuccess.html");
+				}else{
+					$(".btn").removeClass("active").find("a").attr("href","javascript:;");
+				}
+			})
+			var maxlength=$(".text-write textarea").attr('maxlength');
+			$(".text-write textarea").on("keyup",function(){
+				num=$(this).val().length;
+				$(".text-write p").text("("+num+"/"+maxlength+")");
+				if(num>=10 && $(".title-input input").val()!=""){
+					$(".btn").addClass("active").find("a").attr("href","hotelConnoisseurSubmitCommentSuccess.html");
+				}else{
+					$(".btn").removeClass("active").find("a").attr("href","javascript:;");
+				}
+			});
+		    //上传图片
+		    var delParent;
+			var defaults = {
+				fileType         : ["jpg","png","bmp","jpeg"],   // 上传文件的类型
+				fileSize         : 1024 * 1024 * 10                  // 上传文件的大小 10M
+			};
+				/*点击图片的文本框*/
+			$(".file").change(function(){
+				var idFile = $(this).attr("id");
+				var file = document.getElementById(idFile);
+				var imgContainer = $(this).parents(".z_photo"); //存放图片的父亲元素
+				var fileList = file.files; //获取的图片文件
+				console.log(fileList+"======filelist=====");
+				var input = $(this).parent();//文本框的父亲元素
+				var imgArr = [];
+				//遍历得到的图片文件
+				var numUp = imgContainer.find(".up-section").length;
+				var totalNum = numUp + fileList.length;  //总的数量
+				if(fileList.length > 5 || totalNum > 5 ){
+			// 		alert("上传图片数目不可以超过5个，请重新选择");  //一次选择上传超过5个 或者是已经上传和这次上传的到的总数也不可以超过5个
+				}
+				else if(numUp < 5){
+					fileList = validateUp(fileList);
+					for(var i = 0;i<fileList.length;i++){
+					 var imgUrl = window.URL.createObjectURL(fileList[i]);
+					     imgArr.push(imgUrl);
+					 var $section = $("<section class='up-section fl loading'>");
+					     imgContainer.prepend($section);
+					 var $span = $("<span class='up-span'>");
+					     $span.appendTo($section);
+					
+				     var $img0 = $("<img class='close-upimg'>").on("click",function(event){
+						    event.preventDefault();
+							event.stopPropagation();
+							$(".works-mask").show();
+							delParent = $(this).parent();			
+						});  
+
+
+					 // $section.on("click",function(){
+					 // 	$(".mask").fadeIn();
+					 // 	$(".delete").show();
+		    // 			$(".page-album-info").addClass("on");
+					 // })
+						// $img0.attr("src","../dist/images/hotelinfo_close-f49c1.png").appendTo($section);
+				     var $img = $("<img class='up-img up-opcity'>");
+				         $img.attr("src",imgArr[i]);
+				         $img.appendTo($section);
+				     var $p = $("<p class='img-name-p'>");
+				         $p.html(fileList[i].name).appendTo($section);
+				     var $input = $("<input id='taglocation' name='taglocation' value='' type='hidden'>");
+				         $input.appendTo($section);
+				     var $input2 = $("<input id='tags' name='tags' value='' type='hidden'/>");
+				         $input2.appendTo($section);		      
+				   }
+				}
+				setTimeout(function(){
+		             $(".up-section").removeClass("loading");
+				 	 $(".up-img").removeClass("up-opcity");
+				 },450);
+				 numUp = imgContainer.find(".up-section").length;
+				if(numUp >= 5){
+					$(this).parent().hide();
+				}
+				
+				//input内容清空
+				$(this).val("");
+			});
+		    $(".z_photo").delegate(".close-upimg","click",function(){
+		     	  $(".works-mask").show();
+		     	  delParent = $(this).parent();    	  
+			});
+				
+			// $(".wsdel-ok").click(function(){
+			// 	$(".works-mask").hide();
+			// 	var numUp = delParent.siblings().length;
+			// 	if(numUp < 4){
+			// 		delParent.parent().find(".z_file").show();
+			// 	}
+			// 	 delParent.remove();		
+			// });
+			
+			// $(".wsdel-no").click(function(){
+			// 	$(".works-mask").hide();
+			// });	
+			function validateUp(files){
+				var arrFiles = [];//替换的文件数组
+				for(var i = 0, file; file = files[i]; i++){
+					//获取文件上传的后缀名
+					var newStr = file.name.split("").reverse().join("");
+					if(newStr.split(".")[0] != null){
+							var type = newStr.split(".")[0].split("").reverse().join("");
+							console.log(type+"===type===");
+							if($.inArray(type, defaults.fileType) > -1){
+								// 类型符合，可以上传
+								if (file.size >= defaults.fileSize) {
+									alert(file.size);
+									alert('您这个"'+ file.name +'"文件大小过大');	
+								} else {
+									// 在这里需要判断当前所有文件中
+									arrFiles.push(file);	
+								}
+							}else{
+								alert('您这个"'+ file.name +'"上传类型不符合');	
+							}
+						}else{
+							alert('您这个"'+ file.name +'"没有类型, 无法识别');	
+						}
+				}
+				return arrFiles;
+			}	
+			// //点击覆盖层
+		 //    $(".mask").on("click",function(){
+		 //    	$(".mask").fadeOut();
+		 //    	$(".page-album-info").removeClass("on");
+		 //    });
+		 //    $(".delete").on("click",function(){
+		 //    	$(".swiper-slide:eq(0)").remove();
+		 //    	$(".swiper-pagination-total").text($(".swiper-pagination-total").text()-1);
+		 //    });
+			// //幻灯片
+			// function mySwioerAll(index){
+
+			// 	var mySwiper = new Swiper('.swiper-container',{
+			// 		pagination : '.swiper-pagination',
+			// 		paginationType : 'fraction',
+			// 		onSlideChangeEnd: function(swiper){
+			// 	       index=swiper.activeIndex;
+			// 	       console.log(index)
+			// 	    }
+			// 	});
+			// }
+			// $(".delete").on("click",function(){
+			// 	alert(0);
+		 //    	$(".swiper-slide:eq(0)").remove();
+		 //    	mySwioerAll();
+		 //    });
+		 //    mySwioerAll();
+		});
+	</script>
+<!-- script end -->
+</body>
+</html>
