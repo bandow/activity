@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/auction.css">
+    <title>我的竞拍</title>
+</head>
+<body>
+	<div class="wrapper my-auction-wrapper">
+		<header class="header auction-header">
+			<div class="left"><a class="arrow-left" href="javascript:window.history.back();"></a></div>
+			<h1>我的竞拍</h1>
+		</header>
+		<div class="tab-nav">
+			<ul class="tab">
+				<li class="on">进行中</li>
+				<li>已结束</li>
+				<div class="line"></div>
+			</ul>
+		</div> 
+		<div class="my-auction-content">
+			<div class="tab-auction">
+				<div class="items" data-id="0">
+					<div class="img">
+						<img src="images/k1.jpg" alt="">
+						<p>距结束：00时23分22秒</p>
+					</div>
+					<div class="text">
+						<h2>天梭力洛克系列精钢自动机 械男表</h2>
+						<div class="before-integral">
+							<p>当前出价(积分)</p>
+							<h3>238800</h3>
+						</div>
+						<div class="my-auction-content">
+							<div class="l">
+								<p>市场价：￥1926</p>
+								<p>出价次数：306次</p>
+							</div>
+							<a href="" class="btn">
+								<span>我要竞拍</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="items" data-id="0">
+					<div class="img">
+						<img src="images/k2.jpg" alt="">
+						<p>距结束：00时23分22秒</p>
+					</div>
+					<div class="text">
+						<h2>Salvatore Ferragamo菲拉 格慕男士马蹄扣双面腰带...</h2>
+						<div class="before-integral">
+							<p>当前出价(积分)</p>
+							<h3>680000</h3>
+						</div>
+						<div class="my-auction-content">
+							<div class="l">
+								<p>市场价：￥1926</p>
+								<p>出价次数：306次</p>
+							</div>
+							<a href="" class="btn">
+								<span>我要竞拍</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="items" data-id="0">
+					<div class="img">
+						<img src="images/k3.jpg" alt="">
+						<p>距结束：00时23分22秒</p>
+					</div>
+					<div class="text">
+						<h2>LOUIS VUITTON路易威登 男士邮差包</h2>
+						<div class="before-integral">
+							<p>当前出价(积分)</p>
+							<h3>2699999</h3>
+						</div>
+						<div class="my-auction-content">
+							<div class="l">
+								<p>市场价：￥1926</p>
+								<p>出价次数：306次</p>
+							</div>
+							<a href="" class="btn">
+								<span>我要竞拍</span>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="items" data-id="1">
+					<div class="img">
+						<img src="images/k1.jpg" alt="">
+					</div>
+					<div class="text">
+						<h2>天梭力洛克系列精钢自动机 械男表</h2>
+						<p>竞拍状态</p>
+						<h3>竞拍成功</h3>
+					</div>
+				</div>	
+				<div class="items" data-id="1">
+					<div class="img">
+						<img src="images/k2.jpg" alt="">
+					</div>
+					<div class="text">
+						<h2>Salvatore Ferragamo菲拉 格慕男士马蹄扣双面腰带...</h2>
+						<p>竞拍状态</p>
+						<h3 class="fail">竞拍失败</h3>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+	<div class="mask"></div>
+	<!-- script begin -->
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script src="scripts/flexible.js"></script>
+	<script src="scripts/common.js"></script>
+	<script>
+		$(document).ready(function($){
+			//tab切换
+			$('.tab-auction .items[data-id="1"]').hide();
+			$(".tab-nav li").each(function(index){
+				$(this).on("click",function(){
+					$(this).addClass('on').siblings().removeClass('on');
+					$('.tab-auction .items').hide();
+					if(index==0){
+						$(".tab-nav .line").css("left",'2.6rem');
+						$('.tab-auction .items[data-id="'+index+'"]').show();
+					}else{
+						$(".tab-nav .line").css("left",'4.2rem');
+						$('.tab-auction .items[data-id="'+index+'"]').show();
+					}
+				});
+			})
+		});	
+	</script>
+
+	<!-- script end -->
+</body>
+</html>

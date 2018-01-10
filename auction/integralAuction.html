@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/auction.css">
+    <title>积分竞拍</title>
+</head>
+<body>
+	<div class="wrapper auction-wrapper">
+		<header class="header auction-header">
+			<h1>积分竞拍</h1>
+			<div class="right">
+				<a href="javascript:;"><img src="images/share_icon.png" alt=""></a>
+				<a href="myAuction.html"><img src="images/user_icon.png" alt=""></a>
+			</div>
+		</header>
+		<div class="auction-content">
+			<div class="items">
+				<div class="img">
+					<img src="images/1.jpg" alt="">
+					<div class="text">
+						<span id="time1"></span>
+						<span>306 次出价</span>
+					</div>
+				</div>
+				<h2>天梭力洛克系列精钢自动机械男表</h2>
+				<div class="auction-price">
+					<div class="integral">
+						<p>当前积分</p>
+						<h3>238800</h3>
+					</div>
+					<p>市场价：<em>￥1926</em> </p>
+					<a href=""><span>我要竞拍</span></a>
+				</div>
+			</div>
+			<div class="items">
+				<div class="img">
+					<img src="images/3.jpg" alt="">
+					<div class="text">
+						<span id="time2"></span>
+						<span>306 次出价</span>
+					</div>
+				</div>
+				<h2>Salvatore Ferragamo菲拉格慕男士马蹄扣双面...</h2>
+				<div class="auction-price">
+					<div class="integral">
+						<p>当前积分</p>
+						<h3>238800</h3>
+					</div>
+					<p>市场价：<em>￥1926</em> </p>
+					<a href=""><span>我要竞拍</span></a>
+				</div>
+			</div>
+			<div class="title">
+				<div class="line"></div>
+				<p>往期竞拍</p>
+			</div>
+			<div class="finish-items">
+				<div class="img">
+					<img src="images/4.jpg" alt="">
+					<div class="text">
+						<span>已结束：XX月XX日XX时XX分</span>
+						<span>306 次出价</span>
+					</div>
+				</div>
+				<h2>Salvatore Ferragamo菲拉格慕男士马蹄扣双面</h2>
+				<div class="auction-price">
+					<div class="integral">
+						<p>成交积分</p>
+						<h3>238800</h3>
+					</div>
+					<p>市场价：<em>￥1926</em> </p>
+					<a href=""><span>已结束</span></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="rule-btn" onclick="ruleMask(defaultTitle,defaultMsg)">
+		<p>规则</p>
+	</div>
+	<div class="mask"></div>
+	<!-- <div class="rule-mask">
+		<h2>竞拍规则</h2>
+		<div class="rule-mask-content">
+			<p>1.竞拍状态有三种，一是正在进行，二是已结束（竞拍失败），三是已结束（竞拍成功）</p>
+			<p>2.页面显示元素包括：</p>
+			<p>2.1商品缩略图：最多显示5张，每隔5秒自动轮播，也可手指左右切换；如果后台只上传一张图片就不用轮播，点击显示大图；</p>
+			<p>2.2竞拍状态和结束倒计时间；时间格式变为XX时XX分XX秒的倒计时形式；</p>
+			<p>2.3商品标题：最多显示15个字，超出用省略号代替；</p>
+			<p>2.4当前的积分；</p>
+			<p>2.5市场价格，以元为单位；</p>
+			<p>2.6起拍积分；</p>
+			<p>2.7加分幅度</p>
+		</div>
+		<div class="rule-mask-close"><a href="javascript:;"></a></div>
+	</div> -->
+	<!-- script begin -->
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script src="scripts/flexible.js"></script>
+	<script src="scripts/common.js"></script>
+	<script>
+		$(document).ready(function($){
+			//图片居中
+			$(".auction-content .items").each(function(){
+				imgTheMiddle($(this),$(this).find(".img img"));
+			});
+			$(".auction-content .finish-items").each(function(){
+				imgTheMiddle($(this),$(this).find(".img img"));
+			});
+		});	
+		countDown('2018-02-10 11:00:00', function (msg) { $('#time1').text(msg);});
+		countDown('2018-02-11 10:00:00', function (msg) { $('#time2').text(msg);});
+	</script>
+	<!-- script end -->
+</body>
+</html>
