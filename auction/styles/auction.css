@@ -321,6 +321,8 @@ input {
 }
 .auction-content .items .img img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .auction-content .items .img .text {
   position: absolute;
@@ -433,6 +435,8 @@ input {
 }
 .auction-content .finish-items .img img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .auction-content .finish-items .img .text {
   position: absolute;
@@ -529,6 +533,243 @@ input {
   font: 0.28rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
 }
 
+/*竞拍详情 auction-detail-content*/
+.auction-detail-wrapper {
+  padding-bottom: 1.1rem;
+}
+
+.auction-detail-content .banner {
+  position: relative;
+  width: 100%;
+  height: 4.5rem;
+}
+.auction-detail-content .banner .swiper-container .swiper-slide {
+  width: 100%;
+  height: 4.5rem;
+  font-size: 0;
+}
+.auction-detail-content .banner .swiper-container .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.auction-detail-content .banner p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  padding: 0 .34rem;
+  width: 100%;
+  height: .6rem;
+  background: rgba(0, 0, 0, 0.35);
+  font: 0.24rem/0.6rem -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+.auction-detail-content .info {
+  padding: 0 .3rem;
+}
+.auction-detail-content .info .info-top {
+  padding: .3rem 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+.auction-detail-content .info .info-top h2 {
+  margin-bottom: .2rem;
+  font: 0.3rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #000;
+}
+.auction-detail-content .info .info-top p {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.auction-detail-content .info .info-top p span:first-child {
+  font: 0.24rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #da004c;
+}
+.auction-detail-content .info .info-top p span:first-child strong {
+  font: bold 0.4rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+}
+.auction-detail-content .info .info-top p span:last-child {
+  font: 0.24rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #666;
+}
+.auction-detail-content .info .info-bottom {
+  padding: .3rem 0;
+}
+.auction-detail-content .info .info-bottom .t {
+  margin-bottom: .2rem;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.auction-detail-content .info .info-bottom .t p {
+  font: 0.22rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #666;
+}
+.auction-detail-content .info .info-bottom .t p span {
+  color: #333;
+}
+.auction-detail-content .info .info-bottom .b {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.auction-detail-content .info .info-bottom .b p {
+  margin-right: .3rem;
+  font: 0.22rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #666;
+}
+.auction-detail-content .info .info-bottom .b p span {
+  color: #333;
+}
+.auction-detail-content .record {
+  padding: .3rem;
+  background-color: #f5f5f5;
+}
+.auction-detail-content .record .title {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.auction-detail-content .record .title h3 {
+  font: 0.3rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #666;
+}
+.auction-detail-content .record .title a {
+  font: 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #666;
+}
+.auction-detail-content .record ul {
+  padding-top: .3rem;
+}
+.auction-detail-content .record ul li {
+  margin-bottom: .3rem;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.auction-detail-content .record ul li .img {
+  width: .5rem;
+  height: .5rem;
+  font-size: 0;
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: #dcdcdc;
+}
+.auction-detail-content .record ul li .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.auction-detail-content .record ul li p {
+  padding-left: .25rem;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  font: 0.22rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.auction-detail-content .record ul li p span:first-child {
+  width: 1.55rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.auction-detail-content .record ul li p span:nth-child(2) {
+  color: #999;
+}
+.auction-detail-content .record ul li p span:nth-child(4) {
+  color: #999;
+}
+.auction-detail-content .record ul li p span:nth-child(4).on-top {
+  font-weight: bold;
+  color: #da004c;
+}
+.auction-detail-content .record ul li:last-child {
+  margin-bottom: 0;
+}
+.auction-detail-content .project-info {
+  padding: .3rem;
+}
+.auction-detail-content .project-info .title {
+  padding-bottom: .2rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+.auction-detail-content .project-info .title h3 {
+  font: 0.3rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #666;
+}
+.auction-detail-content .project-info .project-info-content {
+  width: 100%;
+}
+.auction-detail-content .project-info .project-info-content img {
+  width: 100%;
+}
+
+.detail-btn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  padding: 0 .3rem;
+  margin: 0 auto;
+  width: 100%;
+  height: 1.1rem;
+  max-width: 750px;
+  background: rgba(218, 0, 76, 0.9);
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+.detail-btn h3 {
+  font: 0.36rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+.detail-btn p {
+  font: 0.22rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+
 /*我的竞拍 my-auction-content*/
 .my-auction-wrapper {
   padding-top: 1.6rem;
@@ -604,6 +845,8 @@ input {
 }
 .my-auction-content .tab-auction .items .img img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .my-auction-content .tab-auction .items .img p {
   position: absolute;
@@ -683,6 +926,72 @@ input {
 .my-auction-content .tab-auction .items .text .my-auction-content .btn span {
   font: bold 0.24rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
   color: #fff;
+}
+
+/*拍卖记录 auction-record*/
+.auction-record-header {
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.auction-record-content ul {
+  padding: .3rem;
+}
+.auction-record-content ul li {
+  margin-bottom: .3rem;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.auction-record-content ul li .img {
+  width: .5rem;
+  height: .5rem;
+  font-size: 0;
+  border-radius: 100%;
+  overflow: hidden;
+  background-color: #dcdcdc;
+}
+.auction-record-content ul li .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.auction-record-content ul li p {
+  padding-left: .25rem;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  font: 0.22rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.auction-record-content ul li p span:first-child {
+  width: 1.55rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.auction-record-content ul li p span:nth-child(2) {
+  color: #999;
+}
+.auction-record-content ul li p span:nth-child(4) {
+  color: #999;
+}
+.auction-record-content ul li p span:nth-child(4).on-top {
+  font-weight: bold;
+  color: #da004c;
 }
 
 .mask {

@@ -107,7 +107,7 @@
 				</div>	
 				<div class="items" data-id="1">
 					<div class="img">
-						<img src="images/k2.jpg" alt="">
+						<img src="images/3.jpg" alt="">
 					</div>
 					<div class="text">
 						<h2>Salvatore Ferragamo菲拉 格慕男士马蹄扣双面腰带...</h2>
@@ -126,6 +126,16 @@
 	<script src="scripts/common.js"></script>
 	<script>
 		$(document).ready(function($){
+			// $('.items').each(function(){
+			// 	var divHeight = $(this).find('.img').height();
+			// 	var imgHeight = $(this).find('.img img').height();
+			// 	var marginTop = (divHeight - imgHeight) / 2;
+			// 	if(divHeight>imgHeight){
+			// 		$(this).find('.img img').css({"margin-top": marginTop + "px"});
+			// 	}else if(divHeight<imgHeight){
+			// 		$(this).find('.img img').css({"margin-top": -marginTop + "px"});
+			// 	}
+			// });
 			//tab切换
 			$('.tab-auction .items[data-id="1"]').hide();
 			$(".tab-nav li").each(function(index){
@@ -141,7 +151,7 @@
 					}
 				});
 			})
-		});	
+		});	  
 	</script>
 
 	<!-- script end -->

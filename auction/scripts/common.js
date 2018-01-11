@@ -64,33 +64,3 @@ function ruleMask(title,msg){
 		},500)
 	});
 }
-//图片居中方法
-function imgTheMiddle(obj,objImg) {
-    var imgObjWidth=obj.width(),
-        imgObjHeight=obj.height(),
-        imgObjImgWidth=objImg.width(),
-        imgObjImgHeight=objImg.height();
-    if(imgObjWidth==imgObjImgWidth && imgObjHeight>imgObjImgHeight){
-        objImg.css({
-            maxHeight:"100%",
-            width:"auto",
-        });
-
-        var imgObjWidth2=obj.width(),
-            imgObjHeight2=obj.height(),
-            imgObjImgWidth2=objImg.width(),
-            imgObjImgHeight2=objImg.height();
-        if(imgObjImgWidth2>imgObjWidth2 && imgObjHeight2==imgObjImgHeight2){
-            return false;
-        }else{
-        	objImg.css({
-                "margin-left":-((imgObjImgWidth2-imgObjWidth2)/2)
-            });
-        }
-    }else if(imgObjWidth==imgObjImgWidth && imgObjHeight<imgObjImgHeight){
-        objImg.css({
-            "margin-top":-((imgObjImgHeight-imgObjHeight)/2)
-        });
-    }
-}
-//

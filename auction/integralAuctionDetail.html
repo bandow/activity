@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="name, sycbbb@sina.com"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+    <meta name="msapplication-tap-highlight" content="no">
+    <link rel="stylesheet" href="styles/auction.css">
+    <link rel="stylesheet" href="styles/swiper-3.4.2.min.css">
+    <style>
+    	.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+    		bottom: 3px;
+		    width: 1.2rem;
+		    right: 0;
+		    left: initial;
+    	}
+    	.swiper-pagination-bullet-active{
+    		background:#fff;
+    	}
+    </style>
+    <title>积分竞拍</title>
+</head>
+<body>
+	<div class="wrapper auction-wrapper auction-detail-wrapper">
+		<header class="header auction-header">
+			<h1>积分竞拍</h1>
+			<div class="right">
+				<a href="javascript:;"><img src="images/share_icon.png" alt=""></a>
+				<a href="myAuction.html"><img src="images/user_icon.png" alt=""></a>
+			</div>
+		</header>
+		<div class="auction-detail-content">
+			<div class="banner">
+				<div class="swiper-container">
+		            <div class="swiper-wrapper">
+		                <div class="swiper-slide"><img src="images/1.jpg" alt=""></div>
+		                <div class="swiper-slide"><img src="images/2.jpg" alt=""></div>
+		                <div class="swiper-slide"><img src="images/3.jpg" alt=""></div>
+		            </div>
+		            <div class="swiper-pagination"></div>
+		        </div>
+		        <p>距结束：00时23分22秒</p>
+			</div>
+			<div class="info">
+				<div class="info-top">
+					<h2>1新款天梭力洛克系列精钢自动机械男表</h2>
+					<p><span>当前出价(积分)：<strong>238000</strong></span><span>市场价：￥1926</span></p>
+				</div>
+				<div class="info-bottom">
+					<div class="t">
+						<p>起拍积分：<span>100分</span></p>
+						<p>加分幅度：<span>200分/次</span></p>
+						<p>延时周期：<span>5分/次</span></p>
+					</div>
+					<div class="b">
+						<p>开拍时间：<span>12月07日 10:00</span></p>
+						<p>结束时间：<span>12月07日 12:00</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="record">
+				<div class="title">
+					<h3>拍卖记录</h3>
+					<a href="auctionRecord.html">共10条 >> </a>
+				</div>
+				<ul>
+					<li>
+						<div class="img"></div>
+						<p><span>Subconan</span><span>12-07 10:22:36</span><span>出2200分</span><span class="on-top">领先</span></p>
+					</li>
+					<li>
+						<div class="img"></div>
+						<p><span>这个名字有点长这个名字有点长</span><span>12-07 10:22:36</span><span>出2200分</span><span>出局</span></p>
+					</li>
+					<li>
+						<div class="img"></div>
+						<p><span>这个名字有点长这个名字有点长</span><span>12-07 10:22:36</span><span>出2200分</span><span>出局</span></p>
+					</li>
+				</ul>
+			</div>
+			<div class="project-info">
+				<div class="title"><h3>商品详情</h3></div>
+				<div class="project-info-content">
+					<img src="images/d1.jpg" alt="">
+				</div>
+			</div>
+		</div>
+		<div class="detail-btn">
+			<h3>我要出2200积分</h3>
+			<p>您共有20000积分，竞拍失败可返回积分</p>
+		</div>
+	</div>
+	<div class="rule-btn" onclick="ruleMask(defaultTitle,defaultMsg)">
+		<p>规则</p>
+	</div>
+	<div class="mask"></div>
+	<!-- script begin -->
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script src="scripts/swiper-3.4.2.min.js"></script>
+	<script src="scripts/flexible.js"></script>
+	<script src="scripts/common.js"></script>
+	<script>
+		var mySwiper = new Swiper('.swiper-container',{
+	        pagination : '.swiper-pagination',
+	        loop : true,
+	        autoplay : 5000,
+	        speed:300,
+	    })
+		$(document).ready(function($){
+			countDown('2018-02-10 11:00:00', function (msg) { $('#time1').text(msg);});
+			countDown('2018-02-11 10:00:00', function (msg) { $('#time2').text(msg);});
+		});	
+	</script>
+	<!-- script end -->
+</body>
+</html>

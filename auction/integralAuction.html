@@ -39,7 +39,7 @@
 						<h3>238800</h3>
 					</div>
 					<p>市场价：<em>￥1926</em> </p>
-					<a href=""><span>我要竞拍</span></a>
+					<a href="integralAuctionDetail.html"><span>我要竞拍</span></a>
 				</div>
 			</div>
 			<div class="items">
@@ -57,7 +57,7 @@
 						<h3>238800</h3>
 					</div>
 					<p>市场价：<em>￥1926</em> </p>
-					<a href=""><span>我要竞拍</span></a>
+					<a href="integralAuctionDetail.html"><span>我要竞拍</span></a>
 				</div>
 			</div>
 			<div class="title">
@@ -109,16 +109,9 @@
 	<script src="scripts/common.js"></script>
 	<script>
 		$(document).ready(function($){
-			//图片居中
-			$(".auction-content .items").each(function(){
-				imgTheMiddle($(this),$(this).find(".img img"));
-			});
-			$(".auction-content .finish-items").each(function(){
-				imgTheMiddle($(this),$(this).find(".img img"));
-			});
+			countDown('2018-02-10 11:00:00', function (msg) { $('#time1').text(msg);});
+			countDown('2018-02-11 10:00:00', function (msg) { $('#time2').text(msg);});
 		});	
-		countDown('2018-02-10 11:00:00', function (msg) { $('#time1').text(msg);});
-		countDown('2018-02-11 10:00:00', function (msg) { $('#time2').text(msg);});
 	</script>
 	<!-- script end -->
 </body>
