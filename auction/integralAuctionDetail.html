@@ -100,8 +100,8 @@
 	<div class="rule-btn" onclick="ruleMask(defaultTitle,defaultMsg)">
 		<p>规则</p>
 	</div>
-	<div class="mask" style="display:block;"></div>
-	<div class="insufficient on">
+	<div class="mask"></div>
+	<div class="insufficient">
 		<p>亲，您的积分不够哦，请完成以下任务来获取更多积分吧！ </p>
 		<ul>
 			<li>
@@ -127,6 +127,35 @@
 			<span>确定</span>
 		</div>
 	</div>
+	<div class="integral-prompt">
+		<p>参与竞拍将暂时冻结您的<span>2200</span>积分，竞拍成功将扣除积分，竞拍失败将返回积分，是否参与竞拍？ </p>
+		<dl>
+			<dd>
+				<div class="select"><i></i></div>
+				<span>下次不再提示</span>
+			</dd>
+			<dd>
+				<div class="select"><i></i></div>
+				<span>出价被超过时微信通知我</span>
+			</dd>
+		</dl>
+		<div class="btn">
+			<a href=""><span>确定</span></a>
+			<a href=""><span>取消</span></a>
+		</div>
+	</div>
+	<div class="see-big-img">
+		<div class="big-img">
+			<div class="swiper-container-img">
+	            <div class="swiper-wrapper">
+	                <div class="swiper-slide"><img src="images/1.jpg" alt=""></div>
+	                <div class="swiper-slide"><img src="images/2.jpg" alt=""></div>
+	                <div class="swiper-slide"><img src="images/3.jpg" alt=""></div>
+	            </div>
+	        </div>
+		</div>
+		<div class="big-img-close"><a href="javascript:;"></a></div>
+	</div>
 	<!-- script begin -->
 	<script src="scripts/jquery-3.1.1.min.js"></script>
 	<script src="scripts/swiper-3.4.2.min.js"></script>
@@ -138,9 +167,25 @@
 	        loop : true,
 	        autoplay : 5000,
 	        speed:300,
+	        onClick: function(swiper){
+		        $(".mask").show();
+				$(".see-big-img").addClass("on");
+				//console.log(mySwiper.activeIndex);  本身索引
+				mySwiperImg.slideTo(mySwiper.activeIndex, false);//切换到对应的第几个slide
+		    }
+	    });
+	    var mySwiperImg = new Swiper('.swiper-container-img',{
+	        loop : true,
+	        autoplay : 5000,
+	        speed:300,
 	    })
 		$(document).ready(function($){
 			countDown('2018-02-10 11:00:00', function (msg) { $('#time1').text(msg);});
+			//查看大图
+			$(".see-big-img .big-img-close,.mask").on("click",function(){
+				$(".mask").hide();
+				$(".see-big-img").removeClass("on");
+			});
 		});	
 	</script>
 	<!-- script end -->

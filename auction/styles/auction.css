@@ -775,7 +775,6 @@ input {
   top: 50%;
   left: 50%;
   z-index: 5;
-  padding: .25rem;
   width: 6.2rem;
   background: #fff;
   border-radius: 5px;
@@ -790,8 +789,270 @@ input {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
+.insufficient > p {
+  padding: .25rem .25rem 0 .25rem;
+  font: 0.26rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #333;
+}
+.insufficient ul {
+  padding: 0 .55rem;
+  margin: .5rem 0;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.insufficient ul li .img {
+  width: 1.1rem;
+  height: 1.1rem;
+  font-size: 0;
+  background-color: #eee;
+  border-radius: 10px;
+  margin-bottom: .1rem;
+}
+.insufficient ul li .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.insufficient ul li p {
+  font: 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #333;
+  text-align: center;
+}
+.insufficient .btn {
+  width: 100%;
+  height: .8rem;
+  border-top: 1px solid #ddd;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.insufficient .btn span {
+  font: 0.26rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #333;
+}
 
 .insufficient.on {
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.integral-prompt {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  width: 6.2rem;
+  background: #fff;
+  border-radius: 5px;
+  -moz-transform: translate(-50%, -500%);
+  -o-transform: translate(-50%, -500%);
+  -ms-transform: translate(-50%, -500%);
+  -webkit-transform: translate(-50%, -500%);
+  transform: translate(-50%, -500%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.integral-prompt > p {
+  padding: .45rem .45rem 0 .45rem;
+  font: 0.26rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #333;
+}
+.integral-prompt > p span {
+  color: #da004c;
+}
+.integral-prompt dl {
+  padding: 0 .45rem;
+  margin: .4rem 0;
+}
+.integral-prompt dl dd {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.integral-prompt dl dd:first-child {
+  margin-bottom: .25rem;
+}
+.integral-prompt dl dd .select {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.integral-prompt dl dd span {
+  margin-left: .15rem;
+  font: 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #999;
+}
+.integral-prompt dl dd.on .select i {
+  margin: 3px 2px;
+  width: 10px;
+  height: 10px;
+  background-color: #bfbfbf;
+  border-radius: 3px;
+}
+.integral-prompt .btn {
+  width: 100%;
+  height: .8rem;
+  border-top: 1px solid #ddd;
+  overflow: hidden;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.integral-prompt .btn a {
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+  height: .8rem;
+}
+.integral-prompt .btn a:first-child {
+  border-right: 1px solid #ddd;
+}
+.integral-prompt .btn a span {
+  font: 0.26rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #333;
+}
+
+.integral-prompt.on {
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.see-big-img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  width: 6.6rem;
+  -moz-transform: translate(-50%, -500%);
+  -o-transform: translate(-50%, -500%);
+  -ms-transform: translate(-50%, -500%);
+  -webkit-transform: translate(-50%, -500%);
+  transform: translate(-50%, -500%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.see-big-img .big-img {
+  width: 6.6rem;
+  height: 6.6rem;
+  overflow: hidden;
+}
+.see-big-img .big-img .swiper-slide {
+  width: 6.2rem;
+  height: 6.2rem;
+  font-size: 0;
+}
+.see-big-img .big-img .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.see-big-img .big-img-close {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  width: .8rem;
+  height: .8rem;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  -moz-transform: translate(-50%, 0);
+  -o-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.see-big-img .big-img-close a {
+  display: inline-block;
+  width: .5rem;
+  height: 1px;
+  background: #fff;
+  line-height: 0;
+  font-size: 0;
+  vertical-align: middle;
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.see-big-img .big-img-close a:after {
+  content: '/';
+  display: block;
+  width: .5rem;
+  height: 1px;
+  background: #fff;
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.see-big-img.on {
   -moz-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
