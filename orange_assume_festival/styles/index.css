@@ -421,8 +421,9 @@ input {
   position: absolute;
   top: .25rem;
   right: .25rem;
-  width: 20px;
-  height: 20px;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
   background-color: #e72c0e;
   font-size: 0;
@@ -460,6 +461,11 @@ input {
   -ms-transform: rotate(-90deg);
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
+}
+.mask-rule .mask-rule-close img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .mask-rule .mask-rule-centent {
   padding: 2%;
