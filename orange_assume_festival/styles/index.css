@@ -307,13 +307,14 @@ input {
   align-items: center;
 }
 .project-list .items .items-show .img {
-  width: 2.4rem;
-  height: 2.28rem;
+  width: 2.6rem;
+  height: 2.6rem;
   font-size: 0;
 }
 .project-list .items .items-show .img img {
   width: 100%;
   height: 100%;
+  boject-fit: cover;
 }
 .project-list .items .items-show .text {
   padding: .15rem .2rem;
@@ -327,7 +328,7 @@ input {
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
-  min-height: 2.28rem;
+  min-height: 2.6rem;
 }
 .project-list .items .items-show .text .text-top {
   -moz-box-flex: 1;
@@ -337,11 +338,11 @@ input {
   flex: 1;
 }
 .project-list .items .items-show .text .text-top h2 {
-  font: 0.26rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  font: 0.3rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
   color: #1c2302;
 }
 .project-list .items .items-show .text .text-top p {
-  font: 0.21rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  font: 0.26rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
   color: #666;
 }
 .project-list .items .items-show .text .text-price {
@@ -356,16 +357,16 @@ input {
 }
 .project-list .items .items-show .text .text-price .text-price-left del {
   display: block;
-  font: 0.2rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  font: 0.22rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
   color: #a88e75;
 }
 .project-list .items .items-show .text .text-price .text-price-left h3 {
-  font: 0.25rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  font: 0.28rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
   color: #b21818;
 }
 .project-list .items .items-show .text .text-price .text-price-right .btn {
-  width: 1.4rem;
-  height: .52rem;
+  width: 1.6rem;
+  height: .6rem;
   background-color: #cf3737;
   border-radius: 3px;
   display: -moz-flex;
