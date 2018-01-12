@@ -145,43 +145,38 @@
 	border-radius:5px;
 	@include transform(translate(-50%, -500%));
 	@include transition(all .5s);
-    overflow: hidden;
+    // overflow: hidden;
     .mask-rule-close{
     	position:absolute;
-    	top:.25rem;
-    	right:.25rem;
-    	z-index:1;
-    	width:30px;
-    	height:30px;
+    	bottom:-1.5rem;
+    	left:50%;
+    	width:.8rem;
+    	height:.8rem;
+    	border:1px solid #fff;
     	border-radius:100%;
-    	background-color:#e72c0e;
-    	font-size:0;
+    	background:rgba(0,0,0,.2);
+    	@include transform(translate(-50%, 0));
     	@include display(flex);
 		@include align-items(center);
 		@include justify-content(center);
     	a{
-		 	display: inline-block; 
-		 	width:15px;
-		 	height:1px; 
-		 	background:$white;
-		 	line-height: 0;
-		 	font-size:0;
-		 	vertical-align: middle;
-		 	@include transform(rotate(45deg));
-		 	&:after{
-		 		content:'';
-		 		display:block;
-		 		width:15px;
-		 		height:1px; 
-		 		background:$white;
-		 		@include transform(rotate(-90deg));
-		 	}
-		}
-		img{
-			width:100%;
-			height:100%;
-			object-fit:cover;
-		}
+    		display: inline-block; 
+    		width:.5rem;
+    		height:1px; 
+    		background: #fff;
+    		line-height: 0;
+    		font-size:0;
+    		vertical-align: middle;
+    		@include transform(rotate(45deg));
+    		&:after{
+    			content:'/';
+    			display:block;
+    			width:.5rem;
+    			height:1px; 
+    			background: #fff;
+    			@include transform(rotate(-90deg));
+    		}
+    	}
     }
 	.mask-rule-centent{
 		padding:2%;
