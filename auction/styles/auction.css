@@ -770,6 +770,40 @@ input {
   color: #fff;
 }
 
+.insufficient {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 5;
+  padding: .25rem;
+  width: 6.2rem;
+  background: #fff;
+  border-radius: 5px;
+  -moz-transform: translate(-50%, -500%);
+  -o-transform: translate(-50%, -500%);
+  -ms-transform: translate(-50%, -500%);
+  -webkit-transform: translate(-50%, -500%);
+  transform: translate(-50%, -500%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.insufficient.on {
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
 /*我的竞拍 my-auction-content*/
 .my-auction-wrapper {
   padding-top: 1.6rem;

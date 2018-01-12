@@ -448,6 +448,22 @@
 		color:#fff;	
 	}
 }
+.insufficient{
+	position:fixed;
+	top:50%;
+	left:50%;
+	z-index:5;
+	padding:.25rem;
+	width:6.2rem;
+	background:#fff;
+	border-radius:5px;
+	@include transform(translate(-50%, -500%));
+	@include transition(all .5s);
+}
+.insufficient.on{
+	@include transform(translate(-50%, -50%));
+	@include transition(all .5s);
+}
 /*我的竞拍 my-auction-content*/
 .my-auction-wrapper{
 	padding-top:1.6rem;

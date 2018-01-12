@@ -29,6 +29,7 @@
 <body>
 	<div class="wrapper auction-wrapper auction-detail-wrapper">
 		<header class="header auction-header">
+			<div class="left"><a class="arrow-left" href="javascript:window.history.back();"></a></div>
 			<h1>积分竞拍</h1>
 			<div class="right">
 				<a href="javascript:;"><img src="images/share_icon.png" alt=""></a>
@@ -45,7 +46,7 @@
 		            </div>
 		            <div class="swiper-pagination"></div>
 		        </div>
-		        <p>距结束：00时23分22秒</p>
+		        <p id="time1"></p>
 			</div>
 			<div class="info">
 				<div class="info-top">
@@ -99,7 +100,33 @@
 	<div class="rule-btn" onclick="ruleMask(defaultTitle,defaultMsg)">
 		<p>规则</p>
 	</div>
-	<div class="mask"></div>
+	<div class="mask" style="display:block;"></div>
+	<div class="insufficient on">
+		<p>亲，您的积分不够哦，请完成以下任务来获取更多积分吧！ </p>
+		<ul>
+			<li>
+				<a href="">
+					<div class="img"></div>
+					<p>任务挑战</p>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<div class="img"></div>
+					<p>以老带新</p>
+				</a>
+			</li>
+			<li>
+				<a href="">
+					<div class="img"></div>
+					<p>预订酒店</p>
+				</a>
+			</li>
+		</ul>
+		<div class="btn">
+			<span>确定</span>
+		</div>
+	</div>
 	<!-- script begin -->
 	<script src="scripts/jquery-3.1.1.min.js"></script>
 	<script src="scripts/swiper-3.4.2.min.js"></script>
@@ -114,7 +141,6 @@
 	    })
 		$(document).ready(function($){
 			countDown('2018-02-10 11:00:00', function (msg) { $('#time1').text(msg);});
-			countDown('2018-02-11 10:00:00', function (msg) { $('#time2').text(msg);});
 		});	
 	</script>
 	<!-- script end -->
