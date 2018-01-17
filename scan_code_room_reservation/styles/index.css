@@ -791,6 +791,7 @@ input {
 .my-prize .prize-list .items .img img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 .my-prize .prize-list .items .text {
   margin-left: .2rem;
