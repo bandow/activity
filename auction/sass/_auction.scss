@@ -649,6 +649,53 @@
 	@include transform(translate(-50%, -50%));
 	@include transition(all .5s);
 }
+.share-mask{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:4;
+	background:rgba(0,0,0,.5);
+	img{
+		width:100%;
+	}
+}
+.auction-success-mask{
+	position:fixed;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:5;
+	padding:.3rem;
+	background-color:#fff;
+	@include transform(translate(0, 100%));
+	@include transition(all .5s);
+	h2{
+		margin-bottom:.3rem;
+		font:.36rem/1.5 $publicFont;
+		color:#da004c;
+		text-align:center;
+	}
+	p{
+		font:.26rem/1.5 $publicFont;
+		color:#333;
+		text-align:center;
+		span{
+			color:#da004c;
+		}
+	}
+	.gray{
+		margin-top:.3rem;
+		font:.24rem/1.5 $publicFont;
+		color:#999;
+		text-align:center;
+	}
+}
+.auction-success-mask.on{
+	@include transform(translate(0, 0));
+	@include transition(all .5s);
+}
 /*我的竞拍 my-auction-content*/
 .my-auction-wrapper{
 	padding-top:1.6rem;

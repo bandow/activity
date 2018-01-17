@@ -98,4 +98,5 @@
 1、js多个倒计时并存，   
 2、图片居中方法:object-fit:cover，   
 3、弹出框规则方法，   
-4swiper插件图片对应图片弹出   
+4、swiper插件图片对应图片弹出   
+5、localStorage的用法   

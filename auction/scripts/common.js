@@ -64,3 +64,11 @@ function ruleMask(title,msg){
 		},500)
 	});
 }
+//分享方法
+function shareMask(){
+    var html='<div class="share-mask"><img src="images/share.png" alt=""></div>';  
+    $('body').append(html); 
+    $(".share-mask").on("click",function(){
+        $(this).remove();
+    });
+}

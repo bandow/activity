@@ -32,7 +32,7 @@
 			<div class="left"><a class="arrow-left" href="javascript:window.history.back();"></a></div>
 			<h1>积分竞拍</h1>
 			<div class="right">
-				<a href="javascript:;"><img src="images/share_icon.png" alt=""></a>
+				<a href="javascript:;" onclick="shareMask();"><img src="images/share_icon.png" alt=""></a>
 				<a href="myAuction.html"><img src="images/user_icon.png" alt=""></a>
 			</div>
 		</header>
@@ -46,9 +46,9 @@
 		            </div>
 		            <div class="swiper-pagination"></div>
 		        </div>
-		        <p id="time1" style="display:none;"></p>
+		        <p id="time1"></p>
 		        <!-- 已结束按钮开始 -->
-		        <p>已结束</p>
+		        <p style="display:none;">已结束</p>
 		        <!-- 已结束按钮结束 -->
 			</div>
 			<div class="info">
@@ -95,12 +95,12 @@
 				</div>
 			</div>
 		</div>
-		<div class="detail-btn" style="display:none;">
+		<div class="detail-btn">
 			<h3>我要出2200积分</h3>
 			<p>您共有20000积分，竞拍失败可返回积分</p>
 		</div>
 		<!-- 已结束按钮开始 -->
-		<div class="detail-btn finish-btn">
+		<div class="detail-btn finish-btn" style="display:none;">
 			<h3>您没有参与竞拍</h3>
 		</div>
 		<!-- 已结束按钮结束 -->
@@ -164,6 +164,11 @@
 		</div>
 		<div class="big-img-close"><a href="javascript:;"></a></div>
 	</div>
+	<div class="auction-success-mask">
+		<h2>恭喜你！</h2>
+		<p>你击败了<span>360个</span>竞争对手，以<span>32600积分</span>拍到了价值<span>1469元</span>的商品，赶快去跟小伙伴们们炫耀一下吧！ </p>
+		<p class="gray">备注：可在积分商城-订单处查看发货情况</p>
+	</div>
 	<!-- script begin -->
 	<script src="scripts/jquery-3.1.1.min.js"></script>
 	<script src="scripts/swiper-3.4.2.min.js"></script>
@@ -186,13 +191,20 @@
 	        loop : true,
 	        autoplay : 5000,
 	        speed:300,
-	    })
+	    });
 		$(document).ready(function($){
 			countDown('2018-02-10 11:00:00', function (msg) { $('#time1').text(msg);});
 			//查看大图
-			$(".see-big-img .big-img-close,.mask").on("click",function(){
+			$(".see-big-img .big-img-close").on("click",function(){
 				$(".mask").hide();
 				$(".see-big-img").removeClass("on");
+			});
+			//mask点击
+			$(".mask").on("click",function(){
+				$(".mask").hide();
+				$(".see-big-img").removeClass("on");
+				$(".insufficient").removeClass("on");
+				$(".auction-success-mask").removeClass("on");
 			});
 
 			//我要出2200积分
@@ -254,6 +266,25 @@
 				$(".mask").hide();
 			});
 		});	
+
+		//积分不足方法以及关闭积分不足
+		function insufficientMask(){
+			$(".insufficient").addClass("on");
+			$(".mask").show();
+		}
+		function insufficientMaskClose(){
+			$(".insufficient").removeClass("on");
+			$(".mask").hide();
+		}
+		//竞拍成功方法以及关闭
+		function auctionSuccessMask(){
+			$(".auction-success-mask").addClass("on");
+			$(".mask").show();
+		}
+		function auctionSuccessMaskClose(){
+			$(".auction-success-mask").removeClass("on");
+			$(".mask").hide();
+		}
 	</script>
 	<!-- script end -->
 </body>
