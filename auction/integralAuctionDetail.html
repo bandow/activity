@@ -46,7 +46,10 @@
 		            </div>
 		            <div class="swiper-pagination"></div>
 		        </div>
-		        <p id="time1"></p>
+		        <p id="time1" style="display:none;"></p>
+		        <!-- 已结束按钮开始 -->
+		        <p>已结束</p>
+		        <!-- 已结束按钮结束 -->
 			</div>
 			<div class="info">
 				<div class="info-top">
@@ -92,10 +95,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="detail-btn">
+		<div class="detail-btn" style="display:none;">
 			<h3>我要出2200积分</h3>
 			<p>您共有20000积分，竞拍失败可返回积分</p>
 		</div>
+		<!-- 已结束按钮开始 -->
+		<div class="detail-btn finish-btn">
+			<h3>您没有参与竞拍</h3>
+		</div>
+		<!-- 已结束按钮结束 -->
 	</div>
 	<div class="rule-btn" onclick="ruleMask(defaultTitle,defaultMsg)">
 		<p>规则</p>
@@ -130,18 +138,18 @@
 	<div class="integral-prompt">
 		<p>参与竞拍将暂时冻结您的<span>2200</span>积分，竞拍成功将扣除积分，竞拍失败将返回积分，是否参与竞拍？ </p>
 		<dl>
-			<dd>
+			<dd class="on-prompt">
 				<div class="select"><i></i></div>
 				<span>下次不再提示</span>
 			</dd>
-			<dd>
+			<dd class="emailme">
 				<div class="select"><i></i></div>
 				<span>出价被超过时微信通知我</span>
 			</dd>
 		</dl>
 		<div class="btn">
-			<a href=""><span>确定</span></a>
-			<a href=""><span>取消</span></a>
+			<a class="confirm" href="javascript:;"><span>确定</span></a>
+			<a class="cancel" href="javascript:;"><span>取消</span></a>
 		</div>
 	</div>
 	<div class="see-big-img">
@@ -185,6 +193,65 @@
 			$(".see-big-img .big-img-close,.mask").on("click",function(){
 				$(".mask").hide();
 				$(".see-big-img").removeClass("on");
+			});
+
+			//我要出2200积分
+			$(".detail-btn").on("click",function(){
+				if(localStorage.getItem('promptSelect')){
+					//如果有缓存 取出判断
+					var promptSelect=JSON.parse(localStorage.getItem('promptSelect'));
+					console.log(promptSelect)
+					if(!promptSelect.warn){
+						//如果提示 则显示弹出框
+						$(".mask").show();
+				        $(".integral-prompt").addClass("on");
+					}
+				}else{
+					//如果没有缓存 显示弹框
+					$(".mask").show();
+			        $(".integral-prompt").addClass("on");					
+				}					
+			});
+			//积分提示
+			$(".integral-prompt .btn .cancel").on("click",function(){
+				$(".mask").hide();
+				$(".integral-prompt").removeClass("on");
+				localStorage.setItem('promptSelect','{}');
+				$(".integral-prompt dl dd").removeClass('on');
+			});
+			$(".integral-prompt dl dd").on("click",function(){
+				//缓存 弹框选择
+				var promptSelect={};
+				if(localStorage.getItem('promptSelect')){
+					//已经缓存
+					var promptSelect=JSON.parse(localStorage.getItem('promptSelect'));
+				}
+				if($(this).hasClass('on-prompt')){
+					//提示
+					if($(this).hasClass('on')){
+						promptSelect.warn=false; //promptSelect.warn 是否提示
+						$(this).removeClass('on'); 
+					}else{
+						promptSelect.warn=true;
+						$(this).addClass('on');
+					}												
+				}else if($(this).hasClass('emailme')){
+					//微信通知
+					if($(this).hasClass('on')){							
+						promptSelect.notice=false;  //promptSelect.notice 是否微信通知
+						$(this).removeClass('on');
+					}else{								
+						promptSelect.notice=true;
+						$(this).addClass('on');
+						//后端调用微信通知方法
+						console.log("出价被超过时微信通知我");
+					}						
+				}				
+				localStorage.setItem('promptSelect',JSON.stringify(promptSelect));		
+			});
+			$(".integral-prompt .btn .confirm").on("click",function(){		
+				$(".integral-prompt").removeClass("on");
+				$(".mask").hide();
 			});
 		});	
 	</script>

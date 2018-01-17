@@ -770,6 +770,10 @@ input {
   color: #fff;
 }
 
+.finish-btn {
+  background: rgba(160, 160, 160, 0.9);
+}
+
 .insufficient {
   position: fixed;
   top: 50%;
