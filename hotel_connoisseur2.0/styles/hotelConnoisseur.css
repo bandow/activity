@@ -1248,7 +1248,7 @@ html {
   color: #999;
   text-align: center;
 }
-.exchange-mask .exchange-mask-text .btn {
+.exchange-mask .exchange-mask-text .exchange-mask-btn {
   margin: 1.5rem auto .3rem;
   display: block;
   width: 6rem;
@@ -1264,7 +1264,7 @@ html {
   -moz-justify-content: center;
   justify-content: center;
 }
-.exchange-mask .exchange-mask-text .btn span {
+.exchange-mask .exchange-mask-text .exchange-mask-btn span {
   font: 0.75rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
   color: #fff;
 }
