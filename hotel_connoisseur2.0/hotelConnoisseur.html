@@ -151,6 +151,17 @@
 			<img src="images/hotelinfo_close.png" alt="">
 		</div>
 	</div>
+	<div class="exchange-rule-mask">
+		<div class="exchange-mask-text">
+			<h3>试睡师活动规则</h3>
+			<div class="text">
+				<p>试睡师活动规则试睡师活动规则试睡师活动规则试睡师活动规则试睡师活动规则试睡师活动规则试睡师活动规则试睡师活动规则试睡师活动规则试睡师活动规则试睡师活动规则试睡师活动规则试睡师活动规则试睡师活动规则</p>
+			</div>
+		</div>
+		<div class="exchange-mask-close">
+			<img src="images/hotelinfo_close.png" alt="">
+		</div>
+	</div>
 	<!-- script begin -->
 	<script src="plugins/jquery-3.1.1.min.js"></script>
 	<script>
@@ -162,10 +173,16 @@
 			$(".exchange-mask-close,.mask").on("click",function(){
 				$(".mask").hide();
 				$(".exchange-mask").removeClass("on");
+				$(".exchange-rule-mask").removeClass('on');
 			});
 			//图片居中
 			$(".items").each(function(){
 				imgTheMiddle($(this),$(this).find(".img img"));
+			});
+
+			$(".hotel-connoisseur-header .right a").on("click",function(){
+				$(".exchange-rule-mask").addClass('on');
+				$(".mask").show();
 			});
 		});
 		//图片居中方法
