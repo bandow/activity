@@ -99,4 +99,8 @@
 2、图片居中方法:object-fit:cover，   
 3、弹出框规则方法，   
 4、swiper插件图片对应图片弹出   
-5、localStorage的用法   
+5、localStorage的用法 
+# valentines_day 
+2018-01-26 情人节活动    
+温馨提示：   
+1、capture="camera"属性针对调用手机自拍模式还是手机图片        

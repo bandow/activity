@@ -1,0 +1,810 @@
+@charset "UTF-8";
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2017-09-08
+* Version:0.0.2
+* ================================================================== */
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2017-09-08
+* Version:0.0.2
+* ================================================================== */
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  /*-webkit-text-size-adjust是解决 iPhone 横屏时默认会放大文字的问题*/
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  /*取消掉300ms的延迟，chrome和safari可以生效*/
+  touch-action: manipulation;
+}
+
+html, body {
+  /*-webkit-user-select:none禁止用户进行复制.选择.*/
+  -webkit-user-select: none;
+  user-select: none;
+  width: 100%;
+  /*使用min-height:100%代替height：100%*/
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  /*弹性滚动-局部滚动开启弹性滚动：将属性挂在body上，可以避免很多奇怪的bug。*/
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, div, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  /*把所有元素的内边距和边框不再会增加它的宽度*/
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
+  box-sizing: border-box;
+}
+
+ol, ul {
+  /*去掉列表点*/
+  list-style: none;
+}
+
+table {
+  /*去掉表格的双行线*/
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*取消a标签在移动端点击时的背景颜色*/
+a, a:hover, a:active, a:visited, a:link, a:focus {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  background: none;
+  text-decoration: none;
+}
+
+a, img {
+  /* 禁止长按链接与图片弹出菜单 */
+  -webkit-touch-callout: none;
+}
+
+input {
+  /*ios去除input默认样式*/
+  -webkit-appearance: none;
+}
+
+/* =================================================================
+* Reset Style for Mobile
+* Author:雪丘行||Bandow
+* Author URI:http://www.unll123.com/
+* Date:2017-09-08
+* Version:0.0.2
+* ================================================================== */
+.arrow-left {
+  position: relative;
+}
+.arrow-left:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 0;
+  width: .2rem;
+  height: .2rem;
+  border: 1px solid;
+  border-bottom: 0;
+  border-right: 0;
+  color: #333;
+  -moz-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  -o-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  -ms-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+  transform: translate3d(-50%, -50%, 0) rotateZ(-45deg);
+}
+
+.arrow-bottom {
+  position: relative;
+}
+.arrow-bottom:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -0.05rem;
+  width: .2rem;
+  height: .2rem;
+  border: 1px solid;
+  border-bottom: 0;
+  border-right: 0;
+  color: #333;
+  -moz-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+  -o-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+  -ms-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+  transform: translate3d(-50%, -50%, 0) rotateZ(-135deg);
+}
+
+.arrow-top {
+  position: relative;
+}
+.arrow-top:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 0.05rem;
+  width: .2rem;
+  height: .2rem;
+  border: 1px solid;
+  border-bottom: 0;
+  border-right: 0;
+  color: #333;
+  -moz-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+  -o-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+  -ms-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+  transform: translate3d(-50%, -50%, 0) rotateZ(45deg);
+}
+
+.arrow-right {
+  position: relative;
+}
+.arrow-right:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: 0;
+  width: .2rem;
+  height: .2rem;
+  border: 1px solid;
+  border-bottom: 0;
+  border-right: 0;
+  color: #333;
+  -moz-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+  -o-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+  -ms-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+  -webkit-transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+  transform: translate3d(-50%, -50%, 0) rotateZ(135deg);
+}
+
+.close-icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  border-radius: 50px;
+  background: #ff366f;
+  opacity: 1;
+}
+.close-icon:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.close-icon:before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 10%;
+  height: 2px;
+  margin-top: -1px;
+  border-radius: 5px;
+  background: #ffffff;
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.close-icon:after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  top: 50%;
+  left: 10%;
+  height: 2px;
+  margin-top: -1px;
+  border-radius: 5px;
+  background: #ffffff;
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto;
+  background-color: #ff8895;
+  overflow: hidden;
+}
+
+.valentines-wrapper .rule {
+  padding: .2rem;
+  margin: .4rem .52rem;
+  border: 1px dashed #fff;
+  border-radius: 10px;
+}
+.valentines-wrapper .rule h3 {
+  margin-bottom: .2rem;
+  font: bold 0.3rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+  text-align: center;
+}
+.valentines-wrapper .rule p {
+  font: 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+.valentines-wrapper .rule .rule-btn {
+  margin: .3rem auto 0;
+  width: 2.24rem;
+  height: .64rem;
+  border: 1px solid #fff;
+  border-radius: 100px;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.valentines-wrapper .rule .rule-btn .img {
+  width: .28rem;
+  height: .28rem;
+  font-size: 0;
+}
+.valentines-wrapper .rule .rule-btn .img img {
+  width: 100%;
+  height: 100%;
+}
+.valentines-wrapper .rule .rule-btn span {
+  margin-left: .15rem;
+  font: 0.32rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+
+.valentines-header .title {
+  width: 100%;
+  font-size: 0;
+}
+.valentines-header .title img {
+  width: 100%;
+}
+
+.valentines-content .valentines-btn .btn-list {
+  position: relative;
+  margin: .55rem auto 0;
+  width: 4.82rem;
+  height: 1.26rem;
+  background-color: #fff;
+  border-radius: 100px;
+  box-shadow: 0 2px 0px rgba(255, 255, 255, 0.6);
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.valentines-content .valentines-btn .btn-list .btn-list-content {
+  width: 4.6rem;
+  height: 1.04rem;
+  border: 1px dashed #ff94a0;
+  border-radius: 100px;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.valentines-content .valentines-btn .btn-list .btn-list-content .img {
+  width: .64rem;
+  height: .54rem;
+  font-size: 0;
+}
+.valentines-content .valentines-btn .btn-list .btn-list-content .img img {
+  width: 100%;
+  height: 100%;
+}
+.valentines-content .valentines-btn .btn-list .btn-list-content span {
+  margin-left: .35rem;
+  font: 0.44rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #f9162a;
+}
+.valentines-content .valentines-btn .btn-list input {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.valentines-content .valentines-btn .btn-list > img {
+  display: none;
+}
+.valentines-content .valentines-btn .ranking-btn {
+  position: relative;
+  margin: .5rem auto .7rem;
+  width: 3.02rem;
+  height: .64rem;
+  border-radius: 100px;
+  border: 1px solid #fff;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.valentines-content .valentines-btn .ranking-btn .img {
+  width: .28rem;
+  height: .26rem;
+  font-size: 0;
+}
+.valentines-content .valentines-btn .ranking-btn .img img {
+  width: 100%;
+  height: 100%;
+}
+.valentines-content .valentines-btn .ranking-btn span {
+  margin-left: .14rem;
+  font: 0.32rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+.valentines-content .valentines-btn .ranking-btn em {
+  position: absolute;
+  top: -.2rem;
+  right: -.2rem;
+  z-index: 1;
+  padding: 0 .1rem;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  font: 0.18rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+  background-color: #e60012;
+}
+.valentines-content .flow-path {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.valentines-content .flow-path .flow-path-list {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.valentines-content .flow-path .flow-path-list .img1 {
+  width: .28rem;
+  height: .23rem;
+}
+.valentines-content .flow-path .flow-path-list .img2 {
+  width: .28rem;
+  height: .28rem;
+}
+.valentines-content .flow-path .flow-path-list .img3 {
+  width: .26rem;
+  height: .28rem;
+}
+.valentines-content .flow-path .flow-path-list .img {
+  font-size: 0;
+}
+.valentines-content .flow-path .flow-path-list .img img {
+  width: 100%;
+  height: 100%;
+}
+.valentines-content .flow-path .flow-path-list span {
+  margin-left: .1rem;
+  font: 0.26rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+}
+.valentines-content .flow-path .arrowhead {
+  margin: 0 .1rem;
+  width: .4rem;
+  height: .1rem;
+  font-size: 0;
+}
+.valentines-content .flow-path .arrowhead img {
+  width: 100%;
+  height: 100%;
+}
+
+.ranking-header .title {
+  padding: 1.42rem 0 0;
+  margin: 0 auto;
+  width: 4.12rem;
+  font-size: 0;
+}
+.ranking-header .title img {
+  width: 100%;
+}
+
+.ranking-content {
+  padding: .3rem;
+}
+.ranking-content .list {
+  padding: 0 .3rem;
+  background-color: #fff;
+  border-radius: 15px;
+}
+.ranking-content .list .items {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.ranking-content .list .items .l {
+  font: bold 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #ff5a6c;
+}
+.ranking-content .list .items .r {
+  padding: .15rem 0;
+  margin-left: .3rem;
+  border-bottom: 1px solid #f5f5f5;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.ranking-content .list .items .r .image-text {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.ranking-content .list .items .r .image-text .img {
+  width: .8rem;
+  height: .8rem;
+  font-size: 0;
+  background-color: #e5e5e5;
+  border-radius: 100%;
+}
+.ranking-content .list .items .r .image-text .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ranking-content .list .items .r .image-text .text {
+  margin-left: .2rem;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+.ranking-content .list .items .r .image-text .text h2 {
+  font-size: 0;
+}
+.ranking-content .list .items .r .image-text .text h2 span {
+  font: bold 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #333;
+}
+.ranking-content .list .items .r .image-text .text h2 time {
+  margin-left: .25rem;
+  font: 0.2rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #b2b2b2;
+}
+.ranking-content .list .items .r .image-text .text p {
+  font: 0.2rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #b2b2b2;
+}
+.ranking-content .list .items .r .number {
+  font: bold 0.36rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #ff5a6c;
+}
+
+.ranking-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: .3rem .9rem .3rem .5rem;
+  margin: 0 auto;
+  max-width: 640px;
+  background-color: #fff;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.ranking-footer .l p {
+  font: bold 0.24rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #ff5a6c;
+}
+.ranking-footer .r {
+  padding: .15rem 0;
+  margin-left: .3rem;
+  border-bottom: 1px solid #f5f5f5;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.ranking-footer .r .image-text {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.ranking-footer .r .image-text .img {
+  width: .8rem;
+  height: .8rem;
+  font-size: 0;
+  background-color: #e5e5e5;
+  border-radius: 100%;
+}
+.ranking-footer .r .image-text .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ranking-footer .r .image-text .text {
+  margin-left: .2rem;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+.ranking-footer .r .image-text .text h2 {
+  font-size: 0;
+}
+.ranking-footer .r .image-text .text h2 span {
+  font: bold 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #333;
+}
+.ranking-footer .r .image-text .text h2 time {
+  margin-left: .25rem;
+  font: 0.2rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #b2b2b2;
+}
+.ranking-footer .r .image-text .text p {
+  font: 0.2rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #b2b2b2;
+}
+.ranking-footer .r .share-icon {
+  width: .36rem;
+  height: .35rem;
+  font-size: 0;
+}
+.ranking-footer .r .share-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.share-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.5);
+}
+.share-mask img {
+  width: 100%;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: none;
+  background-color: #000;
+  opacity: .8;
+}
+
+.mask-public {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  padding: .5rem;
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  background-color: #fff;
+  -moz-transform: translate(-50%, -500%);
+  -o-transform: translate(-50%, -500%);
+  -ms-transform: translate(-50%, -500%);
+  -webkit-transform: translate(-50%, -500%);
+  transform: translate(-50%, -500%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.mask-public .mascot {
+  position: absolute;
+  left: -.43rem;
+  top: -.8rem;
+  width: 1.78rem;
+  height: 2.22rem;
+  font-size: 0;
+}
+.mask-public .mascot img {
+  width: 100%;
+  height: 100%;
+}
+.mask-public .close {
+  position: absolute;
+  top: .1rem;
+  right: .13rem;
+  width: .35rem;
+  height: .35rem;
+  border-radius: 100%;
+  background-color: #f93b3b;
+  text-align: center;
+  font-size: 0;
+}
+.mask-public .close a {
+  margin-top: 9px;
+  display: inline-block;
+  width: .3rem;
+  height: 1px;
+  background: #fff;
+  line-height: 0;
+  font-size: 0;
+  vertical-align: middle;
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.mask-public .close a:after {
+  content: '';
+  display: block;
+  width: .3rem;
+  height: 1px;
+  background: #fff;
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.mask-public .items label {
+  padding-left: 5%;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  width: 100%;
+  height: .5rem;
+  display: inline-block;
+  font-size: 0;
+}
+.mask-public .items label input {
+  background: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  font: 0.2rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+}
+.mask-public .code {
+  margin-top: .18rem;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+.mask-public .code label {
+  width: 45%;
+}
+.mask-public .code a {
+  display: block;
+  padding: 0 5%;
+  font: bold 0.24rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #a81f29;
+  border-radius: 30px;
+  text-align: center;
+  background-color: #fff1b2;
+  box-shadow: 0px 5px 0 #e2cf7b;
+}
+.mask-public h2 {
+  font: bold 0.2667rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #363636;
+  text-align: center;
+}
+.mask-public p {
+  font: 0.241rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #363636;
+  text-align: center;
+}
+.mask-public > a {
+  margin: .3rem auto 0;
+  display: block;
+  width: 2.3rem;
+  font: bold 0.24rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #fff;
+  border-radius: 30px;
+  text-align: center;
+  background-color: #f93b3b;
+  box-shadow: 0px 5px 0 #c30d0d;
+}
+
+.mask-public.on {
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+/*# sourceMappingURL=index.css.map */
