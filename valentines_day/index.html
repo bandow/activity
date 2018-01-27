@@ -41,8 +41,19 @@
     <div class="title"><img src="images/valentines_title.png" alt=""></div>
   </header>
   <div class="valentines-content">
-    <div class="barrage"></div>
+    <div class="barrage">
+      <ul>
+        <li>
+          <div class="li-content">
+              <div class="img"></div>
+              <span>徐*1笑上传了合照，获得850甜蜜值</span>
+          </div>
+        </li>
+      </ul>
+    </div>
     <div class="valentines-btn">
+      <!-- 这个温馨提示后端判断 未评分显示按钮 评分后显示评分 以下style="display:none;"要去掉 -->
+      <!-- 上传图片按钮 begin -->
       <div class="autodyne btn-list">
         <div class="btn-list-content">
           <div class="img"><img src="images/valentines_icon1.png" alt=""></div>
@@ -59,10 +70,29 @@
           <img id="uploadImgInfo" src="" alt="">
         </div>
       </div>
+      <!-- 上传图片按钮 end -->
+      <!-- 评分 begin -->
+      <div class="score" style="display:none;">
+        <div class="score-image-text">
+          <div class="img"><img src="images/1.jpg" alt=""></div>
+          <div class="text">
+            <h6>当前合照甜蜜值为</h6>
+            <h2>820</h2>
+            <p>击败了全国96%用户</p>
+          </div>
+        </div>
+        <div class="score-btn" onclick="shareMask();">
+          <div class="score-btn-content">
+            <div class="img"><img src="images/valentines_icon9.png" alt=""></div>
+            <span>邀好友助力 问鼎甜蜜值榜</span>
+          </div>
+        </div> 
+      </div>
+      <!-- 评分 end -->
       <a href="ranking.html" class="ranking-btn">
         <div class="img"><img src="images/valentines_icon3.png" alt=""></div>
         <span>甜蜜值排行榜</span>
-        <em>NEW</em>
+        <div class="em"><em>NEW</em></div>
       </a>
     </div>
     <div class="flow-path">
@@ -102,6 +132,9 @@
 <script src="scripts/jquery-3.1.1.min.js"></script>
 <script src="scripts/upload.js"></script>
 <script>
+  var arr=['徐*1笑上传了合照，获得850甜蜜值','徐*2笑上传了合照，获得850甜蜜值','徐*3笑上传了合照，获得850甜蜜值','徐*4笑上传了合照，获得850甜蜜值'];
+  var num=0;
+
   $(document).ready(function(){
     var rankingFooterHeight=$(".ranking-footer").outerHeight();
     $(".ranking-wrapper").css({
@@ -112,6 +145,16 @@
     });
     uploadImg('autodyne','autodyneInfo');
     uploadImg('uploadImg','uploadImgInfo');
+   
+    setInterval(function(){
+      if(num==arr.length-1){
+        num=0;
+      }else{
+        num=num+1;
+      }
+      $(".li-content span").text(arr[num]);
+    },5000); 
+
   });
   //分享方法
   function shareMask(){

@@ -62,7 +62,45 @@
 	}
 }
 .valentines-content{
-	.barrage{}
+	.barrage{
+		margin-top:.4rem;
+		ul{
+			li{
+				padding:0 .3rem 0 .1rem;
+			    display: inline-block;
+				height:.6rem;
+				border-radius:30px;
+				background-color:#ffbdc3;
+				@include transform(translate(140%, 0));
+  				@include animation(danmu 5s .01s infinite);
+				.li-content{
+					width:100%;
+					height:100%;
+					@include display(flex);
+					@include align-items(center);
+					.img{
+						width:.45rem;
+						height:.45rem;
+						background-color:#fff;
+						border-radius:100%;
+						font-size:0;
+						overflow:hidden;
+						img{
+							width:100%;
+							height:100%;
+							object-fit:cover;
+						}
+					}
+					span{
+						@include box-flex(1);
+						margin-left:.15rem;
+						font:.24rem/1.5 $publicFont;
+						color:#ee3f4f;
+					}
+				}	
+			}
+		}
+	}
 	.valentines-btn{
 		.btn-list{
 			position:relative;
@@ -133,17 +171,28 @@
 				font:.32rem/1.5 $publicFont;
 				color:#fff;
 			}
-			em{
+			.em{
 				position:absolute;
-				top: -.2rem;
-    			right: -.2rem;
+				top: -.15rem;
+    			right: -.1rem;
 				z-index:1;
-				padding:0 .1rem;
+				width:.6rem;
+				height:.24rem;
 				border:1px solid #fff;
 				border-radius:30px;
-				font:.18rem/1.2 $publicFont;
-				color:#fff;
 				background-color:#e60012;
+				font-size:0;
+				@include display(flex);
+				@include align-items(center);
+				@include justify-content(center);
+				em{
+					position:absolute;
+					top:53%;
+					left:50%;
+					font:.15rem/.25rem $publicFont;
+					color:#fff;
+					@include transform(translate(-50%, -50%));
+				}
 			}
 		}
 	}
@@ -189,6 +238,86 @@
 				height:100%;
 			}
 		}
+	}
+	.score{
+		margin-top:.7rem;
+		.score-image-text{
+			padding:.1rem;
+			margin:0 .8rem;
+			background-color:#fff;
+			border-radius:15px;
+			@include display(flex);
+			@include align-items(center);
+			.img{
+				width:1.94rem;
+				height:1.94rem;
+				font-size:0;
+				border-radius:10px;
+				overflow:hidden;
+				img{
+					width:100%;
+					height:100%;
+					object-fit:cover;
+				}
+			}
+			.text{
+				@include box-flex(1);
+				text-align:center;
+				h6{
+					font:.24rem/1.5 $publicFont;
+					color:#f47f8c;
+				}
+				h2{
+					font:bold .72rem/1.2 $publicFont;
+					color:#ff3248;
+				}
+				p{
+					font:.24rem/1.5 $publicFont;
+					color:#999;
+				}
+			}
+		}
+		.score-btn{
+			margin:.5rem auto 0;
+			width:5.6rem;
+			height:.86rem;
+			background-color:#fff;
+			border-radius:100px;
+			@include display(flex);
+			@include align-items(center);
+			@include justify-content(center);
+			.score-btn-content{
+				width:5.4rem;
+				height:.72rem;
+				border:1px solid #ff94a0;
+				border-radius:100px;
+				@include display(flex);
+				@include align-items(center);
+				@include justify-content(center);
+				.img{
+					width:.44rem;
+					height:.38rem;
+					font-size:0;
+					img{
+						width:100%;
+						height:100%;
+					}
+				}
+				span{
+					margin-left:.15rem;
+					font:.36rem/1.5 $publicFont;
+					color:#f9162a;
+				}
+			}	
+		}
+	}
+}
+@include keyframes(danmu){
+	from {
+		@include transform(translate(140%, 0));
+	}
+	to {
+		@include transform(translate(-140%, 0));
 	}
 }
 // 排行榜
@@ -352,10 +481,320 @@
 		width:100%;
 	}
 }
-
-
-
-
+// 规则
+.rule-header{
+	.title{
+		padding:1.42rem 0 0;
+		margin:0 auto;
+		width:3.52rem;
+		font-size: 0;
+		img{
+			width:100%;
+		}
+	}
+}
+.rule-content{
+	padding:.3rem;
+	margin:.3rem;
+	border:1px solid #fff;
+	border-radius:10px;
+	h5{
+		margin-top:.5rem;
+		font:.24rem/1.5 $publicFont;
+		color:#fff;
+		&:first-child{
+			margin-top:0;
+		}
+	}
+	p{
+		font:.24rem/1.5 $publicFont;
+		color:#fff;
+	}
+}
+//活动已结束
+.finish-header{
+	.title{
+		padding:1.3rem 0 3rem;;
+		margin:0 auto;
+		width:2.36rem;
+		height:2.74rem;
+		font-size: 0;
+		img{
+			width:100%;
+		}
+	}
+}
+.finish-content{
+	margin:0 .3rem .3rem;
+	>p{
+		text-align:center;
+		font:.32rem/1.4 $publicFont;
+		color:#fff;
+	}
+	.finish-bottom{
+		position:relative;
+		padding:.2rem .1rem .3rem;
+		margin-top:.8rem;
+		border:1px dashed #fff;
+		border-radius:15px;
+		@include display(flex);
+		@include align-items(center);
+		@include justify-content(space-between);
+		.top{
+			position:absolute;
+			width:3.2rem;
+			height:.5rem;
+		    top: -.26rem;
+		    left:50%;
+		    background-color:#ff8895;
+			@include display(flex);
+			@include align-items(center);
+			@include justify-content(center);
+			@include transform(translate(-50%, 0));
+			>p{
+				text-align:center;
+				font:.26rem/1.2 $publicFont;
+				color:#fff;
+			}
+			&:after{
+				position:absolute;
+				left:0;
+				top:42%;;
+				content:"";
+				width:3px;
+				height:3px;
+				border:1px solid #fff;
+				border-radius:100%;
+			}
+			&:before{
+				position:absolute;
+				right:0;
+				top:42%;;
+				content:"";
+				width:3px;
+				height:3px;
+				border:1px solid #fff;
+				border-radius:100%;
+			}
+		}
+		.l,.r{
+			.img{
+				width:2.8rem;
+				height:2.8rem;
+				font-size:0;
+				img{
+					width:100%;
+					height:100%;
+				}
+			}
+			h3{
+				text-align:center;
+				font:bold .22rem/1.4 $publicFont;
+				color:#fff;
+			}
+			p{
+				text-align:center;
+				font:.2rem/1.4 $publicFont;
+				color:#fff;
+			}
+		}
+	}
+}
+//分享
+.share-header{
+	width:100%;
+	height:2.35rem;
+}
+.share-content{
+	margin-top:-1rem;
+	.img{
+		margin:0 auto;
+		width:4.2rem;
+		height:4.2rem;
+		border:.1rem solid #e35666;
+		border-radius:15px;
+		overflow:hidden;
+		font-size:0;
+		img{
+			width:100%;
+			height:100%;
+			object-fit:cover;
+		}
+	}
+	.did-not-good{
+		margin-top:.36rem;
+		.text{
+			margin:0 auto;
+			width:5rem;
+			height:auto;
+			font-size:0;
+			img{
+				width:100%;
+			}
+		}
+		.good-btn{
+			margin:-.3rem auto 0;
+			width:2rem;
+			height:2rem;
+			font-size:0;
+			img{
+				width:100%;
+				height:100%;
+			}
+		}
+		>a{
+			display:block;
+			text-align:center;
+			font:.28rem/1.5 $publicFont;
+			color:#fff;
+		}
+	}
+	.good{
+		margin-top:.36rem;
+		.text{
+			margin:0 auto;
+			width:4rem;
+			height:auto;
+			font-size:0;
+			img{
+				width:100%;
+			}
+		}
+		.good-btn{
+			margin:0 auto;
+			width:2rem;
+			height:2rem;
+			font-size:0;
+			img{
+				width:100%;
+				height:100%;
+			}
+		}
+		>a{
+			margin:0 auto;
+			display:block;
+			width:5rem;
+			height:.8rem;
+			background-color:#fff;
+			border-radius:30px;
+			@include display(flex);
+			@include align-items(center);
+			@include justify-content(center);
+			.a-btn{
+				width:4.8rem;
+				height:.6rem;
+				border:1px solid #ff94a0;
+				border-radius:30px;
+				@include display(flex);
+				@include align-items(center);
+				@include justify-content(center);
+				span{
+					font:bold .32rem/1.5 $publicFont;
+					color:#ff3248;
+				}
+			}
+		}
+	}
+}
+//上次图片
+.upload-header{
+	.title{
+		padding:1rem 0 0;
+		margin:0 auto;
+		width:3.52rem;
+		font-size: 0;
+		img{
+			width:100%;
+		}
+	}
+}
+.upload-content{
+	.img{
+		position:relative;
+		margin:.6rem auto;
+		width:4.2rem;
+		height:4.2rem;
+		border:.1rem solid #e35666;
+		border-radius:15px;
+		overflow:hidden;
+		font-size:0;
+		.clipArea{
+		    width: 100%;
+    		height: 100%;
+			>img{
+				width:100%;
+				height:100%;
+				// object-fit:cover;
+			}
+		}
+		.change-img{
+			position:absolute;
+			top:.1rem;
+			right:.15rem;
+		    z-index: 1;
+			width:1.4rem;
+			height:.5rem;
+			background-color:#888e8f;
+			border-radius:5px;
+			@include display(flex);
+			@include align-items(center);
+			@include justify-content(center);
+			i{
+				width:.24rem;
+				height:.24rem;
+				font-size:0;
+				img{
+					width:100%;
+					height:100%;
+				}
+			}
+			span{
+				margin-left:.05rem;
+				font:.24rem/1.5 $publicFont;
+				color:#fff;
+			}
+			input{
+				position:absolute;
+				top:0;
+				right:0;
+				bottom:0;
+				left:0;
+				opacity:0;
+			}
+		}
+	}
+	.upload-btn{
+		margin:0 auto;
+		display:block;
+		width:4.8rem;
+		height:1.25rem;
+		background-color:#fff;
+		border-radius:50px;
+		@include display(flex);
+		@include align-items(center);
+		@include justify-content(center);
+		.upload-btn-content{
+			width:4.6rem;
+			height:1.05rem;
+			border:1px solid #ff94a0;
+			border-radius:50px;
+			@include display(flex);
+			@include align-items(center);
+			@include justify-content(center);
+			p{
+			    padding-left: .25rem;
+				font:bold .36rem/1.5 $publicFont;
+				color:#f9162a;
+			}
+		}
+	}
+	>p{
+		margin-top:.8rem;
+		text-align:center;
+		font:.24rem/1.5 $publicFont;
+		color:#fff;
+	}
+}
 
 
 

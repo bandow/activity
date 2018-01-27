@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="description" content=""/>
+  <meta name="keywords" content=""/>
+  <meta name="author" content="name, sycbbb@sina.com"/>
+  <meta name="robots" content="index,follow"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 启用360浏览器的极速模式(webkit) -->  
+  <meta name="renderer" content="webkit">  
+  <!-- 避免IE使用兼容模式 -->  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->  
+  <meta name="HandheldFriendly" content="true">  
+  <!-- 微软的老式浏览器 -->  
+  <meta name="MobileOptimized" content="320">  
+  <!-- uc强制竖屏 -->  
+  <meta name="screen-orientation" content="portrait">  
+  <!-- QQ强制竖屏 -->  
+  <meta name="x5-orientation" content="portrait">  
+  <!-- UC强制全屏 -->  
+  <meta name="full-screen" content="yes">  
+  <!-- QQ强制全屏 -->  
+  <meta name="x5-fullscreen" content="true">  
+  <!-- UC应用模式 -->  
+  <meta name="browsermode" content="application">  
+  <!-- QQ应用模式 -->  
+  <meta name="x5-page-mode" content="app">  
+  <link rel="stylesheet" href="styles/index.css">
+  <title></title>
+</head>
+<body>
+<div class="wrapper rule-wrapper" id="app">
+  <header class="rule-header" style="background:url(images/head.png) no-repeat;background-size:100% auto;">
+    <div class="title"><img src="images/rule_title.png" alt=""></div>
+  </header>
+  <div class="rule-content">
+    <h5>1、活动时间</h5>
+    <p>2018年2月1日~2月28日</p>
+    <h5>2、活动规则</h5>
+    <p>测甜蜜值：活动期间，会员上传情侣合照测初始甜蜜值，每个会员只有1次上传照片机会（基础甜蜜值为350~500分，会员上传照片后，系统随机给分值）</p>
+    <p>拼甜蜜值：会员邀请好友为自己点赞可提升甜蜜值，每邀请1位老会员点赞可提升5点甜蜜值，每邀请1位新会员点赞可提升50点甜蜜值。</p>
+    <h5>3、奖励说明</h5>
+    <p>①每成功邀请1个非东呈会员点赞可获赠50积分，邀请东呈会员点赞可获赠5积分，活动期间最高可获赠2000积分；</p>
+    <p>②活动结束后，本期活动甜蜜值排行榜1~100名会员可获得如下奖品：</p>
+    <p>第1~10名会员将获赠价值888元的情人节礼包1份：情人节主题房1晚+枕头君卫衣2件+枕头君公仔2个+全国通用电影票2张；</p>
+    <p>第11~100名将获赠价值100元优惠劵礼包1份；</p>
+    <p>③ 特别奖励：从排行榜前10名会员中抽取1名会员赠送价值5800元开房圣旨1份，会员可凭圣旨在任意时间入住东呈旗下任意酒店任意房型，客房拥有超豪华超浪漫的精心布置（法国红酒1支+蓝海豚珠江夜游船票2张+全国通用电影票2张+99朵玫瑰花1束+ GODIVA歌帝梵巧克力1盒+枕头君公仔2个+枕头君卫衣2件），获得开房圣旨的会员将不再赠送情人节礼包。</p>
+  </div>
+</div>
+<!-- script begin -->
+<script src="scripts/flexible.js"></script>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+ $(document).ready(function(){
+  var rankingFooterHeight=$(".ranking-footer").outerHeight();
+  $(".ranking-wrapper").css({
+    paddingBottom:rankingFooterHeight,
+  });
+  $(".share-icon").on("click",function(){
+    shareMask();
+  });
+ })
+  //分享方法
+  function shareMask(){
+    var html='<div class="share-mask"><img src="images/share.png" alt=""></div>';  
+    $('body').append(html); 
+    $(".share-mask").on("click",function(){
+        $(this).remove();
+    });
+  }
+</script>
+<!-- script end -->
+</body>
+</html>
