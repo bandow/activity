@@ -45,9 +45,8 @@
       <div class="change-img">
         <i><img src="images/upload_icon.png" alt=""></i>
         <span>更换图片</span>
-        <input type="file" id="file" accept="image/*" capture="camera"/>
       </div>
-      <div id="clipArea" class="clipArea"><img src="images/2.jpg" alt=""></div>
+      <div id="clipArea" class="clipArea"></div>
     </div>
     <div class="upload-btn" id="clipBtn">
       <div class="upload-btn-content">
@@ -58,6 +57,31 @@
     <p>温馨提示:活动上传照片不作其他商业用途 </p>
   </div>
 </div>
+<div class="mask"></div>
+<!-- loading提示框 begin -->
+<div class="mask-upload-img">
+  <div class="img">
+    <img src="" alt="">
+    <div class="loading_bg"><div class="loading"><div class="show"></div></div></div>
+    <p>正在测评甜蜜值<em></em>%</p>
+  </div>
+</div>
+<!-- loading提示框 end -->
+<!-- 上传提示弹出框 begin -->
+<div class="mask-upload-prompt">
+  <div class="mask-upload-prompt-text">
+    <h3>提示</h3>
+    <p>更换图片将不保留之前图片处理操作确认更换？</p>
+  </div>
+  <div class="mask-upload-prompt-btn">
+    <a href="javascript:;" class="on-exchange"><span>暂不更换</span></a>
+    <a href="javascript:;">
+      <span>确定</span>
+      <input type="file" id="file" accept="image/*" capture="camera"/>
+    </a>
+  </div>
+</div>
+<!-- 上传提示弹出框 end -->
 <!-- script begin -->
 <script src="scripts/flexible.js"></script>
 <script src="scripts/jquery-2.1.1.min.js"></script>
@@ -67,7 +91,27 @@
 <script>
 var objW=$(".upload-content .img").width();
 var objH=$(".upload-content .img").height();
+var clipImg;
 $(document).ready(function($) {
+  //首页传过来的图片   //初始化
+  setTimeout(function(){
+    $(".photo-clip-rotateLayer").append('<img class="start" src="images/2.jpg" alt="">').find("img").css({
+      width:'100%',
+      height:'100%'
+    });
+    //初始化  loading背景图片
+    clipImg=$(".photo-clip-rotateLayer img").attr("src");
+    $(".mask-upload-img .img img").attr("src",clipImg);
+  },30);
+  //更换图片
+  $(".upload-content .img .change-img").on("click",function(){
+    $(".mask-upload-prompt").addClass("on");
+    $(".mask").show();
+  });
+  $(".on-exchange").on("click",function(){
+    onExchange();
+  });
+  //上传图片控件
   $("#clipArea").photoClip({
     width: objW,
     height: objH,
@@ -75,16 +119,54 @@ $(document).ready(function($) {
     view: "#view",
     ok: "#clipBtn",
     loadStart: function() {
-      console.log("照片读取中");
+      //console.log("照片读取中");
+      onExchange();
     },
     loadComplete: function() {
-      console.log("照片读取完成");
+      //console.log("照片读取完成");
+      $(".clipArea .start").remove();
+      //loading添加背景图
+      clipImg=$(".photo-clip-rotateLayer img").attr("src");
+      $(".mask-upload-img .img img").attr("src",clipImg);
     },
     clipFinish: function(dataURL) {
-      console.log(dataURL);
+      //console.log(dataURL);
     }
   });
+  //爱，就是要高调秀出来！按钮
+  $(".upload-btn-content").on("click",function(){
+    $(".mask").show();
+    $(".mask-upload-img").addClass("on");
+    addNum('.mask-upload-img .img > p > em','.loading_bg .show');   
+  });
 });
+//滚动100%比方法
+function addNum(obj,objCls){
+  var member=0;
+  var max=100;
+  var timer=setInterval(function(){
+    member++;
+    if(member>=max){
+      clearInterval(timer);
+      $(objCls).css({
+        top:'-10%',
+      });
+      //跳转页面吗？
+      window.location.href="share.html";
+    }else{
+      $(objCls).css({
+        top:(max-member)+'%',
+      });
+    }
+    $(obj).text(member);
+    //console.log(member);
+  },30);
+}
+//暂不更换方法
+function onExchange(){
+  $(".mask-upload-prompt").removeClass("on");
+  $(".mask").hide();
+}
 </script>
 <!-- script end -->
 </body>

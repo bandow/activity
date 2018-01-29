@@ -426,7 +426,8 @@
 		}
 		function clipImg() {
 			if (!imgLoaded) {
-				alert("亲，当前没有图片可以裁剪!");
+				//后台直接调页面上的图片
+				//alert("亲，当前没有图片可以裁剪!");
 				return;
 			}
 			var local = loaclToLoacl($moveLayer, $clipView);
@@ -620,7 +621,9 @@
 				"width": clipWidth,
 				"height": clipHeight,
 				"margin-left": -clipWidth/2,
-				"margin-top": -clipHeight/2
+				"margin-top": -clipHeight/2,
+				"border-radius":"10px",
+				"overflow":"hidden"
 			}).appendTo($container);
 
 			$moveLayer = $("<div class='photo-clip-moveLayer'>").appendTo($clipView);
@@ -634,7 +637,9 @@
 				"top": 0,
 				"width": "100%",
 				"height": "100%",
-				"pointer-events": "none"
+				"pointer-events": "none",
+				"border-radius":"10px",
+				"overflow":"hidden"
 			}).appendTo($container);
 			var $mask_left = $("<div class='photo-clip-mask-left'>").css({
 				"position": "absolute",
@@ -647,7 +652,9 @@
 				"margin-right": clipWidth/2,
 				"margin-top": -clipHeight/2,
 				"margin-bottom": -clipHeight/2,
-				"background-color": "rgba(0,0,0,.5)"
+				"background-color": "rgba(0,0,0,.5)",
+				"border-radius":"10px",
+				"overflow":"hidden"
 			}).appendTo($mask);
 			var $mask_right = $("<div class='photo-clip-mask-right'>").css({
 				"position": "absolute",
@@ -658,7 +665,9 @@
 				"margin-left": clipWidth/2,
 				"margin-top": -clipHeight/2,
 				"margin-bottom": -clipHeight/2,
-				"background-color": "rgba(0,0,0,.5)"
+				"background-color": "rgba(0,0,0,.5)",
+				"border-radius":"10px",
+				"overflow":"hidden"
 			}).appendTo($mask);
 			var $mask_top = $("<div class='photo-clip-mask-top'>").css({
 				"position": "absolute",
@@ -667,7 +676,9 @@
 				"top": 0,
 				"bottom": "50%",
 				"margin-bottom": clipHeight/2,
-				"background-color": "rgba(0,0,0,.5)"
+				"background-color": "rgba(0,0,0,.5)",
+				"border-radius":"10px",
+				"overflow":"hidden"
 			}).appendTo($mask);
 			var $mask_bottom = $("<div class='photo-clip-mask-bottom'>").css({
 				"position": "absolute",
@@ -676,18 +687,22 @@
 				"top": "50%",
 				"bottom": 0,
 				"margin-top": clipHeight/2,
-				"background-color": "rgba(0,0,0,.5)"
+				"background-color": "rgba(0,0,0,.5)",
+				"border-radius":"10px",
+				"overflow":"hidden"
 			}).appendTo($mask);
 			// 创建截取区域
 			var $clip_area = $("<div class='photo-clip-area'>").css({
-				"border": "1px dashed #ddd",
+				// "border": "1px dashed #ddd",
 				"position": "absolute",
 				"left": "50%",
 				"top": "50%",
 				"width": clipWidth,
 				"height": clipHeight,
 				"margin-left": -clipWidth/2 - 1,
-				"margin-top": -clipHeight/2 - 1
+				"margin-top": -clipHeight/2 - 1,
+				"border-radius":"10px",
+				"overflow":"hidden"
 			}).appendTo($mask);
 
 			// 初始化视图容器
@@ -697,7 +712,9 @@
 					"background-color": "#666",
 					"background-repeat": "no-repeat",
 					"background-position": "center",
-					"background-size": "contain"
+					"background-size": "contain",
+					"border-radius":"10px",
+				"overflow":"hidden"
 				});
 			}
 		}

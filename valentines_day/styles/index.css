@@ -315,10 +315,10 @@ input {
   -ms-transform: translate(140%, 0);
   -webkit-transform: translate(140%, 0);
   transform: translate(140%, 0);
-  -moz-animation: danmu 5s 0.01s infinite;
-  -webkit-animation: danmu 5s 0.01s infinite;
-  -o-animation: danmu 5s 0.01s infinite;
-  animation: danmu 5s 0.01s infinite;
+  -moz-animation: danmu 10s 0.01s infinite;
+  -webkit-animation: danmu 10s 0.01s infinite;
+  -o-animation: danmu 10s 0.01s infinite;
+  animation: danmu 10s 0.01s infinite;
 }
 .valentines-content .barrage ul li .li-content {
   width: 100%;
@@ -396,6 +396,9 @@ input {
   margin-left: .35rem;
   font: 0.44rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
   color: #f9162a;
+}
+.valentines-content .valentines-btn .btn-list .btn-list-content #autodyneInfo, .valentines-content .valentines-btn .btn-list .btn-list-content #uploadImgInfo {
+  display: none;
 }
 .valentines-content .valentines-btn .btn-list input {
   position: absolute;
@@ -1052,6 +1055,7 @@ input {
   color: #fff;
 }
 .share-content .good {
+  display: none;
   margin-top: .36rem;
 }
 .share-content .good .text {
@@ -1120,7 +1124,7 @@ input {
 
 .upload-content .img {
   position: relative;
-  margin: .6rem auto;
+  margin: .5rem auto;
   width: 4.2rem;
   height: 4.2rem;
   border: .1rem solid #e35666;
@@ -1131,6 +1135,8 @@ input {
 .upload-content .img .clipArea {
   width: 100%;
   height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .upload-content .img .clipArea > img {
   width: 100%;
@@ -1167,14 +1173,6 @@ input {
   margin-left: .05rem;
   font: 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
   color: #fff;
-}
-.upload-content .img .change-img input {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0;
 }
 .upload-content .upload-btn {
   margin: 0 auto;
@@ -1230,15 +1228,15 @@ input {
   opacity: .8;
 }
 
-.mask-public {
+.mask-upload-img {
   position: fixed;
   top: 50%;
   left: 50%;
   z-index: 2;
-  padding: .5rem;
-  width: 80%;
-  height: auto;
-  border-radius: 20px;
+  padding: .05rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 10px;
   background-color: #fff;
   -moz-transform: translate(-50%, -500%);
   -o-transform: translate(-50%, -500%);
@@ -1251,120 +1249,37 @@ input {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
-.mask-public .mascot {
-  position: absolute;
-  left: -.43rem;
-  top: -.8rem;
-  width: 1.78rem;
-  height: 2.22rem;
-  font-size: 0;
-}
-.mask-public .mascot img {
+.mask-upload-img .img {
+  position: relative;
   width: 100%;
   height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
 }
-.mask-public .close {
-  position: absolute;
-  top: .1rem;
-  right: .13rem;
-  width: .35rem;
-  height: .35rem;
-  border-radius: 100%;
-  background-color: #f93b3b;
-  text-align: center;
-  font-size: 0;
-}
-.mask-public .close a {
-  margin-top: 9px;
-  display: inline-block;
-  width: .3rem;
-  height: 1px;
-  background: #fff;
-  line-height: 0;
-  font-size: 0;
-  vertical-align: middle;
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-.mask-public .close a:after {
-  content: '';
-  display: block;
-  width: .3rem;
-  height: 1px;
-  background: #fff;
-  -moz-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-}
-.mask-public .items label {
-  padding-left: 5%;
-  border: 1px solid #ddd;
-  border-radius: 30px;
-  width: 100%;
-  height: .5rem;
-  display: inline-block;
-  font-size: 0;
-}
-.mask-public .items label input {
-  background: none;
-  border: none;
-  outline: none;
+.mask-upload-img .img img {
   width: 100%;
   height: 100%;
-  font: 0.2rem/1.2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  object-fit: cover;
 }
-.mask-public .code {
-  margin-top: .18rem;
-  display: -moz-flex;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: space-between;
-  -moz-justify-content: space-between;
-  justify-content: space-between;
-}
-.mask-public .code label {
-  width: 45%;
-}
-.mask-public .code a {
-  display: block;
-  padding: 0 5%;
-  font: bold 0.24rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
-  color: #a81f29;
-  border-radius: 30px;
-  text-align: center;
-  background-color: #fff1b2;
-  box-shadow: 0px 5px 0 #e2cf7b;
-}
-.mask-public h2 {
-  font: bold 0.2667rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
-  color: #363636;
-  text-align: center;
-}
-.mask-public p {
-  font: 0.241rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
-  color: #363636;
-  text-align: center;
-}
-.mask-public > a {
-  margin: .3rem auto 0;
-  display: block;
-  width: 2.3rem;
-  font: bold 0.24rem/2 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+.mask-upload-img .img > p {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  width: 100%;
+  font: 0.24rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
   color: #fff;
-  border-radius: 30px;
   text-align: center;
-  background-color: #f93b3b;
-  box-shadow: 0px 5px 0 #c30d0d;
+  -moz-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.mask-upload-img .img > p > em {
+  margin-left: .15rem;
 }
 
-.mask-public.on {
+.mask-upload-img.on {
   -moz-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -1375,6 +1290,159 @@ input {
   -ms-transition: all 0.5s;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+}
+
+.mask-upload-prompt {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 4.2rem;
+  height: auto;
+  border-radius: 10px;
+  background-color: #fff;
+  -moz-transform: translate(-50%, -500%);
+  -o-transform: translate(-50%, -500%);
+  -ms-transform: translate(-50%, -500%);
+  -webkit-transform: translate(-50%, -500%);
+  transform: translate(-50%, -500%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.mask-upload-prompt .mask-upload-prompt-text {
+  padding: .4rem;
+}
+.mask-upload-prompt .mask-upload-prompt-text h3 {
+  font: 0.3rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #333;
+  text-align: center;
+  margin-bottom: .5rem;
+}
+.mask-upload-prompt .mask-upload-prompt-text p {
+  font: 0.26rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #666;
+  text-align: center;
+}
+.mask-upload-prompt .mask-upload-prompt-btn {
+  width: 100%;
+  height: .8rem;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  border-top: 1px solid #f5f5f5;
+}
+.mask-upload-prompt .mask-upload-prompt-btn a {
+  position: relative;
+  height: .8rem;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  font: 0.26rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #333;
+  text-align: center;
+  overflow: hidden;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.mask-upload-prompt .mask-upload-prompt-btn a:nth-child(2) {
+  border-left: 1px solid #f5f5f5;
+}
+.mask-upload-prompt .mask-upload-prompt-btn a input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.mask-upload-prompt.on {
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.loading_bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.loading_bg .loading {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  -webkit-mask-image: url(../images/bolang_bg.jpg);
+}
+.loading_bg .show {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  background-image: url(../images/bolang.png);
+  opacity: 0.6;
+  -moz-animation: sploosh 3s ease-in-out both infinite;
+  -webkit-animation: sploosh 3s ease-in-out both infinite;
+  -o-animation: sploosh 3s ease-in-out both infinite;
+  animation: sploosh 3s ease-in-out both infinite;
+  -moz-animation-delay: -3.2s;
+  -webkit-animation-delay: -3.2s;
+  -o-animation-delay: -3.2s;
+  animation-delay: -3.2s;
+}
+
+@-webkit-keyframes sploosh {
+  0% {
+    background-position: 0 bottom;
+  }
+  100% {
+    background-position: 200px bottom;
+  }
+}
+@-moz-keyframes sploosh {
+  0% {
+    background-position: 0 bottom;
+  }
+  100% {
+    background-position: 200px bottom;
+  }
+}
+@-o-keyframes sploosh {
+  0% {
+    background-position: 0 bottom;
+  }
+  100% {
+    background-position: 200px bottom;
+  }
+}
+@keyframes sploosh {
+  0% {
+    background-position: 0 bottom;
+  }
+  100% {
+    background-position: 200px bottom;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -25,7 +25,7 @@
 				<input type="text" placeholder="请填写标题">
 			</div>
 			<div class="text-write">
-				<textarea name="" id="" cols="30" rows="15" maxlength="2000" placeholder="试睡店铺字数不少于300字哦，开始写下您的感受吧~"></textarea>
+				<textarea name="" id="" cols="30" rows="10" maxlength="2000" placeholder="试睡店铺字数不少于300字哦，开始写下您的感受吧~"></textarea>
 				<p></p>
 			</div>
 			<div class="upload img-box full">
@@ -75,7 +75,7 @@
 		$(document).ready(function(){
 			var num;
 			$(".title-input input").on("input",function(){
-				if(num>=10 && $(this).val!=""){
+				if(num>=1 && $(this).val!=""){
 					$(".btn").addClass("active").find("a").attr("href","hotelConnoisseurSubmitCommentSuccess.html");
 				}else{
 					$(".btn").removeClass("active").find("a").attr("href","javascript:;");
@@ -85,7 +85,7 @@
 			$(".text-write textarea").on("keyup",function(){
 				num=$(this).val().length;
 				$(".text-write p").text("("+num+"/"+maxlength+")");
-				if(num>=10 && $(".title-input input").val()!=""){
+				if(num>=1 && $(".title-input input").val()!=""){
 					$(".btn").addClass("active").find("a").attr("href","hotelConnoisseurSubmitCommentSuccess.html");
 				}else{
 					$(".btn").removeClass("active").find("a").attr("href","javascript:;");
