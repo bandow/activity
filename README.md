@@ -103,4 +103,6 @@
 # valentines_day 
 2018-01-26 情人节活动    
 温馨提示：   
-1、capture="camera"属性针对调用手机自拍模式还是手机图片        
+1、capture="camera"属性针对调用手机自拍模式还是手机图片    
+2、上传截图js控件 jquery.photoClip       
+3、波浪loading  css3+图片实现          
