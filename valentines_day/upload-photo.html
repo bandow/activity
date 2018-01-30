@@ -93,6 +93,8 @@ var objW=$(".upload-content .img").width();
 var objH=$(".upload-content .img").height();
 var clipImg;
 $(document).ready(function($) {
+  // console.log(navigator.userAgent);
+  // alert(navigator.userAgent);
   //首页传过来的图片   //初始化
   setTimeout(function(){
     $(".photo-clip-rotateLayer").append('<img class="start" src="images/2.jpg" alt="">').find("img").css({
@@ -128,6 +130,14 @@ $(document).ready(function($) {
       //loading添加背景图
       clipImg=$(".photo-clip-rotateLayer img").attr("src");
       $(".mask-upload-img .img img").attr("src",clipImg);
+      if(navigator.userAgent.match(/iphone/i)){
+        $(".photo-clip-rotateLayer img").css({
+          transform: 'translate(0, 0) scale(1) translateZ(0px) rotate(90deg)',
+        });
+        console.log("针对移动设备苹果");
+      }else{
+        console.log("针对移动安卓");
+      }
     },
     clipFinish: function(dataURL) {
       //console.log(dataURL);
