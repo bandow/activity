@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="description" content=""/>
+  <meta name="keywords" content=""/>
+  <meta name="author" content="name, sycbbb@sina.com"/>
+  <meta name="robots" content="index,follow"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="format-detection" content="telephone=no, email=no,adress=no"/>
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 启用360浏览器的极速模式(webkit) -->  
+  <meta name="renderer" content="webkit">  
+  <!-- 避免IE使用兼容模式 -->  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->  
+  <meta name="HandheldFriendly" content="true">  
+  <!-- 微软的老式浏览器 -->  
+  <meta name="MobileOptimized" content="320">  
+  <!-- uc强制竖屏 -->  
+  <meta name="screen-orientation" content="portrait">  
+  <!-- QQ强制竖屏 -->  
+  <meta name="x5-orientation" content="portrait">  
+  <!-- UC强制全屏 -->  
+  <meta name="full-screen" content="yes">  
+  <!-- QQ强制全屏 -->  
+  <meta name="x5-fullscreen" content="true">  
+  <!-- UC应用模式 -->  
+  <meta name="browsermode" content="application">  
+  <!-- QQ应用模式 -->  
+  <meta name="x5-page-mode" content="app">  
+  <title></title>
+</head>
+<body>
+<style>
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  /*display: none;*/
+  background-color: #000;
+  opacity: .8;
+}
+.mask-upload-prompt {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  background-color: #fff;
+  -moz-transform: translate(-50%, -500%);
+  -o-transform: translate(-50%, -500%);
+  -ms-transform: translate(-50%, -500%);
+  -webkit-transform: translate(-50%, -500%);
+  transform: translate(-50%, -500%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.mask-upload-prompt .mask-upload-prompt-text {
+  padding: .4rem;
+}
+.mask-upload-prompt .mask-upload-prompt-text h3 {
+  font: 0.3rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #333;
+  text-align: center;
+  margin-bottom: .3rem;
+}
+.mask-upload-prompt .mask-upload-prompt-text p {
+  font: 0.26rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #666;
+  text-align: center;
+}
+.mask-upload-prompt .mask-upload-prompt-btn {
+  width: 100%;
+  height: .8rem;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  border-top: 1px solid #ddd;
+}
+.mask-upload-prompt .mask-upload-prompt-btn a {
+  position: relative;
+  height: .8rem;
+  -moz-box-flex: 1;
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  font: 0.26rem/1.5 -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft Yahei", STHeiti, Tahoma, Simsun, sans-serif;
+  color: #333;
+  text-align: center;
+  text-decoration:none;
+  overflow: hidden;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  justify-content: center;
+}
+.mask-upload-prompt .mask-upload-prompt-btn a:nth-child(2) {
+  border-left: 1px solid #ddd;
+  color:#e5004f;
+}
+.mask-upload-prompt .mask-upload-prompt-btn a input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+}
+.mask-upload-prompt.on {
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+</style>
+
+
+<div class="mask" onclick="maskConfirm();"></div>
+<!-- 弹出框 begin -->
+<div class="mask-upload-prompt on">
+  <div class="mask-upload-prompt-text">
+    <h3>提示</h3>
+    <p>你即将跳转到桂林银行商城,是否授权 获取您的手机号码完成自动登录?</p>
+  </div>
+  <div class="mask-upload-prompt-btn">
+    <a href="javascript:;" onclick="maskCancel();"><span>取消</span></a>
+    <a href="javascript:;" onclick="maskConfirm();"><span>确定</span></a>
+  </div>
+</div>
+<!-- 弹出框 end -->
+<!-- script begin -->
+<script src="scripts/flexible.js"></script>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script>
+function maskCancel(){
+  $(".mask-upload-prompt").removeClass("on");
+  $(".mask").hide();
+}
+function maskConfirm(){
+  $(".mask-upload-prompt").removeClass("on");
+  $(".mask").hide();
+}
+</script>
+<!-- script end -->
+</body>
+</html>

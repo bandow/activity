@@ -428,7 +428,8 @@
 			if (!imgLoaded) {
 				//后台直接调页面上的图片
 				//alert("亲，当前没有图片可以裁剪!");
-				return;
+				$img=$(".photo-clip-rotateLayer img");
+				//return;
 			}
 			var local = loaclToLoacl($moveLayer, $clipView);
 			var scale = myScroll.scale;
@@ -704,6 +705,9 @@
 				"border-radius":"10px",
 				"overflow":"hidden"
 			}).appendTo($mask);
+
+			//后台直接调页面上的图片
+			createImg('/activity/valentines_day/images/2.jpg');
 
 			// 初始化视图容器
 			$view = $(view);
