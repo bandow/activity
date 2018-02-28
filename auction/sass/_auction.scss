@@ -696,6 +696,137 @@
 	@include transform(translate(0, 0));
 	@include transition(all .5s);
 }
+.auction-finish-mask{
+	position:fixed;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:5;
+	padding:.3rem 0 .2rem;
+	background-color:#fff;
+	@include transform(translate(0, 100%));
+	@include transition(all .5s);
+	>h3{
+		margin-bottom:.3rem;
+		font:.36rem/1.5 $publicFont;
+		color:#333;
+		text-align:center;
+	}
+	>p{
+		font:.26rem/1.5 $publicFont;
+		color:#666;
+		text-align:center;
+	}
+	.title{
+		border-bottom:1px solid #ddd;
+	    position: relative;
+        margin-bottom: .5rem;
+   		height: .5rem;
+		span{
+			position: absolute;
+		    top: .25rem;
+		    left: 50%;
+		    padding: 0 .2rem;
+			background-color:#fff;
+			font:.26rem/1.5 $publicFont;
+			color:#999;
+			text-align:center;
+			@include transform(translate(-50%, 0));
+		}
+	}
+	.tab-auction{
+		margin-top:.2rem;
+		.items{
+			margin-bottom:.2rem;
+			@include display(flex);
+			@include align-items(center);
+			.img{
+				position:relative;
+				width:3.15rem;
+				height:3.15rem;
+				border:1px solid #ddd;
+				font-size:0;
+				overflow: hidden;
+				img{
+					width:100%;
+					height:100%;
+					object-fit:cover; 
+				}
+				p{
+					position:absolute;
+					left:0;
+					right:0;
+					bottom:0;
+					height:.6rem;
+					background:rgba(0,0,0,.5);
+					font:.24rem/.6rem $publicFont;
+					color:#fff;
+					text-align:center;
+				}
+			}
+			.text{
+				padding:0 .25rem;
+				@include box-flex(1);
+				>h2{
+					font:.32rem/1.2 $publicFont;
+					color:#000;
+				}
+				>p{
+					margin-top:.2rem;
+					font:.2rem/1.5 $publicFont;
+					color:#999;
+				}
+				>h3{
+					font:bold .42rem/1.2 $publicFont;
+					color:#da004c;
+				}
+				.fail{
+					color:#999;
+				}
+				.before-integral{
+					margin-top:.2rem;
+					p{
+						font:.2rem/1.5 $publicFont;
+						color:#da004c;
+					}
+					h3{
+						font:bold .42rem/1.2 $publicFont;
+						color:#da004c;
+					}
+				}
+				.my-auction-content{
+					margin-top:.2rem;
+					@include display(flex);
+					@include align-items(center);
+					@include justify-content(space-between);
+					.l{
+						p{
+							font:.2rem/1.5 $publicFont;
+							color:#999;
+						}
+					}
+					.btn{
+						width:1.6rem;
+						height:.6rem;
+						background-color:#da004c;
+						border-radius:5px;
+						@include display(flex);
+						@include align-items(center);
+						@include justify-content(center);
+						span{
+							font:bold .24rem/1.2 $publicFont;
+							color:#fff;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.auction-finish-mask.on{
+	@include transform(translate(0, 0));
+	@include transition(all .5s);
+}
 /*我的竞拍 my-auction-content*/
 .my-auction-wrapper{
 	padding-top:1.6rem;
