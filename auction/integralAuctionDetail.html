@@ -169,7 +169,7 @@
 		<p>你击败了<span>360个</span>竞争对手，以<span>32600积分</span>拍到了价值<span>1469元</span>的商品，赶快去跟小伙伴们们炫耀一下吧！ </p>
 		<p class="gray">备注：可在积分商城-订单处查看发货情况</p>
 	</div>
-	<div class="auction-finish-mask on">
+	<div class="auction-finish-mask">
 		<h3>竞拍结束</h3>
 		<p>真遗憾，有人比你出价高一点点哦，收拾心情重新开始 </p>
 		<p>下一次竞拍吧，点击分享邀请好友来给你加油吧。</p>
@@ -234,13 +234,30 @@
 	        loop : true,
 	        autoplay : 5000,
 	        speed:300,
-	        onClick: function(swiper){
-		        $(".mask").show();
-				$(".see-big-img").addClass("on");
-				//console.log(mySwiper.activeIndex);  本身索引
-				mySwiperImg.slideTo(mySwiper.activeIndex, false);//切换到对应mySwiperImg的第几个slide
-		    }
+	        //这个ios有问题
+	   //      onClick: function(swiper){
+		  //       $(".mask").show();
+				// $(".see-big-img").addClass("on");
+				// //console.log(mySwiper.activeIndex);  本身索引
+				// mySwiperImg.slideTo(mySwiper.activeIndex, false);//切换到对应mySwiperImg的第几个slide
+				
+		  //   }
 	    });
+	   //这个ios有问题
+	    mySwiper.on('click', function(swiper){
+          //some code
+           // $(".mask").show();
+				//$(".see-big-img").addClass("on");
+				//console.log(mySwiper.activeIndex);  本身索引
+				//mySwiperImg.slideTo(mySwiper.activeIndex, false);//切换到对应mySwiperImg的第几个slide
+		})
+		//解决ios不兼容问题
+		$('.swiper-container').on('click mousedown', function(e) {
+		      //some code
+		       $(".mask").show();
+		       $(".see-big-img").addClass("on");
+		       mySwiperImg.slideTo(mySwiper.activeIndex, false);
+		})
 	    var mySwiperImg = new Swiper('.swiper-container-img',{
 	        loop : true,
 	        autoplay : 5000,
