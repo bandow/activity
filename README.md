@@ -105,4 +105,7 @@
 温馨提示：   
 1、capture="camera"属性针对调用手机自拍模式还是手机图片    
 2、上传截图js控件 jquery.photoClip       
-3、波浪loading  css3+图片实现          
+3、波浪loading  css3+图片实现  
+# assignment-challenge   
+2018-04-25  2018任务挑战  
+温馨提示：仿微信雷达loading   
