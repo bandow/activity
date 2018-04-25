@@ -1,2 +1,3 @@
-﻿# activity-manage
-2018-03-15  专题活动管理后台
+﻿# assignment-challenge   
+2018-04-25  2018任务挑战  
+温馨提示：仿微信雷达loading   
