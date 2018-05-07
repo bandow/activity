@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="robots" content="index,follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no, email=no,adress=no">
+  <!-- windows phone 点击无高光 -->
+  <meta name="msapplication-tap-highlight" content="no">
+  <!-- 启用360浏览器的极速模式(webkit) -->  
+  <meta name="renderer" content="webkit">  
+  <!-- 避免IE使用兼容模式 -->  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+  <meta name="HandheldFriendly" content="true">  
+  <!-- 微软的老式浏览器 -->  
+  <meta name="MobileOptimized" content="320">  
+  <!-- uc强制竖屏 -->  
+  <meta name="screen-orientation" content="portrait">  
+  <!-- QQ强制竖屏 -->  
+  <meta name="x5-orientation" content="portrait">  
+  <!-- UC强制全屏 -->  
+  <meta name="full-screen" content="yes">  
+  <!-- QQ强制全屏 -->  
+  <meta name="x5-fullscreen" content="true">  
+  <!-- UC应用模式 -->  
+  <meta name="browsermode" content="application">  
+  <!-- QQ应用模式 -->  
+  <meta name="x5-page-mode" content="app">  
+  <title></title>
+</head>
+<body>
+<!-- 
+一、Cookie是什么
+Cookie是一种客户端（浏览器）把用户信息以文件形式存储到本地硬盘的技术，说白了就是一种浏览器技术
+
+二、Cookie的作用
+Cookie的作用很单一，就是存储客户数据。（存储数据的文件叫Cookie文件）
+
+三、Cookie与变量的区别
+变量：数据是存储到内存中的，是一种暂时存储（一关浏览器就没了）
+Cookie:数据是存储到Cookie文件中的（硬盘），是一种长期存储（即使关了浏览器还存在）
+
+四、Cookie的注意事项
+1、不同浏览器存放Cookie的位置不同，也是不能通用的
+2、Cookie文件的存储以域名形式进行区分的
+3、Cookie的数据可以设置名字（为了存储大量数据和方便操作这些数据）
+4、一个域名下存放Cookie的数量是有限的，而不同浏览器存放的个数不同
+5、每个cookie存放的内容大小也是有限的，而不同浏览器存放内容大小不同
+ -->
+
+<!-- 五、从Cookie中获取数据 -->
+<script>
+	console.log(document.cookie);
+</script>
+
+<!-- 六、向Cookie中写入数据 -->
+<script>
+ 	document.cookie = 'user=leo';  
+	document.cookie = 'age=17';  
+</script>
+
+<!-- 
+七、Cookie长期存储数据
+如果Cookie要长时间存储数据，需要在写入Cookie时同时给它设置一个过期时间
+语法格式：document.cookie = 'username=leo；expires=' + 时间;
+注意：Cookie文件默认是临时存储的，当浏览器关闭时自动销毁。
+-->
+<script>
+	var oDate = new Date();  
+	oDate.setDate(oDate.getDate() + 5);  
+	document.cookie = 'username=leo1；expires=' +oDate;  
+</script>
+
+<!-- 
+八、IE兼容问题
+上面这种Cookie长期存储数据，在ie中有兼容性问题。
+原因：oDate是object类型，而cookie中要求oDate必须是字符串
+解决：把oDate转化成string类型
+-->
+<script>
+	var oDate = new Date();  
+	oDate.setDate(oDate.getDate() + 5);  
+	document.cookie = 'username=leo；expires=' +oDate.toGMTString();   
+</script>
+<!-- 
+九、存储特殊字符问题
+问题：在Cookie存储特殊字符的时候（例如：中文、转义字符等），存储不了特殊字符
+解决：内容最好编码存放（encodeURI编码，decodeURI解码） 
+-->
+<script>
+	var oDate = new Date();  
+	oDate.setDate(oDate.getDate() + 5);  
+	document.cookie = 'username='+encodeURI('www.baidu.com')+'；expires=' +oDate.toGMTString();  
+	console.log(decodeURI(document.cookie)); 
+</script>
+
+<!-- 
+十、封装读取单个Cookie值的方法
+由于document.cookie获取的是该网站下的所有cookie值，为了能够获取所需的那个值，我们必须自己封装函数。
+-->
+<script>
+	//读取Cookie的方法  
+	function getCookie(key){  
+	    var arr1 = document.cookie.split('; ');  
+	    for(var i=0;i<arr1.length;i++){  
+            var arr2 = arr1[i].split('=');  
+            if(arr2[0] == key){  
+                return decodeURI(arr2[1]);  
+            }  
+	    }  
+	}
+
+</script>
+
+<!-- 
+十一、封装写入Cookie的方法
+-->
+<script>
+function setCookie(key,value,t){  
+    var oDate = new Date();  
+    oDate.setDate(oDate.getDate() + t);  
+    document.cookie = key + '=' + encodeURI(value) + ';expire=' + oDate.toGMTString();  
+}
+</script>
+<script src="scripts/flexible.js"></script>
+
+<div style="margin-top:5px;border-width:thin;border-color:red;border-style:solid;">11111111111</div>
+<div style="margin-top:5px;border-width:medium;border-color:red;border-style:solid;">22222222222</div>
+<div style="margin-top:5px;border-width:thick;border-color:red;border-style:solid;">333333333333</div>
+<div style="margin-top:5px;border:1px solid red;">44444444444</div>
+
+</body>
+</html>

@@ -6,62 +6,80 @@
 </head>
 <body>
 <script>
-	//闭包方式
-	var plugin1=(function(){
-		function _firstFunc(str){
-			console.log(str);
-			console.log(str);
-		}
-		return{
-			firstFunc:_firstFunc
-		}
-	})();
-	plugin1.firstFunc("plugin1 Hello");
+	// //闭包方式
+	// var plugin1=(function(){
+	// 	function _firstFunc(str){
+	// 		console.log(str);
+	// 		console.log(str);
+	// 	}
+	// 	return{
+	// 		firstFunc:_firstFunc
+	// 	}
+	// })();
+	// plugin1.firstFunc("plugin1 Hello");
 
-	//自定义类 
-	function plugin(){};
-	//提供默认参数
-	plugin.prototype.str="default param";
-	//提供方法(如果不传参,则使用默认参数)
-	plugin.prototype.firstFunc=function(str=this.str){
-		console.log(str);
-	}
-	//创建"对象"
-	var p=new plugin();
-	//调用方法
-	p.firstFunc();
-	p.firstFunc("Hello");
+	// //自定义类 
+	// function plugin(){};
+	// //提供默认参数
+	// plugin.prototype.str="default param";
+	// //提供方法(如果不传参,则使用默认参数)
+	// plugin.prototype.firstFunc=function(str=this.str){
+	// 	console.log(str);
+	// }
+	// //创建"对象"
+	// var p=new plugin();
+	// //调用方法
+	// p.firstFunc();
+	// p.firstFunc("Hello");
 
-	//闭包方式上修改
-	var plugin3=(function(){
-		var _options={
-			default_word:"OK"	
-		}
-		var _plugin_api={
-			firstFunc:function(str=_options.default_word){
-				console.log(str);
-				return this;
-			},
-			lastFunc:function(){
-				console.log("on");
-				return this;
-			}
-		}
-		this.CJPlugin=_plugin_api;
-	})();
-	CJPlugin.firstFunc("yes");
-	CJPlugin.firstFunc();
-	CJPlugin.lastFunc();
-    var arr='dfsafsaffsdafs';
-	console.log(arr[0]);
+	// //闭包方式上修改
+	// var plugin3=(function(){
+	// 	var _options={
+	// 		default_word:"OK"	
+	// 	}
+	// 	var _plugin_api={
+	// 		firstFunc:function(str=_options.default_word){
+	// 			console.log(str);
+	// 			return this;
+	// 		},
+	// 		lastFunc:function(){
+	// 			console.log("on");
+	// 			return this;
+	// 		}
+	// 	}
+	// 	this.CJPlugin=_plugin_api;
+	// })();
+	// CJPlugin.firstFunc("yes");
+	// CJPlugin.firstFunc();
+	// CJPlugin.lastFunc();
+ //    var arr='dfsafsaffsdafs';
+	// console.log(arr[0]);
 
-	var arr = ['Apple', 'Google', 'Microsoft'];
-	var i, x;
-	for (i=0; i<arr.length; i++) {
-	    x = arr[i];
-	    console.log(x);
-	}
+	// var arr = ['Apple', 'Google', 'Microsoft'];
+	// var i, x;
+	// for (i=0; i<arr.length; i++) {
+	//     x = arr[i];
+	//     console.log(x);
+	// }
+	function getCookie(key){  
+        var arr1 = document.cookie.split('; ');  
+        for(var i=0;i<arr1.length;i++){  
+            var arr2 = arr1[i].split('=');  
+            if(arr2[0] == key){  
+                    return decodeURI(arr2[1]);  
+            }  
+	    }  
+	} 
+   function setCookie(key,value,t){  
+        var oDate = new Date();  
+        oDate.setDate(oDate.getDate() + t);  
+        document.cookie = key + '=' + encodeURI(value) + ';expire=' + oDate.toGMTString();  
+	}  
+   	setCookie("user","123456",2)
+   	document.cookie = 'username=leo';  
+	document.cookie = 'age=17';  
 
+	console.log(document.cookie);
 
 </script>
 

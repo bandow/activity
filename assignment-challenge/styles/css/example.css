@@ -143,7 +143,7 @@ input {
 }
 
 .max-width, .wrapper {
-  max-width: 7.5rem;
+  max-width: 750px;
 }
 
 .wrapper {
