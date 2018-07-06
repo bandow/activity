@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>es6</title>
+</head>
+<body>
+	<ul class="ul"></ul>
+	<script>
+		class b{
+			add(a,b){
+				return a*b
+			}
+		}
+		var c=new b();
+		console.log(c.add(4,6));
+		var ulObj=document.querySelector(".ul");
+		var array = [1, 2, 3];
+		//传统写法
+		// array.forEach(function(e, i, a) {
+		//     console.log(i);
+		// });
+		array.forEach((e, i, a)=>console.log('<li>'+e+'</li>'));
+
+
+
+	</script>
+</body>
+</html>

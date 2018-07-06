@@ -218,4 +218,20 @@ html{font-size:18px;}
 		color:#b99d64;
 	}
 }
+.ysp .logo{
+	@extend .logo;
+}
+.ysp .video{
+	@extend .video;
+	background-color:#dcdcdc;
+}
+.ysp .text{
+	@extend .text;
+	h3{
+		color:#a9a475;
+	}
+	h4{
+		color:#a9a475;
+	}
+}
 

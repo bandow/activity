@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="scripts/vue/vue.js"></script>
+</head>
+<body>
+	<div id="room">
+		<input type="text" v-model="inputValue">
+		<button @click="handleSubmit">提交</button>
+		<ul>
+			<todo-item v-for="(item,index) of listArray" :content="item" :index="index" @delete="hendleDelete"></todo-item>
+		</ul>
+
+		<div></div>
+		<div v-show="show">显示</div>
+		<button v-on:click="handleToggle">切换</button>
+		
+		<div></div>
+		<input type="text" v-model="firstName">
+		<input type="text" v-model="lastName">
+		<div>{{fullName|fullNameFilters}}</div>
+		<div>{{count}}</div>
+	</div>
+	<script>
+		Vue.component('todo-item',{
+			props:['content','index'],
+			template:'<li @click="handleClick">{{content}}</li>',
+			methods:{
+				handleClick:function(){
+					this.$emit('delete',this.index)
+				}
+			}
+		})
+		new Vue({
+			el:"#room",
+			data:{
+				inputValue:'',
+				listArray:[],
+				show:true,
+				firstName:'',
+				lastName:'',
+				count:0,
+			},
+			computed:{
+				fullName:function (){
+					return this.firstName+this.lastName;
+				}
+			},
+			methods:{
+				handleSubmit:function(){
+					this.listArray.push(this.inputValue);
+					this.inputValue='';
+				},
+				handleToggle:function(){
+					this.show=!this.show;
+				},
+				handleMonitor:function(){
+					this.count;
+				},
+				hendleDelete:function(index){
+					this.listArray.splice(index,1);
+				}
+			},
+			watch:{
+				fullName:function(){
+					this.count++;
+				},
+			},
+			filters:{
+				fullNameFilters:function(value){
+					return value.toUpperCase();
+				}
+			}
+		})
+	</script>
+</body>
+</html>
